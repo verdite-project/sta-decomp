@@ -115,7 +115,6 @@ register and scheduling differences.
 | Text_Render_2_00188010 | round Y/Z near-miss (agent's best attempt; see comments in file) |
 | Text_MeasureWidth_2_001889E0 | round Y/Z near-miss (agent's best attempt; see comments in file) |
 | Shop_Update_0_001A1C80 | round Y/Z near-miss (agent's best attempt; see comments in file) |
-| EnemyMgr_ReleaseData_0_001A51E0 | round Y/Z near-miss (agent's best attempt; see comments in file) |
 | Enemy_Draw_1_001A5DE0 | round Y/Z near-miss (agent's best attempt; see comments in file) |
 | Enemy_InitPartState_1_001A8510 | round Y/Z near-miss (agent's best attempt; see comments in file) |
 | ItemObj_TestVisible_0_001ACD90 | round Y/Z near-miss (agent's best attempt; see comments in file) |

@@ -495,7 +495,7 @@ segments:
       - [0x0A35B0, c, game/ui/title]
       - [0x0A4990, asm, text_001A4990]
       - [0x0A5070, c, game/enemy/enemy_manager]
-      - [0x0A51E0, asm, text_001A51E0]
+      - [0x0A51E0, c, game/enemy/enemy_mgr_release_data]
       - [0x0A5340, c, game/enemy/enemy_list]
       - [0x0A7D00, c, game/enemy/enemy_data]
       - [0x0A7D90, c, game/enemy/enemy_data_alloc]
