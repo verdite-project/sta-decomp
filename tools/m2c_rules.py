@@ -1,4 +1,4 @@
-"""Rewrite rules for m2c output, learned from docs/m2c-diffs/.
+"""Rewrite rules for m2c output, learned from how hand-matched C differed from m2c output.
 
 tools/m2c_batch.py compiles m2c's output both as is and after apply() and
 keeps the variant with fewer differing words, so a rule only has to help on
@@ -60,7 +60,7 @@ def arg_type(a):
 
 
 def callee_prototypes(c):
-    """m2c_diffs: callers pass narrow loads and casts to narrow parameters
+    """callers pass narrow loads and casts to narrow parameters
     (u8 getters around 0x143920, s16/s8 wrappers, s64 at 0x17DEA0). Declare
     each called func_ with the argument types and drop the casts."""
     defined = set(re.findall(r"^[^\s].*\b((?:func|[A-Za-z]\w*?_[0-5])_[0-9A-F]{8})\(.*\) \{$", c, re.M))
@@ -110,7 +110,7 @@ def callee_prototypes(c):
 
 
 def typed_indexing(c):
-    """m2c_diffs: m2c scales pointer arithmetic by bytes on typed symbols
+    """m2c scales pointer arithmetic by bytes on typed symbols
     (*(D_0033F6D0 + (i * 4)) for D_0033F6D0[i]); C scales again."""
     decls = dict((m.group(2), m.group(1)) for m in
                  re.finditer(r"^extern (%s) \*?((?:D|g[A-Z][A-Za-z0-9]*)_[0-9A-F]{8})(?:\[\])?;" % TYPE, c, re.M))
@@ -126,7 +126,7 @@ def typed_indexing(c):
 
 
 def base_first_index(c):
-    """m2c_diffs: CodeWarrior adds index to base in the order of the C
+    """CodeWarrior adds index to base in the order of the C
     `s->v[i]` (0x13DCA0, 0x13E3F0): rewrite m2c's ((i * n) + base)."""
     def fix(m):
         idx, n, base, t, off = m.group(1), int(m.group(2), 0), m.group(3), m.group(4), m.group(5)
@@ -137,7 +137,7 @@ def base_first_index(c):
 
 
 def bitfields(c):
-    """m2c_diffs: the most common hand fix. m2c writes a byte bitfield store
+    """the most common hand fix. m2c writes a byte bitfield store
     as (x & ~M) | ((v & 1) << k) and a load as (u64)((s64)x << a) >> b;
     CodeWarrior only emits these shapes for real bitfields."""
     decls = []

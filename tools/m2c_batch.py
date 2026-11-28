@@ -303,7 +303,7 @@ PERM_TYPES = ["s32", "u8", "s16", "u16", "s8", "s64", "u32", "f32"]
 
 def permute(name, addr, size, limit=400):
     """Near-miss: try every type for the parameters of the function and of
-    the prototypes it declares (most frequent types in docs/m2c-diffs first),
+    the prototypes it declares (most frequent types first),
     keeping the first combination that matches."""
     import itertools
     c = OUT / f"{name}.c"
