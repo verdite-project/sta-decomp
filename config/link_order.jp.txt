@@ -537,7 +537,6 @@ src/game/enemy/enemy_mgr_update.c
 asm/text_001A4990.s
 src/game/enemy/enemy_manager.c
 src/game/enemy/enemy_mgr_release_data.c
-asm/text_001A51E0.s
 src/game/data/enemy_list_rodata.c
 src/game/enemy/enemy_list.c
 src/game/data/enemy_list_rodata_001FD960.c

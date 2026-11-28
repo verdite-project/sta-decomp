@@ -725,7 +725,7 @@ ignored_00474E49 = 0x00474E49; // ignore:True
 // game function names (config/game_func_names.txt, tools/apply_names.py)
 Fx_UpdateChildrenEx_1_001629E0 = 0x001629E0; // type:func
 Mdl_ClipFrustum_0_0016BD00 = 0x0016BD00; // type:func
-EnemyMgr_ReleaseData_0_001A51E0 = 0x001A51E0; // type:func
+EnemyMgr_ReleaseData_0_001A51E0 = 0x001A51E0; // type:func size:0x160
 Vu0_CopyQword_3_001DC328 = 0x001DC328; // type:func
 Vu0_CopyQwordB_3_001DC338 = 0x001DC338; // type:func
 Vu0_LoadLightVf5_2_001DC360 = 0x001DC360; // type:func
