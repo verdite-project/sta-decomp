@@ -24,8 +24,6 @@ register and scheduling differences.
 | Glow_Add_0_0015DBF0 | ~18 instrs: v70[3] store order, table-update regs, a0/a1 swap |
 | Enemy_UpdateTimers_0_0013D8A0 | else-branch: `negu` scheduled before the `andi`/`sw` of `*q` (Actor accessor block) |
 | ItemObj_Free_1_001AF4A0 | case-1 list remove: orig reloads count each pass and puts the shift loop's setup after the function |
-| MapObj_Hit_0_001B85B0 | ours keeps idx*0x30 in s4 across calls (extra s-reg, frame +0x10) |
-| MapObj_SetAnimFrame_0_001B87C0 | first block regs: load from 0x180 to t1 (ours a2) |
 | Sfx_AimMatrix_0_00167310 | `b` delay slot left empty (orig fills with next `lwc1 f21`); `move s0,a0` before null check |
 | Mdl_RunMotionEvents_0_001717A0 | 4 words, regs only: orig tbl=a1 and keeps q+0x40 in a2 |
 | FxProc_RandomJitter_0_0014C890 | &v should be s1 below the loop pointers; multiply operand order |
@@ -44,7 +42,7 @@ register and scheduling differences.
 | Coll_SweepSegmentsInit_1_00151E50 | 1 word: late clear loop count `li v0,16` vs orig 8; the C slot only lands at 0x40 with a 16-byte struct |
 | Quat_Slerp_2_0015DFA0 | quaternion slerp; saved regs only: orig `out` in s6, ours s0 (permuter candidate) |
 | Mdl_EmitStripD_0_0016DC70 | GIF packet; saved regs rotated (orig gives p and &q.w[1]/[3] the high s-regs) (permuter candidate) |
-| MapObj_PlayAnimImpl_1_001B8350 | first block regs shifted by one; orig `li v1,1; movz v1,zero,a2` for `a2 ? 1 : 0` (MWCC gives sltu) |
+| MapObj_PlayAnimImpl_1_001B8350 | 121/150 words match. The direction selection matches. Remaining differences are lookup registers and the order of two item-spawn argument moves. |
 | Actor_BuildLookMatrix_0_00136DB0 | inlined axis-angle rotation (as Mtx_AxisAngle_2_0015EBB0 times a vector): float scheduling/regs only |
 | MapCmd_GetSfxParamB_0_0017EAF0 | adapted MapCmd_SetSfxParamB_0_0017E940 inlines; shape identical, temp regs only (slot pointer v1 vs a2) |
 | Mdl_EmitPolys_1_0016EF70 | right size/branches, loop regalloc differs (orig spills a0, i in t9); far (155 words) |

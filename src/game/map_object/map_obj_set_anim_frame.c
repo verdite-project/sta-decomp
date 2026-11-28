@@ -1,83 +1,80 @@
-/* Best-effort C for the NONMATCHING build; the matching attempt is
- * wip/MapObj_SetAnimFrame_0_001B87C0.c.
- * The matching build takes it from the assembly of MapObj_PlayAnimImpl_1_001B8350. */
-#ifdef NONMATCHING
-// NEAR 4/165: still t1/a2 swap on lw 0x180 base + sll/addu (retail: base t1, off a2, addu a1,a1,a2). Tried stmt/decl perms, struct p, inline getters, E80 index, b38, idx via E30* temp (fixes addu order but 6 words).
-#include "m2c.h"
-typedef struct { u8 p:3; u8 v:1; } BF3;
-typedef struct { s8 pad[0x18]; u16 x18; s8 pad1A[0x16]; } E30;
-typedef struct { u8 b0:1; u8 b1:1; u8 b2:1; u8 b3:1; u8 b4:1; u8 b5:1; u8 b6:1; u8 b7:1; } F8;
-typedef struct { s8 pad0[0xC]; f32 xC; f32 x10; s8 pad14[0xC]; f32 x20; } Obj;
-void Mdl_SetBoneRotation_0_001710D0(Obj *obj, s16 a1, f32 a, f32 b, f32 c);
-f32 Mdl_GetMotionLength_0_00173F70(s8 *, u16);
+#include "game/map_object_records.h"
 
-void MapObj_SetAnimFrame_0_001B87C0(s8 *p, u32 a1, s32 a2, s32 a3, f32 f, f32 g) {
-    s8 *e;
-    Obj *ob;
-    s8 **q;
-    Obj **pp;
-    u16 k;
-    u16 idx;
-    s8 *tbl;
-    s8 *t;
-    s8 *s;
-    f32 r;
+void Mdl_SetBoneRotation_0_001710D0(MapObjModel *, s16, f32, f32, f32);
+f32 Mdl_GetMotionLength_0_00173F70(MapObjMotionData *, u16);
 
-    if (p == NULL || a1 >= *(u16 *)(p + 0x6E)) {
+void MapObj_SetAnimFrame_0_001B87C0(MapObjArea *area, u32 index, s32 anim, s32 flags, f32 frame, f32 speed) {
+    MapObjState *state;
+    MapObjModel *model;
+    MapObjMotionData **motion;
+    MapObjModel **modelHandle;
+    u16 animationIndex;
+    u16 nodeIndex;
+    MapObjNode *nodes;
+    MapObjNode *node;
+    MapObjAnimationMap *animation;
+    f32 length;
+    MapObjState *states;
+    MapObjEntry *entry;
+    u32 status;
+
+    if (area == NULL || index >= area->entryCount) {
         return;
     }
-    e = *(s8 **)(p + 0x180) + (a1 << 7);
-    idx = (*(E30 **)(p + 0x138))[a1].x18;
-    tbl = *(s8 **)(p + 0x170);
-    t = tbl + (idx << 6);
-    if ((*(u8 *)(e + 0x50) & 3) && ((BF3 *)(t + 0x12))->v) {
-        k = *(u16 *)(tbl + (*(u16 *)(t + 6) << 6));
-        pp = *(Obj ***)(e + 0x44);
+    states = ((volatile MapObjArea *)area)->states;
+    state = &states[index];
+    status = state->flags.b & 3;
+    entry = &area->entries[index];
+    nodeIndex = entry->nodeIndex;
+    nodes = area->nodes;
+    node = &nodes[nodeIndex];
+    if (status && node->flags.f.b3) {
+        animationIndex = area->nodes[node->alternateNodeIndex].id;
+        modelHandle = state->alternateModel;
     } else {
-        pp = *(Obj ***)(e + 0x40);
-        k = idx;
+        modelHandle = state->model;
+        animationIndex = nodeIndex;
     }
-    ob = *pp;
-    q = *(s8 ***)ob;
-    s = *(s8 **)(p + 0x194) + k * 0x10;
-    if (q == NULL || *q == NULL) {
+    model = *modelHandle;
+    motion = model->motion;
+    animation = &area->animations[animationIndex];
+    if (motion == NULL || *motion == NULL) {
         return;
     }
-    if (*(u16 *)(*q + 0x16) <= 0) {
+    if ((*motion)->motionCount <= 0) {
         return;
     }
-    if (a2 < 0 || (u32)a2 >= *(u32 *)(s + 4)) {
+    if (anim < 0 || (u32)anim >= animation->count) {
         return;
     }
-    a2 = (*(u8 **)(s + 8))[a2];
-    if (a2 == 0xFF) {
+    anim = animation->motionIds[anim];
+    if (anim == 0xFF) {
         return;
     }
-    Mdl_SetBoneRotation_0_001710D0(ob, a2, g, 0.0f, 0.0f);
-    ((F8 *)(e + 0x50))->b2 = 1;
-    ((F8 *)(e + 0x50))->b4 = 0;
-    r = Mdl_GetMotionLength_0_00173F70(*q, a2);
-    if (a3 & 0x80) {
-        ((F8 *)(e + 0x50))->b3 = 1;
+    Mdl_SetBoneRotation_0_001710D0(model, anim, speed, 0.0f, 0.0f);
+    state->flags.f.b2 = 1;
+    state->flags.f.b4 = 0;
+    length = Mdl_GetMotionLength_0_00173F70(*motion, anim);
+    if (flags & 0x80) {
+        state->flags.f.b3 = 1;
     } else {
-        ((F8 *)(e + 0x50))->b3 = 0;
+        state->flags.f.b3 = 0;
     }
-    if (a3 & 0x40) {
-        ((F8 *)(e + 0x50))->b5 = 1;
+    if (flags & 0x40) {
+        state->flags.f.b5 = 1;
     } else {
-        ((F8 *)(e + 0x50))->b5 = 0;
+        state->flags.f.b5 = 0;
     }
-    if (!(a3 & 1)) {
-        ob->xC = f;
-        ob->x10 = f;
-        ob->x20 = ob->xC;
+    if (!(flags & 1)) {
+        model->frame = frame;
+        model->previousFrame = frame;
+        model->x20 = model->frame;
     } else {
-        ob->xC = r - f;
-        if (ob->xC < 0.0f) {
-            ob->xC = 0.0f;
+        model->frame = length - frame;
+        if (model->frame < 0.0f) {
+            model->frame = 0.0f;
         }
-        ob->x10 = ob->xC;
-        ob->x20 = ob->xC;
+        model->previousFrame = model->frame;
+        model->x20 = model->frame;
     }
 }
-#endif
