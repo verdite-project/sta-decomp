@@ -4,8 +4,10 @@
    (CodeWarrior writes uninitialised objects in reverse order). */
 /* used by: script_op, sfx, sfx_all, sfx_system, text_00169F40.s */
 
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/effect/sfx_system.c */
 u8 D_003407E0[0xec130];
 u8 D_003406E0[0x100];
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/effect/sfx.c */
 u8 D_003406D0[0x10];
 #endif

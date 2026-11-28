@@ -27,3 +27,9 @@ void Glow_Init_0_0015DD90(void) {
         M2C_FIELD(&D_0030D180[0xFF - i], s32 *, 8) = i;
     }
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/point_light_bss.c): D_0030D0E0__grp: D_0030D0E0@0x0, D_0030D0E4@0x4, D_0030D0E8@0x8, D_0030D170@0x90, D_0030D180@0xa0, D_0030D184@0xa4, D_0030D588@0x4a8 */
+u8 D_0030D0E0__grp[0x6b0] __attribute__((aligned(16)));
+#endif

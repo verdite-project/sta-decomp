@@ -5,22 +5,28 @@
 /* used by: menu, menu_options, menu_proc, message, option, save_menu,
    save_menu_card, save_menu_slot */
 
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/option.c */
 s32 D_004A108C[0x1];
 s32 D_004A1088[0x1];
 s32 D_004A1084[0x1];
 s32 D_004A1080[0x1];
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/save_menu.c */
 u8 D_004A1078[0x8] __attribute__((aligned(4)));
 u8 D_004A1074[0x4]; /* also D_004A1075, D_004A1077 */
 u8 D_004A1070[0x4]; /* also D_004A1071, D_004A1072, D_004A1073 */
+#endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/save_menu_card.c */
 s32 D_004A106C[0x1];
 s32 D_004A1068[0x1];
+#endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/save_menu.c */
 f32 D_004A1060[0x2] __attribute__((aligned(4)));
+#endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/save_menu_card.c */
 u8 D_004A105C[0x4];
 s32 D_004A1058[0x1];
 s32 D_004A1054[0x1];
-u8 D_004A1050[0x4];
 #endif
+u8 D_004A1050[0x4];
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/save_menu.c */
 s32 D_004A1020[0xc] __attribute__((aligned(4)));
 #endif

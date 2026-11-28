@@ -48,6 +48,7 @@ const s32 D_001FCFC0[0x2] = { -0xe760670, 0 };
 const s32 D_001FCFC8[0x4] __attribute__((aligned(8))) = { -0x426a4973, -0x25778c73, 0xae93, 0 };
 const s32 D_001FCFD8[0x4] __attribute__((aligned(8))) = { -0x426aba77, -0x25778c73, 0xae93, 0 };
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/option.c */
 const s32 D_001FCFE8[0x2] = { 0x5f938b8e, 0xe38f };
 const s32 D_001FCFF0[0x2] = { 0x5f938b8e, 0xba89 };
 const f32 D_001FCFF8[0x2] = { 4.7034407f, 0.0f };
@@ -63,3 +64,4 @@ const s32 D_001FD068[0x4] __attribute__((aligned(8))) = { -0x7d73aa73, -0x526bba
 const s32 D_001FD078[0x4] __attribute__((aligned(8))) = { -0xe760670, -0x7471ba7f, 0x5f93, 0 };
 const s32 D_001FD088[0x2] = { -0x66f4973, 0xf189 };
 const s32 D_001FD090[0x1c] __attribute__((aligned(8))) = { -0x66fba77, 0xf189, 0x4e4f, 0, 0x46464f, 0, 0, 0, 0x7050604, 0xb0a0908, 0xc0d0101, 0x1506140f, 0xa090807, 0xd00000b, 0x12100f0c, 0x9081211, 0x1010b0a, 0x10020c0d, 0x8121112, 0x10b0a09, 0x20c0d01, 0x12111210, 0xb0a0908, 0xc0d0000, 0x11121013, 0xa090812, 0xd00000b, 0x130c };
+#endif

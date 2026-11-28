@@ -253,7 +253,11 @@ the object from its owner instead:
   each member's slice of the blob. Small-data (`.sbss`/`.sdata`) groups
   stay: one blob would leave the gp range. An object the twin writer cannot
   write in the owner's type (a qword union, a type clash, no `extern`) moves
-  as a one-object group the same way: no C type has to fit.
+  as a one-object group the same way: no C type has to fit. A root whose
+  reach is unknown groups the rest of its gap-free run (moved whole, what
+  follows it still follows it). A group whose members change (a new
+  extent, a new root) goes back and is made again (`split_data.py --apply`,
+  then the inventory and `--apply` once more).
 - **Pinned** objects stay where the data unit has them in both builds: the
   code can reach past them into their neighbours, so the neighbours must not
   move. That is an object whose address is cast (to an integer or another
@@ -266,9 +270,9 @@ the object from its owner instead:
 <!-- data-owners:start -->
 | objects (2026-11-28) | bss | data | rodata | sbss | sdata | all |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| NONMATCHING twin or group in its owner | 663 | 152 | 325 | 314 | 119 | 1573 |
+| NONMATCHING twin or group in its owner | 751 | 174 | 349 | 314 | 119 | 1707 |
 | not split yet | 0 | 0 | 3 | 0 | 4 | 7 |
-| pinned | 95 | 22 | 24 | 3 | 0 | 144 |
+| pinned | 7 | 0 | 0 | 3 | 0 | 10 |
 | used by asm only | 5 | 1 | 0 | 7 | 1 | 14 |
 | used by other data only | 2 | 0 | 0 | 0 | 0 | 2 |
 | unused | 35 | 5 | 38 | 0 | 0 | 78 |

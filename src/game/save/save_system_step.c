@@ -756,15 +756,16 @@ u8 D_004BCBC0[0x380];
 u8 D_004BCF40[0x3d0];
 #endif
 
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-/* data group (src/game/data/save_system_start_bss.c): D_004BC394__grp: D_004BC394@0x0, D_004BC398@0x4, D_004BC39C@0x8 */
-u8 D_004BC394__grp[0xc] __attribute__((aligned(4)));
-#endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
 /* data twins (src/game/data/save_system_step_rodata.c): D_00201760, D_00201770 */
 char D_00201760[0x10] __attribute__((aligned(4))) = { 0x42, 0x49, 0x53, 0x4c, 0x50, 0x53, 0x2d, 0x32, 0x35, 0x32, 0x31, 0x37, 0, 0, 0, 0 };
 char D_00201770[0x8] __attribute__((aligned(4))) = { 0x2f, 0x25, 0x73, 0x2f, 0x2a, 0, 0, 0 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/save_system_start_bss.c): D_004BC360__grp: D_004BC360@0x0, D_004BC380@0x20, D_004BC384@0x24, D_004BC388@0x28, D_004BC38C@0x2c, D_004BC390@0x30, D_004BC394@0x34, D_004BC398@0x38, D_004BC39C@0x3c */
+u8 D_004BC360__grp[0x40] __attribute__((aligned(16)));
 #endif

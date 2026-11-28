@@ -1325,11 +1325,6 @@ Mtx D_002F1740;
 Mtx D_002F1800;
 #endif
 
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-/* data group (src/game/data/sound_bss.c): D_00222B50__grp: D_00222B50@0x0, D_00222B54@0x4, D_00222B58@0x8, D_00222B5C@0xc, D_00222B60@0x10, D_00222B64@0x14, D_00222B68@0x18, D_00222B70@0x20, D_00222B74@0x24, D_00222B78@0x28, D_00222B7C@0x2c, D_00222B80@0x30, D_00222B84@0x34 */
-u8 D_00222B50__grp[0x70] __attribute__((aligned(16)));
-#endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
@@ -1359,4 +1354,10 @@ f32 D_001F1BF0__grp[0x4] __attribute__((aligned(16))) = { 0.0f, 0.0f, 1.0f, 1.0f
 #pragma explicit_zero_data on
 /* data group (src/game/data/game_main_data.c): D_001F1C00__grp: D_001F1C00@0x0 */
 f32 D_001F1C00__grp[0x4] __attribute__((aligned(16))) = { 0.0f, 1.0f, 0.0f, 1.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/gs_packet_bss.c): D_002F1840__grp: D_002F1840@0x0, D_002F1880@0x40, D_002F18C0@0x80, D_002F1900@0xc0, D_002F1940@0x100, D_002F1944@0x104, D_002F1948@0x108, D_002F194C@0x10c */
+u8 D_002F1840__grp[0x110] __attribute__((aligned(16)));
 #endif

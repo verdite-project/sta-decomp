@@ -155,11 +155,6 @@ void Font_EmitGlyph_0_00181310(s32 x, s32 y, s8 ch, u8 *col, s32 **pp) {
     *pp = p + 20;
 }
 
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-/* data group (src/game/data/ui_anim_bss.c): D_004880B0__grp: D_004880B0@0x0, D_004880B4@0x4 */
-u8 D_004880B0__grp[0x400] __attribute__((aligned(16)));
-#endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on

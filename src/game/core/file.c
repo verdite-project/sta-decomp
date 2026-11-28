@@ -573,3 +573,9 @@ s8 *D_00201F80;
 /* data twins (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A0D0 */
 F_Arc_FindByHash_2_0015ABD0 D_0030A0D0[0x10];
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/screen_fx_bss.c): D_002F20C0__grp: D_002F20C0@0x0 */
+u8 D_002F20C0__grp[0x4] __attribute__((aligned(16)));
+#endif

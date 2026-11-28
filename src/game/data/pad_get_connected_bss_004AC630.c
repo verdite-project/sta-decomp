@@ -4,8 +4,8 @@
    (CodeWarrior writes uninitialised objects in reverse order). */
 /* used by: item_object, item_object_spawn, map */
 
-u8 D_004B4B94[0x4];
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/map/map.c */
+u8 D_004B4B94[0x4];
 u8 D_004B4B90[0x4];
 #endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/item/item_object.c */

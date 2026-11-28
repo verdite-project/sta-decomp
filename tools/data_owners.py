@@ -365,12 +365,12 @@ def pin(objs, link):
                 root = n
                 end = a + extent[n] if n in extent else None
                 objs[n]["pinned"] = objs[n]["pinned"] or roots[n]
-                if end is not None:
-                    objs[n]["group"] = n
+                # a root of unknown reach groups the rest of its run: moved
+                # whole, the bytes after it stay after it
+                objs[n]["group"] = n
             elif root is not None:
                 objs[n]["pinned"] = objs[n]["pinned"] or f"after {root} in its run ({roots[root]})"
-                if end is not None:
-                    objs[n]["group"] = root
+                objs[n]["group"] = root
         # an object pinned only because code reaches past its end at a fixed
         # offset: a group of it and what it reaches (16 bytes past the
         # furthest offset, the widest access)

@@ -4,9 +4,9 @@
    (CodeWarrior writes uninitialised objects in reverse order). */
 /* used by: bgm, sound_driver_call, sound_driver_flush, text_001D9FC0.s */
 
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/bgm.c */
 u8 D_004BA000[0x40];
 u8 D_004B9FC0[0x40];
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/bgm.c */
 u8 D_004B9FB0[0x10]; /* also D_004B9FB4 */
 u8 D_004B9FAC[0x4];
 u8 D_004B9FA8[0x4]; /* also D_004B9FAA */

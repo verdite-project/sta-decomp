@@ -528,6 +528,6 @@ s16 D_004B4BBC[0x2];
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/pad_get_connected_bss_004AC630.c): D_004B4B90__grp: D_004B4B90@0x0 */
-u8 D_004B4B90__grp[0x4] __attribute__((aligned(16)));
+/* data group (src/game/data/pad_get_connected_bss_004AC630.c): D_004B4B90__grp: D_004B4B90@0x0, D_004B4B94@0x4 */
+u8 D_004B4B90__grp[0x8] __attribute__((aligned(16)));
 #endif

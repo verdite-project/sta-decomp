@@ -286,3 +286,9 @@ s32 D_00201FE8;
 /* data twins (src/game/data/texture_bss.c): D_0042D850 */
 s8 D_0042D850[0x30];
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/vibration_bss_0033F540.c): D_003406E0__grp: D_003406E0@0x0, D_003407E0@0x100 */
+u8 D_003406E0__grp[0xec230] __attribute__((aligned(16)));
+#endif

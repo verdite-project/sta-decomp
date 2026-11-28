@@ -109,3 +109,9 @@ void ItemMenuProc_DrawInfo_0_0019CEF0(s8 *a0, s32 a1, u32 a2, s32 a3) {
 /* data group (src/game/data/item_menu_draw_bss.c): D_004A3250__grp: D_004A3250@0x0, D_004A3264@0x14, D_004A327C@0x2c, D_004A3280@0x30, D_004A328C@0x3c */
 u8 D_004A3250__grp[0x40] __attribute__((aligned(16)));
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/item_menu_draw_bss.c): D_004A30E0__grp: D_004A30E0@0x0, D_004A30F0@0x10, D_004A3100@0x20, D_004A3110@0x30, D_004A3120@0x40, D_004A3130@0x50, D_004A3140@0x60, D_004A3150@0x70 */
+u8 D_004A30E0__grp[0x170] __attribute__((aligned(16)));
+#endif

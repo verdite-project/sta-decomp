@@ -15,4 +15,6 @@ s32 D_001F2E00[0x10] = { -0x3fc00000, 0xfa6, -0x40000000, 0xfa5, -0x40800000, 0x
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/databook.c */
 s32 D_001F2E40[0x8] = { 0, 5, 0, (s32)D_001F2E00, 7, -0x3fc00000, 0, 0 };
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/databook.c */
 s32 D_001F2E60[0x4] = { 0, 1, 2, 0 };
+#endif

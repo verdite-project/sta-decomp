@@ -635,3 +635,9 @@ u8 D_001F2E00[0x40] = { 0, 0, 0x40, 0xc0, 0xa6, 0xf, 0, 0, 0, 0, 0, 0xc0, 0xa5, 
 /* data twins (src/game/data/databook_rodata.c): D_001FD268 */
 s8 D_001FD268[0x8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/load_menu_draw_data.c): D_001F2E60__grp: D_001F2E60@0x0 */
+s32 D_001F2E60__grp[0x4] __attribute__((aligned(16))) = { 0, 1, 2, 0 };
+#endif

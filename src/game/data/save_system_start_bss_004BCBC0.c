@@ -5,8 +5,10 @@
 /* used by: movie, movie_params, save_system_step, save_system_update,
    text_001E8C50.s */
 
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/movie_params.c */
 u8 D_004BD320[0x60];
 s32 D_004BD31C[0x1];
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/movie.c */
 s32 D_004BD318[0x1];
 s32 D_004BD314[0x1];

@@ -6,9 +6,11 @@
    noise_eval, noise_fbm, pad, player, player_se, text_0015F540.s,
    text_0015FC60.s, vibration */
 
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/input/vibration.c */
 u8 D_003174F0[0x27010];
 u8 D_003174E0[0x10];
 u8 D_003172E0[0x200];
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/player/player.c */
 u8 D_00317274[0x6c] __attribute__((aligned(4))); /* also D_00317278 */
 f32 D_00317270[0x1];

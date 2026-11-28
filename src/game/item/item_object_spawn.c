@@ -939,3 +939,9 @@ f32 D_001F3820__grp[0x4] __attribute__((aligned(16))) = { 1.0f, 1.0f, 1.0f, 1.0f
 /* data group (src/game/data/map_area_load_data.c): D_001F3830__grp: D_001F3830@0x0 */
 f32 D_001F3830__grp[0x4] __attribute__((aligned(16))) = { 1.0f, 1.0f, 1.0f, 1.0f };
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/pad_get_connected_bss.c): D_004AC5A0__grp: D_004AC5A0@0x0 */
+u8 D_004AC5A0__grp[0x4] __attribute__((aligned(16)));
+#endif

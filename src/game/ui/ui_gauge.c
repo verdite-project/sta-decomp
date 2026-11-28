@@ -1527,11 +1527,6 @@ s8 *D_002020AC;
 s8 D_0048D170[0x1e0];
 #endif
 
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-/* data group (src/game/data/ui_anim_bss.c): D_0048D060__grp: D_0048D060@0x0, D_0048D074@0x14, D_0048D08C@0x2c, D_0048D090@0x30, D_0048D09C@0x3c, D_0048D0A0@0x40 */
-u8 D_0048D060__grp[0x54] __attribute__((aligned(16)));
-#endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
@@ -1579,4 +1574,10 @@ char gStrAreaM04dTdc_001FCA10__grp[0xf] __attribute__((aligned(16))) = "area/m%0
 #pragma explicit_zero_data on
 /* data group (src/game/data/ui_gauge_rodata.c): gStrMs04d_001FCA08__grp: gStrMs04d_001FCA08@0x0 */
 char gStrMs04d_001FCA08__grp[0x7] __attribute__((aligned(8))) = "ms%04d\000";
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/ui_anim_bss.c): D_00486990__grp: D_00486990@0x0, D_0048699C@0xc, D_004869A0@0x10, D_004869B0@0x20, D_004869B4@0x24, D_004869D0@0x40, D_004870B0@0x720, D_004880B0@0x1720, D_004880B4@0x1724, D_004884B0@0x1b20, D_0048C4B0@0x5b20, D_0048CE40@0x64b0, D_0048CF40@0x65b0, D_0048CF80@0x65f0, D_0048CFC0@0x6630, D_0048D000@0x6670, D_0048D040@0x66b0, D_0048D060@0x66d0, D_0048D074@0x66e4, D_0048D08C@0x66fc, D_0048D090@0x6700, D_0048D09C@0x670c, D_0048D0A0@0x6710, D_0048D0B4@0x6724, D_0048D0CC@0x673c, D_0048D0D0@0x6740, D_0048D0DC@0x674c, D_0048D0E0@0x6750, D_0048D0F0@0x6760, D_0048D0F4@0x6764, D_0048D0F8@0x6768, D_0048D0FC@0x676c, D_0048D100@0x6770, D_0048D104@0x6774, D_0048D108@0x6778, D_0048D10C@0x677c, D_0048D110@0x6780 */
+u8 D_00486990__grp[0x67b0] __attribute__((aligned(16)));
 #endif

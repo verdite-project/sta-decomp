@@ -5,6 +5,7 @@
 /* used by: font_draw, text_00184280.s, text_00185D70.s, ui_anim, ui_draw,
    ui_gauge */
 
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/ui_gauge.c */
 void *D_0048D110[0xc];
 u8 D_0048D10C[0x4];
 u8 D_0048D108[0x4];
@@ -19,14 +20,12 @@ u8 D_0048D0DC[0x4];
 u8 D_0048D0D0[0xc];
 u8 D_0048D0CC[0x4];
 u8 D_0048D0B4[0x18] __attribute__((aligned(4))); /* also D_0048D0B8 */
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/ui_gauge.c */
 u8 D_0048D0A0[0x14];
 u8 D_0048D09C[0x4];
 u8 D_0048D090[0xc];
 u8 D_0048D08C[0x4];
 u8 D_0048D074[0x18] __attribute__((aligned(4))); /* also D_0048D078 */
 u8 D_0048D060[0x14];
-#endif
 u8 D_0048D040[0x20];
 s32 D_0048D000[0x10];
 s32 D_0048CFC0[0x10];
@@ -35,12 +34,9 @@ s32 D_0048CF40[0x10];
 u8 D_0048CE40[0x100];
 u8 D_0048C4B0[0x990];
 u8 D_004884B0[0x4000];
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/font_draw.c */
 u8 D_004880B4[0x3fc] __attribute__((aligned(4))); /* also D_004880B5, D_004880B6, D_004880B7 */
 u8 D_004880B0[0x4];
-#endif
 s8 D_004870B0[0x1000];
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/ui_anim.c */
 u8 D_004869D0[0x6e0]; /* also D_004869D4 */
 u8 D_004869B4[0x1c] __attribute__((aligned(4))); /* also D_004869B8 */
 u8 D_004869B0[0x4];

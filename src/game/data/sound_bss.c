@@ -6,6 +6,7 @@
    sound_bank_load, sound_bank_step, sound_emitter, sound_start, text.s,
    text_0012F0F0.s, ui_anim */
 
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/sound_bank_load.c */
 u8 D_0022EC48[0x8]; /* also D_0022EC4A */
 s32 D_0022EC44[0x1];
 u8 D_0022EC40[0x4]; /* also D_0022EC41, D_0022EC42, D_0022EC43 */
@@ -16,7 +17,6 @@ s32 D_0022EC18[0x1];
 u8 D_0022EC14[0x4]; /* also D_0022EC15, D_0022EC16, D_0022EC17 */
 s32 D_0022EC10[0x1];
 Vec D_0022EC00[0x1];
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/sound_bank_load.c */
 u8 D_0022EBE8[0x18] __attribute__((aligned(8))); /* also D_0022EBEC */
 u8 D_0022EBE4[0x4];
 s32 D_0022EBE0[0x1];
@@ -25,15 +25,11 @@ u8 D_0022EBD8[0x4]; /* also D_0022EBD9, D_0022EBDA */
 u8 D_0022EBD0[0x8]; /* also D_0022EBD1, D_0022EBD2, D_0022EBD3 */
 u8 D_0022EBC8[0x8]; /* also D_0022EBC9, D_0022EBCA, D_0022EBCB */
 u8 D_0022EBC0[0x8]; /* also D_0022EBC1, D_0022EBC2, D_0022EBC3 */
-#endif
 u8 D_0022EB40[0x80];
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/sound_bank_load.c */
 u8 D_0022CBC0[0x1f80];
 u8 D_0022CBBC[0x4];
 u8 D_00222BC4[0x9ff8] __attribute__((aligned(4))); /* also D_00222BC5 */
 u8 D_00222BC0[0x4]; /* also D_00222BC1 */
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/game_main.c */
 u8 D_00222B84[0x3c] __attribute__((aligned(4))); /* also D_00222B88 */
 s32 D_00222B80[0x1];
 s32 D_00222B7C[0x1];
@@ -47,8 +43,8 @@ u8 D_00222B5C[0x4];
 s32 D_00222B58[0x1];
 s32 D_00222B54[0x1];
 u8 D_00222B50[0x4];
-#endif
 u8 D_00222B20[0x30];
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/game_main.c */
 u8 D_00222AF0[0x30];
 #endif

@@ -17,7 +17,12 @@ typedef struct { u8 p0[0xAC]; s8 *xAC; } G;
 typedef struct { s32 sel; s32 x4; s32 x8; f32 xC; s32 x10; s32 x14; E e[2]; } M_SaveMenu_SelectDevice_0_0018D7B0;
 extern M_SaveMenu_DrawFrame_0_0018D1F0 D_004A1050;
 extern s32 D_004A105C[];
+#ifndef NONMATCHING
 extern f32 D_004A1060[];
+#else
+/* data twins (src/game/data/option_bss.c): D_004A1060 */
+static f32 D_004A1060[0x2] __attribute__((aligned(4)));
+#endif
 extern S D_001F2A50[] __attribute__((aligned(16)));
 #ifndef NONMATCHING
 extern s8 D_001FCDC8[];
@@ -265,11 +270,6 @@ void SaveMenu_SelectDevice_0_0018D7B0(s8 *arg0) {
 s32 D_004A1020[0xc] __attribute__((aligned(4)));
 #endif
 
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-/* data group (src/game/data/option_bss.c): D_004A1050__grp: D_004A1050@0x0, D_004A1054@0x4, D_004A1058@0x8, D_004A105C@0xc, D_004A1060@0x10, D_004A1068@0x18, D_004A106C@0x1c, D_004A1070@0x20, D_004A1074@0x24, D_004A1078@0x28 */
-u8 D_004A1050__grp[0x30] __attribute__((aligned(16)));
-#endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on

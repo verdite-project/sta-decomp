@@ -96,3 +96,19 @@ void Mtx_RotateToward_0_00146140(s32 arg0, f32 x, f32 z) {
     e = 3.1415927f + d;
     sceVu0RotMatrixY(arg0, D_001F2170, (e - 6.2831855f * (s32)(0.15915494f * e)) + (e < 0.0f ? 6.2831855f : 0.0f) - 3.1415927f);
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+void ScrCmd_GetArg0_2_00164CC0(void);
+void ScrCmd_GetVar_1_00164CE0(void);
+void ScrCmd_NopB_2_00164EC0(void);
+void ScrCmd_NopC_2_00164ED0(void);
+void ScrCmd_NopD_2_00164EF0(void);
+void ScrCmd_NopE_2_00164F00(void);
+void ScrCmd_Nop_2_00164CD0(void);
+void ScrCmd_ResetAllSlots_0_00164E80(void);
+void ScrCmd_SendEvent_1_00164EE0(void);
+void ScrCmd_SetVar_1_00164DC0(void);
+/* data group (src/game/data/screen_fx_flash_data.c): D_001F2100__grp: D_001F2100@0x0, D_001F210C@0xc, D_001F2110@0x10, D_001F2114@0x14, D_001F2118@0x18, D_001F211C@0x1c, D_001F2120@0x20, D_001F2130@0x30, D_001F2140@0x40, D_001F2150@0x50, D_001F2154@0x54, D_001F2158@0x58, D_001F2160@0x60, D_001F2170@0x70, D_001F21B0@0xb0 */
+s32 D_001F2100__grp[0x80] __attribute__((aligned(16))) = { 0x3f800000, 0, 0, 0x43000000, 0x3f800000, 0, 0x3f800000, 0, 0x3f800000, 0x3f800000, 0x3f800000, 0x3f800000, 0x3f800000, 0, 0, 0, 0, 0x3f800000, 0, 0, 0, 0, 0x3f800000, 0, 0, 0, 0, 0x3f800000, 0x3f800000, 0, 0, 0, 0, 0x3f800000, 0, 0, 0, 0, 0x3f800000, 0, 0, 0, 0, 0x3f800000, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopD_2_00164EF0, (s32)ScrCmd_NopD_2_00164EF0, (s32)ScrCmd_NopC_2_00164ED0, (s32)ScrCmd_NopB_2_00164EC0, (s32)ScrCmd_ResetAllSlots_0_00164E80, (s32)ScrCmd_SendEvent_1_00164EE0, (s32)ScrCmd_NopD_2_00164EF0, (s32)ScrCmd_SetVar_1_00164DC0, (s32)ScrCmd_GetVar_1_00164CE0, (s32)ScrCmd_Nop_2_00164CD0, (s32)ScrCmd_GetArg0_2_00164CC0, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00, (s32)ScrCmd_NopE_2_00164F00 };
+#endif

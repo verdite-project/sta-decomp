@@ -178,3 +178,9 @@ void Vibe_StopAll_1_00160300(void) {
 void Vibe_Clear_1_00160350(void) {
     memset(D_003172E0, 0, 0x204);
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/vibration_bss.c): D_003172E0__grp: D_003172E0@0x0, D_003174E0@0x200, D_003174F0@0x210 */
+u8 D_003172E0__grp[0x27220] __attribute__((aligned(16)));
+#endif

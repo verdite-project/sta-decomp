@@ -5245,11 +5245,6 @@ f32 D_001F2080__grp[0x10] __attribute__((aligned(16))) = { 0.0f, -90.0f, 0.0f, 0
 f32 D_001F20C0__grp[0x10] __attribute__((aligned(16))) = { 128.0f, 128.0f, 128.0f, 128.0f, 1.0f, 1.0f, 1.0f, 128.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f };
 #endif
 
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-/* data group (src/game/data/point_light_bss.c): D_0030D0E0__grp: D_0030D0E0@0x0, D_0030D0E4@0x4, D_0030D0E8@0x8, D_0030D170@0x90 */
-u8 D_0030D0E0__grp[0xa0] __attribute__((aligned(16)));
-#endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
@@ -5261,4 +5256,16 @@ u8 D_004B4CD0__grp[0x10] __attribute__((aligned(16)));
 #pragma explicit_zero_data on
 /* data group (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4C40__grp: D_004B4C40@0x0 */
 u8 D_004B4C40__grp[0x10] __attribute__((aligned(16)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/player_data.c): D_001F3860__grp: D_001F3860@0x0, D_001F3870@0x10, D_001F3880@0x20 */
+s32 D_001F3860__grp[0x18] __attribute__((aligned(16))) = { 0x447a0000, 0x466a6000, 0, 0x3f800000, 0x3f800000, 0x3dcccccd, 0, 0, 0x708, 0x96, 0xe10, 0x708, 0xa8c, 0x708, 0, 0, 0xa8c, 0x1c2, 0x1518, 0xa8c, 0xe10, 0xa8c, 0, 0 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4CE0__grp: D_004B4CE0@0x0, D_004B4CEC@0xc, D_004B4CF0@0x10, D_004B4D00@0x20, D_004B4D04@0x24, D_004B4D08@0x28, D_004B4D0C@0x2c, D_004B4D10@0x30 */
+u8 D_004B4CE0__grp[0x10d0] __attribute__((aligned(16)));
 #endif

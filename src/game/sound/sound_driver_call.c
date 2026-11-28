@@ -357,3 +357,9 @@ void SndDrv_RpcServerThread_1_001D8BE0(void)
 /* data twins (src/game/data/bgm_bss.c): D_004B9EF0 */
 s32 D_004B9EF0[0xc];
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/pad_get_connected_bss_004B5DD0.c): gPadState_004B6900__grp: gPadState_004B6900@0x0, D_004B6A00@0x100, D_004B6A20@0x120, D_004B6A68@0x168, D_004B7740@0xe40, D_004B7840@0xf40, D_004B7A40@0x1140, D_004B7C40@0x1340, D_004B7C90@0x1390, D_004B7CB0@0x13b0, D_004B7EB0@0x15b0 */
+u8 gPadState_004B6900__grp[0x15f0] __attribute__((aligned(16)));
+#endif

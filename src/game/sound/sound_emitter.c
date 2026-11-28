@@ -1217,11 +1217,6 @@ s8 D_00201C38 = 1;
 void *D_00201ED0;
 #endif
 
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-/* data group (src/game/data/sound_emitter_bss.c): D_0022F080__grp: D_0022F080@0x0, D_0022F084@0x4, D_0022F088@0x8, D_0022F08C@0xc, D_0022F090@0x10 */
-u8 D_0022F080__grp[0x40010] __attribute__((aligned(16)));
-#endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on

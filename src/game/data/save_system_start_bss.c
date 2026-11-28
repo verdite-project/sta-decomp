@@ -12,13 +12,13 @@
 s32 D_004BC39C[0x1];
 u8 D_004BC398[0x4];
 u8 D_004BC394[0x4];
-#endif
 s32 D_004BC390[0x1];
 s32 D_004BC38C[0x1];
 s32 D_004BC388[0x1];
 u8 D_004BC384[0x4];
 u8 D_004BC380[0x4];
 u8 D_004BC360[0x20]; /* also D_004BC368 */
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ee/credits_load.c */
 u8 D_004BC2F0[0x70];
 #endif

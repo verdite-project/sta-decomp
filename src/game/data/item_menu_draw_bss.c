@@ -22,8 +22,8 @@ u8 D_004A327C[0x4];
 u8 D_004A3264[0x18] __attribute__((aligned(4))); /* also D_004A3268 */
 u8 D_004A3250[0x14] __attribute__((aligned(4)));
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/item_menu_proc_draw_info.c */
 s8 D_004A3150[0x100] __attribute__((aligned(4)));
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/hud_draw.c */
 u8 D_004A3140[0x10] __attribute__((aligned(4))); /* also D_004A3144 */
 u8 D_004A3130[0x10] __attribute__((aligned(4))); /* also D_004A3134 */
 u8 D_004A3120[0x10] __attribute__((aligned(4))); /* also D_004A3124 */

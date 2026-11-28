@@ -18,6 +18,7 @@
    pad_set_rumble_large, sound_driver_call, stats, text_001D4170.s,
    text_001D7350.s, text_001D8AB0.s */
 
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/sound_driver_call.c */
 int D_004B7EB0[0x10];
 u8 D_004B7CB0[0x200]; /* also D_004B7EAF */
 u8 D_004B7C90[0x20];
@@ -25,12 +26,11 @@ u8 D_004B7C40[0x50];
 u8 D_004B7A40[0x200]; /* also D_004B7C3F */
 char D_004B7840[0x200];
 u8 D_004B7740[0x100];
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ee/pad_set_enabled.c */
 u8 D_004B6A68[0xcd8] __attribute__((aligned(8))); /* also D_004B6A6C, D_004B6A74, D_004B6A7E, D_004B6A82 */
 u8 D_004B6A20[0x48]; /* also D_004B6A22 */
 u8 D_004B6A00[0x20]; /* also D_004B6A02 */
-#endif
 u8 gPadState_004B6900[0x100];
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ee/mc_step_write_checked.c */
 s32 D_004B68D0[0xc];
 u8 gMcDirBuf_004B68C0[0x10];

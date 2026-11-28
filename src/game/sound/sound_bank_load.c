@@ -405,12 +405,12 @@ f32 D_00201EC0;
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/sound_bss.c): D_00222BC0__grp: D_00222BC0@0x0, D_00222BC4@0x4, D_0022CBBC@0x9ffc, D_0022CBC0@0xa000 */
-u8 D_00222BC0__grp[0xbf80] __attribute__((aligned(16)));
+/* data group (src/game/data/sound_bss.c): D_00222B20__grp: D_00222B20@0x0, D_00222B50@0x30, D_00222B54@0x34, D_00222B58@0x38, D_00222B5C@0x3c, D_00222B60@0x40, D_00222B64@0x44, D_00222B68@0x48, D_00222B70@0x50, D_00222B74@0x54, D_00222B78@0x58, D_00222B7C@0x5c, D_00222B80@0x60, D_00222B84@0x64, D_00222BC0@0xa0, D_00222BC4@0xa4, D_0022CBBC@0xa09c, D_0022CBC0@0xa0a0, D_0022EB40@0xc020, D_0022EBC0@0xc0a0, D_0022EBC8@0xc0a8, D_0022EBD0@0xc0b0, D_0022EBD8@0xc0b8, D_0022EBDC@0xc0bc, D_0022EBE0@0xc0c0, D_0022EBE4@0xc0c4, D_0022EBE8@0xc0c8, D_0022EC00@0xc0e0, D_0022EC10@0xc0f0, D_0022EC14@0xc0f4, D_0022EC18@0xc0f8, D_0022EC1C@0xc0fc, D_0022EC20@0xc100, D_0022EC3C@0xc11c, D_0022EC40@0xc120, D_0022EC44@0xc124, D_0022EC48@0xc128 */
+u8 D_00222B20__grp[0xc130] __attribute__((aligned(16)));
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/sound_bss.c): D_0022EBC0__grp: D_0022EBC0@0x0, D_0022EBC8@0x8, D_0022EBD0@0x10, D_0022EBD8@0x18, D_0022EBDC@0x1c, D_0022EBE0@0x20, D_0022EBE4@0x24, D_0022EBE8@0x28 */
-u8 D_0022EBC0__grp[0x40] __attribute__((aligned(16)));
+/* data group (src/game/data/sound_emitter_bss.c): D_0022F040__grp: D_0022F040@0x0, D_0022F044@0x4, D_0022F048@0x8, D_0022F04C@0xc, D_0022F050@0x10, D_0022F060@0x20, D_0022F070@0x30, D_0022F080@0x40, D_0022F084@0x44, D_0022F088@0x48, D_0022F08C@0x4c, D_0022F090@0x50 */
+u8 D_0022F040__grp[0x40050] __attribute__((aligned(16)));
 #endif

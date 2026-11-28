@@ -518,8 +518,86 @@ def group_compare(obj, blob, members, unit_obj):
     return ""
 
 
+def ungroup(blobs):
+    """Take groups back: the owner's blob block goes, the data unit's
+    members leave their #ifndef blocks where they stand."""
+    names = {}
+    for p in sorted((ROOT / "src/game").rglob("*.c")):
+        t = p.read_text()
+        changed = False
+        for m in list(GROUP_MARK.finditer(t)):
+            if m.group(2) not in blobs:
+                continue
+            for item in m.group(3).split(","):
+                names[item.strip().split("@")[0]] = (str(p.relative_to(ROOT)), m.group(1))
+            blk = re.compile(r"\n#ifdef NONMATCHING\n(?:#pragma[^\n]*\n|extern[^\n]*\n|void [^\n]*\n)*"
+                             + re.escape(m.group(0)) + r"\n[^\n]*\n#endif\n")
+            t, k = blk.subn("\n", t)
+            changed |= bool(k)
+        if changed:
+            p.write_text(t)
+    if names:
+        # the data units: the members' definitions leave their #ifndef blocks
+        unsplit_units({n: u for n, (_, u) in names.items()})
+    return names
+
+
+def unsplit_units(unit_of):
+    by_unit = collections.defaultdict(set)
+    for n, u in unit_of.items():
+        by_unit[u].add(n)
+    for u, names in by_unit.items():
+        lines = (ROOT / u).read_text().split("\n")
+        out, block = [], None
+        for line in lines:
+            if line.startswith("#ifndef NONMATCHING /* the NONMATCHING build defines these in"):
+                block = line
+                out.append(line)
+                continue
+            if block is not None and line == "#endif":
+                block = None
+                out.append(line)
+                continue
+            d = re.search(r"\b(\w+)\s*(?:\[[^\]]*\])*\s*(?:__attribute__\(\(\w+(?:\([^()]*\))?\)\)\s*)?(?:=|;)", line)
+            if block is not None and d and d.group(1) in names:
+                out += ["#endif", line, block]
+                continue
+            out.append(line)
+        text = "\n".join(out)
+        text = re.sub(r"^#ifndef NONMATCHING /\* the NONMATCHING build defines these in [\w/.]+ \*/\n#endif\n", "",
+                      text, flags=re.M)
+        (ROOT / u).write_text(text)
+
+
+def stale_groups(inv):
+    """The blobs whose member list is not the inventory's group any more
+    (a bigger extent, a new root): they go back and are made again."""
+    want = collections.defaultdict(set)
+    for r in inv:
+        if r.get("group"):
+            want[r["group"]].add(r["name"])
+    out = set()
+    for p in sorted((ROOT / "src/game").rglob("*.c")):
+        for m in GROUP_MARK.finditer(p.read_text()):
+            have = {x.strip().split("@")[0] for x in m.group(3).split(",")}
+            root = m.group(2)[:-len("__grp")]
+            if len(have) == 1 and root not in want:
+                continue                    # a one-object group (no root)
+            if have != want.get(root, set()):
+                out.add(m.group(2))
+    return out
+
+
 def main():
     inv = json.loads((ROOT / "build/data_owners.json").read_text())
+    stale = stale_groups(inv)
+    if stale:
+        print(f"{len(stale)} groups changed and go back: {', '.join(sorted(stale)[:6])}", file=sys.stderr)
+        if "--apply" in sys.argv:
+            ungroup(stale)
+            write_group_syms()
+            print("rerun tools/data_owners.py and this to make them again", file=sys.stderr)
+            return
     back = {r["name"]: r["owner"] for r in inv if r["class"] == "pinned" and r.get("owner")}
     if back:
         print(f"{len(back)} pinned twins go back: {', '.join(sorted(back)[:8])}{', ...' if len(back) > 8 else ''}",

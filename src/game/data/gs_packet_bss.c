@@ -6,16 +6,16 @@
    hud_warning, lightning, model_layer, player, screen_fx, sound_emitter,
    text_001544C0.s, text_00155090.s, text_0016BD00.s */
 
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/gfx_upload.c */
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/game_main.c */
 s32 D_002F194C[0x1];
 s32 D_002F1948[0x1];
 u32 D_002F1944[0x1];
 u8 D_002F1940[0x4];
-#endif
 u8 D_002F1900[0x40];
 u8 D_002F18C0[0x40];
 u8 D_002F1880[0x40];
 u8 D_002F1840[0x40];
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/game_main.c */
 u8 D_002F1800[0x40];
 u8 D_002F17C0[0x40];
