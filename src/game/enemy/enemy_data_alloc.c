@@ -1,36 +1,42 @@
-/* Best-effort C for the NONMATCHING build; the matching attempt is
- * wip/EnemyData_Alloc_0_001A7D90.c. */
-#include "include_asm.h"
+#include "common.h"
 
-#ifdef NONMATCHING
-#include "m2c.h"
-typedef struct { s16 x0; u16 x2; } P;
+typedef struct {
+    s16 id;
+    u16 slot;
+    u8 unknown[0x750 - 4];
+} EnemyData;
+
 extern s32 gEnemyListSbss_00202278;
-extern P **gEnemyListBss_004A4570[];
+extern EnemyData **gEnemyListBss_004A4570[];
 extern s16 gEnemyListBss_004A4774[];
 extern u16 D_004A4776[];
-P **Pool_Alloc_3_001288C0(s32, s32);
-void memset(P *, s32, s32);
-void EnemyMgr_ReleaseData_0_001A51E0(P **, s32);
-static inline s32 reg(P **h) {
-    P *p = *h;
-    memset(p, 0, 0x750);
-    gEnemyListBss_004A4570[p->x2 = D_004A4776[--gEnemyListBss_004A4774[0]]] = h;
+
+EnemyData **Pool_Alloc_3_001288C0(s32 pool, s32 size);
+void *memset(void *dest, s32 value, u32 size);
+void EnemyMgr_ReleaseData_0_001A51E0(EnemyData **handle);
+
+static inline s32 registerEnemyData(EnemyData ***handle) {
+    EnemyData *data;
+    u16 slot;
+
+    if (!handle) {
+        return 0;
+    }
+    data = **handle;
+    memset(data, 0, sizeof(EnemyData));
+    slot = D_004A4776[--gEnemyListBss_004A4774[0]];
+    data->slot = slot;
+    gEnemyListBss_004A4570[slot] = *handle;
     return 1;
 }
 
-P **EnemyData_Alloc_0_001A7D90(s16 a) {
-    P ** volatile h;
-    h = Pool_Alloc_3_001288C0(gEnemyListSbss_00202278, 0x750);
-    if (!reg(h)) return NULL;
-    (*h)->x0 = a;
-    EnemyMgr_ReleaseData_0_001A51E0(h, 1);
-    return h;
-}
-#else
-INCLUDE_ASM(EnemyData_Alloc_0_001A7D90);
-#endif
+EnemyData **EnemyData_Alloc_0_001A7D90(s16 id) {
+    EnemyData **handle = Pool_Alloc_3_001288C0(gEnemyListSbss_00202278, sizeof(EnemyData));
 
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-#endif
+    if (!registerEnemyData(&handle)) {
+        return NULL;
+    }
+    (*handle)->id = id;
+    EnemyMgr_ReleaseData_0_001A51E0(handle);
+    return handle;
+}

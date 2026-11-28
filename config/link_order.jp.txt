@@ -283,7 +283,6 @@ src/game/collision/coll_sphere_vs_mesh.c
 asm/text_0014E680.s
 src/game/collision/collision_sphere.c
 src/game/collision/coll_ray_vs_model.c
-asm/text_0014FA30.s
 src/game/collision/collision.c
 src/game/collision/segment.c
 src/game/collision/coll_sweep_segments_init.c
@@ -343,7 +342,6 @@ src/game/input/input_update.c
 asm/text_0015F540.s
 src/game/input/input.c
 src/game/input/input_init.c
-asm/text_0015FC60.s
 src/game/input/vibration.c
 src/game/effect/fx_update_emitter.c
 src/game/math/deg_to_rad.c
@@ -545,7 +543,6 @@ src/game/enemy/enemy_list.c
 src/game/data/enemy_list_rodata_001FD960.c
 src/game/enemy/enemy_data.c
 src/game/enemy/enemy_data_alloc.c
-asm/text_001A7D90.s
 src/game/enemy/enemy_model.c
 src/game/enemy/enemy_init_part_state.c
 asm/text_001A8510.s
@@ -603,10 +600,8 @@ src/game/map_object/map_object_reset.c
 src/game/data/player_data.c
 src/game/map_object/map_object_all.c
 src/game/ui/hud_draw_compass.c
-asm/text_001BBCC0.s
 src/game/ui/hud_marker.c
 src/game/ui/hud_draw_quad.c
-asm/text_001BC610.s
 src/game/ui/hud_warning.c
 src/game/player/player.c
 src/game/player/player_level_up.c
