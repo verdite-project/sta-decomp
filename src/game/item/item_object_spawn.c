@@ -226,6 +226,12 @@ extern Vec_ItemObj_Drop_0_001AE900 gItemObjectSpawnData_001F3830;
 extern s32 gPlayerSbss_002022BC;
 /* .bss, from the top down (CodeWarrior writes it in reverse) */
 s16 D_004AC5A4[0x46] __attribute__((aligned(4)));
+#ifdef NONMATCHING
+/* Keep both banks in the same .bss block as their header when the data
+ * moves into this unit. CodeWarrior emits .bss definitions in reverse. */
+/* data group (src/game/data/pad_get_connected_bss.c): D_004AC5A0__grp: gItemObjectSpawnBss_004AC5A0@0x0 */
+u8 D_004AC5A0__grp[0x4] __attribute__((section(".bss"), aligned(16)));
+#endif
 extern Node *D_004AC5A8[][16];
 extern s16 gItemObjectSpawnBss_004AC5A0[];
 extern s32 gItemObjectSbss_00202290;
@@ -924,8 +930,6 @@ s32 gItemObjectSpawnSbss_0020228C;
 f32 D_001F3820__grp[0x4] __attribute__((aligned(16))) = { 1.0f, 1.0f, 1.0f, 1.0f };
 /* data group (src/game/data/map_area_load_data.c): D_001F3830__grp: gItemObjectSpawnData_001F3830@0x0 */
 f32 D_001F3830__grp[0x4] __attribute__((aligned(16))) = { 1.0f, 1.0f, 1.0f, 1.0f };
-/* data group (src/game/data/pad_get_connected_bss.c): D_004AC5A0__grp: gItemObjectSpawnBss_004AC5A0@0x0 */
-u8 D_004AC5A0__grp[0x4] __attribute__((aligned(16)));
 /* data group (src/game/data/pad_get_connected_bss_004AC630.c): gItemObjectSpawnBss_004AC630__grp: gItemObjectSpawnBss_004AC630@0x0, gItemObjectSpawnBss_004AC6CC@0x9c, gItemObjectSpawnBss_004AC79C@0x16c, gItemObjectSpawnBss_004AC86C@0x23c, gItemObjectSpawnBss_004AC93C@0x30c */
 unsigned char gItemObjectSpawnBss_004AC630__grp[0x340] __attribute__((aligned(16)));
 #endif

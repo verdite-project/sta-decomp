@@ -120,7 +120,6 @@ register and scheduling differences.
 | Enemy_InitPartState_1_001A8510 | round Y/Z near-miss (agent's best attempt; see comments in file) |
 | ItemObj_TestVisible_0_001ACD90 | round Y/Z near-miss (agent's best attempt; see comments in file) |
 | ItemObj_SpawnProjectile_0_001AD2C0 | round Y/Z near-miss (agent's best attempt; see comments in file) |
-| ItemObj_SaveState_1_001AE510 | round Y/Z near-miss (agent's best attempt; see comments in file) |
 | MapObj_GetCount_0_001B17E0 | round Y/Z near-miss (agent's best attempt; see comments in file) |
 | Map_UpdateEnemySpawns_0_001B43A0 | round Y/Z near-miss (agent's best attempt; see comments in file) |
 | MapObj_UpdateAll_0_001BAB70 | round Y/Z near-miss (agent's best attempt; see comments in file) |
