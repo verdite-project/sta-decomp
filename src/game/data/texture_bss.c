@@ -6,7 +6,9 @@
    text_00176FB0.s, text_001777C0.s, text_001789E0.s, texture, texture_anim,
    texture_hash, vram_init */
 
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/dma.c */
 u8 D_00483100[0x3000]; /* also D_004860FE */
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/texture.c */
 u8 D_004830F0[0x10]; /* also D_004830F4 */
 s32 D_004830EC[0x1];

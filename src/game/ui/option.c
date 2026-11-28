@@ -1720,6 +1720,6 @@ s32 D_001FCFE8__grp[0x46] __attribute__((aligned(8))) = { 0x5f938b8e, 0xe38f, 0x
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/option_bss.c): D_004A1070__grp: D_004A1070@0x0, D_004A1074@0x4, D_004A1078@0x8, D_004A1080@0x10, D_004A1084@0x14, D_004A1088@0x18, D_004A108C@0x1c */
-u8 D_004A1070__grp[0x20] __attribute__((aligned(16)));
+/* data group (src/game/data/option_bss.c): D_004A1050__grp: D_004A1050@0x0, D_004A1054@0x4, D_004A1058@0x8, D_004A105C@0xc, D_004A1060@0x10, D_004A1068@0x18, D_004A106C@0x1c, D_004A1070@0x20, D_004A1074@0x24, D_004A1078@0x28, D_004A1080@0x30, D_004A1084@0x34, D_004A1088@0x38, D_004A108C@0x3c */
+unsigned char D_004A1050__grp[0x40] __attribute__((aligned(16)));
 #endif

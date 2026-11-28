@@ -384,8 +384,11 @@ def pin(objs, link):
                 if a2 >= gend or lst[lst.index((a2, s2, n2)) - 1][0] + lst[lst.index((a2, s2, n2)) - 1][1] != a2:
                     break
                 if objs[n2].get("group") and objs[n2]["group"] != n:
-                    members = None
-                    break
+                    # it reaches into another group: one group, from here
+                    other = objs[n2]["group"]
+                    members += [m for m in objs if objs[m].get("group") == other]
+                    gend = max(gend, max(sz[m][0] + sz[m][1] for m in members if m in sz))
+                    continue
                 members.append(n2)
             if members:
                 for m in members:

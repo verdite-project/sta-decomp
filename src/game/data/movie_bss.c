@@ -18,7 +18,9 @@ u8 D_004BE0D0[0x4];
 #endif
 u8 D_004BE0A8[0x28] __attribute__((aligned(4))); /* also D_004BE0AC */
 u8 D_004BE090[0x18] __attribute__((aligned(4)));
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/movie.c */
 u8 D_004BE080[0x10] __attribute__((aligned(4)));
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/movie.c */
 s32 D_004BE07C[0x1];
 s32 D_004BE078[0x1];

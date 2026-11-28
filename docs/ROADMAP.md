@@ -270,47 +270,27 @@ the object from its owner instead:
 <!-- data-owners:start -->
 | objects (2026-11-28) | bss | data | rodata | sbss | sdata | all |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| NONMATCHING twin or group in its owner | 751 | 174 | 349 | 314 | 119 | 1707 |
-| not split yet | 0 | 0 | 3 | 0 | 4 | 7 |
-| pinned | 7 | 0 | 0 | 3 | 0 | 10 |
-| used by asm only | 5 | 1 | 0 | 7 | 1 | 14 |
-| used by other data only | 2 | 0 | 0 | 0 | 0 | 2 |
-| unused | 35 | 5 | 38 | 0 | 0 | 78 |
+| NONMATCHING twin or group in its owner | 768 | 175 | 352 | 324 | 124 | 1743 |
+| used by asm only (no C owner) | 2 | 0 | 0 | 0 | 0 | 2 |
+| unused (nothing names it) | 30 | 5 | 38 | 0 | 0 | 73 |
 | total | 800 | 180 | 390 | 324 | 124 | 1818 |
 <!-- data-owners:end -->
 
-Next, in order of yield:
+What is left has no owner yet: the objects only asm names go to the C that
+replaces that asm, and the unused ones (labels nothing refers to) stay in
+their data units. Beyond that:
 
-1. **Extents of the roots** (`config/data_extents.txt`): 577 objects are
-   pinned, most of them after a root whose reach is unknown: an address cast,
-   or a "view" (a column of a struct array behind a label smaller than the
-   struct, walked with the struct's stride; it reaches every label of the
-   array). A view every user declares as one struct or a sized array gets
-   its extent from that type; `tools/data_owners.py --json` names the root
-   of every other pinned object: read how far the code goes from it and add
-   a line. The biggest left: `D_00486990` (UI anim table: its entry types have
-   bitfields layout() cannot size), `D_00222B20` (the pool header),
-   `D_0022F040` (sound bank slots).
-2. **Initialisers the tool cannot write** ("type does not fit"): 128-bit
-   qword types (`u128` members: no C literal), structs with bitfields,
-   unions or anonymous members (`split_data.py`'s layout() takes
-   scalars, pointers, arrays and nested typedef'd structs).
-3. **No extern**: owners that reach an object only through a macro or a
-   cast of another symbol; give them an `extern` first.
-4. **Data used only by data or asm**: they go with their user once that is C.
-5. **Real moves**: rerun `tools/move_data.py` as units match; an object it
-   moves loses both twins. As of now it moves nothing: 15 candidates fold
-   into their owner's code, 2 would leave link order, and 13 are 128-bit
-   qword unions no C initialiser writes byte for byte (it now also tries
-   split_data.py's struct initialisers).
-6. **Names**: `config/game_data_names.txt` + `tools/apply_data_names.py`
-   (README, "Data names"); 135 are named: the game's 123 ASCII strings after
-   their text (`gStrScrChrtestBin`), the objects the headers type
-   (`gMcState`, `gGsText`, `gGsTextStyle`, `gPlayerData`, `gZeroVec`,
-   `gPadState`) and tables whose users settle what they are (`gWeatherState`,
-   `gLoadBuf`, `gVramBlocks`, `gEnemyDataTbl`, `gMcDirBuf`, `gGlowFxSlots`).
-   Name more as their owners show what they are; the checker keeps both
-   copies of a twin in step.
+1. **Extents** (`config/data_extents.txt`) make groups smaller: a root of
+   unknown reach takes the rest of its run with it, so the run moves as
+   one blob; read how far the code goes and add a line to split it.
+2. **Real moves**: rerun `tools/move_data.py` as units match; an object it
+   moves loses both copies. As of now it moves nothing (15 candidates fold
+   into their owner's code, 2 would leave link order, 13 are 128-bit qword
+   unions no C initialiser writes; it also tries struct initialisers).
+3. **Names**: `config/game_data_names.txt` + `tools/apply_data_names.py`
+   (README, "Data names"); 135 are named (the 123 ASCII strings after their
+   text, the header-typed objects, the tables whose users settle them).
+   Name more as their owners show what they are.
 
 `tools/split_data.py --apply` also takes back the twin of any object a
 later inventory pins (a new root, a new extent), so rerun it after changing

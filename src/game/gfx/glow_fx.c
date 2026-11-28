@@ -218,8 +218,3 @@ void GlowFx_Init_0_001E1200(void)
 }
 #undef gGlowFxSlots_004BAC50
 
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-/* data group (src/game/data/save_system_start_bss.c): gGlowFxSlots_004BAC50__grp: gGlowFxSlots_004BAC50@0x0, D_004BAC54@0x4, D_004BAC80@0x30, D_004BB010@0x3c0 */
-u8 gGlowFxSlots_004BAC50__grp[0x400] __attribute__((aligned(16)));
-#endif

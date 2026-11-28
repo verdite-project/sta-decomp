@@ -48,12 +48,14 @@ f32 D_00202408;
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/map_sheet.c */
 f32 D_00202404;
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/movie.c */
 s32 D_00202400;
 s32 D_002023FC;
 s32 D_002023F8;
 s32 D_002023F4;
 s32 D_002023F0;
 s32 D_002023EC;
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/save/save_system_step.c */
 s32 D_002023E8;
 u8 D_002023E4[0x4];
@@ -426,7 +428,9 @@ u8 D_00202028[0x4];
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/timer_init.c */
 u8 D_00202024[0x4];
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/timer_ticks.c */
 s32 D_00202020;
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/timer_init.c */
 u8 D_0020201C[0x4];
 #endif
@@ -629,6 +633,8 @@ s32 D_00201E98;
 u8 D_00201E94[0x4];
 f32 D_00201E90;
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/map/map.c */
 u8 D_00201E8C[0x4];
 u8 D_00201E88[0x4];
 u8 D_00201E80[0x8] __attribute__((aligned(16)));
+#endif

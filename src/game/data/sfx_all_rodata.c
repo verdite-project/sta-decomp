@@ -31,6 +31,8 @@ const s8 D_001FB90A[0x1] __attribute__((aligned(2))) = { 0x49 };
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/texture_hash.c */
 const s8 D_001FB90B[0x5] __attribute__((aligned(1))) = { 0x58, 0, 0, 0, 0 };
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/texture_hash.c */
 const s8 D_001FB910[0x1] = { 0x54 };
 const s8 D_001FB911[0x1] __attribute__((aligned(1))) = { 0x58 };
 const s8 D_001FB912[0x1] __attribute__((aligned(2))) = { 0x4d };
+#endif

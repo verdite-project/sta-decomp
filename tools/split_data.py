@@ -455,8 +455,8 @@ def group_plan(inv):
             g[r["group"]].append(r)
     out = {}
     for root, rs in g.items():
-        if len({r["unit"] for r in rs}) != 1 or rs[0]["section"] in ("sbss", "sdata"):
-            continue        # (a small-data group would leave the gp range as one blob)
+        if len({r["unit"] for r in rs}) != 1:
+            continue
         ms = sorted((sz[r["name"]][0], sz[r["name"]][1], r["name"]) for r in rs)
         if any(a + s != b for (a, s, _), (b, _, _) in zip(ms, ms[1:])) or ms[0][2] != root:
             continue
@@ -474,8 +474,10 @@ def group_text(own, unit, kind, members, labels):
     total = members[-1][1] + members[-1][2] - start
     blob = f"{root}__grp"
     text = (ROOT / own).read_text()
+    # a small-data group stays in small data (the gp range) whatever its size
+    sec = f" __attribute__((section(\".{kind}\")))" if kind in ("sbss", "sdata") else ""
     if kind in UNINIT:
-        d = f"u8 {blob}[{total:#x}] __attribute__((aligned({min(16, start & -start)})));"
+        d = f"unsigned char {blob}[{total:#x}]{sec} __attribute__((aligned({min(16, start & -start)})));"
         ext = []
     else:
         items = []
@@ -491,8 +493,24 @@ def group_text(own, unit, kind, members, labels):
         d = data_to_c.define(blob, items, {}, False, need, trim)
         if d is None or len(data_to_c.obj_bytes(items, trim)[0]) != total:
             return None, "bytes"
-        d = d.replace(" = ", f" __attribute__((aligned({min(16, start & -start)}))) = ", 1)
-        ext = [f"void {x}(void);" if is_func(x) else f"extern u8 {x}[];"
+        d = d.replace(" = ", f"{sec} __attribute__((aligned({min(16, start & -start)}))) = ", 1)
+        # built-in types only: an owner need not have the game's typedefs
+        builtin = {"s32": "int", "u32": "unsigned int", "u16": "unsigned short", "s16": "short",
+                   "u8": "unsigned char", "s8": "signed char", "f32": "float", "char": "char"}
+        head = d.split()[0]
+        if head == "f32":
+            # floats as their bits: ee-gcc 2.96 rounds some decimals a unit
+            # off from CodeWarrior (0.3333333f), the bits are the bytes
+            import struct as _st
+            data = data_to_c.obj_bytes(items, trim)[0]
+            words = ", ".join(f"{w:#x}" for (w,) in _st.iter_unpack("<I", data))
+            d = (f"unsigned int {blob}[{len(data) // 4:#x}]{sec} "
+                 f"__attribute__((aligned({min(16, start & -start)}))) = {{ {words} }};")
+            head = None
+        if head in builtin:
+            d = builtin[head] + d[len(head):]
+            d = re.sub(r"\((s32|u32|u16|s16|u8|s8|f32)( \*)?\)", lambda m: f"({builtin[m.group(1)]}{m.group(2) or ''})", d)
+        ext = [f"void {x}(void);" if is_func(x) else f"extern unsigned char {x}[];"
                for x in sorted(need) if not re.search(rf"\b{x}\b", text)]
     mark = f"/* data group ({unit}): {blob}: " + ", ".join(f"{n}@{a - start:#x}" for n, a, _ in members) + " */"
     block = ["", "#ifdef NONMATCHING", "#pragma explicit_zero_data on"] + ext + [mark, d, "#endif"]
@@ -701,6 +719,23 @@ def main():
     # a blob, its name an offset into it), so no C type has to fit; a small
     # data object only while the blob stays small (8 bytes, the gp range)
     sz = move_data.sizes()
+    owner_of = {x["name"]: x.get("owner") for x in inv}
+    # an object asm still names may move too when C uses it: a group member
+    # is a global, which is all the asm needs
+    recs += [x for x in inv if x["class"] == "asm" and any(u.endswith(".c") for u in x["users"])]
+    for r in [x for x in inv if x["class"] == "data"]:
+        # only other data points at it: it goes where what points at it went
+        for u in r["data"]:
+            t = (ROOT / u).read_text()
+            for m in re.finditer(rf"^[^\n]*?\b(\w+)\s*(?:\[[^\]]*\])*\s*(?:__attribute__\(\(\w+(?:\([^()]*\))?\)\)\s*)?="
+                                 rf"[^\n]*\b{r['name']}\b", t, re.M):
+                if owner_of.get(m.group(1)):
+                    r = dict(r, users=[owner_of[m.group(1)]])
+                    break
+            if r["users"]:
+                break
+        if r["users"]:
+            recs.append(r)
     for r in recs:
         n = r["name"]
         if n in done or n in gdone or n not in sz:
@@ -708,8 +743,7 @@ def main():
         own = pick_owner(r)
         if own is None:
             continue
-        if r["section"] in ("sbss", "sdata") and r["size"] > 8:
-            continue
+
         if r["unit"] not in labels and r["section"] not in UNINIT:
             labels[r["unit"]] = labels_of(r["unit"], r["section"])
         members = [(n, sz[n][0], r["size"])]
@@ -718,6 +752,19 @@ def main():
             (ROOT / own).write_text(texts[own])
         try:
             t, blob = group_text(own, r["unit"], r["section"], members, labels[r["unit"]])
+            if t is None and blob == "no splat label":
+                # no label of its own (carve cut it out of a word): its bytes
+                # from the data unit's object, if nothing in it is relocated
+                ub = unit_obj(r["unit"]).blob(n)
+                if ub is not None and ub[0] != "bss" and not ub[3]:
+                    blob = f"{n}__grp"
+                    sec = f" __attribute__((section(\".{r['section']}\")))" if r["section"] in ("sbss", "sdata") else ""
+                    a = sz[n][0]
+                    vals = ", ".join(f"{b:#x}" for b in ub[2])
+                    d = f"unsigned char {blob}[{len(ub[2]):#x}]{sec} __attribute__((aligned({min(16, a & -a)}))) = {{ {vals} }};"
+                    mark = f"/* data group ({r['unit']}): {blob}: {n}@0x0 */"
+                    base = (ROOT / own).read_text()
+                    t = base.rstrip("\n") + "\n" + "\n".join(["", "#ifdef NONMATCHING", mark, d, "#endif"]) + "\n"
         finally:
             (ROOT / own).write_text(saved)
         if t is None:

@@ -134,3 +134,22 @@ Obj **Mdl_CreateInstance_0_00174230(s32 *arg0, Src **arg1, s32 off, s32 arg3) { 
 #else
 INCLUDE_ASM(Mdl_CreateInstance_0_00174230);
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+extern unsigned char D_00202030[];
+extern unsigned char D_00317230[];
+extern unsigned char D_00317238[];
+extern unsigned char D_0031723C[];
+extern unsigned char D_00486900[];
+extern unsigned char D_00486940[];
+/* data group (src/game/data/screen_fx_flash_data_001F2340.c): D_001F2340__grp: D_001F2340@0x0 */
+int D_001F2340__grp[0x30] __attribute__((aligned(16))) = { 0x3f800000, 0, 0, 0, 0, 0x3f800000, 0, 0, 0, 0, 0x3f800000, 0, 0, 0, 0, 0x3f800000, (int)D_00486940, (int)D_00486900, (int)D_0031723C, (int)D_00317238, (int)D_00317230, (int)D_00202030, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/ui_anim_bss.c): D_00486900, D_00486940 */
+unsigned char D_00486900[0x40];
+unsigned char D_00486940[0x40];
+#endif

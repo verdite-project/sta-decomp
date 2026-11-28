@@ -49,5 +49,7 @@ f32 D_00486988[0x2];
 f32 D_00486984[0x1];
 s32 D_00486980[0x1];
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/model/mdl_create_instance.c */
 u8 D_00486940[0x40];
 u8 D_00486900[0x40];
+#endif

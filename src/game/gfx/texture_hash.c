@@ -236,3 +236,18 @@ E D_0047F080[8];
 /* data group (src/game/data/texture_bss.c): D_004800C0__grp: D_004800C0@0x0, D_004800C8@0x8, D_004800D0@0x10, D_004800DC@0x1c, D_00483090@0x2fd0 */
 u8 D_004800C0__grp[0x3000] __attribute__((aligned(16)));
 #endif
+
+#ifdef NONMATCHING
+/* data group (src/game/data/sfx_all_rodata.c): D_001FB910__grp: D_001FB910@0x0 */
+unsigned char D_001FB910__grp[0x1] __attribute__((aligned(16))) = { 0x54 };
+#endif
+
+#ifdef NONMATCHING
+/* data group (src/game/data/sfx_all_rodata.c): D_001FB911__grp: D_001FB911@0x0 */
+unsigned char D_001FB911__grp[0x1] __attribute__((aligned(1))) = { 0x58 };
+#endif
+
+#ifdef NONMATCHING
+/* data group (src/game/data/sfx_all_rodata.c): D_001FB912__grp: D_001FB912@0x0 */
+unsigned char D_001FB912__grp[0x1] __attribute__((aligned(2))) = { 0x4d };
+#endif

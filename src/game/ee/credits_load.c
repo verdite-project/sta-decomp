@@ -48,3 +48,15 @@ s32 Credits_Load_1_001E3B48(u8 *data, s32 size) {
 /* data group (src/game/data/save_system_start_bss.c): D_004BC2F0__grp: D_004BC2F0@0x0 */
 u8 D_004BC2F0__grp[0x70] __attribute__((aligned(16)));
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/sdata.c): D_00201B88__grp: D_00201B88@0x0 */
+unsigned int D_00201B88__grp[0x1] __attribute__((section(".sdata"))) __attribute__((aligned(8))) = { 0x41855555 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/sdata.c): D_00201B8C__grp: D_00201B8C@0x0 */
+unsigned int D_00201B8C__grp[0x1] __attribute__((section(".sdata"))) __attribute__((aligned(4))) = { 0x42055555 };
+#endif

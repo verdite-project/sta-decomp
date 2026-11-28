@@ -154,8 +154,4 @@ s32 Task_GetState_0_001E02A0(s8 *p) { if (p == NULL) return D_004BAC3C[0]; retur
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/save_system_start_bss.c): D_004BAC34, D_004BAC38, D_004BAC3C */
-volatile s32 D_004BAC34[0x1];
-volatile u32 D_004BAC38[0x1];
-volatile s32 D_004BAC3C[0x1];
 #endif

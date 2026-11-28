@@ -2016,3 +2016,51 @@ s16 D_004BE0D4[0x2];
 /* data group (src/game/data/sdata.c): D_00201E74__grp: D_00201E74@0x0 */
 s32 D_00201E74__grp[0x1] __attribute__((aligned(4))) = { -0x48ff0000 };
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/sbss.c): D_002023EC__grp: D_002023EC@0x0 */
+unsigned char D_002023EC__grp[0x4] __attribute__((section(".sbss"))) __attribute__((aligned(4)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/sbss.c): D_002023F0__grp: D_002023F0@0x0 */
+unsigned char D_002023F0__grp[0x4] __attribute__((section(".sbss"))) __attribute__((aligned(16)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/sbss.c): D_002023F4__grp: D_002023F4@0x0 */
+unsigned char D_002023F4__grp[0x4] __attribute__((section(".sbss"))) __attribute__((aligned(4)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/sbss.c): D_002023F8__grp: D_002023F8@0x0 */
+unsigned char D_002023F8__grp[0x4] __attribute__((section(".sbss"))) __attribute__((aligned(8)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/sbss.c): D_002023FC__grp: D_002023FC@0x0 */
+unsigned char D_002023FC__grp[0x4] __attribute__((section(".sbss"))) __attribute__((aligned(4)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/sbss.c): D_00202400__grp: D_00202400@0x0 */
+unsigned char D_00202400__grp[0x4] __attribute__((section(".sbss"))) __attribute__((aligned(16)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/save_system_start_bss_004BCBC0.c): D_004BD310__grp: D_004BD310@0x0 */
+unsigned char D_004BD310__grp[0x4] __attribute__((aligned(16)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/movie_bss.c): D_004BE080__grp: D_004BE080@0x0 */
+unsigned char D_004BE080__grp[0x10] __attribute__((aligned(16)));
+#endif
