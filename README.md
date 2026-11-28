@@ -41,7 +41,9 @@ place of its retail asm. The image, `build/sta.elf`, is not retail's (the
 code differs, so everything after it moves), but each such function was
 checked to do what the retail code does. `./build.sh --matching` (or
 `tools/gen_ninja.py --matching`) builds the asm instead and checks the ROM
-SHA-1. The progress report needs the matching build.
+SHA-1. The progress report (`ninja progress`) measures the matching build in
+either mode: a NONMATCHING build also compiles each C unit without
+`-DNONMATCHING` into `build/matching/` for objdiff.
 
 A function with best-effort C looks like
 

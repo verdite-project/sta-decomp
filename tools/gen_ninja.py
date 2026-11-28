@@ -15,7 +15,9 @@ NONMATCHING (the default; `--matching` turns it off): every C compile gets
 
 builds from its C and its asm chunk leaves the link. That image is not
 retail's, so its default target is build/sta.elf; `--matching` builds the
-asm and checks the ROM SHA-1 (the progress report wants that build).
+asm and checks the ROM SHA-1. objdiff and the progress report measure the
+matching build in either mode (match_obj: a NONMATCHING build compiles each
+C unit a second time, without -DNONMATCHING, into build/matching/).
 
 Each C unit also gets a target object, build/target/src/<path>.o, assembled
 from splat's per-function files and data files (asm/matchings, asm/data), so
@@ -177,6 +179,57 @@ def target_src(out: str) -> str:
     return "src/" + out[len("build/target/src/"):-len(".s")] + ".c"
 
 
+def base_sizes(src: str) -> dict:
+    """{name: size} of the data objects the matching build's object of src
+    defines (build/matching/ in a NONMATCHING build), or {} if there is none."""
+    from elftools.elf.elffile import ELFFile
+    nm = (ROOT / "build.ninja").exists() and "# NONMATCHING: on" in (ROOT / "build.ninja").read_text()
+    o = ROOT / (f"build/matching/{src}.o" if nm else obj_for(src))
+    if not o.exists():
+        return {}
+    out = {}
+    with open(o, "rb") as f:
+        e = ELFFile(f)
+        for sym in e.get_section_by_name(".symtab").iter_symbols():
+            if isinstance(sym["st_shndx"], int) and sym.name and sym["st_info"]["type"] == "STT_OBJECT":
+                out[sym.name] = sym["st_size"]
+    return out
+
+
+def trim_last_labels(text: str, sizes: dict) -> str:
+    """The last label of each data section, cut at the size the C object has
+    when what is past it is zero words: splat's label runs over the fill to
+    the next unit's alignment, which the C object (a struct with no tail
+    padding) leaves to the link; objdiff matches a section only whole."""
+    out = text.splitlines(keepends=True)
+    secs = [i for i, l in enumerate(out) if l.startswith(".section")] + [len(out)]
+    for a, b in zip(secs, secs[1:]):
+        labs = [i for i in range(a, b) if out[i].startswith("dlabel ")]
+        if not labs:
+            continue
+        k = labs[-1]
+        name = out[k].split()[1]
+        want = sizes.get(name)
+        if want is None:
+            continue
+        end = next((i for i in range(k, b) if out[i].startswith("enddlabel")), b)
+        items = [i for i in range(k + 1, end) if re.search(r"\.(word|short|byte) ", out[i])]
+        width = lambda l: 4 if ".word " in l else 2 if ".short " in l else 1
+        total = sum(width(out[i]) for i in items)
+        drop = []
+        for i in reversed(items):
+            if total <= want or not re.search(r"\.word 0x0+\s*$", out[i]):
+                break
+            if total - 4 < want:
+                break
+            total -= 4
+            drop.append(i)
+        if total == want:
+            for i in drop:
+                out[i] = ""
+    return "".join(out)
+
+
 def target_text(src: str) -> str:
     """One assembly file for a C unit: its functions in address order, then its data."""
     funcs, datas = c_parts(src)
@@ -209,6 +262,8 @@ def target_text(src: str) -> str:
             body = trailing_fill(raw if src.startswith("src/sce/") else jtbl_fill(raw))
         body = body.splitlines(keepends=True)
         text += "".join(l for l in body if l.strip() != '.include "macro.inc"')
+    if mwcc and not src.startswith("src/game/data/"):
+        text = trim_last_labels(text, base_sizes(src))
     for a, b in TARGET_FIXUPS.get(src, []):
         assert a in text, f"{src}: no {a!r} to fix"
         text = text.replace(a, b)
@@ -308,10 +363,20 @@ def is_mwcc(src: str) -> bool:
     return src.startswith("src/game/") and not src.startswith("src/game/ee/")
 
 
+def match_obj(src: str) -> str:
+    """A unit's object as the matching build compiles it: the build's own in
+    a matching build; a C unit's second compile, without -DNONMATCHING, in
+    build/matching/ in a NONMATCHING one (objdiff and the progress report
+    always measure the matching build)."""
+    if NONMATCHING and src.startswith("src/") and src.endswith(".c"):
+        return f"build/matching/{src}.o"
+    return obj_for(src)
+
+
 def objdiff_base(src: str) -> str:
     """The object objdiff diffs for a C unit (tools/objdiff_base.py for
     CodeWarrior units: data sections merged and paired by name)."""
-    return f"build/objdiff/{stem(src)}.o" if is_mwcc(src) else obj_for(src)
+    return f"build/objdiff/{stem(src)}.o" if is_mwcc(src) else match_obj(src)
 
 
 def objdiff_config(srcs: list[str]) -> dict:
@@ -526,14 +591,16 @@ def main() -> None:
         t = f"build/target/{stem(s)}.s"
         funcs, datas = c_parts(s)
         deps = " ".join(["tools/gen_ninja.py"] + [str(p.relative_to(ROOT)) for p in funcs + datas])
-        n.append(f"build {t}: target_src | {deps}")
+        # (the matching object: a data label's last zero words are the C
+        # object's only up to its size, trim_last_labels)
+        n.append(f"build {t}: target_src | {deps} {match_obj(s)}")
         n.append(f"build build/target/{stem(s)}.o: as {t} | include/macro.inc")
     n.append("rule objdiff_base\n"
              "  command = .venv/bin/python tools/objdiff_base.py $in $out\n"
              "  description = OBJDIFF $out\n")
     for s in c_units:
         if is_mwcc(s):
-            n.append(f"build {objdiff_base(s)}: objdiff_base {obj_for(s)} build/target/{stem(s)}.o"
+            n.append(f"build {objdiff_base(s)}: objdiff_base {match_obj(s)} build/target/{stem(s)}.o"
                      " | tools/objdiff_base.py")
     # splat's lists of addresses referenced but not defined yet, given to ld
     # as implicit linker scripts
@@ -592,7 +659,16 @@ def main() -> None:
         + sum(data_twin_sources(), [])
     n.append(f"build build.ninja build/sta.ld objdiff.json: regen | {' '.join(regen_in)}")
     # objdiff's progress report over every object of the link
-    all_objs = objs + [f"build/target/{stem(s)}.o" for s in c_units] \
+    # (the matching build's objects, whatever this build is: match_obj)
+    if NONMATCHING:
+        n.append("rule cc_matching\n"
+                 "  command = tools/compile_c.sh $in $out\n"
+                 "  description = CC (matching) $in\n")
+        for s in all_srcs:
+            if s.startswith("src/") and s.endswith(".c"):
+                n.append(f"build {match_obj(s)}: cc_matching {s} | tools/compile_c.sh tools/mwfix.py "
+                         f"config/game_cflags.txt " + hdrs)
+    all_objs = [match_obj(s) for s in all_srcs] + [f"build/target/{stem(s)}.o" for s in c_units] \
         + [objdiff_base(s) for s in c_units if is_mwcc(s)]
     n.append("rule report\n"
              f"  command = {OBJDIFF} report generate -o $out\n"
