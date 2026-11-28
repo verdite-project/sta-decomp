@@ -268,3 +268,9 @@ void PointLight_Init_0_0015C8D0(void) {
 Vec D_0030C3E0;
 f32 D_0030C420[0x1];
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/point_light_bss.c): D_0030C48C__grp: D_0030C48C@0x0, D_0030C490@0x4 */
+u8 D_0030C48C__grp[0x14] __attribute__((aligned(4)));
+#endif

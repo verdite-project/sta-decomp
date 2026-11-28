@@ -103,3 +103,9 @@ void Vram_Init_0_001781A0(s32 a0, s32 a1) {
         Vram_AllocBlock_1_00176FB0(k);
     }
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/texture_bss.c): gVramBlocks_0047F0C0__grp: gVramBlocks_0047F0C0@0x0, D_0047F0C4@0x4, D_0047F0C8@0x8, D_004800B0@0xff0 */
+u8 gVramBlocks_0047F0C0__grp[0x1000] __attribute__((aligned(16)));
+#endif

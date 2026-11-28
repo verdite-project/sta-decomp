@@ -48,6 +48,7 @@ s32 D_004B638C[0x1];
 u8 D_004B6388[0x4];
 u8 D_004B6384[0x4];
 u8 D_004B6380[0x4];
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/player/stats.c */
 u8 D_004B6288[0xf8] __attribute__((aligned(8))); /* also D_004B628A */
 u8 D_004B6284[0x4]; /* also D_004B6286 */
 u8 D_004B6280[0x4]; /* also D_004B6282 */
@@ -92,6 +93,7 @@ u8 D_004B5E94[0x4]; /* also D_004B5E96 */
 u8 D_004B5E90[0x4]; /* also D_004B5E92 */
 u8 D_004B5E8C[0x4]; /* also D_004B5E8D, D_004B5E8E, D_004B5E8F */
 u8 D_004B5E60[0x2c]; /* also D_004B5E8A, D_004B5E8B */
+#endif
 u8 D_004B5E08[0x58] __attribute__((aligned(8))); /* also D_004B5E0A, D_004B5E0C */
 u8 D_004B5E04[0x4]; /* also D_004B5E06 */
 u8 D_004B5E00[0x4]; /* also D_004B5E02 */

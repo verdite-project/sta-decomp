@@ -55,18 +55,8 @@ extern s32 D_002021C8;
 extern struct { unsigned char f : 1; char pad[15]; } D_001F306C, D_001F307C;
 extern E_Hud_ClearTimers_0_0019A840 D_004A28E0[64];
 extern E_Hud_ClearTimers_0_0019A840 D_004A2CE0[64];
-#ifndef NONMATCHING
 extern s8 D_001FD408[];
-#else
-/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD408 */
-static s8 D_001FD408[0x8] = "HP\000\000\000\000\000\000";
-#endif
-#ifndef NONMATCHING
 extern s8 D_001FD410[];
-#else
-/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD410 */
-static s8 D_001FD410[0x8] = { 0x25, 0x34, 0x64, 0x2f, 0, 0, 0, 0 };
-#endif
 #ifndef NONMATCHING
 extern s8 D_001FD418[];
 #else
@@ -846,4 +836,16 @@ f32 D_001F3070[0x1] = { 0.0f };
 f32 D_002020D4;
 s32 D_002021C4;
 s32 D_002021C8;
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/databook_item_reset_rodata.c): D_001FD3F8__grp: D_001FD3F8@0x0, D_001FD402@0xa, D_001FD404@0xc */
+u16 D_001FD3F8__grp[0x8] __attribute__((aligned(8))) = { 2, 3, 6, 5, 4, 1, 0, 0 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/item_menu_draw_bss.c): D_004A30E0__grp: D_004A30E0@0x0, D_004A30F0@0x10, D_004A3100@0x20, D_004A3110@0x30, D_004A3120@0x40, D_004A3130@0x50, D_004A3140@0x60 */
+u8 D_004A30E0__grp[0x70] __attribute__((aligned(16)));
 #endif

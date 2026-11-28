@@ -1216,3 +1216,15 @@ s8 D_00201C38 = 1;
 /* data twins (src/game/data/sbss.c): D_00201ED0 */
 void *D_00201ED0;
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/sound_emitter_bss.c): D_0022F080__grp: D_0022F080@0x0, D_0022F084@0x4, D_0022F088@0x8, D_0022F08C@0xc, D_0022F090@0x10 */
+u8 D_0022F080__grp[0x40010] __attribute__((aligned(16)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/gs_packet_bss.c): D_002F16C0__grp: D_002F16C0@0x0, D_002F16C4@0x4, D_002F16C8@0x8, D_002F16D0@0x10, D_002F16D4@0x14, D_002F16D8@0x18, D_002F16E0@0x20, D_002F16E4@0x24 */
+u8 D_002F16C0__grp[0x40] __attribute__((aligned(16)));
+#endif

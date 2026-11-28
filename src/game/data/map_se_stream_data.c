@@ -12,8 +12,10 @@ void Ease_Out_1_001E5020(void);
 void Ease_InOut_1_001E5098(void);
 void Ease_Smooth_1_001E5128(void);
 
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/shop_menu.c */
 f32 D_001F3A50[0x4] = { 1.0f, 0.0f, 0.0f, 1.0f };
 u16 D_001F3A60[0x8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/shop_menu.c */
 f32 D_001F3A70[0x8] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
 #endif

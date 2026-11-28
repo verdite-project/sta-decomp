@@ -402,3 +402,15 @@ s32 SndBank_TransferStep_0_0012EA00(H_SndBank_ParseHeader_1_0012E8F0 *a0, u32 id
 /* data twins (src/game/data/sbss.c): D_00201EC0 */
 f32 D_00201EC0;
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/sound_bss.c): D_00222BC0__grp: D_00222BC0@0x0, D_00222BC4@0x4, D_0022CBBC@0x9ffc, D_0022CBC0@0xa000 */
+u8 D_00222BC0__grp[0xbf80] __attribute__((aligned(16)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/sound_bss.c): D_0022EBC0__grp: D_0022EBC0@0x0, D_0022EBC8@0x8, D_0022EBD0@0x10, D_0022EBD8@0x18, D_0022EBDC@0x1c, D_0022EBE0@0x20, D_0022EBE4@0x24, D_0022EBE8@0x28 */
+u8 D_0022EBC0__grp[0x40] __attribute__((aligned(16)));
+#endif

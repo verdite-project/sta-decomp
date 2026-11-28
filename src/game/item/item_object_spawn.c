@@ -921,3 +921,9 @@ s32 Item_LoadTableB_0_001AFFA0(void *a) {
 /* data twins (src/game/data/sbss.c): D_0020228C */
 s32 D_0020228C;
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/pad_get_connected_bss_004AC630.c): D_004AC630__grp: D_004AC630@0x0, D_004AC6CC@0x9c, D_004AC79C@0x16c, D_004AC86C@0x23c, D_004AC93C@0x30c */
+u8 D_004AC630__grp[0x340] __attribute__((aligned(16)));
+#endif

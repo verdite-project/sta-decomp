@@ -860,3 +860,9 @@ s32 D_002F1AD0[0x4];
 s32 D_002F1AE0[0x1];
 f32 D_002F2070[0x2];
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/gs_packet_bss_002F1990.c): gWeatherState_002F19B0__grp: gWeatherState_002F19B0@0x0, D_002F19C0@0x10, D_002F19C4@0x14, D_002F19C8@0x18, D_002F19D4@0x24, D_002F19D8@0x28, D_002F19DC@0x2c, D_002F19E0@0x30, D_002F1A48@0x98 */
+u8 gWeatherState_002F19B0__grp[0xa0] __attribute__((aligned(16)));
+#endif

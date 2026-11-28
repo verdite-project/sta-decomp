@@ -285,3 +285,9 @@ s32 Snd_LoadSystemBank_1_0012DEE0(s32 a) {
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/game_main_rodata.c): D_001FAB58__grp: D_001FAB58@0x0, D_001FAB59@0x1, D_001FAB5A@0x2, D_001FAB5B@0x3, D_001FAB60@0x8, D_001FAB61@0x9, D_001FAB62@0xa, D_001FAB63@0xb, D_001FAB68@0x10, D_001FAB69@0x11, D_001FAB6A@0x12 */
+u8 D_001FAB58__grp[0x13] __attribute__((aligned(8))) = { 0x53, 0x54, 0x53, 0x45, 0, 0, 0, 0, 0x53, 0x54, 0x41, 0x4d, 0, 0, 0, 0, 0x53, 0x54, 0x4d };
+#endif

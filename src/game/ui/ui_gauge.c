@@ -1526,3 +1526,9 @@ s8 *D_002020AC;
 /* data twins (src/game/data/ui_gauge_bss.c): D_0048D170 */
 s8 D_0048D170[0x1e0];
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/ui_anim_bss.c): D_0048D060__grp: D_0048D060@0x0, D_0048D074@0x14, D_0048D08C@0x2c, D_0048D090@0x30, D_0048D09C@0x3c, D_0048D0A0@0x40 */
+u8 D_0048D060__grp[0x54] __attribute__((aligned(16)));
+#endif

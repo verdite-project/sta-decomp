@@ -152,12 +152,30 @@ def compare(a, b):
     return ""
 
 
+GROUP = re.compile(r"/\* data group \(([\w/.]+)\): (\w+): ([\w@, ]+) \*/")
+
+
+def groups():
+    """[(owner, unit, blob, [(name, offset)])] from the owners' `data group` lines."""
+    out = []
+    for p in sorted(glob.glob(str(ROOT / "src/game/**/*.c"), recursive=True)):
+        if "/src/game/data/" in p:
+            continue
+        for m in GROUP.finditer(Path(p).read_text()):
+            ms = [(x.strip().split("@")[0], int(x.strip().split("@")[1], 0)) for x in m.group(3).split(",")]
+            out.append((str(Path(p).relative_to(ROOT)), m.group(1), m.group(2), ms))
+    return out
+
+
 def check():
     bad = []
     tw = twins()
+    gs = groups()
     pairs = collections.defaultdict(set)
     for owner, unit, n in tw:
         pairs[(unit, owner)].add(n)
+    for owner, unit, blob, ms in gs:
+        pairs[(unit, owner)] |= {n for n, _ in ms}
     blocks = unit_blocks()
     for key in set(blocks) | set(pairs):
         if blocks.get(key, set()) != pairs.get(key, set()):
@@ -174,6 +192,29 @@ def check():
         why = compare(a, b)
         if why:
             bad.append(f"{n} ({owner} vs {unit}): {why}")
+    # a group's members: their slices of the blob
+    for owner, unit, blob, ms in gs:
+        try:
+            ob, uo = get(side(owner, True)), get(side(unit, False))
+        except FileNotFoundError as e:
+            bad.append(f"{blob}: {e.filename} missing")
+            continue
+        b = ob.blob(blob)
+        if b is None:
+            bad.append(f"{blob} ({owner}): not defined")
+            continue
+        for n, off in ms:
+            u = uo.blob(n)
+            if u is None:
+                bad.append(f"{n} ({unit}): not defined in the data unit")
+                continue
+            size = u[1]
+            rels = [(x - off, t, tg) for x, t, tg in b[3] if off <= x < off + size]
+            part = (b[0], size, b[2][off:off + size] if b[0] != "bss" else b"", rels)
+            why = compare(part, u)
+            if why:
+                bad.append(f"{n} (group {blob} in {owner} vs {unit}): {why}")
+        tw = tw + [(owner, unit, n) for n, _ in ms]
     return tw, bad
 
 

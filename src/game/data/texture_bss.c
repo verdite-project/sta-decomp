@@ -7,6 +7,7 @@
    texture_hash, vram_init */
 
 u8 D_00483100[0x3000]; /* also D_004860FE */
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/texture.c */
 u8 D_004830F0[0x10]; /* also D_004830F4 */
 s32 D_004830EC[0x1];
 s32 D_004830E8[0x1];
@@ -20,15 +21,20 @@ u8 D_004830CC[0x4]; /* also D_004830CE */
 u8 D_004830C8[0x4]; /* also D_004830CA */
 u8 D_004830C4[0x4];
 u8 D_004830C0[0x4];
+#endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/texture_hash.c */
 u8 D_00483090[0x30]; /* also D_004830AC */
 u8 D_004800DC[0x2fb4] __attribute__((aligned(4))); /* also D_004800DE, D_004800E2, D_004800EA, D_004800EE */
 u8 D_004800D0[0xc]; /* also D_004800D4 */
 u8 D_004800C8[0x8];
 u8 D_004800C0[0x8];
+#endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/vram_init.c */
 u8 D_004800B0[0x10];
 u8 D_0047F0C8[0xfe8] __attribute__((aligned(8))); /* also D_0047F0CA, D_0047F0CC */
 u8 D_0047F0C4[0x4]; /* also D_0047F0C6 */
 u8 gVramBlocks_0047F0C0[0x4]; /* also D_0047F0C2 */
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/texture_hash.c */
 u8 D_0047F080[0x40]; /* also D_0047F084 */
 #endif

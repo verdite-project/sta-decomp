@@ -75,3 +75,9 @@ void MapSheet_Update_0_001ED740(S_MapSheet_Update_0_001ED740 *a) {
         }
     }
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/movie_bss.c): D_004BE0E0__grp: D_004BE0E0@0x0, D_004BE0F4@0x14, D_004BE10C@0x2c, D_004BE110@0x30, D_004BE11C@0x3c */
+u8 D_004BE0E0__grp[0x40] __attribute__((aligned(16)));
+#endif

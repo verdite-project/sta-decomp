@@ -1173,3 +1173,9 @@ s32 Combat_ApplyDamage_1_00135E90(s8 *a0, s32 a1, s8 *a2, u8 a3, s32 *out) {
 #undef Combat_CalcDamage_1_00132DB0
 #undef Combat_RollStatusEffects_2_00133FD0
 #undef Enemy_GetMaxHp_2_0013F700
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/sound_emitter_rodata.c): D_001FABD0__grp: D_001FABD0@0x0, D_001FABD7@0x7 */
+s32 D_001FABD0__grp[0x2c] __attribute__((aligned(16))) = { -0x1f7f9fe, 0x404f8fe, -0x30307fc, 0x4040402, 0x80404f8, 0x8040404, 0x10606f8, 0x6080404, -0x7fef908, 0x4040802, 0x602fff8, -0x70303f8, -0x3f7f908, 0x1f8fefe, -0x103f7fa, 0x401f8fe, -0x303fdf8, 0x204fef8, 0x8fc06f8, 0x804fcfe, -0x3070304, -0x3f7f9fe, 0x6f8f8fc, -0x10103f8, 0x80601f8, -0x7010104, -0x7fdfbff, -0x1f7f904, -0x3fdf7fc, -0x3010704, -0x303f7fc, 0x602fcf8, -0x70707f8, 0x80806f8, -0x7070708, -0x7fef7fc, 0x4f8f8f8, -0x707fef8, 0x804f8f8, -0x70707ff, 0x10804f8, -0x7070708, 0, 0 };
+#endif

@@ -423,7 +423,7 @@ def data_twin_sources() -> tuple[list[str], list[str]]:
         if rel.startswith("src/game/data/"):
             if "#ifndef NONMATCHING /* the NONMATCHING build defines these in" in t:
                 units.append(rel)
-        elif "/* data twins (" in t:
+        elif "/* data twins (" in t or "/* data group (" in t:
             owners.append(rel)
     return owners, units
 
@@ -539,7 +539,7 @@ def main() -> None:
     # as implicit linker scripts
     # (tools/rel_syms.py writes them relative to the objects they lie in, so
     # they follow when the image shifts)
-    syms = "config/linker_syms.txt config/data_aliases.txt config/undefined_syms_auto.txt config/undefined_funcs_auto.txt"
+    syms = "config/data_groups.txt config/linker_syms.txt config/data_aliases.txt config/undefined_syms_auto.txt config/undefined_funcs_auto.txt"
     n.append("rule rel_syms\n"
              "  command = .venv/bin/python tools/rel_syms.py $out $objs\n"
              "  description = SYMS $out")

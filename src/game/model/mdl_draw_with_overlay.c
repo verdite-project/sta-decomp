@@ -125,3 +125,9 @@ void Mdl_DrawWithOverlay_0_0016C350(Obj *obj, Oth *oth, u8 *ctx, Vec *src) {
     ScreenFx_DrawLetterbox_0_001325F0();
 }
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/gs_packet_bss.c): D_002F15C0__grp: D_002F15C0@0x0, D_002F15C4@0x4, D_002F15C8@0x8, D_002F15D0@0x10, D_002F15D4@0x14, D_002F15D8@0x18, D_002F15E0@0x20, D_002F15E4@0x24 */
+u8 D_002F15C0__grp[0x40] __attribute__((aligned(16)));
+#endif

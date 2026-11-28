@@ -440,3 +440,9 @@ s32 D_004BAA48[0x1];
 s32 D_004BAA4C[0x1];
 s32 D_004BAA50[0x1];
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/save_system_start_bss.c): D_004BAA60__grp: D_004BAA60@0x0, D_004BAA64@0x4, D_004BAA68@0x8, D_004BAA6C@0xc */
+u8 D_004BAA60__grp[0x10] __attribute__((aligned(16)));
+#endif

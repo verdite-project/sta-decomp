@@ -60,3 +60,9 @@ void Task_Register_0_0014DB10(s32 arg0) {
 /* data twins (src/game/data/sbss.c): D_00201F20 */
 s32 D_00201F20;
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/angle_b_bss.c): D_002F0F40__grp: D_002F0F40@0x0, D_002F0F44@0x4, D_002F0F48@0x8, D_002F0F4C@0xc, D_002F0F50@0x10, D_002F0F54@0x14, D_002F0F58@0x18, D_002F0F5C@0x1c */
+u8 D_002F0F40__grp[0x20] __attribute__((aligned(16)));
+#endif

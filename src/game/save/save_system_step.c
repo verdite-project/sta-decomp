@@ -758,3 +758,9 @@ s32 D_002023E8;
 u8 D_004BCBC0[0x380];
 u8 D_004BCF40[0x3d0];
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/save_system_start_bss.c): D_004BC394__grp: D_004BC394@0x0, D_004BC398@0x4, D_004BC39C@0x8 */
+u8 D_004BC394__grp[0xc] __attribute__((aligned(4)));
+#endif

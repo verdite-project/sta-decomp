@@ -584,3 +584,15 @@ u32 D_00202008;
 Q_Mdl_EmitMeshVu1_1_0016E760 D_0042D8C0[0x500 / sizeof(Q_Mdl_EmitMeshVu1_1_0016E760[2])][2];
 Q_Mdl_EmitMeshVu1_1_0016E760 D_0042DDC0[0xa000 / sizeof(Q_Mdl_EmitMeshVu1_1_0016E760[2])][2];
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/screen_fx_flash_data.c): D_001F2110__grp: D_001F2110@0x0, D_001F2114@0x4, D_001F2118@0x8, D_001F211C@0xc, D_001F2120@0x10 */
+f32 D_001F2110__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/sfx_all_rodata.c): D_001FB8F8__grp: D_001FB8F8@0x0, D_001FB8F9@0x1, D_001FB8FA@0x2, D_001FB8FB@0x3 */
+s32 D_001FB8F8__grp[0x2] __attribute__((aligned(8))) = { 0x4e465854, 0 };
+#endif

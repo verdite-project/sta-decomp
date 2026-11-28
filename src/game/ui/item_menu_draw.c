@@ -680,8 +680,7 @@ extern u8 D_00496B60[];
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/item_menu_draw_bss.c): D_004A3150, D_004A329C, D_004A32A0 */
-s8 D_004A3150[0x100] __attribute__((aligned(4)));
+/* data twins (src/game/data/item_menu_draw_bss.c): D_004A329C, D_004A32A0 */
 u8 D_004A329C[0x4];
 s8 D_004A32A0[0x4];
 #endif

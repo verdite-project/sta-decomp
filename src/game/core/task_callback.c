@@ -244,3 +244,9 @@ s32 D_002023A8;
 /* data twins (src/game/data/save_system_start_bss.c): D_004BAC4C */
 BF D_004BAC4C[0x4 / sizeof(BF)];
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/save_system_start_bss.c): D_004BAC20__grp: D_004BAC20@0x0, D_004BAC24@0x4, D_004BAC28@0x8, D_004BAC2C@0xc */
+u8 D_004BAC20__grp[0x10] __attribute__((aligned(16)));
+#endif

@@ -37,3 +37,9 @@ void EnemyMgr_FreeSlot_0_001A5070(s8 **arg0) {
         D_004A43D0[idx].v = 0;
     }
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/save_byte_bss.c): gEnemyDataTbl_004A43B0__grp: gEnemyDataTbl_004A43B0@0x0, D_004A43B4@0x4, D_004A43B8@0x8, D_004A43BC@0xc, D_004A43C0@0x10, D_004A43C4@0x14, D_004A43C8@0x18, D_004A43CC@0x1c, D_004A43D0@0x20, D_004A4540@0x190 */
+u8 gEnemyDataTbl_004A43B0__grp[0x1c0] __attribute__((aligned(16)));
+#endif

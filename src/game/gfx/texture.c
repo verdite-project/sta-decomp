@@ -757,3 +757,9 @@ INCLUDE_ASM(Tex_Resident_0_001777C0);
 s32 D_00438A10[0x1];
 volatile u16 D_00438A1C[0x2];
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/texture_bss.c): D_004830C0__grp: D_004830C0@0x0, D_004830C4@0x4, D_004830C8@0x8, D_004830CC@0xc, D_004830D0@0x10, D_004830D4@0x14, D_004830D8@0x18, D_004830DC@0x1c, D_004830E0@0x20, D_004830E4@0x24, D_004830E8@0x28, D_004830EC@0x2c, D_004830F0@0x30 */
+u8 D_004830C0__grp[0x40] __attribute__((aligned(16)));
+#endif

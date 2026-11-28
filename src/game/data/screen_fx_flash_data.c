@@ -23,10 +23,13 @@ void ScrCmd_SetVar_1_00164DC0(void);
 
 f32 D_001F2040[0x4] = { 0.0f, 0.0f, 0.0f, 1.0f };
 f32 D_001F2050[0x4] = { 0.0f, 0.0f, 0.0f, 1.0f };
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/fog.c */
 f32 D_001F2060[0x1] = { 1.0f };
 s32 D_001F2064[0x1] = { 0 };
 s32 D_001F2068[0x1] = { 0 };
 s32 D_001F206C[0x1] = { 0 };
+#endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/player/player.c */
 f32 D_001F2070[0x1] = { 2.0f };
 s32 D_001F2074[0x1] = { 0 };
 f32 D_001F2078[0x1] = { 1.0f };
@@ -43,13 +46,16 @@ f32 D_001F20C8[0x2] = { 128.0f, 128.0f };
 f32 D_001F20D0[0x1] = { 1.0f };
 f32 D_001F20D4[0x1] = { 1.0f };
 f32 D_001F20D8[0xa] __attribute__((aligned(8))) = { 1.0f, 128.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+#endif
 f32 D_001F2100[0x3] = { 1.0f, 0.0f, 0.0f };
 f32 D_001F210C[0x1] = { 128.0f };
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/model/model_emit.c */
 f32 D_001F2110[0x1] = { 1.0f };
 s32 D_001F2114[0x1] = { 0 };
 f32 D_001F2118[0x1] = { 1.0f };
 s32 D_001F211C[0x1] = { 0 };
 Vec D_001F2120 = { 1.0f, 1.0f, 1.0f, 1.0f };
+#endif
 f32 D_001F2130[0x4] = { 1.0f, 0.0f, 0.0f, 0.0f };
 f32 D_001F2140[0x4] = { 0.0f, 1.0f, 0.0f, 0.0f };
 s32 D_001F2150[0x1] = { 0 };

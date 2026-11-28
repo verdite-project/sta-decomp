@@ -4,11 +4,13 @@
    (CodeWarrior writes uninitialised objects in reverse order). */
 /* used by: map_sheet, movie, text_001E8C50.s */
 
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/map_sheet.c */
 u8 D_004BE11C[0x4]; /* also D_004BE11F */
 u8 D_004BE110[0xc] __attribute__((aligned(4)));
 u8 D_004BE10C[0x4];
 u8 D_004BE0F4[0x18] __attribute__((aligned(4))); /* also D_004BE0F8 */
 u8 D_004BE0E0[0x14] __attribute__((aligned(4)));
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/movie.c */
 s16 D_004BE0D8[0x4] __attribute__((aligned(4)));
 u8 D_004BE0D4[0x4]; /* also D_004BE0D6 */

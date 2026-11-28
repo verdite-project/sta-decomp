@@ -197,3 +197,9 @@ void DbCharProc_DrawInfo_0_00196330(O *o, s32 a1, u32 mode, s32 a3) {
 /* data twins (src/game/data/sbss.c): D_00202188 */
 s32 D_00202188;
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/load_menu_bss_004A1120.c): D_004A13A0__grp: D_004A13A0@0x0, D_004A13B4@0x14, D_004A13CC@0x2c, D_004A13D0@0x30, D_004A13DC@0x3c */
+u8 D_004A13A0__grp[0x40] __attribute__((aligned(16)));
+#endif

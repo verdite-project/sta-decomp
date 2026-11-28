@@ -422,6 +422,95 @@ def unsplit(names_owner, unit_of):
         (ROOT / u).write_text(text)
 
 
+GROUP_MARK = re.compile(r"/\* data group \(([\w/.]+)\): (\w+): ([\w@, ]+) \*/")
+GROUPS_TXT = ROOT / "config/data_groups.txt"
+
+
+def write_group_syms():
+    """config/data_groups.txt from the owners' group markers: each member
+    NAME = BLOB + 0xOFF (tools/rel_syms.py writes a line only when no object
+    defines NAME and an object defines BLOB, so the matching build, whose
+    data units define the members, has none of them)."""
+    out = ["/* NONMATCHING data groups (tools/split_data.py writes this from the",
+           "   owners' `data group` lines): members as offsets into their blob. */"]
+    for p in sorted((ROOT / "src/game").rglob("*.c")):
+        for m in GROUP_MARK.finditer(p.read_text()):
+            for item in m.group(3).split(","):
+                n, off = item.strip().split("@")
+                out.append(f"{n} = {m.group(2)} + {off};")
+    GROUPS_TXT.write_text("\n".join(out) + "\n")
+
+
+def group_plan(inv):
+    """{root: (unit, section, [(name, addr, size)])} for the pinned groups
+    (tools/data_owners.py) whose members are all still in their data unit."""
+    sz = move_data.sizes()
+    g = collections.defaultdict(list)
+    for r in inv:
+        if r.get("group") and r["class"] == "pinned" and not r.get("owner") and r["name"] in sz:
+            g[r["group"]].append(r)
+    out = {}
+    for root, rs in g.items():
+        if len({r["unit"] for r in rs}) != 1 or rs[0]["section"] in ("sbss", "sdata"):
+            continue        # (a small-data group would leave the gp range as one blob)
+        ms = sorted((sz[r["name"]][0], sz[r["name"]][1], r["name"]) for r in rs)
+        if any(a + s != b for (a, s, _), (b, _, _) in zip(ms, ms[1:])) or ms[0][2] != root:
+            continue
+        users = collections.Counter(u for r in rs for u in r["users"] if u.endswith(".c"))
+        if not users:
+            continue
+        own = max(users, key=lambda u: (users[u], u))
+        out[root] = (own, rs[0]["unit"], rs[0]["section"], [(n, a, s) for a, s, n in ms])
+    return out
+
+
+def group_text(own, unit, kind, members, labels):
+    """(the owner's new text, blob name) or (None, reason)."""
+    root, start = members[0][0], members[0][1]
+    total = members[-1][1] + members[-1][2] - start
+    blob = f"{root}__grp"
+    text = (ROOT / own).read_text()
+    if kind in UNINIT:
+        d = f"u8 {blob}[{total:#x}] __attribute__((aligned({min(16, start & -start)})));"
+        ext = []
+    else:
+        items = []
+        for n, _, _ in members:
+            lab = labels.get(n)
+            if lab is None:
+                return None, "no splat label"
+            items += lab[2]
+        need = set()
+        d = data_to_c.define(blob, items, {}, False, need, False)
+        if d is None or len(data_to_c.obj_bytes(items, False)[0]) != total:
+            return None, "bytes"
+        d = d.replace(" = ", f" __attribute__((aligned({min(16, start & -start)}))) = ", 1)
+        ext = [f"void {x}(void);" if is_func(x) else f"extern u8 {x}[];"
+               for x in sorted(need) if not re.search(rf"\b{x}\b", text)]
+    mark = f"/* data group ({unit}): {blob}: " + ", ".join(f"{n}@{a - start:#x}" for n, a, _ in members) + " */"
+    block = ["", "#ifdef NONMATCHING", "#pragma explicit_zero_data on"] + ext + [mark, d, "#endif"]
+    return text.rstrip("\n") + "\n" + "\n".join(block) + "\n", blob
+
+
+def group_compare(obj, blob, members, unit_obj):
+    """'' if every member's slice of the blob is the data unit's object."""
+    b = obj.blob(blob)
+    if b is None:
+        return "blob not defined"
+    start = members[0][1]
+    for n, a, size in members:
+        u = unit_obj.blob(n)
+        if u is None:
+            return f"{n} not in the data unit"
+        o = a - start
+        rels = [(x - o, t, tg) for x, t, tg in b[3] if o <= x < o + size]
+        part = (b[0], size, b[2][o:o + size] if b[0] != "bss" else b"", rels)
+        why = ct.compare(part, u)
+        if why:
+            return f"{n}: {why}"
+    return ""
+
+
 def main():
     inv = json.loads((ROOT / "build/data_owners.json").read_text())
     back = {r["name"]: r["owner"] for r in inv if r["class"] == "pinned" and r.get("owner")}
@@ -492,6 +581,40 @@ def main():
         print(f"{own}: {len(took)} ({ns} static)")
     print(f"{len(done)} of {len(recs)} objects get a twin in {len(texts)} owners; left: "
           + ", ".join(f"{k} {v}" for k, v in reasons.most_common()), file=sys.stderr)
+    # groups: a pinned table with a known extent moves whole, as one blob
+    gdone, greasons = {}, collections.Counter()
+    for root, (own, unit, kind, members) in sorted(group_plan(inv).items()):
+        if own in texts:
+            base_text = texts[own]
+        else:
+            base_text = None
+        if unit not in labels and kind not in UNINIT:
+            labels[unit] = labels_of(unit, kind)
+        saved = (ROOT / own).read_text()
+        if base_text is not None:
+            (ROOT / own).write_text(base_text)
+        try:
+            t, blob = group_text(own, unit, kind, members, labels[unit])
+        finally:
+            (ROOT / own).write_text(saved)
+        if t is None:
+            greasons[blob] += 1
+            continue
+        o = tmp / (Path(own).stem + f".g.{root}.o")
+        if not compile_to(t, own, o, True):
+            greasons["owner does not compile"] += 1
+            continue
+        why = group_compare(ct.Obj(o), blob, members, unit_obj(unit))
+        if why:
+            greasons[why.split(":")[-1].strip()[:30]] += 1
+            continue
+        texts[own] = t
+        for n, _, _ in members:
+            gdone[n] = own
+        print(f"{own}: group {root} ({len(members)} objects)")
+    print(f"{len(gdone)} objects in {len({gdone[n] for n in gdone})} owners move as groups; left: "
+          + ", ".join(f"{k} {v}" for k, v in greasons.most_common()), file=sys.stderr)
+    done.update(gdone)
     if "--apply" not in sys.argv:
         return
     for own, text in texts.items():
@@ -502,6 +625,7 @@ def main():
         by_unit[unit_of[n]][n] = own
     for u, m in by_unit.items():
         (ROOT / u).write_text(unit_edit(u, m))
+    write_group_syms()
 
 
 if __name__ == "__main__":

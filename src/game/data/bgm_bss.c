@@ -6,11 +6,13 @@
 
 u8 D_004BA000[0x40];
 u8 D_004B9FC0[0x40];
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/bgm.c */
 u8 D_004B9FB0[0x10]; /* also D_004B9FB4 */
 u8 D_004B9FAC[0x4];
 u8 D_004B9FA8[0x4]; /* also D_004B9FAA */
 s32 D_004B9FA4[0x1];
 u8 D_004B9FA0[0x4];
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/bgm.c */
 u8 D_004B9F20[0x80]; /* also D_004B9F24, D_004B9F44, D_004B9F64, D_004B9F84 */
 #endif

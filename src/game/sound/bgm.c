@@ -514,3 +514,9 @@ s32 D_00202314;
 /* data twins (src/game/data/bgm_bss.c): D_004B9F20 */
 E D_004B9F20[4];
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/bgm_bss.c): D_004B9FA0__grp: D_004B9FA0@0x0, D_004B9FA4@0x4, D_004B9FA8@0x8, D_004B9FAC@0xc, D_004B9FB0@0x10 */
+u8 D_004B9FA0__grp[0x20] __attribute__((aligned(16)));
+#endif

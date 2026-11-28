@@ -96,3 +96,9 @@ void Fog_UpdatePlanes_0_0015D300(void) {
     D_0030D0E0.v0.w = D_001F2070[0].w;
     sceVu0CopyVector(&D_0030D0E0.c, D_001F2100);
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/screen_fx_flash_data.c): D_001F2060__grp: D_001F2060@0x0, D_001F2064@0x4, D_001F2068@0x8, D_001F206C@0xc */
+f32 D_001F2060__grp[0x4] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 0.0f };
+#endif

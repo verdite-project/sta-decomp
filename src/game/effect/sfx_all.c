@@ -632,3 +632,9 @@ s32 D_0033F6D0[0x400];
 /* data twins (src/game/data/texture_bss.c): D_0042D7E0 */
 u8 D_0042D7E0[0x70];
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/sfx_all_rodata.c): D_001FB8F0__grp: D_001FB8F0@0x0, D_001FB8F1@0x1, D_001FB8F2@0x2, D_001FB8F3@0x3 */
+s32 D_001FB8F0__grp[0x2] __attribute__((aligned(16))) = { 0x4d415453, 0 };
+#endif

@@ -219,3 +219,15 @@ P *D_002023B0;
 /* data twins (src/game/data/save_system_start_bss.c): D_004BB050 */
 S D_004BB050[0xc0 / sizeof(S)];
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/map_se_stream_rodata.c): D_001FE890__grp: D_001FE890@0x0, D_001FE891@0x1, D_001FE892@0x2, D_001FE893@0x3, D_001FE8A0@0x10 */
+char D_001FE890__grp[0x20] __attribute__((aligned(16))) = "STSE\000\000\000\000\000\000\000\000\000\000\000\000se/m%3.03ds.mse\000";
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/save_system_start_bss.c): D_004BB110__grp: D_004BB110@0x0, D_004BB120@0x10 */
+u8 D_004BB110__grp[0x11c0] __attribute__((aligned(16)));
+#endif

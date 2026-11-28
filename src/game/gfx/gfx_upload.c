@@ -100,3 +100,9 @@ void Gfx_UploadVu1Program_0_00155460(u32 buf, u32 size) {
 void Gfx_Nop_2_001558F0(void) {
 
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/gs_packet_bss.c): D_002F1940__grp: D_002F1940@0x0, D_002F1944@0x4, D_002F1948@0x8, D_002F194C@0xc */
+u8 D_002F1940__grp[0x10] __attribute__((aligned(16)));
+#endif

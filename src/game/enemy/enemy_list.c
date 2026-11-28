@@ -1417,3 +1417,15 @@ u8 **EnemyData_LoadTextures_0_001A7C70(s32 arg0) {
 s32 D_00202278;
 s32 D_00202280;
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/enemy_list_rodata_001FD960.c): D_001FD960__grp: D_001FD960@0x0, D_001FD961@0x1, D_001FD962@0x2, D_001FD963@0x3 */
+f32 D_001FD960__grp[0x4] __attribute__((aligned(16))) = { 800069.2f, 0.0f, 0.0f, 0.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/save_byte_bss.c): D_004A4570__grp: D_004A4570@0x0, D_004A4774@0x204 */
+u8 D_004A4570__grp[0x308] __attribute__((aligned(16)));
+#endif

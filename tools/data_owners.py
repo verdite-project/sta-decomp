@@ -100,9 +100,13 @@ def split_names():
     for p in glob.glob(str(ROOT / "src/game/**/*.c"), recursive=True):
         if "/src/game/data/" in p:
             continue
-        for m in re.finditer(r"/\* data twins \(([\w/.]+)\): ([\w, ]+) \*/", Path(p).read_text()):
+        t = Path(p).read_text()
+        for m in re.finditer(r"/\* data twins \(([\w/.]+)\): ([\w, ]+) \*/", t):
             for n in m.group(2).split(","):
                 out[n.strip()] = str(Path(p).relative_to(ROOT))
+        for m in re.finditer(r"/\* data group \(([\w/.]+)\): (\w+): ([\w@, ]+) \*/", t):
+            for item in m.group(3).split(","):
+                out[item.strip().split("@")[0]] = str(Path(p).relative_to(ROOT))
     return out
 
 
@@ -152,10 +156,16 @@ def inventory():
         r["data"] = sorted(data_refs[n])
         r["alias"] = n in via_alias or n in rel_owners
     pin(objs, nonmatching_link())
+    grouped = set()
+    for p in glob.glob(str(ROOT / "src/game/**/*.c"), recursive=True):
+        for m in re.finditer(r"/\* data group \(([\w/.]+)\): (\w+): ([\w@, ]+) \*/", Path(p).read_text()):
+            grouped |= {x.strip().split("@")[0] for x in m.group(3).split(",")}
     for n, r in objs.items():
         if n in split:
             r["owner"] = split[n]
-        if r["pinned"]:
+        if n in grouped:
+            r["class"] = "split"        # moved with its group, whole
+        elif r["pinned"]:
             # a pinned twin is wrong: tools/split_data.py --apply takes it back
             r["class"] = "pinned"
         elif n in split:
@@ -350,8 +360,32 @@ def pin(objs, link):
                 root = n
                 end = a + extent[n] if n in extent else None
                 objs[n]["pinned"] = objs[n]["pinned"] or roots[n]
+                if end is not None:
+                    objs[n]["group"] = n
             elif root is not None:
                 objs[n]["pinned"] = objs[n]["pinned"] or f"after {root} in its run ({roots[root]})"
+                if end is not None:
+                    objs[n]["group"] = root
+        # an object pinned only because code reaches past its end at a fixed
+        # offset: a group of it and what it reaches (16 bytes past the
+        # furthest offset, the widest access)
+        for k, (a, size, n) in enumerate(lst):
+            r = objs[n]
+            if r.get("group") or not r["pinned"] or "reaches" not in r["pinned"]:
+                continue
+            gend = a + r.get("reach", size) + 16
+            members = [n]
+            for a2, s2, n2 in lst[k + 1:]:
+                if a2 >= gend or lst[lst.index((a2, s2, n2)) - 1][0] + lst[lst.index((a2, s2, n2)) - 1][1] != a2:
+                    break
+                if objs[n2].get("group") and objs[n2]["group"] != n:
+                    members = None
+                    break
+                members.append(n2)
+            if members:
+                for m in members:
+                    objs[m]["group"] = n
+                    objs[m]["pinned"] = objs[m]["pinned"] or f"reached by {n}"
 
 
 def owned_in_code():

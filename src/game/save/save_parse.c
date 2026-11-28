@@ -199,3 +199,21 @@ extern u8 D_004A4880[];
 PlayerData *gPlayerData_00201DC0 = (PlayerData *)D_004A4980;
 Big_Save_ParseOptions_1_001A8B90 *D_00201E00 = (Big_Save_ParseOptions_1_001A8B90 *)D_004A4880;
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/save_parse_rodata.c): D_001FD988__grp: D_001FD988@0x0, D_001FD989@0x1, D_001FD98A@0x2, D_001FD98B@0x3, D_001FD990@0x8, D_001FD991@0x9, D_001FD992@0xa, D_001FD993@0xb, D_001FD998@0x10, D_001FD999@0x11, D_001FD99A@0x12 */
+u8 D_001FD988__grp[0x13] __attribute__((aligned(8))) = { 0x45, 0x4e, 0x44, 0x5f, 0, 0, 0, 0, 0x4f, 0x50, 0x54, 0x61, 0, 0, 0, 0, 0x53, 0x59, 0x53 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/save_parse_rodata.c): D_001FD9A0__grp: D_001FD9A0@0x0, D_001FD9A1@0x1, D_001FD9A2@0x2, D_001FD9A3@0x3, D_001FD9A8@0x8, D_001FD9A9@0x9, D_001FD9AA@0xa, D_001FD9AB@0xb, D_001FD9B0@0x10, D_001FD9B1@0x11, D_001FD9B2@0x12 */
+u8 D_001FD9A0__grp[0x13] __attribute__((aligned(16))) = { 0x50, 0x43, 0x53, 0x61, 0, 0, 0, 0, 0x4d, 0x41, 0x50, 0x61, 0, 0, 0, 0, 0x45, 0x4e, 0x45 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/save_parse_rodata.c): D_001FD9B8__grp: D_001FD9B8@0x0, D_001FD9B9@0x1, D_001FD9BA@0x2, D_001FD9BB@0x3, D_001FD9C0@0x8, D_001FD9C1@0x9, D_001FD9C2@0xa, D_001FD9C3@0xb */
+s32 D_001FD9B8__grp[0x6] __attribute__((aligned(8))) = { 0x614d5449, 0, 0x61484353, 0, 0, 0 };
+#endif

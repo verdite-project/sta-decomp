@@ -6,10 +6,12 @@
    hud_warning, lightning, model_layer, player, screen_fx, sound_emitter,
    text_001544C0.s, text_00155090.s, text_0016BD00.s */
 
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/gfx_upload.c */
 s32 D_002F194C[0x1];
 s32 D_002F1948[0x1];
 u32 D_002F1944[0x1];
 u8 D_002F1940[0x4];
+#endif
 u8 D_002F1900[0x40];
 u8 D_002F18C0[0x40];
 u8 D_002F1880[0x40];
@@ -21,6 +23,7 @@ u8 D_002F1780[0x40];
 u8 D_002F1740[0x40];
 u8 D_002F1700[0x40];
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/sound_emitter.c */
 u8 D_002F16E4[0x1c] __attribute__((aligned(4))); /* also D_002F16E8 */
 u8 D_002F16E0[0x4];
 u8 D_002F16D8[0x8];
@@ -29,13 +32,17 @@ u8 D_002F16D0[0x4];
 u8 D_002F16C8[0x8];
 u8 D_002F16C4[0x4];
 u8 D_002F16C0[0x4];
+#endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/game_main.c */
 u8 D_002F1694[0x2c] __attribute__((aligned(4))); /* also D_002F1698 */
 f32 D_002F1690[0x1];
 u8 D_002F1680[0x10];
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/gs_packet.c */
 u8 D_002F1640[0x40];
 u8 D_002F1600[0x40];
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/model/mdl_draw_with_overlay.c */
 u8 D_002F15E4[0x1c] __attribute__((aligned(4))); /* also D_002F15E8 */
 u8 D_002F15E0[0x4];
 u8 D_002F15D8[0x8];
@@ -44,6 +51,7 @@ u8 D_002F15D0[0x4];
 u8 D_002F15C8[0x8];
 u8 D_002F15C4[0x4];
 u8 D_002F15C0[0x4];
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/gs_packet.c */
 u8 D_002F1580[0x40];
 u8 D_002F1510[0x70];
@@ -63,6 +71,7 @@ u8 D_002F13F0[0x10];
 u8 D_002F13D0[0x20];
 u8 D_002F13C8[0x8];
 u8 D_002F13A0[0x28]; /* also D_002F13A8 */
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/gs_packet.c */
 u8 D_002F1390[0x10];
 u8 D_002F1388[0x8];
 u8 D_002F1340[0x48];
@@ -95,3 +104,4 @@ u8 D_002F112C[0x4];
 u8 D_002F1128[0x4];
 u8 D_002F1124[0x4];
 u8 D_002F1120[0x4] __attribute__((aligned(16)));
+#endif

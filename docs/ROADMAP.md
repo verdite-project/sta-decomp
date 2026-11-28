@@ -242,6 +242,16 @@ the object from its owner instead:
 - `tools/check_data_twins.py` (ninja, part of the default target in both
   modes; `build/twins/` holds the other build's side): each twin has the
   data unit's bytes, size and relocations.
+- **Groups**: a pinned table whose extent is known (a root with an entry in
+  `config/data_extents.txt` or a typed extent, or an object code reaches
+  past at a fixed offset) moves whole: the owner defines one blob
+  `<ROOT>__grp` with the retail bytes under `#ifdef NONMATCHING` and a
+  `/* data group (UNIT): BLOB: NAME@OFF, ... */` line, and
+  `config/data_groups.txt` (written by `split_data.py`) gives ld each member
+  as `NAME = BLOB + OFF` (`tools/rel_syms.py` writes those lines only where
+  the blob is linked, so the matching build has none). The checker compares
+  each member's slice of the blob. Small-data (`.sbss`/`.sdata`) groups
+  stay: one blob would leave the gp range.
 - **Pinned** objects stay where the data unit has them in both builds: the
   code can reach past them into their neighbours, so the neighbours must not
   move. That is an object whose address is cast (to an integer or another
@@ -254,11 +264,11 @@ the object from its owner instead:
 <!-- data-owners:start -->
 | objects (2026-11-28) | bss | data | rodata | sbss | sdata | all |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| NONMATCHING twin in its owner | 341 | 51 | 236 | 312 | 111 | 1051 |
+| NONMATCHING twin or group in its owner | 617 | 81 | 290 | 312 | 111 | 1411 |
 | one user, not split yet | 26 | 58 | 17 | 2 | 10 | 113 |
 | several users, not split yet | 8 | 5 | 0 | 0 | 2 | 15 |
-| pinned | 343 | 50 | 58 | 3 | 0 | 454 |
-| used by asm only / by data only / unused | 82 | 16 | 79 | 7 | 1 | 185 |
+| pinned | 106 | 22 | 44 | 3 | 0 | 175 |
+| used by asm only / by data only / unused | 43 | 14 | 39 | 7 | 1 | 104 |
 | total | 800 | 180 | 390 | 324 | 124 | 1818 |
 <!-- data-owners:end -->
 

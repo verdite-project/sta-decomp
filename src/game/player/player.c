@@ -5226,3 +5226,33 @@ f32 D_00317248[0x1];
 f32 D_00317254[0x6] __attribute__((aligned(4)));
 f32 D_00317274[0x1b] __attribute__((aligned(4)));
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/screen_fx_flash_data.c): D_001F2070__grp: D_001F2070@0x0, D_001F2074@0x4, D_001F2078@0x8, D_001F207C@0xc */
+f32 D_001F2070__grp[0x4] __attribute__((aligned(16))) = { 2.0f, 0.0f, 1.0f, 0.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/screen_fx_flash_data.c): D_001F2080__grp: D_001F2080@0x0, D_001F2084@0x4, D_001F208C@0xc, D_001F2090@0x10, D_001F2094@0x14, D_001F209C@0x1c */
+f32 D_001F2080__grp[0x10] __attribute__((aligned(16))) = { 0.0f, -90.0f, 0.0f, 0.7f, 0.0f, 0.0f, 0.0f, 0.7f, 0.0f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f, 0.0f, -1.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/screen_fx_flash_data.c): D_001F20C0__grp: D_001F20C0@0x0, D_001F20C4@0x4, D_001F20C8@0x8, D_001F20D0@0x10, D_001F20D4@0x14, D_001F20D8@0x18 */
+f32 D_001F20C0__grp[0x10] __attribute__((aligned(16))) = { 128.0f, 128.0f, 128.0f, 128.0f, 1.0f, 1.0f, 1.0f, 128.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/point_light_bss.c): D_0030D0E0__grp: D_0030D0E0@0x0, D_0030D0E4@0x4, D_0030D0E8@0x8, D_0030D170@0x90 */
+u8 D_0030D0E0__grp[0xa0] __attribute__((aligned(16)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4CD0__grp: D_004B4CD0@0x0, D_004B4CDC@0xc */
+u8 D_004B4CD0__grp[0x10] __attribute__((aligned(16)));
+#endif

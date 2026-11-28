@@ -11,24 +11,9 @@ typedef struct { u64 key; u8 p8[0x30]; Node *x38; s32 x3C; u8 p40[0x10]; } Ent_T
 typedef struct { s32 x0; s32 x4; u32 n; u8 pC[4]; Ent_Tex_Lookup_1_00177BB0 e[1]; } Tbl;
 typedef struct { s32 **a; s32 b; } Ent_Tex_RegisterTtix_0_00178080;
 extern E D_0047F080[8];
-#ifndef NONMATCHING
 extern s8 D_001FB908[];
-#else
-/* data twins (src/game/data/sfx_all_rodata.c): D_001FB908 */
-static s8 D_001FB908[0x1] = { 0x54 };
-#endif
-#ifndef NONMATCHING
 extern s8 D_001FB909[];
-#else
-/* data twins (src/game/data/sfx_all_rodata.c): D_001FB909 */
-static s8 D_001FB909[0x1] __attribute__((aligned(1))) = { 0x54 };
-#endif
-#ifndef NONMATCHING
 extern s8 D_001FB90A[];
-#else
-/* data twins (src/game/data/sfx_all_rodata.c): D_001FB90A */
-static s8 D_001FB90A[0x1] __attribute__((aligned(2))) = { 0x49 };
-#endif
 #ifndef NONMATCHING
 extern s8 D_001FB90B[];
 #else
@@ -244,4 +229,10 @@ s32 D_00201CB4 = 0x43494454;
 #pragma explicit_zero_data on
 /* data twins (src/game/data/texture_bss.c): D_0047F080 */
 E D_0047F080[8];
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/texture_bss.c): D_004800C0__grp: D_004800C0@0x0, D_004800C8@0x8, D_004800D0@0x10, D_004800DC@0x1c, D_00483090@0x2fd0 */
+u8 D_004800C0__grp[0x3000] __attribute__((aligned(16)));
 #endif

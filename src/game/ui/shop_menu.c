@@ -975,3 +975,9 @@ f32 D_004BAB84[0x6] __attribute__((aligned(4)));
 s32 D_004BABB0[0xc];
 f32 D_004BABF4[0x6] __attribute__((aligned(4)));
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/map_se_stream_data.c): D_001F3A50__grp: D_001F3A50@0x0, D_001F3A60@0x10 */
+f32 D_001F3A50__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+#endif

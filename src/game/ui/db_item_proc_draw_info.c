@@ -159,3 +159,9 @@ void DbItemProc_DrawInfo_0_001973F0(s8 *o, s32 sel, u32 id, s32 n) {
     }
 }
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/load_menu_bss_004A1120.c): D_004A13F0__grp: D_004A13F0@0x0, D_004A1404@0x14, D_004A141C@0x2c, D_004A1420@0x30, D_004A142C@0x3c */
+u8 D_004A13F0__grp[0x40] __attribute__((aligned(16)));
+#endif

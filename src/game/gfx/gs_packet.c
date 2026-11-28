@@ -737,3 +737,27 @@ s32 D_002F19AC[0x1];
 f32 D_002F1600[4][4];
 f32 D_002F1640[4][4];
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/gs_packet_bss.c): D_002F1120__grp: D_002F1120@0x0, D_002F1124@0x4, D_002F1128@0x8, D_002F112C@0xc */
+u8 D_002F1120__grp[0x10] __attribute__((aligned(16)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/gs_packet_bss.c): D_002F1130__grp: D_002F1130@0x0, D_002F1134@0x4, D_002F1138@0x8, D_002F113C@0xc */
+u8 D_002F1130__grp[0x10] __attribute__((aligned(16)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/gs_packet_bss.c): D_002F1140__grp: D_002F1140@0x0, D_002F1148@0x8, D_002F1150@0x10, D_002F1158@0x18 */
+u8 D_002F1140__grp[0x20] __attribute__((aligned(16)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/gs_packet_bss.c): D_002F1160__grp: D_002F1160@0x0, D_002F1170@0x10, D_002F11C0@0x60, D_002F11C8@0x68, D_002F11D0@0x70, D_002F11D8@0x78, D_002F11E0@0x80, D_002F11E4@0x84, D_002F1248@0xe8, D_002F1250@0xf0, D_002F12B0@0x150, D_002F12B8@0x158, D_002F12C0@0x160, D_002F12C8@0x168, D_002F12D0@0x170, D_002F12D4@0x174, D_002F1338@0x1d8, D_002F1340@0x1e0, D_002F1388@0x228, D_002F1390@0x230 */
+u8 D_002F1160__grp[0x240] __attribute__((aligned(16)));
+#endif

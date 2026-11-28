@@ -16,6 +16,7 @@ u8 D_0030C3D0[0x10]; /* also D_0030C3D4 */
 u8 D_0030A3C4[0x200c] __attribute__((aligned(4))); /* also D_0030A3C8 */
 f32 D_0030A3C0[0x1];
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/light.c */
 f32 D_0030A3BC[0x1];
 f32 D_0030A3B8[0x1];
 f32 D_0030A3B4[0x1];
@@ -30,12 +31,15 @@ u8 D_0030A370[0x4];
 u8 D_0030A368[0x8];
 u8 D_0030A364[0x4];
 u8 D_0030A360[0x4];
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/light.c */
 u8 D_0030A350[0x10];
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/light.c */
 u8 D_0030A338[0x18] __attribute__((aligned(8))); /* also D_0030A33C */
 u8 D_0030A334[0x4];
 u8 D_0030A330[0x4];
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/light.c */
 u8 D_0030A320[0x10];
 u8 D_0030A310[0x10];

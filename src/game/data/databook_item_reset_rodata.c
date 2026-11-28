@@ -45,12 +45,14 @@ const s8 D_001FD3E0[0x8] = { 0x20, 0x2d, 0x2d, 0x2d, 0x20, -0x7f, -0x6d, 0 };
 const s8 D_001FD3E8[0x8] = { 0x20, 0x25, 0x33, 0x64, 0x20, -0x7f, -0x6d, 0 };
 const s8 D_001FD3F0[0x8] = "%s\000\000\000\000\000\000";
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/hud_draw.c */
 const s16 D_001FD3F8[0x5] = { 2, 3, 6, 5, 4 };
 const u16 D_001FD402[0x1] __attribute__((aligned(2))) = { 1 };
 const u16 D_001FD404[0x2] = { 0, 0 };
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/hud_draw.c */
+#endif
 const s8 D_001FD408[0x8] = "HP\000\000\000\000\000\000";
 const s8 D_001FD410[0x8] = { 0x25, 0x34, 0x64, 0x2f, 0, 0, 0, 0 };
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/hud_draw.c */
 const s8 D_001FD418[0x8] = { 0x25, 0x64, 0, 0, 0, 0, 0, 0 };
 const s8 D_001FD420[0xd] = "MP\000\000\000\000\000\000\000\000\000\000\000";
 #endif
