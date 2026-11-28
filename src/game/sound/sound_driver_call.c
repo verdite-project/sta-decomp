@@ -321,7 +321,11 @@ out:
 }
 
 /* text_001D8AB0 */
+#ifdef NONMATCHING
+/* best-effort C: snd_drv_rpc_server_func.c */
+#else
 INCLUDE_ASM(SndDrv_RpcServerFunc_1_001D8AB0);
+#endif
 
 /* SndDrv_RpcServerThread_1_001D8BE0 */
 

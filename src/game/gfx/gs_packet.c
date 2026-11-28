@@ -361,7 +361,11 @@ void GsPkt_EndAD_3_00154420(void) {
 }
 
 /* text_001544C0 */
+#ifdef NONMATCHING
+/* best-effort C: gs_pkt_flush.c */
+#else
 INCLUDE_ASM(GsPkt_Flush_1_001544C0);
+#endif
 
 /* GsPkt_BeginAD_3_001545D0 */
 
@@ -614,7 +618,11 @@ void Gfx_KickFrame_1_00154B70(void) {
 }
 
 /* text_00155090 */
+#ifdef NONMATCHING
+/* best-effort C: gfx_build_view_matrices.c */
+#else
 INCLUDE_ASM(Gfx_BuildViewMatrices_0_00155090);
+#endif
 
 /* Gfx_WaitDraw_1_001552A0 */
 

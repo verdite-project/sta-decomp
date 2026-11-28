@@ -414,7 +414,11 @@ void Actor_OffsetColliders_1_00137730(Actor *a, Vec *m) {
 }
 
 /* text_00137870 */
+#ifdef NONMATCHING
+/* best-effort C: actor_collide_capsules.c, actor_collide_capsules_b.c */
+#else
 INCLUDE_ASM(Actor_CollideCapsules_0_00137870);
+#endif
 
 /* Actor_PushApart_0_00138460 */
 static inline s32 hit(f32 g) { return g <= 0.0f; }

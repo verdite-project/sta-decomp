@@ -271,7 +271,11 @@ void ItemMenu_DrawRing_0_0019CCF0(s32 arg, f32 ang) {
 #undef Ui_DrawList_1_001829B0
 
 /* text_0019CEF0 */
+#ifdef NONMATCHING
+/* best-effort C: item_menu_proc_draw_info.c */
+#else
 INCLUDE_ASM(ItemMenuProc_DrawInfo_0_0019CEF0);
+#endif
 
 /* func_0019D290_ */
 #define D_004A329C D_004A329C__as_func_0019D290_

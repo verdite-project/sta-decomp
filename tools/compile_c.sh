@@ -17,6 +17,9 @@
 #   everything else (the game) Metrowerks CodeWarrior mwccps2 3.0 beta -O4,p,
 #                              run under wibo
 #
+# CDEFS (tools/gen_ninja.py: -DNONMATCHING unless --matching) goes to every
+# C compile.
+#
 # tools/probe_compiler.py settles the game's compilers: its probes match
 # under mwccps2 3.0b38, 3.0b50 and 3.0b52 at -O4,p only (b50 and b52 emit
 # identical code on everything tried), and the gcc modules under ee-gcc 2.96
@@ -81,7 +84,7 @@ case "${SRC}" in
         esac
         # tools/mwfix.py retypes the .mwcats section, which ld 2.10 cannot read
         MWCIncludes="${ROOT}/include" "${WIBO}" "${MWCC_DIR}/mwccps2.exe" -c -nostdinc \
-            ${GAME_CFLAGS:-${UNIT_CFLAGS:--O4,p}} ${INCS} -o "${OUT}" "${SRC}"
+            ${GAME_CFLAGS:-${UNIT_CFLAGS:--O4,p}} ${CDEFS:-} ${INCS} -o "${OUT}" "${SRC}"
         python3 "${ROOT}/tools/mwfix.py" "${OUT}"
         # INCLUDE_ASM markers (include/include_asm.h): split the unit's .text
         if grep -q '^[[:space:]]*INCLUDE_ASM(' "${SRC}"; then
@@ -100,7 +103,7 @@ S="${OUT%.o}.s"
 # source's directory with its bare name.
 SRC_DIR="$(cd "$(dirname "${SRC}")" && pwd)"
 ( cd "${SRC_DIR}" && "${ROOT}/tools/period_env.sh" ${GCC} \
-    -S -O2 -mips3 -EL -nostdinc ${FLAGS} ${INCS} -o "${ROOT}/${S}" "$(basename "${SRC}")" )
+    -S -O2 -mips3 -EL -nostdinc ${FLAGS} ${CDEFS:-} ${INCS} -o "${ROOT}/${S}" "$(basename "${SRC}")" )
 # The newlib libraries were assembled by an older gas, which never put a
 # macro (`move`, `ld`, `sd`, ...) in a delay slot; tools/oldmove.py stops ours
 # from doing so.

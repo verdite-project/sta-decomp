@@ -240,7 +240,11 @@ s32 Menu_CalcStatBar_0_001866B0__as_Menu_DrawStatRing_0_00186440(s32, s32, s32, 
 G* MenuLayout_GetSub_1_00189020__as_MenuProc_DrawStatValue_0_00186990(s32);
 
 /* text_00182C10 */
+#ifdef NONMATCHING
+/* best-effort C: ui_draw_elem.c */
+#else
 INCLUDE_ASM(Ui_DrawElem_1_00182C10);
+#endif
 
 /* Ui_DrawGauge_0_00182EF0 */
 
@@ -714,7 +718,11 @@ void Menu_DrawRingA_0_00184040(s32 a0, f32 ang) {
 }
 
 /* text_00184280 */
+#ifdef NONMATCHING
+/* best-effort C: menu_proc_draw_item_stats.c */
+#else
 INCLUDE_ASM(MenuProc_DrawItemStats_0_00184280);
+#endif
 
 /* Item_GetDurability_0_001848A0 */
 #define D_001FCB08 D_001FCB08__as_Item_GetDurability_0_001848A0
@@ -1127,7 +1135,11 @@ void Menu_DrawRingE_0_00185B40(s32 a0, f32 f) {
 #undef D_001FCB30
 
 /* text_00185D70 */
+#ifdef NONMATCHING
+/* best-effort C: menu_proc_draw_weight.c */
+#else
 INCLUDE_ASM(MenuProc_DrawWeight_0_00185D70);
+#endif
 
 /* rodata_001FCB08 */
 /* rodata_001FCB08: the game's data at 0x001FCB08..., one object per label. */

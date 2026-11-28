@@ -1,7 +1,13 @@
 # Near-misses
 
 Best attempts at functions that don't match yet. Each compiles; what still differs is noted below.
-Check one with `tools/match.py diff wip/func_X.c`. (These notes come from KiskarFisk's
+Check one with `tools/match.py diff wip/func_X.c`.
+Most of these also build in the NONMATCHING build (the default, see the top README):
+a copy of each one that was checked to do what the retail code does is in `src/game/`
+under `#ifdef NONMATCHING`. Not there: Pad_UpdateAll, Mc_StepWriteChecked and Weather_Draw
+(they still do different work from retail). The inline-assembly matches that are plain
+vector math have FPU versions there; the VU0 register helpers, the interrupt handlers and
+the DMA waits (Dma_SprClear/Dma_SprInit, so also Dma_SprCopy) stay asm in both builds. (These notes come from KiskarFisk's
 shadow-tower-abyss; `tools/order_search.py` there can help with
 register and scheduling differences.
 

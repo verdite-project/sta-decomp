@@ -21,7 +21,11 @@ void DbChar_GetListName_1_00196C50(void);
 void DbCharProc_Pos_0_00196CB0(void);
 
 /* text_00196330 */
+#ifdef NONMATCHING
+/* best-effort C: db_char_proc_draw_info.c */
+#else
 INCLUDE_ASM(DbCharProc_DrawInfo_0_00196330);
+#endif
 
 /* DbChar_UpdateWrap_0_00196930 */
 /* DbChar_UpdateWrap_0_00196930 */

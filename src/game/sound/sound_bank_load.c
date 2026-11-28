@@ -178,7 +178,11 @@ s32 Snd_Init_2_0012DF90(void) {
 }
 
 /* text */
+#ifdef NONMATCHING
+/* best-effort C: snd_load_bank.c */
+#else
 INCLUDE_ASM(Snd_LoadBank_1_0012E3C0);
+#endif
 
 /* SndBank_RegisterSet_0_0012E640 */
 extern M2C_UNK D_0022F040__as_SndBank_RegisterSet_0_0012E640[];

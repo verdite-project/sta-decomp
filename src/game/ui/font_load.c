@@ -17,7 +17,11 @@ s32 Tex_HashName_2_00177F80(void *);
 s32 Tex_Find_1_00177AF0(s32, s32);
 
 /* text_00188010 */
+#ifdef NONMATCHING
+/* best-effort C: text_render.c */
+#else
 INCLUDE_ASM(Text_Render_2_00188010);
+#endif
 
 /* Font_Load_3_00188830 */
 void Font_Load_3_00188830(s32 a0) {

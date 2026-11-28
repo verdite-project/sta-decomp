@@ -2,7 +2,7 @@
  * MWCC reproduces the target shape (byte0 + &lit[1..3] hoisted, 3rd FOURCC rebuilt per outer iteration),
  * but batch.py discards .data/.sdata so it cannot link literals, and my build puts them in sdata (gp) while
  * the target uses lui. extern s8 D_001FAB60[] arrays link but fully hoist all three (130/160 differ).
- * Remaining known diff: final 0x14-byte struct copy is lq/sq here vs 5x lwc1/swc1 in target. Real chars unknown. */
+ * Remaining known diff: final 0x14-byte struct copy is lq/sq here vs 5x lwc1/swc1 in target. The chars are "STAM", "STMI", "SEEa" (retail D_001FAB60/68/70). */
 #include "m2c.h"
 typedef struct Ch { s32 id; s32 size; u32 lo:8; u32 off:24; u16 xC; u16 n; } Ch;
 typedef struct { s32 x0; s32 x4; u8 pad8[4]; s32 xC; } D;
@@ -29,14 +29,14 @@ void Snd_LoadBank_1_0012E3C0(Arg *a0) {
 
     if (a0 == NULL) return;
     h = *(*a0->x4)->x10;
-    if (h->id != FCC("SXRI")) return;
+    if (h->id != FCC("STAM")) return;
     e = (Ch *)((s8 *)h + h->off);
     for (i = 0; i < h->n; i++) {
-        if (e->id == FCC("ABCD")) {
+        if (e->id == FCC("STMI")) {
             c = (Ch *)((s8 *)e + e->off);
             for (j = 0; j < e->n; j++) {
                 d = (D *)((s8 *)c + 0x10);
-                if (c->id == FCC("EFGH")) {
+                if (c->id == FCC("SEEa")) {
                     if (d->x4 != 0) {
                         v = (u8 *)d + 0x10 + ((d->xC + 15) & ~15);
                         p.a = 1;

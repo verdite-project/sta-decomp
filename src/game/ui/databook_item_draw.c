@@ -133,7 +133,11 @@ f32 d, a, t, dx, dy;
 }
 
 /* text_001973F0 */
+#ifdef NONMATCHING
+/* best-effort C: db_item_proc_draw_info.c */
+#else
 INCLUDE_ASM(DbItemProc_DrawInfo_0_001973F0);
+#endif
 
 /* DbItem_Open_0_001979C0 */
 #define DbItem_Update_0_00197B80 DbItem_Update_0_00197B80__as_DbItem_Open_0_001979C0

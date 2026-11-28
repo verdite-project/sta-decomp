@@ -623,7 +623,11 @@ found:
 #undef Vram_AllocBlock_1_00176FB0
 
 /* text_00176FB0 */
+#ifdef NONMATCHING
+/* best-effort C: vram_alloc_block.c */
+#else
 INCLUDE_ASM(Vram_AllocBlock_1_00176FB0);
+#endif
 
 /* Vram_FreeBlock_0_00177380 */
 /* Vram_FreeBlock_0_00177380 */
@@ -706,4 +710,8 @@ s16 Tex_Release_1_00177570(E30 *p) {
 #undef D_004830D0
 
 /* text_001777C0 */
+#ifdef NONMATCHING
+/* best-effort C: tex_resident.c */
+#else
 INCLUDE_ASM(Tex_Resident_0_001777C0);
+#endif
