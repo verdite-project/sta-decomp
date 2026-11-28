@@ -80,7 +80,6 @@ register and scheduling differences.
 | Actor_CollideCapsules_0_00137870 | far; orig spills outer counter i and count na, keeps inner k in s3 |
 | Mdl_ClipFrustum_0_0016BD00 | far; right size, float temp allocation off throughout |
 | MenuProc_DrawWeight_0_00185D70 | 2 words; temp reg of the 24-byte `buf = gMenuProcDrawWeightData_001F26B0` lq/sq copy (a2 vs a0) |
-| FxProc_ChaseEnemy_0_00148D00 | angle-wrap `PI + a` sum shared (orig recomputes), bitfield `++` reuses reg |
 | Map_FindChunk_0_001B6190 | uses string literals "STMI"/"STEM"/"STOI" (>8 bytes padded); batch.py can't link literals |
 | DbCharProc_DrawInfo_0_00196330 | 3 words; `Item_GetTable_1_001AFC90()[a3]` index temp a0 vs a2 (same as ItemMenuProc_DrawInfo_0_0019CEF0) |
 | EnemyMgr_Update_0_001A4990 | ~50 instrs; 11-entry loops start with `addu sN,v1,zero` + pad nop |
@@ -138,7 +137,6 @@ register and scheduling differences.
 | ShopProc_DrawItemStats_0_001DE2D0 | round 3 near-miss: 6 words: lw a2 (Col stack arg) vs lwc1 f12 order before Text_Draw_2_001875C0, 3 sites |
 | Se_TransferBank_0_001DB020 | round 3 near-miss: 5 words: register swap in case 0's gSeBss_004BAA28 update |
 | Mc_StepReadChecked_3_001D4A78 | round 3 near-miss: ee-gcc, ~24 lines after alignment: case 1 fail path, case 14 scheduling |
-| Pad_UpdateAll_3_001D7350 | round 3 near-miss: ee-gcc, 23 words short: retail keeps empty switch cases [2,3] and 0x100 in the tree |
 | ShopProc_DrawItemInfo_0_001DDA20 | round 3 near-miss: 3 words: 1 handwritten addi at the switch range check (asm-only), 2 lwc1/lw order |
 | Se_UpdateStatus_0_001D9FC0 | round 3 near-miss: 15 words: temp register numbers in the 8x32 loop |
 | Gs_UploadTim_1_001E54E8 | round 3 near-miss: ee-gcc, 22 words: saved-register choice for k/w/h/h2 |

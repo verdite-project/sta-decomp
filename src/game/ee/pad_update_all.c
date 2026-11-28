@@ -1,9 +1,3 @@
-/* Best-effort C for the NONMATCHING build; the matching attempt is
- * wip/Pad_UpdateAll_3_001D7350.c. */
-#include "include_asm.h"
-
-#ifdef NONMATCHING
-/* round 3 near-miss: ee-gcc, 23 words short: retail keeps empty switch cases [2,3] and 0x100 in the tree */
 #include "common.h"
 typedef struct {
     char p0[0x102];
@@ -50,8 +44,6 @@ void Pad_UpdateAll_3_001D7350(void) {
     s32 r;
     s32 i;
     u16 old;
-    u8 x;
-    u8 t;
 
     for (port = 0; port < 2; port++) {
         for (slot = 0; slot < 4; slot++) {
@@ -69,18 +61,16 @@ void Pad_UpdateAll_3_001D7350(void) {
                 e->flags = 0;
                 if (ext > 0) id = ext;
                 e->x181 = 0;
-                switch (id) {
-                case 2:
-                case 3:
-                    break;
-                case 4:
-                    e->phase = 0x28;
-                    break;
-                case 7:
+                /* IDs 2, 3 and 0x100 leave the phase unchanged. */
+                if (id < 7) {
+                    if (id >= 5) continue;
+                    if (id < 2) continue;
+                    if (id >= 4) e->phase = 0x28;
+                } else {
+                    if (id == 0x100) continue;
+                    if (id > 0x100) continue;
+                    if (id != 7) continue;
                     e->phase = 0x46;
-                    break;
-                case 0x100:
-                    break;
                 }
                 break;
             case 0x28:
@@ -88,10 +78,9 @@ void Pad_UpdateAll_3_001D7350(void) {
                 if (e->phase != 0x28 || scePadInfoMode(port, slot, 4, -1) != 0) e->flags |= 1;
                 if ((e->actNum = scePadInfoAct(port, slot, -1, 0)) != 0) e->flags |= 2;
                 if (scePadInfoPressMode(port, slot) == 1) e->flags |= 4;
-                x = e->x17F;
-                if ((e->flags & 1) && (u8)(x - 1) < 2) {
+                if ((e->flags & 1) && (e->x17F == 1 || e->x17F == 2)) {
                     e->phase = 0x6E;
-                } else if (x == 0) {
+                } else if (e->x17F == 0) {
                     e->phase = 0x64;
                 } else if (e->phase == 0x28) {
                     e->phase = 0xFD;
@@ -152,49 +141,62 @@ void Pad_UpdateAll_3_001D7350(void) {
             case 0xFF:
                 if (e->x17F == 2) e->x17F = 0xFF;
                 if (e->x17F < 2) {
-                    e->x17E = -1;
                     e->phase = 0x82;
+                    e->x17E = -1;
                     break;
                 }
                 e->x17E = 2;
-                goto common;
+                if (e->x181 || !(e->flags & 2)) goto read_pad;
+                e->x17B = e->phase;
+                e->phase = 0xC8;
+                break;
             case 0xFE:
                 if (e->x17F == 1) e->x17F = 0xFF;
                 if (e->x17F == 0) {
-                    e->phase = 0;
                     e->x17E = -1;
-                } else {
-                    if (e->x17F == 2) {
-                        if (e->flags & 4) {
-                            e->phase = 0x78;
-                            e->x17E = -1;
-                            break;
-                        }
-                    }
-                    e->x17E = 1;
-                    if (e->x181 == 0 && (e->flags & 2)) {
-                        e->x17B = e->phase;
-                        e->phase = 0xC8;
-                    } else {
-                        goto tail;
+                    e->phase = 0;
+                    break;
+                }
+                if (e->x17F == 2) {
+                    if (e->flags & 4) {
+                        e->phase = 0x78;
+                        e->x17E = -1;
+                        break;
                     }
                 }
+                e->x17E = 1;
+                if (e->x181 == 0 && (e->flags & 2)) {
+                    e->x17B = e->phase;
+                    e->phase = 0xC8;
+                } else {
+                    goto read_pad;
+                }
                 break;
-            case 0xFD:
-                if (e->x17F == 0) e->x17F = 0xFF;
+            case 0xFD: {
+                /* The signed byte/word copy keeps the request in v1 while
+                 * ee-gcc schedules the subtraction in the branch delay slot. */
+                s8 requestedMode = e->x17F;
+                s32 mode = requestedMode;
+
+                if (e->x17F == 0) {
+                    e->x17F = 0xFF;
+                } else {
+                    requestedMode = mode;
+                }
                 if ((u8)(e->x17F - 1) < 2) {
-                    e->phase = 0;
                     e->x17E = -1;
+                    e->phase = 0;
                     break;
                 }
                 e->x17E = 0;
-            common:
                 if (e->x181 == 0 && (e->flags & 2)) {
                     e->x17B = e->phase;
                     e->phase = 0xC8;
                     break;
                 }
-            tail:
+                goto read_pad;
+            }
+            read_pad:
                 old = e->btn;
                 r = Pad_Read_4_001D7110(e, port, slot);
                 if (r != 0) {
@@ -208,6 +210,3 @@ void Pad_UpdateAll_3_001D7350(void) {
         }
     }
 }
-#else
-INCLUDE_ASM(Pad_UpdateAll_3_001D7350);
-#endif

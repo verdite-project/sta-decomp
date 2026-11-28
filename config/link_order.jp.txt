@@ -267,7 +267,6 @@ src/game/entity/projectile_target.c
 src/game/data/fx_proc_data.c
 src/game/effect/fx_proc_random.c
 src/game/effect/fx_proc_chase_enemy.c
-asm/text_00148D00.s
 src/game/effect/fx_proc.c
 src/game/core/object.c
 src/game/core/task_run.c
@@ -673,7 +672,6 @@ src/game/ee/pad_step_repeat.c
 src/game/ee/pad_init.c
 src/game/ee/pad_port_open.c
 src/game/ee/pad_update_all.c
-asm/text_001D7350.s
 src/game/ee/pad_get_buttons.c
 src/game/ee/pad_get_mode.c
 src/game/ee/pad_get_trigger.c

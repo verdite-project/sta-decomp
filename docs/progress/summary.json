@@ -3,17 +3,17 @@
   {
    "id": "game",
    "measures": {
-    "fuzzy_match_percent": 90.4839,
-    "matched_code": 722156,
-    "matched_code_percent": 90.4839,
+    "fuzzy_match_percent": 90.9476,
+    "matched_code": 725856,
+    "matched_code_percent": 90.9476,
     "matched_data": 2895914,
     "matched_data_percent": 99.9984,
-    "matched_functions": 2119,
-    "matched_functions_percent": 95.2788,
+    "matched_functions": 2121,
+    "matched_functions_percent": 95.3687,
     "total_code": 798104,
     "total_data": 2895959,
     "total_functions": 2224,
-    "total_units": 635
+    "total_units": 633
    },
    "name": "Game"
   },
@@ -47,17 +47,17 @@
   "complete_data": 896,
   "complete_data_percent": 0.0304,
   "complete_units": 15,
-  "fuzzy_match_percent": 92.0962,
-  "matched_code": 884956,
-  "matched_code_percent": 92.0962,
+  "fuzzy_match_percent": 92.4813,
+  "matched_code": 888656,
+  "matched_code_percent": 92.4813,
   "matched_data": 2949052,
   "matched_data_percent": 99.9985,
-  "matched_functions": 2986,
-  "matched_functions_percent": 96.603,
+  "matched_functions": 2988,
+  "matched_functions_percent": 96.6677,
   "total_code": 960904,
   "total_data": 2949097,
   "total_functions": 3091,
-  "total_units": 824
+  "total_units": 822
  },
  "units": [
   {
@@ -3206,27 +3206,15 @@
   },
   {
    "category": "game",
-   "code_matched": 0,
-   "code_total": 0,
-   "complete": false,
-   "data_matched": 0,
-   "data_total": 0,
-   "functions_matched": 0,
-   "functions_total": 0,
-   "fuzzy": 100.0,
-   "name": "game/effect/fx_proc_chase_enemy"
-  },
-  {
-   "category": "game",
-   "code_matched": 0,
+   "code_matched": 1752,
    "code_total": 1752,
    "complete": false,
    "data_matched": 0,
    "data_total": 0,
-   "functions_matched": 0,
+   "functions_matched": 1,
    "functions_total": 1,
-   "fuzzy": 0.0,
-   "name": "text_00148D00"
+   "fuzzy": 100.0,
+   "name": "game/effect/fx_proc_chase_enemy"
   },
   {
    "category": "game",
@@ -8078,27 +8066,15 @@
   },
   {
    "category": "game",
-   "code_matched": 0,
-   "code_total": 0,
-   "complete": false,
-   "data_matched": 0,
-   "data_total": 0,
-   "functions_matched": 0,
-   "functions_total": 0,
-   "fuzzy": 100.0,
-   "name": "game/ee/pad_update_all"
-  },
-  {
-   "category": "game",
-   "code_matched": 0,
+   "code_matched": 1948,
    "code_total": 1948,
    "complete": false,
    "data_matched": 0,
    "data_total": 0,
-   "functions_matched": 0,
+   "functions_matched": 1,
    "functions_total": 1,
-   "fuzzy": 0.0,
-   "name": "text_001D7350"
+   "fuzzy": 100.0,
+   "name": "game/ee/pad_update_all"
   },
   {
    "category": "game",
