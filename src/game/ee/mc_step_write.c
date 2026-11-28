@@ -2,7 +2,7 @@
 #include "game/data.h"
 #include "game/ee.h"
 typedef struct { u8 pad[0x10]; u32 fsize; } Tbl;
-extern Tbl D_004B68C0[];
+extern Tbl gMcDirBuf_004B68C0[];
 extern u32 D_004B639C[];
 extern s32 D_004B63A0[];
 s32 Mc_StepGetInfo_3_001D3BF0(s32, s32, s32 *, s32 *, s32 *, s32);
@@ -47,7 +47,7 @@ s32 Mc_StepWrite_4_001D5280(void) {
         gMcState_004B63B8.step++;
         break;
     case 3:
-        if (sceMcGetDir(i, j, gMcState_004B63B8.name, 0, 1, D_004B68C0) != 0) {
+        if (sceMcGetDir(i, j, gMcState_004B63B8.name, 0, 1, gMcDirBuf_004B68C0) != 0) {
             if (gMcState_004B63B8.retry == 2) {
                 gMcState_004B63B8.cmd = 0;
                 gMcState_004B63B8.err = 100;
@@ -75,14 +75,14 @@ s32 Mc_StepWrite_4_001D5280(void) {
         gMcState_004B63B8.step++;
         break;
     case 5:
-        n = ((D_004B68C0[0].fsize + 0x3FF) >> 10) + gMcState_004B63B8.free[i * 4 + j];
-        if (D_004B68C0[0].fsize == 0 && n < 3) {
+        n = ((gMcDirBuf_004B68C0[0].fsize + 0x3FF) >> 10) + gMcState_004B63B8.free[i * 4 + j];
+        if (gMcDirBuf_004B68C0[0].fsize == 0 && n < 3) {
             gMcState_004B63B8.cmd = 0;
             gMcState_004B63B8.err = 0x1F;
             return -6;
         }
         k = 2;
-        if (D_004B68C0[0].fsize != 0) k = 0;
+        if (gMcDirBuf_004B68C0[0].fsize != 0) k = 0;
         if ((u32)(n - k) < (gMcState_004B63B8.size + 0x3FF) >> 10) {
             gMcState_004B63B8.cmd = 0;
             gMcState_004B63B8.err = 0x3D;

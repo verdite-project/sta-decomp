@@ -18,7 +18,7 @@ extern s32 D_00201E54;
 static s32 D_00201E54 = -1;
 #endif
 extern G D_00222A54[];
-extern s32 D_00270F40[];
+extern s32 gLoadBuf_00270F40[];
 extern E_ImageLoader_Init_0_001E1770 D_004BB110__as_ImageLoader_Init_0_001E1770[16];
 extern char D_004BB050__as_ImageLoader_Init_0_001E1770[];
 extern const s8 D_001FE890[];
@@ -68,7 +68,7 @@ void MapSe_StreamUpdate_0_001E1250(void) {
                 e->x8 = File_GetSectorOrSize_0_0015A300(h);
                 File_Close_2_0015AB80(h);
             }
-            e->h = Task_SetPriorityWrap_0_0014DB00(e->name, 0xFE, D_00270F40);
+            e->h = Task_SetPriorityWrap_0_0014DB00(e->name, 0xFE, gLoadBuf_00270F40);
             e->x10 = Pool_Alloc_3_001288C0(D_002023B0, e->x8);
             Task_FlushWrap_0_0014DAC0(e->h, 0);
             e->xC = 0;
@@ -81,7 +81,7 @@ void MapSe_StreamUpdate_0_001E1250(void) {
         case 5:
             n = e->x8 - e->xC;
             n = (n > 0x80000) ? 0x80000 : n;
-            memcpy(*e->x10 + e->xC, D_00270F40, n);
+            memcpy(*e->x10 + e->xC, gLoadBuf_00270F40, n);
             e->xC += n;
             Task_RemoveWrap_0_0014DAE0(e->h);
             break;

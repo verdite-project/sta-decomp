@@ -16,7 +16,7 @@ extern f32 D_002F1AE4[];
 extern f32 D_002F1AE8[];
 extern f32 D_002F1AEC[];
 extern f32 D_002F2070[];
-extern W D_002F19B0;
+extern W gWeatherState_002F19B0;
 extern void GsPkt_BeginAD_3_001545D0(void);
 extern void GsPkt_SetReg_3_001543E0(s32, u64);
 extern void GsPkt_EndAD_3_00154420(void);
@@ -118,8 +118,8 @@ void Weather_Draw_0_00157630(void) {
             if (ii < e) do {
                 l = j;
                 if (jj < e2) do {
-                    Pt *a = &D_002F19B0.pos[0][k][l];
-                    Pt *b = &D_002F19B0.pos[1][k][l];
+                    Pt *a = &gWeatherState_002F19B0.pos[0][k][l];
+                    Pt *b = &gWeatherState_002F19B0.pos[1][k][l];
                     s16 ay = a->y;
                     s16 by = b->y;
                     s16 ax = a->x;

@@ -5,15 +5,15 @@ typedef struct {
     u8 p183[0x3D];
 } PadBuf;
 typedef struct { PadBuf buf[8]; u8 open[8]; } PadState;
-extern PadState D_004B6900;
+extern PadState gPadState_004B6900;
 s32 scePadInit(s32 mode);
 
 s32 Pad_Init_3_001D7290(s32 mode) {
     PadBuf *p;
     s32 i;
-    D_004B6900.open[0] = 0;
-    D_004B6900.open[1] = 0;
-    p = D_004B6900.buf;
+    gPadState_004B6900.open[0] = 0;
+    gPadState_004B6900.open[1] = 0;
+    p = gPadState_004B6900.buf;
     for (i = 0; i < 8; i++) {
         p->x120 = 0;
         p->x122 = 0;

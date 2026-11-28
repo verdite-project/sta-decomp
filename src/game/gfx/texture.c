@@ -71,7 +71,7 @@ extern s32 D_004830E8[];
 extern s32 D_004830EC[];
 extern volatile s16 D_004830DC[];
 extern s16 D_004830DE[];
-extern Blk_Tex_Upload_0_00175CD0 D_0047F0C0[];
+extern Blk_Tex_Upload_0_00175CD0 gVramBlocks_0047F0C0[];
 #ifndef NONMATCHING
 extern u8 D_00438A30[];
 #else
@@ -125,13 +125,13 @@ extern s16 D_004830D6[];
 extern s16 D_004830D8[];
 extern B_Tex_FlushLayer_0_00176440 D_00438A70__as_Tex_FlushLayer_0_00176440[];
 extern TexInfo D_00438A10__as_Tex_CalcVramSize_0_00176710;
-extern Blk_Vram_Reset_0_001769C0 D_0047F0C0__as_Vram_Reset_0_001769C0[];
+extern Blk_Vram_Reset_0_001769C0 gVramBlocks_0047F0C0__as_Vram_Reset_0_001769C0[];
 extern s16 D_004830DC__as_Vram_Reset_0_001769C0[];
 extern s64 D_00202010__as_Tex_BeginFrame_0_00176A60;
 extern s32 D_00438A30__as_Tex_BeginFrame_0_00176A60[];
 extern s32 D_00438A70__as_Tex_BeginFrame_0_00176A60[];
 extern s32 D_0043F080__as_Tex_BeginFrame_0_00176A60[];
-extern Blk_Vram_AllocForTex_0_00176BF0 D_0047F0C0__as_Vram_AllocForTex_0_00176BF0[];
+extern Blk_Vram_AllocForTex_0_00176BF0 gVramBlocks_0047F0C0__as_Vram_AllocForTex_0_00176BF0[];
 extern s16 D_004830DC__as_Vram_AllocForTex_0_00176BF0[];
 extern s16 D_004830DA[];
 extern G D_004830C0;
@@ -209,31 +209,31 @@ void Tex_Upload_0_00175CD0(A *a0) {
             n = t->h22;
             if (n != D_004830DC) {
                 D_004830DE--;
-                if (n == D_0047F0C0[n].fnext) {
+                if (n == gVramBlocks_0047F0C0[n].fnext) {
                     D_004830DC = -1;
                 } else {
-                    D_0047F0C0[D_0047F0C0[n].fnext].fprev = D_0047F0C0[n].fprev;
-                    D_0047F0C0[D_0047F0C0[n].fprev].fnext = D_0047F0C0[n].fnext;
-                    if (D_004830DC == n) D_004830DC = D_0047F0C0[n].fnext;
+                    gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[n].fnext].fprev = gVramBlocks_0047F0C0[n].fprev;
+                    gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[n].fprev].fnext = gVramBlocks_0047F0C0[n].fnext;
+                    if (D_004830DC == n) D_004830DC = gVramBlocks_0047F0C0[n].fnext;
                 }
                 D_004830DE++;
                 f = D_004830DC;
                 if (f == -1) {
                     D_004830DC = n;
-                    D_0047F0C0[n].fnext = n;
-                    D_0047F0C0[n].fprev = n;
+                    gVramBlocks_0047F0C0[n].fnext = n;
+                    gVramBlocks_0047F0C0[n].fprev = n;
                 } else {
-                    D_0047F0C0[n].fnext = f;
-                    D_0047F0C0[n].fprev = D_0047F0C0[f].fprev;
-                    D_0047F0C0[D_0047F0C0[n].fnext].fprev = n;
-                    D_0047F0C0[D_0047F0C0[n].fprev].fnext = n;
+                    gVramBlocks_0047F0C0[n].fnext = f;
+                    gVramBlocks_0047F0C0[n].fprev = gVramBlocks_0047F0C0[f].fprev;
+                    gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[n].fnext].fprev = n;
+                    gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[n].fprev].fnext = n;
                     D_004830DC = n;
                 }
             }
         } else {
             v = Vram_AllocForTex_0_00176BF0(t, (u32)(t->h2A + t->h2E + 15) >> 4);
             t->h22 = v;
-            off = D_0047F0C0[v].off;
+            off = gVramBlocks_0047F0C0[v].off;
             base = t->x10->x0 + t->x24;
             m = (M *)(t->h20 * 0x50 + (t->x10->x0 + t->x24) + 0x10);
             d = t->x10->x4 - t->x10->x0;
@@ -465,7 +465,7 @@ void Tex_CalcVramSize_0_00176710(Tex0 t0, Tex1_Tex_CalcVramSize_0_00176710 t1) {
 #undef D_00438A10
 
 /* Vram_Reset_0_001769C0 */
-#define D_0047F0C0 D_0047F0C0__as_Vram_Reset_0_001769C0
+#define gVramBlocks_0047F0C0 gVramBlocks_0047F0C0__as_Vram_Reset_0_001769C0
 void Vram_Reset_0_001769C0(void) {
     s32 b;
     D_004830E8[0] = 0;
@@ -473,12 +473,12 @@ void Vram_Reset_0_001769C0(void) {
     b = D_004830DC[0];
     if (b != -1) {
         do {
-            D_0047F0C0[b].owner->x22 = -1;
+            gVramBlocks_0047F0C0[b].owner->x22 = -1;
             Vram_AllocBlock_1_00176FB0(b);
         } while ((b = D_004830DC[0]) != -1);
     }
 }
-#undef D_0047F0C0
+#undef gVramBlocks_0047F0C0
 
 /* Tex_UploadQueuedWrap_0_00176A40 */
 #define Tex_UploadQueued_1_00176350 Tex_UploadQueued_1_00176350__as_Tex_UploadQueuedWrap_0_00176A40
@@ -540,7 +540,7 @@ void Tex_BindFlush_1_00176BC0(s32 arg0) {
 }
 
 /* Vram_AllocForTex_0_00176BF0 */
-#define D_0047F0C0 D_0047F0C0__as_Vram_AllocForTex_0_00176BF0
+#define gVramBlocks_0047F0C0 gVramBlocks_0047F0C0__as_Vram_AllocForTex_0_00176BF0
 #define D_004830D0 D_004830D0[0]
 #define D_004830D2 D_004830D2[0]
 #define D_004830D4 D_004830D4[0]
@@ -564,71 +564,71 @@ u16 Vram_AllocForTex_0_00176BF0(Owner_Vram_AllocForTex_0_00176BF0 *arg0, u16 arg
     first = b;
     if (first != -1) {
         do {
-            if (!(D_0047F0C0[b].size < size)) goto found;
-            b = D_0047F0C0[b].fnext;
+            if (!(gVramBlocks_0047F0C0[b].size < size)) goto found;
+            b = gVramBlocks_0047F0C0[b].fnext;
         } while (b != first);
     }
     b = D_004830DC;
     if (b != -1) {
         do {
             s = b;
-            b = D_0047F0C0[b].fprev;
-            if ((D_0047F0C0[b].owner->type & 7) != 3) {
+            b = gVramBlocks_0047F0C0[b].fprev;
+            if ((gVramBlocks_0047F0C0[b].owner->type & 7) != 3) {
                 t = Vram_AllocBlock_1_00176FB0(b);
-                b = D_0047F0C0[s].fprev;
-                if (size < D_0047F0C0[t].size) {
+                b = gVramBlocks_0047F0C0[s].fprev;
+                if (size < gVramBlocks_0047F0C0[t].size) {
                     b = t;
                     goto found;
                 }
             }
             if (D_004830DC == -1) break;
-        } while (b != D_004830DC || (D_0047F0C0[b].owner->type & 7) != 3);
+        } while (b != D_004830DC || (gVramBlocks_0047F0C0[b].owner->type & 7) != 3);
     }
 found:
     n = D_004830D0;
     D_004830D2--;
-    if (n == D_0047F0C0[n].prev) {
+    if (n == gVramBlocks_0047F0C0[n].prev) {
         D_004830D0 = -1;
     } else {
-        D_0047F0C0[D_0047F0C0[n].prev].next = D_0047F0C0[n].next;
-        D_0047F0C0[D_0047F0C0[n].next].prev = D_0047F0C0[n].prev;
-        if (D_004830D0 == n) D_004830D0 = D_0047F0C0[n].prev;
+        gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[n].prev].next = gVramBlocks_0047F0C0[n].next;
+        gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[n].next].prev = gVramBlocks_0047F0C0[n].prev;
+        if (D_004830D0 == n) D_004830D0 = gVramBlocks_0047F0C0[n].prev;
     }
     D_004830D6++;
     h = D_004830D4;
     if (h == -1) {
         D_004830D4 = n;
-        D_0047F0C0[n].prev = n;
-        D_0047F0C0[n].next = n;
+        gVramBlocks_0047F0C0[n].prev = n;
+        gVramBlocks_0047F0C0[n].next = n;
     } else {
-        D_0047F0C0[n].prev = b;
-        D_0047F0C0[n].next = D_0047F0C0[b].next;
-        D_0047F0C0[D_0047F0C0[n].prev].next = n;
-        D_0047F0C0[D_0047F0C0[n].next].prev = n;
+        gVramBlocks_0047F0C0[n].prev = b;
+        gVramBlocks_0047F0C0[n].next = gVramBlocks_0047F0C0[b].next;
+        gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[n].prev].next = n;
+        gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[n].next].prev = n;
         if (h == b) D_004830D4 = n;
     }
-    D_0047F0C0[n].off = D_0047F0C0[b].off;
-    D_0047F0C0[n].size = size;
-    D_0047F0C0[b].off += size;
-    D_0047F0C0[b].size -= size;
+    gVramBlocks_0047F0C0[n].off = gVramBlocks_0047F0C0[b].off;
+    gVramBlocks_0047F0C0[n].size = size;
+    gVramBlocks_0047F0C0[b].off += size;
+    gVramBlocks_0047F0C0[b].size -= size;
     D_004830DE++;
     h = D_004830DC;
     if (h == -1) {
         D_004830DC = n;
-        D_0047F0C0[n].fnext = n;
-        D_0047F0C0[n].fprev = n;
+        gVramBlocks_0047F0C0[n].fnext = n;
+        gVramBlocks_0047F0C0[n].fprev = n;
     } else {
-        D_0047F0C0[n].fnext = h;
-        D_0047F0C0[n].fprev = D_0047F0C0[h].fprev;
-        D_0047F0C0[D_0047F0C0[n].fnext].fprev = n;
-        D_0047F0C0[D_0047F0C0[n].fprev].fnext = n;
+        gVramBlocks_0047F0C0[n].fnext = h;
+        gVramBlocks_0047F0C0[n].fprev = gVramBlocks_0047F0C0[h].fprev;
+        gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[n].fnext].fprev = n;
+        gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[n].fprev].fnext = n;
         D_004830DC = n;
     }
-    D_0047F0C0[n].owner = arg0;
+    gVramBlocks_0047F0C0[n].owner = arg0;
     return n;
 }
 #undef Vram_AllocBlock_1_00176FB0
-#undef D_0047F0C0
+#undef gVramBlocks_0047F0C0
 #undef D_004830DC
 #undef D_004830D0
 #undef D_004830D2
@@ -642,7 +642,7 @@ found:
 #undef D_00438A70
 #undef Tex_CalcVramSize_0_00176710
 #undef D_00438A10
-#undef D_0047F0C0
+#undef gVramBlocks_0047F0C0
 #undef Tex_UploadQueued_1_00176350
 #undef D_00202010
 #undef D_00438A30
@@ -666,44 +666,44 @@ INCLUDE_ASM(Vram_AllocBlock_1_00176FB0);
 
 /* Vram_FreeBlock_0_00177380 */
 /* Vram_FreeBlock_0_00177380 */
-#define D_0047F0C0 D_0047F0C0__as_Vram_FreeBlock_0_00177380
-extern L D_0047F0C0__as_Vram_FreeBlock_0_00177380[];
+#define gVramBlocks_0047F0C0 gVramBlocks_0047F0C0__as_Vram_FreeBlock_0_00177380
+extern L gVramBlocks_0047F0C0__as_Vram_FreeBlock_0_00177380[];
 #define D_004830D0 D_004830D0__as_Vram_FreeBlock_0_00177380
 extern s16 D_004830D0__as_Vram_FreeBlock_0_00177380[];
 
 void Vram_FreeBlock_0_00177380(s16 i) {
 
-    if (D_0047F0C0[i].used == 0) {
+    if (gVramBlocks_0047F0C0[i].used == 0) {
         D_004830DA[0]--;
-        if (i == D_0047F0C0[i].n4) {
+        if (i == gVramBlocks_0047F0C0[i].n4) {
             D_004830D8[0] = -1;
         } else {
-            D_0047F0C0[D_0047F0C0[i].n4].p6 = D_0047F0C0[i].p6;
-            D_0047F0C0[D_0047F0C0[i].p6].n4 = D_0047F0C0[i].n4;
-            if (D_004830D8[0] == i) D_004830D8[0] = D_0047F0C0[i].n4;
+            gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[i].n4].p6 = gVramBlocks_0047F0C0[i].p6;
+            gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[i].p6].n4 = gVramBlocks_0047F0C0[i].n4;
+            if (D_004830D8[0] == i) D_004830D8[0] = gVramBlocks_0047F0C0[i].n4;
         }
     }
     D_004830D6[0]--;
-    if (i == D_0047F0C0[i].n0) {
+    if (i == gVramBlocks_0047F0C0[i].n0) {
         D_004830D4[0] = -1;
     } else {
-        D_0047F0C0[D_0047F0C0[i].n0].p2 = D_0047F0C0[i].p2;
-        D_0047F0C0[D_0047F0C0[i].p2].n0 = D_0047F0C0[i].n0;
-        if (D_004830D4[0] == i) D_004830D4[0] = D_0047F0C0[i].n0;
+        gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[i].n0].p2 = gVramBlocks_0047F0C0[i].p2;
+        gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[i].p2].n0 = gVramBlocks_0047F0C0[i].n0;
+        if (D_004830D4[0] == i) D_004830D4[0] = gVramBlocks_0047F0C0[i].n0;
     }
     D_004830D2[0]++;
     if (D_004830D0[0] == -1) {
         D_004830D0[0] = i;
-        D_0047F0C0[i].n0 = i;
-        D_0047F0C0[i].p2 = i;
+        gVramBlocks_0047F0C0[i].n0 = i;
+        gVramBlocks_0047F0C0[i].p2 = i;
     } else {
-        D_0047F0C0[i].n0 = D_004830D0[0];
-        D_0047F0C0[i].p2 = D_0047F0C0[D_004830D0[0]].p2;
-        D_0047F0C0[D_0047F0C0[i].n0].p2 = i;
-        D_0047F0C0[D_0047F0C0[i].p2].n0 = i;
+        gVramBlocks_0047F0C0[i].n0 = D_004830D0[0];
+        gVramBlocks_0047F0C0[i].p2 = gVramBlocks_0047F0C0[D_004830D0[0]].p2;
+        gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[i].n0].p2 = i;
+        gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[i].p2].n0 = i;
         D_004830D0[0] = i;
     }
-    D_0047F0C0[i].used = 0;
+    gVramBlocks_0047F0C0[i].used = 0;
 }
 
 /* Tex_Release_1_00177570 */
@@ -741,7 +741,7 @@ s16 Tex_Release_1_00177570(E30 *p) {
     if (p->x22 != -1) Vram_AllocBlock_1_00176FB0(p->x22);
     return 0;
 }
-#undef D_0047F0C0
+#undef gVramBlocks_0047F0C0
 #undef D_004830D0
 
 /* text_001777C0 */

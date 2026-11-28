@@ -281,7 +281,7 @@ typedef struct {
     s32 x4A0;
 } Obj_EnemyData_Parse_0_001A7810;
 typedef struct { char pad[0x3C]; unsigned int : 4; unsigned int f : 1; } BF_3C_4_1;
-extern E D_004A43B0[];
+extern E gEnemyDataTbl_004A43B0[];
 extern E D_004A43B8[];
 extern s32 D_004A4878[];
 extern A_ActorList_Next_2_001A5460 **D_004A4570[];
@@ -447,9 +447,9 @@ void EnemyMgr_Init_0_001A5340(void) {
     }
     D_00201DA8 = -1;
     Task_Register_0_0014DB10(EnemyMgr_Update_0_001A4990);
-    memset(D_004A43B0, 0, 0x1B8);
+    memset(gEnemyDataTbl_004A43B0, 0, 0x1B8);
     for (i = 10; i >= 0; i--) {
-        D_004A43B0[i].v = -1;
+        gEnemyDataTbl_004A43B0[i].v = -1;
     }
     D_00201DA8 = -1;
 }

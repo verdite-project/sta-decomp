@@ -35,7 +35,7 @@ u8 D_004BB050[0xc0];
 u8 D_004BB010[0x40];
 u8 D_004BAC80[0x390]; /* also D_004BAC84 */
 u8 D_004BAC54[0x2c] __attribute__((aligned(4))); /* also D_004BAC58 */
-u8 D_004BAC50[0x4];
+u8 gGlowFxSlots_004BAC50[0x4];
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/task_callback.c */
 u8 D_004BAC4C[0x4]; /* also D_004BAC4D */
 #endif

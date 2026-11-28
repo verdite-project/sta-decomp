@@ -28,7 +28,7 @@ u8 D_004800C0[0x8];
 u8 D_004800B0[0x10];
 u8 D_0047F0C8[0xfe8] __attribute__((aligned(8))); /* also D_0047F0CA, D_0047F0CC */
 u8 D_0047F0C4[0x4]; /* also D_0047F0C6 */
-u8 D_0047F0C0[0x4]; /* also D_0047F0C2 */
+u8 gVramBlocks_0047F0C0[0x4]; /* also D_0047F0C2 */
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/texture_hash.c */
 u8 D_0047F080[0x40]; /* also D_0047F084 */
 #endif

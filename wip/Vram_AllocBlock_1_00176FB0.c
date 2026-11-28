@@ -14,7 +14,7 @@ typedef struct {
     u16 off, size;
     Owner *owner;
 } Blk;
-extern Blk D_0047F0C0[];
+extern Blk gVramBlocks_0047F0C0[];
 extern s16 D_004830D8[];
 extern s16 D_004830DA[];
 extern s16 D_004830DC[];
@@ -32,51 +32,51 @@ s16 Vram_AllocBlock_1_00176FB0(s32 x) {
 
     i = x;
     a0 = x;
-    o = D_0047F0C0[i].owner;
+    o = gVramBlocks_0047F0C0[i].owner;
     D_004830DE[0]--;
-    if (i == D_0047F0C0[i].fnext) {
+    if (i == gVramBlocks_0047F0C0[i].fnext) {
         D_004830DC[0] = -1;
     } else {
-        D_0047F0C0[D_0047F0C0[i].fnext].fprev = D_0047F0C0[i].fprev;
-        D_0047F0C0[D_0047F0C0[i].fprev].fnext = D_0047F0C0[i].fnext;
-        if (D_004830DC[0] == i) D_004830DC[0] = D_0047F0C0[i].fnext;
+        gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[i].fnext].fprev = gVramBlocks_0047F0C0[i].fprev;
+        gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[i].fprev].fnext = gVramBlocks_0047F0C0[i].fnext;
+        if (D_004830DC[0] == i) D_004830DC[0] = gVramBlocks_0047F0C0[i].fnext;
     }
-    n = D_0047F0C0[i].next;
-    on = D_0047F0C0[n].owner;
-    if ((on != NULL || n == 0) && (D_0047F0C0[D_0047F0C0[i].prev].owner != NULL || i == D_0047F0C0[i].prev)) {
+    n = gVramBlocks_0047F0C0[i].next;
+    on = gVramBlocks_0047F0C0[n].owner;
+    if ((on != NULL || n == 0) && (gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[i].prev].owner != NULL || i == gVramBlocks_0047F0C0[i].prev)) {
         D_004830DA[0]++;
         h = D_004830D8[0];
         if (h == -1) {
             D_004830D8[0] = a0;
-            D_0047F0C0[i].fnext = a0;
-            D_0047F0C0[i].fprev = a0;
+            gVramBlocks_0047F0C0[i].fnext = a0;
+            gVramBlocks_0047F0C0[i].fprev = a0;
         } else {
-            D_0047F0C0[i].fnext = h;
-            D_0047F0C0[i].fprev = D_0047F0C0[h].fprev;
-            D_0047F0C0[D_0047F0C0[i].fnext].fprev = a0;
-            D_0047F0C0[D_0047F0C0[i].fprev].fnext = a0;
+            gVramBlocks_0047F0C0[i].fnext = h;
+            gVramBlocks_0047F0C0[i].fprev = gVramBlocks_0047F0C0[h].fprev;
+            gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[i].fnext].fprev = a0;
+            gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[i].fprev].fnext = a0;
             D_004830D8[0] = a0;
         }
-        D_0047F0C0[i].owner = NULL;
+        gVramBlocks_0047F0C0[i].owner = NULL;
         i = a0;
-    } else if (on == NULL && n != 0 && D_0047F0C0[D_0047F0C0[i].prev].owner == NULL && i != D_0047F0C0[i].prev) {
-        p = D_0047F0C0[i].prev;
-        D_0047F0C0[p].off -= D_0047F0C0[i].size;
-        D_0047F0C0[D_0047F0C0[i].prev].size += D_0047F0C0[i].size;
-        D_0047F0C0[D_0047F0C0[i].prev].off -= D_0047F0C0[n].size;
-        D_0047F0C0[D_0047F0C0[i].prev].size += D_0047F0C0[n].size;
-        i = D_0047F0C0[i].prev;
+    } else if (on == NULL && n != 0 && gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[i].prev].owner == NULL && i != gVramBlocks_0047F0C0[i].prev) {
+        p = gVramBlocks_0047F0C0[i].prev;
+        gVramBlocks_0047F0C0[p].off -= gVramBlocks_0047F0C0[i].size;
+        gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[i].prev].size += gVramBlocks_0047F0C0[i].size;
+        gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[i].prev].off -= gVramBlocks_0047F0C0[n].size;
+        gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[i].prev].size += gVramBlocks_0047F0C0[n].size;
+        i = gVramBlocks_0047F0C0[i].prev;
         Vram_FreeBlock_0_00177380(n);
         Vram_FreeBlock_0_00177380(a0);
     } else if (on == NULL && n != 0) {
-        D_0047F0C0[n].size += D_0047F0C0[i].size;
-        i = D_0047F0C0[i].next;
+        gVramBlocks_0047F0C0[n].size += gVramBlocks_0047F0C0[i].size;
+        i = gVramBlocks_0047F0C0[i].next;
         Vram_FreeBlock_0_00177380(a0);
-    } else if (D_0047F0C0[D_0047F0C0[i].prev].owner == NULL && i != D_0047F0C0[i].prev) {
-        p = D_0047F0C0[i].prev;
-        D_0047F0C0[p].off -= D_0047F0C0[i].size;
-        D_0047F0C0[D_0047F0C0[i].prev].size += D_0047F0C0[i].size;
-        i = D_0047F0C0[i].prev;
+    } else if (gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[i].prev].owner == NULL && i != gVramBlocks_0047F0C0[i].prev) {
+        p = gVramBlocks_0047F0C0[i].prev;
+        gVramBlocks_0047F0C0[p].off -= gVramBlocks_0047F0C0[i].size;
+        gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[i].prev].size += gVramBlocks_0047F0C0[i].size;
+        i = gVramBlocks_0047F0C0[i].prev;
         Vram_FreeBlock_0_00177380(a0);
     }
     o->x22 = -1;

@@ -17,7 +17,7 @@ u8 D_004A43C0[0x4];
 u8 D_004A43BC[0x4];
 u8 D_004A43B8[0x4];
 u8 D_004A43B4[0x4];
-u8 D_004A43B0[0x4];
+u8 gEnemyDataTbl_004A43B0[0x4];
 u8 D_004A43AC[0x4];
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/title.c */
 u8 D_004A43A0[0xc]; /* also D_004A43A2 */

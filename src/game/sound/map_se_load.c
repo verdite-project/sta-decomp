@@ -5,7 +5,7 @@
 typedef struct { u8 pad[0x14]; s32 x14; u64 b0:1; u64 b1:1; u64 rest:62; } S22C4;
 extern s32 D_001FE8A0[];
 extern S22C4 *D_002022C4;
-extern s32 D_00270F40[];
+extern s32 gLoadBuf_00270F40[];
 #ifndef NONMATCHING
 extern s32 D_004BC2D0[];
 #else
@@ -96,7 +96,7 @@ void MapSe_LoadTask_1_001E19A0(void) {
             File_Close_2_0015AB80(h);
             *D_004BC2E4 = sz;
             *D_004BC2E8 = 0;
-            *D_004BC2E0 = Task_SetPriorityWrap_0_0014DB00(buf, 0x101, D_00270F40);
+            *D_004BC2E0 = Task_SetPriorityWrap_0_0014DB00(buf, 0x101, gLoadBuf_00270F40);
             if (*D_004BC2E0 == 0) {
                 if (*D_004BC2E0 != 0) {
                     Task_AddWrap_0_0014DAD0(*D_004BC2E0);
@@ -122,9 +122,9 @@ void MapSe_LoadTask_1_001E19A0(void) {
             off = q << 4;
             rem = n - off;
             FlushCache(0);
-            Dma_SprCopy_1_001789E0(*D_00222B54 + *D_004BC2E8, D_00270F40, q);
+            Dma_SprCopy_1_001789E0(*D_00222B54 + *D_004BC2E8, gLoadBuf_00270F40, q);
             if (rem > 0) {
-                memcpy(*D_00222B54 + off, (s32 *)((u8 *)D_00270F40 + off), rem);
+                memcpy(*D_00222B54 + off, (s32 *)((u8 *)gLoadBuf_00270F40 + off), rem);
             }
             *D_004BC2E8 += n;
             Task_RemoveWrap_0_0014DAE0(*D_004BC2E0);

@@ -40,7 +40,7 @@ typedef struct {
 typedef union { u128 q; f32 f[4]; } V_ScreenFx_ProjectPoint_0_00159160;
 extern Q D_001F2050;
 extern s32 D_002F1AE0[];
-extern W D_002F19B0;
+extern W gWeatherState_002F19B0;
 extern f32 D_002F2070[];
 extern u64 D_00201F78;
 extern V_ScreenFx_ProjectPoint_0_00159160 D_001F2040[];
@@ -99,7 +99,7 @@ extern s32 D_002F19CC[];
 extern s32 D_002F19C0[];
 extern s32 D_002F19D8[];
 extern s32 D_002F19DC[];
-extern W D_002F19B0__as_Weather_RespawnParticle_0_00157FE0;
+extern W gWeatherState_002F19B0__as_Weather_RespawnParticle_0_00157FE0;
 extern struct { unsigned char : 6; unsigned char f : 1; char pad[15]; } D_002F2078__as_ScreenFx_EnableWeather_0_00159500;
 extern s32 D_002F2070__as_ScreenFx_EnableWeather_0_00159500[];
 extern struct { unsigned char : 5; unsigned char f : 1; char pad[15]; } D_002F2078__as_ScreenFx_GetParamsA_0_00159590;
@@ -107,7 +107,7 @@ extern struct { unsigned char : 4; unsigned char f : 1; char pad[15]; } D_002F20
 extern struct { unsigned char : 2; unsigned char f : 1; char pad[15]; } D_002F2078__as_ScreenFx_SetEnabledB_0_001595F0;
 extern struct { unsigned char : 1; unsigned char f : 1; char pad[15]; } D_002F2078__as_ScreenFx_GetParamsC_0_00159620;
 extern struct { unsigned char f : 1; char pad[15]; } D_002F2078__as_ScreenFx_GetParamsD_0_00159650;
-extern s32 D_002F19B0__as_ScreenFx_DrawAll_2_00159680[];
+extern s32 gWeatherState_002F19B0__as_ScreenFx_DrawAll_2_00159680[];
 extern s8 D_002F19C0__as_ScreenFx_DrawAll_2_00159680[];
 extern s8 D_002F19CC__as_ScreenFx_DrawAll_2_00159680[];
 extern M2C_UNK D_002F1A60__as_ScreenFx_DrawAll_2_00159680[];
@@ -247,32 +247,32 @@ void Weather_Update_0_00157D50(f32 dt) {
             for (j = 1; j < 10; j++) {
                 ax = 0;
                 ay = 0;
-                ax += D_002F19B0.pos[l][i - 1][j].x;
-                ay += D_002F19B0.pos[l][i - 1][j].y;
-                ax += D_002F19B0.pos[l][i + 1][j].x;
-                ay += D_002F19B0.pos[l][i + 1][j].y;
-                ax += D_002F19B0.pos[l][i][j - 1].x;
-                ay += D_002F19B0.pos[l][i][j - 1].y;
-                ax += D_002F19B0.pos[l][i][j + 1].x;
-                ay += D_002F19B0.pos[l][i][j + 1].y;
-                ax -= (s16)(D_002F19B0.pos[l][i][j].x * 4);
-                ay -= (s16)(D_002F19B0.pos[l][i][j].y * 4);
-                D_002F19B0.vel[l][i][j].x += ax;
-                D_002F19B0.vel[l][i][j].y += ay;
+                ax += gWeatherState_002F19B0.pos[l][i - 1][j].x;
+                ay += gWeatherState_002F19B0.pos[l][i - 1][j].y;
+                ax += gWeatherState_002F19B0.pos[l][i + 1][j].x;
+                ay += gWeatherState_002F19B0.pos[l][i + 1][j].y;
+                ax += gWeatherState_002F19B0.pos[l][i][j - 1].x;
+                ay += gWeatherState_002F19B0.pos[l][i][j - 1].y;
+                ax += gWeatherState_002F19B0.pos[l][i][j + 1].x;
+                ay += gWeatherState_002F19B0.pos[l][i][j + 1].y;
+                ax -= (s16)(gWeatherState_002F19B0.pos[l][i][j].x * 4);
+                ay -= (s16)(gWeatherState_002F19B0.pos[l][i][j].y * 4);
+                gWeatherState_002F19B0.vel[l][i][j].x += ax;
+                gWeatherState_002F19B0.vel[l][i][j].y += ay;
             }
         }
         for (i = 1; i < 7; i++) {
             for (j = 1; j < 10; j++) {
-                D_002F19B0.pos[l][i][j].x += (s16)(0.005f * D_002F19B0.vel[l][i][j].x);
-                D_002F19B0.pos[l][i][j].y += (s16)(0.005f * D_002F19B0.vel[l][i][j].y);
+                gWeatherState_002F19B0.pos[l][i][j].x += (s16)(0.005f * gWeatherState_002F19B0.vel[l][i][j].x);
+                gWeatherState_002F19B0.pos[l][i][j].y += (s16)(0.005f * gWeatherState_002F19B0.vel[l][i][j].y);
             }
         }
     }
     D_002F2070[0] += dt / 100.0f;
     if (D_002F2070[0] > 1.0f) {
         D_002F2070[0] -= 1.0f;
-        memcpy(D_002F19B0.pos[0], D_002F19B0.pos[1], 0x160);
-        memcpy(D_002F19B0.vel[0], D_002F19B0.vel[1], 0x160);
+        memcpy(gWeatherState_002F19B0.pos[0], gWeatherState_002F19B0.pos[1], 0x160);
+        memcpy(gWeatherState_002F19B0.vel[0], gWeatherState_002F19B0.vel[1], 0x160);
         Weather_RespawnParticle_0_00157FE0(1);
     }
 }
@@ -285,14 +285,14 @@ void Weather_RespawnParticle_0_00157FE0(u8 a0) {
 
     for (i = 0; i < 8; i++) {
         for (j = 0; j < 11; j++) {
-            D_002F19B0.vel[a0][i][j].x = 0;
-            D_002F19B0.vel[a0][i][j].y = 0;
+            gWeatherState_002F19B0.vel[a0][i][j].x = 0;
+            gWeatherState_002F19B0.vel[a0][i][j].y = 0;
             if (i == 0 || i == 7 || j == 0 || j == 10) {
-                D_002F19B0.pos[a0][i][j].x = 0;
-                D_002F19B0.pos[a0][i][j].y = 0;
+                gWeatherState_002F19B0.pos[a0][i][j].x = 0;
+                gWeatherState_002F19B0.pos[a0][i][j].y = 0;
             } else {
-                D_002F19B0.pos[a0][i][j].x = (Rand_Next_3_0015ED20() & 0x3FF) - 0x200;
-                D_002F19B0.pos[a0][i][j].y = (Rand_Next_3_0015ED20() & 0x3FF) - 0x200;
+                gWeatherState_002F19B0.pos[a0][i][j].x = (Rand_Next_3_0015ED20() & 0x3FF) - 0x200;
+                gWeatherState_002F19B0.pos[a0][i][j].y = (Rand_Next_3_0015ED20() & 0x3FF) - 0x200;
             }
         }
     }
@@ -749,7 +749,7 @@ s32 *ScreenFx_GetParamsD_0_00159650(int v)
 #undef D_002F2078
 
 /* ScreenFx_DrawAll_2_00159680 */
-#define D_002F19B0 D_002F19B0__as_ScreenFx_DrawAll_2_00159680
+#define gWeatherState_002F19B0 gWeatherState_002F19B0__as_ScreenFx_DrawAll_2_00159680
 #define D_002F1AD0 D_002F1AD0__as_ScreenFx_DrawAll_2_00159680
 #define D_002F2078 D_002F2078__as_ScreenFx_DrawAll_2_00159680
 
@@ -759,7 +759,7 @@ void ScreenFx_DrawAll_2_00159680(void) {
     f32 temp_f1;
 
     if (((u64) ((s64) D_002F2078[0] << 0x38) >> 0x3F) != 0) {
-        GsPkt_SetLayer_1_00154700(D_002F19B0[0], -1);
+        GsPkt_SetLayer_1_00154700(gWeatherState_002F19B0[0], -1);
         if (D_002F2078[0] & 1) {
             ScreenFx_DrawMotionBlur_0_00158900(D_002F19C0);
         }
@@ -774,7 +774,7 @@ void ScreenFx_DrawAll_2_00159680(void) {
         } else {
             sceVu0InterVector(1.0f - (D_002F1AD0[0] / D_002F1AD4[0]), D_002F1AA0, D_002F1AC0, D_002F1AB0);
         }
-        GsPkt_SetLayer_1_00154700(D_002F19B0[0], 0);
+        GsPkt_SetLayer_1_00154700(gWeatherState_002F19B0[0], 0);
         D_002F19DC[0] = 0;
         D_002F1A48[0] = 2;
         D_002F19D8[0] = 0;
@@ -785,7 +785,7 @@ void ScreenFx_DrawAll_2_00159680(void) {
         GsPkt_EndLayer_1_00155900();
         return;
     }
-    GsPkt_SetLayer_1_00154700(D_002F19B0[0], -1);
+    GsPkt_SetLayer_1_00154700(gWeatherState_002F19B0[0], -1);
     if (D_002F2078[0] & 1) {
         ScreenFx_DrawMotionBlur_0_00158900(D_002F19C0);
     }
@@ -800,7 +800,7 @@ void ScreenFx_DrawAll_2_00159680(void) {
     }
     ScreenFx_DrawTint_0_00157320(0);
     GsPkt_EndLayer_1_00155900();
-    GsPkt_SetLayer_1_00154700(D_002F19B0[0], 0);
+    GsPkt_SetLayer_1_00154700(gWeatherState_002F19B0[0], 0);
     if (((u64) ((s64) D_002F2078[0] << 0x3B) >> 0x3F) != 0) {
         ScreenFx_DrawRadialBlur_0_001580E0(D_002F1A60);
     }
@@ -820,11 +820,11 @@ void ScreenFx_DrawAll_2_00159680(void) {
     ScreenFx_DrawFade_0_00156F60();
     GsPkt_EndLayer_1_00155900();
 }
-#undef D_002F19B0
+#undef gWeatherState_002F19B0
 #undef D_002F1AD0
 #undef D_002F2078
 #undef GsPkt_SetReg_3_001543E0
-#undef D_002F19B0
+#undef gWeatherState_002F19B0
 #undef Draw_Sprite_1_00155BD0
 #undef sceVu0CopyVector
 #undef D_002F2078

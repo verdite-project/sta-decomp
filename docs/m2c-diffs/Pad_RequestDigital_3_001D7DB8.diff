@@ -2,17 +2,17 @@
 +++ matched
 @@ -1,8 +1,9 @@
  #include "common.h"
--extern s32 D_004B6900[];
+-extern s32 gPadState_004B6900[];
 -void Pad_RequestDigital_3_001D7DB8(s32 arg0, s32 arg1, s8 arg2) {
 -    void *temp_2;
--    temp_2 = D_004B6900 + (((arg0 * 4) + arg1) * 0x1C0);
+-    temp_2 = gPadState_004B6900 + (((arg0 * 4) + arg1) * 0x1C0);
 -    M2C_FIELD(temp_2, s8 *, 0x180) = arg2;
 -    M2C_FIELD(temp_2, s8 *, 0x17F) = 0;
 +typedef struct { char pad[0x17F]; u8 a; s8 b; char rest[0x3F]; } E;
-+extern E D_004B6900[];
++extern E gPadState_004B6900[];
 +void Pad_RequestDigital_3_001D7DB8(s32 i, s32 j, s8 v)
 +{
-+    E *e = &D_004B6900[i * 4 + j];
++    E *e = &gPadState_004B6900[i * 4 + j];
 +    e->b = v;
 +    e->a = 0;
  }

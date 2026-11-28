@@ -18,7 +18,7 @@ typedef struct { u8 pad[0x20]; u16 x20; u8 pad2[0x30 - 0x22]; } Ent;
 typedef struct { s32 id; u8 pad[0x72]; u16 x76; u8 pad2[0x148 - 0x78]; Ent *x148; u8 pad3[0x18C - 0x14C]; u32 *x18C; u8 pad4[0x1D8 - 0x190]; u8 x1D8; } O_Map_GetGlowIndex_0_001B0C70;
 extern G2C4 *D_002022C4;
 extern BF D_00222A54[];
-extern u8 D_00270F40[];
+extern u8 gLoadBuf_00270F40[];
 extern f32 D_004B4B90[];
 #ifndef NONMATCHING
 extern s32 D_004B4BB0[];
@@ -155,7 +155,7 @@ void Map_StreamUpdate_0_001B0020(void) {
         Map_GetFile_2_001B7050(D_004B4BB4[0], buf, D_004B4BC8);
         D_004B4BC4[0] = Map_AllocAreaBuf_1_001B70E0(D_004B4BB4[0]);
         D_004B4BCC[0] = 0;
-        D_004B4BC0[0] = Task_SetPriorityWrap_0_0014DB00(buf, 0x100, D_00270F40);
+        D_004B4BC0[0] = Task_SetPriorityWrap_0_0014DB00(buf, 0x100, gLoadBuf_00270F40);
         D_004B4BCC[0] = Obj_FreeTimer_0_0014DA70(D_004B4BC0[0]);
         D_004B4BBE[0] = 0;
         Task_FlushWrap_0_0014DAC0(D_004B4BC0[0], 0);
@@ -170,9 +170,9 @@ void Map_StreamUpdate_0_001B0020(void) {
             off = q << 4;
             r = n - off;
             FlushCache(0);
-            Dma_SprCopy_1_001789E0((u8 *)(**(s32 **)(*(s32 *)D_004B4BC4[0] + 0x24) + D_004B4BCC[0]), D_00270F40, q);
+            Dma_SprCopy_1_001789E0((u8 *)(**(s32 **)(*(s32 *)D_004B4BC4[0] + 0x24) + D_004B4BCC[0]), gLoadBuf_00270F40, q);
             if (r > 0) {
-                memcpy((u8 *)(**(s32 **)(*(s32 *)D_004B4BC4[0] + 0x24) + D_004B4BCC[0]) + off, D_00270F40 + off, r);
+                memcpy((u8 *)(**(s32 **)(*(s32 *)D_004B4BC4[0] + 0x24) + D_004B4BCC[0]) + off, gLoadBuf_00270F40 + off, r);
             }
             D_004B4BCC[0] += n;
             Task_RemoveWrap_0_0014DAE0(D_004B4BC0[0]);

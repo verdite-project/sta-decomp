@@ -28,9 +28,9 @@ u8 D_004B7740[0x100];
 u8 D_004B6A68[0xcd8] __attribute__((aligned(8))); /* also D_004B6A6C, D_004B6A74, D_004B6A7E, D_004B6A82 */
 u8 D_004B6A20[0x48]; /* also D_004B6A22 */
 u8 D_004B6A00[0x20]; /* also D_004B6A02 */
-u8 D_004B6900[0x100];
+u8 gPadState_004B6900[0x100];
 s32 D_004B68D0[0xc];
-u8 D_004B68C0[0x10];
+u8 gMcDirBuf_004B68C0[0x10];
 u8 D_004B6474[0x44c] __attribute__((aligned(4))); /* also D_004B6478 */
 s32 D_004B6450[0x9];
 s32 D_004B644C[0x1];

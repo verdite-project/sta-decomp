@@ -1,7 +1,7 @@
 #include "common.h"
 #include "game/ee.h"
 typedef struct { char pad[0x80]; s32 x80; s32 x84; s32 x88; s32 x8c; s32 pad90[2]; s32 x98; s32 x9c; s32 xa0; } MC;
-extern s32 D_004B68C0[];
+extern s32 gMcDirBuf_004B68C0[];
 s32 sceMcGetDir(s32, s32, s32, u32, s32, s32 *);
 s32 sceMcSync(s32, s32 *, s32 *);
 
@@ -22,7 +22,7 @@ s32 Mc_StepFindFile_5_001D67A8(void)
         m->x9c = 0;
         break;
     case 1:
-        if (sceMcGetDir(x, y, m->xa0, 0, 1, D_004B68C0) != 0) {
+        if (sceMcGetDir(x, y, m->xa0, 0, 1, gMcDirBuf_004B68C0) != 0) {
             if (m->x9c == 2) {
                 m->x88 = 0;
                 m->x98 = 100;

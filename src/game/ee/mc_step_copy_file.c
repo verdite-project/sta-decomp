@@ -6,7 +6,7 @@ extern s32 D_004B63A4[];
 extern s32 D_004B63A8[];
 extern s32 D_004B63AC[];
 extern s32 D_004B63B0[];
-extern DE D_004B68C0[];
+extern DE gMcDirBuf_004B68C0[];
 s32 Mc_StepGetInfo_3_001D3BF0(s32, s32, s32 *, s32 *, s32 *, s32);
 s32 sceOpen(s8 *, s32);
 void strcpy(s8 *, s32);
@@ -58,7 +58,7 @@ s32 Mc_StepCopyFile_4_001D58C0(void) {
         gMcState_004B63B8.step++;
         break;
     case 3:
-        if (sceMcGetDir(i, j, gMcState_004B63B8.name, 0, 1, D_004B68C0) != 0) {
+        if (sceMcGetDir(i, j, gMcState_004B63B8.name, 0, 1, gMcDirBuf_004B68C0) != 0) {
             if (gMcState_004B63B8.retry == 2) {
                 gMcState_004B63B8.cmd = 0;
                 gMcState_004B63B8.err = 100;
@@ -92,8 +92,8 @@ s32 Mc_StepCopyFile_4_001D58C0(void) {
         gMcState_004B63B8.step++;
         break;
     case 5:
-        n = (D_004B68C0[0].x10 + 0x3FF) / 1024 + gMcState_004B63B8.free[i * 4 + j];
-        if (D_004B68C0[0].x10 == 0 && n < 3) {
+        n = (gMcDirBuf_004B68C0[0].x10 + 0x3FF) / 1024 + gMcState_004B63B8.free[i * 4 + j];
+        if (gMcDirBuf_004B68C0[0].x10 == 0 && n < 3) {
             gMcState_004B63B8.cmd = 0;
             gMcState_004B63B8.err = 0x1F;
             return -6;
@@ -112,7 +112,7 @@ s32 Mc_StepCopyFile_4_001D58C0(void) {
             D_004B63AC[0] = sceLseek(fd, 0, 2);
             sceLseek(D_004B63A4[0], 0, 0);
         }
-        k = D_004B68C0[0].x10 != 0 ? 0 : 2;
+        k = gMcDirBuf_004B68C0[0].x10 != 0 ? 0 : 2;
         if (n - k < (D_004B63AC[0] + 0x3FF) / 1024) {
             gMcState_004B63B8.err = 0x3D;
             gMcState_004B63B8.cmd = 0;

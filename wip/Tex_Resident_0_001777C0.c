@@ -46,7 +46,7 @@ typedef struct {
     s16 x8, xA, xC, xE;
 } G;
 extern G D_004830C0;
-extern Blk D_0047F0C0[];
+extern Blk gVramBlocks_0047F0C0[];
 extern E30 D_004800C0[];
 extern s32 D_00202018;
 u16 Vram_AllocForTex_0_00176BF0(E30 *, u16);
@@ -86,7 +86,7 @@ void Tex_Resident_0_001777C0(u16 a0, u64 *a1, u64 *a2) {
     D_004800C0[idx].x14 = a0 << 4;
     r = Vram_AllocForTex_0_00176BF0(p, (u32)(D_004800C0[idx].x2A + D_004800C0[idx].x2E + 15) >> 4);
     D_004800C0[idx].x22 = r;
-    D_004800C0[idx].x10 = D_0047F0C0[r].off;
+    D_004800C0[idx].x10 = gVramBlocks_0047F0C0[r].off;
     if (a1) p->tex0 = *(Tex0 *)a1;
     if (a2) D_004800C0[idx].x8 = *a2;
     D_004800C0[idx].tex0.tbp0 = D_004800C0[idx].x10;

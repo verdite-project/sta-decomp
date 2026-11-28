@@ -26,7 +26,7 @@ typedef struct {
     char p182[0x3E];
 } E;
 typedef struct { E e[8]; u8 mask[2]; } PadData;
-extern PadData D_004B6900;
+extern PadData gPadState_004B6900;
 s32 scePadEnterPressMode(s32, s32);
 s32 scePadExitPressMode(s32, s32);
 s32 scePadGetReqState(s32, s32);
@@ -55,8 +55,8 @@ void Pad_UpdateAll_3_001D7350(void) {
 
     for (port = 0; port < 2; port++) {
         for (slot = 0; slot < 4; slot++) {
-            if (!((D_004B6900.mask[port] >> slot) & 1)) continue;
-            e = &D_004B6900.e[port * 4 + slot];
+            if (!((gPadState_004B6900.mask[port] >> slot) & 1)) continue;
+            e = &gPadState_004B6900.e[port * 4 + slot];
             if ((e->state = scePadGetState(port, slot)) == 0) e->phase = 0;
             e->req = scePadGetReqState(port, slot);
             switch (e->phase) {

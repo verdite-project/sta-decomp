@@ -3,7 +3,7 @@
 #include "game/data.h"
 typedef struct { volatile s32 v; s8 pad[0x24]; } E;
 void Pool_Free_2_00128580(s32, s32);
-extern E D_004A43B0[];
+extern E gEnemyDataTbl_004A43B0[];
 extern E D_004A43B4[];
 extern E D_004A43B8[];
 extern E D_004A43BC[];
@@ -32,7 +32,7 @@ void EnemyMgr_FreeSlot_0_001A5070(s8 **arg0) {
             D_00201DA8 = -1;
         }
         D_004A43B4[idx].v = 0;
-        D_004A43B0[idx].v = -1;
+        gEnemyDataTbl_004A43B0[idx].v = -1;
         D_004A43CC[idx].v = 0;
         D_004A43D0[idx].v = 0;
     }

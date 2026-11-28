@@ -14,7 +14,7 @@ u8 D_002F0F48[0x4];
 u8 D_002F0F44[0x4];
 s32 D_002F0F40[0x1];
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/enemy/enemy_mgr_update.c */
-u8 D_00270F40[0x80000];
+u8 gLoadBuf_00270F40[0x80000];
 #endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/math/angle_b.c */
 f32 D_00270560[0x278];

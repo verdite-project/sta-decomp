@@ -13,7 +13,7 @@ u8 D_002F19D4[0x4];
 u8 D_002F19C8[0xc]; /* also D_002F19CA, D_002F19CB, D_002F19CC */
 u8 D_002F19C4[0x4];
 u8 D_002F19C0[0x4];
-u8 D_002F19B0[0x10];
+u8 gWeatherState_002F19B0[0x10];
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/gs_packet.c */
 u8 D_002F19AC[0x4];
 u8 D_002F19A8[0x4];

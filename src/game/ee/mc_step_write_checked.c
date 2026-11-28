@@ -20,7 +20,7 @@ extern u32 D_004B6384[];
 extern s32 D_004B6388[];
 extern s32 D_004B6474[];
 extern u8 D_004B6478[];
-extern volatile s32 D_004B68C0[];
+extern volatile s32 gMcDirBuf_004B68C0[];
 extern s32 D_004B68D0[];
 s32 Mc_StepGetInfo_3_001D3BF0(s32, s32, s32 *, s32 *, s32 *, s32);
 s32 Mc_GetInfoStatus_2_001D3CE0(s32);
@@ -83,7 +83,7 @@ s32 Mc_StepWriteChecked_3_001D4170(void)
         t->state++;
         break;
     case 3:
-        if (sceMcGetDir(port, slot, t->name, 0, 1, D_004B68C0) != 0) {
+        if (sceMcGetDir(port, slot, t->name, 0, 1, gMcDirBuf_004B68C0) != 0) {
             if (t->retry == 2) {
                 t->x88 = 0;
                 t->err = 100;
@@ -115,7 +115,7 @@ s32 Mc_StepWriteChecked_3_001D4170(void)
         break;
     case 5:
         d = t->size;
-        sz = D_004B68C0[4];
+        sz = gMcDirBuf_004B68C0[4];
         fr = ((u32)(sz + 0x3FF) >> 10) + t->free[port * 4 + slot];
         if (sz == 0 && fr < 3) goto fail5;
         d -= 0x3FB;
@@ -123,7 +123,7 @@ s32 Mc_StepWriteChecked_3_001D4170(void)
         if (d > 0) D_004B6380[0] += (d + 0x3FE) / 0x3FF;
         D_004B6380[0] = (D_004B6380[0] + 0x1F) & ~0x1F;
         k = 2;
-        if (D_004B68C0[4] != 0) k = 0;
+        if (gMcDirBuf_004B68C0[4] != 0) k = 0;
         if (fr - k < (s32)((D_004B6380[0] + 0x3FF) >> 10)) {
         fail5:
             t->x88 = 0;

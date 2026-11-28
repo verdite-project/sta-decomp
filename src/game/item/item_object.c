@@ -202,7 +202,7 @@ extern s8 D_001FD9F0[];
 /* data twins (src/game/data/save_parse_rodata.c): D_001FD9F0 */
 static s8 D_001FD9F0[0x20] __attribute__((aligned(8))) = "item/i%4.04dm.stm\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
 #endif
-extern s8 D_00270F40[];
+extern s8 gLoadBuf_00270F40[];
 #ifndef NONMATCHING
 extern s32 D_004AD670[];
 #else
@@ -403,7 +403,7 @@ void ItemMdl_Update_0_001AB690(void) {
         D_004B4B80[0] = Pool_Alloc_3_001288C0(D_00202290, D_004B4B78[0]);
         D_004B4B84[0] = 0;
         D_004B4B7C[0] = 0;
-        D_004B4B74[0] = Task_SetPriorityWrap_0_0014DB00(buf2, 0x102, D_00270F40);
+        D_004B4B74[0] = Task_SetPriorityWrap_0_0014DB00(buf2, 0x102, gLoadBuf_00270F40);
         D_004B4B7C[0] = Obj_FreeTimer_0_0014DA70(D_004B4B74[0]);
         Task_FlushWrap_0_0014DAC0(D_004B4B74[0], 0);
         D_00202288->fA8.f.b1 = 1;
@@ -417,8 +417,8 @@ void ItemMdl_Update_0_001AB690(void) {
         q = (s32)n >> 4;
         r = n - q * 16;
         FlushCache(0);
-        Dma_SprCopy_1_001789E0(*D_004B4B80[0] + D_004B4B7C[0], D_00270F40, q);
-        if (r > 0) memcpy(*D_004B4B80[0] + D_004B4B7C[0] + q * 16, D_00270F40 + q * 16, r);
+        Dma_SprCopy_1_001789E0(*D_004B4B80[0] + D_004B4B7C[0], gLoadBuf_00270F40, q);
+        if (r > 0) memcpy(*D_004B4B80[0] + D_004B4B7C[0] + q * 16, gLoadBuf_00270F40 + q * 16, r);
         D_004B4B7C[0] += n;
         Task_RemoveWrap_0_0014DAE0(D_004B4B74[0]);
         break;

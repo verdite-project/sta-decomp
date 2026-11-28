@@ -5,7 +5,7 @@
 #ifdef NONMATCHING
 #include "m2c.h"
 typedef struct { volatile s32 v; s8 pad[0x24]; } E;
-extern E D_004A43B0[];
+extern E gEnemyDataTbl_004A43B0[];
 extern E D_004A43B4[];
 extern E D_004A43C8[];
 extern E D_004A43D0[];
@@ -17,7 +17,7 @@ void EnemyMgr_ReleaseData_0_001A51E0(B **arg0) {
     s32 i;
 
     for (i = 0; i < 11; i++) {
-        if (key == D_004A43B0[i].v) break;
+        if (key == gEnemyDataTbl_004A43B0[i].v) break;
     }
     if (i != 11) {
         p->xC = D_004A43C8[i].v;
@@ -26,9 +26,9 @@ void EnemyMgr_ReleaseData_0_001A51E0(B **arg0) {
         return;
     }
     for (i = 0; i < 11; i++) {
-        if (D_004A43B0[i].v == -1) break;
+        if (gEnemyDataTbl_004A43B0[i].v == -1) break;
     }
-    D_004A43B0[i].v = key;
+    gEnemyDataTbl_004A43B0[i].v = key;
     D_004A43B4[i].v = 0;
     D_004A43D0[i].v = 0;
     p->xC = 0;

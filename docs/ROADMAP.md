@@ -287,10 +287,12 @@ Next, in order of yield:
    qword unions no C initialiser writes byte for byte (it now also tries
    split_data.py's struct initialisers).
 6. **Names**: `config/game_data_names.txt` + `tools/apply_data_names.py`
-   (README, "Data names"); the five objects the headers type are named
-   (`gMcState`, `gGsText`, `gGsTextStyle`, `gPlayerData`, `gZeroVec`). Name
-   more as their owners show what they are; the checker keeps both copies
-   of a twin in step.
+   (README, "Data names"); 12 are named: the objects the headers type
+   (`gMcState`, `gGsText`, `gGsTextStyle`, `gPlayerData`, `gZeroVec`,
+   `gPadState`) and tables whose users settle what they are (`gWeatherState`,
+   `gLoadBuf`, `gVramBlocks`, `gEnemyDataTbl`, `gMcDirBuf`, `gGlowFxSlots`).
+   Name more as their owners show what they are; the checker keeps both
+   copies of a twin in step.
 
 `tools/split_data.py --apply` also takes back the twin of any object a
 later inventory pins (a new root, a new extent), so rerun it after changing

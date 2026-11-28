@@ -3,15 +3,15 @@
 @@ -1,28 +1,24 @@
  #include "common.h"
 +typedef struct { s32 h; char p[0x3C]; } E;
-+extern E D_004BAC50[16];
++extern E gGlowFxSlots_004BAC50[16];
  extern u8 D_002023AC;
--extern s32 D_004BAC50[];
+-extern s32 gGlowFxSlots_004BAC50[];
 -s32 GlowFx_StopAll_0_001E0E80(void) {
 -    s32 var_2;
 -    s32 var_17;
 -    s32 *var_16;
 -    var_17 = 0;
--    var_16 = (s32 *) (D_004BAC50);
+-    var_16 = (s32 *) (gGlowFxSlots_004BAC50);
 -    do {
 -        if ((var_17 < 0) || (var_17 >= 0x10)) {
 -            var_2 = 0;
@@ -25,7 +25,7 @@
 +s32 GlowFx_StopAll_0_001E0E80(void)
 +{
 +    s32 i;
-+    E *e = D_004BAC50;
++    E *e = gGlowFxSlots_004BAC50;
 +    for (i = 0; i < 16; i++, e++) {
 +        s32 ok;
 +        if (i < 0 || i >= 16)
