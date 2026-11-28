@@ -1,19 +1,5 @@
 #include "game/map_object_records.h"
 
-typedef struct {
-    u8 pad0[0x16];
-    u16 motionCount;
-} MapObjMotionData;
-
-struct MapObjModel {
-    MapObjMotionData **motion;
-    u8 pad4[8];
-    f32 frame;
-    f32 previousFrame;
-    u8 pad14[0xC];
-    f32 x20;
-};
-
 void Mdl_SetBoneRotation_0_001710D0(MapObjModel *, s16, f32, f32, f32);
 f32 Mdl_GetMotionLength_0_00173F70(MapObjMotionData *, u16);
 

@@ -42,7 +42,7 @@ register and scheduling differences.
 | Coll_SweepSegmentsInit_1_00151E50 | 1 word: late clear loop count `li v0,16` vs orig 8; the C slot only lands at 0x40 with a 16-byte struct |
 | Quat_Slerp_2_0015DFA0 | quaternion slerp; saved regs only: orig `out` in s6, ours s0 (permuter candidate) |
 | Mdl_EmitStripD_0_0016DC70 | GIF packet; saved regs rotated (orig gives p and &q.w[1]/[3] the high s-regs) (permuter candidate) |
-| MapObj_PlayAnimImpl_1_001B8350 | first block regs shifted by one; orig `li v1,1; movz v1,zero,a2` for `a2 ? 1 : 0` (MWCC gives sltu) |
+| MapObj_PlayAnimImpl_1_001B8350 | 121/150 words match. The direction selection matches. Remaining differences are lookup registers and the order of two item-spawn argument moves. |
 | Actor_BuildLookMatrix_0_00136DB0 | inlined axis-angle rotation (as Mtx_AxisAngle_2_0015EBB0 times a vector): float scheduling/regs only |
 | MapCmd_GetSfxParamB_0_0017EAF0 | adapted MapCmd_SetSfxParamB_0_0017E940 inlines; shape identical, temp regs only (slot pointer v1 vs a2) |
 | Mdl_EmitPolys_1_0016EF70 | right size/branches, loop regalloc differs (orig spills a0, i in t9); far (155 words) |
