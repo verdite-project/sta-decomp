@@ -7,7 +7,12 @@ typedef struct { f32 m[4]; f32 x; f32 y; } S;
 typedef struct { u8 r, g, b, a; } Col;
 typedef struct { u8 p0[0x4]; u16 x4; u8 p6[4]; u16 xA; u8 pC[0x1D]; u8 x29; u8 p2A[0x66]; } E;
 typedef struct { u8 p0[0x14]; f32 x14; f32 x18; u8 p1C[0x10]; f32 x2C; f32 x30; u8 p34[8]; u32 x3C; } G;
+#ifndef NONMATCHING
 extern S D_001F30E0 __attribute__((aligned(16)));
+#else
+/* data twins (src/game/data/databook_item_reset_data.c): D_001F30E0 */
+static S D_001F30E0 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+#endif
 #ifndef NONMATCHING
 extern s8 D_001FD5B8[];
 #else

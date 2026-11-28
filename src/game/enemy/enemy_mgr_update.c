@@ -167,3 +167,9 @@ INCLUDE_ASM(EnemyMgr_Update_0_001A4990);
 /* data twins (src/game/data/sdata.c): D_00201DA8 */
 s32 D_00201DA8 = -1;
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/angle_b_bss.c): D_00270F40 */
+u8 D_00270F40[0x80000];
+#endif

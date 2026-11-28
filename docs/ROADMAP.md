@@ -254,11 +254,11 @@ the object from its owner instead:
 <!-- data-owners:start -->
 | objects (2026-11-28) | bss | data | rodata | sbss | sdata | all |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| NONMATCHING twin in its owner | 317 | 36 | 234 | 312 | 111 | 1010 |
-| one user, not split yet | 25 | 70 | 17 | 2 | 10 | 124 |
-| several users, not split yet | 7 | 4 | 0 | 0 | 2 | 13 |
-| pinned | 385 | 54 | 60 | 3 | 0 | 502 |
-| used by asm only / by data only / unused | 66 | 16 | 79 | 7 | 1 | 169 |
+| NONMATCHING twin in its owner | 333 | 49 | 235 | 312 | 111 | 1040 |
+| one user, not split yet | 26 | 56 | 17 | 2 | 10 | 111 |
+| several users, not split yet | 8 | 4 | 0 | 0 | 2 | 14 |
+| pinned | 352 | 55 | 59 | 3 | 0 | 469 |
+| used by asm only / by data only / unused | 81 | 16 | 79 | 7 | 1 | 184 |
 | total | 800 | 180 | 390 | 324 | 124 | 1818 |
 <!-- data-owners:end -->
 
@@ -271,10 +271,12 @@ Next, in order of yield:
    array). A view every user declares as one struct or a sized array gets
    its extent from that type; `tools/data_owners.py --json` names the root
    of every other pinned object: read how far the code goes from it and add
-   a line. The biggest left: `D_004B5EF0` (stat blocks), `D_00486990` (UI anim
-   table), `D_00222B20` (the pool).
-2. **Initialisers the tool cannot write** ("type does not fit"): structs with
-   bitfields, unions or anonymous members (`split_data.py`'s layout() takes
+   a line. The biggest left: `D_00486990` (UI anim table: its entry types have
+   bitfields layout() cannot size), `D_00222B20` (the pool header),
+   `D_0022F040` (sound bank slots).
+2. **Initialisers the tool cannot write** ("type does not fit"): 128-bit
+   qword types (`u128` members: no C literal), structs with bitfields,
+   unions or anonymous members (`split_data.py`'s layout() takes
    scalars, pointers, arrays and nested typedef'd structs).
 3. **No extern**: owners that reach an object only through a macro or a
    cast of another symbol; give them an `extern` first.

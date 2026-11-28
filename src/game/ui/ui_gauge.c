@@ -188,7 +188,12 @@ extern s32 D_002020A8__as_Ui_LoadItemImage_3_00183DC0;
 extern s8 *D_0048D0E4__as_Ui_LoadItemImage_3_00183DC0[];
 extern Res *D_002020AC__as_Ui_IsImageLoading_0_00183FF0;
 extern G_MenuProc_DrawScrolled_0_00184CF0 D_0048D060;
+#ifndef NONMATCHING
 extern S_Ui_DrawGauge_0_00182EF0 D_001F2700 __attribute__((aligned(16)));
+#else
+/* data twins (src/game/data/ui_global_data.c): D_001F2700 */
+static S_Ui_DrawGauge_0_00182EF0 D_001F2700 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+#endif
 #ifndef NONMATCHING
 extern f32 D_00202084;
 #else
@@ -220,7 +225,12 @@ extern f32 D_002020BC;
 static f32 D_002020BC;
 #endif
 extern V D_001F26F0[];
+#ifndef NONMATCHING
 extern S_Ui_DrawGauge_0_00182EF0 D_001F26D0 __attribute__((aligned(16)));
+#else
+/* data twins (src/game/data/ui_global_data.c): D_001F26D0 */
+static S_Ui_DrawGauge_0_00182EF0 D_001F26D0 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+#endif
 extern char D_0048CE40[];
 #ifndef NONMATCHING
 extern s32 D_0020207C;
@@ -270,9 +280,24 @@ extern f32 D_0020209C;
 /* data twins (src/game/data/sbss.c): D_0020209C */
 static f32 D_0020209C;
 #endif
+#ifndef NONMATCHING
 extern S_Ui_DrawGauge_0_00182EF0 D_001F2630 __attribute__((aligned(16)));
+#else
+/* data twins (src/game/data/ui_global_data.c): D_001F2630 */
+static S_Ui_DrawGauge_0_00182EF0 D_001F2630 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+#endif
+#ifndef NONMATCHING
 extern S_Ui_DrawGauge_0_00182EF0 D_001F2650 __attribute__((aligned(16)));
+#else
+/* data twins (src/game/data/ui_global_data.c): D_001F2650 */
+static S_Ui_DrawGauge_0_00182EF0 D_001F2650 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+#endif
+#ifndef NONMATCHING
 extern S_Ui_DrawGauge_0_00182EF0 D_001F2670 __attribute__((aligned(16)));
+#else
+/* data twins (src/game/data/ui_global_data.c): D_001F2670 */
+static S_Ui_DrawGauge_0_00182EF0 D_001F2670 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+#endif
 extern s32 D_0048CF40[];
 extern s32 D_0048CFC0[];
 extern s32 D_0048CF80[];

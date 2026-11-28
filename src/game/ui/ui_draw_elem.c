@@ -9,7 +9,12 @@
 #include "common.h"
 typedef struct { f32 a[6]; } M2;
 typedef struct { u32 n; u8 *p; } L;
+#ifndef NONMATCHING
 extern M2 D_001F2790 __attribute__((aligned(16)));
+#else
+/* data twins (src/game/data/menu_draw_wrap_data.c): D_001F2790 */
+static M2 D_001F2790 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+#endif
 M2 *Mtx2_Rotate_1_00182860(M2 *, f32);
 M2 *Mtx2_Mul_1_001828F0(M2 *, M2 *, M2 *);
 void Ui_DrawSprite_2_00181680(s32, f32 *, u8 *, u8 *, M2 *, s32);

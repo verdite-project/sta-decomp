@@ -10,4 +10,6 @@ s16 D_001F38F2[0x7e] __attribute__((aligned(2))) = { 0xca, 0x195, 0x25f, 0x32a, 
 s16 D_001F39EE[0x1] __attribute__((aligned(2))) = { 0x3fff };
 #endif
 f32 D_001F39F0[0x8] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/credits.c */
 f32 D_001F3A10[0x8] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+#endif

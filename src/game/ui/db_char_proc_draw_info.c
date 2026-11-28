@@ -33,7 +33,12 @@ s32 Item_GetCategory_0_001AFBD0(s32);
 E *Item_GetTable_1_001AFC90(void);
 double fptodp(f32);
 void Ui_DrawWindow_0_00183650(T *);
+#ifndef NONMATCHING
 extern S D_001F2EE0 __attribute__((aligned(16)));
+#else
+/* data twins (src/game/data/databook_item_reset_data.c): D_001F2EE0 */
+static S D_001F2EE0 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+#endif
 extern T D_004A13A0;
 extern s32 D_00202184;
 extern s32 D_00202188;

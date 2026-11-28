@@ -7,6 +7,7 @@
    load_menu, load_menu_card, load_menu_draw, text_00196330.s,
    text_001973F0.s */
 
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/databook_item_reset.c */
 f32 D_004A18B8[0x2];
 s32 D_004A18B0[0x2];
 u32 D_004A18AC[0x1];
@@ -16,6 +17,7 @@ u8 D_004A1884[0x18] __attribute__((aligned(4))); /* also D_004A1888 */
 s8 D_004A1870[0x14];
 s8 D_004A1770[0x100];
 s32 D_004A1450[0xc8];
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/databook_item_draw.c */
 u8 D_004A1440[0x10]; /* also D_004A1444 */
 f32 D_004A143C[0x1];

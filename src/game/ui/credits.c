@@ -67,7 +67,12 @@ static s32 D_00202340;
 extern u8 D_00202348;
 extern f32 D_00201E44;
 extern f32 D_00201E48;
+#ifndef NONMATCHING
 extern S D_001F3A10 __attribute__((aligned(16)));
+#else
+/* data twins (src/game/data/player_status_data.c): D_001F3A10 */
+static S D_001F3A10 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+#endif
 #ifndef NONMATCHING
 extern f32 D_00202344;
 #else

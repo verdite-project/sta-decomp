@@ -47,7 +47,8 @@ from names import is_func  # noqa: E402
 
 UNINIT = {"bss", "sbss"}
 ALIGNED = re.compile(r"\s*__attribute__\(\(aligned\((\d+)\)\)\)")
-EXT_STMT = re.compile(r"^[ \t]*extern\s+([^;(){}]*?);[^\n]*\n?", re.M)
+EXT_STMT = re.compile(r"^[ \t]*extern\s+((?:[^;(){}]|__attribute__\(\(\w+(?:\([^()]*\))?\)\))*?);[^\n]*\n?", re.M)
+ATTR = re.compile(r"\s*__attribute__\(\(\w+(?:\([^()]*\))?\)\)")
 FIRST = re.compile(r"^(?P<spec>(?:\w+\s+)*?\w+)\s*(?P<ptr>\**)\s*(?P<name>\w+)\s*(?P<dims>(?:\[[^\]]*\]\s*)*)"
                    r"(?P<attr>__attribute__\(\(.*\)\))?\s*$")
 REST = re.compile(r"^\s*(?P<ptr>\**)\s*(?P<name>\w+)\s*(?P<dims>(?:\[[^\]]*\]\s*)*)(?P<attr>__attribute__\(\(.*\)\))?\s*$")
@@ -57,7 +58,7 @@ def externs(text):
     """name -> dict(spec, ptr, dims [str], single, start, end, stmt)."""
     out = {}
     for m in EXT_STMT.finditer(text):
-        parts = m.group(1).split(",")
+        parts = ATTR.sub("", m.group(1)).split(",")
         f = FIRST.match(parts[0].strip())
         if not f:
             continue

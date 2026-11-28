@@ -5,7 +5,9 @@
 #pragma explicit_zero_data on
 
 f32 D_001F2A10[0x8] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/save_menu_slot.c */
 s32 D_001F2A30[0x8] = { -1, 0, 0, 0, 0, 0, 0, 0 };
+#endif
 f32 D_001F2A50[0x8] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
 f32 D_001F2A70[0x8] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/option.c */

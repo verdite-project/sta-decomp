@@ -36,7 +36,12 @@ void TextParam_Init_1_00187A90(T *, s8 *, u64);
 s32 Text_Render_2_00188010(T *, Col);
 u64 fptodp(f32);
 void sprintf(s8 *, s8 *, u64);
+#ifndef NONMATCHING
 extern S D_001F26B0 __attribute__((aligned(16)));
+#else
+/* data twins (src/game/data/ui_global_data.c): D_001F26B0 */
+static S D_001F26B0 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+#endif
 extern s8 D_0048CE40[];
 #ifdef NONMATCHING
 extern u8 D_001FC980[];

@@ -57,7 +57,9 @@ void Ending_Update_0_001ED9A0(void);
 void Ending_HandleEvent_0_001EDCC0(void);
 
 f32 D_001F2770[0x8] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/ui_draw_elem.c */
 f32 D_001F2790[0x8] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+#endif
 f32 D_001F27B0[0x4] = { 0.0f, 0.0f, 640.0f, 448.0f };
 f32 D_001F27C0[0x4] = { 0.0f, 0.0f, 256.0f, 256.0f };
 s32 D_001F27D0[0x2c] = { (s32)MenuProc_CheckReady_0_0018B2E0, (s32)Title_LoadGame_0_001A35B0, 0, (s32)Title_UpdateWrap_0_001A3EB0, (s32)Title_ResetOnEvent_0_001A3C70, (s32)Credits_Update_0_001DCC30, (s32)TitleMenu_Update_1_001A4010, (s32)Title_StartNewGame_0_001A4930, 0, (s32)SaveMenu_Open_1_0018D360, (s32)LoadMenu_Open_0_001939B0, (s32)SaveMenu_HandleEvent_0_0018C4C0, (s32)LoadMenu_HandleEvent_0_00192900, (s32)Option_Update_2_0018EAE0, 0, 0, 0, (s32)MapSheet_Update_0_001ED740, (s32)Hud_Update_1_0019B560, (s32)Pause_HandleEvent_0_0019E810, (s32)PauseMenu_Open_0_0019E2F0, (s32)ItemMenu_Open_0_0019D290, (s32)Equip_Open_0_001997A0, 0, (s32)Databook_UpdateWrap_0_00195410, (s32)DbMap_UpdateWrap_0_00198BD0, (s32)DbChar_UpdateWrap_0_00196930, (s32)DbItem_Open_0_001979C0, 0, 0, 0, (s32)Storage_Open_0_001A32A0, 0, 0, (s32)Shop_Open_1_001A1B40, 0, (s32)Ending_Update_0_001ED9A0, (s32)Ending_HandleEvent_0_001EDCC0, 0, (s32)Loading_Nop_0_0018E440, (s32)GameOver_Update_2_0019EDC0, (s32)Ending_OpenLoadMenu_0_00194F60, 0, 0 };

@@ -53,7 +53,12 @@ typedef struct { s16 x0; s16 x2; s16 x4; s16 x6; u8 pad8[4]; s16 xC; u8 xE; u8 x
 typedef struct { u8 pad[0x20]; R r; } S1;
 typedef struct { u8 pad[0x50]; R r[1]; } S0;
 typedef struct { s32 x0; u32 flags; u8 b8; char p9; u8 bA; char pB[3]; u8 bE; } Obj_MenuProc_BackOnCancel_0_0018D000;
+#ifndef NONMATCHING
 extern Tbl D_001F2A30 __attribute__((aligned(16)));
+#else
+/* data twins (src/game/data/save_menu_data.c): D_001F2A30 */
+static Tbl D_001F2A30 = { -1, 0, 0, 0, 0, 0, 0, 0 };
+#endif
 #ifndef NONMATCHING
 extern f32 D_0020211C;
 #else

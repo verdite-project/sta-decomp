@@ -219,7 +219,12 @@ extern f32 D_004A1190[];
 /* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A1190 */
 static f32 D_004A1190[0x1];
 #endif
+#ifndef NONMATCHING
 extern S_LoadMenu_DrawSlot_1_00193AF0 D_001F2DE0 __attribute__((aligned(16)));
+#else
+/* data twins (src/game/data/load_menu_draw_data.c): D_001F2DE0 */
+static S_LoadMenu_DrawSlot_1_00193AF0 D_001F2DE0 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+#endif
 #ifndef NONMATCHING
 extern s8 D_001FD208[];
 #else

@@ -75,7 +75,12 @@ extern s32 D_00202200;
 /* data twins (src/game/data/sbss.c): D_00202200 */
 static s32 D_00202200;
 #endif
+#ifndef NONMATCHING
 extern s32 D_004A3290[];
+#else
+/* data twins (src/game/data/item_menu_draw_bss.c): D_004A3290 */
+static s32 D_004A3290[0x1];
+#endif
 extern s8 D_004A32A0[];
 extern S D_001F3100[] __attribute__((aligned(16)));
 #ifndef NONMATCHING
@@ -105,8 +110,18 @@ extern s32 D_002021F4;
 /* data twins (src/game/data/sbss.c): D_002021F4 */
 static s32 D_002021F4;
 #endif
+#ifndef NONMATCHING
 extern s32 D_004A3294[];
+#else
+/* data twins (src/game/data/item_menu_draw_bss.c): D_004A3294 */
+static s32 D_004A3294[0x1];
+#endif
+#ifndef NONMATCHING
 extern f32 D_004A3298[];
+#else
+/* data twins (src/game/data/item_menu_draw_bss.c): D_004A3298 */
+static f32 D_004A3298[0x1];
+#endif
 #ifndef NONMATCHING
 extern s32 D_002021F0;
 #else
@@ -661,4 +676,12 @@ void ItemMenuProc_Pos_0_0019DE90(s32 i, s8 *a1, s8 *a2) {
 #pragma explicit_zero_data on
 extern u8 D_00495B60[];
 extern u8 D_00496B60[];
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/item_menu_draw_bss.c): D_004A3150, D_004A329C, D_004A32A0 */
+s8 D_004A3150[0x100] __attribute__((aligned(4)));
+u8 D_004A329C[0x4];
+s8 D_004A32A0[0x4];
 #endif

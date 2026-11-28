@@ -56,8 +56,18 @@ extern s32 D_002021A8;
 /* data twins (src/game/data/sbss.c): D_002021A8 */
 static s32 D_002021A8;
 #endif
+#ifndef NONMATCHING
 extern s32 D_004A1450[];
+#else
+/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A1450 */
+static s32 D_004A1450[0xc8];
+#endif
+#ifndef NONMATCHING
 extern s32 D_004A18B0[];
+#else
+/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A18B0 */
+static s32 D_004A18B0[0x2];
+#endif
 extern S D_001F2FE0 __attribute__((aligned(16)));
 #ifndef NONMATCHING
 extern u32 D_002021A4;
@@ -113,14 +123,44 @@ extern s8 D_001FD3E8[];
 /* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD3E8 */
 static s8 D_001FD3E8[0x8] = { 0x20, 0x25, 0x33, 0x64, 0x20, -0x7f, -0x6d, 0 };
 #endif
+#ifndef NONMATCHING
 extern s8 D_004A1770[];
+#else
+/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A1770 */
+static s8 D_004A1770[0x100];
+#endif
+#ifndef NONMATCHING
 extern s8 D_004A1870[];
+#else
+/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A1870 */
+static s8 D_004A1870[0x14];
+#endif
 extern f32 D_004A1884[];
 extern f32 D_004A1888[];
+#ifndef NONMATCHING
 extern f32 D_004A189C[];
+#else
+/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A189C */
+static f32 D_004A189C[0x1];
+#endif
+#ifndef NONMATCHING
 extern f32 D_004A18A0[];
+#else
+/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A18A0 */
+static f32 D_004A18A0[0x3];
+#endif
+#ifndef NONMATCHING
 extern u32 D_004A18AC[];
+#else
+/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A18AC */
+static u32 D_004A18AC[0x1];
+#endif
+#ifndef NONMATCHING
 extern f32 D_004A18B8[];
+#else
+/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A18B8 */
+static f32 D_004A18B8[0x2];
+#endif
 extern Q2 D_001F2FC0;
 extern u32 D_002022B8;
 #ifndef NONMATCHING
@@ -622,4 +662,10 @@ void DbMapProc_Pos_0_00199110(s32 arg0, void *arg1, void *arg2) {
 #pragma explicit_zero_data on
 /* data twins (src/game/data/sbss.c): D_00202190 */
 u32 D_00202190;
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A1884 */
+f32 D_004A1884[0x6] __attribute__((aligned(4)));
 #endif
