@@ -12,6 +12,7 @@ register and scheduling differences.
 
 | Function | What still differs |
 |---|---|
+| CreditsCb_DrawRect_0_001E4460 | Two UV stores at sp+0x30 and sp+0x34 appear in the opposite order (44/46 words match). |
 | GsPkt_Flush_1_001544C0 | register choice only (orig p=a0, c=a1, div/n=v1). volatile globals give the reloads |
 | MapObj_FindCollider_0_001B1D00 | one `addu` operand order (orig `addu a2,a1,a0`) |
 | ScreenFx_DrawModelOverlay_0_00132A70 | orig moves the loop setup after the loop and branches back into it; ours keeps invariants in s-regs (frame 0x70 vs 0xA0) |
