@@ -1603,3 +1603,9 @@ u8 D_001FCF20[0x10] __attribute__((aligned(8))) = { 0x83, 0x5e, 0x83, 0x43, 0x83
 /* data twins (src/game/data/option_rodata.c): D_001FCF30 */
 u8 D_001FCF30[0x10] __attribute__((aligned(8))) = { 0x83, 0x5e, 0x83, 0x43, 0x83, 0x76, 0x82, 0x51, 0, 0, 0, 0, 0, 0, 0, 0 };
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/option_rodata.c): D_001FCF40 */
+u8 D_001FCF40[0x10] __attribute__((aligned(8))) = { 0x83, 0x5e, 0x83, 0x43, 0x83, 0x76, 0x82, 0x52, 0, 0, 0, 0, 0, 0, 0, 0 };
+#endif

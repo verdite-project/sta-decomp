@@ -35,3 +35,8 @@ D_001F2080 0x40   # 4 Vecs, i < 4 (fog.c)
 gVramBlocks_0047F0C0 0x1000 # 0x100 VRAM blocks of 0x10, memset(.., 0x1000) (vram_init.c)
 gEnemyDataTbl_004A43B0 0x1B8  # 11 entries of 0x28, i < 11 (enemy_mgr_*.c)
 D_0030C48C 0x8    # one C, [0] only (point_light.c)
+D_001FCF40 self   # a string in option.c's label table
+D_001F20C0 0x40   # 4 Vecs, the i < 4 loop with D_001F2080 (fog.c)
+D_004800C0 0x3000 # memset(.., 0, 0x3000), 0x100 entries of 0x30 (vram_init.c)
+D_0030A3B0 0x10   # a Vec, [0] and sceVu0CopyVector (light.c)
+D_001F3A50 0x18   # one S, t = [0] (shop_menu.c)

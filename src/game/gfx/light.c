@@ -46,7 +46,12 @@ extern Vec D_0030A3B0[];
 extern f32 D_0030A3B4[];
 extern f32 D_0030A3B8[];
 extern f32 D_0030A3BC[];
+#ifndef NONMATCHING
 extern f32 D_0030A3C0[];
+#else
+/* data twins (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A3C0 */
+static f32 D_0030A3C0[0x1];
+#endif
 extern f32 D_0030A3C4[];
 extern B D_0030A3C8[];
 extern s8 D_0030A2D0__as_Light_Init_1_0015BCA0[];
@@ -386,4 +391,11 @@ char D_0030A310[0x10];
 #pragma explicit_zero_data on
 /* data twins (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A350 */
 Vec D_0030A350;
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A3C4, D_0030C3D0 */
+f32 D_0030A3C4[0x803] __attribute__((aligned(4)));
+u16 D_0030C3D0[0x8];
 #endif

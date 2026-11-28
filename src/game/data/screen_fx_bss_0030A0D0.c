@@ -4,14 +4,18 @@
    (CodeWarrior writes uninitialised objects in reverse order). */
 /* used by: cd, file, light, point_light */
 
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/point_light.c */
 f32 D_0030C42C[0x1];
 f32 D_0030C428[0x1];
 f32 D_0030C424[0x1];
 u8 D_0030C420[0x4];
 u8 D_0030C3E0[0x40];
+#endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/light.c */
 u8 D_0030C3D0[0x10]; /* also D_0030C3D4 */
 u8 D_0030A3C4[0x200c] __attribute__((aligned(4))); /* also D_0030A3C8 */
 f32 D_0030A3C0[0x1];
+#endif
 f32 D_0030A3BC[0x1];
 f32 D_0030A3B8[0x1];
 f32 D_0030A3B4[0x1];

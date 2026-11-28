@@ -30,9 +30,24 @@ typedef struct {
     u8 pad2[0xCC0 - 0xB0];
 } Big;
 extern f32 D_0030C420[];
+#ifndef NONMATCHING
 extern f32 D_0030C424[];
+#else
+/* data twins (src/game/data/screen_fx_bss_0030A0D0.c): D_0030C424 */
+static f32 D_0030C424[0x1];
+#endif
+#ifndef NONMATCHING
 extern f32 D_0030C428[];
+#else
+/* data twins (src/game/data/screen_fx_bss_0030A0D0.c): D_0030C428 */
+static f32 D_0030C428[0x1];
+#endif
+#ifndef NONMATCHING
 extern f32 D_0030C42C[];
+#else
+/* data twins (src/game/data/screen_fx_bss_0030A0D0.c): D_0030C42C */
+static f32 D_0030C42C[0x1];
+#endif
 extern f32 D_0030C434[];
 extern Vec D_0030C3E0;
 extern Vec D_001F2150;
@@ -245,4 +260,11 @@ void PointLight_Init_0_0015C8D0(void) {
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/screen_fx_bss_0030A0D0.c): D_0030C3E0, D_0030C420 */
+Vec D_0030C3E0;
+f32 D_0030C420[0x1];
 #endif

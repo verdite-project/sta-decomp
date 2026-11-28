@@ -68,7 +68,12 @@ extern s32 D_00202378;
 static s32 D_00202378;
 #endif
 extern S D_001F3A90[] __attribute__((aligned(16)));
+#ifndef NONMATCHING
 extern S D_001F3AB0[] __attribute__((aligned(16)));
+#else
+/* data twins (src/game/data/map_se_stream_data.c): D_001F3AB0 */
+static S D_001F3AB0[0x1] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+#endif
 extern s8 D_001FE748[];
 extern s8 D_001FE750[];
 extern s8 D_001FE758[];
@@ -102,7 +107,12 @@ extern u32 D_004BAC1C[];
 /* data twins (src/game/data/save_system_start_bss.c): D_004BAC1C */
 static u32 D_004BAC1C[0x1];
 #endif
+#ifndef NONMATCHING
 extern S D_001F3A70 __attribute__((aligned(16)));
+#else
+/* data twins (src/game/data/map_se_stream_data.c): D_001F3A70 */
+static S D_001F3A70 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+#endif
 #ifndef NONMATCHING
 extern char D_004BAA70[];
 #else

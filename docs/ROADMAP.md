@@ -254,11 +254,11 @@ the object from its owner instead:
 <!-- data-owners:start -->
 | objects (2026-11-28) | bss | data | rodata | sbss | sdata | all |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| NONMATCHING twin in its owner | 333 | 49 | 235 | 312 | 111 | 1040 |
-| one user, not split yet | 26 | 56 | 17 | 2 | 10 | 111 |
-| several users, not split yet | 8 | 4 | 0 | 0 | 2 | 14 |
-| pinned | 352 | 55 | 59 | 3 | 0 | 469 |
-| used by asm only / by data only / unused | 81 | 16 | 79 | 7 | 1 | 184 |
+| NONMATCHING twin in its owner | 341 | 51 | 236 | 312 | 111 | 1051 |
+| one user, not split yet | 26 | 58 | 17 | 2 | 10 | 113 |
+| several users, not split yet | 8 | 5 | 0 | 0 | 2 | 15 |
+| pinned | 343 | 50 | 58 | 3 | 0 | 454 |
+| used by asm only / by data only / unused | 82 | 16 | 79 | 7 | 1 | 185 |
 | total | 800 | 180 | 390 | 324 | 124 | 1818 |
 <!-- data-owners:end -->
 
