@@ -160,14 +160,15 @@ void DbItemProc_DrawInfo_0_001973F0(s8 *o, s32 sel, u32 id, s32 n) {
 }
 #endif
 
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-/* data group (src/game/data/load_menu_bss_004A1120.c): D_004A13F0__grp: gDbItemProcDrawInfoBss_004A13F0@0x0, gDbItemProcDrawInfoBss_004A1404@0x14, gDbItemProcDrawInfoBss_004A141C@0x2c, gDbItemProcDrawInfoBss_004A1420@0x30, gDbItemProcDrawInfoBss_004A142C@0x3c */
-u8 D_004A13F0__grp[0x40] __attribute__((aligned(16)));
-#endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
 /* data group (src/game/data/databook_item_reset_data.c): D_001F2F60__grp: gDbItemProcDrawInfoData_001F2F60@0x0 */
 f32 D_001F2F60__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/load_menu_bss_004A1120.c): gDbItemProcDrawInfoBss_004A13F0__grp: gDbItemProcDrawInfoBss_004A13F0@0x0, gDbItemProcDrawInfoBss_004A1404@0x14, gDbItemProcDrawInfoBss_004A141C@0x2c, gDbItemProcDrawInfoBss_004A1420@0x30, gDbItemProcDrawInfoBss_004A142C@0x3c */
+unsigned char gDbItemProcDrawInfoBss_004A13F0__grp[0x40] __attribute__((aligned(16)));
 #endif

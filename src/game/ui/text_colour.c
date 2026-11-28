@@ -11,6 +11,6 @@ TextColour *TextColour_Get_1_0015D580(int colour)
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/player_bss.c): D_0030D9A0__grp: gTextColourBss_0030D9A0@0x0, gZeroVec_003139A0@0x6000, gTextColourBss_003139A4@0x6004, gTextColourBss_003139A8@0x6008 */
-unsigned char D_0030D9A0__grp[0x6010] __attribute__((aligned(16)));
+/* data group (src/game/data/player_bss.c): gTextColourBss_0030D9A0__grp: gTextColourBss_0030D9A0@0x0, gZeroVec_003139A0@0x6000, gTextColourBss_003139A4@0x6004, gTextColourBss_003139A8@0x6008 */
+unsigned char gTextColourBss_0030D9A0__grp[0x6010] __attribute__((aligned(16)));
 #endif

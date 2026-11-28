@@ -3,7 +3,7 @@
 #include "include_asm.h"
 
 #ifdef NONMATCHING
-/* NEAR: literal "STMI"/"STEM"/"STOI" (D_001FDA60/68/70) - batch.py cannot link literals; checked with a private batch2.py placing .data at 0x1FDA60: same size/shape, ~300 words differ in temp/s-reg allocation. extern s8 D_[] instead hoists the byte loads out of the loops. */
+/* NEAR: literal "STMI"/"STEM"/"STOI" (gMapAreaLoadRodata_001FDA60/68/70) - batch.py cannot link literals; checked with a private batch2.py placing .data at 0x1FDA60: same size/shape, ~300 words differ in temp/s-reg allocation. extern s8 D_[] instead hoists the byte loads out of the loops. */
 #include "common.h"
 typedef struct { u32 id; s32 size; u32 kind:8; u32 off:24; u16 xC; u16 n; } Ch;
 typedef struct { s32 x0; s32 x4; s32 x8; s32 xC; } Dt;
@@ -12,9 +12,9 @@ typedef struct {
     s32 x28, x2C, x30, x34, x38, x3C, x40, x44, x48, x4C, x50, x54, x58, x5C, x60, x64, x68;
     s16 x6C, x6E, x70, x72, x74, x76, x78, x7A, x7C, x7E, x80;
 } Out;
-extern s8 D_001FDA60[];
-extern s8 D_001FDA68[];
-extern s8 D_001FDA70[];
+extern s8 gMapAreaLoadRodata_001FDA60[];
+extern s8 gMapAreaLoadRodata_001FDA68[];
+extern s8 gMapAreaLoadRodata_001FDA70[];
 #define S1 "STMI\0\0\0\0"
 #define S2 "STEM\0\0\0\0"
 #define S3 "STOI\0\0\0\0"

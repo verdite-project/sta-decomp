@@ -51,8 +51,6 @@ u8 gTaskCallbackBss_004BAC3C[0x4];
 u8 gTaskCallbackBss_004BAC38[0x4];
 s32 gTaskCallbackBss_004BAC34[0x1];
 u8 gTaskCallbackBss_004BAC30[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/task_callback.c */
 u8 gTaskCallbackBss_004BAC2C[0x4];
 u8 gTaskCallbackBss_004BAC28[0x4];
 u8 gTaskCallbackBss_004BAC24[0x4];

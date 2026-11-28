@@ -402,36 +402,36 @@ u16 gLightBss_0030C3D0[0x8];
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A330__grp: gLightBss_0030A330@0x0, gLightBss_0030A334@0x4, gLightBss_0030A338@0x8 */
-u8 D_0030A330__grp[0x20] __attribute__((aligned(16)));
+/* data group (src/game/data/screen_fx_bss_0030A0D0.c): gLightBss_0030A330__grp: gLightBss_0030A330@0x0, gLightBss_0030A334@0x4, gLightBss_0030A338@0x8 */
+unsigned char gLightBss_0030A330__grp[0x20] __attribute__((aligned(16)));
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A360__grp: gLightBss_0030A360@0x0, gLightBss_0030A364@0x4, gLightBss_0030A368@0x8 */
-u8 D_0030A360__grp[0x10] __attribute__((aligned(16)));
+/* data group (src/game/data/screen_fx_bss_0030A0D0.c): gLightBss_0030A360__grp: gLightBss_0030A360@0x0, gLightBss_0030A364@0x4, gLightBss_0030A368@0x8 */
+unsigned char gLightBss_0030A360__grp[0x10] __attribute__((aligned(16)));
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A370__grp: gLightBss_0030A370@0x0, gLightBss_0030A374@0x4, gLightBss_0030A378@0x8 */
-u8 D_0030A370__grp[0x20] __attribute__((aligned(16)));
+/* data group (src/game/data/screen_fx_bss_0030A0D0.c): gLightBss_0030A370__grp: gLightBss_0030A370@0x0, gLightBss_0030A374@0x4, gLightBss_0030A378@0x8 */
+unsigned char gLightBss_0030A370__grp[0x20] __attribute__((aligned(16)));
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A390__grp: gLightBss_0030A390@0x0, gLightBss_0030A39C@0xc */
-u8 D_0030A390__grp[0x10] __attribute__((aligned(16)));
+/* data group (src/game/data/screen_fx_bss_0030A0D0.c): gLightBss_0030A390__grp: gLightBss_0030A390@0x0, gLightBss_0030A39C@0xc */
+unsigned char gLightBss_0030A390__grp[0x10] __attribute__((aligned(16)));
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A3A0__grp: gLightBss_0030A3A0@0x0, gLightBss_0030A3AC@0xc */
-u8 D_0030A3A0__grp[0x10] __attribute__((aligned(16)));
+/* data group (src/game/data/screen_fx_bss_0030A0D0.c): gLightBss_0030A3A0__grp: gLightBss_0030A3A0@0x0, gLightBss_0030A3AC@0xc */
+unsigned char gLightBss_0030A3A0__grp[0x10] __attribute__((aligned(16)));
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A3B0__grp: gLightBss_0030A3B0@0x0, gLightBss_0030A3B4@0x4, gLightBss_0030A3B8@0x8, gLightBss_0030A3BC@0xc */
-u8 D_0030A3B0__grp[0x10] __attribute__((aligned(16)));
+/* data group (src/game/data/screen_fx_bss_0030A0D0.c): gLightBss_0030A3B0__grp: gLightBss_0030A3B0@0x0, gLightBss_0030A3B4@0x4, gLightBss_0030A3B8@0x8, gLightBss_0030A3BC@0xc */
+unsigned char gLightBss_0030A3B0__grp[0x10] __attribute__((aligned(16)));
 #endif

@@ -4,4 +4,6 @@
 /* used by: no code by name (reached through other data) */
 #pragma explicit_zero_data on
 
-const s32 D_0020186C[0x1] = { 0 };
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/save/save_system_update.c */
+const s32 gSaveSystemUpdateRodata_0020186C[0x1] = { 0 };
+#endif

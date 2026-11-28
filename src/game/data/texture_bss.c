@@ -49,7 +49,9 @@ u8 gTextureBss_00438A70[0x6610];
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/texture.c */
 u8 gTextureBss_00438A30[0x40];
 #endif
-u8 D_00438A20[0x10]; /* also D_00438A22, D_00438A24 */
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/texture.c */
+u8 gTextureBss_00438A20[0x10]; /* also D_00438A22, D_00438A24 */
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/texture.c */
 u8 gTextureBss_00438A1C[0x4]; /* also D_00438A1E */
 s32 gTextureBss_00438A18[0x1];

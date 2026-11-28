@@ -2,15 +2,15 @@
 +++ matched
 @@ -1,32 +1,12 @@
  #include "common.h"
--extern s32 D_004A2CD0[];
--extern s32 D_004A30D0[];
+-extern s32 gHudDrawBss_004A2CD0[];
+-extern s32 gHudDrawBss_004A30D0[];
 -void Hud_ClearTimers_0_0019A840(void) {
 -    s32 var_5;
 -    s32 *var_4;
 -    s32 *var_3;
 -    var_5 = 0x3F;
--    var_4 = (s32 *) (D_004A30D0);
--    var_3 = (s32 *) (D_004A2CD0);
+-    var_4 = (s32 *) (gHudDrawBss_004A30D0);
+-    var_3 = (s32 *) (gHudDrawBss_004A2CD0);
 -    do {
 -        M2C_FIELD(var_4, s32 *, 8) = 0;
 -        M2C_FIELD(var_3, s32 *, 8) = 0;

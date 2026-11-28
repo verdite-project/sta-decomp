@@ -289,6 +289,6 @@ s8 gSfxSystemBss_0042D850[0x30];
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/vibration_bss_0033F540.c): D_003406E0__grp: gSfxSystemBss_003406E0@0x0, gSfxSystemBss_003407E0@0x100 */
-u8 D_003406E0__grp[0xec230] __attribute__((aligned(16)));
+/* data group (src/game/data/vibration_bss_0033F540.c): gSfxSystemBss_003406E0__grp: gSfxSystemBss_003406E0@0x0, gSfxSystemBss_003407E0@0x100 */
+unsigned char gSfxSystemBss_003406E0__grp[0xec230] __attribute__((aligned(16)));
 #endif

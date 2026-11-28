@@ -5227,30 +5227,10 @@ f32 gPlayerBss_00317254[0x6] __attribute__((aligned(4)));
 f32 gPlayerBss_00317274[0x1b] __attribute__((aligned(4)));
 #endif
 
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-/* data group (src/game/data/screen_fx_flash_data.c): D_001F2070__grp: gPlayerData_001F2070@0x0, gPlayerData_001F2074@0x4, gPlayerData_001F2078@0x8, gPlayerData_001F207C@0xc */
-f32 D_001F2070__grp[0x4] __attribute__((aligned(16))) = { 2.0f, 0.0f, 1.0f, 0.0f };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-/* data group (src/game/data/screen_fx_flash_data.c): D_001F2080__grp: gPlayerData_001F2080@0x0, gPlayerData_001F2084@0x4, gPlayerData_001F208C@0xc, gPlayerData_001F2090@0x10, gPlayerData_001F2094@0x14, gPlayerData_001F209C@0x1c */
-f32 D_001F2080__grp[0x10] __attribute__((aligned(16))) = { 0.0f, -90.0f, 0.0f, 0.7f, 0.0f, 0.0f, 0.0f, 0.7f, 0.0f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f, 0.0f, -1.0f };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-/* data group (src/game/data/screen_fx_flash_data.c): D_001F20C0__grp: gPlayerData_001F20C0@0x0, gPlayerData_001F20C4@0x4, gPlayerData_001F20C8@0x8, gPlayerData_001F20D0@0x10, gPlayerData_001F20D4@0x14, gPlayerData_001F20D8@0x18 */
-f32 D_001F20C0__grp[0x10] __attribute__((aligned(16))) = { 128.0f, 128.0f, 128.0f, 128.0f, 1.0f, 1.0f, 1.0f, 128.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f };
-#endif
 
 
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-/* data group (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4CD0__grp: gPlayerBss_004B4CD0@0x0, gPlayerBss_004B4CDC@0xc */
-u8 D_004B4CD0__grp[0x10] __attribute__((aligned(16)));
-#endif
+
+
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
@@ -5260,12 +5240,42 @@ u8 D_004B4C40__grp[0x10] __attribute__((aligned(16)));
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/player_data.c): D_001F3860__grp: gPlayerData_001F3860@0x0, gPlayerData_001F3870@0x10, gPlayerData_001F3880@0x20 */
-s32 D_001F3860__grp[0x18] __attribute__((aligned(16))) = { 0x447a0000, 0x466a6000, 0, 0x3f800000, 0x3f800000, 0x3dcccccd, 0, 0, 0x708, 0x96, 0xe10, 0x708, 0xa8c, 0x708, 0, 0, 0xa8c, 0x1c2, 0x1518, 0xa8c, 0xe10, 0xa8c, 0, 0 };
+/* data group (src/game/data/pad_get_connected_bss_004B4BB0.c): gPlayerBss_004B4CD0__grp: gPlayerBss_004B4CD0@0x0, gPlayerBss_004B4CDC@0xc */
+unsigned char gPlayerBss_004B4CD0__grp[0x10] __attribute__((aligned(16)));
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4CE0__grp: gPlayerBss_004B4CE0@0x0, gPlayerBss_004B4CEC@0xc, gPlayerBss_004B4CF0@0x10, gPlayerBss_004B4D00@0x20, gPlayerBss_004B4D04@0x24, gPlayerBss_004B4D08@0x28, gPlayerBss_004B4D0C@0x2c, gPlayerBss_004B4D10@0x30 */
-u8 D_004B4CE0__grp[0x10d0] __attribute__((aligned(16)));
+/* data group (src/game/data/pad_get_connected_bss_004B4BB0.c): gPlayerBss_004B4CE0__grp: gPlayerBss_004B4CE0@0x0, gPlayerBss_004B4CEC@0xc, gPlayerBss_004B4CF0@0x10, gPlayerBss_004B4D00@0x20, gPlayerBss_004B4D04@0x24, gPlayerBss_004B4D08@0x28, gPlayerBss_004B4D0C@0x2c, gPlayerBss_004B4D10@0x30 */
+unsigned char gPlayerBss_004B4CE0__grp[0x10d0] __attribute__((aligned(16)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/screen_fx_flash_data.c): gPlayerData_001F2070__grp: gPlayerData_001F2070@0x0, gPlayerData_001F2074@0x4, gPlayerData_001F2078@0x8, gPlayerData_001F207C@0xc */
+unsigned int gPlayerData_001F2070__grp[0x4] __attribute__((aligned(16))) = { 0x40000000, 0x0, 0x3f800000, 0x0 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/screen_fx_flash_data.c): gPlayerData_001F2080__grp: gPlayerData_001F2080@0x0, gPlayerData_001F2084@0x4, gPlayerData_001F208C@0xc, gPlayerData_001F2090@0x10, gPlayerData_001F2094@0x14, gPlayerData_001F209C@0x1c */
+unsigned int gPlayerData_001F2080__grp[0x10] __attribute__((aligned(16))) = { 0x0, 0xc2b40000, 0x0, 0x3f333333, 0x0, 0x0, 0x0, 0x3f333333, 0x0, 0x0, 0x0, 0xbf800000, 0x0, 0x0, 0x0, 0xbf800000 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/screen_fx_flash_data.c): gPlayerData_001F20C0__grp: gPlayerData_001F20C0@0x0, gPlayerData_001F20C4@0x4, gPlayerData_001F20C8@0x8, gPlayerData_001F20D0@0x10, gPlayerData_001F20D4@0x14, gPlayerData_001F20D8@0x18 */
+unsigned int gPlayerData_001F20C0__grp[0x10] __attribute__((aligned(16))) = { 0x43000000, 0x43000000, 0x43000000, 0x43000000, 0x3f800000, 0x3f800000, 0x3f800000, 0x43000000, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/player_data.c): gPlayerData_001F3860__grp: gPlayerData_001F3860@0x0, gPlayerData_001F3870@0x10, gPlayerData_001F3880@0x20 */
+int gPlayerData_001F3860__grp[0x18] __attribute__((aligned(16))) = { 0x447a0000, 0x466a6000, 0, 0x3f800000, 0x3f800000, 0x3dcccccd, 0, 0, 0x708, 0x96, 0xe10, 0x708, 0xa8c, 0x708, 0, 0, 0xa8c, 0x1c2, 0x1518, 0xa8c, 0xe10, 0xa8c, 0, 0 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/player_rodata.c): pad_001FDC2D__grp: pad_001FDC2D@0x0 */
+unsigned char pad_001FDC2D__grp[0x3] __attribute__((aligned(1))) = { 0, 0, 0 };
 #endif

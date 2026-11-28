@@ -99,6 +99,6 @@ void Fog_UpdatePlanes_0_0015D300(void) {
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/screen_fx_flash_data.c): D_001F2060__grp: gFogData_001F2060@0x0, gFogData_001F2064@0x4, gFogData_001F2068@0x8, gFogData_001F206C@0xc */
-f32 D_001F2060__grp[0x4] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 0.0f };
+/* data group (src/game/data/screen_fx_flash_data.c): gFogData_001F2060__grp: gFogData_001F2060@0x0, gFogData_001F2064@0x4, gFogData_001F2068@0x8, gFogData_001F206C@0xc */
+unsigned int gFogData_001F2060__grp[0x4] __attribute__((aligned(16))) = { 0x3f800000, 0x0, 0x0, 0x0 };
 #endif

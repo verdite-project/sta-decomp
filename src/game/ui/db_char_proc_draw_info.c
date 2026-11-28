@@ -200,6 +200,6 @@ s32 gDbCharProcDrawInfoSbss_00202188;
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/load_menu_bss_004A1120.c): D_004A13A0__grp: gDbCharProcDrawInfoBss_004A13A0@0x0, gDbCharProcDrawInfoBss_004A13B4@0x14, gDbCharProcDrawInfoBss_004A13CC@0x2c, gDbCharProcDrawInfoBss_004A13D0@0x30, gDbCharProcDrawInfoBss_004A13DC@0x3c */
-u8 D_004A13A0__grp[0x40] __attribute__((aligned(16)));
+/* data group (src/game/data/load_menu_bss_004A1120.c): gDbCharProcDrawInfoBss_004A13A0__grp: gDbCharProcDrawInfoBss_004A13A0@0x0, gDbCharProcDrawInfoBss_004A13B4@0x14, gDbCharProcDrawInfoBss_004A13CC@0x2c, gDbCharProcDrawInfoBss_004A13D0@0x30, gDbCharProcDrawInfoBss_004A13DC@0x3c */
+unsigned char gDbCharProcDrawInfoBss_004A13A0__grp[0x40] __attribute__((aligned(16)));
 #endif

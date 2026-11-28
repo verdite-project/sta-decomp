@@ -1326,11 +1326,6 @@ Mtx gGameMainBss_002F1800;
 #endif
 
 
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-/* data group (src/game/data/gs_packet_bss.c): D_002F1680__grp: gGameMainBss_002F1680@0x0, gGameMainBss_002F1690@0x10, gGameMainBss_002F1694@0x14 */
-u8 D_002F1680__grp[0x40] __attribute__((aligned(16)));
-#endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
@@ -1358,6 +1353,48 @@ f32 D_001F1C00__grp[0x4] __attribute__((aligned(16))) = { 0.0f, 1.0f, 0.0f, 1.0f
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/gs_packet_bss.c): D_002F1840__grp: gGameMainBss_002F1840@0x0, gGameMainBss_002F1880@0x40, gGameMainBss_002F18C0@0x80, gGameMainBss_002F1900@0xc0, gGameMainBss_002F1940@0x100, gGameMainBss_002F1944@0x104, gGameMainBss_002F1948@0x108, gGameMainBss_002F194C@0x10c */
-u8 D_002F1840__grp[0x110] __attribute__((aligned(16)));
+/* data group (src/game/data/gs_packet_bss.c): gGameMainBss_002F1680__grp: gGameMainBss_002F1680@0x0, gGameMainBss_002F1690@0x10, gGameMainBss_002F1694@0x14 */
+unsigned char gGameMainBss_002F1680__grp[0x40] __attribute__((aligned(16)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/gs_packet_bss.c): gGameMainBss_002F1840__grp: gGameMainBss_002F1840@0x0, gGameMainBss_002F1880@0x40, gGameMainBss_002F18C0@0x80, gGameMainBss_002F1900@0xc0, gGameMainBss_002F1940@0x100, gGameMainBss_002F1944@0x104, gGameMainBss_002F1948@0x108, gGameMainBss_002F194C@0x10c */
+unsigned char gGameMainBss_002F1840__grp[0x110] __attribute__((aligned(16)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/game_main_rodata.c): D_001FAB6B__grp: gGameMainRodata_001FAB6B@0x0 */
+unsigned char D_001FAB6B__grp[0x5] __attribute__((aligned(1))) = { 0x49, 0, 0, 0, 0 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/game_main_rodata.c): D_001FAB70__grp: gGameMainRodata_001FAB70@0x0 */
+unsigned char D_001FAB70__grp[0x1] __attribute__((aligned(16))) = { 0x53 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/game_main_rodata.c): D_001FAB71__grp: gGameMainRodata_001FAB71@0x0 */
+unsigned char D_001FAB71__grp[0x1] __attribute__((aligned(1))) = { 0x45 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/game_main_rodata.c): D_001FAB72__grp: gGameMainRodata_001FAB72@0x0 */
+unsigned char D_001FAB72__grp[0x1] __attribute__((aligned(2))) = { 0x45 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/game_main_rodata.c): D_001FAB73__grp: gGameMainRodata_001FAB73@0x0 */
+unsigned char D_001FAB73__grp[0xd] __attribute__((aligned(1))) = { 0x61, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/game_main_bss.c): D_00209B70__grp: gGameMainBss_00209B70@0x0 */
+unsigned char D_00209B70__grp[0x18b90] __attribute__((aligned(16)));
 #endif

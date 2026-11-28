@@ -25,11 +25,15 @@ s32 gTitleData_001F3320[0x10] = { -0x3fc00000, 0xfa6, -0x40000000, 0xfa5, -0x408
 s32 gTitleData_001F3360[0x8] = { 0, 5, 0, (s32)gTitleData_001F3320, 7, -0x3fc00000, 0, 0 };
 char gStrNewGame_001F3380[0xd] = "NEW GAME\000\000\000\000\000";
 #endif
-u8 D_001F338D[0x3] __attribute__((aligned(1))) = { 0, 0, 0 };
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/title.c */
+u8 gTitleData_001F338D[0x3] __attribute__((aligned(1))) = { 0, 0, 0 };
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/title.c */
 char gStrLoadGame_001F3390[0xd] = "LOAD GAME\000\000\000\000";
 #endif
-u8 D_001F339D[0x3] __attribute__((aligned(1))) = { 0, 0, 0 };
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/title.c */
+u8 gTitleData_001F339D[0x3] __attribute__((aligned(1))) = { 0, 0, 0 };
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/enemy/enemy_list.c */
 s32 gEnemyListData_001F33A0[0x100] = { (s32)Player_LoadModel_1_001C9CD0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 #endif

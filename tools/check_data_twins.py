@@ -108,8 +108,18 @@ class Obj:
     def object_at(self, shndx, addr):
         best = None
         for s in self.syms:
-            if s["st_shndx"] == shndx and s.name and s["st_info"]["type"] in ("STT_OBJECT", "STT_NOTYPE") \
+            if s["st_shndx"] == shndx and s.name and s["st_info"]["type"] in ("STT_OBJECT", "STT_NOTYPE", "STT_FUNC") \
                     and s["st_value"] <= addr < s["st_value"] + max(s["st_size"], 1):
+                best = (s.name, addr - s["st_value"])
+        if best is None:
+            # past every symbol's end (a jump table into a function the C made
+            # shorter): the nearest symbol before it
+            cands = [s for s in self.syms if s["st_shndx"] == shndx and s.name and "." not in s.name
+                     and s["st_value"] <= addr
+                     and s["st_info"]["type"] in ("STT_OBJECT", "STT_NOTYPE", "STT_FUNC")]
+            if cands:
+                s = max(cands, key=lambda s: (s["st_value"], s["st_info"]["type"] == "STT_FUNC",
+                                              not s.name.startswith("__gnu")))
                 best = (s.name, addr - s["st_value"])
         return best or (f"?{shndx}", addr)
 

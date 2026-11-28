@@ -20,8 +20,10 @@ const u8 gSoundStartRodata_001FAB68[0x1] = { 0x53 };
 const u8 gSoundStartRodata_001FAB69[0x1] __attribute__((aligned(1))) = { 0x54 };
 const u8 gSoundStartRodata_001FAB6A[0x1] __attribute__((aligned(2))) = { 0x4d };
 #endif
-const u8 D_001FAB6B[0x5] __attribute__((aligned(1))) = { 0x49, 0, 0, 0, 0 };
-const u8 D_001FAB70[0x1] = { 0x53 };
-const u8 D_001FAB71[0x1] __attribute__((aligned(1))) = { 0x45 };
-const u8 D_001FAB72[0x1] __attribute__((aligned(2))) = { 0x45 };
-const u8 D_001FAB73[0xd] __attribute__((aligned(1))) = { 0x61, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/game_main.c */
+const u8 gGameMainRodata_001FAB6B[0x5] __attribute__((aligned(1))) = { 0x49, 0, 0, 0, 0 };
+const u8 gGameMainRodata_001FAB70[0x1] = { 0x53 };
+const u8 gGameMainRodata_001FAB71[0x1] __attribute__((aligned(1))) = { 0x45 };
+const u8 gGameMainRodata_001FAB72[0x1] __attribute__((aligned(2))) = { 0x45 };
+const u8 gGameMainRodata_001FAB73[0xd] __attribute__((aligned(1))) = { 0x61, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+#endif

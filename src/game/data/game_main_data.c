@@ -4,7 +4,9 @@
 /* used by: actor, game_main, script */
 #pragma explicit_zero_data on
 
-s32 D_001F1BAC[0x1] = { 0 };
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/entity/actor.c */
+s32 gActorData_001F1BAC[0x1] = { 0 };
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/game_main.c */
 s8 gGameMainData_001F1BB0[0x10] __attribute__((aligned(4))) = { 0, 0, 0, 0, 0, 0, -0x38, -0x3e, 0, -0x40, -0x58, -0x3c, 0, 0, -0x80, 0x3f };
 f32 gGameMainData_001F1BC0[0x1] = { 15000.0f };

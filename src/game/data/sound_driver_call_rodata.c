@@ -4,4 +4,6 @@
 /* used by: no code by name (reached through other data) */
 #pragma explicit_zero_data on
 
-const s32 D_001FE6B8[0x2] = { 0, 0 };
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ee/pad_get_connected.c */
+const s32 gPadGetConnectedRodata_001FE6B8[0x2] = { 0, 0 };
+#endif

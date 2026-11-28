@@ -760,6 +760,12 @@ volatile u16 gTextureBss_00438A1C[0x2];
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/texture_bss.c): D_004830C0__grp: gTextureBss_004830C0@0x0, gTextureBss_004830C4@0x4, gTextureBss_004830C8@0x8, gTextureBss_004830CC@0xc, gTextureBss_004830D0@0x10, gTextureBss_004830D4@0x14, gTextureBss_004830D8@0x18, gTextureBss_004830DC@0x1c, gTextureBss_004830E0@0x20, gTextureBss_004830E4@0x24, gTextureBss_004830E8@0x28, gTextureBss_004830EC@0x2c, gTextureBss_004830F0@0x30 */
-u8 D_004830C0__grp[0x40] __attribute__((aligned(16)));
+/* data group (src/game/data/texture_bss.c): gTextureBss_004830C0__grp: gTextureBss_004830C0@0x0, gTextureBss_004830C4@0x4, gTextureBss_004830C8@0x8, gTextureBss_004830CC@0xc, gTextureBss_004830D0@0x10, gTextureBss_004830D4@0x14, gTextureBss_004830D8@0x18, gTextureBss_004830DC@0x1c, gTextureBss_004830E0@0x20, gTextureBss_004830E4@0x24, gTextureBss_004830E8@0x28, gTextureBss_004830EC@0x2c, gTextureBss_004830F0@0x30 */
+unsigned char gTextureBss_004830C0__grp[0x40] __attribute__((aligned(16)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/texture_bss.c): D_00438A20__grp: gTextureBss_00438A20@0x0 */
+unsigned char D_00438A20__grp[0x10] __attribute__((aligned(16)));
 #endif

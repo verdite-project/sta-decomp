@@ -17,10 +17,12 @@ u8 gScreenFxBss_002F2078[0x8];
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/screen_fx.c */
 u8 gScreenFxBss_002F2070[0x8];
 #endif
-u8 D_002F1F10[0x160];
-u8 D_002F1DB0[0x160];
-u8 D_002F1C50[0x160];
-u8 D_002F1AF0[0x160];
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/weather_draw.c */
+u8 gWeatherDrawBss_002F1F10[0x160];
+u8 gWeatherDrawBss_002F1DB0[0x160];
+u8 gWeatherDrawBss_002F1C50[0x160];
+u8 gWeatherDrawBss_002F1AF0[0x160];
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/weather_draw.c */
 u8 gWeatherDrawBss_002F1AEC[0x4];
 u8 gWeatherDrawBss_002F1AE8[0x4];
@@ -33,7 +35,9 @@ u8 gScreenFxBss_002F1AC0[0x10];
 u8 gScreenFxBss_002F1AB0[0x10];
 u8 gScreenFxBss_002F1AA0[0x10];
 #endif
-u8 D_002F1A9C[0x4];
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/screen_fx.c */
+u8 gScreenFxBss_002F1A9C[0x4];
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/screen_fx.c */
 u8 gScreenFxBss_002F1A80[0x1c];
 u8 gScreenFxBss_002F1A78[0x8]; /* also D_002F1A7A, D_002F1A7B, D_002F1A7D, D_002F1A7E, D_002F1A7F */

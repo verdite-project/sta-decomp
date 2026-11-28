@@ -222,12 +222,18 @@ S gMapSeStreamBss_004BB050[0xc0 / sizeof(S)];
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/map_se_stream_rodata.c): D_001FE890__grp: gMapSeStreamRodata_001FE890@0x0, gMapSeStreamRodata_001FE891@0x1, gMapSeStreamRodata_001FE892@0x2, gMapSeStreamRodata_001FE893@0x3, gMapSeStreamRodata_001FE8A0@0x10 */
-char D_001FE890__grp[0x20] __attribute__((aligned(16))) = "STSE\000\000\000\000\000\000\000\000\000\000\000\000se/m%3.03ds.mse\000";
+/* data group (src/game/data/save_system_start_bss.c): gMapSeStreamBss_004BB110__grp: gMapSeStreamBss_004BB110@0x0, gMapSeStreamBss_004BB120@0x10 */
+unsigned char gMapSeStreamBss_004BB110__grp[0x11c0] __attribute__((aligned(16)));
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/save_system_start_bss.c): D_004BB110__grp: gMapSeStreamBss_004BB110@0x0, gMapSeStreamBss_004BB120@0x10 */
-u8 D_004BB110__grp[0x11c0] __attribute__((aligned(16)));
+/* data group (src/game/data/map_se_stream_rodata.c): gMapSeStreamRodata_001FE890__grp: gMapSeStreamRodata_001FE890@0x0, gMapSeStreamRodata_001FE891@0x1, gMapSeStreamRodata_001FE892@0x2, gMapSeStreamRodata_001FE893@0x3, gMapSeStreamRodata_001FE8A0@0x10 */
+char gMapSeStreamRodata_001FE890__grp[0x20] __attribute__((aligned(16))) = "STSE\000\000\000\000\000\000\000\000\000\000\000\000se/m%3.03ds.mse\000";
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/map_se_stream_rodata.c): D_001FE88C__grp: gMapSeStreamRodata_001FE88C@0x0 */
+int D_001FE88C__grp[0x1] __attribute__((aligned(4))) = { 0 };
 #endif

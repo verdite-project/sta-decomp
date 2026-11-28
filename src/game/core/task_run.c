@@ -63,6 +63,6 @@ s32 gTaskRunSbss_00201F20;
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/angle_b_bss.c): D_002F0F40__grp: gTaskRunBss_002F0F40@0x0, gTaskRunBss_002F0F44@0x4, gTaskRunBss_002F0F48@0x8, gTaskRunBss_002F0F4C@0xc, gTaskRunBss_002F0F50@0x10, gTaskRunBss_002F0F54@0x14, gTaskRunBss_002F0F58@0x18, gTaskRunBss_002F0F5C@0x1c */
-u8 D_002F0F40__grp[0x20] __attribute__((aligned(16)));
+/* data group (src/game/data/angle_b_bss.c): gTaskRunBss_002F0F40__grp: gTaskRunBss_002F0F40@0x0, gTaskRunBss_002F0F44@0x4, gTaskRunBss_002F0F48@0x8, gTaskRunBss_002F0F4C@0xc, gTaskRunBss_002F0F50@0x10, gTaskRunBss_002F0F54@0x14, gTaskRunBss_002F0F58@0x18, gTaskRunBss_002F0F5C@0x1c */
+unsigned char gTaskRunBss_002F0F40__grp[0x20] __attribute__((aligned(16)));
 #endif

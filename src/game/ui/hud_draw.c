@@ -870,6 +870,36 @@ f32 gHudDrawData_001F3070[0x1] = { 0.0f };
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/databook_item_reset_rodata.c): D_001FD3F8__grp: gHudDrawRodata_001FD3F8@0x0, gHudDrawRodata_001FD402@0xa, gHudDrawRodata_001FD404@0xc, gHudDrawRodata_001FD408@0x10, gHudDrawRodata_001FD410@0x18 */
-char D_001FD3F8__grp[0x20] __attribute__((aligned(8))) = "\002\000\003\000\006\000\005\000\004\000\001\000\000\000\000\000HP\000\000\000\000\000\000%4d/\000\000\000\000";
+/* data group (src/game/data/databook_item_reset_rodata.c): gHudDrawRodata_001FD3F8__grp: gHudDrawRodata_001FD3F8@0x0, gHudDrawRodata_001FD402@0xa, gHudDrawRodata_001FD404@0xc, gHudDrawRodata_001FD408@0x10, gHudDrawRodata_001FD410@0x18 */
+char gHudDrawRodata_001FD3F8__grp[0x20] __attribute__((aligned(8))) = "\002\000\003\000\006\000\005\000\004\000\001\000\000\000\000\000HP\000\000\000\000\000\000%4d/\000\000\000\000";
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/databook_item_reset_data.c): D_001F3064__grp: gHudDrawData_001F3064@0x0 */
+unsigned int D_001F3064__grp[0x2] __attribute__((aligned(4))) = { 0x41200000, 0x0 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/databook_item_reset_data.c): D_001F3074__grp: gHudDrawData_001F3074@0x0 */
+unsigned int D_001F3074__grp[0x2] __attribute__((aligned(4))) = { 0x41200000, 0x0 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/item_menu_draw_bss.c): D_004A2CD0__grp: gHudDrawBss_004A2CD0@0x0 */
+unsigned char D_004A2CD0__grp[0x10] __attribute__((aligned(16)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/item_menu_draw_bss.c): D_004A30D0__grp: gHudDrawBss_004A30D0@0x0 */
+unsigned char D_004A30D0__grp[0x10] __attribute__((aligned(16)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/databook_item_reset_rodata.c): pad_001FD42D__grp: pad_001FD42D@0x0 */
+unsigned char pad_001FD42D__grp[0x3] __attribute__((aligned(1))) = { 0, 0, 0 };
 #endif

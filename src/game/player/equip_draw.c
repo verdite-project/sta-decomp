@@ -617,3 +617,9 @@ u8 D_00495B60__grp[0x1000] __attribute__((aligned(16)));
 /* data group (src/game/data/ui_gauge_bss.c): D_00496B60__grp: gEquipDrawBss_00496B60@0x0 */
 u8 D_00496B60__grp[0x1000] __attribute__((aligned(16)));
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/item_menu_draw_bss.c): D_004A1A50__grp: gEquipDrawBss_004A1A50@0x0 */
+unsigned char D_004A1A50__grp[0xe70] __attribute__((aligned(16)));
+#endif

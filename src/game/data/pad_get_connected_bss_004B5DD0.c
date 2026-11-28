@@ -108,8 +108,6 @@ u8 gStatsBss_004B5F20[0x4]; /* also D_004B5F22 */
 u8 gStatsBss_004B5F1C[0x4]; /* also D_004B5F1E */
 u8 gStatsBss_004B5F18[0x4]; /* also D_004B5F19, D_004B5F1A, D_004B5F1B */
 u8 gStatsBss_004B5EF0[0x28]; /* also D_004B5F16, D_004B5F17 */
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/player/stats.c */
 u8 gStatsBss_004B5E98[0x58] __attribute__((aligned(8))); /* also D_004B5E9A */
 u8 gStatsBss_004B5E94[0x4]; /* also D_004B5E96 */
 u8 gStatsBss_004B5E90[0x4]; /* also D_004B5E92 */

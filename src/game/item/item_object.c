@@ -1364,3 +1364,15 @@ u8 D_004AC970__grp[0xd00] __attribute__((aligned(16)));
 /* data group (src/game/data/pad_get_connected_bss_004AC630.c): D_004AE370__grp: gItemObjectBss_004AE370@0x0 */
 u8 D_004AE370__grp[0x3400] __attribute__((aligned(16)));
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/save_parse_rodata.c): D_001FD99B__grp: gItemObjectRodata_001FD99B@0x0 */
+unsigned char D_001FD99B__grp[0x5] __attribute__((aligned(1))) = { 0x61, 0, 0, 0, 0 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/save_parse_rodata.c): D_001FD9B3__grp: gItemObjectRodata_001FD9B3@0x0 */
+unsigned char D_001FD9B3__grp[0x5] __attribute__((aligned(1))) = { 0x61, 0, 0, 0, 0 };
+#endif

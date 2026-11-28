@@ -78,6 +78,6 @@ void MapSheet_Update_0_001ED740(S_MapSheet_Update_0_001ED740 *a) {
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/movie_bss.c): D_004BE0E0__grp: gMapSheetBss_004BE0E0@0x0, gMapSheetBss_004BE0F4@0x14, gMapSheetBss_004BE10C@0x2c, gMapSheetBss_004BE110@0x30, gMapSheetBss_004BE11C@0x3c */
-u8 D_004BE0E0__grp[0x40] __attribute__((aligned(16)));
+/* data group (src/game/data/movie_bss.c): gMapSheetBss_004BE0E0__grp: gMapSheetBss_004BE0E0@0x0, gMapSheetBss_004BE0F4@0x14, gMapSheetBss_004BE10C@0x2c, gMapSheetBss_004BE110@0x30, gMapSheetBss_004BE11C@0x3c */
+unsigned char gMapSheetBss_004BE0E0__grp[0x40] __attribute__((aligned(16)));
 #endif

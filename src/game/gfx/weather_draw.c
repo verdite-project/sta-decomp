@@ -163,3 +163,27 @@ void Weather_Draw_0_00157630(void) {
     Tex_FlushAll_1_00176AE0();
 }
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/screen_fx_bss.c): D_002F1AF0__grp: gWeatherDrawBss_002F1AF0@0x0 */
+unsigned char D_002F1AF0__grp[0x160] __attribute__((aligned(16)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/screen_fx_bss.c): D_002F1C50__grp: gWeatherDrawBss_002F1C50@0x0 */
+unsigned char D_002F1C50__grp[0x160] __attribute__((aligned(16)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/screen_fx_bss.c): D_002F1DB0__grp: gWeatherDrawBss_002F1DB0@0x0 */
+unsigned char D_002F1DB0__grp[0x160] __attribute__((aligned(16)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/screen_fx_bss.c): D_002F1F10__grp: gWeatherDrawBss_002F1F10@0x0 */
+unsigned char D_002F1F10__grp[0x160] __attribute__((aligned(16)));
+#endif

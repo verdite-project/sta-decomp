@@ -5,7 +5,9 @@
    texture_hash */
 #pragma explicit_zero_data on
 
-const s32 D_001FB8C8[0x2] = { 0, 0 };
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/texture_hash.c */
+const s32 gTextureHashRodata_001FB8C8[0x2] = { 0, 0 };
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/effect/sfx_all.c */
 const s8 gSfxAllRodata_001FB8D0[0x20] __attribute__((aligned(8))) = "SFX(%d) not found from STAM\000\000\000\000\000";
 #endif

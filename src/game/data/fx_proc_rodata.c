@@ -102,4 +102,6 @@ const s8 gFileRodata_001FB760[0x10] = ";1\000\000\000\000\000\000\000\000\000\00
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/iop.c */
 const u8 gIopRodata_001FB770[0x1d] = "cdrom0:\\IOPRP250.IMG;1\000\000\000\000\000\000\000";
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/iop.c */
 const u8 pad_001FB78D[0x3] __attribute__((aligned(1))) = { 0, 0, 0 };
+#endif

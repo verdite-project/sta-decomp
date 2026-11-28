@@ -635,6 +635,6 @@ u8 gSfxAllBss_0042D7E0[0x70];
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/sfx_all_rodata.c): D_001FB8F0__grp: gSfxAllRodata_001FB8F0@0x0, gSfxAllRodata_001FB8F1@0x1, gSfxAllRodata_001FB8F2@0x2, gSfxAllRodata_001FB8F3@0x3 */
-s32 D_001FB8F0__grp[0x2] __attribute__((aligned(16))) = { 0x4d415453, 0 };
+/* data group (src/game/data/sfx_all_rodata.c): gSfxAllRodata_001FB8F0__grp: gSfxAllRodata_001FB8F0@0x0, gSfxAllRodata_001FB8F1@0x1, gSfxAllRodata_001FB8F2@0x2, gSfxAllRodata_001FB8F3@0x3 */
+int gSfxAllRodata_001FB8F0__grp[0x2] __attribute__((aligned(16))) = { 0x4d415453, 0 };
 #endif

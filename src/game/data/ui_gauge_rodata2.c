@@ -31,4 +31,6 @@ const char gStrTime2d2d2d_001FCD40[0x18] = "TIME %2d:%2d:%2d\000\000\000\000\000
 const char gStrEmpty_001FCD58[0x8] = " EMPTY \000";
 const char gSaveMenuSlotRodata_001FCD60[0xd] = "----\000\000\000\000\000\000\000\000\000";
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/save_menu_slot.c */
 const u8 pad_001FCD6D[0x3] __attribute__((aligned(1))) = { 0, 0, 0 };
+#endif

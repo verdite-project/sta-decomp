@@ -95,3 +95,9 @@ void Iop_Reboot_3_0015CB50(void) {
     }
     gGameMainSbss_00201F90 = n;
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/fx_proc_rodata.c): pad_001FB78D__grp: pad_001FB78D@0x0 */
+unsigned char pad_001FB78D__grp[0x3] __attribute__((aligned(1))) = { 0, 0, 0 };
+#endif

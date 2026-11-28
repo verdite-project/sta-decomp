@@ -841,3 +841,28 @@ char D_001FD8D0__grp[0x1e] __attribute__((aligned(16))) = "cdrom0:\\TARGET\\PROL
 /* data group (src/game/data/title_rodata.c): gStrCdrom0TargetOpeningPss1_001FD870__grp: gStrCdrom0TargetOpeningPss1_001FD870@0x0 */
 char gStrCdrom0TargetOpeningPss1_001FD870__grp[0x1d] __attribute__((aligned(16))) = "cdrom0:\\TARGET\\OPENING.PSS;1\000";
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/title_nop_data.c): D_001F338D__grp: gTitleData_001F338D@0x0 */
+unsigned char D_001F338D__grp[0x3] __attribute__((aligned(1))) = { 0, 0, 0 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/title_nop_data.c): D_001F339D__grp: gTitleData_001F339D@0x0 */
+unsigned char D_001F339D__grp[0x3] __attribute__((aligned(1))) = { 0, 0, 0 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+void EnemyMgr_Update_0_001A4990(void);
+/* data group (src/game/data/enemy_list_rodata.c): jtbl_001FD8F0__grp: jtbl_001FD8F0@0x0 */
+int jtbl_001FD8F0__grp[0x8] __attribute__((aligned(16))) = { (int)((unsigned char *)EnemyMgr_Update_0_001A4990 + 0x6C0), (int)((unsigned char *)EnemyMgr_Update_0_001A4990 + 0x6A0), (int)((unsigned char *)EnemyMgr_Update_0_001A4990 + 0x6A0), (int)((unsigned char *)EnemyMgr_Update_0_001A4990 + 0x420), (int)((unsigned char *)EnemyMgr_Update_0_001A4990 + 0x6A0), (int)((unsigned char *)EnemyMgr_Update_0_001A4990 + 0x2C8), (int)((unsigned char *)EnemyMgr_Update_0_001A4990 + 0x420), 0 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/title_rodata.c): pad_001FD8AD__grp: pad_001FD8AD@0x0 */
+unsigned char pad_001FD8AD__grp[0x3] __attribute__((aligned(1))) = { 0, 0, 0 };
+#endif

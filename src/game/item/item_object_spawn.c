@@ -922,11 +922,6 @@ s32 Item_LoadTableB_0_001AFFA0(void *a) {
 s32 gItemObjectSpawnSbss_0020228C;
 #endif
 
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-/* data group (src/game/data/pad_get_connected_bss_004AC630.c): D_004AC630__grp: gItemObjectSpawnBss_004AC630@0x0, gItemObjectSpawnBss_004AC6CC@0x9c, gItemObjectSpawnBss_004AC79C@0x16c, gItemObjectSpawnBss_004AC86C@0x23c, gItemObjectSpawnBss_004AC93C@0x30c */
-u8 D_004AC630__grp[0x340] __attribute__((aligned(16)));
-#endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
@@ -944,4 +939,10 @@ f32 D_001F3830__grp[0x4] __attribute__((aligned(16))) = { 1.0f, 1.0f, 1.0f, 1.0f
 #pragma explicit_zero_data on
 /* data group (src/game/data/pad_get_connected_bss.c): D_004AC5A0__grp: gItemObjectSpawnBss_004AC5A0@0x0 */
 u8 D_004AC5A0__grp[0x4] __attribute__((aligned(16)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/pad_get_connected_bss_004AC630.c): gItemObjectSpawnBss_004AC630__grp: gItemObjectSpawnBss_004AC630@0x0, gItemObjectSpawnBss_004AC6CC@0x9c, gItemObjectSpawnBss_004AC79C@0x16c, gItemObjectSpawnBss_004AC86C@0x23c, gItemObjectSpawnBss_004AC93C@0x30c */
+unsigned char gItemObjectSpawnBss_004AC630__grp[0x340] __attribute__((aligned(16)));
 #endif

@@ -270,15 +270,14 @@ the object from its owner instead:
 <!-- data-owners:start -->
 | objects (2026-11-28) | bss | data | rodata | sbss | sdata | all |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| NONMATCHING twin or group in its owner | 768 | 175 | 352 | 324 | 124 | 1743 |
-| used by asm only (no C owner) | 2 | 0 | 0 | 0 | 0 | 2 |
-| unused (nothing names it) | 30 | 5 | 38 | 0 | 0 | 73 |
+| NONMATCHING twin or group in its owner | 800 | 180 | 390 | 324 | 124 | 1818 |
 | total | 800 | 180 | 390 | 324 | 124 | 1818 |
 <!-- data-owners:end -->
 
-What is left has no owner yet: the objects only asm names go to the C that
-replaces that asm, and the unused ones (labels nothing refers to) stay in
-their data units. Beyond that:
+Every object has an owner in the NONMATCHING build. One nothing in C names
+goes to the C that stands in for the asm that used it, else to its owned
+neighbour, else to the unit its data unit was carved for (its `used by`
+note), else to the C unit before its data unit in link order. Beyond that:
 
 1. **Extents** (`config/data_extents.txt`) make groups smaller: a root of
    unknown reach takes the rest of its run with it, so the run moves as
@@ -288,11 +287,11 @@ their data units. Beyond that:
    into their owner's code, 2 would leave link order, 13 are 128-bit qword
    unions no C initialiser writes; it also tries struct initialisers).
 3. **Names**: `config/game_data_names.txt` + `tools/apply_data_names.py`
-   (README, "Data names"); 1744 are named: 135 for what they are (the 123
+   (README, "Data names"); 1808 are named: 135 for what they are (the 123
    ASCII strings after their text, the header-typed objects, the tables
-   whose users settle them) and 1609 after their owner unit and section
-   (`gGsPacketBss_002F1194`). Replace an owner name with a real one as its
-   purpose shows; the 75 with no owner keep `D_<ADDR>`.
+   whose users settle them) and 1673 after their owner unit and section
+   (`gGsPacketBss_002F1194`); the other 10 keep splat's `jtbl_`/`pad_`
+   names. Replace an owner name with a real one as its purpose shows.
 
 `tools/split_data.py --apply` also takes back the twin of any object a
 later inventory pins (a new root, a new extent), so rerun it after changing

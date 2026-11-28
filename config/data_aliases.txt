@@ -41,7 +41,7 @@ D_002F1298 = gGsPacketBss_002F1250 + 0x48;
 D_002F12D8 = gGsPacketBss_002F12D4 + 0x4;
 D_002F12E8 = gGsPacketBss_002F12D4 + 0x14;
 D_002F1328 = gGsPacketBss_002F12D4 + 0x54;
-D_002F13A8 = D_002F13A0 + 0x8;
+D_002F13A8 = gGsPacketBss_002F13A0 + 0x8;
 D_002F15E8 = gMdlDrawWithOverlayBss_002F15E4 + 0x4;
 D_002F16E8 = gSoundEmitterBss_002F16E4 + 0x4;
 D_002F1698 = gGameMainBss_002F1694 + 0x4;
@@ -105,7 +105,7 @@ D_004BDF1C = D_004BDF14 + 0x8;
 D_004BDF20 = D_004BDF14 + 0xC;
 D_004BDF24 = D_004BDF14 + 0x10;
 /* movie_bss */
-D_004BE0AC = D_004BE0A8 + 0x4;
+D_004BE0AC = gMovieBss_004BE0A8 + 0x4;
 D_004BE0F8 = gMapSheetBss_004BE0F4 + 0x4;
 D_004BE11F = gMapSheetBss_004BE11C + 0x3;
 D_004BDFF4 = gMovieBss_004BDFF0 + 0x4;
@@ -249,9 +249,9 @@ D_004B5F17 = gStatsBss_004B5EF0 + 0x27;
 /* point_light */
 D_0030C434 = D_0030C430 + 0x4;
 /* point_light_bss */
-D_0030C4BD = D_0030C4BC + 0x1;
-D_0030C4BE = D_0030C4BC + 0x2;
-D_0030C4BF = D_0030C4BC + 0x3;
+D_0030C4BD = gPointLightBss_0030C4BC + 0x1;
+D_0030C4BE = gPointLightBss_0030C4BC + 0x2;
+D_0030C4BF = gPointLightBss_0030C4BC + 0x3;
 D_0030C4C2 = gPointLightBss_0030C4C0 + 0x2;
 D_0030C4C3 = gPointLightBss_0030C4C0 + 0x3;
 D_0030D0D4 = gPointLightBss_0030C4C0 + 0xC14;
@@ -377,8 +377,8 @@ D_0022EC15 = gSoundBankLoadBss_0022EC14 + 0x1;
 D_0022EC16 = gSoundBankLoadBss_0022EC14 + 0x2;
 D_0022EC17 = gSoundBankLoadBss_0022EC14 + 0x3;
 /* texture_bss */
-D_00438A22 = D_00438A20 + 0x2;
-D_00438A24 = D_00438A20 + 0x4;
+D_00438A22 = gTextureBss_00438A20 + 0x2;
+D_00438A24 = gTextureBss_00438A20 + 0x4;
 D_0047F0C6 = gVramInitBss_0047F0C4 + 0x2;
 D_0047F0CA = gVramInitBss_0047F0C8 + 0x2;
 D_0047F0CC = gVramInitBss_0047F0C8 + 0x4;

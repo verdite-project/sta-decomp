@@ -14,8 +14,6 @@ u8 gPlayerBss_004B4D00[0x4];
 u8 gPlayerBss_004B4CF0[0x10];
 f32 gPlayerBss_004B4CEC[0x1];
 u8 gPlayerBss_004B4CE0[0xc];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/player/player.c */
 f32 gPlayerBss_004B4CDC[0x1];
 u8 gPlayerBss_004B4CD0[0xc];
 #endif

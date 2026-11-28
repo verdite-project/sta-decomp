@@ -18,4 +18,6 @@ const char gSaveSystemStepRodata_002017A8[0x10] __attribute__((aligned(4))) = { 
 const char gSaveSystemStepRodata_002017B8[0x10] __attribute__((aligned(4))) = { 0x47, 0x41, 0x4d, 0x45, 0x44, 0x41, 0x54, 0x41, 0, 0, 0, 0, 0, 0, 0, 0 };
 const char gSaveSystemStepRodata_002017C8[0x15] __attribute__((aligned(4))) = "/%s/icon.sys\000\000\000\000\000\000\000\000\000";
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/save/save_system_step.c */
 const u8 pad_002017DD[0x3] __attribute__((aligned(1))) = { 0, 0, 0 };
+#endif

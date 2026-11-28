@@ -314,3 +314,10 @@ void Notify_DrawItemGold_0_0019FA00(void) {
 #undef Item_GetTable_1_001AFC90
 #undef Inventory_GetSlot_1_001A97D0
 #undef Inventory_GetEntry_1_001CC3F0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+void Inventory_Sort_0_0019FD00(void);
+/* data group (src/game/data/notify_rodata.c): jtbl_001FD6B0__grp: jtbl_001FD6B0@0x0 */
+int jtbl_001FD6B0__grp[0x8] __attribute__((aligned(16))) = { (int)((unsigned char *)Inventory_Sort_0_0019FD00 + 0x698), (int)((unsigned char *)Inventory_Sort_0_0019FD00 + 0x48), (int)((unsigned char *)Inventory_Sort_0_0019FD00 + 0x1A0), (int)((unsigned char *)Inventory_Sort_0_0019FD00 + 0x2C0), (int)((unsigned char *)Inventory_Sort_0_0019FD00 + 0x370), (int)((unsigned char *)Inventory_Sort_0_0019FD00 + 0x428), (int)((unsigned char *)Inventory_Sort_0_0019FD00 + 0x500), 0 };
+#endif

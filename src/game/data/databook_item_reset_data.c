@@ -46,14 +46,18 @@ s32 gEquipDrawData_001F3040[0x8] = { 0, 5, 0, (s32)gEquipDrawData_001F3000, 7, -
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/hud_draw.c */
 s32 gHudDrawData_001F3060[0x1] = { 0 };
 #endif
-f32 D_001F3064[0x2] __attribute__((aligned(4))) = { 10.0f, 0.0f };
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/hud_draw.c */
+f32 gHudDrawData_001F3064[0x2] __attribute__((aligned(4))) = { 10.0f, 0.0f };
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/hud_draw.c */
 s32 gHudDrawData_001F306C[0x1] = { 0 };
 #endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/hud_draw.c */
 s32 gHudDrawData_001F3070[0x1] = { 0 };
 #endif
-f32 D_001F3074[0x2] __attribute__((aligned(4))) = { 10.0f, 0.0f };
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/hud_draw.c */
+f32 gHudDrawData_001F3074[0x2] __attribute__((aligned(4))) = { 10.0f, 0.0f };
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/hud_draw.c */
 s32 gHudDrawData_001F307C[0x1] = { 0 };
 #endif

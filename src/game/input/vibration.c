@@ -181,6 +181,6 @@ void Vibe_Clear_1_00160350(void) {
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/vibration_bss.c): D_003172E0__grp: gVibrationBss_003172E0@0x0, gVibrationBss_003174E0@0x200, gVibrationBss_003174F0@0x210 */
-u8 D_003172E0__grp[0x27220] __attribute__((aligned(16)));
+/* data group (src/game/data/vibration_bss.c): gVibrationBss_003172E0__grp: gVibrationBss_003172E0@0x0, gVibrationBss_003174E0@0x200, gVibrationBss_003174F0@0x210 */
+unsigned char gVibrationBss_003172E0__grp[0x27220] __attribute__((aligned(16)));
 #endif

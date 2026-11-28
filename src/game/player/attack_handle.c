@@ -126,3 +126,15 @@ void Attack_ApplyHit_0_001D3A90(s8 *a0, s8 *a1, s32 a2, s32 a3, s32 t0, u8 t1) {
         MapObj_Hit_0_001B85B0(p, a3);
     }
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/attack_handle_rodata.c): D_001FDE04__grp: gAttackHandleRodata_001FDE04@0x0 */
+int D_001FDE04__grp[0x3] __attribute__((aligned(4))) = { 0, 0, 0 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/attack_handle_rodata.c): pad_001FDE3D__grp: pad_001FDE3D@0x0 */
+unsigned char pad_001FDE3D__grp[0x3] __attribute__((aligned(1))) = { 0, 0, 0 };
+#endif

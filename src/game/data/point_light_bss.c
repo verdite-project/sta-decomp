@@ -17,14 +17,14 @@ u8 gGlowInitBss_0030D0E0[0x4];
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/point_light.c */
 u8 gPointLightBss_0030C4C0[0xc20]; /* also D_0030C4C2, D_0030C4C3, D_0030D0D4 */
 #endif
-u8 D_0030C4BC[0x4]; /* also D_0030C4BD, D_0030C4BE, D_0030C4BF */
-u8 D_0030C4B8[0x4];
-u8 D_0030C4B4[0x4];
-u8 D_0030C4B0[0x4];
-u8 D_0030C4A0[0x10];
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/point_light.c */
+u8 gPointLightBss_0030C4BC[0x4]; /* also D_0030C4BD, D_0030C4BE, D_0030C4BF */
+u8 gPointLightBss_0030C4B8[0x4];
+u8 gPointLightBss_0030C4B4[0x4];
+u8 gPointLightBss_0030C4B0[0x4];
+u8 gPointLightBss_0030C4A0[0x10];
 u8 gPointLightBss_0030C490[0x10];
 u8 gPointLightBss_0030C48C[0x4];
+u8 gPointLightBss_0030C470[0x1c];
+u8 gPointLightBss_0030C440[0x30];
 #endif
-u8 D_0030C470[0x1c];
-u8 D_0030C440[0x30];

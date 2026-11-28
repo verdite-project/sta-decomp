@@ -884,3 +884,9 @@ f32 D_001F2050__grp[0x4] __attribute__((aligned(16))) = { 0.0f, 0.0f, 0.0f, 1.0f
 /* data group (src/game/data/screen_fx_bss.c): D_002F2078__grp: gScreenFxBss_002F2078@0x0 */
 u8 D_002F2078__grp[0x8] __attribute__((aligned(8)));
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/screen_fx_bss.c): D_002F1A9C__grp: gScreenFxBss_002F1A9C@0x0 */
+unsigned char D_002F1A9C__grp[0x4] __attribute__((aligned(4)));
+#endif

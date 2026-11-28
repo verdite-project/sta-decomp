@@ -629,3 +629,9 @@ Flags8 gSaveMenuSlotBss_004A1010[0x10 / sizeof(Flags8)] __attribute__((aligned(4
 /* data group (src/game/data/save_menu_data.c): D_001F2A10__grp: gSaveMenuSlotData_001F2A10@0x0 */
 f32 D_001F2A10__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/ui_gauge_rodata2.c): pad_001FCD6D__grp: pad_001FCD6D@0x0 */
+unsigned char pad_001FCD6D__grp[0x3] __attribute__((aligned(1))) = { 0, 0, 0 };
+#endif

@@ -11,4 +11,6 @@ const char gStrDm09_001FDC18[0x6] = "DM_09\000";
 const char gStrDm10_001FDC20[0x6] = "DM_10\000";
 const char gStrTen_001FDC28[0x5] = "TEN\000\000";
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/player/player.c */
 const u8 pad_001FDC2D[0x3] __attribute__((aligned(1))) = { 0, 0, 0 };
+#endif

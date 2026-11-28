@@ -766,6 +766,17 @@ char gSaveSystemStepRodata_00201770[0x8] __attribute__((aligned(4))) = { 0x2f, 0
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/save_system_start_bss.c): D_004BC360__grp: gSaveSystemStepBss_004BC360@0x0, gSaveSystemStepBss_004BC380@0x20, gSaveSystemStepBss_004BC384@0x24, gSaveSystemStepBss_004BC388@0x28, gSaveSystemStepBss_004BC38C@0x2c, gSaveSystemStepBss_004BC390@0x30, gSaveSystemStepBss_004BC394@0x34, gSaveSystemStepBss_004BC398@0x38, gSaveSystemStepBss_004BC39C@0x3c */
-u8 D_004BC360__grp[0x40] __attribute__((aligned(16)));
+/* data group (src/game/data/save_system_start_bss.c): gSaveSystemStepBss_004BC360__grp: gSaveSystemStepBss_004BC360@0x0, gSaveSystemStepBss_004BC380@0x20, gSaveSystemStepBss_004BC384@0x24, gSaveSystemStepBss_004BC388@0x28, gSaveSystemStepBss_004BC38C@0x2c, gSaveSystemStepBss_004BC390@0x30, gSaveSystemStepBss_004BC394@0x34, gSaveSystemStepBss_004BC398@0x38, gSaveSystemStepBss_004BC39C@0x3c */
+unsigned char gSaveSystemStepBss_004BC360__grp[0x40] __attribute__((aligned(16)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/save_system_step_rodata.c): pad_002017DD__grp: pad_002017DD@0x0 */
+unsigned char pad_002017DD__grp[0x3] __attribute__((aligned(1))) = { 0, 0, 0 };
+#endif
+
+#ifdef NONMATCHING
+/* data group (src/game/data/save_system_step_rodata2.c): pad_0020184D__grp: pad_0020184D@0x0 */
+unsigned char pad_0020184D__grp[0x3] __attribute__((aligned(1))) = { 0x0, 0x0, 0x0 };
 #endif

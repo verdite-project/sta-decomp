@@ -14,4 +14,6 @@ s32 gGameMainBss_00222734[0x1];
 s32 gGameMainBss_00222730[0x1];
 u8 gGameMainBss_00222700[0x30];
 #endif
-u8 D_00209B70[0x18b90];
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/game_main.c */
+u8 gGameMainBss_00209B70[0x18b90];
+#endif

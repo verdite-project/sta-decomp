@@ -734,3 +734,27 @@ f32 D_001F3130__grp[0x4] __attribute__((aligned(16))) = { 0.0f, 0.0f, 640.0f, 48
 /* data twins (src/game/data/databook_item_reset_data.c): gItemMenuDrawData_001F3080 */
 u8 gItemMenuDrawData_001F3080[0x40] = { 0, 0, 0x40, 0xc0, 0xa6, 0xf, 0, 0, 0, 0, 0, 0xc0, 0xa5, 0xf, 0, 0, 0, 0, 0x80, 0xbf, 0xa4, 0xf, 0, 0, 0, 0, 0, 0, 0xa3, 0xf, 0, 0, 0, 0, 0x80, 0x3f, 0xa2, 0xf, 0, 0, 0, 0, 0, 0x40, 0xa1, 0xf, 0, 0, 0, 0, 0x40, 0x40, 0xa0, 0xf, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/item_menu_draw_bss.c): D_004A1A4C__grp: gItemMenuDrawBss_004A1A4C@0x0 */
+unsigned char D_004A1A4C__grp[0x4] __attribute__((aligned(4)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/item_menu_draw_bss.c): D_004A32A4__grp: gItemMenuDrawBss_004A32A4@0x0 */
+unsigned char D_004A32A4__grp[0x4] __attribute__((aligned(4)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/item_menu_draw_bss.c): D_004A32A8__grp: gItemMenuDrawBss_004A32A8@0x0 */
+unsigned char D_004A32A8__grp[0x4] __attribute__((aligned(8)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/item_menu_draw_bss.c): D_004A32AC__grp: gItemMenuDrawBss_004A32AC@0x0 */
+unsigned char D_004A32AC__grp[0x4] __attribute__((aligned(4)));
+#endif

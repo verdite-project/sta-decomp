@@ -740,24 +740,54 @@ f32 gGsPacketBss_002F1640[4][4];
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/gs_packet_bss.c): D_002F1120__grp: gGsPacketBss_002F1120@0x0, gGsPacketBss_002F1124@0x4, gGsPacketBss_002F1128@0x8, gGsPacketBss_002F112C@0xc */
-u8 D_002F1120__grp[0x10] __attribute__((aligned(16)));
+/* data group (src/game/data/gs_packet_bss.c): gGsPacketBss_002F1120__grp: gGsPacketBss_002F1120@0x0, gGsPacketBss_002F1124@0x4, gGsPacketBss_002F1128@0x8, gGsPacketBss_002F112C@0xc */
+unsigned char gGsPacketBss_002F1120__grp[0x10] __attribute__((aligned(16)));
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/gs_packet_bss.c): D_002F1130__grp: gGsPacketBss_002F1130@0x0, gGsPacketBss_002F1134@0x4, gGsPacketBss_002F1138@0x8, gGsPacketBss_002F113C@0xc */
-u8 D_002F1130__grp[0x10] __attribute__((aligned(16)));
+/* data group (src/game/data/gs_packet_bss.c): gGsPacketBss_002F1130__grp: gGsPacketBss_002F1130@0x0, gGsPacketBss_002F1134@0x4, gGsPacketBss_002F1138@0x8, gGsPacketBss_002F113C@0xc */
+unsigned char gGsPacketBss_002F1130__grp[0x10] __attribute__((aligned(16)));
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/gs_packet_bss.c): D_002F1140__grp: gGsPacketBss_002F1140@0x0, gGsPacketBss_002F1148@0x8, gGsPacketBss_002F1150@0x10, gGsPacketBss_002F1158@0x18 */
-u8 D_002F1140__grp[0x20] __attribute__((aligned(16)));
+/* data group (src/game/data/gs_packet_bss.c): gGsPacketBss_002F1140__grp: gGsPacketBss_002F1140@0x0, gGsPacketBss_002F1148@0x8, gGsPacketBss_002F1150@0x10, gGsPacketBss_002F1158@0x18 */
+unsigned char gGsPacketBss_002F1140__grp[0x20] __attribute__((aligned(16)));
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/gs_packet_bss.c): D_002F1160__grp: gGsPacketBss_002F1160@0x0, gGsPacketBss_002F1170@0x10, gGsPacketBss_002F11C0@0x60, gGsPacketBss_002F11C8@0x68, gGsPacketBss_002F11D0@0x70, gGsPacketBss_002F11D8@0x78, gGsPacketBss_002F11E0@0x80, gGsPacketBss_002F11E4@0x84, gGsPacketBss_002F1248@0xe8, gGsPacketBss_002F1250@0xf0, gGsPacketBss_002F12B0@0x150, gGsPacketBss_002F12B8@0x158, gGsPacketBss_002F12C0@0x160, gGsPacketBss_002F12C8@0x168, gGsPacketBss_002F12D0@0x170, gGsPacketBss_002F12D4@0x174, gGsPacketBss_002F1338@0x1d8, gGsPacketBss_002F1340@0x1e0, gGsPacketBss_002F1388@0x228, gGsPacketBss_002F1390@0x230 */
-u8 D_002F1160__grp[0x240] __attribute__((aligned(16)));
+/* data group (src/game/data/gs_packet_bss.c): gGsPacketBss_002F1160__grp: gGsPacketBss_002F1160@0x0, gGsPacketBss_002F1170@0x10, gGsPacketBss_002F11C0@0x60, gGsPacketBss_002F11C8@0x68, gGsPacketBss_002F11D0@0x70, gGsPacketBss_002F11D8@0x78, gGsPacketBss_002F11E0@0x80, gGsPacketBss_002F11E4@0x84, gGsPacketBss_002F1248@0xe8, gGsPacketBss_002F1250@0xf0, gGsPacketBss_002F12B0@0x150, gGsPacketBss_002F12B8@0x158, gGsPacketBss_002F12C0@0x160, gGsPacketBss_002F12C8@0x168, gGsPacketBss_002F12D0@0x170, gGsPacketBss_002F12D4@0x174, gGsPacketBss_002F1338@0x1d8, gGsPacketBss_002F1340@0x1e0, gGsPacketBss_002F1388@0x228, gGsPacketBss_002F1390@0x230 */
+unsigned char gGsPacketBss_002F1160__grp[0x240] __attribute__((aligned(16)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/gs_packet_bss.c): D_002F13A0__grp: gGsPacketBss_002F13A0@0x0 */
+unsigned char D_002F13A0__grp[0x28] __attribute__((aligned(16)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/gs_packet_bss.c): D_002F13C8__grp: gGsPacketBss_002F13C8@0x0 */
+unsigned char D_002F13C8__grp[0x8] __attribute__((aligned(8)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/gs_packet_bss.c): D_002F13D0__grp: gGsPacketBss_002F13D0@0x0 */
+unsigned char D_002F13D0__grp[0x20] __attribute__((aligned(16)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/gs_packet_bss.c): D_002F1400__grp: gGsPacketBss_002F1400@0x0 */
+unsigned char D_002F1400__grp[0x10] __attribute__((aligned(16)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/gs_packet_bss.c): D_002F14F0__grp: gGsPacketBss_002F14F0@0x0 */
+unsigned char D_002F14F0__grp[0x10] __attribute__((aligned(16)));
 #endif

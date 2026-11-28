@@ -528,12 +528,12 @@ s16 gMapBss_004B4BBC[0x2];
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/pad_get_connected_bss_004AC630.c): D_004B4B90__grp: gMapBss_004B4B90@0x0, gMapBss_004B4B94@0x4 */
-u8 D_004B4B90__grp[0x8] __attribute__((aligned(16)));
+/* data group (src/game/data/pad_get_connected_bss_004AC630.c): gMapBss_004B4B90__grp: gMapBss_004B4B90@0x0, gMapBss_004B4B94@0x4 */
+unsigned char gMapBss_004B4B90__grp[0x8] __attribute__((aligned(16)));
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/sbss.c): D_00201E80__grp: gMapSbss_00201E80@0x0, gMapSbss_00201E88@0x8, gMapSbss_00201E8C@0xc */
-unsigned char D_00201E80__grp[0x10] __attribute__((section(".sbss"))) __attribute__((aligned(16)));
+/* data group (src/game/data/sbss.c): gMapSbss_00201E80__grp: gMapSbss_00201E80@0x0, gMapSbss_00201E88@0x8, gMapSbss_00201E8C@0xc */
+unsigned char gMapSbss_00201E80__grp[0x10] __attribute__((section(".sbss"))) __attribute__((aligned(16)));
 #endif

@@ -235,12 +235,12 @@ s32 gTaskCallbackSbss_002023A8;
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/save_system_start_bss.c): D_004BAC20__grp: gTaskCallbackBss_004BAC20@0x0, gTaskCallbackBss_004BAC24@0x4, gTaskCallbackBss_004BAC28@0x8, gTaskCallbackBss_004BAC2C@0xc */
-u8 D_004BAC20__grp[0x10] __attribute__((aligned(16)));
+/* data group (src/game/data/save_system_start_bss.c): gTaskCallbackBss_004BAC20__grp: gTaskCallbackBss_004BAC20@0x0, gTaskCallbackBss_004BAC24@0x4, gTaskCallbackBss_004BAC28@0x8, gTaskCallbackBss_004BAC2C@0xc */
+unsigned char gTaskCallbackBss_004BAC20__grp[0x10] __attribute__((aligned(16)));
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/save_system_start_bss.c): D_004BAC30__grp: gTaskCallbackBss_004BAC30@0x0, gTaskCallbackBss_004BAC34@0x4, gTaskCallbackBss_004BAC38@0x8, gTaskCallbackBss_004BAC3C@0xc, gTaskCallbackBss_004BAC40@0x10, gTaskCallbackBss_004BAC44@0x14, gTaskCallbackBss_004BAC48@0x18, gTaskCallbackBss_004BAC4C@0x1c, gGlowFxSlots_004BAC50@0x20, gTaskCallbackBss_004BAC54@0x24, gTaskCallbackBss_004BAC80@0x50, gTaskCallbackBss_004BB010@0x3e0 */
-unsigned char D_004BAC30__grp[0x420] __attribute__((aligned(16)));
+/* data group (src/game/data/save_system_start_bss.c): gTaskCallbackBss_004BAC30__grp: gTaskCallbackBss_004BAC30@0x0, gTaskCallbackBss_004BAC34@0x4, gTaskCallbackBss_004BAC38@0x8, gTaskCallbackBss_004BAC3C@0xc, gTaskCallbackBss_004BAC40@0x10, gTaskCallbackBss_004BAC44@0x14, gTaskCallbackBss_004BAC48@0x18, gTaskCallbackBss_004BAC4C@0x1c, gGlowFxSlots_004BAC50@0x20, gTaskCallbackBss_004BAC54@0x24, gTaskCallbackBss_004BAC80@0x50, gTaskCallbackBss_004BB010@0x3e0 */
+unsigned char gTaskCallbackBss_004BAC30__grp[0x420] __attribute__((aligned(16)));
 #endif

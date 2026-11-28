@@ -95,3 +95,9 @@ s32 SaveSys_Init_1_001E85E0(s32 arg0, s32 arg1, s32 *arg2, s32 arg3, s32 arg4) {
     return 0;
 }
 #undef gSaveSystemStartSbss_002023DC
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/save_system_update_rodata.c): D_0020186C__grp: gSaveSystemUpdateRodata_0020186C@0x0 */
+int D_0020186C__grp[0x1] __attribute__((aligned(4))) = { 0 };
+#endif

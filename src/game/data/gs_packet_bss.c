@@ -57,21 +57,25 @@ u8 gGsPacketBss_002F1580[0x40];
 u8 gGsPacketBss_002F1510[0x70];
 u8 gGsPacketBss_002F1500[0x10]; /* also D_002F1504 */
 #endif
-u8 D_002F14F0[0x10];
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/gs_packet.c */
+u8 gGsPacketBss_002F14F0[0x10];
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/gs_packet.c */
 u8 gGsPacketBss_002F14E0[0x10];
 u8 gGsPacketBss_002F1490[0x50];
 u8 gGsPacketBss_002F1420[0x70];
 u8 gGsPacketBss_002F1410[0x10]; /* also D_002F1414 */
 #endif
-u8 D_002F1400[0x10];
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/gs_packet.c */
+u8 gGsPacketBss_002F1400[0x10];
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/gs_packet.c */
 u8 gGsPacketBss_002F13F0[0x10];
 #endif
-u8 D_002F13D0[0x20];
-u8 D_002F13C8[0x8];
-u8 D_002F13A0[0x28]; /* also D_002F13A8 */
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/gs_packet.c */
+u8 gGsPacketBss_002F13D0[0x20];
+u8 gGsPacketBss_002F13C8[0x8];
+u8 gGsPacketBss_002F13A0[0x28]; /* also D_002F13A8 */
 u8 gGsPacketBss_002F1390[0x10];
 u8 gGsPacketBss_002F1388[0x8];
 u8 gGsPacketBss_002F1340[0x48];

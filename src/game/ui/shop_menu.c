@@ -1001,14 +1001,15 @@ s32 gShopMenuBss_004BABB0[0xc];
 f32 gShopMenuBss_004BABF4[0x6] __attribute__((aligned(4)));
 #endif
 
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-/* data group (src/game/data/map_se_stream_data.c): D_001F3A50__grp: gShopMenuData_001F3A50@0x0, gShopMenuData_001F3A60@0x10 */
-f32 D_001F3A50__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
-#endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
 /* data group (src/game/data/map_se_stream_data.c): D_001F3A90__grp: gShopMenuData_001F3A90@0x0 */
 f32 D_001F3A90__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/map_se_stream_data.c): gShopMenuData_001F3A50__grp: gShopMenuData_001F3A50@0x0, gShopMenuData_001F3A60@0x10 */
+unsigned int gShopMenuData_001F3A50__grp[0x8] __attribute__((aligned(16))) = { 0x3f800000, 0x0, 0x0, 0x3f800000, 0x0, 0x0, 0x0, 0x0 };
 #endif

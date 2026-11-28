@@ -1315,3 +1315,9 @@ s32 D_001F1C80__grp[0x14] __attribute__((aligned(16))) = { 0, 0x3f800000, 0, 0, 
 /* data twins (src/game/data/sound_emitter_bss_002704D0.c): gActorBss_002704D0 */
 u8 gActorBss_002704D0[0x80];
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/game_main_data.c): D_001F1BAC__grp: gActorData_001F1BAC@0x0 */
+int D_001F1BAC__grp[0x1] __attribute__((aligned(4))) = { 0 };
+#endif

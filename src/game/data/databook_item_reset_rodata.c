@@ -56,4 +56,6 @@ const s8 gHudDrawRodata_001FD410[0x8] = { 0x25, 0x34, 0x64, 0x2f, 0, 0, 0, 0 };
 const s8 gHudDrawRodata_001FD418[0x8] = { 0x25, 0x64, 0, 0, 0, 0, 0, 0 };
 const s8 gHudDrawRodata_001FD420[0xd] = "MP\000\000\000\000\000\000\000\000\000\000\000";
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/hud_draw.c */
 const u8 pad_001FD42D[0x3] __attribute__((aligned(1))) = { 0, 0, 0 };
+#endif

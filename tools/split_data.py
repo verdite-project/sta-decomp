@@ -719,6 +719,11 @@ def main():
     # a blob, its name an offset into it), so no C type has to fit; a small
     # data object only while the blob stays small (8 bytes, the gp range)
     sz = move_data.sizes()
+    for x in inv:
+        # carve lists no size for some labels (pads, jump tables): the name
+        # has the address, the inventory the size
+        if x["name"] not in sz and re.search(r"_([0-9A-F]{8})$", x["name"]):
+            sz[x["name"]] = (int(x["name"][-8:], 16), x["size"])
     owner_of = {x["name"]: x.get("owner") for x in inv}
     # an object asm still names may move too when C uses it: a group member
     # is a global, which is all the asm needs
@@ -736,6 +741,54 @@ def main():
                 break
         if r["users"]:
             recs.append(r)
+    # nothing in C names it (unused, or only a still-linked asm chunk): it
+    # goes to the owner of its neighbour in the data unit, its bytes in a blob
+    # (a global, all the asm needs; an unused object cannot change what runs)
+    by_unit = collections.defaultdict(list)
+    for x in inv:
+        if x["name"] in sz:
+            by_unit[x["unit"]].append((sz[x["name"]][0], x))
+    # the C that stands in for an asm chunk in the NONMATCHING build
+    import gen_ninja
+    first = {}
+    for c in Path(ROOT / "asm").glob("text*.s"):
+        m = re.search(r"^\s*glabel (\w+)", c.read_text(), re.M)
+        if m:
+            first[m.group(1)] = c
+    replacer = {}
+    gen_ninja.NONMATCHING = True
+    for p in sorted((ROOT / "src/game").rglob("*.c")):
+        for nm in gen_ninja.asm_markers(p.read_text())[1]:
+            if nm in first:
+                c = first[nm]
+                own = next((q for q in sorted(p.parent.glob("*.c")) if f"{nm}" in q.read_text()
+                            and "#ifdef NONMATCHING" in q.read_text() and q != p), p)
+                replacer[c] = str(own.relative_to(ROOT))
+    for u, lst in by_unit.items():
+        lst.sort(key=lambda t: t[0])
+        for k, (a, x) in enumerate(lst):
+            if x["class"] not in ("orphan", "asm") or x.get("owner") or any(v.endswith(".c") for v in x["users"]):
+                continue
+            # an asm chunk the NONMATCHING build replaces used it: its C owns it
+            by_asm = [replacer[c] for c in replacer if re.search(rf"\b{x['name']}\b", c.read_text())]
+            near = [y for _, y in lst[k - 1::-1] if y.get("owner")][:1] + [y for _, y in lst[k + 1:] if y.get("owner")][:1]
+            owner = by_asm[0] if by_asm else (near[0]["owner"] if near else None)
+            if owner is None:
+                # the units the data unit was carved for (its `used by` note)
+                note = re.search(r"/\* used by: ([^*]*)\*/", (ROOT / u).read_text())
+                for stem in (note.group(1).replace("\n", " ").split(",") if note else []):
+                    hit = sorted((ROOT / "src/game").rglob(f"{stem.strip()}.c"))
+                    if hit and "/data/" not in str(hit[0]):
+                        owner = str(hit[0].relative_to(ROOT))
+                        break
+            if owner is None:
+                # the C unit retail put it after (the one before it in link order)
+                order = [l.strip() for l in (ROOT / "config/link_order.jp.txt").read_text().splitlines()]
+                if u in order:
+                    owner = next((q for q in order[order.index(u)::-1]
+                                  if q.startswith("src/game/") and q.endswith(".c") and "/data/" not in q), None)
+            if owner:
+                recs.append(dict(x, users=[owner]))
     for r in recs:
         n = r["name"]
         if n in done or n in gdone or n not in sz:
