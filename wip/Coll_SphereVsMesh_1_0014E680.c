@@ -7,7 +7,7 @@ typedef struct { Vec a; Vec b; s32 x20; u16 *x24; Item *x28; Tri *x2C; s32 x30; 
 typedef struct { Vec mn; Vec mx; } Box;
 extern s16 D_00222A18[];
 extern s16 D_00222A16[];
-extern Vec D_003139A0;
+extern Vec gZeroVec_003139A0;
 void sceVu0CopyVector(Vec *, void *);
 void sceVu0ScaleVector(Vec *, Vec *, f32);
 void sceVu0AddVector(Vec *, Vec *, Vec *);
@@ -63,7 +63,7 @@ s32 Coll_SphereVsMesh_1_0014E680(Out *out, Hdr *h, s32 base, Vec *sph, Mtx *m, u
     sceVu0InversMatrix(&M, m);
     sceVu0ApplyMatrix(&C, &M, &C);
     sceVu0CopyMatrix(&R, m);
-    sceVu0CopyVector((Vec *)&R.m[3], &D_003139A0);
+    sceVu0CopyVector((Vec *)&R.m[3], &gZeroVec_003139A0);
     cnt = q0;
     for (k = 0; k < 8; h = (Hdr *)&h->off[1], q8++, k++, cnt++) {
         if (!((1 << k) & mask)) continue;

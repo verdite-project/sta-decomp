@@ -32,7 +32,7 @@ typedef struct {
 } Big_Save_ParseGame_1_001A9080;
 typedef struct { u8 pad0[8]; u16 x8; u8 xA; u8 xB; u8 pad[0x98 - 0xC]; u8 x98; u8 x99; u8 x9A; u8 x9B; } Src;
 extern Big_Save_ParseOptions_1_001A8B90 *D_00201E00;
-extern PlayerData *D_00201DC0;
+extern PlayerData *gPlayerData_00201DC0;
 void Save_ParseOptions_1_001A8B90(Rec_Save_ParseOptions_1_001A8B90 *p);
 void Save_ParseOptionsB_0_001A8F00(Rec_Save_ParseOptionsB_0_001A8F00 *p);
 s32 Save_GetData_1_001A9400(void);
@@ -93,25 +93,25 @@ void Save_ApplyLoaded_0_001A8E30(void) {
     Vec a;
     Vec b;
 
-    a.x = D_00201DC0->x30;
-    a.y = D_00201DC0->x32;
-    a.z = D_00201DC0->x34;
+    a.x = gPlayerData_00201DC0->x30;
+    a.y = gPlayerData_00201DC0->x32;
+    a.z = gPlayerData_00201DC0->x34;
     a.w = 0.0f;
-    b.x = 0.00024414062f * D_00201DC0->x36;
-    b.y = 0.00024414062f * D_00201DC0->x38;
+    b.x = 0.00024414062f * gPlayerData_00201DC0->x36;
+    b.y = 0.00024414062f * gPlayerData_00201DC0->x38;
     b.w = 0.0f;
     b.z = 0.0f;
-    if (D_00201DC0->x2E != 1) {
+    if (gPlayerData_00201DC0->x2E != 1) {
         Player_SetStartPos_0_001C9630(&a, &b);
     }
-    PlayerData_Load_1_001C9BB0(D_00201DC0->x20);
-    PlayTime_Load_1_001DFAA0((u8 *)D_00201DC0 + 0xB8);
+    PlayerData_Load_1_001C9BB0(gPlayerData_00201DC0->x20);
+    PlayTime_Load_1_001DFAA0((u8 *)gPlayerData_00201DC0 + 0xB8);
     PlayTime_Tick_1_001DF9A0();
 }
 
 /* Save_ParseOptionsB_0_001A8F00 */
-#define D_00201DC0 D_00201DC0__as_Save_ParseOptionsB_0_001A8F00
-extern Big_Save_ParseOptionsB_0_001A8F00 *D_00201DC0__as_Save_ParseOptionsB_0_001A8F00;
+#define gPlayerData_00201DC0 gPlayerData_00201DC0__as_Save_ParseOptionsB_0_001A8F00
+extern Big_Save_ParseOptionsB_0_001A8F00 *gPlayerData_00201DC0__as_Save_ParseOptionsB_0_001A8F00;
 #define FCC(s) ((s)[0] | ((s)[1] << 8) | ((s)[2] << 16) | ((s)[3] << 24))
 
 void Save_ParseOptionsB_0_001A8F00(Rec_Save_ParseOptionsB_0_001A8F00 *p) {
@@ -127,29 +127,29 @@ void Save_ParseOptionsB_0_001A8F00(Rec_Save_ParseOptionsB_0_001A8F00 *p) {
         if (p->tag == (D_001FD988[0] | (*c1 << 8) | (*c2 << 16) | (*c3 << 24))) return;
         switch (p->tag) {
         case 0x61534350:
-            memcpy(D_00201DC0->x20, s, *d);
+            memcpy(gPlayerData_00201DC0->x20, s, *d);
             break;
         case 0x6150414D:
-            memcpy(D_00201DC0->x10E0, s, *d);
+            memcpy(gPlayerData_00201DC0->x10E0, s, *d);
             break;
         case 0x61454E45:
-            memcpy(D_00201DC0->x5AC0, s, *d);
+            memcpy(gPlayerData_00201DC0->x5AC0, s, *d);
             break;
         case 0x614D5449:
-            memcpy(D_00201DC0->x5B60, s, *d);
+            memcpy(gPlayerData_00201DC0->x5B60, s, *d);
             break;
         case 0x61484353:
-            memcpy(D_00201DC0->x5C00, s, *d);
+            memcpy(gPlayerData_00201DC0->x5C00, s, *d);
             break;
         }
         p = (Rec_Save_ParseOptionsB_0_001A8F00 *)((u8 *)p + p->x4);
     }
 }
-#undef D_00201DC0
+#undef gPlayerData_00201DC0
 
 /* Save_ParseGame_1_001A9080 */
-#define D_00201DC0 D_00201DC0__as_Save_ParseGame_1_001A9080
-extern Big_Save_ParseGame_1_001A9080 *D_00201DC0__as_Save_ParseGame_1_001A9080;
+#define gPlayerData_00201DC0 gPlayerData_00201DC0__as_Save_ParseGame_1_001A9080
+extern Big_Save_ParseGame_1_001A9080 *gPlayerData_00201DC0__as_Save_ParseGame_1_001A9080;
 #define FCC(s) ((s)[0] | ((s)[1] << 8) | ((s)[2] << 16) | ((s)[3] << 24))
 static inline void init_Save_ParseGame_1_001A9080(Rec_Save_ParseGame_1_001A9080 *p, s8 *s, u32 x4, u32 x10, u32 x14) {
     p->tag = FCC(s);
@@ -172,30 +172,30 @@ void Save_ParseGame_1_001A9080(void) {
     s->x8 = s->x9B;
     s->xA = s->x9A;
     s->xB = s->x99;
-    memcpy(D_00201DC0->x20, s, 0x10A0);
-    b = D_00201DC0; init_Save_ParseGame_1_001A9080(&b->r0, D_001FD9A0, 0x10C0, 0x10B0, 0x10A0);
-    b = D_00201DC0; init_Save_ParseGame_1_001A9080(&b->r1, D_001FD9A8, 0x49E0, 0x49D0, 0x49C0);
-    b = D_00201DC0; init_Save_ParseGame_1_001A9080(&b->r2, D_001FD9B0, 0xA0, 0x90, 0x80);
-    b = D_00201DC0; init_Save_ParseGame_1_001A9080(&b->r3, D_001FD9B8, 0xA0, 0x90, 0x80);
-    b = D_00201DC0; init_Save_ParseGame_1_001A9080(&b->r4, D_001FD9C0, 0x2020, 0x2010, 0x2000);
-    b = D_00201DC0; init_Save_ParseGame_1_001A9080(&b->r5, D_001FD988, 0x20, 0x10, 0);
+    memcpy(gPlayerData_00201DC0->x20, s, 0x10A0);
+    b = gPlayerData_00201DC0; init_Save_ParseGame_1_001A9080(&b->r0, D_001FD9A0, 0x10C0, 0x10B0, 0x10A0);
+    b = gPlayerData_00201DC0; init_Save_ParseGame_1_001A9080(&b->r1, D_001FD9A8, 0x49E0, 0x49D0, 0x49C0);
+    b = gPlayerData_00201DC0; init_Save_ParseGame_1_001A9080(&b->r2, D_001FD9B0, 0xA0, 0x90, 0x80);
+    b = gPlayerData_00201DC0; init_Save_ParseGame_1_001A9080(&b->r3, D_001FD9B8, 0xA0, 0x90, 0x80);
+    b = gPlayerData_00201DC0; init_Save_ParseGame_1_001A9080(&b->r4, D_001FD9C0, 0x2020, 0x2010, 0x2000);
+    b = gPlayerData_00201DC0; init_Save_ParseGame_1_001A9080(&b->r5, D_001FD988, 0x20, 0x10, 0);
 }
-#undef D_00201DC0
+#undef gPlayerData_00201DC0
 
 /* Save_GetData_1_001A9400 */
-#define D_00201DC0 D_00201DC0__as_Save_GetData_1_001A9400
-extern s32 D_00201DC0__as_Save_GetData_1_001A9400;
+#define gPlayerData_00201DC0 gPlayerData_00201DC0__as_Save_GetData_1_001A9400
+extern s32 gPlayerData_00201DC0__as_Save_GetData_1_001A9400;
 
 s32 Save_GetData_1_001A9400(void) {
-    return D_00201DC0;
+    return gPlayerData_00201DC0;
 }
-#undef D_00201DC0
+#undef gPlayerData_00201DC0
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
 extern u8 D_004A4980[];
 extern u8 D_004A4880[];
-/* data twins (src/game/data/sdata.c): D_00201DC0, D_00201E00 */
-PlayerData *D_00201DC0 = (PlayerData *)D_004A4980;
+/* data twins (src/game/data/sdata.c): gPlayerData_00201DC0, D_00201E00 */
+PlayerData *gPlayerData_00201DC0 = (PlayerData *)D_004A4980;
 Big_Save_ParseOptions_1_001A8B90 *D_00201E00 = (Big_Save_ParseOptions_1_001A8B90 *)D_004A4880;
 #endif

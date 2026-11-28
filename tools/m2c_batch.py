@@ -84,7 +84,7 @@ def clean(c, body=""):
     c = re.sub(r"^(Warning: .*)$", r"/* \1 */", c, flags=re.M)
     # CodeWarrior (and gcc -G 8) address an object of 8 bytes or less through
     # $gp; one reached with %hi/%lo is bigger, so declare it as an array
-    for sym in sorted(set(re.findall(r"%hi\((D_[0-9A-F]{8})\)", body))):
+    for sym in sorted(set(re.findall(r"%hi\(((?:D|g[A-Z][A-Za-z0-9]*)_[0-9A-F]{8})\)", body))):
         d = re.search(r"^extern ([^;\n]*?)\b%s;" % sym, c, re.M)
         if not d or "[" in d.group(0):
             continue

@@ -16,7 +16,7 @@ s32 sceMcSync(s32, s32 *, s32 *);
 
 s32 Mc_StepReadChecked_3_001D4A78(void)
 {
-#define t (&D_004B63B8)
+#define t (&gMcState_004B63B8)
     s32 r;
     s32 v;
     s32 port = t->port;

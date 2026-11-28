@@ -156,7 +156,7 @@ s32 Coll_CapsuleVsMesh_1_0014E230(Out_Coll_CapsuleVsMesh_1_0014E230 *out, s32 *l
     sceVu0ApplyMatrix(&CD[0], &m250, &S[0]);
     sceVu0ApplyMatrix(&CD[1], &m250, &S[1]);
     sceVu0CopyMatrix(&m210, m);
-    sceVu0CopyVector(&m210.m[3], &D_003139A0);
+    sceVu0CopyVector(&m210.m[3], &gZeroVec_003139A0);
     cnt = (u16 *)h;
     msk = mask;
     for (i = 0; i < 8; i++) {

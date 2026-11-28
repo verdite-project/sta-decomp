@@ -31,8 +31,8 @@ typedef struct { u8 b; char pad[7]; } E_Inventory_GetSlotFlag_0_001AA6B0;
 typedef struct { char pad[0x5C04]; E_Inventory_GetSlotFlag_0_001AA6B0 e[1]; } S_Inventory_GetSlotFlag_0_001AA6B0;
 typedef struct { char p0[2]; u8 b2; char p3[2]; u8 b5; char p6[2]; } E_Inventory_GetSlotCount_0_001AA6D0;
 typedef struct { char pad[0x5C00]; E_Inventory_GetSlotCount_0_001AA6D0 e[1]; } S_Inventory_GetSlotCount_0_001AA6D0;
-extern PlayerData *D_00201DC0;
-extern S *D_00201DC0__as_Inventory_GetSlot_1_001A97D0;
+extern PlayerData *gPlayerData_00201DC0;
+extern S *gPlayerData_00201DC0__as_Inventory_GetSlot_1_001A97D0;
 extern G_MapState_OffsetObjects_0_001A9810 *D_00201DC4;
 #pragma explicit_zero_data on
 s16 D_001F37B0[0x30] = { 0xa, 0xb, 0xc, 0xd, 0x16, 0x21, 0x28, 0x29, 0x2a, 0x2b, 0x32, 0x33, 0x34, 0x35, 0x3c, 0x3d, 0x3e, 0x3f, 0x40, 0x46, 0x47, 0x50, 0x51, 0x52, 0x53, 0x5a, 0x5b, 0x5c, 0x64, 0x65, 0x6e, 0x6f, 0x70, 0x78, 0x79, 0x7a, 0x7b, 0x82, 0x83, 0x84, 0x8c, 0x96, 0, 0, 0, 0, 0, 0 };
@@ -60,8 +60,8 @@ extern Rec_MapState_SetVisited_0_001AA4C0 *D_00201DC4__as_MapState_SetVisited_0_
 extern E_MapState_GetWord_1_001AA540 *D_00201DC4__as_MapState_GetWord_1_001AA540;
 extern Rec_MapState_SetWord_1_001AA5D0 *D_00201DC4__as_MapState_SetWord_1_001AA5D0;
 extern Rec_MapState_GetKillCount_0_001A9FF0 *D_00201DC4__as_MapState_GetKillCount_0_001A9FF0;
-extern S_Inventory_GetSlotFlag_0_001AA6B0 *D_00201DC0__as_Inventory_GetSlotFlag_0_001AA6B0;
-extern S_Inventory_GetSlotCount_0_001AA6D0 *D_00201DC0__as_Inventory_GetSlotCount_0_001AA6D0;
+extern S_Inventory_GetSlotFlag_0_001AA6B0 *gPlayerData_00201DC0__as_Inventory_GetSlotFlag_0_001AA6B0;
+extern S_Inventory_GetSlotCount_0_001AA6D0 *gPlayerData_00201DC0__as_Inventory_GetSlotCount_0_001AA6D0;
 E* Inventory_GetSlot_1_001A97D0(s16 i);
 void MapState_OffsetObjects_0_001A9810(s32 k);
 s16 MapState_GetObjectPos_0_001A9900(s32 id, s32 k, Vec *a, Vec *b);
@@ -94,7 +94,7 @@ void Inventory_AddItem_1_001A95A0(s16 id, u8 n) {
     if (0 > id || id >= 0x400) {
         slot = NULL;
     } else {
-        slot = &D_00201DC0->slot[id];
+        slot = &gPlayerData_00201DC0->slot[id];
     }
     if (n == 0 || slot == NULL) {
         return;
@@ -103,14 +103,14 @@ void Inventory_AddItem_1_001A95A0(s16 id, u8 n) {
         if (Inventory_GetFlag_0_001CC060(id) != 0) {
             return;
         }
-        if ((D_00201DC0->slot[id].b5 ? D_00201DC0->slot[id].b2 : 0) != 0) {
+        if ((gPlayerData_00201DC0->slot[id].b5 ? gPlayerData_00201DC0->slot[id].b2 : 0) != 0) {
             return;
         }
-        if (D_00201DC0->slot[id].b4 != 0) {
+        if (gPlayerData_00201DC0->slot[id].b4 != 0) {
             return;
         }
         cnt = 0;
-        g = D_00201DC0->grp;
+        g = gPlayerData_00201DC0->grp;
         for (j = 0; j < 0x2A; j++, g++) {
             for (k = 0; k < 0x10; k++) {
                 if (id == g->ids[k]) {
@@ -153,11 +153,11 @@ void Inventory_AddItem_1_001A95A0(s16 id, u8 n) {
 }
 
 /* Inventory_GetSlot_1_001A97D0 */
-E *Inventory_GetSlot_1_001A97D0(s16 i) { if (0 > i || i >= 0x400) return NULL; return &D_00201DC0__as_Inventory_GetSlot_1_001A97D0->e[i]; }
+E *Inventory_GetSlot_1_001A97D0(s16 i) { if (0 > i || i >= 0x400) return NULL; return &gPlayerData_00201DC0__as_Inventory_GetSlot_1_001A97D0->e[i]; }
 
 /* MapState_OffsetObjects_0_001A9810 */
-#define D_00201DC0 D_00201DC0__as_MapState_OffsetObjects_0_001A9810
-extern S_MapState_OffsetObjects_0_001A9810 *D_00201DC0__as_MapState_OffsetObjects_0_001A9810;
+#define gPlayerData_00201DC0 gPlayerData_00201DC0__as_MapState_OffsetObjects_0_001A9810
+extern S_MapState_OffsetObjects_0_001A9810 *gPlayerData_00201DC0__as_MapState_OffsetObjects_0_001A9810;
 
 /* MapState_OffsetObjects_0_001A9810 */
 /* MapState_OffsetObjects_0_001A9810 */
@@ -177,7 +177,7 @@ void MapState_OffsetObjects_0_001A9810(s32 k) {
     if (i != -1) {
         for (j = 0; j < 16; j++) {
             D_00201DC4[i].x60[j] = -1;
-            sceVu0CopyVector(&D_00201DC4[i].x80[j], &D_003139A0);
+            sceVu0CopyVector(&D_00201DC4[i].x80[j], &gZeroVec_003139A0);
         }
     }
 }
@@ -247,13 +247,13 @@ void MapState_SetObjectPos_0_001A9A20(s32 id, s32 k, s16 h, Vec *a, Vec *b) {
 /* Save_TestItemBit_1_001A9B40 */
 s32 Save_TestItemBit_1_001A9B40(s16 i)
 {
-    return (D_00201DC0->bits[i / 32] & (1 << (i % 32))) != 0;
+    return (gPlayerData_00201DC0->bits[i / 32] & (1 << (i % 32))) != 0;
 }
 
 /* Save_SetItemBit_1_001A9B90 */
 void Save_SetItemBit_1_001A9B90(s16 i)
 {
-    D_00201DC0->bits[i / 32] |= 1 << (i % 32);
+    gPlayerData_00201DC0->bits[i / 32] |= 1 << (i % 32);
 }
 
 /* MapState_TestBit_0_001A9BE0 */
@@ -517,11 +517,11 @@ void MapState_SetWord_1_001AA5D0(s32 id, s16 k, s32 v) {
         D_00201DC4__as_MapState_SetWord_1_001AA5D0[i].v[k] = v;
     }
 }
-#undef D_00201DC0
+#undef gPlayerData_00201DC0
 
 /* Inventory_FindItem_0_001AA650 */
-#define D_00201DC0 D_00201DC0__as_Inventory_FindItem_0_001AA650
-extern u8 *D_00201DC0__as_Inventory_FindItem_0_001AA650;
+#define gPlayerData_00201DC0 gPlayerData_00201DC0__as_Inventory_FindItem_0_001AA650
+extern u8 *gPlayerData_00201DC0__as_Inventory_FindItem_0_001AA650;
 
 /* Inventory_FindItem_0_001AA650 */
 s32 Inventory_FindItem_0_001AA650(s16 arg0) {
@@ -531,7 +531,7 @@ s32 Inventory_FindItem_0_001AA650(s16 arg0) {
     s32 i;
     s32 n;
     n = 0;
-    g = (G_Inventory_FindItem_0_001AA650 *)(D_00201DC0 + 0x10E0);
+    g = (G_Inventory_FindItem_0_001AA650 *)(gPlayerData_00201DC0 + 0x10E0);
     for (j = 0; j < 0x2A; j++) {
         for (i = 0; i < 0x10; i++) {
             if (arg0 == g[j].v[i]) n++;
@@ -544,12 +544,12 @@ s32 Inventory_FindItem_0_001AA650(s16 arg0) {
 
 u8 Inventory_GetSlotFlag_0_001AA6B0(s16 i)
 {
-    return D_00201DC0__as_Inventory_GetSlotFlag_0_001AA6B0->e[i].b;
+    return gPlayerData_00201DC0__as_Inventory_GetSlotFlag_0_001AA6B0->e[i].b;
 }
 
 /* Inventory_GetSlotCount_0_001AA6D0 */
-u8 Inventory_GetSlotCount_0_001AA6D0(s16 i) { if (D_00201DC0__as_Inventory_GetSlotCount_0_001AA6D0->e[i].b5) return D_00201DC0__as_Inventory_GetSlotCount_0_001AA6D0->e[i].b2; return 0; }
-#undef D_00201DC0
+u8 Inventory_GetSlotCount_0_001AA6D0(s16 i) { if (gPlayerData_00201DC0__as_Inventory_GetSlotCount_0_001AA6D0->e[i].b5) return gPlayerData_00201DC0__as_Inventory_GetSlotCount_0_001AA6D0->e[i].b2; return 0; }
+#undef gPlayerData_00201DC0
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on

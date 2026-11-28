@@ -626,7 +626,7 @@ void FxProc_InitChase_0_001493E0(O_FxProc_InitChase_0_001493E0 *o) {
     u16 *e;
     o->xA8 = 0;
     o->x88 = 600.0f;
-    sceVu0CopyVector(&o->v, &D_003139A0);
+    sceVu0CopyVector(&o->v, &gZeroVec_003139A0);
     it = 0;
     do {
         e = ActorList_Next_2_001A5460(&it);
@@ -2033,8 +2033,8 @@ s32 FxTable_CallC_0_0014D9A0(u16 i, s32 v)
 }
 
 /* FxProc_NopA_2_0014DA00 */
-#define D_003139A0 D_003139A0__as_FxProc_NopA_2_0014DA00
-extern f32 D_003139A0__as_FxProc_NopA_2_0014DA00[4];
+#define gZeroVec_003139A0 gZeroVec_003139A0__as_FxProc_NopA_2_0014DA00
+extern f32 gZeroVec_003139A0__as_FxProc_NopA_2_0014DA00[4];
 #define sceVu0CopyVector sceVu0CopyVector__as_FxProc_NopA_2_0014DA00
 void sceVu0CopyVector__as_FxProc_NopA_2_0014DA00(f32 *v0, f32 *v1);
 
@@ -2056,8 +2056,8 @@ void FxProc_NopC_2_0014DA20(void) {
 /* FxProc_InitAtOrigin_0_0014DA30 */
 void FxProc_InitAtOrigin_0_0014DA30(Obj_FxProc_NopA_2_0014DA00 *o)
 {
-    sceVu0CopyVector(o->v, D_003139A0);
+    sceVu0CopyVector(o->v, gZeroVec_003139A0);
     o->a8 = 0;
 }
 #undef sceVu0CopyVector
-#undef D_003139A0
+#undef gZeroVec_003139A0

@@ -42,7 +42,7 @@ void sceVu0ScaleVector(Vec *, Vec *, f32);
 void sceVu0CopyVector(Vec *, Vec *);
 f32 Vec_Distance_3_00146940(Vec *, O *);
 void EnemyScr_Event2015_1_00141510(s8 *, u8, s32, s32);
-extern Vec D_003139A0;
+extern Vec gZeroVec_003139A0;
 extern Mtx D_001F2170;
 extern s32 **D_002022BC;
 
@@ -98,7 +98,7 @@ void FxProc_ChaseEnemy_0_00148D00(O *o, f32 dt) {
         o->x10.z = 0.0f;
         o->x10.w = 0.0f;
         done = 2.0f < o->xB4;
-        if (done) sceVu0CopyVector(&o->x10, &D_003139A0);
+        if (done) sceVu0CopyVector(&o->x10, &gZeroVec_003139A0);
         break;
     case 1:
     case 2:
@@ -130,7 +130,7 @@ void FxProc_ChaseEnemy_0_00148D00(O *o, f32 dt) {
             sceVu0ScaleVector(&d, &d, sp);
         }
         sceVu0AddVector(&o->p, &o->p, &d);
-        sceVu0CopyVector(&o->x10, &D_003139A0);
+        sceVu0CopyVector(&o->x10, &gZeroVec_003139A0);
         if (s == 1) done = Vec_Distance_3_00146940(&v, o) < 300.0f;
         if (s == 2) done = h < o->xB4;
         if (s == 3) done = 1.8f * r < Vec_Distance_3_00146940(Enemy_Ptr6F0_1_0013FFA0(p), o);

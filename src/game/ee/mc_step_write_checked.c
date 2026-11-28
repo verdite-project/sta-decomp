@@ -14,7 +14,7 @@ typedef struct {
     s32 x90; s32 x94; s32 err; s32 retry;
     s32 name; s32 xa4; s32 size; s32 xac; s32 xb0; s32 xb4; s32 data;
 } T;
-extern T D_004B63B8;
+extern T gMcState_004B63B8;
 extern u32 D_004B6380[];
 extern u32 D_004B6384[];
 extern s32 D_004B6388[];
@@ -34,7 +34,7 @@ s32 sceMcWrite(s32, void *, s32);
 s32 sceMcClose(s32);
 s32 sceMcSync(s32, s32 *, s32 *);
 
-#define t (&D_004B63B8)
+#define t (&gMcState_004B63B8)
 s32 Mc_StepWriteChecked_3_001D4170(void)
 {
 
@@ -266,7 +266,7 @@ s32 Mc_StepWriteChecked_3_001D4170(void)
             sum = 0;
             if (n != 0) {
                 p = &D_004B6478[off];
-                memcpy(p, D_004B63B8.data + D_004B6384[0], n);
+                memcpy(p, gMcState_004B63B8.data + D_004B6384[0], n);
                 if (n > 0) { q = p; i = n; do { sum += ~*q; q++; i--; } while (i != 0); }
                 D_004B6478[pos++] = sum;
             }

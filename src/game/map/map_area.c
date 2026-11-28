@@ -124,7 +124,7 @@ extern f32 D_004B4BD0[];
 extern O_Map_UpdateSfxVisibility_0_001B41C0 **D_002022BC__as_Map_UpdateSfxVisibility_0_001B41C0;
 extern s32 D_001F2170__as_Map_UpdateBones_0_001B4AF0[];
 extern s32 D_001F2170__as_Map_UpdateArea_0_001B4B50[];
-extern f32 D_003139A0__as_Map_RecenterWorld_1_001B4CB0[];
+extern f32 gZeroVec_003139A0__as_Map_RecenterWorld_1_001B4CB0[];
 s32 MapColl_SphereCastAll_0_001B34B0(s8 *o, s8 *out, s32 p2, u8 f1, u8 f2);
 void Map_GetNodeTransform_0_001B3710(H_Map_GetNodeTransform_0_001B3710 *h, B *base, s32 i, Vec *v, Mtx *m);
 void Map_DrawArea_0_001B37F0(O_Map_DrawArea_0_001B37F0 *o, s32 (*cb)(s32 **, Key));
@@ -250,7 +250,7 @@ void Map_GetNodeTransform_0_001B3710(H_Map_GetNodeTransform_0_001B3710 *h, B *ba
     p = *h->p;
     b = el->b;
     if (b == 0xFF) {
-        sceVu0CopyVector(v, &D_003139A0);
+        sceVu0CopyVector(v, &gZeroVec_003139A0);
         sceVu0CopyMatrix(m, &D_001F2170);
     } else {
         e = (s32)p + t[b].off;
@@ -258,7 +258,7 @@ void Map_GetNodeTransform_0_001B3710(H_Map_GetNodeTransform_0_001B3710 *h, B *ba
             sceVu0CopyVector(v, (void *)(e + 0x10));
             sceVu0CopyMatrix(m, el);
         } else {
-            sceVu0CopyVector(v, &D_003139A0);
+            sceVu0CopyVector(v, &gZeroVec_003139A0);
             sceVu0CopyMatrix(m, &D_001F2170);
         }
     }
@@ -400,7 +400,7 @@ void Map_DrawArea_0_001B37F0(O_Map_DrawArea_0_001B37F0 *o, s32 (*cb)(s32 **, Key
         s4 = e->x21;
         Map_GetNodeTransform_0_001B3710__as_Map_DrawArea_0_001B37F0(c0, (s8 *)s1, i + 1, &A, B);
         sceVu0CopyVector__as_Map_DrawArea_0_001B37F0(&C, &D);
-        sceVu0CopyVector__as_Map_DrawArea_0_001B37F0(&D, &D_003139A0);
+        sceVu0CopyVector__as_Map_DrawArea_0_001B37F0(&D, &gZeroVec_003139A0);
         {
             f32 w;
             D.w = 1.0f;
@@ -473,7 +473,7 @@ void Map_UpdateFog_0_001B4100(A_Map_UpdateFog_0_001B4100 *a) {
     s32 i;
     for (i = 0; i < a->n74; i++) {
         V8 *q = &a->x144[i];
-        Fog_BuildPlanes_0_0015CD30(&a->x188[i], &q->v[0], &q->v[2], &D_003139A0, &D_003139A0, &q->v[1], &q->v[3], &D_003139A0, &D_003139A0, &q->v[5], &q->v[4]);
+        Fog_BuildPlanes_0_0015CD30(&a->x188[i], &q->v[0], &q->v[2], &gZeroVec_003139A0, &gZeroVec_003139A0, &q->v[1], &q->v[3], &gZeroVec_003139A0, &gZeroVec_003139A0, &q->v[5], &q->v[4]);
     }
 }
 
@@ -701,8 +701,8 @@ void Map_RecenterWorld_1_001B4CB0(void) {
     if (D_002022C0 != 0) {
         sceVu0CopyVector__as_Map_RecenterWorld_1_001B4CB0(v, D_004B4BD0);
         o = *((O_Map_RecenterWorld_1_001B4CB0 ***)(&D_00201E80 + 2))[side];
-        if (diff_Map_RecenterWorld_1_001B4CB0(o->pos, D_003139A0__as_Map_RecenterWorld_1_001B4CB0) != 0.0f) {
-            sceVu0CopyVector__as_Map_RecenterWorld_1_001B4CB0(o->pos, D_003139A0__as_Map_RecenterWorld_1_001B4CB0);
+        if (diff_Map_RecenterWorld_1_001B4CB0(o->pos, gZeroVec_003139A0__as_Map_RecenterWorld_1_001B4CB0) != 0.0f) {
+            sceVu0CopyVector__as_Map_RecenterWorld_1_001B4CB0(o->pos, gZeroVec_003139A0__as_Map_RecenterWorld_1_001B4CB0);
             o->x1C = 0;
             o->x20 = 2;
             if (o->x1D8 & 1) {

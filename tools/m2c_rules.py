@@ -113,7 +113,7 @@ def typed_indexing(c):
     """m2c_diffs: m2c scales pointer arithmetic by bytes on typed symbols
     (*(D_0033F6D0 + (i * 4)) for D_0033F6D0[i]); C scales again."""
     decls = dict((m.group(2), m.group(1)) for m in
-                 re.finditer(r"^extern (%s) \*?(D_[0-9A-F]{8})(?:\[\])?;" % TYPE, c, re.M))
+                 re.finditer(r"^extern (%s) \*?((?:D|g[A-Z][A-Za-z0-9]*)_[0-9A-F]{8})(?:\[\])?;" % TYPE, c, re.M))
 
     def fix(m):
         sym, idx, n = m.group(1), m.group(2), int(m.group(3), 0)
@@ -122,7 +122,7 @@ def typed_indexing(c):
             return m.group(0)
         k = n // SIZE[t]
         return f"{sym}[{idx}]" if k == 1 else f"{sym}[{idx} * {k}]"
-    return re.sub(r"\*\((?:\(\*)?(D_[0-9A-F]{8})\)? \+ \((\w+(?: & 0x\w+)?|\(\w+ & 0x\w+\)) \* (\w+)\)\)", fix, c)
+    return re.sub(r"\*\((?:\(\*)?((?:D|g[A-Z][A-Za-z0-9]*)_[0-9A-F]{8})\)? \+ \((\w+(?: & 0x\w+)?|\(\w+ & 0x\w+\)) \* (\w+)\)\)", fix, c)
 
 
 def base_first_index(c):
@@ -312,7 +312,7 @@ def symbol_byte_offsets(c):
     """LEDGER: the same byte offsets on typed global arrays
     (`D_003172E0 + (i << 5)`, func_0015FD90)."""
     decls = dict((m.group(2), m.group(1)) for m in
-                 re.finditer(r"^extern ((?:s16|u16|s32|u32|f32|s64|u64)) (D_[0-9A-F]{8})\[\];", c, re.M))
+                 re.finditer(r"^extern ((?:s16|u16|s32|u32|f32|s64|u64)) ((?:D|g[A-Z][A-Za-z0-9]*)_[0-9A-F]{8})\[\];", c, re.M))
     for sym, t in decls.items():
         out, i = [], 0
         for m in re.finditer(r"\b%s \+ \(" % sym, c):

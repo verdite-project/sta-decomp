@@ -69,7 +69,7 @@ s32 MapObj_CheckFacing_0_001B9610(S *a, s32 idx) {
     d = sqrtf(sceVu0InnerProduct(v120, v120));
     if (!(d <= u2f(s4->xE))) return 0;
     sceVu0CopyMatrix(&m, s2 + 0x200);
-    sceVu0CopyVector(m.m[3], &D_003139A0);
+    sceVu0CopyVector(m.m[3], &gZeroVec_003139A0);
     m.m[3][3] = 1.0f;
     sceVu0InversMatrix(&m, &m);
     sceVu0ApplyMatrix(v130, &m, v120);

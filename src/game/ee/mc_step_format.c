@@ -6,7 +6,7 @@ s32 sceMcSync(s32, s32, s32 *);
 
 s32 Mc_StepFormat_4_001D6428(void)
 {
-    S *p = &D_004B63B8;
+    S *p = &gMcState_004B63B8;
     s32 a = p->a;
     s32 b = p->b;
     s32 res;

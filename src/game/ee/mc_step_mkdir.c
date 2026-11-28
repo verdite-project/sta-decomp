@@ -6,7 +6,7 @@ typedef struct { char pad[0x80]; s32 a; s32 b; s32 x88; s32 state; s32 p90[2]; s
 
 s32 Mc_StepMkdir_5_001D6688(void)
 {
-    MC *m = &D_004B63B8;
+    MC *m = &gMcState_004B63B8;
     s32 res;
     s32 a = m->a;
     s32 b = m->b;

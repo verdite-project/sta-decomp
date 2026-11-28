@@ -52,7 +52,7 @@ extern B D_0030A3C8[];
 extern s8 D_0030A2D0__as_Light_Init_1_0015BCA0[];
 extern W_Light_Add_0_0015B980 D_0030A2D0__as_Light_Add_0_0015B980;
 extern Vec D_0030A390__as_Light_Add_0_0015B980[];
-extern Vec D_003139A0__as_Light_Add_0_0015B980[];
+extern Vec gZeroVec_003139A0__as_Light_Add_0_0015B980[];
 extern M D_0030A310__as_Light_Add_0_0015B980;
 extern M D_0030A350__as_Light_Add_0_0015B980;
 void Light_OffsetAll_0_0015B110(s32 arg0);
@@ -177,8 +177,8 @@ void Light_UpdateModel_0_0015B360(void *a0, s32 mask) {
 
     h = (Vec *)((u8 *)&D_0030A2D0 + D_00201F2C * 32);
     h2 = h + 1;
-    sceVu0CopyVector__as_Light_UpdateModel_0_0015B360(&D_0030A360, &D_003139A0);
-    sceVu0CopyVector__as_Light_UpdateModel_0_0015B360(&D_0030A370, &D_003139A0);
+    sceVu0CopyVector__as_Light_UpdateModel_0_0015B360(&D_0030A360, &gZeroVec_003139A0);
+    sceVu0CopyVector__as_Light_UpdateModel_0_0015B360(&D_0030A370, &gZeroVec_003139A0);
     sceVu0CopyMatrix(&D_0030A290, a0);
     sum = Light_CalcIntensity_0_0015B720__as_Light_UpdateModel_0_0015B360(&D_0030A350, &D_0030A390);
     for (i = 0; i < 2; i++) {
@@ -327,12 +327,12 @@ s32 Light_Add_0_0015B980(s32 idx, Vec *a, Vec *b, Vec *c, f32 f0, f32 f1, f32 f2
 
 /* Light_SetAmbient_0_0015BB40 */
 void Light_SetAmbient_0_0015BB40(Vec *a, Vec *b, f32 f) {
-    sceVu0CopyVector__as_Light_Add_0_0015B980(D_0030A390__as_Light_Add_0_0015B980, D_003139A0__as_Light_Add_0_0015B980);
+    sceVu0CopyVector__as_Light_Add_0_0015B980(D_0030A390__as_Light_Add_0_0015B980, gZeroVec_003139A0__as_Light_Add_0_0015B980);
     D_0030A39C[0] = 30000.0f;
     if (b != NULL) {
         sceVu0ScaleVector__as_Light_Add_0_0015B980(D_0030A3A0, b, 1.0f / 255.0f);
     } else {
-        sceVu0CopyVector__as_Light_Add_0_0015B980(D_0030A3A0, D_003139A0__as_Light_Add_0_0015B980);
+        sceVu0CopyVector__as_Light_Add_0_0015B980(D_0030A3A0, gZeroVec_003139A0__as_Light_Add_0_0015B980);
         D_0030A3A0[0].x = 0.0f;
     }
     D_0030A3AC[0] = 100.0f;
@@ -357,9 +357,9 @@ void Light_SetAmbient_0_0015BB40(Vec *a, Vec *b, f32 f) {
 
 void Light_Init_1_0015BCA0(void) {
     memset__as_Light_Add_0_0015B980(D_0030A2D0__as_Light_Init_1_0015BCA0, 0, 0x2110);
-    sceVu0CopyVector__as_Light_Add_0_0015B980(D_0030A390__as_Light_Add_0_0015B980, D_003139A0__as_Light_Add_0_0015B980);
+    sceVu0CopyVector__as_Light_Add_0_0015B980(D_0030A390__as_Light_Add_0_0015B980, gZeroVec_003139A0__as_Light_Add_0_0015B980);
     D_0030A39C[0] = 30000.0f;
-    sceVu0CopyVector__as_Light_Add_0_0015B980(D_0030A3A0, D_003139A0__as_Light_Add_0_0015B980);
+    sceVu0CopyVector__as_Light_Add_0_0015B980(D_0030A3A0, gZeroVec_003139A0__as_Light_Add_0_0015B980);
     D_0030A3A0[0].x = 0.0f;
     D_0030A3AC[0] = 100.0f;
     D_0030A3B0[0].x = 1000.0f;

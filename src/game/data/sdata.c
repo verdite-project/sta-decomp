@@ -226,7 +226,7 @@ s32 D_00201DA8 = -1;
 f32 D_00201DAC[0x5] __attribute__((aligned(4))) = { 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
 #endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/save/save_parse.c */
-s32 D_00201DC0[0x1] = { (s32)D_004A4980 };
+s32 gPlayerData_00201DC0[0x1] = { (s32)D_004A4980 };
 #endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/save/save_byte.c */
 s32 D_00201DC4[0x1] = { (s32)D_004A5A60 };
@@ -267,8 +267,8 @@ s32 D_00201E50 = -1;
 s32 D_00201E54 = -1;
 #endif
 s32 D_00201E58 = 0;
-s32 D_00201E5C[0x1] = { 0 };
-s32 D_00201E60[0x2] = { 0, 0 };
+s32 gGsText_00201E5C[0x1] = { 0 };
+s32 gGsTextStyle_00201E60[0x2] = { 0, 0 };
 u16 D_00201E68[0x4] = { 0, 0, 0, 0 };
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/movie.c */
 s32 D_00201E70 = 1;

@@ -4,7 +4,7 @@ typedef struct { s32 type[8]; s32 free[8]; s32 format[8]; s32 res[8]; s32 port; 
 s32 sceMcGetInfo(s32, s32, s32 *, s32 *, s32 *);
 s32 sceMcSync(s32, s32 *, s32 *);
 s32 Mc_StepCheck_4_001D3E30(void) {
-    T *t = &D_004B63B8;
+    T *t = &gMcState_004B63B8;
     s32 step = t->step;
     s32 i = t->port;
     s32 j = t->slot;
@@ -16,7 +16,7 @@ s32 Mc_StepCheck_4_001D3E30(void) {
         t->retry = 0;
         break;
     case 1:
-        if (sceMcGetInfo(i, j, &D_004B63B8.type[i * 4 + j], &D_004B63B8.free[i * 4 + j], &D_004B63B8.format[i * 4 + j]) != 0) {
+        if (sceMcGetInfo(i, j, &gMcState_004B63B8.type[i * 4 + j], &gMcState_004B63B8.free[i * 4 + j], &gMcState_004B63B8.format[i * 4 + j]) != 0) {
             if (t->retry == 2) {
                 t->err = 100;
                 return -10;
@@ -45,8 +45,8 @@ s32 Mc_StepCheck_4_001D3E30(void) {
         break;
     default:
         if (sceMcSync(1, 0, &r) == 0) break;
-        D_004B63B8.err = 100;
-        D_004B63B8.cmd = 0;
+        gMcState_004B63B8.err = 100;
+        gMcState_004B63B8.cmd = 0;
         return -10;
     }
     return 0;

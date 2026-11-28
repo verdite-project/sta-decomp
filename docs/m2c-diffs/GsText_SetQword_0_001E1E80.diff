@@ -2,17 +2,17 @@
 +++ matched
 @@ -1,8 +1,9 @@
  #include "common.h"
--extern s32 D_00201E5C;
+-extern s32 gGsText_00201E5C;
 -void GsText_SetQword_0_001E1E80(s32 arg0, s64 arg1, s64 arg2) {
 -    s32 temp_4;
 -    temp_4 = (arg0 * 0x10) + 0x30;
--    *(D_00201E5C + temp_4) = arg1;
--    M2C_FIELD((D_00201E5C + temp_4), s64 *, 8) = arg2;
+-    *(gGsText_00201E5C + temp_4) = arg1;
+-    M2C_FIELD((gGsText_00201E5C + temp_4), s64 *, 8) = arg2;
 +typedef struct { s64 a, b; } Q;
 +typedef struct { char pad[0x30]; Q q[1]; } S;
-+extern S *D_00201E5C;
++extern S *gGsText_00201E5C;
 +void GsText_SetQword_0_001E1E80(s32 i, s64 a, s64 b)
 +{
-+    D_00201E5C->q[i].a = a;
-+    D_00201E5C->q[i].b = b;
++    gGsText_00201E5C->q[i].a = a;
++    gGsText_00201E5C->q[i].b = b;
  }

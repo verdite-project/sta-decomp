@@ -31,8 +31,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SYMS = ROOT / "config/symbol_addrs.txt"
-WORD = re.compile(r"/\* \w+ ([0-9A-F]{8}) [0-9A-F]{8} \*/\s+\.word (D_([0-9A-F]{8}))\s*$")
-NAME = re.compile(r"\b(D_[0-9A-F]{8})\b")
+WORD = re.compile(r"/\* \w+ ([0-9A-F]{8}) [0-9A-F]{8} \*/\s+\.word ((?:D|g[A-Z][A-Za-z0-9]*)_([0-9A-F]{8}))\s*$")
+NAME = re.compile(r"\b((?:D|g[A-Z][A-Za-z0-9]*)_[0-9A-F]{8})\b")
 
 
 def main() -> None:
@@ -63,7 +63,7 @@ def main() -> None:
         if not p.endswith("/bss.bss.s"):
             refs |= set(NAME.findall(Path(p).read_text()))
     bss = ROOT / "asm/data/bss.bss.s"
-    for n in re.findall(r"^dlabel (D_[0-9A-F]{8})\b", bss.read_text(), re.M):
+    for n in re.findall(r"^dlabel ((?:D|g[A-Z][A-Za-z0-9]*)_[0-9A-F]{8})\b", bss.read_text(), re.M):
         if n not in refs:
             print(f"bss.bss.s: {n} (unreferenced)")
             fake.add(int(n[2:], 16))

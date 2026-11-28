@@ -114,11 +114,11 @@ body:
             sceVu0CopyVector(&lt.v[1], &D_001F2130);
             sceVu0CopyVector(&lt.v[2], &D_001F2140);
             sceVu0CopyVector(&lt.v[3], &D_001F2150);
-            sceVu0CopyVector(&lt.v[4], &D_003139A0);
-            sceVu0CopyVector(&lt.v[5], &D_003139A0);
-            sceVu0CopyVector(&lt.v[6], &D_003139A0);
-            sceVu0CopyVector(&lt.v[7], &D_003139A0);
-            sceVu0CopyVector(&lt.v[8], &D_003139A0);
+            sceVu0CopyVector(&lt.v[4], &gZeroVec_003139A0);
+            sceVu0CopyVector(&lt.v[5], &gZeroVec_003139A0);
+            sceVu0CopyVector(&lt.v[6], &gZeroVec_003139A0);
+            sceVu0CopyVector(&lt.v[7], &gZeroVec_003139A0);
+            sceVu0CopyVector(&lt.v[8], &gZeroVec_003139A0);
             lt.v[9].x = 1.0f;
             lt.v[9].y = 1.0f;
             lt.v[9].z = 1.0f;

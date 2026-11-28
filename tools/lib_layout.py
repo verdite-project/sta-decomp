@@ -485,7 +485,7 @@ def layout(objdir):
                 for s, off, n in o.allsyms:
                     if s != sec:
                         continue
-                    m = re.fullmatch(r"D_([0-9A-F]{8})", n)
+                    m = re.fullmatch(r"(?:D|g[A-Z][A-Za-z0-9]*)_([0-9A-F]{8})", n)
                     a = syms[0].get(n, int(m.group(1), 16) if m else None)
                     if a is not None:
                         bases.add(a - off)

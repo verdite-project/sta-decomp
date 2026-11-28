@@ -12,7 +12,7 @@ s32 Mc_StepFindFile_5_001D67A8(void)
     s32 res;
     s32 x, y;
 
-    m = &D_004B63B8;
+    m = &gMcState_004B63B8;
     st = m->x8c;
     x = m->x80;
     y = m->x84;

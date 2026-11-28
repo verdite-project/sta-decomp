@@ -29,7 +29,7 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from names import is_func  # noqa: E402
+from names import is_func, data_name  # noqa: E402
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -328,7 +328,7 @@ def bss_unit(src):
     # _gp is the linker script's (the small data base), not an object's name
     for l in labels:
         if l[0] == "_gp":
-            l[0] = f"D_{l[1]:08X}"
+            l[0] = data_name(l[1])
     cut = next((i for i, l in enumerate(labels) if l[0] in NOT_GAME), len(labels))
     labels = labels[:cut]
     natural = lambda n: 4 if n <= 4 else 8 if n < 16 else 16

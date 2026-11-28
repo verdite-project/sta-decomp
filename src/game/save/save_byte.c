@@ -26,7 +26,7 @@ typedef struct {
 } Big_Save_BuildGame_1_001AAAE0;
 typedef SaveRec Rec_Save_BuildOptions_1_001AB0A0;
 typedef struct { Rec_Save_BuildOptions_1_001AB0A0 r0; u8 x20[0x10]; Rec_Save_BuildOptions_1_001AB0A0 r1; u8 pad[0x80]; Rec_Save_BuildOptions_1_001AB0A0 r2; } Big_Save_BuildOptions_1_001AB0A0;
-extern PlayerData *D_00201DC0;
+extern PlayerData *gPlayerData_00201DC0;
 extern Rec_Save_InitNewGame_1_001AA760 *D_00201DC4;
 u8 Save_GetByte2E_0_001AA740(void);
 void Save_InitNewGame_1_001AA760(void);
@@ -37,23 +37,23 @@ void memset(void *, s32, s32);
 
 /* Save_GetByte2E_0_001AA740 */
 u8 Save_GetByte2E_0_001AA740(void) {
-    return D_00201DC0->x2E;
+    return gPlayerData_00201DC0->x2E;
 }
 
 /* Save_GetByte2F_0_001AA750 */
 u8 Save_GetByte2F_0_001AA750(void) {
-    return D_00201DC0->x2F;
+    return gPlayerData_00201DC0->x2F;
 }
 
 /* Save_InitNewGame_1_001AA760 */
-#define D_00201DC0 D_00201DC0__as_Save_InitNewGame_1_001AA760
-extern W *D_00201DC0__as_Save_InitNewGame_1_001AA760;
+#define gPlayerData_00201DC0 gPlayerData_00201DC0__as_Save_InitNewGame_1_001AA760
+extern W *gPlayerData_00201DC0__as_Save_InitNewGame_1_001AA760;
 static inline Slot *slot(s16 id) {
     Slot *s;
     if (0 > id || id >= 0x400) {
         s = NULL;
     } else {
-        s = &D_00201DC0->slot[id];
+        s = &gPlayerData_00201DC0->slot[id];
     }
     return s;
 }
@@ -70,8 +70,8 @@ void Save_InitNewGame_1_001AA760(void) {
         memset(D_00201DC4[i].x180, 0, 0x40);
     }
     memset(&D_00201DC4[0x2A], 0, 0x20);
-    D_00201DC0->x2E = 1;
-    D_00201DC0->x2F = 10;
+    gPlayerData_00201DC0->x2E = 1;
+    gPlayerData_00201DC0->x2F = 10;
     for (i = 0x1F; i <= 0x31; i++) {
         memset(&sv->xA0[i], 0, 4);
         memset(slot(i), 0, 8);
@@ -124,7 +124,7 @@ void Save_InitNewGame_1_001AA760(void) {
     sv->xE = 1;
     sv->xF = 10;
 }
-#undef D_00201DC0
+#undef gPlayerData_00201DC0
 
 /* Save_BuildGame_1_001AAAE0 */
 #define FCC(s) ((s)[0] | ((s)[1] << 8) | ((s)[2] << 16) | ((s)[3] << 24))

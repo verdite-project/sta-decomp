@@ -2,11 +2,11 @@
 +++ matched
 @@ -1,5 +1,5 @@
 -#include "common.h"
--extern s32 D_004B63B8[];
+-extern s32 gMcState_004B63B8[];
 -s32 Mc_GetFormatRaw_0_001D7078(s32 arg0, s32 arg1) {
--    return *(D_004B63B8 + (((arg0 * 4) + arg1) * 4));
-+extern int D_004B63B8[][4];
+-    return *(gMcState_004B63B8 + (((arg0 * 4) + arg1) * 4));
++extern int gMcState_004B63B8[][4];
 +int Mc_GetFormatRaw_0_001D7078(int a, int b)
 +{
-+    return D_004B63B8[a][b];
++    return gMcState_004B63B8[a][b];
  }

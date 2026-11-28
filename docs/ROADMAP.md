@@ -280,9 +280,15 @@ Next, in order of yield:
    cast of another symbol; give them an `extern` first.
 4. **Data used only by data or asm**: they go with their user once that is C.
 5. **Real moves**: rerun `tools/move_data.py` as units match; an object it
-   moves loses both twins.
-6. **Names**: rename `D_XXXXXXXX` objects in both copies as owners show what
-   they are (the checker keeps the copies in step).
+   moves loses both twins. As of now it moves nothing: 15 candidates fold
+   into their owner's code, 2 would leave link order, and 13 are 128-bit
+   qword unions no C initialiser writes byte for byte (it now also tries
+   split_data.py's struct initialisers).
+6. **Names**: `config/game_data_names.txt` + `tools/apply_data_names.py`
+   (README, "Data names"); the five objects the headers type are named
+   (`gMcState`, `gGsText`, `gGsTextStyle`, `gPlayerData`, `gZeroVec`). Name
+   more as their owners show what they are; the checker keeps both copies
+   of a twin in step.
 
 `tools/split_data.py --apply` also takes back the twin of any object a
 later inventory pins (a new root, a new extent), so rerun it after changing

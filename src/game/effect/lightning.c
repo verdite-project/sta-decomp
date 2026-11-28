@@ -54,7 +54,7 @@ static inline void body(LP *P, u32 **po, Vec *L, Vec *dir, Vec *c) {
     L2 = L;
     for (i = 0; i < 256; i++) {
         sceVu0CopyVector(&n, tbl++);
-        sceVu0CopyVector(&col, &D_003139A0);
+        sceVu0CopyVector(&col, &gZeroVec_003139A0);
         for (k = 0; k < 2; k++) {
             sum = 0.0f;
             d = sceVu0InnerProduct(&tr[k], &n);

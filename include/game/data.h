@@ -97,7 +97,7 @@ extern u8 D_0022F090[];
 extern s32 D_002F1948[];
 extern u32 D_002F199C[];
 extern u32 D_002F19A0[];
-extern Vec D_003139A0;
+extern Vec gZeroVec_003139A0;
 extern f32 D_003139E0[];
 extern s32 D_00316A20[];
 extern f32 D_00317244[];

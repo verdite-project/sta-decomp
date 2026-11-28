@@ -3,12 +3,12 @@
  * after every store (ee-gcc without strict aliasing). */
 
 typedef struct { char pad[0x4C]; int w[4]; } Cam;
-extern Cam *D_00201E60;
+extern Cam *gGsTextStyle_00201E60;
 
 void GsText_SetColorQ_0_001E2D38(int *src)
 {
-    D_00201E60->w[0] = src[0];
-    D_00201E60->w[1] = src[1];
-    D_00201E60->w[2] = src[2];
-    D_00201E60->w[3] = src[3];
+    gGsTextStyle_00201E60->w[0] = src[0];
+    gGsTextStyle_00201E60->w[1] = src[1];
+    gGsTextStyle_00201E60->w[2] = src[2];
+    gGsTextStyle_00201E60->w[3] = src[3];
 }

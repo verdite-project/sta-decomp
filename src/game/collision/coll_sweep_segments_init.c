@@ -21,7 +21,7 @@ void sceVu0CopyVector(Vec *, Vec *);
 void Seg_ClosestPoints_3_00151B20(Res *, Seg *, Seg *);
 void Coll_SweepRecursive_0_00150730(Out *, Seg **, Seg **, RPair *, s32 *, f32 *, f32, f32, f32);
 float sqrtf(float);
-extern Vec D_003139A0;
+extern Vec gZeroVec_003139A0;
 extern s32 D_00201F24;
 
 static inline void inner(Out *out, Seg *a1, Seg *a2, Seg *a3, Seg *a4) {
@@ -40,7 +40,7 @@ static inline void inner(Out *out, Seg *a1, Seg *a2, Seg *a3, Seg *a4) {
     flag = 0;
     Seg_ClosestPoints_3_00151B20(&r1, A[0], B[0]);
     if (r1.hit) {
-        sceVu0CopyVector(&out->a, &D_003139A0);
+        sceVu0CopyVector(&out->a, &gZeroVec_003139A0);
         sceVu0ScaleVector(&v80, &r1.a, 0.5f);
         sceVu0AddVector(&out->a, &v80, &out->a);
         sceVu0ScaleVector(&v70, &r1.b, 0.5f);

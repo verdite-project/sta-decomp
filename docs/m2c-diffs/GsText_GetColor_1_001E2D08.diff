@@ -2,7 +2,7 @@
 +++ matched
 @@ -1,13 +1,9 @@
  #include "common.h"
--extern s32 D_00201E60;
+-extern s32 gGsTextStyle_00201E60;
 -s32 GsText_GetColor_1_001E2D08(s32 arg0) {
 -    M2C_ERROR(/* unknown instruction: ldl $a1, 0x53($v1) */);
 -    M2C_ERROR(/* unknown instruction: ldr $a1, 0x4c($v1) */);
@@ -15,9 +15,9 @@
 -    return arg0;
 +typedef struct { s32 v[4]; } Q;
 +typedef struct { char pad[0x4C]; Q q; } S;
-+extern S *D_00201E60;
++extern S *gGsTextStyle_00201E60;
 +Q *GsText_GetColor_1_001E2D08(Q *dst)
 +{
-+    *dst = D_00201E60->q;
++    *dst = gGsTextStyle_00201E60->q;
 +    return dst;
  }

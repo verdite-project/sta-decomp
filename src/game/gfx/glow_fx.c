@@ -187,16 +187,16 @@ static inline void setup(s32 i) {
     if (ok) {
         f = (E_GlowFx_Start_0_001E1050 *)((s32)D_004BAC50 + (i << 6));
         sceVu0CopyVector(f->p, &D_001F2160);
-        sceVu0CopyVector(f->p + 0x10, &D_003139A0);
+        sceVu0CopyVector(f->p + 0x10, &gZeroVec_003139A0);
         D_004BAC50[i].x30 = 0.0f;
         D_004BAC50[i].x34 = 0.0f;
-        Glow_SetParams_0_0015D800(f->h, &D_001F2160, &D_003139A0, 0.0f, 0.0f);
+        Glow_SetParams_0_0015D800(f->h, &D_001F2160, &gZeroVec_003139A0, 0.0f, 0.0f);
     }
 }
 s32 GlowFx_Start_0_001E1050(void) {
     s32 i = find();
     if (i != -1) {
-        s32 h = Glow_Add_0_0015DBF0(0, &D_001F2160, &D_003139A0, 0.0f, 0.0f); E_GlowFx_Start_0_001E1050 *e = &D_004BAC50[i]; e->h = h; D_004BAC50[i].x4 = 0; D_004BAC50[i].x8 = 0;
+        s32 h = Glow_Add_0_0015DBF0(0, &D_001F2160, &gZeroVec_003139A0, 0.0f, 0.0f); E_GlowFx_Start_0_001E1050 *e = &D_004BAC50[i]; e->h = h; D_004BAC50[i].x4 = 0; D_004BAC50[i].x8 = 0;
         setup(i);
         D_002023AC++;
     }

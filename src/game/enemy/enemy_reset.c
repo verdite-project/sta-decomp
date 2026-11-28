@@ -114,12 +114,12 @@ void Enemy_ScatterPart_0_001A8700(Act *a, u8 idx) {
     e->xC4 = sqrtf(sceVu0InnerProduct(m1, m1));
     m2 = &m.m[2];
     e->xC8 = sqrtf(sceVu0InnerProduct(m2, m2));
-    sceVu0CopyVector(&e->xD0, &D_003139A0);
+    sceVu0CopyVector(&e->xD0, &gZeroVec_003139A0);
     sceVu0Normalize(&e->xE0, &m.m[0]);
     sceVu0Normalize(&e->xF0, m1);
     sceVu0Normalize(&e->x100, m2);
     sceVu0CopyVector(&e->x110, &D_001F2160);
-    sceVu0CopyVector(&e->x120, &D_003139A0);
+    sceVu0CopyVector(&e->x120, &gZeroVec_003139A0);
     sceVu0CopyVector(&e->x130, &D_001F2160);
     sceVu0CopyMatrix((Mtx *)((s32)na + off + 0x100), &m);
     sceVu0CopyMatrix((Mtx *)(b + 0x100), &m);

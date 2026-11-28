@@ -224,7 +224,7 @@ found:
 
 void PointLight_Init_0_0015C8D0(void) {
     memset(&D_0030C420__as_PointLight_Init_0_0015C8D0, 0, 0xCC0);
-    sceVu0CopyVector(&D_0030C420__as_PointLight_Init_0_0015C8D0.c.v, &D_003139A0);
+    sceVu0CopyVector(&D_0030C420__as_PointLight_Init_0_0015C8D0.c.v, &gZeroVec_003139A0);
     D_0030C420__as_PointLight_Init_0_0015C8D0.c.v.w = 40000.0f;
     D_0030C420__as_PointLight_Init_0_0015C8D0.c.x18 = 100.0f;
     D_0030C420__as_PointLight_Init_0_0015C8D0.c.x10 = 1.0f;

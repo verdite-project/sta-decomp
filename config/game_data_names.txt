@@ -1,0 +1,8 @@
+# Game data names: address, name (g<Name>, CamelCase). The symbol is
+# <name>_<address>; tools/apply_data_names.py applies it. Name an object
+# only when what it is is settled (a header type, a clear sole owner).
+00201DC0 gPlayerData   # PlayerData *, the player's save data (include/game/save.h)
+00201E5C gGsText       # GsTextState *, the text renderer's packet state (include/game/ee.h)
+00201E60 gGsTextStyle  # GsTextStyle *, the text renderer's style (include/game/ee.h)
+003139A0 gZeroVec      # the zero vector (include/game/data.h)
+004B63B8 gMcState      # McState, the memory-card driver state (include/game/ee.h)

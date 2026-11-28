@@ -34,7 +34,7 @@ u8 D_004B68C0[0x10];
 u8 D_004B6474[0x44c] __attribute__((aligned(4))); /* also D_004B6478 */
 s32 D_004B6450[0x9];
 s32 D_004B644C[0x1];
-u8 D_004B63B4[0x98] __attribute__((aligned(4))); /* also D_004B63B8, D_004B6418 */
+u8 D_004B63B4[0x98] __attribute__((aligned(4))); /* also gMcState_004B63B8, D_004B6418 */
 s32 D_004B63B0[0x1];
 s32 D_004B63AC[0x1];
 s32 D_004B63A8[0x1];

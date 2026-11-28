@@ -717,9 +717,9 @@ static f32 D_00317270[0x1];
 extern f32 D_00317274[];
 extern f32 D_00317278[];
 extern MtxF D_001F2170__as_Player_UpdatePickup_0_001C0A10_;
-extern Vec D_003139A0__as_Player_UpdatePickup_0_001C0A10_;
+extern Vec gZeroVec_003139A0__as_Player_UpdatePickup_0_001C0A10_;
 extern Mtx D_001F2170__as_Player_UpdateEquipSounds_0_001BF940_;
-extern f32 D_003139A0__as_Player_UpdateEquipSounds_0_001BF940_[];
+extern f32 gZeroVec_003139A0__as_Player_UpdateEquipSounds_0_001BF940_[];
 extern s32 **D_002022BC__as_Player_UpdateEquipSounds_0_001BF940_;
 extern s32 D_00201E80__as_Player_UpdateEquipSounds_0_001BF940_;
 extern s8 D_004B4CF0__as_Player_UpdateEquipSounds_0_001BF940_[];
@@ -741,7 +741,7 @@ extern u32 D_001F3860[][8];
 extern Flags8 D_00222A53__as_Player_AddStatus_1_001C88E0[];
 extern s8 *D_002022E4__as_Player_TakeHit_1_001C7DC0___;
 extern f32 D_001F2170__as_Player_UpdateArmBones_0_001C5DE0_____[];
-extern u8 D_003139A0__as_Player_UpdateArmBones_0_001C5DE0_____[];
+extern u8 gZeroVec_003139A0__as_Player_UpdateArmBones_0_001C5DE0_____[];
 extern s32 D_00201E80__as_Player_UpdateArmBones_0_001C5DE0_____;
 extern u8 D_00222A53__as_Player_UpdateArmBones_0_001C5DE0_____[];
 extern S *D_002022E4__as_Camera_SetPosition_0_001C8EA0;
@@ -752,8 +752,8 @@ extern S_Player_GetHeadPos_0_001C93A0 *D_002022E4__as_Player_GetHeadPos_0_001C93
 extern S_Player_GetPos_1_001C9410 *D_002022E4__as_Player_GetPos_1_001C9410;
 extern S_Player_GetPosB_0_001C9490 *D_002022E4__as_Player_GetPosB_0_001C9490;
 extern S_Player_SetStartPos_0_001C9630 *D_002022E4__as_Player_SetStartPos_0_001C9630;
-extern f32 D_003139A0__as_Player_SetStartPos_0_001C9630[];
-extern Vec D_003139A0__as_Player_LoadStartPos_0_001C96F0;
+extern f32 gZeroVec_003139A0__as_Player_SetStartPos_0_001C9630[];
+extern Vec gZeroVec_003139A0__as_Player_LoadStartPos_0_001C96F0;
 extern s8 *D_002022E4__as_Player_UpdateFrame_0_001C9830;
 extern S_Player_GetHpS16_0_001C99C0 *D_002022E4__as_Player_GetHpS16_0_001C99C0;
 extern S_Player_IsCrouching_0_001C9A20 *D_002022E4__as_Player_IsCrouching_0_001C9A20;
@@ -1661,7 +1661,7 @@ void PlayerProc_Update_0_001BEFA0(AH *a0, f32 dt) {
     s->x3AE = 0;
     if (D_00222A53[0].f.b4 && s->f3A2.f.b4) {
         q = (S_Player_DrawWeapon_0_001BCFF0 *)(a0->unk518 + 0x180);
-        sceVu0CopyVector__as_PlayerProc_Update_0_001BEFA0(&q->x50, &D_003139A0);
+        sceVu0CopyVector__as_PlayerProc_Update_0_001BEFA0(&q->x50, &gZeroVec_003139A0);
         q->x50.y -= 3920.0f * dt;
         reset_Player_DrawWeapon_0_001BCFF0_();
         q->x18->x20 = Lerpf_3_0015DF90(q->x18->x20, 1.5707964f, (u2f_PlayerProc_Update_0_001BEFA0(q->x41E) / 90.0f) * (u2f_PlayerProc_Update_0_001BEFA0(q->x41E) / 90.0f));
@@ -1727,7 +1727,7 @@ void PlayerProc_Update_0_001BEFA0(AH *a0, f32 dt) {
         Player_ReadStick_0_001C27C0__as_Player_DrawWeapon_0_001BCFF0_(a0, buf);
         Player_UpdateInput_0_001C1900__as_Player_DrawWeapon_0_001BCFF0_(a0, buf);
     } else {
-        sceVu0CopyVector__as_PlayerProc_Update_0_001BEFA0(&s->x50, &D_003139A0);
+        sceVu0CopyVector__as_PlayerProc_Update_0_001BEFA0(&s->x50, &gZeroVec_003139A0);
         s->x50.y -= 3920.0f * dt;
     }
     if (s->x18->x20 < -1.0471976f) {
@@ -1765,7 +1765,7 @@ void PlayerProc_Update_0_001BEFA0(AH *a0, f32 dt) {
     if (!Game_GetBusy_0_0012C020() && !mode()) {
         sceVu0AddVector__as_Player_DrawWeapon_0_001BCFF0_(&s->x50, &s->x50, &s->x3F0);
     }
-    sceVu0CopyVector__as_PlayerProc_Update_0_001BEFA0(&s->x3F0, &D_003139A0);
+    sceVu0CopyVector__as_PlayerProc_Update_0_001BEFA0(&s->x3F0, &gZeroVec_003139A0);
     if (s->x3BE) {
         s->x3BE--;
     }
@@ -2030,7 +2030,7 @@ void Player_GetHandMatrix_1_001C0660(f32 *out, s32 a1, s32 flag, u32 n) {
 
     ang = -12.0f * (3.1415927f * n) / 180.0f;
     sceVu0InversMatrix(m1, D_00222850);
-    sceVu0CopyVector__as_Player_GetHandMatrix_1_001C0660(w, D_003139A0__as_Player_UpdateEquipSounds_0_001BF940_);
+    sceVu0CopyVector__as_Player_GetHandMatrix_1_001C0660(w, gZeroVec_003139A0__as_Player_UpdateEquipSounds_0_001BF940_);
     w[2] = 180.0f;
     w[1] = 30.0f;
     sceVu0ApplyMatrix__as_Player_UpdateEquipSounds_0_001BF940_(w, m1, w);
@@ -2841,7 +2841,7 @@ void Player_UpdateWalk_1_001C2DB0(Actor *a, f32 *in) {
     y = p->v50.y;
     p->v50.y = 0.0f;
     d = sqrtf(sceVu0InnerProduct(&p->v50, &p->v50));
-    if (d < 40.0f) sceVu0CopyVector(&p->v50, &D_003139A0__as_Player_UpdatePickup_0_001C0A10_);
+    if (d < 40.0f) sceVu0CopyVector(&p->v50, &gZeroVec_003139A0__as_Player_UpdatePickup_0_001C0A10_);
     p->f428 = Lerpf_3_0015DF90(p->f428, p->f3A0.b.hi.f.b5 ? 0.8f * sc : 0.5f * sc, 0.2f);
     u = 600.0f * (p->x390->x48 ? 0.5f : 1.0f);
     t = p->f428 * u;
@@ -2956,7 +2956,7 @@ void Player_UpdateFall_0_001C39D0(Actor *a, In_Player_UpdateFall_0_001C39D0 *in,
     p->v50.y = p->v50.y - 3920.0f * dt;
     sceVu0ScaleVector(&p->v50, &p->v50, 0.9f);
     if (sqrtf(sceVu0InnerProduct(&p->v50, &p->v50)) < 50.0f) {
-        sceVu0CopyVector(&p->v50, &D_003139A0__as_Player_UpdatePickup_0_001C0A10_);
+        sceVu0CopyVector(&p->v50, &gZeroVec_003139A0__as_Player_UpdatePickup_0_001C0A10_);
     }
     sceVu0ScaleVector(&t1, &p->v50, dt);
     sceVu0AddVector(&p->v40, &t1, &p->v40);
@@ -4014,7 +4014,7 @@ void Player_SetArmMotion_1_001C7020(u16 idx, f32 t, s32 flags, f32 b, f32 c) {
     }
     q = &e->q;
     Mdl_SetBoneRotation_0_001710D0(s->r, a, c * (0.0078125f * u2f_Player_UpdateArmBones_0_001C5DE0_(e->b)), 0.033333335f * (b + u2f_Player_UpdateArmBones_0_001C5DE0_(q->lo)), 0.033333335f * u2f_Player_UpdateArmBones_0_001C5DE0_(q->mid));
-    sceVu0CopyVector__as_Player_UpdateArmBones_0_001C5DE0___(s->x18 + 0xA0, D_003139A0__as_Player_UpdateArmBones_0_001C5DE0_____);
+    sceVu0CopyVector__as_Player_UpdateArmBones_0_001C5DE0___(s->x18 + 0xA0, gZeroVec_003139A0__as_Player_UpdateArmBones_0_001C5DE0_____);
     if (flags & 2) {
         s->f3D6.f.b7 = 1;
     } else {
@@ -4737,8 +4737,8 @@ void Camera_Update_1_001C8F90(void *a0) {
 int Inventory_Give_0_001CBCD0__as_Player_Warp_0_001C92C0__();
 #define Player_RecalcStats_1_001CEDC0 Player_RecalcStats_1_001CEDC0__as_Player_Warp_0_001C92C0__
 int Player_RecalcStats_1_001CEDC0__as_Player_Warp_0_001C92C0__();
-#define D_003139A0 D_003139A0__as_Player_Warp_0_001C92C0__
-extern s8 D_003139A0__as_Player_Warp_0_001C92C0__[];
+#define gZeroVec_003139A0 gZeroVec_003139A0__as_Player_Warp_0_001C92C0__
+extern s8 gZeroVec_003139A0__as_Player_Warp_0_001C92C0__[];
 #define D_00201E20 D_00201E20__as_Player_Warp_0_001C92C0__
 extern S1E20 *D_00201E20__as_Player_Warp_0_001C92C0__;
 #define D_002022BC D_002022BC__as_Player_Warp_0_001C92C0__
@@ -4884,7 +4884,7 @@ void Player_SetPosAndGround_0_001C94F0(f32 *a0) {
     sceVu0CopyVector__as_Player_SetPosAndGround_0_001C94F0(p->o + 0x10, a0);
     sceVu0CopyVector__as_Player_SetPosAndGround_0_001C94F0(p->o + 0x20, &v);
     sceVu0CopyVector__as_Player_SetPosAndGround_0_001C94F0(p->o + 0x30, &v);
-    sceVu0CopyVector__as_Player_SetPosAndGround_0_001C94F0(p->o + 0x40, D_003139A0);
+    sceVu0CopyVector__as_Player_SetPosAndGround_0_001C94F0(p->o + 0x40, gZeroVec_003139A0);
 }
 
 /* Player_SetStartPos_0_001C9630 */
@@ -4905,7 +4905,7 @@ void Player_SetStartPos_0_001C9630(f32 *a, f32 *b)
         sceVu0CopyVector__as_Player_SetStartPos_0_001C9630(t->m + 4, a);
         sceVu0CopyVector__as_Player_SetStartPos_0_001C9630(t->m + 8, b);
         sceVu0CopyVector__as_Player_SetStartPos_0_001C9630(t->m + 12, b);
-        sceVu0CopyVector__as_Player_SetStartPos_0_001C9630(t->m + 16, D_003139A0__as_Player_SetStartPos_0_001C9630);
+        sceVu0CopyVector__as_Player_SetStartPos_0_001C9630(t->m + 16, gZeroVec_003139A0__as_Player_SetStartPos_0_001C9630);
     }
 }
 
@@ -4933,7 +4933,7 @@ void Player_LoadStartPos_0_001C96F0(s8 *a0) {
             sceVu0CopyVector__as_Player_LoadStartPos_0_001C96F0(&s->m[1], r);
             sceVu0CopyVector__as_Player_LoadStartPos_0_001C96F0(&s->m[2], &v);
             sceVu0CopyVector__as_Player_LoadStartPos_0_001C96F0(&s->m[3], &v);
-            sceVu0CopyVector__as_Player_LoadStartPos_0_001C96F0(&s->m[4], &D_003139A0__as_Player_LoadStartPos_0_001C96F0);
+            sceVu0CopyVector__as_Player_LoadStartPos_0_001C96F0(&s->m[4], &gZeroVec_003139A0__as_Player_LoadStartPos_0_001C96F0);
         }
     }
 }
@@ -5203,7 +5203,7 @@ void PlayerData_InitNew_0_001C9EA0(void) {
 #undef PlayerProc_Update_0_001BEFA0
 #undef PlayerProc_UpdateMove_0_001BE7B0
 #undef PlayerProc_Attack_0_001C55A0
-#undef D_003139A0
+#undef gZeroVec_003139A0
 #undef D_00201E20
 #undef D_002022BC
 #undef D_004B4C40

@@ -1,6 +1,6 @@
 #include "common.h"
 #include "game/ee.h"
-extern GsTextState *D_00201E5C;
+extern GsTextState *gGsText_00201E5C;
 void FlushCache(s32);
 #define D2_CHCR ((volatile int *)0x1000A000)
 #define D2_MADR ((volatile int *)0x1000A010)
@@ -14,7 +14,7 @@ void GsText_WaitDma_1_001E3688(void) {
     } while (*GIF_STAT & 0xC00);
     *D2_QWC = 0;
     *D2_MADR = 0;
-    *D2_TADR = D_00201E5C->x8;
+    *D2_TADR = gGsText_00201E5C->x8;
     FlushCache(0);
     *D2_CHCR = 0x145;
     do {

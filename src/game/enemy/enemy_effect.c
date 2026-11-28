@@ -154,7 +154,7 @@ void Enemy_AttachEffect_1_0013C0D0(Actor *a, u8 slot, s16 id, s8 dx, s8 dy, u8 f
         }
     }
     Mdl_SetBoneRotation_0_001710D0(s->p28, s->p20[i].id, scale * (u2f_Enemy_AttachEffect_1_0013C0D0(s->p20[i].spd) * 0.0078125f), x, y);
-    sceVu0CopyVector(s->p18 + 0xA0, &D_003139A0);
+    sceVu0CopyVector(s->p18 + 0xA0, &gZeroVec_003139A0);
 }
 #undef sceVu0CopyVector
 

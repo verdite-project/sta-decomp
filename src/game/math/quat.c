@@ -66,7 +66,7 @@ void Mtx_ToQuat_2_0015E290(f32 *out, f32 (*a)[4]) {
     sceVu0Normalize(m[0], a[0]);
     sceVu0Normalize(m[1], a[1]);
     sceVu0Normalize(m[2], a[2]);
-    sceVu0CopyVector(m[3], &D_003139A0);
+    sceVu0CopyVector(m[3], &gZeroVec_003139A0);
     m[3][3] = 1.0f;
     t = m[0][0] + m[1][1] + m[2][2] + 1.0f;
     if (!(t < 1.0f)) {

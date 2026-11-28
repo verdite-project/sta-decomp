@@ -15,7 +15,7 @@ typedef struct { u8 p[4]; Flags8 f; u8 p5[3]; } FE;
 extern s16 D_00222A18[];
 extern s16 D_00222A16[];
 extern s32 D_00201F2C;
-extern Vec D_003139A0;
+extern Vec gZeroVec_003139A0;
 void sceVu0CopyVector(Vec *, void *);
 void sceVu0CopyMatrix(Mtx *, void *);
 void sceVu0ApplyMatrix(Vec *, Mtx *, void *);
@@ -77,7 +77,7 @@ s32 Coll_RayVsModel_1_0014FA30(Out *out, H *h, Vec *ray, u8 mask, F *flag, s32 f
             if (c >= g->x1C) continue;
             sceVu0CopyMatrix(&M2, (u8 *)&((Ent *)base190)[j + 1] + 0xC0);
             sceVu0CopyMatrix(&M1, (u8 *)&((Ent *)base190)[j + 1] + 0xC0);
-            sceVu0CopyVector(&M1.m[3], &D_003139A0);
+            sceVu0CopyVector(&M1.m[3], &gZeroVec_003139A0);
             hh = &hd[c];
             if (!hh->off[0]) continue;
             if (!hh->off[2]) continue;

@@ -116,7 +116,7 @@ void Enemy_UpdateModelMatrix_0_001A7E60(A *a) {
     p->x18->m.m[3].w = 1.0f;
     sceVu0CopyVector(&p->v40, &p->x10->v0);
     sceVu0CopyVector(&p->v50, &p->x10->v40);
-    sceVu0CopyVector(&p->vA0, &D_003139A0);
+    sceVu0CopyVector(&p->vA0, &gZeroVec_003139A0);
     p->xF4 = 0;
 }
 #undef sceVu0CopyMatrix

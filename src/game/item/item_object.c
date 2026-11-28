@@ -649,7 +649,7 @@ s32 ItemObj_OffsetAll_0_001AC0F0(s32 arg0, u16 arg1, s32 arg2) {
     s32 j;
     Obj3D *row;
 
-    sceVu0CopyVector(arg2, &D_003139A0);
+    sceVu0CopyVector(arg2, &gZeroVec_003139A0);
     if (arg1 == 0) {
         return 0;
     }

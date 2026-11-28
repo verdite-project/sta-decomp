@@ -194,7 +194,7 @@ void Map_OnAreaLoaded_0_001B6800(S *a, s32 a1) {
     }
     for (i = 0; i < a->n74; i++) {
         V8 *q = &a->x144[i];
-        Fog_BuildPlanes_0_0015CD30(&a->x188[i], &q->v[0], &q->v[2], &D_003139A0, &D_003139A0, &q->v[1], &q->v[3], &D_003139A0, &D_003139A0, &q->v[5], &q->v[4]);
+        Fog_BuildPlanes_0_0015CD30(&a->x188[i], &q->v[0], &q->v[2], &gZeroVec_003139A0, &gZeroVec_003139A0, &q->v[1], &q->v[3], &gZeroVec_003139A0, &gZeroVec_003139A0, &q->v[5], &q->v[4]);
     }
     if (a->x64) {
         a->xC = Pool_Alloc_3_001288C0(D_002022C4, 0x963C);
@@ -220,8 +220,8 @@ void Map_OnAreaLoadedWrap_1_001B6FB0(s32 *arg0) {
 void sceVu0CopyVector__as_Map_LoadTextures_0_001B6FC0(u8 *, s32 *);
 #define D_002022D0 D_002022D0__as_Map_LoadTextures_0_001B6FC0
 extern s32 *D_002022D0__as_Map_LoadTextures_0_001B6FC0;
-#define D_003139A0 D_003139A0__as_Map_LoadTextures_0_001B6FC0
-extern s32 D_003139A0__as_Map_LoadTextures_0_001B6FC0[];
+#define gZeroVec_003139A0 gZeroVec_003139A0__as_Map_LoadTextures_0_001B6FC0
+extern s32 gZeroVec_003139A0__as_Map_LoadTextures_0_001B6FC0[];
 
 void Map_LoadTextures_0_001B6FC0(u8 **arg0) {
     u8 *temp_3;
@@ -232,7 +232,7 @@ void Map_LoadTextures_0_001B6FC0(u8 **arg0) {
     temp_17 = (u8 *) (*arg0);
     temp_2 = (u8 **) (Tex_LoadArchive_0_0016F950(D_002022D0, M2C_FIELD(temp_17, u8 ***, 0x24)));
     M2C_FIELD(temp_17, u8 ***, 4) = temp_2;
-    sceVu0CopyVector(temp_17 + 0x10, D_003139A0);
+    sceVu0CopyVector(temp_17 + 0x10, gZeroVec_003139A0);
     temp_3 = (u8 *) (*temp_2);
     if (((BF_3C_4_1 *)temp_3)->f != 0) {
         temp_4 = (s32 **) (M2C_FIELD(temp_3, s32 ***, 0x10));
@@ -244,7 +244,7 @@ void Map_LoadTextures_0_001B6FC0(u8 **arg0) {
 }
 #undef sceVu0CopyVector
 #undef D_002022D0
-#undef D_003139A0
+#undef gZeroVec_003139A0
 
 /* Map_GetFile_2_001B7050 */
 #define Pool_Alloc_3_001288C0 Pool_Alloc_3_001288C0__as_Map_GetFile_2_001B7050

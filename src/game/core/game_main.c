@@ -840,7 +840,7 @@ void Loading_Loop_0_0012AC00(s32 arg0) {
             break;
         case 3:
             IDX = 0;
-            Map_RequestArea_1_001B06E0(arg0, &D_003139A0, 0);
+            Map_RequestArea_1_001B06E0(arg0, &gZeroVec_003139A0, 0);
             st++;
             break;
         case 4:
@@ -929,7 +929,7 @@ void Game_StartSession_0_0012B120(s32 arg0) {
     Light_Init_1_0015BCA0();
     PointLight_Init_0_0015C8D0();
     ScreenFx_Init_1_00159A60();
-    ScreenFx_SetFadeTarget_0_00159400(3.0f, &D_003139A0);
+    ScreenFx_SetFadeTarget_0_00159400(3.0f, &gZeroVec_003139A0);
     D_00222A30[0] = ScreenFx_GetParamsD_0_00159650(1);
     D_00222A34[0] = ScreenFx_GetParamsC_0_00159620(0);
     D_00222A38[0] = ScreenFx_GetParamsB_0_001595C0(1);

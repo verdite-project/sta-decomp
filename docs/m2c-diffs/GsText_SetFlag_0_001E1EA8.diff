@@ -2,12 +2,12 @@
 +++ matched
 @@ -1,5 +1,7 @@
  #include "common.h"
--extern s64 *D_00201E5C;
+-extern s64 *gGsText_00201E5C;
 -void GsText_SetFlag_0_001E1EA8(s32 arg0) {
--    *D_00201E5C = (*D_00201E5C & ((((0xFFF7FFFF << 0x10) | 0xFFFF) << 0x10) | 0xFFFF)) | ((arg0 & 1) << 0x33);
+-    *gGsText_00201E5C = (*gGsText_00201E5C & ((((0xFFF7FFFF << 0x10) | 0xFFFF) << 0x10) | 0xFFFF)) | ((arg0 & 1) << 0x33);
 +typedef struct { u64 : 51; u64 f : 1; } S;
-+extern S *D_00201E5C;
++extern S *gGsText_00201E5C;
 +void GsText_SetFlag_0_001E1EA8(s32 v)
 +{
-+    D_00201E5C->f = v;
++    gGsText_00201E5C->f = v;
  }

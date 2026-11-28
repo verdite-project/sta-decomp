@@ -90,7 +90,7 @@ void ScreenFx_Init_1_00159A60(void) {
     ScreenFx_InitEntry_0_00159480(D_002F19B0.xB0);
     ScreenFx_InitEntry_0_00159480(D_002F19B0.xD0);
     D_002F19B0.xEC = 1;
-    sceVu0CopyVector(&v, &D_003139A0);
+    sceVu0CopyVector(&v, &gZeroVec_003139A0);
     v.w = 128.0f;
     sceVu0CopyVector(&D_002F19B0.xF0, &v);
     sceVu0CopyVector(&D_002F19B0.x100, &v);

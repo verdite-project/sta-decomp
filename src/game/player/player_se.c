@@ -448,8 +448,8 @@ void Player_ReleaseHeldItem_0_001CAE90(void) {
     D_002022F0 = NULL;
     D_002022F4 = 0;
     D_002022F8 = 0;
-    sceVu0CopyVector(D_004B5DB0, &D_003139A0);
-    sceVu0CopyVector(D_004B5DC0, &D_003139A0);
+    sceVu0CopyVector(D_004B5DB0, &gZeroVec_003139A0);
+    sceVu0CopyVector(D_004B5DC0, &gZeroVec_003139A0);
 }
 #undef sceVu0CopyVector
 #undef D_002022F0

@@ -87,7 +87,7 @@ def main():
         for l in ins:
             m = re.match(r"jal\s+(\w+)", l)
             if m: calls.append(nm(m.group(1)))
-            for d in re.findall(r"%(?:hi|lo|gp_rel)\(D_([0-9A-F]{8})\)", l):
+            for d in re.findall(r"%(?:hi|lo|gp_rel)\((?:D|g[A-Z][A-Za-z0-9]*)_([0-9A-F]{8})\)", l):
                 s = cstr(int(d, 16))
                 if s and s not in strs: strs.append(s)
         cur = names.get(a, "")

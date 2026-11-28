@@ -128,7 +128,7 @@ s32 Snd_Init_2_0012DF90(void) {
     D_0022EBE0[1] = 0x12C010;
     D_0022EBE0[2] = 0x5010;
     D_0022EBE0[3] = 0x102010;
-    sceVu0CopyVector(D_0022EC00, &D_003139A0);
+    sceVu0CopyVector(D_0022EC00, &gZeroVec_003139A0);
     D_0022EC10[0] = 0;
     D_0022EC18[0] = -1;
     D_0022EC21[0] = 0;

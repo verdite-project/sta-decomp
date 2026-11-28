@@ -188,7 +188,7 @@ keeps its local name as `typedef Canon Local;` (e.g. `ResNode`, `Bits8`, `UiArg`
 
 Globals accessed at many offsets across unmatched code, worth a shared header in `include/` (like `actor.h`):
 
-- Done: `D_00201DC0` is `PlayerData *` (include/game/save.h); `D_004B63B8` is `McState`, `D_00201E5C` `GsTextState *`, `D_00201E60` `GsTextStyle *` (include/game/ee.h); `D_003139A0` is `Vec`. Units still on their own view: `tools/struct_views.py show GLOBAL`; move them with `tools/struct_views.py migrate GLOBAL TYPE`.
+- Done: `gPlayerData_00201DC0` is `PlayerData *` (include/game/save.h); `gMcState_004B63B8` is `McState`, `gGsText_00201E5C` `GsTextState *`, `gGsTextStyle_00201E60` `GsTextStyle *` (include/game/ee.h); `gZeroVec_003139A0` is `Vec`. Units still on their own view: `tools/struct_views.py show GLOBAL`; move them with `tools/struct_views.py migrate GLOBAL TYPE`.
 - Done: `D_004AC630`, `D_004AC970`, `D_004AE370` (0xD0-byte objects) are `Obj3D` in `include/obj3d.h`. Several matched files still carry local partial copies; migrate them when touched.
 - `D_0022CBC0`: 63 elements of 0x80 bytes.
 - `D_003407E0`: elements of 0xED0 bytes.
