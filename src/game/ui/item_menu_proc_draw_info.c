@@ -20,16 +20,16 @@ extern s8 D_001FD5B8[];
 static s8 D_001FD5B8[0x8] = { 0x25, 0x33, 0x64, 0, 0, 0, 0, 0 };
 #endif
 #ifndef NONMATCHING
-extern s8 D_001FD5C0[];
+extern s8 gStrD_001FD5C0[];
 #else
-/* data twins (src/game/data/item_menu_draw_rodata.c): D_001FD5C0 */
-static s8 D_001FD5C0[0x6] = "(+%d)\000";
+/* data twins (src/game/data/item_menu_draw_rodata.c): gStrD_001FD5C0 */
+static s8 gStrD_001FD5C0[0x6] = "(+%d)\000";
 #endif
 #ifndef NONMATCHING
-extern s8 D_001FD5C8[];
+extern s8 gStr31f_001FD5C8[];
 #else
-/* data twins (src/game/data/item_menu_draw_rodata.c): D_001FD5C8 */
-static s8 D_001FD5C8[0x6] = "%3.1f\000";
+/* data twins (src/game/data/item_menu_draw_rodata.c): gStr31f_001FD5C8 */
+static s8 gStr31f_001FD5C8[0x6] = "%3.1f\000";
 #endif
 extern s8 D_004A3150[];
 extern G D_004A3250;
@@ -70,7 +70,7 @@ void ItemMenuProc_DrawInfo_0_0019CEF0(s8 *a0, s32 a1, u32 a2, s32 a3) {
             if (chk(&Item_GetTable_1_001AFC90()[a3])) {
                 sprintf(D_004A3150, D_001FD5B8, Inventory_GetEntry_1_001CC3F0(a3)[2]);
                 Text_Draw_2_001875C0(*(f32 *)(a0 + 0x38), *(f32 *)(a0 + 0x3C), 0.9f, D_004A3150, 2, col);
-                sprintf(D_004A3150, D_001FD5C0, Inventory_GetEntry_1_001CC3F0(a3)[3]);
+                sprintf(D_004A3150, gStrD_001FD5C0, Inventory_GetEntry_1_001CC3F0(a3)[3]);
                 Text_Draw_2_001875C0(8.0f + *(f32 *)(a0 + 0x38), 3.0f + *(f32 *)(a0 + 0x3C), 0.7f, D_004A3150, 0, col);
             } else {
                 sprintf(D_004A3150, D_001FD5B8, Inventory_GetEntry_1_001CC3F0(a3)[2]);
@@ -90,7 +90,7 @@ void ItemMenuProc_DrawInfo_0_0019CEF0(s8 *a0, s32 a1, u32 a2, s32 a3) {
         if (a3 > 0) {
             e = Item_GetTable_1_001AFC90() + a3;
             *(u32 *)&col2 = 0x80808080;
-            sprintf(D_004A3150, D_001FD5C8, fptodp(u2f(e->x4) / 10.0f));
+            sprintf(D_004A3150, gStr31f_001FD5C8, fptodp(u2f(e->x4) / 10.0f));
             Text_Draw_2_001875C0(*(f32 *)(a0 + 0x38), *(f32 *)(a0 + 0x3C), 0.9f, D_004A3150, 0, col2);
         }
         break;

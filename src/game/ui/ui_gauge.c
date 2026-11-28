@@ -118,8 +118,8 @@ extern O_Ui_LoadItemImageSmall_3_001833E0 *D_0048D110[];
 extern Col_Ui_DrawWindow_0_00183650 D_002020A8;
 extern s32 D_0048D0E0[];
 extern s32 D_0048D0E4[];
-extern M2C_UNK D_001FC9F0[];
-extern M2C_UNK D_001FCA08[];
+extern M2C_UNK gStrMapsheetMs04dTdc_001FC9F0[];
+extern M2C_UNK gStrMs04d_001FCA08[];
 #ifndef NONMATCHING
 extern s32 D_00201CDC;
 #else
@@ -153,8 +153,8 @@ extern s32 D_0048D100[];
 extern s32 D_0048D104[];
 extern s32 D_0048D108[];
 extern s32 D_0048D10C[];
-extern M2C_UNK D_001FCA10[];
-extern M2C_UNK D_001FCA20[];
+extern M2C_UNK gStrAreaM04dTdc_001FCA10[];
+extern M2C_UNK gStrM04d_001FCA20[];
 #ifndef NONMATCHING
 extern s8 D_001FCA30[];
 #else
@@ -167,8 +167,8 @@ extern s8 D_001FCA48[];
 /* data twins (src/game/data/ui_gauge_rodata.c): D_001FCA48 */
 static s8 D_001FCA48[0x18] __attribute__((aligned(8))) = "cimg%04d\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
 #endif
-extern M2C_UNK D_001FCA60[];
-extern M2C_UNK D_001FCA78[];
+extern M2C_UNK gStrItemImg04dTdc_001FCA60[];
+extern M2C_UNK gStrImg04d_001FCA78[];
 extern Ent D_0048D170__as_Ui_LoadItemImageSmall_3_001833E0[];
 extern s32 D_002020A8__as_Ui_LoadMapSheet_3_00183750;
 extern s8 *D_0048D0E4__as_Ui_LoadMapSheet_3_00183750[];
@@ -627,7 +627,7 @@ void Ui_LoadMapSheet_3_00183750(s32 arg0) {
         D_00201CE4 = -1;
         {
             Buf_Ui_LoadMapSheet_3_00183750 s = {0};
-        sprintf__as_Ui_LoadMapSheet_3_00183750(s.b, D_001FC9F0, D_00201CE8);
+        sprintf__as_Ui_LoadMapSheet_3_00183750(s.b, gStrMapsheetMs04dTdc_001FC9F0, D_00201CE8);
             D_002020AC = ImageLoader_Request_1_001E1570__as_Ui_LoadMapSheet_3_00183750(s.b, 0xA);
             D_0048D0F0[0] = 0;
             D_0048D0F4[0] = 0;
@@ -645,7 +645,7 @@ void Ui_LoadMapSheet_3_00183750(s32 arg0) {
     if (D_002020AC != NULL) {
             temp_a0 = M2C_FIELD(D_002020AC, u8 *, 8);
             if ((((u64) ((s64) temp_a0 << 0x3E) >> 0x3F) == 0) && (((u64) ((s64) temp_a0 << 0x3D) >> 0x3F) == 0) && (temp_a0 & 1)) {
-                sprintf__as_Ui_LoadMapSheet_3_00183750(name, D_001FCA08, D_00201CE8);
+                sprintf__as_Ui_LoadMapSheet_3_00183750(name, gStrMs04d_001FCA08, D_00201CE8);
                 temp_s0 = M2C_FIELD(D_002020AC, s32 *, 0);
                 if (temp_s0 != 0) {
                     D_0048D0E4__as_Ui_LoadMapSheet_3_00183750[0] = (s8 *)Tex_Find_1_00177AF0__as_Ui_LoadMapSheet_3_00183750(Tex_HashName_2_00177F80__as_Ui_LoadMapSheet_3_00183750(name), temp_s0);
@@ -684,7 +684,7 @@ void Ui_LoadAreaImage_3_00183970(s32 arg0) {
         D_00201CE8 = -1;
         {
             Buf_Ui_LoadMapSheet_3_00183750 s = {0};
-        sprintf__as_Ui_LoadAreaImage_3_00183970(s.b, D_001FCA10, D_00201CE4);
+        sprintf__as_Ui_LoadAreaImage_3_00183970(s.b, gStrAreaM04dTdc_001FCA10, D_00201CE4);
             D_002020AC = ImageLoader_Request_1_001E1570__as_Ui_LoadAreaImage_3_00183970(s.b, 0xA);
             D_0048D0F0[0] = 0;
             D_0048D0F4[0] = 0;
@@ -702,7 +702,7 @@ void Ui_LoadAreaImage_3_00183970(s32 arg0) {
     if (D_002020AC != NULL) {
             temp_a0 = M2C_FIELD(D_002020AC, u8 *, 8);
             if ((((u64) ((s64) temp_a0 << 0x3E) >> 0x3F) == 0) && (((u64) ((s64) temp_a0 << 0x3D) >> 0x3F) == 0) && (temp_a0 & 1)) {
-                sprintf__as_Ui_LoadAreaImage_3_00183970(name, D_001FCA20, D_00201CE4);
+                sprintf__as_Ui_LoadAreaImage_3_00183970(name, gStrM04d_001FCA20, D_00201CE4);
                 temp_s0 = M2C_FIELD(D_002020AC, s32 *, 0);
                 if (temp_s0 != 0) {
                     D_0048D0E4__as_Ui_LoadAreaImage_3_00183970[0] = (s8 *)Tex_Find_1_00177AF0__as_Ui_LoadAreaImage_3_00183970(Tex_HashName_2_00177F80__as_Ui_LoadAreaImage_3_00183970(name), temp_s0);
@@ -791,7 +791,7 @@ void Ui_LoadItemImage_3_00183DC0(s32 arg0) {
         D_00201CE8 = -1;
         {
             Buf_Ui_LoadMapSheet_3_00183750 s = {0};
-        sprintf__as_Ui_LoadItemImage_3_00183DC0(s.b, D_001FCA60, D_00201CDC);
+        sprintf__as_Ui_LoadItemImage_3_00183DC0(s.b, gStrItemImg04dTdc_001FCA60, D_00201CDC);
             D_002020AC = ImageLoader_Request_1_001E1570__as_Ui_LoadItemImage_3_00183DC0(s.b, 0xA);
             D_0048D0F0[0] = 0;
             D_0048D0F4[0] = 0;
@@ -809,7 +809,7 @@ void Ui_LoadItemImage_3_00183DC0(s32 arg0) {
     if (D_002020AC != NULL) {
             temp_a0 = M2C_FIELD(D_002020AC, u8 *, 8);
             if ((((u64) ((s64) temp_a0 << 0x3E) >> 0x3F) == 0) && (((u64) ((s64) temp_a0 << 0x3D) >> 0x3F) == 0) && (temp_a0 & 1)) {
-                sprintf__as_Ui_LoadItemImage_3_00183DC0(name, D_001FCA78, D_00201CDC);
+                sprintf__as_Ui_LoadItemImage_3_00183DC0(name, gStrImg04d_001FCA78, D_00201CDC);
                 temp_s0 = M2C_FIELD(D_002020AC, s32 *, 0);
                 if (temp_s0 != 0) {
                     D_0048D0E4__as_Ui_LoadItemImage_3_00183DC0[0] = (s8 *)Tex_Find_1_00177AF0__as_Ui_LoadItemImage_3_00183DC0(Tex_HashName_2_00177F80__as_Ui_LoadItemImage_3_00183DC0(name), temp_s0);

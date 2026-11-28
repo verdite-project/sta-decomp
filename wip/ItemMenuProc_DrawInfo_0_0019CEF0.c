@@ -5,8 +5,8 @@ typedef struct { u8 p0[0x4]; u16 x4; u8 p6[4]; u16 xA; u8 pC[0x1D]; u8 x29; u8 p
 typedef struct { u8 p0[0x14]; f32 x14; f32 x18; u8 p1C[0x10]; f32 x2C; f32 x30; u8 p34[8]; u32 x3C; } G;
 extern S D_001F30E0 __attribute__((aligned(16)));
 extern s8 D_001FD5B8[];
-extern s8 D_001FD5C0[];
-extern s8 D_001FD5C8[];
+extern s8 gStrD_001FD5C0[];
+extern s8 gStr31f_001FD5C8[];
 extern s8 D_004A3150[];
 extern G D_004A3250;
 void Text_Draw_2_001875C0(f32, f32, f32, s8 *, s32, Col);
@@ -46,7 +46,7 @@ void ItemMenuProc_DrawInfo_0_0019CEF0(s8 *a0, s32 a1, u32 a2, s32 a3) {
             if (chk(&Item_GetTable_1_001AFC90()[a3])) {
                 sprintf(D_004A3150, D_001FD5B8, Inventory_GetEntry_1_001CC3F0(a3)[2]);
                 Text_Draw_2_001875C0(*(f32 *)(a0 + 0x38), *(f32 *)(a0 + 0x3C), 0.9f, D_004A3150, 2, col);
-                sprintf(D_004A3150, D_001FD5C0, Inventory_GetEntry_1_001CC3F0(a3)[3]);
+                sprintf(D_004A3150, gStrD_001FD5C0, Inventory_GetEntry_1_001CC3F0(a3)[3]);
                 Text_Draw_2_001875C0(8.0f + *(f32 *)(a0 + 0x38), 3.0f + *(f32 *)(a0 + 0x3C), 0.7f, D_004A3150, 0, col);
             } else {
                 sprintf(D_004A3150, D_001FD5B8, Inventory_GetEntry_1_001CC3F0(a3)[2]);
@@ -66,7 +66,7 @@ void ItemMenuProc_DrawInfo_0_0019CEF0(s8 *a0, s32 a1, u32 a2, s32 a3) {
         if (a3 > 0) {
             e = Item_GetTable_1_001AFC90() + a3;
             *(u32 *)&col2 = 0x80808080;
-            sprintf(D_004A3150, D_001FD5C8, fptodp(u2f(e->x4) / 10.0f));
+            sprintf(D_004A3150, gStr31f_001FD5C8, fptodp(u2f(e->x4) / 10.0f));
             Text_Draw_2_001875C0(*(f32 *)(a0 + 0x38), *(f32 *)(a0 + 0x3C), 0.9f, D_004A3150, 0, col2);
         }
         break;

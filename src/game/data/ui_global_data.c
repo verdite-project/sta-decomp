@@ -4,12 +4,12 @@
 /* used by: font_draw, text_00184280.s, text_00185D70.s, ui_anim, ui_gauge */
 #pragma explicit_zero_data on
 
-extern u8 D_001FC980[];
+extern u8 gStrPoison_001FC980[];
 extern u8 D_001FC988[];
 extern u8 D_001FC998[];
-extern u8 D_001FC9A8[];
-extern u8 D_001FC9B0[];
-extern u8 D_001FC9B8[];
+extern u8 gStrGravity_001FC9A8[];
+extern u8 gStrCurse_001FC9B0[];
+extern u8 gStrSeal_001FC9B8[];
 
 f32 D_001F25B0[0x8] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
 f32 D_001F25D0[0x4] = { 40.0f, 83.0f, 52.0f, 157.0f };
@@ -21,7 +21,7 @@ f32 D_001F2650[0x8] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
 f32 D_001F2670[0x8] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
 #endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/menu_proc_draw_weight.c */
-s32 D_001F2690[0x8] = { (s32)D_001FC980, (s32)D_001FC988, (s32)D_001FC998, (s32)D_001FC9A8, (s32)D_001FC9B0, (s32)D_001FC9B8, 0, 0 };
+s32 D_001F2690[0x8] = { (s32)gStrPoison_001FC980, (s32)D_001FC988, (s32)D_001FC998, (s32)gStrGravity_001FC9A8, (s32)gStrCurse_001FC9B0, (s32)gStrSeal_001FC9B8, 0, 0 };
 #endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/menu_proc_draw_weight.c */
 f32 D_001F26B0[0x8] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };

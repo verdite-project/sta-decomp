@@ -31,10 +31,10 @@ extern s8 D_001FD378[];
 static s8 D_001FD378[0x8] = { 0x25, 0x64, 0, 0, 0, 0, 0, 0 };
 #endif
 #ifndef NONMATCHING
-extern s8 D_001FD380[];
+extern s8 gStr31f_001FD380[];
 #else
-/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD380 */
-static s8 D_001FD380[0x6] = "%3.1f\000";
+/* data twins (src/game/data/databook_item_reset_rodata.c): gStr31f_001FD380 */
+static s8 gStr31f_001FD380[0x6] = "%3.1f\000";
 #endif
 extern s32 D_00202190;
 extern H D_004A13F0;
@@ -146,7 +146,7 @@ void DbItemProc_DrawInfo_0_001973F0(s8 *o, s32 sel, u32 id, s32 n) {
             if (n > 0) {
                 e = Item_GetTable_1_001AFC90() + n;
                 col.w = 0x80808080;
-                sprintf(buf, D_001FD380, fptodp(u2f(e->x4) / 10.0f));
+                sprintf(buf, gStr31f_001FD380, fptodp(u2f(e->x4) / 10.0f));
                 Text_Draw_2_001875C0(*(f32 *)(o + 0x38) - 20.0f, *(f32 *)(o + 0x3C) - 4.0f, 0.9f, buf, 2, col.w);
             } else {
                 col.w = 0x80808080;

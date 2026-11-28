@@ -287,7 +287,8 @@ Next, in order of yield:
    qword unions no C initialiser writes byte for byte (it now also tries
    split_data.py's struct initialisers).
 6. **Names**: `config/game_data_names.txt` + `tools/apply_data_names.py`
-   (README, "Data names"); 12 are named: the objects the headers type
+   (README, "Data names"); 135 are named: the game's 123 ASCII strings after
+   their text (`gStrScrChrtestBin`), the objects the headers type
    (`gMcState`, `gGsText`, `gGsTextStyle`, `gPlayerData`, `gZeroVec`,
    `gPadState`) and tables whose users settle what they are (`gWeatherState`,
    `gLoadBuf`, `gVramBlocks`, `gEnemyDataTbl`, `gMcDirBuf`, `gGlowFxSlots`).

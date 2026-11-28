@@ -4,7 +4,7 @@
 /* used by: title */
 #pragma explicit_zero_data on
 
-const char D_001FD870[0x1d] = "cdrom0:\\TARGET\\OPENING.PSS;1\000";
+const char gStrCdrom0TargetOpeningPss1_001FD870[0x1d] = "cdrom0:\\TARGET\\OPENING.PSS;1\000";
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/title.c */
 const s8 D_001FD890[0x1d] = "\\TARGET\\STA_TI.ADX\000\000\000\000\000\000\000\000\000\000\000";
 #endif

@@ -763,34 +763,34 @@ extern void *D_002022E4__as_Player_GetBodyState_1_001C9B60;
 extern s32 D_00201E20__as_PlayerData_Get_2_001C9BA0;
 extern M2C_UNK D_004B4BE0[];
 #ifndef NONMATCHING
-extern char D_001FDC08[];
+extern char gStrRifle01_001FDC08[];
 #else
-/* data twins (src/game/data/player_rodata.c): D_001FDC08 */
-static char D_001FDC08[0x8] = "RIFLE01\000";
+/* data twins (src/game/data/player_rodata.c): gStrRifle01_001FDC08 */
+static char gStrRifle01_001FDC08[0x8] = "RIFLE01\000";
 #endif
 #ifndef NONMATCHING
-extern char D_001FDC10[];
+extern char gStrJyo_001FDC10[];
 #else
-/* data twins (src/game/data/player_rodata.c): D_001FDC10 */
-static char D_001FDC10[0x8] = "JYO\000\000\000\000\000";
+/* data twins (src/game/data/player_rodata.c): gStrJyo_001FDC10 */
+static char gStrJyo_001FDC10[0x8] = "JYO\000\000\000\000\000";
 #endif
 #ifndef NONMATCHING
-extern char D_001FDC18[];
+extern char gStrDm09_001FDC18[];
 #else
-/* data twins (src/game/data/player_rodata.c): D_001FDC18 */
-static char D_001FDC18[0x6] = "DM_09\000";
+/* data twins (src/game/data/player_rodata.c): gStrDm09_001FDC18 */
+static char gStrDm09_001FDC18[0x6] = "DM_09\000";
 #endif
 #ifndef NONMATCHING
-extern char D_001FDC20[];
+extern char gStrDm10_001FDC20[];
 #else
-/* data twins (src/game/data/player_rodata.c): D_001FDC20 */
-static char D_001FDC20[0x6] = "DM_10\000";
+/* data twins (src/game/data/player_rodata.c): gStrDm10_001FDC20 */
+static char gStrDm10_001FDC20[0x6] = "DM_10\000";
 #endif
 #ifndef NONMATCHING
-extern char D_001FDC28[];
+extern char gStrTen_001FDC28[];
 #else
-/* data twins (src/game/data/player_rodata.c): D_001FDC28 */
-static char D_001FDC28[0x5] = "TEN\000\000";
+/* data twins (src/game/data/player_rodata.c): gStrTen_001FDC28 */
+static char gStrTen_001FDC28[0x5] = "TEN\000\000";
 #endif
 extern s8 *D_002022E4__as_Player_Destroy_1_001C9C30;
 extern s8 *D_002022E4__as_Player_LoadModel_1_001C9CD0;
@@ -5140,11 +5140,11 @@ void Player_LoadModel_1_001C9CD0(s8 *a) {
     *(s16 *)(*(s8 **)(o + 0x18) + 0x53A) = -1;
     *(u8 *)(o + 0x39C) = 0;
     Arc_LoadFile_2_00159DD0(0x374169A, D_00202278, o + 0x3A8, &tmp);
-    *(s32 *)(o + 0x3B0) = Tex_Find_1_00177AF0(Tex_HashName_2_00177F80(D_001FDC08), *(s32 *)(o + 0x3A8));
-    *(s32 *)(o + 0x3B4) = Tex_Find_1_00177AF0(Tex_HashName_2_00177F80(D_001FDC10), *(s32 *)(o + 0x3A8));
-    *(s32 *)(o + 0x448) = Tex_Find_1_00177AF0(Tex_HashName_2_00177F80(D_001FDC18), *(s32 *)(o + 0x3A8));
-    *(s32 *)(o + 0x44C) = Tex_Find_1_00177AF0(Tex_HashName_2_00177F80(D_001FDC20), *(s32 *)(o + 0x3A8));
-    *(s32 *)(o + 0x450) = Tex_Find_1_00177AF0(Tex_HashName_2_00177F80(D_001FDC28), *(s32 *)(o + 0x3A8));
+    *(s32 *)(o + 0x3B0) = Tex_Find_1_00177AF0(Tex_HashName_2_00177F80(gStrRifle01_001FDC08), *(s32 *)(o + 0x3A8));
+    *(s32 *)(o + 0x3B4) = Tex_Find_1_00177AF0(Tex_HashName_2_00177F80(gStrJyo_001FDC10), *(s32 *)(o + 0x3A8));
+    *(s32 *)(o + 0x448) = Tex_Find_1_00177AF0(Tex_HashName_2_00177F80(gStrDm09_001FDC18), *(s32 *)(o + 0x3A8));
+    *(s32 *)(o + 0x44C) = Tex_Find_1_00177AF0(Tex_HashName_2_00177F80(gStrDm10_001FDC20), *(s32 *)(o + 0x3A8));
+    *(s32 *)(o + 0x450) = Tex_Find_1_00177AF0(Tex_HashName_2_00177F80(gStrTen_001FDC28), *(s32 *)(o + 0x3A8));
     memset__as_Player_LoadModel_1_001C9CD0(D_004B4BE0__as_Player_LoadModel_1_001C9CD0, 0, 0x58);
 }
 

@@ -5,24 +5,24 @@
 #pragma explicit_zero_data on
 
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/option.c */
-const char D_001FCE08[0xe] = "SOUND SETTING\000";
+const char gStrSoundSetting_001FCE08[0xe] = "SOUND SETTING\000";
 const char D_001FCE18[0x18] __attribute__((aligned(8))) = "SCREEN SETTING\000\000\000\000\000\000\000\000\000\000";
 const char D_001FCE30[0x1d] __attribute__((aligned(8))) = "CONTROLLER\012          SETTING\000";
 const char D_001FCE50[0x10] __attribute__((aligned(8))) = "QUIT GAME\000\000\000\000\000\000\000";
 #endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/option.c */
-const char D_001FCE60[0x5] = "MONO\000";
-const char D_001FCE68[0x7] = "STEREO\000";
+const char gStrMono_001FCE60[0x5] = "MONO\000";
+const char gStrStereo_001FCE68[0x7] = "STEREO\000";
 const char D_001FCE70[0x18] __attribute__((aligned(8))) = "Dolby ProLogic II\000\000\000\000\000\000\000";
-const char D_001FCE88[0x6] = "SOUND\000";
+const char gStrSound_001FCE88[0x6] = "SOUND\000";
 const char D_001FCE90[0x10] __attribute__((aligned(8))) = "BGM VOLUME\000\000\000\000\000\000";
 const char D_001FCEA0[0x10] __attribute__((aligned(8))) = "SE VOLUME\000\000\000\000\000\000\000";
 const char D_001FCEB0[0x10] __attribute__((aligned(8))) = "MOVE EFFECT\000\000\000\000\000";
-const char D_001FCEC0[0xd] = "SCREEN RATIO\000";
+const char gStrScreenRatio_001FCEC0[0xd] = "SCREEN RATIO\000";
 const char D_001FCED0[0x10] __attribute__((aligned(8))) = "BRIGHTNESS\000\000\000\000\000\000";
 #endif
 const s32 D_001FCEE0[0x2] = { 0x333a34, 0 };
-const char D_001FCEE8[0x5] = "16:9\000";
+const char gStr169_001FCEE8[0x5] = "16:9\000";
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/option.c */
 const char D_001FCEF0[0x30] __attribute__((aligned(8))) = "16:9(LB)\000\000\000\000\000\000\000\000VIBRATION\000\000\000\000\000\000\000KEY ASSIGN\000\000\000\000\000\000";
 #endif

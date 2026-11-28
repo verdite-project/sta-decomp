@@ -76,10 +76,10 @@ typedef struct { s32 x0; s32 x4; s32 x8; } Q_Movie_ReadLoop_1_001ECAB0;
 extern char D_00201920[];
 extern char D_00201940[];
 #ifndef NONMATCHING
-extern char D_00201950[];
+extern char gStrCdrom0_00201950[];
 #else
-/* data twins (src/game/data/movie_rodata.c): D_00201950 */
-static char D_00201950[0x7] = "cdrom0\000";
+/* data twins (src/game/data/movie_rodata.c): gStrCdrom0_00201950 */
+static char gStrCdrom0_00201950[0x7] = "cdrom0\000";
 #endif
 #ifndef NONMATCHING
 extern char D_00201958[];
@@ -88,16 +88,16 @@ extern char D_00201958[];
 static char D_00201958[0x8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
 #endif
 #ifndef NONMATCHING
-extern char D_00201960[];
+extern char gStr1_00201960[];
 #else
-/* data twins (src/game/data/movie_rodata.c): D_00201960 */
-static char D_00201960[0x8] = ";1\000\000\000\000\000\000";
+/* data twins (src/game/data/movie_rodata.c): gStr1_00201960 */
+static char gStr1_00201960[0x8] = ";1\000\000\000\000\000\000";
 #endif
 #ifndef NONMATCHING
-extern char D_00201968[];
+extern char gStrSS_00201968[];
 #else
-/* data twins (src/game/data/movie_rodata.c): D_00201968 */
-static char D_00201968[0x5] = "%s%s\000";
+/* data twins (src/game/data/movie_rodata.c): gStrSS_00201968 */
+static char gStrSS_00201968[0x5] = "%s%s\000";
 #endif
 #ifndef NONMATCHING
 extern char D_00201970[];
@@ -106,10 +106,10 @@ extern char D_00201970[];
 static char D_00201970[0x8] = { 0x25, 0x73, 0x3a, 0x25, 0x73, 0, 0, 0 };
 #endif
 #ifndef NONMATCHING
-extern char D_00201978[];
+extern char gStrHost0_00201978[];
 #else
-/* data twins (src/game/data/movie_rodata.c): D_00201978 */
-static char D_00201978[0x6] = "host0\000";
+/* data twins (src/game/data/movie_rodata.c): gStrHost0_00201978 */
+static char gStrHost0_00201978[0x6] = "host0\000";
 #endif
 extern u8 D_004BD310[];
 extern u8 D_004BD311[];
@@ -184,10 +184,10 @@ static s32 D_004BE07C[0x1];
 #endif
 extern s32 _gp;
 #ifndef NONMATCHING
-extern s32 D_00201A50[];
+extern s32 gStrCanTOpenFileS_00201A50[];
 #else
-/* data twins (src/game/data/movie_rodata2.c): D_00201A50 */
-static s32 D_00201A50[0x8] = { 0x276e6143, 0x704f2074, 0x66206e65, 0x20656c69, 0xa7325, 0, 0, 0 };
+/* data twins (src/game/data/movie_rodata2.c): gStrCanTOpenFileS_00201A50 */
+static s32 gStrCanTOpenFileS_00201A50[0x8] = { 0x276e6143, 0x704f2074, 0x66206e65, 0x20656c69, 0xa7325, 0, 0, 0 };
 #endif
 #ifndef NONMATCHING
 extern s32 D_00201E70;
@@ -416,7 +416,7 @@ s32 MovieFile_Open_3_001E88C0(s32 *a0, char *name) {
     if (colon != NULL) {
         strncpy(dev, name, len);
         dev[len] = 0;
-        if (strcmp(dev, D_00201950) == 0) {
+        if (strcmp(dev, gStrCdrom0_00201950) == 0) {
             n = strlen(colon + 1);
             a0[0] = 1;
             for (i = 0; i < n; i++) {
@@ -424,13 +424,13 @@ s32 MovieFile_Open_3_001E88C0(s32 *a0, char *name) {
                 if (*p == '/') *p = 0x5C;
                 *p = toupper(*p);
             }
-            sprintf(path, D_00201968, colon + 1, index(name, ';') ? D_00201958 : D_00201960);
+            sprintf(path, gStrSS_00201968, colon + 1, index(name, ';') ? D_00201958 : gStr1_00201960);
         } else {
             a0[0] = 0;
             sprintf(path, D_00201970, dev, colon + 1);
         }
     } else {
-        strcpy(dev, D_00201978);
+        strcpy(dev, gStrHost0_00201978);
         a0[0] = 0;
         sprintf(path, D_00201970, dev, name);
     }
@@ -1792,7 +1792,7 @@ void Movie_Init_1_001EC5E0(s32 arg0) {
     D_004BE040[0] = CreateThread(&tp);
     StartThread(D_004BE040[0], D_004BDF40);
     while (!MovieFile_Open_3_001E88C0(D_004BE04C, arg0) != 0) {
-        printf(D_00201A50, arg0);
+        printf(gStrCanTOpenFileS_00201A50, arg0);
     }
     D_004BDFF4[0] = AddIntcHandler(2, Movie_DisplayHandler_0_001E8CB0, 0);
     EnableIntc(2);

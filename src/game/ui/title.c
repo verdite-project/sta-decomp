@@ -128,7 +128,7 @@ extern f32 D_004A4370[];
 static f32 D_004A4370[0x1];
 #endif
 extern f32 D_004A4378[];
-extern s32 D_001FD870[];
+extern s32 gStrCdrom0TargetOpeningPss1_001FD870[];
 #ifndef NONMATCHING
 extern Vec D_001F3310;
 #else
@@ -155,8 +155,8 @@ extern s32 D_004A4394[];
 static s32 D_004A4394[0x1];
 #endif
 extern u8 D_004A43A2[];
-extern s32 D_001F3380[];
-extern s32 D_001F3390[];
+extern s32 gStrNewGame_001F3380[];
+extern s32 gStrLoadGame_001F3390[];
 #ifndef NONMATCHING
 extern f32 D_004A4398[];
 #else
@@ -416,7 +416,7 @@ void TitleProc_Back_0_001A3B60(Obj_Title_LoadGame_0_001A35B0 *o)
 void Title_PlayOpening_2_001A3C10(void *arg0) {
     if (M2C_FIELD(arg0, s32 *, 0) == 0) {
         GsPkt_EndLayer_1_00155900();
-        Movie_Play_2_0017FF70((s32) D_001FD870);
+        Movie_Play_2_0017FF70((s32) gStrCdrom0TargetOpeningPss1_001FD870);
         GsPkt_SetLayer_1_00154700(5, 0);
         ((BF_14_3_1 *)arg0)->f = 1;
     }
@@ -535,9 +535,9 @@ void TitleMenu_Update_1_001A4010(s32 *arg0) {
 s32 *TitleMenu_GetLabel_2_001A4050(s32 arg0) {
     switch (arg0) {                                 /* irregular */
     case 0:
-        return D_001F3380;
+        return gStrNewGame_001F3380;
     case 1:
-        return D_001F3390;
+        return gStrLoadGame_001F3390;
     default:
         return NULL;
     }

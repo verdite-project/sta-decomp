@@ -81,22 +81,22 @@ static f32 D_004A100C[0x1];
 extern S D_001F2A10[] __attribute__((aligned(16)));
 extern Slot D_004A0900[];
 #ifndef NONMATCHING
-extern char D_001FCD00[];
+extern char gStrSavedataD_001FCD00[];
 #else
-/* data twins (src/game/data/ui_gauge_rodata2.c): D_001FCD00 */
-static char D_001FCD00[0x10] = "SAVEDATA %d\000\000\000\000\000";
+/* data twins (src/game/data/ui_gauge_rodata2.c): gStrSavedataD_001FCD00 */
+static char gStrSavedataD_001FCD00[0x10] = "SAVEDATA %d\000\000\000\000\000";
 #endif
 #ifndef NONMATCHING
-extern char D_001FCD10[];
+extern char gStrHp4d4d_001FCD10[];
 #else
-/* data twins (src/game/data/ui_gauge_rodata2.c): D_001FCD10 */
-static char D_001FCD10[0x10] = "HP %4d/%4d\000\000\000\000\000\000";
+/* data twins (src/game/data/ui_gauge_rodata2.c): gStrHp4d4d_001FCD10 */
+static char gStrHp4d4d_001FCD10[0x10] = "HP %4d/%4d\000\000\000\000\000\000";
 #endif
 #ifndef NONMATCHING
-extern char D_001FCD20[];
+extern char gStrMp4d4d_001FCD20[];
 #else
-/* data twins (src/game/data/ui_gauge_rodata2.c): D_001FCD20 */
-static char D_001FCD20[0x10] = "MP %4d/%4d\000\000\000\000\000\000";
+/* data twins (src/game/data/ui_gauge_rodata2.c): gStrMp4d4d_001FCD20 */
+static char gStrMp4d4d_001FCD20[0x10] = "MP %4d/%4d\000\000\000\000\000\000";
 #endif
 #ifndef NONMATCHING
 extern char D_001FCD30[];
@@ -105,16 +105,16 @@ extern char D_001FCD30[];
 static char D_001FCD30[0x10] = { 0x4c, 0x4f, 0x43, 0x41, 0x54, 0x49, 0x4f, 0x4e, 0, 0, 0, 0, 0, 0, 0, 0 };
 #endif
 #ifndef NONMATCHING
-extern char D_001FCD40[];
+extern char gStrTime2d2d2d_001FCD40[];
 #else
-/* data twins (src/game/data/ui_gauge_rodata2.c): D_001FCD40 */
-static char D_001FCD40[0x18] = "TIME %2d:%2d:%2d\000\000\000\000\000\000\000\000";
+/* data twins (src/game/data/ui_gauge_rodata2.c): gStrTime2d2d2d_001FCD40 */
+static char gStrTime2d2d2d_001FCD40[0x18] = "TIME %2d:%2d:%2d\000\000\000\000\000\000\000\000";
 #endif
 #ifndef NONMATCHING
-extern char D_001FCD58[];
+extern char gStrEmpty_001FCD58[];
 #else
-/* data twins (src/game/data/ui_gauge_rodata2.c): D_001FCD58 */
-static char D_001FCD58[0x8] = " EMPTY \000";
+/* data twins (src/game/data/ui_gauge_rodata2.c): gStrEmpty_001FCD58 */
+static char gStrEmpty_001FCD58[0x8] = " EMPTY \000";
 #endif
 #ifndef NONMATCHING
 extern char D_001FCD60[];
@@ -293,22 +293,22 @@ void SaveMenu_DrawSlotInfo_2_0018BCC0(O_MenuProc_DrawItemList_0_0018B860 *o, s32
                 col.c.r = 0x20;
                 col.c.g = 0x20;
             }
-            sprintf(buf, D_001FCD00, n + 1);
+            sprintf(buf, gStrSavedataD_001FCD00, n + 1);
             Text_Draw_2_001875C0(o->x38, o->x3C, 1.0f, buf, 0, col.w);
             break;
         case 2003:
-            sprintf(buf, D_001FCD10, e->x4, e->x0);
+            sprintf(buf, gStrHp4d4d_001FCD10, e->x4, e->x0);
             Text_Draw_2_001875C0(o->x38, o->x3C, 0.9f, buf, 0, col.w);
             break;
         case 2004:
-            sprintf(buf, D_001FCD20, e->x6, e->x2);
+            sprintf(buf, gStrMp4d4d_001FCD20, e->x6, e->x2);
             Text_Draw_2_001875C0(o->x38, o->x3C, 0.9f, buf, 0, col.w);
             break;
         case 2005:
             Text_Draw_2_001875C0(o->x38, o->x3C, 0.9f, D_001FCD30, 0, col.w);
             break;
         case 2006:
-            sprintf(buf, D_001FCD40, e->x8, e->xA, e->xB);
+            sprintf(buf, gStrTime2d2d2d_001FCD40, e->x8, e->xA, e->xB);
             Text_Draw_2_001875C0(o->x38, o->x3C, 0.9f, buf, 0, col.w);
             break;
         case 2007:
@@ -325,7 +325,7 @@ void SaveMenu_DrawSlotInfo_2_0018BCC0(O_MenuProc_DrawItemList_0_0018B860 *o, s32
                 col.c.a = o->x2F * 2;
                 Text_Draw_2_001875C0(o->x38, o->x3C, 1.0f, Msg_GetText_2_00195B10(0x69), 0, col.w);
             } else {
-                Text_Draw_2_001875C0(o->x38, o->x3C, 1.0f, D_001FCD58, 0, col.w);
+                Text_Draw_2_001875C0(o->x38, o->x3C, 1.0f, gStrEmpty_001FCD58, 0, col.w);
             }
             break;
         case 2005:

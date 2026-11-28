@@ -17,10 +17,10 @@ typedef struct {
 } Clear;
 typedef struct { DispEnv disp[2]; u64 giftag0[2]; DrawEnv1 draw0; Clear clear0; u64 giftag1[2]; DrawEnv1 draw1; Clear clear1; } DBuff;
 #ifndef NONMATCHING
-extern s32 D_001FD230[];
+extern s32 gStrCdrom0TargetEndingPss1_001FD230[];
 #else
-/* data twins (src/game/data/databook_rodata.c): D_001FD230 */
-static s32 D_001FD230[0x8] = { 0x6f726463, 0x5c3a306d, 0x47524154, 0x455c5445, 0x4e49444e, 0x53502e47, 0x313b53, 0 };
+/* data twins (src/game/data/databook_rodata.c): gStrCdrom0TargetEndingPss1_001FD230 */
+static s32 gStrCdrom0TargetEndingPss1_001FD230[0x8] = { 0x6f726463, 0x5c3a306d, 0x47524154, 0x455c5445, 0x4e49444e, 0x53502e47, 0x313b53, 0 };
 #endif
 #ifndef NONMATCHING
 extern s32 *D_00202150;
@@ -83,7 +83,7 @@ int GsPkt_SetLayer_1_00154700__as_Ending_PlayMovie_2_00194EE0();
 void Ending_PlayMovie_2_00194EE0(void *arg0) {
     if (M2C_FIELD(arg0, s32 *, 0) == 0) {
         GsPkt_EndLayer_1_00155900();
-        Movie_Play_2_0017FF70((s32) D_001FD230);
+        Movie_Play_2_0017FF70((s32) gStrCdrom0TargetEndingPss1_001FD230);
         GsPkt_SetLayer_1_00154700(5, 0);
         GsPkt_EndLayer_1_00155900();
         Ending_StaffRoll_2_00194FC0();

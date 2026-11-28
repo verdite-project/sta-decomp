@@ -34,11 +34,11 @@ extern T D_004A13A0;
 extern s32 D_00202184;
 extern s32 D_00202188;
 extern s8 D_001FD328[];
-extern s8 D_001FD330[];
-extern s8 D_001FD338[];
-extern s8 D_001FD340[];
+extern s8 gStrHpD_001FD330[];
+extern s8 gStrHp_001FD338[];
+extern s8 gStr3d_001FD340[];
 extern s8 D_001FD348[];
-extern s8 D_001FD350[];
+extern s8 gStr31f_001FD350[];
 static inline f32 u2f(u32 x) { return x; }
 
 void DbCharProc_DrawInfo_0_00196330(O *o, s32 a1, u32 mode, s32 a3) {
@@ -72,9 +72,9 @@ void DbCharProc_DrawInfo_0_00196330(O *o, s32 a1, u32 mode, s32 a3) {
     if (mode == 1000) {
         col.w = 0x80808080;
         if (D_00202188 != 0) {
-            sprintf(buf, D_001FD330, D_00202188);
+            sprintf(buf, gStrHpD_001FD330, D_00202188);
         } else {
-            sprintf(buf, D_001FD338, D_00202188);
+            sprintf(buf, gStrHp_001FD338, D_00202188);
         }
         Text_Draw_2_001875C0(o->x38, o->x3C, 0.9f, buf, 0, col.w);
     }
@@ -114,7 +114,7 @@ void DbCharProc_DrawInfo_0_00196330(O *o, s32 a1, u32 mode, s32 a3) {
         case 303:
             col.w = 0x80808080;
             if (a3 > 0) {
-                sprintf(buf, D_001FD340, Inventory_GetEntry_1_001CC3F0(a3)->x0);
+                sprintf(buf, gStr3d_001FD340, Inventory_GetEntry_1_001CC3F0(a3)->x0);
                 if (Item_GetCategory_0_001AFBD0(a3) == 0) {
                     strcpy(buf, D_001FD348);
                 } else if (Item_GetCategory_0_001AFBD0(a3) == 1) {
@@ -139,7 +139,7 @@ void DbCharProc_DrawInfo_0_00196330(O *o, s32 a1, u32 mode, s32 a3) {
             if (a3 > 0) {
                 e = Item_GetTable_1_001AFC90() + a3;
                 col.w = 0x80808080;
-                sprintf(buf, D_001FD350, fptodp(u2f(e->x4) / 10.0f));
+                sprintf(buf, gStr31f_001FD350, fptodp(u2f(e->x4) / 10.0f));
                 Text_Draw_2_001875C0(o->x38 - 20.0f, o->x3C - 4.0f, 0.9f, buf, 2, col.w);
             } else {
                 col.w = 0x80808080;

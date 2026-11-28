@@ -39,7 +39,7 @@ extern s8 D_0048CE40[];
 extern s8 D_001FCA80[];
 extern s8 D_001FCA88[];
 extern s8 D_001FCA90[];
-extern s8 D_001FCA98[];
+extern s8 gStr3d_001FCA98[];
 extern s8 D_001FCAA0[];
 extern s8 D_0048D0A0[];
 extern f32 D_0048D0CC[];
@@ -132,7 +132,7 @@ void MenuProc_DrawItemStats_0_00184280(O *o, s32 a1, u32 mode, s32 id) {
             if (k == 0) {
                 strcpy(D_0048CE40, D_001FCA90);
             } else {
-                sprintf(D_0048CE40, D_001FCA98, k);
+                sprintf(D_0048CE40, gStr3d_001FCA98, k);
             }
             txt(D_0048CE40, o->x38, o->x3C, &c2, &t2);
         }

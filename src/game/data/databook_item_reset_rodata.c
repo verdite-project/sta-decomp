@@ -18,11 +18,11 @@ const s8 D_001FD310[0x18] __attribute__((aligned(8))) = "menu/itemmenu.tbl\000\0
 #endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/db_char_proc_draw_info.c */
 const s32 D_001FD328[0x2] = { -0x7edf9bdb, 0x93 };
-const char D_001FD330[0x6] = "HP %d\000";
-const char D_001FD338[0x8] = "HP ----\000";
-const char D_001FD340[0x8] = "%3d\000\000\000\000\000";
+const char gStrHpD_001FD330[0x6] = "HP %d\000";
+const char gStrHp_001FD338[0x8] = "HP ----\000";
+const char gStr3d_001FD340[0x8] = "%3d\000\000\000\000\000";
 const s32 D_001FD348[0x2] = { 0x2d2d2d, 0 };
-const char D_001FD350[0x6] = "%3.1f\000";
+const char gStr31f_001FD350[0x6] = "%3.1f\000";
 #endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/databook_char_list.c */
 const char D_001FD358[0x10] __attribute__((aligned(8))) = { -0x7f, 0x48, -0x7f, 0x48, -0x7f, 0x48, -0x7f, 0x48, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -31,7 +31,7 @@ const char D_001FD358[0x10] __attribute__((aligned(8))) = { -0x7f, 0x48, -0x7f, 
 const s32 D_001FD368[0x2] = { -0x7edf9bdb, 0x93 };
 const s32 D_001FD370[0x2] = { 0x2d2d2d, 0 };
 const s32 D_001FD378[0x2] = { 0x6425, 0 };
-const char D_001FD380[0x6] = "%3.1f\000";
+const char gStr31f_001FD380[0x6] = "%3.1f\000";
 #endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/databook_item_reset.c */
 const char D_001FD388[0x10] __attribute__((aligned(8))) = { -0x7f, 0x48, -0x7f, 0x48, -0x7f, 0x48, -0x7f, 0x48, 0, 0, 0, 0, 0, 0, 0, 0 };

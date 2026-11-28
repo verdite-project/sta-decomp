@@ -44,19 +44,19 @@ static S D_001F26B0 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
 #endif
 extern s8 D_0048CE40[];
 #ifdef NONMATCHING
-extern u8 D_001FC980[];
+extern u8 gStrPoison_001FC980[];
 extern u8 D_001FC988[];
 extern u8 D_001FC998[];
-extern u8 D_001FC9A8[];
-extern u8 D_001FC9B0[];
-extern u8 D_001FC9B8[];
+extern u8 gStrGravity_001FC9A8[];
+extern u8 gStrCurse_001FC9B0[];
+extern u8 gStrSeal_001FC9B8[];
 #endif
 extern f32 D_0048D040[];
 #ifndef NONMATCHING
 extern s8 *D_001F2690[];
 #else
 /* data twins (src/game/data/ui_global_data.c): D_001F2690 */
-static s8 *D_001F2690[0x8] = { (s8 *)D_001FC980, (s8 *)D_001FC988, (s8 *)D_001FC998, (s8 *)D_001FC9A8, (s8 *)D_001FC9B0, (s8 *)D_001FC9B8, 0, 0 };
+static s8 *D_001F2690[0x8] = { (s8 *)gStrPoison_001FC980, (s8 *)D_001FC988, (s8 *)D_001FC998, (s8 *)gStrGravity_001FC9A8, (s8 *)gStrCurse_001FC9B0, (s8 *)gStrSeal_001FC9B8, 0, 0 };
 #endif
 extern s8 D_001FCAA0[];
 extern s8 D_001FCB38[];
@@ -185,10 +185,10 @@ void MenuProc_DrawWeight_0_00185D70(O *o, s32 a1, u32 mode, C *a3) {
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-extern u8 D_001FC980[];
+extern u8 gStrPoison_001FC980[];
 extern u8 D_001FC988[];
 extern u8 D_001FC998[];
-extern u8 D_001FC9A8[];
-extern u8 D_001FC9B0[];
-extern u8 D_001FC9B8[];
+extern u8 gStrGravity_001FC9A8[];
+extern u8 gStrCurse_001FC9B0[];
+extern u8 gStrSeal_001FC9B8[];
 #endif

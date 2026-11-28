@@ -6,17 +6,17 @@
 
 extern u8 D_001F2A90[];
 extern u8 D_001F2AC0[];
-extern u8 D_001FCE60[];
-extern u8 D_001FCE68[];
+extern u8 gStrMono_001FCE60[];
+extern u8 gStrStereo_001FCE68[];
 extern u8 D_001FCE70[];
-extern u8 D_001FCE88[];
+extern u8 gStrSound_001FCE88[];
 extern u8 D_001FCE90[];
 extern u8 D_001FCEA0[];
 extern u8 D_001FCEB0[];
-extern u8 D_001FCEC0[];
+extern u8 gStrScreenRatio_001FCEC0[];
 extern u8 D_001FCED0[];
 extern u8 D_001FCEE0[];
-extern u8 D_001FCEE8[];
+extern u8 gStr169_001FCEE8[];
 extern u8 D_001FCEF0[];
 extern u8 D_001FCF20[];
 extern u8 D_001FCF30[];
@@ -51,10 +51,10 @@ void OptionProc_DrawController_0_00191110(void);
 void OptionProc_DrawMain_0_00191420(void);
 
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/option.c */
-s32 D_001F2B50[0x4] = { (s32)D_001FCE60, (s32)D_001FCE68, (s32)D_001FCE70, 0 };
-s32 D_001F2B60[0x4] = { (s32)D_001FCE88, (s32)D_001FCE90, (s32)D_001FCEA0, 0 };
-s32 D_001F2B70[0x4] = { (s32)D_001FCEB0, (s32)D_001FCEC0, (s32)D_001FCED0, 0 };
-s32 D_001F2B80[0x4] = { (s32)D_001FCEE0, (s32)D_001FCEE8, (s32)D_001FCEF0, 0 };
+s32 D_001F2B50[0x4] = { (s32)gStrMono_001FCE60, (s32)gStrStereo_001FCE68, (s32)D_001FCE70, 0 };
+s32 D_001F2B60[0x4] = { (s32)gStrSound_001FCE88, (s32)D_001FCE90, (s32)D_001FCEA0, 0 };
+s32 D_001F2B70[0x4] = { (s32)D_001FCEB0, (s32)gStrScreenRatio_001FCEC0, (s32)D_001FCED0, 0 };
+s32 D_001F2B80[0x4] = { (s32)D_001FCEE0, (s32)gStr169_001FCEE8, (s32)D_001FCEF0, 0 };
 s32 D_001F2B90[0x8] = { (s32)D_001FCF20, (s32)D_001FCF30, (s32)D_001FCF40, (s32)D_001FCF50, (s32)D_001FCF68, (s32)D_001FCF80, 0, 0 };
 s32 D_001F2BB0[0x18] = { (s32)D_001FCF98, (s32)D_001FCFA0, (s32)D_001FCFB0, (s32)D_001FCFC0, (s32)D_001FCFC8, (s32)D_001FCFD8, (s32)D_001FCFE8, (s32)D_001FCFF0, (s32)D_001FCFF8, (s32)D_001FD000, (s32)D_001FD010, (s32)D_001FD020, (s32)D_001FD030, (s32)D_001FD040, (s32)D_001FD048, (s32)D_001FD050, (s32)D_001FD058, (s32)D_001FD068, (s32)D_001FD050, (s32)D_001FD078, (s32)D_001FD088, (s32)D_001FD090, 0, 0 };
 #endif
