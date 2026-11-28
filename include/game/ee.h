@@ -6,8 +6,8 @@
 
 /* gMcState_004B63B8, the memory-card driver state (src/game/ee/mc_*.c). Per-card
  * arrays are indexed [port * 4 + slot]; Mc_Start* fill the request fields and
- * set cmd, Mc_Step* advance step. Still defined inside gMcStepReadBss_004B63B4[] in
- * src/game/data/pad_get_connected_bss.c. */
+ * set cmd, Mc_Step* advance step. The retail state starts four bytes after the read byte count
+ * at gMcStepReadBss_004B63B4. */
 typedef struct {
     s32 type[8];    /* 0x00 */
     s32 free[8];    /* 0x20 */

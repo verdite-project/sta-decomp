@@ -165,6 +165,11 @@ s32 Mc_StepRead_4_001D5F88(void) {
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): gMcStepReadBss_004B63B4 */
-s32 gMcStepReadBss_004B63B4[0x26] __attribute__((aligned(4)));
+/* The read byte count precedes McState. Mc_GetResult reads state.x94
+ * and Mc_SetErrorStatus writes state.err through their named symbols. */
+/* data group (src/game/data/pad_get_connected_bss_004B5DD0.c): gMcStepReadBss_004B63B4__grp: gMcStepReadBss_004B63B4@0x0, gMcGetResultBss_004B644C@0x98, gMcSetErrorStatusBss_004B6450@0x9c */
+struct {
+    s32 bytesRead;
+    McState state;
+} gMcStepReadBss_004B63B4__grp __attribute__((aligned(4)));
 #endif
