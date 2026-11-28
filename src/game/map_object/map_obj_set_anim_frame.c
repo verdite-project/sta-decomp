@@ -1,6 +1,7 @@
 /* Best-effort C for the NONMATCHING build; the matching attempt is
- * wip/MapObj_SetAnimFrame_0_001B87C0.c.
- * The matching build takes it from the assembly of MapObj_PlayAnimImpl_1_001B8350. */
+ * wip/MapObj_SetAnimFrame_0_001B87C0.c. */
+#include "include_asm.h"
+
 #ifdef NONMATCHING
 // NEAR 4/165: still t1/a2 swap on lw 0x180 base + sll/addu (retail: base t1, off a2, addu a1,a1,a2). Tried stmt/decl perms, struct p, inline getters, E80 index, b38, idx via E30* temp (fixes addu order but 6 words).
 #include "m2c.h"
@@ -80,4 +81,6 @@ void MapObj_SetAnimFrame_0_001B87C0(s8 *p, u32 a1, s32 a2, s32 a3, f32 f, f32 g)
         ob->x20 = ob->xC;
     }
 }
+#else
+INCLUDE_ASM(MapObj_SetAnimFrame_0_001B87C0);
 #endif

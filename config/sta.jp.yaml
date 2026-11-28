@@ -528,6 +528,8 @@ segments:
       - [0x0B6800, c, game/map/map_area_load]
       - [0x0B72F0, c, game/map_object/map_object]
       - [0x0B8350, asm, text_001B8350]
+      - [0x0B85B0, c, game/map_object/map_obj_hit]
+      - [0x0B87C0, asm, text_001B87C0]
       - [0x0B8A60, c, game/map_object/map_object_draw]
       - [0x0B8F70, c, game/map_object/door]
       - [0x0B9360, c, game/map_object/chest]

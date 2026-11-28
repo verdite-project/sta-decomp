@@ -1,6 +1,5 @@
 /* Best-effort C for the NONMATCHING build; the matching attempt is
- * wip/MapObj_PlayAnimImpl_1_001B8350.c.
- * The retail assembly of MapObj_PlayAnimImpl_1_001B8350 also holds MapObj_Hit_0_001B85B0, MapObj_SetAnimFrame_0_001B87C0. */
+ * wip/MapObj_PlayAnimImpl_1_001B8350.c. */
 #include "include_asm.h"
 
 #ifdef NONMATCHING

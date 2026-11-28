@@ -1,72 +1,119 @@
-/* Best-effort C for the NONMATCHING build; the matching attempt is
- * wip/MapObj_Hit_0_001B85B0.c.
- * The matching build takes it from the assembly of MapObj_PlayAnimImpl_1_001B8350. */
-#ifdef NONMATCHING
-/* NEAR 12 of 129 (was 103, len-3): node lookup in a static inline with early return (gives the b+nop), (u32)idx in the 2nd tbl index stops idx*48 CSE, ae not a local (arg1->e twice). Left: o (arg1->o) in a1 instead of a0 and the 0x2AAAAAAB magic in a0 instead of a1 (+ ddu a1,a1,a3 operand order); decl perms (720) no effect. */
-#include "actor.h"
-typedef struct { u8 pad[0x18]; u16 n18; u16 n1A; u8 pad1C[0x14]; } E30;
-typedef struct { u8 pad[4]; u16 x4; u16 x6; u8 pad8[0xA]; Flags8 x12; u8 pad13; u16 x14; u8 v[6]; u8 pad1C[0x24]; } N40;
-typedef struct { u8 pad[0x50]; u8 x50; u8 pad51[0x2F]; } E80;
-typedef struct { s32 o0; u8 pad4[0x134]; E30 *tbl; u8 pad13C[0x34]; N40 *nodes; u8 pad174[0xC]; E80 *e80; } Obj;
-typedef struct { u8 pad[0x30]; Obj *o; E30 *cur; E80 *e; } Arg;
-void memset(void *, s32, s32);
-s32 Combat_SumResist_0_001AB500(s32, s16 *);
-void MapObj_PlayAnimImpl_1_001B8350(s32, s32, s32);
-s8 *MapObj_Find_1_001B19A0(s32);
-void Event_CheckTrigger_0_00179F80(s32 *);
+#include "common.h"
 
-static inline N40 *node(Obj *o, s32 idx) {
-    N40 *n = &o->nodes[o->tbl[idx].n18];
-    if ((o->e80[idx].x50 & 3) && n->x12.f.b3) {
-        return &o->nodes[n->x6];
+typedef struct {
+    u8 pad0[0x18];
+    u16 nodeIndex;
+    u16 id;
+    u8 pad1C[0x14];
+} MapObjEntry;
+
+typedef struct {
+    u8 pad0[4];
+    u16 type;
+    u16 alternateNodeIndex;
+    u8 pad8[0xA];
+    Flags8 flags;
+    u8 pad13;
+    u16 threshold;
+    u8 resistance[6];
+    u8 pad1C[0x24];
+} MapObjNode;
+
+typedef struct {
+    u8 pad0[0x50];
+    u8 flags;
+    u8 pad51[0x2F];
+} MapObjState;
+
+typedef struct {
+    s32 id;
+    u8 pad4[0x134];
+    MapObjEntry *entries;
+    u8 pad13C[0x34];
+    MapObjNode *nodes;
+    u8 pad174[0xC];
+    MapObjState *states;
+} MapObject;
+
+typedef struct {
+    u8 pad0[0x30];
+    MapObject *object;
+    MapObjEntry *entry;
+    MapObjState *state;
+} MapObjHit;
+
+typedef struct {
+    s32 type;
+    s32 triggerId;
+    s32 objectId;
+    s32 entryIndex;
+    u8 pad10[0x20];
+} MapObjEvent;
+
+void memset(void *, s32, s32);
+s32 Combat_SumResist_0_001AB500(u16 *, u16 *);
+void MapObj_PlayAnimImpl_1_001B8350(s32, u32, s32);
+s8 *MapObj_Find_1_001B19A0(s32);
+s32 Event_CheckTrigger_0_00179F80(MapObjEvent *);
+
+static inline MapObjNode *getHitNode(MapObject *object, s32 index) {
+    MapObjState *states = object->states;
+    MapObjEntry *entries = object->entries;
+    MapObjNode *nodes = object->nodes;
+    MapObjState *state = &states[index];
+    MapObjEntry *entry = &entries[index];
+    u8 flags = state->flags;
+    MapObjNode *node = &nodes[entry->nodeIndex];
+
+    if ((flags & 3) && node->flags.f.b3) {
+        return &nodes[node->alternateNodeIndex];
     }
-    return n;
+    return node;
 }
 
-s32 MapObj_Hit_0_001B85B0(s32 arg0, Arg *arg1) {
-    s32 o0;
-    s32 idx;
-    N40 *n;
-    Obj *o;
-    E30 *cur;
-    E80 *ae;
-    Obj *t;
-    E30 *e;
-    s16 b[8];
-    s32 m[12];
+s32 MapObj_Hit_0_001B85B0(u16 *attack, MapObjHit *hit) {
+    s32 objectId;
+    s32 index;
+    MapObjNode *node;
+    MapObject *object;
+    MapObjEntry *current;
+    MapObject *updated;
+    MapObjEntry *entry;
+    u16 resistance[8];
+    MapObjEvent event;
 
-    cur = arg1->cur;
-    if (cur != NULL) {
-        if (arg1->e != NULL) {
-            o = arg1->o;
-            o0 = o->o0;
-            idx = cur - o->tbl;
-            n = node(o, idx);
-            if (n->x4 != 2) {
+    current = hit->entry;
+    if (current != NULL) {
+        if (hit->state != NULL) {
+            object = hit->object;
+            objectId = object->id;
+            index = current - object->entries;
+            node = getHitNode(object, index);
+            if (node->type != 2) {
                 return 0;
             }
-            if (arg1->e->x50 & 3) {
+            if (hit->state->flags & 3) {
                 return 0;
             }
-            memset(b, 0, 0x10);
-            b[1] = n->v[0];
-            b[2] = n->v[1];
-            b[3] = n->v[2];
-            b[5] = n->v[3];
-            b[6] = n->v[4];
-            b[7] = n->v[5];
-            if (Combat_SumResist_0_001AB500(arg0, b) >= n->x14) {
-                MapObj_PlayAnimImpl_1_001B8350(o0, idx, 0);
-                t = (Obj *)MapObj_Find_1_001B19A0(o0);
-                if (t != NULL) {
-                    e = &t->tbl[(u32)idx];
-                    if (e->n1A % 100) {
-                        memset(m, 0, 0x30);
-                        m[0] = 8;
-                        m[1] = e->n1A % 100;
-                        m[2] = o0;
-                        m[3] = idx;
-                        Event_CheckTrigger_0_00179F80(m);
+            memset(resistance, 0, sizeof(resistance));
+            resistance[1] = node->resistance[0];
+            resistance[2] = node->resistance[1];
+            resistance[3] = node->resistance[2];
+            resistance[5] = node->resistance[3];
+            resistance[6] = node->resistance[4];
+            resistance[7] = node->resistance[5];
+            if (Combat_SumResist_0_001AB500(attack, resistance) >= node->threshold) {
+                MapObj_PlayAnimImpl_1_001B8350(objectId, index, 0);
+                updated = (MapObject *)MapObj_Find_1_001B19A0(objectId);
+                if (updated != NULL) {
+                    entry = &updated->entries[(u32)index];
+                    if (entry->id % 100) {
+                        memset(&event, 0, sizeof(event));
+                        event.type = 8;
+                        event.triggerId = entry->id % 100;
+                        event.objectId = objectId;
+                        event.entryIndex = index;
+                        Event_CheckTrigger_0_00179F80(&event);
                     }
                 }
                 return 1;
@@ -75,4 +122,3 @@ s32 MapObj_Hit_0_001B85B0(s32 arg0, Arg *arg1) {
     }
     return 0;
 }
-#endif

@@ -24,7 +24,6 @@ register and scheduling differences.
 | Glow_Add_0_0015DBF0 | ~18 instrs: v70[3] store order, table-update regs, a0/a1 swap |
 | Enemy_UpdateTimers_0_0013D8A0 | else-branch: `negu` scheduled before the `andi`/`sw` of `*q` (Actor accessor block) |
 | ItemObj_Free_1_001AF4A0 | case-1 list remove: orig reloads count each pass and puts the shift loop's setup after the function |
-| MapObj_Hit_0_001B85B0 | ours keeps idx*0x30 in s4 across calls (extra s-reg, frame +0x10) |
 | MapObj_SetAnimFrame_0_001B87C0 | first block regs: load from 0x180 to t1 (ours a2) |
 | Sfx_AimMatrix_0_00167310 | `b` delay slot left empty (orig fills with next `lwc1 f21`); `move s0,a0` before null check |
 | Mdl_RunMotionEvents_0_001717A0 | 4 words, regs only: orig tbl=a1 and keeps q+0x40 in a2 |
