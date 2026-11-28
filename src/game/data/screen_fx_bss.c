@@ -9,7 +9,9 @@ u8 D_002F20C0[0x4];
 f32 D_002F20BC[0x1];
 f32 D_002F2080[0xf];
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/screen_fx.c */
 u8 D_002F2078[0x8];
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/screen_fx.c */
 u8 D_002F2070[0x8];
 #endif

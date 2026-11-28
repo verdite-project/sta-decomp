@@ -555,3 +555,9 @@ u8 Inventory_GetSlotCount_0_001AA6D0(s16 i) { if (gPlayerData_00201DC0__as_Inven
 #pragma explicit_zero_data on
 extern u8 D_004AA440[];
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/pad_get_connected_bss.c): D_004AA440__grp: D_004AA440@0x0 */
+u8 D_004AA440__grp[0x2160] __attribute__((aligned(16)));
+#endif

@@ -270,3 +270,9 @@ s32 D_004A1020[0xc] __attribute__((aligned(4)));
 /* data group (src/game/data/option_bss.c): D_004A1050__grp: D_004A1050@0x0, D_004A1054@0x4, D_004A1058@0x8, D_004A105C@0xc, D_004A1060@0x10, D_004A1068@0x18, D_004A106C@0x1c, D_004A1070@0x20, D_004A1074@0x24, D_004A1078@0x28 */
 u8 D_004A1050__grp[0x30] __attribute__((aligned(16)));
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/save_menu_data.c): D_001F2A50__grp: D_001F2A50@0x0 */
+f32 D_001F2A50__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+#endif

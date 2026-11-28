@@ -829,9 +829,6 @@ void Hud_UpdateWeaponSlots_0_0019C560(void) {
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/databook_item_reset_data.c): D_001F3060, D_001F3070 */
-f32 D_001F3060[0x1] = { 0.0f };
-f32 D_001F3070[0x1] = { 0.0f };
 /* data twins (src/game/data/sbss.c): D_002020D4, D_002021C4, D_002021C8 */
 f32 D_002020D4;
 s32 D_002021C4;
@@ -848,4 +845,35 @@ u16 D_001FD3F8__grp[0x8] __attribute__((aligned(8))) = { 2, 3, 6, 5, 4, 1, 0, 0 
 #pragma explicit_zero_data on
 /* data group (src/game/data/item_menu_draw_bss.c): D_004A30E0__grp: D_004A30E0@0x0, D_004A30F0@0x10, D_004A3100@0x20, D_004A3110@0x30, D_004A3120@0x40, D_004A3130@0x50, D_004A3140@0x60 */
 u8 D_004A30E0__grp[0x70] __attribute__((aligned(16)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/databook_item_reset_data.c): D_001F306C__grp: D_001F306C@0x0 */
+s32 D_001F306C__grp[0x1] __attribute__((aligned(4))) = { 0 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/databook_item_reset_data.c): D_001F307C__grp: D_001F307C@0x0 */
+s32 D_001F307C__grp[0x1] __attribute__((aligned(4))) = { 0 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/item_menu_draw_bss.c): D_004A28E0__grp: D_004A28E0@0x0 */
+u8 D_004A28E0__grp[0x3f0] __attribute__((aligned(16)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/item_menu_draw_bss.c): D_004A2CE0__grp: D_004A2CE0@0x0 */
+u8 D_004A2CE0__grp[0x3f0] __attribute__((aligned(16)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/databook_item_reset_data.c): D_001F3060, D_001F3070 */
+f32 D_001F3060[0x1] = { 0.0f };
+f32 D_001F3070[0x1] = { 0.0f };
 #endif

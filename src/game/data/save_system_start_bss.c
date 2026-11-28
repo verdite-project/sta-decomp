@@ -19,7 +19,9 @@ s32 D_004BC388[0x1];
 u8 D_004BC384[0x4];
 u8 D_004BC380[0x4];
 u8 D_004BC360[0x20]; /* also D_004BC368 */
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ee/credits_load.c */
 u8 D_004BC2F0[0x70];
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/map_se_load.c */
 u32 D_004BC2E8[0x2];
 u32 D_004BC2E4[0x1];

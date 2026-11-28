@@ -33,9 +33,13 @@ u8 D_004A30F0[0x10] __attribute__((aligned(4)));
 u8 D_004A30E0[0x10] __attribute__((aligned(4)));
 #endif
 u8 D_004A30D0[0x10] __attribute__((aligned(4)));
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/hud_draw.c */
 u8 D_004A2CE0[0x3f0] __attribute__((aligned(4)));
+#endif
 u8 D_004A2CD0[0x10] __attribute__((aligned(4)));
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/hud_draw.c */
 u8 D_004A28E0[0x3f0] __attribute__((aligned(4)));
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/player/equip_draw.c */
 u8 D_004A28D0[0x10] __attribute__((aligned(4)));
 f32 D_004A28CC[0x1];

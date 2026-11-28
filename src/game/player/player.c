@@ -5256,3 +5256,9 @@ u8 D_0030D0E0__grp[0xa0] __attribute__((aligned(16)));
 /* data group (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4CD0__grp: D_004B4CD0@0x0, D_004B4CDC@0xc */
 u8 D_004B4CD0__grp[0x10] __attribute__((aligned(16)));
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4C40__grp: D_004B4C40@0x0 */
+u8 D_004B4C40__grp[0x10] __attribute__((aligned(16)));
+#endif

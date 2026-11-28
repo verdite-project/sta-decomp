@@ -194,3 +194,9 @@ s32 D_00202120[2];
 /* data twins (src/game/data/option_bss.c): D_004A0F90 */
 s32 D_004A0F90[0x2] __attribute__((aligned(4)));
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/option_bss.c): D_004A0F98__grp: D_004A0F98@0x0 */
+u8 D_004A0F98__grp[0x28] __attribute__((aligned(8)));
+#endif

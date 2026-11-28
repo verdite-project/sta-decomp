@@ -245,3 +245,9 @@ extern u8 D_004A5A60[];
 /* data twins (src/game/data/sdata.c): D_00201DC4 */
 Rec_Save_InitNewGame_1_001AA760 *D_00201DC4 = (Rec_Save_InitNewGame_1_001AA760 *)D_004A5A60;
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/pad_get_connected_bss.c): D_004A5A60 */
+u8 D_004A5A60[0x49e0];
+#endif

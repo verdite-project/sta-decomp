@@ -330,8 +330,12 @@ def compile_to(src_text, owner, out, nonmatching):
     probe.write_text(src_text)
     try:
         env = {**os.environ, "CDEFS": "-DNONMATCHING" if nonmatching else ""}
-        r = subprocess.run([str(ROOT / "tools/compile_c.sh"), str(probe.relative_to(ROOT)), str(out)],
+        # compile_c.sh writes ee-gcc's .s beside the object, at a path from the root
+        r = subprocess.run([str(ROOT / "tools/compile_c.sh"), str(probe.relative_to(ROOT)),
+                            str(Path(out).resolve().relative_to(ROOT))],
                            cwd=ROOT, capture_output=True, text=True, env=env)
+        if r.returncode and os.environ.get("SPLIT_DEBUG"):
+            print(f"--- {owner}\n{r.stdout}{r.stderr}"[:1500], file=sys.stderr)
         return r.returncode == 0
     finally:
         probe.unlink()
@@ -481,8 +485,11 @@ def group_text(own, unit, kind, members, labels):
                 return None, "no splat label"
             items += lab[2]
         need = set()
-        d = data_to_c.define(blob, items, {}, False, need, False)
-        if d is None or len(data_to_c.obj_bytes(items, False)[0]) != total:
+        # the last string ends at its NUL when carve's size does (the
+        # padding after it is the next object's alignment)
+        trim = len(data_to_c.obj_bytes(items, False)[0]) != total
+        d = data_to_c.define(blob, items, {}, False, need, trim)
+        if d is None or len(data_to_c.obj_bytes(items, trim)[0]) != total:
             return None, "bytes"
         d = d.replace(" = ", f" __attribute__((aligned({min(16, start & -start)}))) = ", 1)
         ext = [f"void {x}(void);" if is_func(x) else f"extern u8 {x}[];"
@@ -612,6 +619,42 @@ def main():
         for n, _, _ in members:
             gdone[n] = own
         print(f"{own}: group {root} ({len(members)} objects)")
+    # what the twin writer could not write: a one-object group (its bytes as
+    # a blob, its name an offset into it), so no C type has to fit; a small
+    # data object only while the blob stays small (8 bytes, the gp range)
+    sz = move_data.sizes()
+    for r in recs:
+        n = r["name"]
+        if n in done or n in gdone or n not in sz:
+            continue
+        own = pick_owner(r)
+        if own is None:
+            continue
+        if r["section"] in ("sbss", "sdata") and r["size"] > 8:
+            continue
+        if r["unit"] not in labels and r["section"] not in UNINIT:
+            labels[r["unit"]] = labels_of(r["unit"], r["section"])
+        members = [(n, sz[n][0], r["size"])]
+        saved = (ROOT / own).read_text()
+        if own in texts:
+            (ROOT / own).write_text(texts[own])
+        try:
+            t, blob = group_text(own, r["unit"], r["section"], members, labels[r["unit"]])
+        finally:
+            (ROOT / own).write_text(saved)
+        if t is None:
+            greasons["single: " + blob] += 1
+            continue
+        o = tmp / (Path(own).stem + f".s.{n}.o")
+        if not compile_to(t, own, o, True):
+            greasons["single: owner does not compile"] += 1
+            continue
+        why = group_compare(ct.Obj(o), blob, members, unit_obj(r["unit"]))
+        if why:
+            greasons["single: " + why.split(":")[-1].strip()[:30]] += 1
+            continue
+        texts[own] = t
+        gdone[n] = own
     print(f"{len(gdone)} objects in {len({gdone[n] for n in gdone})} owners move as groups; left: "
           + ", ".join(f"{k} {v}" for k, v in greasons.most_common()), file=sys.stderr)
     done.update(gdone)

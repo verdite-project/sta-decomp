@@ -65,12 +65,14 @@ u8 D_0042D8C0[0x500];
 s32 D_0042D8B8[0x2];
 s32 D_0042D8B4[0x1];
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/model/model_load.c */
 u8 D_0042D8B0[0x4];
 u8 D_0042D8AC[0x4];
 u8 D_0042D8A8[0x4];
 u8 D_0042D8A4[0x4];
 u8 D_0042D8A0[0x4];
 u8 D_0042D89C[0x4];
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/model/model_load.c */
 s32 D_0042D898[0x1];
 s32 D_0042D894[0x1];

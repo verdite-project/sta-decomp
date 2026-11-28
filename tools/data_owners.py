@@ -204,9 +204,14 @@ def escape_roots(objs):
     (its extent ends at its NUL) is no root."""
     out = {}
     srcs = {}
+    # the NONMATCHING twin and group blocks are data (a pointer in them is an
+    # initialiser, as in the data units, which are not scanned either)
+    block = re.compile(r"^#ifdef NONMATCHING\n(?:#pragma[^\n]*\n|extern[^\n]*\n|void [^\n]*\n)*"
+                       r"/\* data (?:twins|group) \((?:.*\n)*?#endif\n", re.M)
+    stat = re.compile(r"^#else\n/\* data twins \([^\n]*\n(?:.*\n)*?#endif\n", re.M)
     for p in glob.glob(str(ROOT / "src/game/**/*.c"), recursive=True):
         if "/src/game/data/" not in p:
-            srcs[p] = Path(p).read_text()
+            srcs[p] = stat.sub("#endif\n", block.sub("", Path(p).read_text()))
     for n, r in objs.items():
         if is_string(r):
             continue

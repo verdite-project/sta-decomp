@@ -3,8 +3,18 @@
 #include "game/ee.h"
 typedef struct { u8 pad[0x10]; u32 fsize; } Tbl;
 extern Tbl gMcDirBuf_004B68C0[];
+#ifndef NONMATCHING
 extern u32 D_004B639C[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): D_004B639C */
+static u32 D_004B639C[0x1];
+#endif
+#ifndef NONMATCHING
 extern s32 D_004B63A0[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): D_004B63A0 */
+static s32 D_004B63A0[0x1];
+#endif
 s32 Mc_StepGetInfo_3_001D3BF0(s32, s32, s32 *, s32 *, s32 *, s32);
 s32 sceMcClose(s32);
 s32 sceMcGetDir(s32, s32, s32, s32, s32, Tbl *);

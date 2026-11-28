@@ -58,3 +58,9 @@ void Loading_DrawText_2_0018E320(s8 *a0, s32 a1, s32 a2) {
         Ui_DrawSprite_2_00181680(*(s32 *)(a0 + 0x28), a0, a0 + 0x10, a0 + 0x2C, &t, a2);
     }
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/save_menu_data.c): D_001F2A70__grp: D_001F2A70@0x0 */
+f32 D_001F2A70__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+#endif

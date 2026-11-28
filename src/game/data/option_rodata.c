@@ -21,8 +21,10 @@ const char D_001FCEB0[0x10] __attribute__((aligned(8))) = "MOVE EFFECT\000\000\0
 const char gStrScreenRatio_001FCEC0[0xd] = "SCREEN RATIO\000";
 const char D_001FCED0[0x10] __attribute__((aligned(8))) = "BRIGHTNESS\000\000\000\000\000\000";
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/option.c */
 const s32 D_001FCEE0[0x2] = { 0x333a34, 0 };
 const char gStr169_001FCEE8[0x5] = "16:9\000";
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/option.c */
 const char D_001FCEF0[0x30] __attribute__((aligned(8))) = "16:9(LB)\000\000\000\000\000\000\000\000VIBRATION\000\000\000\000\000\000\000KEY ASSIGN\000\000\000\000\000\000";
 #endif
@@ -35,6 +37,7 @@ const s32 D_001FCF30[0x4] __attribute__((aligned(8))) = { 0x43835e83, 0x51827683
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/option.c */
 const s32 D_001FCF40[0x4] __attribute__((aligned(8))) = { 0x43835e83, 0x52827683, 0, 0 };
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/option.c */
 const s32 D_001FCF50[0x6] __attribute__((aligned(8))) = { 0x43835e83, 0x52827683, -0x757cba7f, 0x5b816f83, 0x5883, 0 };
 const s32 D_001FCF68[0x6] __attribute__((aligned(8))) = { 0x43835e83, 0x53827683, 0, 0, 0, 0 };
 const s32 D_001FCF80[0x6] __attribute__((aligned(8))) = { 0x43835e83, 0x53827683, -0x757cba7f, 0x5b816f83, 0x5883, 0 };
@@ -44,6 +47,7 @@ const s32 D_001FCFB0[0x4] __attribute__((aligned(8))) = { -0x516c2578, -0x7471ba
 const s32 D_001FCFC0[0x2] = { -0xe760670, 0 };
 const s32 D_001FCFC8[0x4] __attribute__((aligned(8))) = { -0x426a4973, -0x25778c73, 0xae93, 0 };
 const s32 D_001FCFD8[0x4] __attribute__((aligned(8))) = { -0x426aba77, -0x25778c73, 0xae93, 0 };
+#endif
 const s32 D_001FCFE8[0x2] = { 0x5f938b8e, 0xe38f };
 const s32 D_001FCFF0[0x2] = { 0x5f938b8e, 0xba89 };
 const f32 D_001FCFF8[0x2] = { 4.7034407f, 0.0f };

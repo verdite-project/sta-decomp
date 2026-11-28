@@ -153,3 +153,16 @@ void StorageProc_Pos_0_001A3500(s32 arg0, void *arg1, void *arg2) {
     UiAnim_Get_1_0017F840(0, &sp4C);
     M2C_FIELD(arg1, f32 *, 0x14) = (f32) (M2C_FIELD(arg2, f32 *, 8) - (f32) arg0);
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+extern u8 D_001F32B0[];
+/* data group (src/game/data/title_nop_data.c): D_001F32F0__grp: D_001F32F0@0x0 */
+s32 D_001F32F0__grp[0x8] __attribute__((aligned(16))) = { 0, 5, 0, (s32)D_001F32B0, 7, -0x3fc00000, 0, 0 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/title_nop_data.c): D_001F32B0 */
+u8 D_001F32B0[0x40] = { 0, 0, 0x40, 0xc0, 0xa6, 0xf, 0, 0, 0, 0, 0, 0xc0, 0xa5, 0xf, 0, 0, 0, 0, 0x80, 0xbf, 0xa4, 0xf, 0, 0, 0, 0, 0, 0, 0xa3, 0xf, 0, 0, 0, 0, 0x80, 0x3f, 0xa2, 0xf, 0, 0, 0, 0, 0, 0x40, 0xa1, 0xf, 0, 0, 0, 0, 0x40, 0x40, 0xa0, 0xf, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+#endif

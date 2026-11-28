@@ -2010,3 +2010,9 @@ u8 *D_004BE038[0x2] __attribute__((aligned(4)));
 s32 D_004BE040[0xe] __attribute__((aligned(4)));
 s16 D_004BE0D4[0x2];
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/sdata.c): D_00201E74__grp: D_00201E74@0x0 */
+s32 D_00201E74__grp[0x1] __attribute__((aligned(4))) = { -0x48ff0000 };
+#endif

@@ -669,3 +669,30 @@ u32 D_00202190;
 /* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A1884 */
 f32 D_004A1884[0x6] __attribute__((aligned(4)));
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+extern u8 D_001F2F00[];
+/* data group (src/game/data/databook_item_reset_data.c): D_001F2F40__grp: D_001F2F40@0x0 */
+s32 D_001F2F40__grp[0x8] __attribute__((aligned(16))) = { 0, 5, 0, (s32)D_001F2F00, 7, -0x3fc00000, 0, 0 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+extern u8 D_001F2F80[];
+/* data group (src/game/data/databook_item_reset_data.c): D_001F2FC0__grp: D_001F2FC0@0x0 */
+s32 D_001F2FC0__grp[0x8] __attribute__((aligned(16))) = { 0, 5, 0, (s32)D_001F2F80, 7, -0x3fc00000, 0, 0 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/databook_item_reset_data.c): D_001F2FE0__grp: D_001F2FE0@0x0 */
+f32 D_001F2FE0__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/databook_item_reset_data.c): D_001F2F00, D_001F2F80 */
+u8 D_001F2F00[0x40] = { 0, 0, 0x40, 0xc0, 0xa6, 0xf, 0, 0, 0, 0, 0, 0xc0, 0xa5, 0xf, 0, 0, 0, 0, 0x80, 0xbf, 0xa4, 0xf, 0, 0, 0, 0, 0, 0, 0xa3, 0xf, 0, 0, 0, 0, 0x80, 0x3f, 0xa2, 0xf, 0, 0, 0, 0, 0, 0x40, 0xa1, 0xf, 0, 0, 0, 0, 0x40, 0x40, 0xa0, 0xf, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+u8 D_001F2F80[0x40] = { 0, 0, 0x40, 0xc0, 0xa6, 0xf, 0, 0, 0, 0, 0, 0xc0, 0xa5, 0xf, 0, 0, 0, 0, 0x80, 0xbf, 0xa4, 0xf, 0, 0, 0, 0, 0, 0, 0xa3, 0xf, 0, 0, 0, 0, 0x80, 0x3f, 0xa2, 0xf, 0, 0, 0, 0, 0, 0x40, 0xa1, 0xf, 0, 0, 0, 0, 0x40, 0x40, 0xa0, 0xf, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+#endif

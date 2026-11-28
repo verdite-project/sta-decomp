@@ -4,4 +4,6 @@
    (CodeWarrior writes uninitialised objects in reverse order). */
 /* used by: no code by name (reached through other data) */
 
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/option_mode.c */
 u8 D_004A48A0[0xe0];
+#endif

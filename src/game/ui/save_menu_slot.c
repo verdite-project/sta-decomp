@@ -623,3 +623,9 @@ s32 D_004A1000[0x2] __attribute__((aligned(4)));
 f32 D_004A1008[0x1];
 Flags8 D_004A1010[0x10 / sizeof(Flags8)] __attribute__((aligned(4)));
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/save_menu_data.c): D_001F2A10__grp: D_001F2A10@0x0 */
+f32 D_001F2A10__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+#endif

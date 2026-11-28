@@ -1302,3 +1302,16 @@ void Actor_ResolveGround_0_0013A720(Actor *a) {
     }
 }
 #undef Sfx_SetOwner_1_00167600
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+extern u8 D_002704D0[];
+/* data group (src/game/data/fx_proc_data.c): D_001F1C80__grp: D_001F1C80@0x0 */
+s32 D_001F1C80__grp[0x14] __attribute__((aligned(16))) = { 0, 0x3f800000, 0, 0, (s32)D_002704D0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sound_emitter_bss_002704D0.c): D_002704D0 */
+u8 D_002704D0[0x80];
+#endif

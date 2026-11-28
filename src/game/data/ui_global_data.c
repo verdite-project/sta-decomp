@@ -11,10 +11,14 @@ extern u8 gStrGravity_001FC9A8[];
 extern u8 gStrCurse_001FC9B0[];
 extern u8 gStrSeal_001FC9B8[];
 
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/ui_anim.c */
 f32 D_001F25B0[0x8] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
 f32 D_001F25D0[0x4] = { 40.0f, 83.0f, 52.0f, 157.0f };
 f32 D_001F25E0[0x4] = { 40.0f, 180.0f, 52.0f, 254.0f };
+#endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/font_draw.c */
 s32 D_001F25F0[0x10] = { -0x80000000, -0x7fefeff0, -0x7fdfdfe0, -0x7fcfcfd0, -0x7fbfbfc0, -0x7fafafb0, -0x7f9f9fa0, -0x7f8f8f90, -0x7f000001, -0x7f000001, -0x7f000001, -0x7f000001, -0x7f000001, -0x7f000001, -0x7f000001, -0x7f000001 };
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/ui_gauge.c */
 f32 D_001F2630[0x8] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
 f32 D_001F2650[0x8] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
@@ -29,7 +33,9 @@ f32 D_001F26B0[0x8] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/ui_gauge.c */
 f32 D_001F26D0[0x8] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/ui_gauge.c */
 f32 D_001F26F0[0x4] = { 615.0f, 275.0f, 619.0f, 399.0f };
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/ui_gauge.c */
 f32 D_001F2700[0x8] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
 #endif

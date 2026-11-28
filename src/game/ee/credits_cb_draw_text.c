@@ -8,7 +8,12 @@ typedef struct { u8 p0[4]; O *x4; u8 p8[0x10]; u16 *x18; s32 x1C; f32 x20; f32 x
 typedef struct { u8 p0[0x1C]; s32 x1C[3]; u8 p28[0x10]; s64 x38[3]; s64 x50[3]; u8 p68[0x10]; s32 x78; } G;
 extern G D_004BC2F0;
 extern f32 D_004BC360[];
+#ifndef NONMATCHING
 extern u16 D_00201E68[];
+#else
+/* data twins (src/game/data/sdata.c): D_00201E68 */
+static u16 D_00201E68[0x4] = { 0, 0, 0, 0 };
+#endif
 extern f32 D_00201B90;
 void GsText_SetQword_0_001E1E80(s32, s64, s64);
 void GsText_Begin_1_001E23C8(void);

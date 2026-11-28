@@ -1532,3 +1532,51 @@ s8 D_0048D170[0x1e0];
 /* data group (src/game/data/ui_anim_bss.c): D_0048D060__grp: D_0048D060@0x0, D_0048D074@0x14, D_0048D08C@0x2c, D_0048D090@0x30, D_0048D09C@0x3c, D_0048D0A0@0x40 */
 u8 D_0048D060__grp[0x54] __attribute__((aligned(16)));
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/ui_global_data.c): D_001F26F0__grp: D_001F26F0@0x0 */
+f32 D_001F26F0__grp[0x4] __attribute__((aligned(16))) = { 615.0f, 275.0f, 619.0f, 399.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/menu_draw_wrap_data.c): D_001F2770__grp: D_001F2770@0x0 */
+f32 D_001F2770__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/ui_gauge_rodata.c): gStrImg04d_001FCA78__grp: gStrImg04d_001FCA78@0x0 */
+char gStrImg04d_001FCA78__grp[0x8] __attribute__((aligned(8))) = "img%04d\000";
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/ui_gauge_rodata.c): gStrItemImg04dTdc_001FCA60__grp: gStrItemImg04dTdc_001FCA60@0x0 */
+char gStrItemImg04dTdc_001FCA60__grp[0x18] __attribute__((aligned(16))) = "item/img%04d.tdc\000\000\000\000\000\000\000\000";
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/ui_gauge_rodata.c): gStrM04d_001FCA20__grp: gStrM04d_001FCA20@0x0 */
+char gStrM04d_001FCA20__grp[0x10] __attribute__((aligned(16))) = "m%04d\000\000\000\000\000\000\000\000\000\000\000";
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/ui_gauge_rodata.c): gStrMapsheetMs04dTdc_001FC9F0__grp: gStrMapsheetMs04dTdc_001FC9F0@0x0 */
+char gStrMapsheetMs04dTdc_001FC9F0__grp[0x18] __attribute__((aligned(16))) = "mapsheet/ms%04d.tdc\000\000\000\000\000";
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/ui_gauge_rodata.c): gStrAreaM04dTdc_001FCA10__grp: gStrAreaM04dTdc_001FCA10@0x0 */
+char gStrAreaM04dTdc_001FCA10__grp[0xf] __attribute__((aligned(16))) = "area/m%04d.tdc\000";
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/ui_gauge_rodata.c): gStrMs04d_001FCA08__grp: gStrMs04d_001FCA08@0x0 */
+char gStrMs04d_001FCA08__grp[0x7] __attribute__((aligned(8))) = "ms%04d\000";
+#endif

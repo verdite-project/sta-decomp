@@ -305,7 +305,9 @@ u8 D_00202164[0x4];
 u8 D_00202160[0x4];
 u8 D_0020215C[0x4];
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/databook.c */
 u8 D_00202158[0x4];
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/databook.c */
 s32 D_00202154;
 #endif
@@ -584,7 +586,9 @@ u8 D_00201EEC[0x4];
 s32 D_00201EE8;
 u8 D_00201EE4[0x4];
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/sound_emitter.c */
 u8 D_00201EE0[0x4]; /* also D_00201EE2 */
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/sound_emitter.c */
 u8 D_00201ED8[0x8];
 #endif

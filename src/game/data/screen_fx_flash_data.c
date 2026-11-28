@@ -21,8 +21,10 @@ void ScrCmd_ResetAllSlots_0_00164E80(void);
 void ScrCmd_SendEvent_1_00164EE0(void);
 void ScrCmd_SetVar_1_00164DC0(void);
 
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/screen_fx.c */
 f32 D_001F2040[0x4] = { 0.0f, 0.0f, 0.0f, 1.0f };
 f32 D_001F2050[0x4] = { 0.0f, 0.0f, 0.0f, 1.0f };
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/fog.c */
 f32 D_001F2060[0x1] = { 1.0f };
 s32 D_001F2064[0x1] = { 0 };

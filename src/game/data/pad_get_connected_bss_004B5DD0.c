@@ -25,29 +25,49 @@ u8 D_004B7C40[0x50];
 u8 D_004B7A40[0x200]; /* also D_004B7C3F */
 char D_004B7840[0x200];
 u8 D_004B7740[0x100];
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ee/pad_set_enabled.c */
 u8 D_004B6A68[0xcd8] __attribute__((aligned(8))); /* also D_004B6A6C, D_004B6A74, D_004B6A7E, D_004B6A82 */
 u8 D_004B6A20[0x48]; /* also D_004B6A22 */
 u8 D_004B6A00[0x20]; /* also D_004B6A02 */
+#endif
 u8 gPadState_004B6900[0x100];
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ee/mc_step_write_checked.c */
 s32 D_004B68D0[0xc];
 u8 gMcDirBuf_004B68C0[0x10];
+#endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ee/mc_step_read_checked.c */
 u8 D_004B6474[0x44c] __attribute__((aligned(4))); /* also D_004B6478 */
+#endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ee/mc_set_error_status.c */
 s32 D_004B6450[0x9];
+#endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ee/mc_get_result.c */
 s32 D_004B644C[0x1];
+#endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ee/mc_step_read.c */
 u8 D_004B63B4[0x98] __attribute__((aligned(4))); /* also gMcState_004B63B8, D_004B6418 */
+#endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ee/mc_step_copy_file.c */
 s32 D_004B63B0[0x1];
 s32 D_004B63AC[0x1];
 s32 D_004B63A8[0x1];
 s32 D_004B63A4[0x1];
+#endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ee/mc_step_write.c */
 s32 D_004B63A0[0x1];
 u32 D_004B639C[0x1];
+#endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ee/mc_step_read_checked.c */
 s32 D_004B6398[0x1];
 s32 D_004B6394[0x1];
 s32 D_004B6390[0x1];
 s32 D_004B638C[0x1];
+#endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ee/mc_step_write_checked.c */
 u8 D_004B6388[0x4];
 u8 D_004B6384[0x4];
 u8 D_004B6380[0x4];
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/player/stats.c */
 u8 D_004B6288[0xf8] __attribute__((aligned(8))); /* also D_004B628A */
 u8 D_004B6284[0x4]; /* also D_004B6286 */

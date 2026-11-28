@@ -1336,3 +1336,27 @@ u8 D_00222B50__grp[0x70] __attribute__((aligned(16)));
 /* data group (src/game/data/gs_packet_bss.c): D_002F1680__grp: D_002F1680@0x0, D_002F1690@0x10, D_002F1694@0x14 */
 u8 D_002F1680__grp[0x40] __attribute__((aligned(16)));
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/game_main_data.c): D_001F1BD0__grp: D_001F1BD0@0x0 */
+f32 D_001F1BD0__grp[0x4] __attribute__((aligned(16))) = { 0.0f, 0.0f, 1.0f, 1.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/game_main_data.c): D_001F1BE0__grp: D_001F1BE0@0x0 */
+f32 D_001F1BE0__grp[0x4] __attribute__((aligned(16))) = { 0.0f, 1.0f, 0.0f, 1.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/game_main_data.c): D_001F1BF0__grp: D_001F1BF0@0x0 */
+f32 D_001F1BF0__grp[0x4] __attribute__((aligned(16))) = { 0.0f, 0.0f, 1.0f, 1.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/game_main_data.c): D_001F1C00__grp: D_001F1C00@0x0 */
+f32 D_001F1C00__grp[0x4] __attribute__((aligned(16))) = { 0.0f, 1.0f, 0.0f, 1.0f };
+#endif

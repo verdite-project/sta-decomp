@@ -157,12 +157,22 @@ extern Q2_Option_MainMenu_0_0018F940 D_001F2CE0;
 extern s32 D_001F2CD0[];
 extern f32 D_001F2A90[];
 extern Q2_Option_ResetLayoutA_0_00190340 D_001F2D60;
+#ifndef NONMATCHING
 extern f32 D_001F2B00[];
+#else
+/* data twins (src/game/data/save_menu_data.c): D_001F2B00 */
+static f32 D_001F2B00[0x8] = { 0.0f, 5.745e-42f, 0.33f, 5.747e-42f, 0.67f, 5.748e-42f, 1.0f, 5.75e-42f };
+#endif
 extern s32 D_00201D10;
 extern s32 D_00201D18;
 extern Q2_Option_ResetLayoutB_0_00190490 D_001F2D40;
 extern s32 D_001F2D30[];
+#ifndef NONMATCHING
 extern f32 D_001F2B20[];
+#else
+/* data twins (src/game/data/save_menu_data.c): D_001F2B20 */
+static f32 D_001F2B20[0x8] = { 1.0f, 5.745e-42f, 1.33f, 5.747e-42f, 1.67f, 5.748e-42f, 2.0f, 5.75e-42f };
+#endif
 extern s32 D_00201D08;
 extern s32 D_00201CF8[2];
 extern s32 D_001F2B70[];
@@ -1531,11 +1541,6 @@ extern u8 D_001FD068[];
 extern u8 D_001FD078[];
 extern u8 D_001FD088[];
 extern u8 D_001FD090[];
-/* data twins (src/game/data/save_menu_data.c): D_001F2A90, D_001F2AC0, D_001F2B00, D_001F2B20 */
-f32 D_001F2A90[0xc] = { -2.0f, 5.605e-42f, -1.0f, 5.607e-42f, 0.0f, 5.608e-42f, 1.0f, 5.61e-42f, 2.0f, 5.611e-42f, 0.0f, 0.0f };
-f32 D_001F2AC0[0x10] = { -4.0f, 5.605e-42f, -3.0f, 5.607e-42f, -2.0f, 5.608e-42f, -1.0f, 5.61e-42f, 0.0f, 5.611e-42f, 1.0f, 5.612e-42f, 1.5f, 5.614e-42f, 2.0f, 5.615e-42f };
-f32 D_001F2B00[0x8] = { 0.0f, 5.745e-42f, 0.33f, 5.747e-42f, 0.67f, 5.748e-42f, 1.0f, 5.75e-42f };
-f32 D_001F2B20[0x8] = { 1.0f, 5.745e-42f, 1.33f, 5.747e-42f, 1.67f, 5.748e-42f, 2.0f, 5.75e-42f };
 /* data twins (src/game/data/option_lerp_data.c): D_001F2B50, D_001F2B60, D_001F2B70, D_001F2B80, D_001F2B90, D_001F2BB0, D_001F2CD0, D_001F2D00, D_001F2D30 */
 s32 D_001F2B50[0x4] = { (s32)gStrMono_001FCE60, (s32)gStrStereo_001FCE68, (s32)D_001FCE70, 0 };
 s32 D_001F2B60[0x4] = { (s32)gStrSound_001FCE88, (s32)D_001FCE90, (s32)D_001FCEA0, 0 };
@@ -1608,4 +1613,101 @@ u8 D_001FCF30[0x10] __attribute__((aligned(8))) = { 0x83, 0x5e, 0x83, 0x43, 0x83
 #pragma explicit_zero_data on
 /* data twins (src/game/data/option_rodata.c): D_001FCF40 */
 u8 D_001FCF40[0x10] __attribute__((aligned(8))) = { 0x83, 0x5e, 0x83, 0x43, 0x83, 0x76, 0x82, 0x52, 0, 0, 0, 0, 0, 0, 0, 0 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/option_lerp_data.c): D_001F2C10__grp: D_001F2C10@0x0 */
+f32 D_001F2C10__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/option_lerp_data.c): D_001F2C30__grp: D_001F2C30@0x0 */
+f32 D_001F2C30__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/option_lerp_data.c): D_001F2C50__grp: D_001F2C50@0x0 */
+f32 D_001F2C50__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/option_lerp_data.c): D_001F2C70__grp: D_001F2C70@0x0 */
+f32 D_001F2C70__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/option_lerp_data.c): D_001F2C90__grp: D_001F2C90@0x0 */
+f32 D_001F2C90__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/option_lerp_data.c): D_001F2CB0__grp: D_001F2CB0@0x0 */
+f32 D_001F2CB0__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/option_lerp_data.c): D_001F2CE0__grp: D_001F2CE0@0x0 */
+s32 D_001F2CE0__grp[0x8] __attribute__((aligned(16))) = { 5, 0, 0, (s32)D_001F2A90, 5, 0, 0, (s32)OptionProc_DrawMain_0_00191420 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/option_lerp_data.c): D_001F2D10__grp: D_001F2D10@0x0 */
+s32 D_001F2D10__grp[0x8] __attribute__((aligned(16))) = { 5, 1, 0, (s32)D_001F2AC0, 8, 0, 0, (s32)OptionProc_DrawController_0_00191110 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/option_lerp_data.c): D_001F2D40__grp: D_001F2D40@0x0 */
+s32 D_001F2D40__grp[0x8] __attribute__((aligned(16))) = { 5, 3, 0, (s32)D_001F2AC0, 8, 0, 0, (s32)OptionProc_DrawScreen_0_00190DC0 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/option_lerp_data.c): D_001F2D60__grp: D_001F2D60@0x0 */
+s32 D_001F2D60__grp[0x8] __attribute__((aligned(16))) = { 5, 2, 0, (s32)D_001F2AC0, 8, 0, 0, (s32)OptionProc_DrawSound_0_00190A50 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/option_lerp_data.c): D_001F2D80__grp: D_001F2D80@0x0 */
+f32 D_001F2D80__grp[0x4] __attribute__((aligned(16))) = { 0.0f, 0.0f, 640.0f, 480.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/option_lerp_data.c): D_001F2D90__grp: D_001F2D90@0x0 */
+f32 D_001F2D90__grp[0x4] __attribute__((aligned(16))) = { 0.0f, 0.0f, 128.0f, 128.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/sdata.c): D_00201D10__grp: D_00201D10@0x0 */
+s32 D_00201D10__grp[0x2] __attribute__((aligned(16))) = { 0, 1 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/save_menu_data.c): D_001F2A90, D_001F2AC0 */
+f32 D_001F2A90[0xc] = { -2.0f, 5.605e-42f, -1.0f, 5.607e-42f, 0.0f, 5.608e-42f, 1.0f, 5.61e-42f, 2.0f, 5.611e-42f, 0.0f, 0.0f };
+f32 D_001F2AC0[0x10] = { -4.0f, 5.605e-42f, -3.0f, 5.607e-42f, -2.0f, 5.608e-42f, -1.0f, 5.61e-42f, 0.0f, 5.611e-42f, 1.0f, 5.612e-42f, 1.5f, 5.614e-42f, 2.0f, 5.615e-42f };
+/* data twins (src/game/data/option_rodata.c): D_001FCEE0, D_001FCF50, D_001FCF68, D_001FCF80, D_001FCF98, D_001FCFA0, D_001FCFB0, D_001FCFC0, D_001FCFC8, D_001FCFD8, gStr169_001FCEE8 */
+u8 D_001FCEE0[0x8] = { 0x34, 0x3a, 0x33, 0, 0, 0, 0, 0 };
+u8 D_001FCF50[0x18] __attribute__((aligned(8))) = { 0x83, 0x5e, 0x83, 0x43, 0x83, 0x76, 0x82, 0x52, 0x81, 0x45, 0x83, 0x8a, 0x83, 0x6f, 0x81, 0x5b, 0x83, 0x58, 0, 0, 0, 0, 0, 0 };
+u8 D_001FCF68[0x18] __attribute__((aligned(8))) = { 0x83, 0x5e, 0x83, 0x43, 0x83, 0x76, 0x82, 0x53, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+u8 D_001FCF80[0x18] __attribute__((aligned(8))) = { 0x83, 0x5e, 0x83, 0x43, 0x83, 0x76, 0x82, 0x53, 0x81, 0x45, 0x83, 0x8a, 0x83, 0x6f, 0x81, 0x5b, 0x83, 0x58, 0, 0, 0, 0, 0, 0 };
+u8 D_001FCF98[0x8] = { 0x88, 0xda, 0x93, 0xae, 0, 0, 0, 0 };
+u8 D_001FCFA0[0x10] __attribute__((aligned(8))) = { 0x88, 0xda, 0x93, 0xae, 0x81, 0x45, 0x90, 0xf9, 0x89, 0xf1, 0, 0, 0, 0, 0, 0 };
+u8 D_001FCFB0[0x10] __attribute__((aligned(8))) = { 0x88, 0xda, 0x93, 0xae, 0x81, 0x45, 0x8e, 0x8b, 0x93, 0x5f, 0, 0, 0, 0, 0, 0 };
+u8 D_001FCFC0[0x8] = { 0x90, 0xf9, 0x89, 0xf1, 0, 0, 0, 0 };
+u8 D_001FCFC8[0x10] __attribute__((aligned(8))) = { 0x8d, 0xb6, 0x95, 0xbd, 0x8d, 0x73, 0x88, 0xda, 0x93, 0xae, 0, 0, 0, 0, 0, 0 };
+u8 D_001FCFD8[0x10] __attribute__((aligned(8))) = { 0x89, 0x45, 0x95, 0xbd, 0x8d, 0x73, 0x88, 0xda, 0x93, 0xae, 0, 0, 0, 0, 0, 0 };
+u8 gStr169_001FCEE8[0x5] = "16:9\000";
 #endif

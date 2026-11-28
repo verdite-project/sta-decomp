@@ -42,7 +42,9 @@ extern u8 D_004AA440[];
 extern u8 D_004B4D10[];
 
 f32 D_00201B80 __attribute__((aligned(16))) = 0.3333333f;
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ee/gs_text_emit_glyph.c */
 s32 D_00201B84[0x1] = { 0x3d7fffff };
+#endif
 f32 D_00201B88 = 16.666666f;
 f32 D_00201B8C = 33.333332f;
 f32 D_00201B90[0x1c] = { 0.79999995f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f };
@@ -157,7 +159,9 @@ s32 D_00201CF8[0x2] = { (s32)((u8 *)D_001FCEF0 + 0x10), (s32)((u8 *)D_001FCEF0 +
 s32 D_00201D00[0x2] = { (s32)((u8 *)D_001FD090 + 0x8), (s32)((u8 *)D_001FD090 + 0x10) };
 s32 D_00201D08[0x2] = { 2, 0 };
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/option.c */
 s32 D_00201D10[0x2] = { 0, 1 };
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/option.c */
 s32 D_00201D18 = 1;
 f32 D_00201D1C = -1.0f;
@@ -218,7 +222,9 @@ s32 D_00201D94 = -1;
 f32 D_00201D98 = -20.0f;
 f32 D_00201D9C = 30.0f;
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/title.c */
 s32 D_00201DA0[0x2] = { 0, 1 };
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/enemy/enemy_mgr_update.c */
 s32 D_00201DA8 = -1;
 #endif
@@ -247,7 +253,9 @@ s32 D_00201E24[0x1] = { 0x80 };
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/hud_warning.c */
 u16 D_00201E28[0x4] = { 0x6040, 0, 0, 0 };
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/player/player_status.c */
 s32 D_00201E30[0x2] = { 0x5a, 0x2d };
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/sound_driver_call.c */
 s32 D_00201E38 = -1;
 #endif
@@ -266,14 +274,22 @@ s32 D_00201E50 = -1;
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/map_se_stream.c */
 s32 D_00201E54 = -1;
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ee/gs_text_alloc.c */
 s32 D_00201E58 = 0;
+#endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ee/gs_text_emit_quad.c */
 s32 gGsText_00201E5C[0x1] = { 0 };
+#endif
 s32 gGsTextStyle_00201E60[0x2] = { 0, 0 };
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ee/credits_cb_draw_text.c */
 u16 D_00201E68[0x4] = { 0, 0, 0, 0 };
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/movie.c */
 s32 D_00201E70 = 1;
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/movie.c */
 s32 D_00201E74[0x1] = { -0x48ff0000 };
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/map_sheet.c */
 s32 D_00201E78[0x2] = { -1, 0 };
 #endif

@@ -52,3 +52,9 @@ void Player_UpdateStatusEffects_0_001C9FF0(void) {
         }
     }
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/sdata.c): D_00201E30__grp: D_00201E30@0x0 */
+s32 D_00201E30__grp[0x2] __attribute__((aligned(16))) = { 0x5a, 0x2d };
+#endif

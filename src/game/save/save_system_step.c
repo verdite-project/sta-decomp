@@ -743,9 +743,6 @@ void SaveSys_ClassifyEntry_2_001E8310(s32 idx, s32 *pa, s32 *pb) {
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/save_system_step_rodata.c): D_00201760, D_00201770 */
-char D_00201760[0x10] __attribute__((aligned(4))) = { 0x42, 0x49, 0x53, 0x4c, 0x50, 0x53, 0x2d, 0x32, 0x35, 0x32, 0x31, 0x37, 0, 0, 0, 0 };
-char D_00201770[0x8] __attribute__((aligned(4))) = { 0x2f, 0x25, 0x73, 0x2f, 0x2a, 0, 0, 0 };
 /* data twins (src/game/data/sbss.c): D_002023C4, D_002023C8, D_002023D4, D_002023D8, D_002023E0, D_002023E4, D_002023E8 */
 s32 D_002023C4;
 s32 D_002023C8;
@@ -763,4 +760,11 @@ u8 D_004BCF40[0x3d0];
 #pragma explicit_zero_data on
 /* data group (src/game/data/save_system_start_bss.c): D_004BC394__grp: D_004BC394@0x0, D_004BC398@0x4, D_004BC39C@0x8 */
 u8 D_004BC394__grp[0xc] __attribute__((aligned(4)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/save_system_step_rodata.c): D_00201760, D_00201770 */
+char D_00201760[0x10] __attribute__((aligned(4))) = { 0x42, 0x49, 0x53, 0x4c, 0x50, 0x53, 0x2d, 0x32, 0x35, 0x32, 0x31, 0x37, 0, 0, 0, 0 };
+char D_00201770[0x8] __attribute__((aligned(4))) = { 0x2f, 0x25, 0x73, 0x2f, 0x2a, 0, 0, 0 };
 #endif

@@ -884,3 +884,21 @@ s32 D_00202048;
 /* data group (src/game/data/ui_anim_bss.c): D_00486990__grp: D_00486990@0x0, D_0048699C@0xc, D_004869A0@0x10, D_004869B0@0x20, D_004869B4@0x24, D_004869D0@0x40 */
 u8 D_00486990__grp[0x720] __attribute__((aligned(16)));
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/ui_global_data.c): D_001F25B0__grp: D_001F25B0@0x0 */
+f32 D_001F25B0__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/ui_global_data.c): D_001F25D0__grp: D_001F25D0@0x0 */
+f32 D_001F25D0__grp[0x4] __attribute__((aligned(16))) = { 40.0f, 83.0f, 52.0f, 157.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/ui_global_data.c): D_001F25E0__grp: D_001F25E0@0x0 */
+f32 D_001F25E0__grp[0x4] __attribute__((aligned(16))) = { 40.0f, 180.0f, 52.0f, 254.0f };
+#endif

@@ -15,9 +15,24 @@ typedef struct {
     s32 name; s32 xa4; s32 size; s32 xac; s32 xb0; s32 xb4; s32 data;
 } T;
 extern T gMcState_004B63B8;
+#ifndef NONMATCHING
 extern u32 D_004B6380[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): D_004B6380 */
+static u32 D_004B6380[0x1];
+#endif
+#ifndef NONMATCHING
 extern u32 D_004B6384[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): D_004B6384 */
+static u32 D_004B6384[0x1];
+#endif
+#ifndef NONMATCHING
 extern s32 D_004B6388[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): D_004B6388 */
+static s32 D_004B6388[0x1];
+#endif
 extern s32 D_004B6474[];
 extern u8 D_004B6478[];
 extern volatile s32 gMcDirBuf_004B68C0[];
@@ -374,4 +389,10 @@ s32 Mc_StepWriteChecked_3_001D4170(void)
 }
 #else
 INCLUDE_ASM(Mc_StepWriteChecked_3_001D4170);
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/pad_get_connected_bss_004B5DD0.c): gMcDirBuf_004B68C0__grp: gMcDirBuf_004B68C0@0x0, D_004B68D0@0x10 */
+u8 gMcDirBuf_004B68C0__grp[0x40] __attribute__((aligned(16)));
 #endif

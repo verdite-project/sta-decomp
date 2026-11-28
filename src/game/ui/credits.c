@@ -86,7 +86,12 @@ extern s32 D_00201E4C;
 /* data twins (src/game/data/sdata.c): D_00201E4C */
 static s32 D_00201E4C = (s32)((u8 *)D_001FE714 + 0x4);
 #endif
+#ifndef NONMATCHING
 extern s32 D_001FE730[];
+#else
+/* data twins (src/game/data/shop_menu_rodata.c): D_001FE730 */
+static s32 D_001FE730[0x6] __attribute__((aligned(4))) = { 0x5241545c, 0x5c544547, 0x5f415453, 0x412e4954, 0x5844, 0 };
+#endif
 void Credits_Update_0_001DCC30(O *o);
 void CreditsProc_DrawText_0_001DCF80(A *o, s32 idx, u32 kind);
 void TitleProc_DrawPushStart_0_001DD510(s8 *a0, s32 a1, s32 a2);
@@ -399,4 +404,16 @@ f32 D_00202334;
 u8 D_00202348;
 s16 D_00202350;
 s16 D_00202354;
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/player_status_data.c): D_001F39F0__grp: D_001F39F0@0x0 */
+f32 D_001F39F0__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/shop_menu_rodata.c): D_001FE714__grp: D_001FE714@0x0 */
+s32 D_001FE714__grp[0x7] __attribute__((aligned(4))) = { 0, 0x48535550, 0x41545320, 0x5452, 0, 0, 0 };
 #endif

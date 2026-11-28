@@ -48,3 +48,9 @@ s32 GsText_EmitQuad_1_001E3790(A *a) {
     }
     return 0;
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sdata.c): gGsText_00201E5C */
+G *gGsText_00201E5C = 0;
+#endif

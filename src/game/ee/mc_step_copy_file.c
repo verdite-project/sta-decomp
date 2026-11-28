@@ -2,10 +2,30 @@
 #include "game/data.h"
 #include "game/ee.h"
 typedef struct { u8 p[0x10]; u32 x10; } DE;
+#ifndef NONMATCHING
 extern s32 D_004B63A4[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): D_004B63A4 */
+static s32 D_004B63A4[0x1];
+#endif
+#ifndef NONMATCHING
 extern s32 D_004B63A8[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): D_004B63A8 */
+static s32 D_004B63A8[0x1];
+#endif
+#ifndef NONMATCHING
 extern s32 D_004B63AC[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): D_004B63AC */
+static s32 D_004B63AC[0x1];
+#endif
+#ifndef NONMATCHING
 extern s32 D_004B63B0[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): D_004B63B0 */
+static s32 D_004B63B0[0x1];
+#endif
 extern DE gMcDirBuf_004B68C0[];
 s32 Mc_StepGetInfo_3_001D3BF0(s32, s32, s32 *, s32 *, s32 *, s32);
 s32 sceOpen(s8 *, s32);

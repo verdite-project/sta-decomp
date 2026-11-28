@@ -792,3 +792,52 @@ void Title_StartNewGame_0_001A4930(Obj_Title_CheckSaveData_1_001A4570 *o)
 /* data twins (src/game/data/save_byte_bss.c): D_004A43A0 */
 s16 D_004A43A0[0x6];
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+extern u8 D_001F3320[];
+/* data group (src/game/data/title_nop_data.c): D_001F3360__grp: D_001F3360@0x0 */
+s32 D_001F3360__grp[0x8] __attribute__((aligned(16))) = { 0, 5, 0, (s32)D_001F3320, 7, -0x3fc00000, 0, 0 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/sdata.c): D_00201DA0__grp: D_00201DA0@0x0 */
+s32 D_00201DA0__grp[0x2] __attribute__((aligned(16))) = { 0, 1 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/save_byte_bss.c): D_004A43AC__grp: D_004A43AC@0x0 */
+u8 D_004A43AC__grp[0x4] __attribute__((aligned(4)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/title_nop_data.c): gStrLoadGame_001F3390__grp: gStrLoadGame_001F3390@0x0 */
+char gStrLoadGame_001F3390__grp[0xd] __attribute__((aligned(16))) = "LOAD GAME\000\000\000\000";
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/title_nop_data.c): gStrNewGame_001F3380__grp: gStrNewGame_001F3380@0x0 */
+char gStrNewGame_001F3380__grp[0xd] __attribute__((aligned(16))) = "NEW GAME\000\000\000\000\000";
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/title_nop_data.c): D_001F3320 */
+u8 D_001F3320[0x40] = { 0, 0, 0x40, 0xc0, 0xa6, 0xf, 0, 0, 0, 0, 0, 0xc0, 0xa5, 0xf, 0, 0, 0, 0, 0x80, 0xbf, 0xa4, 0xf, 0, 0, 0, 0, 0, 0, 0xa3, 0xf, 0, 0, 0, 0, 0x80, 0x3f, 0xa2, 0xf, 0, 0, 0, 0, 0, 0x40, 0xa1, 0xf, 0, 0, 0, 0, 0x40, 0x40, 0xa0, 0xf, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/enemy_list_rodata.c): D_001FD8D0__grp: D_001FD8D0@0x0 */
+char D_001FD8D0__grp[0x1e] __attribute__((aligned(16))) = "cdrom0:\\TARGET\\PROLOGUE.PSS;1\000";
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/title_rodata.c): gStrCdrom0TargetOpeningPss1_001FD870__grp: gStrCdrom0TargetOpeningPss1_001FD870@0x0 */
+char gStrCdrom0TargetOpeningPss1_001FD870__grp[0x1d] __attribute__((aligned(16))) = "cdrom0:\\TARGET\\OPENING.PSS;1\000";
+#endif

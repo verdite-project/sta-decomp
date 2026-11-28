@@ -160,3 +160,9 @@ void Font_EmitGlyph_0_00181310(s32 x, s32 y, s8 ch, u8 *col, s32 **pp) {
 /* data group (src/game/data/ui_anim_bss.c): D_004880B0__grp: D_004880B0@0x0, D_004880B4@0x4 */
 u8 D_004880B0__grp[0x400] __attribute__((aligned(16)));
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/ui_global_data.c): D_001F25F0__grp: D_001F25F0@0x0 */
+s32 D_001F25F0__grp[0x10] __attribute__((aligned(16))) = { -0x80000000, -0x7fefeff0, -0x7fdfdfe0, -0x7fcfcfd0, -0x7fbfbfc0, -0x7fafafb0, -0x7f9f9fa0, -0x7f8f8f90, -0x7f000001, -0x7f000001, -0x7f000001, -0x7f000001, -0x7f000001, -0x7f000001, -0x7f000001, -0x7f000001 };
+#endif

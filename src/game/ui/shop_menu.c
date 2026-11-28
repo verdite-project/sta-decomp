@@ -74,11 +74,36 @@ extern S D_001F3AB0[] __attribute__((aligned(16)));
 /* data twins (src/game/data/map_se_stream_data.c): D_001F3AB0 */
 static S D_001F3AB0[0x1] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
 #endif
+#ifndef NONMATCHING
 extern s8 D_001FE748[];
+#else
+/* data twins (src/game/data/shop_menu_rodata.c): D_001FE748 */
+static s8 D_001FE748[0x8] __attribute__((aligned(4))) = { 0x25, 0x33, 0x64, 0, 0, 0, 0, 0 };
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FE750[];
+#else
+/* data twins (src/game/data/shop_menu_rodata.c): D_001FE750 */
+static s8 D_001FE750[0x8] __attribute__((aligned(4))) = { 0x2d, 0x2d, 0x2d, 0, 0, 0, 0, 0 };
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FE758[];
+#else
+/* data twins (src/game/data/shop_menu_rodata.c): D_001FE758 */
+static s8 D_001FE758[0x8] __attribute__((aligned(4))) = { 0x2f, 0x2d, 0x2d, 0x2d, 0, 0, 0, 0 };
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FE760[];
+#else
+/* data twins (src/game/data/shop_menu_rodata.c): D_001FE760 */
+static s8 D_001FE760[0x8] __attribute__((aligned(4))) = "/%d\000\000\000\000\000";
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FE768[];
+#else
+/* data twins (src/game/data/shop_menu_rodata.c): D_001FE768 */
+static s8 D_001FE768[0x8] __attribute__((aligned(4))) = { 0x25, 0x33, 0x2e, 0x31, 0x66, 0, 0, 0 };
+#endif
 extern s32 D_004BABB0[];
 extern s32 D_004BABC8[];
 #ifndef NONMATCHING
@@ -980,4 +1005,10 @@ f32 D_004BABF4[0x6] __attribute__((aligned(4)));
 #pragma explicit_zero_data on
 /* data group (src/game/data/map_se_stream_data.c): D_001F3A50__grp: D_001F3A50@0x0, D_001F3A60@0x10 */
 f32 D_001F3A50__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/map_se_stream_data.c): D_001F3A90__grp: D_001F3A90@0x0 */
+f32 D_001F3A90__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
 #endif

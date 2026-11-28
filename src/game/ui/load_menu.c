@@ -1102,3 +1102,15 @@ f32 D_004A118C[0x1];
 s32 D_004A1198[0x1];
 s32 D_004A119C[0x1];
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/option_lerp_data.c): D_001F2DA0__grp: D_001F2DA0@0x0 */
+f32 D_001F2DA0__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/load_menu_bss_004A1120.c): D_004A1194__grp: D_004A1194@0x0 */
+u8 D_004A1194__grp[0x4] __attribute__((aligned(4)));
+#endif

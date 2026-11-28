@@ -274,3 +274,9 @@ f32 D_0030C420[0x1];
 /* data group (src/game/data/point_light_bss.c): D_0030C48C__grp: D_0030C48C@0x0, D_0030C490@0x4 */
 u8 D_0030C48C__grp[0x14] __attribute__((aligned(4)));
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/point_light_bss.c): D_0030C4C0__grp: D_0030C4C0@0x0 */
+u8 D_0030C4C0__grp[0xc20] __attribute__((aligned(16)));
+#endif

@@ -251,7 +251,9 @@ the object from its owner instead:
   as `NAME = BLOB + OFF` (`tools/rel_syms.py` writes those lines only where
   the blob is linked, so the matching build has none). The checker compares
   each member's slice of the blob. Small-data (`.sbss`/`.sdata`) groups
-  stay: one blob would leave the gp range.
+  stay: one blob would leave the gp range. An object the twin writer cannot
+  write in the owner's type (a qword union, a type clash, no `extern`) moves
+  as a one-object group the same way: no C type has to fit.
 - **Pinned** objects stay where the data unit has them in both builds: the
   code can reach past them into their neighbours, so the neighbours must not
   move. That is an object whose address is cast (to an integer or another
@@ -264,11 +266,12 @@ the object from its owner instead:
 <!-- data-owners:start -->
 | objects (2026-11-28) | bss | data | rodata | sbss | sdata | all |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| NONMATCHING twin or group in its owner | 617 | 81 | 290 | 312 | 111 | 1411 |
-| one user, not split yet | 26 | 58 | 17 | 2 | 10 | 113 |
-| several users, not split yet | 8 | 5 | 0 | 0 | 2 | 15 |
-| pinned | 106 | 22 | 44 | 3 | 0 | 175 |
-| used by asm only / by data only / unused | 43 | 14 | 39 | 7 | 1 | 104 |
+| NONMATCHING twin or group in its owner | 663 | 152 | 325 | 314 | 119 | 1573 |
+| not split yet | 0 | 0 | 3 | 0 | 4 | 7 |
+| pinned | 95 | 22 | 24 | 3 | 0 | 144 |
+| used by asm only | 5 | 1 | 0 | 7 | 1 | 14 |
+| used by other data only | 2 | 0 | 0 | 0 | 0 | 2 |
+| unused | 35 | 5 | 38 | 0 | 0 | 78 |
 | total | 800 | 180 | 390 | 324 | 124 | 1818 |
 <!-- data-owners:end -->
 

@@ -162,3 +162,9 @@ s32 Mc_StepRead_4_001D5F88(void) {
     }
     return 0;
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): D_004B63B4 */
+s32 D_004B63B4[0x26] __attribute__((aligned(4)));
+#endif

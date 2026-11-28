@@ -54,7 +54,12 @@ extern Pack1952B0 **D_00202180;
 /* data twins (src/game/data/sbss.c): D_00202180 */
 static Pack1952B0 **D_00202180;
 #endif
+#ifndef NONMATCHING
 extern u8 D_001FD270[];
+#else
+/* data twins (src/game/data/databook_rodata.c): D_001FD270 */
+static u8 D_001FD270[0x8] = "MAP\000\000\000\000\000";
+#endif
 #ifndef NONMATCHING
 extern u8 D_001FD288[];
 #else
@@ -608,4 +613,25 @@ Tbl *D_0020215C;
 s32 *D_00202164;
 s16 *D_00202174;
 E_ItemSort_GetEntry_0_00195B80 *D_0020217C;
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+extern u8 D_001F2E00[];
+/* data group (src/game/data/load_menu_draw_data.c): D_001F2E40__grp: D_001F2E40@0x0 */
+s32 D_001F2E40__grp[0x8] __attribute__((aligned(16))) = { 0, 5, 0, (s32)D_001F2E00, 7, -0x3fc00000, 0, 0 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/sbss.c): D_00202158__grp: D_00202158@0x0 */
+u8 D_00202158__grp[0x4] __attribute__((aligned(8)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/load_menu_draw_data.c): D_001F2E00 */
+u8 D_001F2E00[0x40] = { 0, 0, 0x40, 0xc0, 0xa6, 0xf, 0, 0, 0, 0, 0, 0xc0, 0xa5, 0xf, 0, 0, 0, 0, 0x80, 0xbf, 0xa4, 0xf, 0, 0, 0, 0, 0, 0, 0xa3, 0xf, 0, 0, 0, 0, 0x80, 0x3f, 0xa2, 0xf, 0, 0, 0, 0, 0, 0x40, 0xa1, 0xf, 0, 0, 0, 0, 0x40, 0x40, 0xa0, 0xf, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+/* data twins (src/game/data/databook_rodata.c): D_001FD268 */
+s8 D_001FD268[0x8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
 #endif

@@ -49,7 +49,9 @@ s32 D_004A11A0[0x80];
 s32 D_004A119C[0x1];
 s32 D_004A1198[0x1];
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/load_menu.c */
 u8 D_004A1194[0x4];
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/load_menu.c */
 f32 D_004A1190[0x1];
 u8 D_004A118C[0x4];

@@ -35,7 +35,9 @@ s32 D_004A0FF4[0x1];
 s32 D_004A0FF0[0x1];
 s32 D_004A0FC0[0xc] __attribute__((aligned(4)));
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/menu_proc.c */
 u8 D_004A0F98[0x28] __attribute__((aligned(4))); /* also D_004A0F9C, D_004A0FAC */
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/menu_proc.c */
 u8 D_004A0F90[0x8] __attribute__((aligned(4)));
 #endif

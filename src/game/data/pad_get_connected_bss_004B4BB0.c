@@ -27,7 +27,9 @@ u8 D_004B4C70[0x10];
 u8 D_004B4C60[0x10];
 u8 D_004B4C50[0x10];
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/player/player.c */
 u8 D_004B4C40[0x10];
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/hud_marker.c */
 u8 D_004B4BE0[0x60];
 #endif

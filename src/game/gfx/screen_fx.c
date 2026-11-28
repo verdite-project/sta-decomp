@@ -866,3 +866,21 @@ f32 D_002F2070[0x2];
 /* data group (src/game/data/gs_packet_bss_002F1990.c): gWeatherState_002F19B0__grp: gWeatherState_002F19B0@0x0, D_002F19C0@0x10, D_002F19C4@0x14, D_002F19C8@0x18, D_002F19D4@0x24, D_002F19D8@0x28, D_002F19DC@0x2c, D_002F19E0@0x30, D_002F1A48@0x98 */
 u8 gWeatherState_002F19B0__grp[0xa0] __attribute__((aligned(16)));
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/screen_fx_flash_data.c): D_001F2040__grp: D_001F2040@0x0 */
+f32 D_001F2040__grp[0x4] __attribute__((aligned(16))) = { 0.0f, 0.0f, 0.0f, 1.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/screen_fx_flash_data.c): D_001F2050__grp: D_001F2050@0x0 */
+f32 D_001F2050__grp[0x4] __attribute__((aligned(16))) = { 0.0f, 0.0f, 0.0f, 1.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/screen_fx_bss.c): D_002F2078__grp: D_002F2078@0x0 */
+u8 D_002F2078__grp[0x8] __attribute__((aligned(8)));
+#endif

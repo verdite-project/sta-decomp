@@ -11,18 +11,28 @@ extern s32 D_001F3320[];
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/storage_draw.c */
 s32 D_001F32A0[0x4] = { 0, 1, 2, 3 };
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/storage_draw.c */
 s32 D_001F32B0[0x10] = { -0x3fc00000, 0xfa6, -0x40000000, 0xfa5, -0x40800000, 0xfa4, 0, 0xfa3, 0x3f800000, 0xfa2, 0x40000000, 0xfa1, 0x40400000, 0xfa0, 0, 0 };
+#endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/storage_draw.c */
 s32 D_001F32F0[0x8] = { 0, 5, 0, (s32)D_001F32B0, 7, -0x3fc00000, 0, 0 };
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/title.c */
 Vec D_001F3310 = { 0.0f, 0.0f, 639.0f, 447.0f };
-#endif
 s32 D_001F3320[0x10] = { -0x3fc00000, 0xfa6, -0x40000000, 0xfa5, -0x40800000, 0xfa4, 0, 0xfa3, 0x3f800000, 0xfa2, 0x40000000, 0xfa1, 0x40400000, 0xfa0, 0, 0 };
+#endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/title.c */
 s32 D_001F3360[0x8] = { 0, 5, 0, (s32)D_001F3320, 7, -0x3fc00000, 0, 0 };
 char gStrNewGame_001F3380[0xd] = "NEW GAME\000\000\000\000\000";
+#endif
 u8 D_001F338D[0x3] __attribute__((aligned(1))) = { 0, 0, 0 };
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/title.c */
 char gStrLoadGame_001F3390[0xd] = "LOAD GAME\000\000\000\000";
+#endif
 u8 D_001F339D[0x3] __attribute__((aligned(1))) = { 0, 0, 0 };
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/enemy/enemy_list.c */
 s32 D_001F33A0[0x100] = { (s32)Player_LoadModel_1_001C9CD0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/enemy/enemy_list.c */
 Vec D_001F37A0 = { 128.0f, 128.0f, 128.0f, 1.0f };
 #endif

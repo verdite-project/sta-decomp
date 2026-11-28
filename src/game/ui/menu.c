@@ -57,7 +57,12 @@ extern s32 D_002020E0;
 /* data twins (src/game/data/sbss.c): D_002020E0 */
 static s32 D_002020E0;
 #endif
+#ifndef NONMATCHING
 extern s32 D_00497B60[];
+#else
+/* data twins (src/game/data/ui_gauge_bss.c): D_00497B60 */
+static s32 D_00497B60[0x8];
+#endif
 #ifndef NONMATCHING
 extern f32 D_004A0B10[];
 #else
@@ -967,4 +972,80 @@ s8 D_004A0B20[0x4];
 u8 D_004A0B28[0x4];
 s8 D_004A0B2C[0x4];
 s32 D_004A0B30[0x8] __attribute__((aligned(4)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/menu_draw_wrap_data.c): D_001F27B0__grp: D_001F27B0@0x0 */
+f32 D_001F27B0__grp[0x4] __attribute__((aligned(16))) = { 0.0f, 0.0f, 640.0f, 448.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/menu_draw_wrap_data.c): D_001F27C0__grp: D_001F27C0@0x0 */
+f32 D_001F27C0__grp[0x4] __attribute__((aligned(16))) = { 0.0f, 0.0f, 256.0f, 256.0f };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+void Credits_Update_0_001DCC30(void);
+void Databook_UpdateWrap_0_00195410(void);
+void DbChar_UpdateWrap_0_00196930(void);
+void DbItem_Open_0_001979C0(void);
+void DbMap_UpdateWrap_0_00198BD0(void);
+void Ending_HandleEvent_0_001EDCC0(void);
+void Ending_OpenLoadMenu_0_00194F60(void);
+void Ending_Update_0_001ED9A0(void);
+void Equip_Open_0_001997A0(void);
+void GameOver_Update_2_0019EDC0(void);
+void Hud_Update_1_0019B560(void);
+void ItemMenu_Open_0_0019D290(void);
+void LoadMenu_HandleEvent_0_00192900(void);
+void LoadMenu_Open_0_001939B0(void);
+void Loading_Nop_0_0018E440(void);
+void MapSheet_Update_0_001ED740(void);
+void MenuProc_CheckReady_0_0018B2E0(void);
+void Option_Update_2_0018EAE0(void);
+void PauseMenu_Open_0_0019E2F0(void);
+void Pause_HandleEvent_0_0019E810(void);
+void SaveMenu_HandleEvent_0_0018C4C0(void);
+void SaveMenu_Open_1_0018D360(void);
+void Shop_Open_1_001A1B40(void);
+void Storage_Open_0_001A32A0(void);
+void TitleMenu_Update_1_001A4010(void);
+void Title_LoadGame_0_001A35B0(void);
+void Title_ResetOnEvent_0_001A3C70(void);
+void Title_StartNewGame_0_001A4930(void);
+void Title_UpdateWrap_0_001A3EB0(void);
+/* data group (src/game/data/menu_draw_wrap_data.c): D_001F27D0__grp: D_001F27D0@0x0 */
+s32 D_001F27D0__grp[0x2c] __attribute__((aligned(16))) = { (s32)MenuProc_CheckReady_0_0018B2E0, (s32)Title_LoadGame_0_001A35B0, 0, (s32)Title_UpdateWrap_0_001A3EB0, (s32)Title_ResetOnEvent_0_001A3C70, (s32)Credits_Update_0_001DCC30, (s32)TitleMenu_Update_1_001A4010, (s32)Title_StartNewGame_0_001A4930, 0, (s32)SaveMenu_Open_1_0018D360, (s32)LoadMenu_Open_0_001939B0, (s32)SaveMenu_HandleEvent_0_0018C4C0, (s32)LoadMenu_HandleEvent_0_00192900, (s32)Option_Update_2_0018EAE0, 0, 0, 0, (s32)MapSheet_Update_0_001ED740, (s32)Hud_Update_1_0019B560, (s32)Pause_HandleEvent_0_0019E810, (s32)PauseMenu_Open_0_0019E2F0, (s32)ItemMenu_Open_0_0019D290, (s32)Equip_Open_0_001997A0, 0, (s32)Databook_UpdateWrap_0_00195410, (s32)DbMap_UpdateWrap_0_00198BD0, (s32)DbChar_UpdateWrap_0_00196930, (s32)DbItem_Open_0_001979C0, 0, 0, 0, (s32)Storage_Open_0_001A32A0, 0, 0, (s32)Shop_Open_1_001A1B40, 0, (s32)Ending_Update_0_001ED9A0, (s32)Ending_HandleEvent_0_001EDCC0, 0, (s32)Loading_Nop_0_0018E440, (s32)GameOver_Update_2_0019EDC0, (s32)Ending_OpenLoadMenu_0_00194F60, 0, 0 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+void Credits_DrawFrame_0_001DC900(void);
+void Hud_DrawMain_0_0019A8B0(void);
+void Hud_Draw_0_0018E480(void);
+void LoadMenu_DrawFrame_0_00193880(void);
+void LoadMenu_DrawList_0_00191CB0(void);
+void MapSheet_Draw_0_001ED630(void);
+void MenuProc_DrawItemList_0_0018B860(void);
+void MenuProc_DrawList_0_0018B180(void);
+void Pause_DrawText_2_0019E7C0(void);
+void SaveMenu_DrawFrame_0_0018D1F0(void);
+void Title_DrawLogo_0_001A3CC0(void);
+void Title_Draw_0_001A3FB0(void);
+void Title_Nop_2_001A35A0(void);
+void Title_PlayOpening_2_001A3C10(void);
+void Title_PlayPrologue_2_001A4890(void);
+/* data group (src/game/data/menu_draw_wrap_data.c): D_001F2880__grp: D_001F2880@0x0 */
+s32 D_001F2880__grp[0x14] __attribute__((aligned(16))) = { (s32)MenuProc_DrawList_0_0018B180, (s32)Title_Nop_2_001A35A0, 0, (s32)Title_DrawLogo_0_001A3CC0, (s32)Title_PlayOpening_2_001A3C10, (s32)Credits_DrawFrame_0_001DC900, (s32)Title_Draw_0_001A3FB0, (s32)Title_PlayPrologue_2_001A4890, 0, (s32)SaveMenu_DrawFrame_0_0018D1F0, (s32)LoadMenu_DrawFrame_0_00193880, (s32)MenuProc_DrawItemList_0_0018B860, (s32)LoadMenu_DrawList_0_00191CB0, (s32)Hud_Draw_0_0018E480, 0, 0, 0, (s32)MapSheet_Draw_0_001ED630, (s32)Hud_DrawMain_0_0019A8B0, (s32)Pause_DrawText_2_0019E7C0 };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+void Credits_DrawBg_0_001DCE70(void);
+void Option_DrawFrame_0_0018E980(void);
+/* data group (src/game/data/menu_draw_wrap_data.c): D_001F2930__grp: D_001F2930@0x0 */
+s32 D_001F2930__grp[0x2c] __attribute__((aligned(16))) = { 0, 0, 0, 0, 0, (s32)Credits_DrawBg_0_001DCE70, (s32)Credits_DrawBg_0_001DCE70, 0, 0, (s32)Option_DrawFrame_0_0018E980, 0, (s32)Option_DrawFrame_0_0018E980, 0, (s32)Option_DrawFrame_0_0018E980, 0, 0, 0, (s32)Hud_DrawMain_0_0019A8B0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 #endif

@@ -19,3 +19,13 @@ void Task_InitAll_1_0014DB60(void)
     Task_SetCallback_1_001E0560(D_002F0F40, 0);
     Task_Start_1_001E0590(D_002F0F60, 0x38, 8, &q);
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+void Res_Free_0_0014DC10(void);
+void Res_Open_0_0014DC70(void);
+void Res_Read_1_0014DC50(void);
+void Res_ReleaseHandle_0_0014DC00(void);
+/* data group (src/game/data/task_run_data.c): D_001F2010__grp: D_001F2010@0x0 */
+s32 D_001F2010__grp[0x4] __attribute__((aligned(16))) = { (s32)Res_Open_0_0014DC70, (s32)Res_Read_1_0014DC50, (s32)Res_Free_0_0014DC10, (s32)Res_ReleaseHandle_0_0014DC00 };
+#endif

@@ -392,3 +392,9 @@ void Script_FetchOperand_2_00165940(void *a0, void *a1, u32 *a2, u32 *a3) {
 #undef Script_LoadLocalB_1_00165770
 #undef Script_LoadStack_0_001655C0
 #undef Script_LoadGlobal_0_001656B0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/game_main_data.c): D_001F1C50__grp: D_001F1C50@0x0 */
+u16 D_001F1C50__grp[0x8] __attribute__((aligned(16))) = { 0x1f4, 0x1f5, 0x1f6, 0x1f4, 0x1f5, 0x1f6, 0, 0 };
+#endif

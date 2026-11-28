@@ -43,6 +43,8 @@ s32 Credits_Load_1_001E3B48(u8 *data, s32 size) {
     return -1;
 }
 
-
-
-
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/save_system_start_bss.c): D_004BC2F0__grp: D_004BC2F0@0x0 */
+u8 D_004BC2F0__grp[0x70] __attribute__((aligned(16)));
+#endif

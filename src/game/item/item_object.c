@@ -1352,3 +1352,15 @@ s32 D_004B4B74[0x1];
 s32 *D_004B4B80[0x1];
 s32 D_004B4B88[0x2];
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/pad_get_connected_bss_004AC630.c): D_004AC970__grp: D_004AC970@0x0 */
+u8 D_004AC970__grp[0xd00] __attribute__((aligned(16)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/pad_get_connected_bss_004AC630.c): D_004AE370__grp: D_004AE370@0x0 */
+u8 D_004AE370__grp[0x3400] __attribute__((aligned(16)));
+#endif

@@ -571,3 +571,39 @@ void Mdl_UpdateBoneMatricesCur_0_00171540(s32 arg0, s32 arg1) {
     Mdl_UpdateBoneMatrices_0_00171270((void *) arg0, arg1, D_00201F2C);
 }
 #undef Mdl_UpdateBoneMatrices_0_00171270
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/texture_bss.c): D_0042D89C__grp: D_0042D89C@0x0 */
+u8 D_0042D89C__grp[0x4] __attribute__((aligned(4)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/texture_bss.c): D_0042D8A0__grp: D_0042D8A0@0x0 */
+u8 D_0042D8A0__grp[0x4] __attribute__((aligned(16)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/texture_bss.c): D_0042D8A4__grp: D_0042D8A4@0x0 */
+u8 D_0042D8A4__grp[0x4] __attribute__((aligned(4)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/texture_bss.c): D_0042D8A8__grp: D_0042D8A8@0x0 */
+u8 D_0042D8A8__grp[0x4] __attribute__((aligned(8)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/texture_bss.c): D_0042D8AC__grp: D_0042D8AC@0x0 */
+u8 D_0042D8AC__grp[0x4] __attribute__((aligned(4)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/texture_bss.c): D_0042D8B0__grp: D_0042D8B0@0x0 */
+u8 D_0042D8B0__grp[0x4] __attribute__((aligned(16)));
+#endif

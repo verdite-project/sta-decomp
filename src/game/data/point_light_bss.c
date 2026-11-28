@@ -14,7 +14,9 @@ u8 D_0030D0E8[0x88] __attribute__((aligned(8))); /* also D_0030D0EC */
 u8 D_0030D0E4[0x4];
 u8 D_0030D0E0[0x4];
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/point_light.c */
 u8 D_0030C4C0[0xc20]; /* also D_0030C4C2, D_0030C4C3, D_0030D0D4 */
+#endif
 u8 D_0030C4BC[0x4]; /* also D_0030C4BD, D_0030C4BE, D_0030C4BF */
 u8 D_0030C4B8[0x4];
 u8 D_0030C4B4[0x4];

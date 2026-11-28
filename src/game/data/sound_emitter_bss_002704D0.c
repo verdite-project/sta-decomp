@@ -4,4 +4,6 @@
    (CodeWarrior writes uninitialised objects in reverse order). */
 /* used by: no code by name (reached through other data) */
 
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/entity/actor.c */
 u8 D_002704D0[0x80];
+#endif

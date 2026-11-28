@@ -1,10 +1,30 @@
 #include "common.h"
 #include "game/ee.h"
 
+#ifndef NONMATCHING
 extern s32 D_004B638C[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): D_004B638C */
+static s32 D_004B638C[0x1];
+#endif
+#ifndef NONMATCHING
 extern s32 D_004B6390[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): D_004B6390 */
+static s32 D_004B6390[0x1];
+#endif
+#ifndef NONMATCHING
 extern s32 D_004B6394[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): D_004B6394 */
+static s32 D_004B6394[0x1];
+#endif
+#ifndef NONMATCHING
 extern s32 D_004B6398[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): D_004B6398 */
+static s32 D_004B6398[0x1];
+#endif
 s32 Mc_StepGetInfo_3_001D3BF0(s32, s32, s32 *, s32 *, s32 *, s32);
 void *memcpy(void *, void *, s32);
 void memset(void *, s32, s32);
@@ -344,3 +364,9 @@ s32 Mc_StepReadChecked_3_001D4A78(void)
     }
     return 0;
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): D_004B6474 */
+s32 D_004B6474[0x113] __attribute__((aligned(4)));
+#endif
