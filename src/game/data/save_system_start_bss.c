@@ -44,6 +44,7 @@ u8 D_004BAC2C[0x4];
 u8 D_004BAC28[0x4];
 u8 D_004BAC24[0x4];
 u8 D_004BAC20[0x4];
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/shop_menu.c */
 u32 D_004BAC1C[0x1];
 f32 D_004BAC10[0x3];
 f32 D_004BAC0C[0x1];
@@ -56,6 +57,7 @@ f32 D_004BAB9C[0x1];
 u8 D_004BAB84[0x18] __attribute__((aligned(4))); /* also D_004BAB88 */
 u8 D_004BAB70[0x14];
 u8 D_004BAA70[0x100];
+#endif
 s32 D_004BAA6C[0x1];
 u8 D_004BAA68[0x4];
 s32 D_004BAA64[0x1];

@@ -26,7 +26,9 @@ u8 D_0030A370[0x4];
 u8 D_0030A368[0x8];
 u8 D_0030A364[0x4];
 u8 D_0030A360[0x4];
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/light.c */
 u8 D_0030A350[0x10];
+#endif
 u8 D_0030A338[0x18] __attribute__((aligned(8))); /* also D_0030A33C */
 u8 D_0030A334[0x4];
 u8 D_0030A330[0x4];

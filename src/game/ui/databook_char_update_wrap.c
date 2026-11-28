@@ -127,3 +127,9 @@ s32 D_0020218C;
 /* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A11A0 */
 s32 D_004A11A0[0x80];
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A13E0 */
+s32 D_004A13E0[0x4];
+#endif

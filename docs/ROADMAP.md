@@ -254,10 +254,10 @@ the object from its owner instead:
 <!-- data-owners:start -->
 | objects (2026-11-28) | bss | data | rodata | sbss | sdata | all |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| NONMATCHING twin in its owner | 274 | 36 | 225 | 312 | 111 | 958 |
-| one user, not split yet | 11 | 70 | 14 | 2 | 10 | 107 |
-| several users, not split yet | 4 | 4 | 0 | 0 | 2 | 10 |
-| pinned | 445 | 54 | 75 | 3 | 0 | 577 |
+| NONMATCHING twin in its owner | 300 | 36 | 225 | 312 | 111 | 984 |
+| one user, not split yet | 25 | 70 | 14 | 2 | 10 | 121 |
+| several users, not split yet | 7 | 4 | 0 | 0 | 2 | 13 |
+| pinned | 402 | 54 | 75 | 3 | 0 | 534 |
 | used by asm only / by data only / unused | 66 | 16 | 76 | 7 | 1 | 166 |
 | total | 800 | 180 | 390 | 324 | 124 | 1818 |
 <!-- data-owners:end -->
@@ -268,8 +268,11 @@ Next, in order of yield:
    pinned, most of them after a root whose reach is unknown: an address cast,
    or a "view" (a column of a struct array behind a label smaller than the
    struct, walked with the struct's stride; it reaches every label of the
-   array). `tools/data_owners.py --json` names each pinned object's root;
-   read how far the code goes from it and add a line.
+   array). A view every user declares as one struct or a sized array gets
+   its extent from that type; `tools/data_owners.py --json` names the root
+   of every other pinned object: read how far the code goes from it and add
+   a line. The biggest left: `D_00486990` (UI anim table), `D_00222B20` (the
+   pool), `D_001FCF20`, `D_0043F080`, `D_001FB8F0`.
 2. **Initialisers the tool cannot write** ("type does not fit"): structs with
    bitfields, unions or anonymous members (`split_data.py`'s layout() takes
    scalars, pointers, arrays and nested typedef'd structs).

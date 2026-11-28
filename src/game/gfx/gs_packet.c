@@ -730,3 +730,10 @@ u32 D_002F19A0[0x1];
 u32 D_002F19A8[0x1];
 s32 D_002F19AC[0x1];
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/gs_packet_bss.c): D_002F1600, D_002F1640 */
+f32 D_002F1600[4][4];
+f32 D_002F1640[4][4];
+#endif

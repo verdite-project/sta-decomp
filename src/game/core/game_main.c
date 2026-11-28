@@ -122,8 +122,18 @@ extern f32 D_002F1698[];
 extern Mtx D_002F16C0;
 extern Mtx D_002F1700;
 extern Mtx D_002F1740;
+#ifndef NONMATCHING
 extern Mtx D_002F1780;
+#else
+/* data twins (src/game/data/gs_packet_bss.c): D_002F1780 */
+static Mtx D_002F1780;
+#endif
+#ifndef NONMATCHING
 extern Mtx D_002F17C0;
+#else
+/* data twins (src/game/data/gs_packet_bss.c): D_002F17C0 */
+static Mtx D_002F17C0;
+#endif
 extern Mtx D_002F1800;
 extern Mtx D_002F1840;
 extern Mtx D_002F1880;
@@ -1305,4 +1315,12 @@ s8 D_00222AF0[0x30];
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/gs_packet_bss.c): D_002F1700, D_002F1740, D_002F1800 */
+Mtx D_002F1700;
+Mtx D_002F1740;
+Mtx D_002F1800;
 #endif

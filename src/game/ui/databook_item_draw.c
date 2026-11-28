@@ -27,10 +27,25 @@ extern f32 D_002021A0;
 /* data twins (src/game/data/sbss.c): D_002021A0 */
 static f32 D_002021A0;
 #endif
+#ifndef NONMATCHING
 extern s32 D_004A1434[];
+#else
+/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A1434 */
+static s32 D_004A1434[0x1];
+#endif
 extern Q2 D_001F2F40;
+#ifndef NONMATCHING
 extern s32 D_004A1438[];
+#else
+/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A1438 */
+static s32 D_004A1438[0x1];
+#endif
+#ifndef NONMATCHING
 extern f32 D_004A143C[];
+#else
+/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A143C */
+static f32 D_004A143C[0x1];
+#endif
 extern Flags8 D_004A1444[];
 #ifndef NONMATCHING
 extern s32 D_00202194;
@@ -273,4 +288,11 @@ s32 D_00201D38 = 6;
 s32 *D_00201D3C = (s32 *)D_00495B60;
 /* data twins (src/game/data/sbss.c): D_00202198 */
 s32 D_00202198;
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A1430, D_004A1440 */
+s32 D_004A1430[0x1];
+f32 D_004A1440[0x4];
 #endif

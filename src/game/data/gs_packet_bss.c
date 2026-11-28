@@ -14,11 +14,13 @@ u8 D_002F1900[0x40];
 u8 D_002F18C0[0x40];
 u8 D_002F1880[0x40];
 u8 D_002F1840[0x40];
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/game_main.c */
 u8 D_002F1800[0x40];
 u8 D_002F17C0[0x40];
 u8 D_002F1780[0x40];
 u8 D_002F1740[0x40];
 u8 D_002F1700[0x40];
+#endif
 u8 D_002F16E4[0x1c] __attribute__((aligned(4))); /* also D_002F16E8 */
 u8 D_002F16E0[0x4];
 u8 D_002F16D8[0x8];
@@ -30,8 +32,10 @@ u8 D_002F16C0[0x4];
 u8 D_002F1694[0x2c] __attribute__((aligned(4))); /* also D_002F1698 */
 f32 D_002F1690[0x1];
 u8 D_002F1680[0x10];
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/gs_packet.c */
 u8 D_002F1640[0x40];
 u8 D_002F1600[0x40];
+#endif
 u8 D_002F15E4[0x1c] __attribute__((aligned(4))); /* also D_002F15E8 */
 u8 D_002F15E0[0x4];
 u8 D_002F15D8[0x8];

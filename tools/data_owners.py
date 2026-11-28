@@ -232,9 +232,10 @@ def views(objs):
     htext = "".join(p.read_text() for p in sorted(hdr.rglob("*.h")))
     hdefs = split_data.struct_defs(htext)
     hext = split_data.externs(htext)
-    out = {}
+    out, reach = {}, {}
     cache = {}
     for n, r in objs.items():
+        sizes = set()            # what each user can reach: its type's size, None for an array
         for u in r["users"]:
             if u not in cache:
                 t = (ROOT / u).read_text()
@@ -256,10 +257,18 @@ def views(objs):
                     es = es * int(dm, 0) if es else None
                 except ValueError:
                     es = None
-            if es and r["size"] < es:
+            whole = es
+            if e["dims"] and whole:
+                try:
+                    whole = es * int(e["dims"][0], 0)     # a sized array reaches its size
+                except ValueError:
+                    whole = None
+            sizes.add(whole if whole else None)
+            if es and r["size"] < es and n not in out:
                 out[n] = f"a view: {u} declares it {base}{'*' if e['ptr'] else ''} ({es:#x} bytes), the object is {r['size']:#x}"
-                break
-    return out
+        if n in out and None not in sizes and sizes:
+            reach[n] = max(sizes)    # one struct, never indexed: it reaches its type's size
+    return out, reach
 
 
 def over_reach(objs, link):
@@ -310,7 +319,8 @@ def pin(objs, link):
     import move_data
     sz = move_data.sizes()
     roots = escape_roots(objs)
-    for n, why in views(objs).items():
+    vw, vreach = views(objs)
+    for n, why in vw.items():
         roots.setdefault(n, why)
     reach = over_reach(objs, link)
     for r in objs.values():
@@ -324,6 +334,8 @@ def pin(objs, link):
         f = line.split("#", 1)[0].split()
         if len(f) == 2:
             extent[f[0]] = None if f[1] == "self" else int(f[1], 0)
+    for n, e in vreach.items():
+        extent.setdefault(n, e)
     for u, lst in by_unit.items():
         lst.sort()
         root, end = None, None          # end: where a root with a known extent stops

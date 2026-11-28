@@ -381,3 +381,9 @@ void Light_Init_1_0015BCA0(void) {
 s32 D_0030A2D0[0x10];
 char D_0030A310[0x10];
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A350 */
+Vec D_0030A350;
+#endif
