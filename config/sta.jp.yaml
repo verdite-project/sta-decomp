@@ -513,7 +513,7 @@ segments:
       - [0x0AB290, c, game/save/save_start]
       - [0x0AB2C0, c, game/entity/combat_randomize]
       - [0x0AB690, c, game/item/item_object]
-      - [0x0AE510, asm, text_001AE510]
+      - [0x0AE510, c, game/item/item_obj_save_state]
       - [0x0AE620, c, game/item/item_object_spawn]
       - [0x0B0020, c, game/map/map]
       - [0x0B0EB0, asm, text_001B0EB0]

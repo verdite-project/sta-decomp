@@ -562,7 +562,6 @@ src/game/save/save_start.c
 src/game/entity/combat_randomize.c
 src/game/item/item_object.c
 src/game/item/item_obj_save_state.c
-asm/text_001AE510.s
 src/game/data/pad_get_connected_bss.c
 src/game/item/item_object_spawn.c
 src/game/data/pad_get_connected_bss_004AC630.c
