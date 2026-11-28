@@ -89,8 +89,8 @@ cannot produce the report.
 <!-- progress:start -->
 | | code | functions | units complete |
 | --- | ---: | ---: | ---: |
-| overall | 90.75% | 2973 / 3091 | 15 / 837 |
-| game | 88.87% | 2106 / 2224 | 0 / 648 |
+| overall | 91.44% | 2979 / 3091 | 15 / 831 |
+| game | 89.69% | 2112 / 2224 | 0 / 642 |
 | sce | 100.00% | 867 / 867 | 15 / 189 |
 <!-- progress:end -->
 

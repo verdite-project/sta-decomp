@@ -39,6 +39,7 @@ void PlayTime_Pause_1_001DF990(void);
 void PlayTime_Resume_1_001DF960(void);
 s32 PlayTime_Tick_1_001DF9A0(void);
 void Task_AddWrap_0_0014DAD0(s32);
+struct TaskRecord *Task_Find_0_001E02C0(s32 arg, s16 id, s32 value);
 void Task_InitWrap_0_0014DAA0(void);
 void Task_Init_1_001E03C0(void);
 void Task_RemoveWrap_0_0014DAE0(s32);

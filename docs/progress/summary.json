@@ -3,17 +3,17 @@
   {
    "id": "game",
    "measures": {
-    "fuzzy_match_percent": 88.8651,
-    "matched_code": 709236,
-    "matched_code_percent": 88.8651,
+    "fuzzy_match_percent": 89.6946,
+    "matched_code": 715856,
+    "matched_code_percent": 89.6946,
     "matched_data": 2895914,
     "matched_data_percent": 99.9984,
-    "matched_functions": 2106,
-    "matched_functions_percent": 94.6942,
+    "matched_functions": 2112,
+    "matched_functions_percent": 94.964,
     "total_code": 798104,
     "total_data": 2895959,
     "total_functions": 2224,
-    "total_units": 648
+    "total_units": 642
    },
    "name": "Game"
   },
@@ -47,17 +47,17 @@
   "complete_data": 896,
   "complete_data_percent": 0.0304,
   "complete_units": 15,
-  "fuzzy_match_percent": 90.7516,
-  "matched_code": 872036,
-  "matched_code_percent": 90.7516,
+  "fuzzy_match_percent": 91.4406,
+  "matched_code": 878656,
+  "matched_code_percent": 91.4406,
   "matched_data": 2949052,
   "matched_data_percent": 99.9985,
-  "matched_functions": 2973,
-  "matched_functions_percent": 96.1825,
+  "matched_functions": 2979,
+  "matched_functions_percent": 96.3766,
   "total_code": 960904,
   "total_data": 2949097,
   "total_functions": 3091,
-  "total_units": 837
+  "total_units": 831
  },
  "units": [
   {
@@ -3158,27 +3158,15 @@
   },
   {
    "category": "game",
-   "code_matched": 0,
-   "code_total": 0,
-   "complete": false,
-   "data_matched": 0,
-   "data_total": 0,
-   "functions_matched": 0,
-   "functions_total": 0,
-   "fuzzy": 100.0,
-   "name": "game/entity/proj_find_enemy_in_cone"
-  },
-  {
-   "category": "game",
-   "code_matched": 0,
+   "code_matched": 512,
    "code_total": 512,
    "complete": false,
    "data_matched": 0,
    "data_total": 0,
-   "functions_matched": 0,
+   "functions_matched": 1,
    "functions_total": 1,
-   "fuzzy": 0.0,
-   "name": "text_00146EF0"
+   "fuzzy": 100.0,
+   "name": "game/entity/proj_find_enemy_in_cone"
   },
   {
    "category": "game",
@@ -4166,27 +4154,15 @@
   },
   {
    "category": "game",
-   "code_matched": 0,
-   "code_total": 0,
-   "complete": false,
-   "data_matched": 0,
-   "data_total": 0,
-   "functions_matched": 0,
-   "functions_total": 0,
-   "fuzzy": 100.0,
-   "name": "game/effect/fx_update_emitter"
-  },
-  {
-   "category": "game",
-   "code_matched": 0,
+   "code_matched": 3264,
    "code_total": 3264,
    "complete": false,
    "data_matched": 0,
    "data_total": 0,
-   "functions_matched": 0,
+   "functions_matched": 1,
    "functions_total": 1,
-   "fuzzy": 0.0,
-   "name": "text_00160370"
+   "fuzzy": 100.0,
+   "name": "game/effect/fx_update_emitter"
   },
   {
    "category": "game",
@@ -4718,6 +4694,18 @@
   },
   {
    "category": "game",
+   "code_matched": 1024,
+   "code_total": 1024,
+   "complete": false,
+   "data_matched": 0,
+   "data_total": 0,
+   "functions_matched": 1,
+   "functions_total": 1,
+   "fuzzy": 100.0,
+   "name": "game/gfx/tex_load_animated"
+  },
+  {
+   "category": "game",
    "code_matched": 128,
    "code_total": 128,
    "complete": false,
@@ -4727,30 +4715,6 @@
    "functions_total": 1,
    "fuzzy": 100.0,
    "name": "game/gfx/texture_find"
-  },
-  {
-   "category": "game",
-   "code_matched": 0,
-   "code_total": 0,
-   "complete": false,
-   "data_matched": 0,
-   "data_total": 0,
-   "functions_matched": 0,
-   "functions_total": 0,
-   "fuzzy": 100.0,
-   "name": "game/gfx/tex_load_animated"
-  },
-  {
-   "category": "game",
-   "code_matched": 0,
-   "code_total": 1024,
-   "complete": false,
-   "data_matched": 0,
-   "data_total": 0,
-   "functions_matched": 0,
-   "functions_total": 1,
-   "fuzzy": 0.0,
-   "name": "text_0016FB80"
   },
   {
    "category": "game",
@@ -4850,27 +4814,15 @@
   },
   {
    "category": "game",
-   "code_matched": 0,
-   "code_total": 0,
-   "complete": false,
-   "data_matched": 0,
-   "data_total": 0,
-   "functions_matched": 0,
-   "functions_total": 0,
-   "fuzzy": 100.0,
-   "name": "game/model/mdl_create_instance"
-  },
-  {
-   "category": "game",
-   "code_matched": 0,
+   "code_matched": 928,
    "code_total": 928,
    "complete": false,
    "data_matched": 0,
    "data_total": 0,
-   "functions_matched": 0,
+   "functions_matched": 1,
    "functions_total": 1,
-   "fuzzy": 0.0,
-   "name": "text_00174230"
+   "fuzzy": 100.0,
+   "name": "game/model/mdl_create_instance"
   },
   {
    "category": "game",
@@ -7226,27 +7178,15 @@
   },
   {
    "category": "game",
-   "code_matched": 0,
-   "code_total": 0,
-   "complete": false,
-   "data_matched": 0,
-   "data_total": 0,
-   "functions_matched": 0,
-   "functions_total": 0,
-   "fuzzy": 100.0,
-   "name": "game/map_object/trap_update"
-  },
-  {
-   "category": "game",
-   "code_matched": 0,
+   "code_matched": 648,
    "code_total": 648,
    "complete": false,
    "data_matched": 0,
    "data_total": 0,
-   "functions_matched": 0,
+   "functions_matched": 1,
    "functions_total": 1,
-   "fuzzy": 0.0,
-   "name": "text_001BA3F0"
+   "fuzzy": 100.0,
+   "name": "game/map_object/trap_update"
   },
   {
    "category": "game",
@@ -8690,27 +8630,15 @@
   },
   {
    "category": "game",
-   "code_matched": 0,
-   "code_total": 0,
-   "complete": false,
-   "data_matched": 0,
-   "data_total": 0,
-   "functions_matched": 0,
-   "functions_total": 0,
-   "fuzzy": 100.0,
-   "name": "game/core/task_find"
-  },
-  {
-   "category": "game",
-   "code_matched": 0,
+   "code_matched": 244,
    "code_total": 244,
    "complete": false,
    "data_matched": 0,
    "data_total": 0,
-   "functions_matched": 0,
+   "functions_matched": 1,
    "functions_total": 1,
-   "fuzzy": 0.0,
-   "name": "text_001E02C0"
+   "fuzzy": 100.0,
+   "name": "game/core/task_find"
   },
   {
    "category": "game",

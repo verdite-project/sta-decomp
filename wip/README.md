@@ -26,10 +26,8 @@ register and scheduling differences.
 | MapObj_Hit_0_001B85B0 | ours keeps idx*0x30 in s4 across calls (extra s-reg, frame +0x10) |
 | MapObj_SetAnimFrame_0_001B87C0 | first block regs: load from 0x180 to t1 (ours a2) |
 | Sfx_AimMatrix_0_00167310 | `b` delay slot left empty (orig fills with next `lwc1 f21`); `move s0,a0` before null check |
-| Proj_FindEnemyInCone_0_00146EF0 | float regs: hh/d swapped between $f22/$f24 |
 | Mdl_RunMotionEvents_0_001717A0 | 4 words, regs only: orig tbl=a1 and keeps q+0x40 in a2 |
 | FxProc_RandomJitter_0_0014C890 | &v should be s1 below the loop pointers; multiply operand order |
-| Trap_Update_0_001BA3F0 | `mul.s` operand order and `lbu` of t+0x13 scheduled late |
 | Proj_Update_0_00147E90 | last flag: orig writes `c = 0` in a branch delay slot; ours gets an else branch or `sltu` |
 | SndBank_IopTransferB_0_0012F0F0 | arg setup of the `Se_SetBankSlot_0_001DAC70` call in state 1: orig loads `ch` first and `off` before `addr[arg1]` |
 | Fx_UpdateChildren_1_00162700 | shared inline count helper: orig has 2 nops before `div` in the `rate < fp` branch, `(f32)period` in $f1 (ours $f2) |
@@ -52,7 +50,6 @@ register and scheduling differences.
 | Mdl_EmitPolys_1_0016EF70 | right size/branches, loop regalloc differs (orig spills a0, i in t9); far (155 words) |
 | Tex_Resident_0_001777C0 | ~50 words, regs only (size calc reuses a0; Vram_AllocForTex_0_00176BF0 result in a1; TEX0 bitfield temps t0/v0 vs ours t1/t0) |
 | Vram_AllocBlock_1_00176FB0 | 159 words; saved-reg swap (orig: sign-extended idx/return in s2, raw param s1) shifts all temps |
-| Tex_LoadAnimated_0_0016FB80 | 6 words; only a0/a1 spill slots (orig 0x110/0x10C) |
 | Hud_DrawCompass_0_001BBCC0 | 8 words; one `mult1` dest v1 vs a0 (2800 statement orders tried) |
 | Tex_Lookup_1_00177BB0 | 88 words; free-list unlink/insert regalloc (idx in a3 vs v1, idx*48 reused) |
 | Actor_ResolveGround_0_0013A720 | 2 words; `addu` operand order in `p->x2C + p->x18->xB5*0x140 + 0x234` |
@@ -107,7 +104,6 @@ register and scheduling differences.
 | PointLight_Init_0_0015C8D0 | round Y/Z near-miss (agent's best attempt; see comments in file) |
 | Quat_ToMatrix_2_0015E180 | round Y/Z near-miss (agent's best attempt; see comments in file) |
 | Input_Init_2_0015FC60 | round Y/Z near-miss (agent's best attempt; see comments in file) |
-| Fx_UpdateEmitter_0_00160370 | round Y/Z near-miss (agent's best attempt; see comments in file) |
 | Fx_HashKey_1_00164A60 | round Y/Z near-miss (agent's best attempt; see comments in file) |
 | Script_FetchOperand_2_00165940 | round Y/Z near-miss (agent's best attempt; see comments in file) |
 | Script_FindLabel_1_00166970 | round Y/Z near-miss (agent's best attempt; see comments in file) |
@@ -152,5 +148,4 @@ register and scheduling differences.
 | Se_UpdateStatus_0_001D9FC0 | round 3 near-miss: 15 words: temp register numbers in the 8x32 loop |
 | Gs_UploadTim_1_001E54E8 | round 3 near-miss: ee-gcc, 22 words: saved-register choice for k/w/h/h2 |
 | Gs_DrawSpriteDirect_0_001E52D0 | round 3 near-miss: ee-gcc, 6 words: D2_QWC/D2_MADR constants in v0/v1 swapped |
-| Mdl_CreateInstance_0_00174230 | round 3 near-miss: 12 words: only two spill slots differ (h is a temp in retail) |
 | GsText_EmitGlyph_1_001E3178 | round 3 near-miss: ee-gcc, ~70 insns after alignment, 3 short |

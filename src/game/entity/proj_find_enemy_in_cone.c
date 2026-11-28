@@ -1,14 +1,3 @@
-/* Best-effort C for the NONMATCHING build; the matching attempt is
- * wip/Proj_FindEnemyInCone_0_00146EF0.c. */
-#include "include_asm.h"
-
-#ifdef NONMATCHING
-/* NEAR: 2 of 128 words differ (was 22). Only diff: the two hoisted mul.s come out as
-   mul.s f23,f23,f0 / mul.s f22,f22,f0, retail has mul.s f23,f0,f23 / mul.s f22,f0,f22.
-   Keys found: if/else for ok (else ok = 1), copy float params into locals (maxd/hw/hh) to
-   get the f21/f23/f22 colouring. In-place `hw = 0.5f * hw` flips the mul operands; a fresh
-   result var or `0.5f * w` inside the loop condition (LICM) gives the right order but
-   mis-colours (f24/f23 instead of f23/f22). */
 #include "common.h"
 u16 *ActorList_Next_2_001A5460(s32 *);
 void sceVu0Normalize(Vec *, Vec *);
@@ -19,70 +8,66 @@ s32 Enemy_IsBusy_0_0013EE40(u16 *);
 Vec *Enemy_Ptr6F0_1_0013FFA0(u16 *);
 f32 Vec_Distance_3_00146940(Vec *, Vec *);
 void Vec_GetYawPitchBetween_1_00146310(Vec *, Vec *, Vec *, f32 *, f32 *);
-s32 Map_LineTest_1_001470F0(Vec *, Vec *, s32, s32, s32, Vec *);
+s32 Map_LineTest_1_001470F0(Vec *, Vec *, u8, s32, s32, Vec *);
 
-u16 *Proj_FindEnemyInCone_0_00146EF0(Vec *pos, Vec *dir, s32 check, f32 maxd_, f32 w, f32 h) {
-    f32 cc;
-    f32 c8;
-    s32 it;
-    Vec b0;
-    Vec a0;
-    Vec p;
-    Vec out;
-    u16 *res;
-    u16 *e;
-    f32 hw;
-    f32 hh;
-    f32 maxd;
-    f32 best;
-    f32 d;
-    s32 ok;
+u16 *Proj_FindEnemyInCone_0_00146EF0(Vec *pos, Vec *dir, s32 checkLineOfSight, f32 maxDistance, f32 pitchSpan, f32 yawSpan) {
+    f32 yawError;
+    f32 pitchError;
+    s32 iterator;
+    Vec toEnemy;
+    Vec normalizedDir;
+    Vec enemyPos;
+    Vec hitPos;
+    u16 *target;
+    u16 *enemy;
+    f32 pitchLimit;
+    f32 yawLimit;
+    f32 range;
+    f32 bestScore;
+    f32 distance;
+    f32 score;
+    s32 visible;
 
-    maxd = maxd_;
-    hw = w;
-    hh = h;
-    res = NULL;
-    best = 65535.0f;
-    it = 0;
-    e = ActorList_Next_2_001A5460(&it);
-    sceVu0Normalize(&a0, dir);
-    if (e != NULL) {
-        hw = 0.5f * hw;
-        hh = 0.5f * hh;
+    range = maxDistance;
+    pitchLimit = (f32)pitchSpan;
+    yawLimit = (f32)yawSpan;
+    target = NULL;
+    bestScore = 65535.0f;
+    iterator = 0;
+    enemy = ActorList_Next_2_001A5460(&iterator);
+    sceVu0Normalize(&normalizedDir, dir);
+    if (enemy != NULL) {
         do {
-            if (*e != 0 && Enemy_IsBusy_0_0013EE40(e) == 0) {
-                sceVu0CopyVector(&p, Enemy_Ptr6F0_1_0013FFA0(e));
-                d = Vec_Distance_3_00146940(&p, pos);
-                if (!(maxd < d)) {
-                    sceVu0SubVector(&b0, &p, pos);
-                    sceVu0Normalize(&b0, &b0);
-                    Vec_GetYawPitchBetween_1_00146310(pos, dir, &p, &cc, &c8);
-                    cc = fabsf(cc);
-                    c8 = fabsf(c8);
-                    if (!(hw < c8) && !(hh < cc)) {
-                        d = (1.0f + c8) * (d * (1.0f + cc));
-                        if (d < 0.0f) {
-                            d = -d;
+            if (*enemy != 0 && Enemy_IsBusy_0_0013EE40(enemy) == 0) {
+                sceVu0CopyVector(&enemyPos, Enemy_Ptr6F0_1_0013FFA0(enemy));
+                distance = Vec_Distance_3_00146940(&enemyPos, pos);
+                if (!(range < distance)) {
+                    sceVu0SubVector(&toEnemy, &enemyPos, pos);
+                    sceVu0Normalize(&toEnemy, &toEnemy);
+                    Vec_GetYawPitchBetween_1_00146310(pos, dir, &enemyPos, &yawError, &pitchError);
+                    yawError = fabsf(yawError);
+                    pitchError = fabsf(pitchError);
+                    if (!(0.5f * pitchLimit < pitchError) && !(0.5f * yawLimit < yawError)) {
+                        score = (1.0f + pitchError) * (distance * (1.0f + yawError));
+                        if (score < 0.0f) {
+                            score = -score;
                         }
-                        if (d < best) {
-                            if (check != 0) {
-                                ok = !Map_LineTest_1_001470F0(pos, &p, 3, 0x26, 0, &out);
+                        if (score < bestScore) {
+                            if (checkLineOfSight != 0) {
+                                visible = !Map_LineTest_1_001470F0(pos, &enemyPos, 3, 0x26, 0, &hitPos);
                             } else {
-                                ok = 1;
+                                visible = 1;
                             }
-                            if (ok != 0) {
-                                best = d;
-                                res = e;
+                            if (visible != 0) {
+                                bestScore = score;
+                                target = enemy;
                             }
                         }
                     }
                 }
             }
-            e = ActorList_Next_2_001A5460(&it);
-        } while (e != NULL);
+            enemy = ActorList_Next_2_001A5460(&iterator);
+        } while (enemy != NULL);
     }
-    return res;
+    return target;
 }
-#else
-INCLUDE_ASM(Proj_FindEnemyInCone_0_00146EF0);
-#endif

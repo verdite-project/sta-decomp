@@ -7,7 +7,6 @@ void Task_KillWrap_0_0014DAF0(s32 arg0);
 void Task_SetPriorityWrap_0_0014DB00(s32 arg0, s16 arg1, s32 arg2);
 void Task_Register_0_0014DB10(s32 arg0);
 void Task_SetPriority_0_001E0160();
-void Task_Find_0_001E02C0(s32 arg0, s16 arg1, s32 arg2);
 void Task_SetCallback_1_001E0560(s32 *, s32);
 
 /* Task_InitWrap_0_0014DAA0 */
