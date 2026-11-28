@@ -1,19 +1,17 @@
 #include "common.h"
 #include "game/ee.h"
-typedef struct { s32 v[4]; } Q;
 typedef struct { u8 pad[8]; u16 x8; } F;
 typedef struct { u8 pad[0x28]; F *x28; } A;
 typedef struct { u8 pad[0x10]; s16 x10; s16 p12; s16 x14; } Gl;
 extern A *gGsText_00201E5C;
 extern GsTextStyle *gGsTextStyle_00201E60;
-Q *GsText_GetColor_1_001E2D08(Q *);
-u16 *GsText_ParseEscape_1_001E2D70(u16 *, Q *);
+u16 *GsText_ParseEscape_1_001E2D70(u16 *, s32 *);
 Gl *GsText_FindGlyph_1_001E3058(s32);
 
 s32 GsText_Measure_2_001E2B88(u16 *s, f32 *w, f32 *h, s32 single) {
     f32 x;
     f32 y;
-    Q q;
+    GsTextColor q;
     u16 c;
     Gl *g;
     y = 0.0f;
@@ -21,8 +19,8 @@ s32 GsText_Measure_2_001E2B88(u16 *s, f32 *w, f32 *h, s32 single) {
     *w = x;
     *h = x;
     y = (gGsText_00201E5C->x28->x8 + gGsTextStyle_00201E60->x64) * gGsTextStyle_00201E60->x34;
-    GsText_GetColor_1_001E2D08(&q);
-    while ((c = *(s = GsText_ParseEscape_1_001E2D70(s, &q))) != 0) {
+    q = GsText_GetColor_1_001E2D08();
+    while ((c = *(s = GsText_ParseEscape_1_001E2D70(s, q.v))) != 0) {
         if (c == 10) {
             if (single) return 1;
             x = 0.0f;

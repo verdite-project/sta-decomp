@@ -74,7 +74,6 @@ register and scheduling differences.
 | Enemy_UpdateMotion_1_0013CBC0 | code identical when Enemy_SetMotion_2_0013C360 is a `static` definition earlier in the same file (MWCC then knows a0/t0 survive the call); needs file regrouping |
 | Actor_CollideCapsulesB_0_00137E60 | 16 words; f22/f23 swap for t/dd, `out` param spill slot 0xC0 vs 0xC4 |
 | Lz_DecompressB_1_001797E0 | 118 words; needs static Bits_Read_2_00179720 earlier in file (included); r/n v1/a0 swap in inlined bit reads |
-| MapObj_SnapToGround_0_001B9F10 | 14 words, stack only: orig spills pos/rot params to 16-byte slots |
 | Coll_SphereVsMesh_1_0014E680 | 60 words; frame 0x10 bigger in orig (unknown 8-byte slots), one mov.s swap |
 | Mdl_DrawMeshesC_1_0016D380 | 126 words; `flag & 1` kept in s5 from prologue, spills differ |
 | DbItemProc_DrawInfo_0_001973F0 | 169 words; saved-reg order only (orig sel=s4,n=s3,k=s2,id=s1,o=s0) |
@@ -151,7 +150,6 @@ register and scheduling differences.
 | Pad_UpdateAll_3_001D7350 | round 3 near-miss: ee-gcc, 23 words short: retail keeps empty switch cases [2,3] and 0x100 in the tree |
 | ShopProc_DrawItemInfo_0_001DDA20 | round 3 near-miss: 3 words: 1 handwritten addi at the switch range check (asm-only), 2 lwc1/lw order |
 | Se_UpdateStatus_0_001D9FC0 | round 3 near-miss: 15 words: temp register numbers in the 8x32 loop |
-| GsText_DrawString_2_001E2748 | round 3 near-miss: ee-gcc, 7 words: v0/v1 swap after GsText_GetColor_1_001E2D08, bnel vs bne |
 | Gs_UploadTim_1_001E54E8 | round 3 near-miss: ee-gcc, 22 words: saved-register choice for k/w/h/h2 |
 | Gs_DrawSpriteDirect_0_001E52D0 | round 3 near-miss: ee-gcc, 6 words: D2_QWC/D2_MADR constants in v0/v1 swapped |
 | Mdl_CreateInstance_0_00174230 | round 3 near-miss: 12 words: only two spill slots differ (h is a temp in retail) |

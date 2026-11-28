@@ -355,7 +355,6 @@ src/game/effect/fx_update_children_ex.c
 asm/text_00162700.s
 src/game/effect/fx_eval.c
 src/game/effect/fx_random_in_sphere.c
-asm/text_00163A10.s
 src/game/effect/fx.c
 src/game/data/vibration_bss.c
 src/game/effect/lightning.c
@@ -477,7 +476,6 @@ src/game/ui/save_menu_card.c
 src/game/ui/loading_draw.c
 src/game/data/save_menu_data_001F2A90.c
 src/game/ui/loading_nop.c
-asm/text_0018E440.s
 src/game/ui/menu_options.c
 src/game/ui/loading_visible.c
 src/game/data/option_rodata.c
@@ -604,7 +602,7 @@ src/game/map_object/chest.c
 src/game/map_object/map_object_check.c
 src/game/map_object/map_obj_snap_to_ground.c
 src/game/map_object/trap_update.c
-asm/text_001B9F10.s
+asm/text_001BA3F0.s
 src/game/map_object/trap.c
 src/game/map_object/map_object_reset.c
 src/game/data/player_data.c
@@ -755,7 +753,6 @@ src/game/ee/gs_text_print_id.c
 src/game/ee/gs_text_printf_at.c
 src/game/ee/gs_text_print_id_at.c
 src/game/ee/gs_text_draw_string.c
-asm/text_001E2748.s
 src/game/ee/gs_text_set_priority.c
 src/game/ee/gs_text_set_spacing.c
 src/game/ee/gs_text_set_scale.c
@@ -780,6 +777,7 @@ src/game/ee/gs_text_find_glyph.c
 src/game/ee/gs_text_emit_glyph.c
 asm/text_001E3178.s
 src/game/ee/gs_text_wait_dma.c
+src/game/ee/gs_text_set_vertex.c
 asm/text_001E3758.s
 src/game/ee/gs_text_emit_quad.c
 src/game/ee/gs_text_emit_tag.c
@@ -792,6 +790,7 @@ src/game/ee/credits_setup.c
 src/game/ee/credits_run.c
 src/game/ee/credits_alloc_node.c
 src/game/ee/credits_alloc.c
+src/game/ee/credits_bind_callbacks.c
 asm/text_001E4080.s
 src/game/ee/credits_parse_header.c
 src/game/ee/credits_cb_draw_image.c

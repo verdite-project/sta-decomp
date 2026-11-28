@@ -198,8 +198,6 @@ Game functions are matched smallest first.
 - MapSe_GetState_0_001E1D20 (ee-gcc): retail loads a >8-byte global as `lui $at` (gas
   macro expansion); gcc 2.96 emits explicit %hi/%lo through $v1 for arrays
   and structs, and $gp for scalars. Unknown declaration.
-- Loading_Nop_0_0018E440: `lw $a0,0($a0); addiu $v1,$0,0x16; jr $ra` with nothing used;
-  CodeWarrior drops such dead code from every form tried.
 - DegToRad_3_00161030: deg-to-rad; one word off: retail `c.eq.s $f12,$f0`, every
   form tried gives `c.eq.s $f0,$f12`.
 - VU0 distance helpers Vec_DistSqXZ_2_0015DEB0, Vec_DistXZ_2_0015DEE0, Vec_DistSq_3_0015DF20,

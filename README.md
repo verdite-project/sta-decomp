@@ -5,11 +5,10 @@ PlayStation 2. The target is the Japanese retail boot ELF, `SLPS_252.17`
 (SLPS-25217). The goal is C source that the original toolchain compiles back
 into the identical executable.
 
-**Status:** the build reproduces the retail ROM image (all bytes the console
-loads) **byte for byte**. 71 SDK, libc, libm and libgcc units build from C
-and hand-written asm (`src/sce/`, about 26 KB of `.text`); the rest of the
-libraries and the whole game are still splat-disassembled assembly. See
-[`docs/ROADMAP.md`](docs/ROADMAP.md).
+**Status:** the matching build reproduces every byte of the retail ELF's
+loadable image. It builds the recovered game functions from C and links
+retail assembly for the remaining functions. The [progress table](#progress)
+tracks the compiled matches.
 
 > No disc data is in this repository. You supply your own disc image; the
 > build extracts the ELF from it and checks its SHA-1.
@@ -90,8 +89,8 @@ cannot produce the report.
 <!-- progress:start -->
 | | code | functions | units complete |
 | --- | ---: | ---: | ---: |
-| overall | 90.49% | 2969 / 3091 | 15 / 2404 |
-| game | 88.55% | 2102 / 2224 | 0 / 2215 |
+| overall | 90.75% | 2973 / 3091 | 15 / 837 |
+| game | 88.87% | 2106 / 2224 | 0 / 648 |
 | sce | 100.00% | 867 / 867 | 15 / 189 |
 <!-- progress:end -->
 

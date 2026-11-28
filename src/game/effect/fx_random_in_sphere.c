@@ -1,40 +1,35 @@
-/* Best-effort C for the NONMATCHING build; the matching attempt is
- * wip/Fx_RandomInSphere_0_00163A10.c. */
-#include "include_asm.h"
-
-#ifdef NONMATCHING
 #include "common.h"
 
-u16 Rand_Next_3_0015ED20(void);
+s32 Rand_Next_3_0015ED20(void);
 f32 sqrtf(f32);
 f32 powf(f32, f32);
-static inline f32 u2f(u32 x) { return x; }
 
-void Fx_RandomInSphere_0_00163A10(Vec *out, f32 r, f32 e) {
-    f32 r2;
-    f32 d;
-    f32 x;
-    f32 y;
-    f32 z;
-    f32 k;
-    r2 = r * r + 0.01f;
-    d = 2.0f * r;
+static inline f32 randomOffset(void) {
+    return (1.0f / 65535.0f) * (f32)(u32)(Rand_Next_3_0015ED20() & 0xFFFF) - 0.5f;
+}
+
+void Fx_RandomInSphere_0_00163A10(Vec *out, f32 radius, f32 exponent) {
+    f32 x, y, z;
+    f32 lengthSquared;
+    f32 scale;
+    f32 radiusSquared = radius * radius;
+    f32 diameter = 2.0f * radius;
+
     do {
-        x = d * (1.5259022e-05f * u2f(Rand_Next_3_0015ED20()) - 0.5f);
-        y = d * (1.5259022e-05f * u2f(Rand_Next_3_0015ED20()) - 0.5f);
-        z = d * (1.5259022e-05f * u2f(Rand_Next_3_0015ED20()) - 0.5f);
-    } while (!(x * x + y * y + z * z <= r2));
-    if (e != 1.0f && !(r <= 0.01f)) {
-        k = powf(sqrtf(x * x + y * y + z * z) / r, e);
-        x *= k;
-        y *= k;
-        z *= k;
+        x = diameter * randomOffset();
+        y = diameter * randomOffset();
+        z = diameter * randomOffset();
+        lengthSquared = x * x + y * y + z * z;
+    } while (lengthSquared > radiusSquared + 0.01f);
+
+    if (exponent != 1.0f && !(radius <= 0.01f)) {
+        scale = powf(sqrtf(lengthSquared) / radius, exponent);
+        x *= scale;
+        y *= scale;
+        z *= scale;
     }
     out->x = x;
     out->y = y;
     out->z = z;
     out->w = 0.0f;
 }
-#else
-INCLUDE_ASM(Fx_RandomInSphere_0_00163A10);
-#endif

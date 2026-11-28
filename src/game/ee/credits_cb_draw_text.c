@@ -25,7 +25,8 @@ void GsText_GetPos_1_001E2B40(f32 *);
 void GsText_Measure_2_001E2B88(u16 *, f32 *, f32 *, s32);
 void GsText_DrawString_2_001E2748(V2 *, u16 *);
 
-void CreditsCb_DrawText_0_001E4518(T *p) {
+void CreditsCb_DrawText_0_001E4518(CreditsNode *node) {
+    T *p = (T *)node;
     V2 pos;
     V2 t;
     u32 n;
