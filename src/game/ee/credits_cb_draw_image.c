@@ -1,25 +1,42 @@
-#include "common.h"
-typedef struct { u8 b[8]; } B8;
-typedef struct { B8 a; u8 pad8[8]; u32 x10; u8 pad14[8]; } E;
-typedef struct { u8 pad0[4]; void *h; u8 pad8[0x14]; s32 x1C; B8 a[4]; u8 v[4][4]; } O;
-s32 Credits_EvalAnim_1_001E4900(u32, void *, E *);
+#include "game/ee.h"
+
+typedef struct {
+    CreditsPoint position;
+    f32 z, w;
+    u32 color;
+    u8 pad14[8];
+} AnimVertex;
+
+s32 Credits_EvalAnim_1_001E4900(u32, CreditsEntry *, AnimVertex *);
 extern f32 gCreditsLoadBss_004BC2F0[];
 
-void CreditsCb_DrawImage_0_001E41A8(O *o)
-{
-    E buf[4];
+void CreditsCb_DrawImage_0_001E41A8(CreditsNode *node) {
+    AnimVertex vertices[4];
 
-    if (!Credits_EvalAnim_1_001E4900(gCreditsLoadBss_004BC2F0[0], o->h, buf))
-        o->x1C = 1;
+    if (!Credits_EvalAnim_1_001E4900(gCreditsLoadBss_004BC2F0[0], node->entry, vertices))
+        node->skipDraw = 1;
     else
-        o->x1C = 0;
-    o->a[0] = buf[0].a;
-    o->a[1] = buf[1].a;
-    o->a[2] = buf[2].a;
-    o->a[3] = buf[3].a;
-    o->v[0][0] = buf[0].x10; o->v[0][1] = buf[0].x10 >> 8; o->v[0][2] = buf[0].x10 >> 16; o->v[0][3] = buf[0].x10 >> 24;
-    o->v[1][0] = buf[1].x10; o->v[1][1] = buf[1].x10 >> 8; o->v[1][2] = buf[1].x10 >> 16; o->v[1][3] = buf[1].x10 >> 24;
-    o->v[2][0] = buf[2].x10; o->v[2][1] = buf[2].x10 >> 8; o->v[2][2] = buf[2].x10 >> 16; o->v[2][3] = buf[2].x10 >> 24;
-    o->v[3][0] = buf[3].x10; o->v[3][1] = buf[3].x10 >> 8; o->v[3][2] = buf[3].x10 >> 16; o->v[3][3] = buf[3].x10 >> 24;
-}
+        node->skipDraw = 0;
 
+    node->image.position[0] = vertices[0].position;
+    node->image.position[1] = vertices[1].position;
+    node->image.position[2] = vertices[2].position;
+    node->image.position[3] = vertices[3].position;
+
+    node->image.color[0][0] = vertices[0].color;
+    node->image.color[0][1] = vertices[0].color >> 8;
+    node->image.color[0][2] = vertices[0].color >> 16;
+    node->image.color[0][3] = vertices[0].color >> 24;
+    node->image.color[1][0] = vertices[1].color;
+    node->image.color[1][1] = vertices[1].color >> 8;
+    node->image.color[1][2] = vertices[1].color >> 16;
+    node->image.color[1][3] = vertices[1].color >> 24;
+    node->image.color[2][0] = vertices[2].color;
+    node->image.color[2][1] = vertices[2].color >> 8;
+    node->image.color[2][2] = vertices[2].color >> 16;
+    node->image.color[2][3] = vertices[2].color >> 24;
+    node->image.color[3][0] = vertices[3].color;
+    node->image.color[3][1] = vertices[3].color >> 8;
+    node->image.color[3][2] = vertices[3].color >> 16;
+    node->image.color[3][3] = vertices[3].color >> 24;
+}

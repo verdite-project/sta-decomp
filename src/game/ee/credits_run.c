@@ -3,7 +3,6 @@ typedef struct { u8 pad[8]; u16 n; } H;
 typedef struct { s32 x0; s32 x4; H *x8; CreditsEntry *xC; s32 x10; s32 x14; CreditsNode *x18; } G;
 extern G gCreditsLoadBss_004BC2F0[];
 CreditsNode *Credits_AllocNode_1_001E3FD8(CreditsEntry *);
-void Credits_ParseHeader_0_001E40D0(CreditsNode *);
 
 s32 Credits_Run_1_001E3EC0(void)
 {
