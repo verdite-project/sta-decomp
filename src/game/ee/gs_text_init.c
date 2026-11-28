@@ -3,8 +3,6 @@
 #include "game/ee.h"
 extern GsTextState *gGsText_00201E5C;
 extern GsTextStyle *gGsTextStyle_00201E60;
-void *GsText_Alloc_0_001E1E08(s32, s32);
-void GsText_SetPriority_0_001E2A08(s16);
 void *memset(void *, s32, u32);
 
 void GsText_Init_1_001E2018(s32 arg0, u8 arg1, u16 arg2) {

@@ -1,8 +1,8 @@
 #include "common.h"
+#include "game/math.h"
 #include "actor.h"
 #include "m2c.h"
 #include "game/effect.h"
-typedef struct { f32 m[4][4]; } MtxF;
 typedef struct { u8 pad[0x170]; s32 *x170; } S90;
 typedef struct {
     Vec p;

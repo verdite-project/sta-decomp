@@ -6,7 +6,6 @@ u32 *GifTag_SetAd_1_001E51A8(void *, u16, s32);
 u32 *GifTag_Build_2_001E51D0(void *, s32, s32, s32, s32, s32, u64);
 u32 *GifTag_SetReg_1_001E52A8(void *, s64, s64);
 u32 *Vec4i_Set_1_001E52B8(void *, u32, u32, u32, u32);
-typedef struct { s32 x0, y0, x1, y1; } Rect;
 typedef struct { u32 a, b, c, d; } Q4;
 typedef struct { u8 pad[0x18]; void *x18; u8 pad1C[0x24]; u32 x40[4]; } Ctx;
 

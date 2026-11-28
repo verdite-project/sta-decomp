@@ -1,8 +1,7 @@
 #include "common.h"
+#include "game/ee.h"
 typedef struct { s32 x0; s16 x4; s16 x6; s32 x8; s32 xC; u8 p[0x18]; s32 x28; s16 x2C; } S;
 extern S *gGsText_00201E5C;
-void GsText_ResetState_0_001E2148(void);
-void GsText_FlushPacket_0_001E21E0(void);
 s32 GsText_Begin_1_001E23C8(void) {
     S *s = gGsText_00201E5C;
     if (s->x28 == 0) return -1;

@@ -1,5 +1,6 @@
 #include "common.h"
 #include "game/data.h"
+#include "game/math.h"
 typedef struct { u16 a, b, c, n; u8 pad[0x38]; s8 data[1]; } Hd;
 typedef struct { u8 pad[0x2A]; u8 x2A; } Ent;
 typedef struct { u8 pad[0xB0]; Hd **xB0; } Sub_Enemy_ResetPartAnim_1_001A8670;
@@ -48,7 +49,6 @@ f32 sceVu0InnerProduct(Vec *, Vec *);
 void sceVu0Normalize(Vec *, Vec *);
 void sceVu0ScaleVector(Vec *, Vec *, f32);
 void sceVu0AddVector(Vec *, Vec *, Vec *);
-void Quat_FromAxisAngle_2_0015E500(Vec *, Vec *, f32);
 s32 rand(void);
 f32 sqrtf(f32);
 

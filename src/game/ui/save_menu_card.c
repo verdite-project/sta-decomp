@@ -17,7 +17,6 @@ typedef struct {
     s32 arr[8];
 } Buf;
 extern u8 D_004A0900[][0xF0];
-extern s32 gOptionBss_004A1058[];
 extern f32 gOptionBss_004A105C[];
 void SaveMenu_Load_0_0018DA20(Obj *o);
 void SaveMenu_CheckCard_0_0018DFB0(Obj *o);

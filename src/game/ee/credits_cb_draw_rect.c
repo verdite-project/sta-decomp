@@ -6,7 +6,7 @@
 /* NEAR: retail keeps r/uv in their own stack slots (0x10/0x30) and copies them to
  * separate argument temps (0x0/0x20); gcc reuses a slot (frame 0x40 vs 0x50). */
 #include "common.h"
-typedef struct { s32 x0, y0, x1, y1; } Rect;
+#include "game/ee.h"
 typedef struct { f32 u0, v0, u1, v1; } UV;
 typedef struct { f32 x, y; u8 pad[0x10]; } Vtx;
 typedef struct { u8 pad[0x20]; Vtx v[4]; } Spr;

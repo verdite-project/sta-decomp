@@ -4,7 +4,7 @@
 
 #ifdef NONMATCHING
 #include "m2c.h"
-typedef struct { f32 x, y, z, w; } Vec;
+#include "common.h"
 f32 sinf(f32);
 f32 acosf(f32);
 u64 fptodp(f32);

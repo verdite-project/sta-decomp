@@ -1,5 +1,5 @@
 #include "common.h"
-typedef struct { f32 a[6]; } M2;
+#include "game/math.h"
 M2* Mtx2_Rotate_1_00182860(M2 *o, f32 x);
 M2* Mtx2_Mul_1_001828F0(M2 *o, M2 *a, M2 *b);
 f32 sinf(f32 x);

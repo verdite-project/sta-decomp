@@ -7,7 +7,7 @@
    block (retail loads o34,o14,o38,oC,o18 then e10,e14,e1C,e18 and finishes pos[0] before the
    e1*d/e3*d products) - decl/statement permutations didn't reach it. */
 #include "common.h"
-typedef struct { f32 a[6]; } M2;
+#include "game/math.h"
 typedef struct { u32 n; u8 *p; } L;
 #ifndef NONMATCHING
 extern M2 gUiDrawElemData_001F2790 __attribute__((aligned(16)));

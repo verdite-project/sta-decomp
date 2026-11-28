@@ -1,11 +1,11 @@
 #include "m2c.h"
 #include "game/gfx.h"
 #include "game/data.h"
+#include "game/core.h"
 typedef union { u128 q; u64 d[2]; u32 w[4]; } Q_ScreenFx_DrawFlash_0_00156AF0;
 typedef union { u128 q; u64 d[2]; u32 w[4]; } Q_ScreenFx_DrawDistort_0_00156CE0;
 typedef union { u128 q; u64 d[2]; u32 w[4]; } Q_ScreenFx_DrawFade_0_00156F60;
 typedef union { u128 q; u64 d[2]; u32 w[4]; f32 f[4]; } Q_ScreenFx_DrawBars_0_00157110;
-extern s8 D_00222A10[];
 void ScreenFx_DrawFlash_0_00156AF0(void);
 void ScreenFx_DrawDistort_0_00156CE0(void);
 void ScreenFx_DrawFade_0_00156F60(void);
