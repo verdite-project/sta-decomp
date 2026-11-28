@@ -305,6 +305,7 @@ src/game/gfx/draw.c
 src/game/gfx/screen_fx_flash.c
 src/game/data/screen_fx_flash_data.c
 src/game/gfx/screen_fx.c
+src/game/gfx/weather_draw.c
 asm/text_00157630.s
 src/game/gfx/screen_fx_update.c
 src/game/core/file_hash.c
@@ -647,6 +648,7 @@ src/game/ee/mc_get_info_status.c
 src/game/ee/mc_set_error_status.c
 src/game/ee/mc_step_check.c
 src/game/ee/mc_step_get_dir.c
+src/game/ee/mc_step_write_checked.c
 asm/text_001D4170.s
 src/game/data/mc_step_get_dir_rodata.c
 src/game/ee/mc_step_read_checked.c
@@ -681,6 +683,7 @@ src/game/ee/pad_read.c
 src/game/ee/pad_step_repeat.c
 src/game/ee/pad_init.c
 src/game/ee/pad_port_open.c
+src/game/ee/pad_update_all.c
 asm/text_001D7350.s
 src/game/ee/pad_get_buttons.c
 src/game/ee/pad_get_mode.c

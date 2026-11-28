@@ -204,7 +204,11 @@ s32 *Weather_GetState_0_00157620(void) {
 }
 
 /* text_00157630 */
+#ifdef NONMATCHING
+/* best-effort C: weather_draw.c */
+#else
 INCLUDE_ASM(Weather_Draw_0_00157630);
+#endif
 
 /* Weather_Update_0_00157D50 */
 void GsPkt_SetReg_3_001543E0__as_Weather_Update_0_00157D50(s32, s64);
