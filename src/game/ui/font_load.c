@@ -1,53 +1,32 @@
 #include "include_asm.h"
 #include "m2c.h"
 typedef struct { u8 pad[0x14]; s32 x14; s32 x18; } Hdr;
+extern Hdr *gFontLoadSbss_002020C8;
+extern s32 gFontLoadBss_0048D350[];
 #ifndef NONMATCHING
 extern s32 gFontLoadSbss_002020C4;
+extern Hdr **gFontLoadSbss_002020CC;
+extern s32 gFontLoadSbss_002020D0;
+extern s32 gFontLoadBss_0048D354[];
+extern s32 gFontLoadBss_0048D358[];
+extern u8 gFontLoadRodata_001FCCC0[];
+extern u8 gFontLoadRodata_001FCCD0[];
+extern u8 gFontLoadRodata_001FCCE0[];
 #else
 /* data twins (src/game/data/sbss.c): gFontLoadSbss_002020C4 */
 static s32 gFontLoadSbss_002020C4;
-#endif
-extern Hdr *gFontLoadSbss_002020C8;
-#ifndef NONMATCHING
-extern Hdr **gFontLoadSbss_002020CC;
-#else
 /* data twins (src/game/data/sbss.c): gFontLoadSbss_002020CC */
 static Hdr **gFontLoadSbss_002020CC;
-#endif
-#ifndef NONMATCHING
-extern s32 gFontLoadSbss_002020D0;
-#else
 /* data twins (src/game/data/sbss.c): gFontLoadSbss_002020D0 */
 static s32 gFontLoadSbss_002020D0;
-#endif
-extern s32 gFontLoadBss_0048D350[];
-#ifndef NONMATCHING
-extern s32 gFontLoadBss_0048D354[];
-#else
 /* data twins (src/game/data/ui_gauge_bss.c): gFontLoadBss_0048D354 */
 static s32 gFontLoadBss_0048D354[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gFontLoadBss_0048D358[];
-#else
 /* data twins (src/game/data/ui_gauge_bss.c): gFontLoadBss_0048D358 */
 static s32 gFontLoadBss_0048D358[0x2];
-#endif
-#ifndef NONMATCHING
-extern u8 gFontLoadRodata_001FCCC0[];
-#else
 /* data twins (src/game/data/ui_gauge_rodata2.c): gFontLoadRodata_001FCCC0 */
 static u8 gFontLoadRodata_001FCCC0[0x10] = "sta_font_00\000\000\000\000\000";
-#endif
-#ifndef NONMATCHING
-extern u8 gFontLoadRodata_001FCCD0[];
-#else
 /* data twins (src/game/data/ui_gauge_rodata2.c): gFontLoadRodata_001FCCD0 */
 static u8 gFontLoadRodata_001FCCD0[0x10] = "sta_font_01\000\000\000\000\000";
-#endif
-#ifndef NONMATCHING
-extern u8 gFontLoadRodata_001FCCE0[];
-#else
 /* data twins (src/game/data/ui_gauge_rodata2.c): gFontLoadRodata_001FCCE0 */
 static u8 gFontLoadRodata_001FCCE0[0x10] = "sta_font_02\000\000\000\000\000";
 #endif

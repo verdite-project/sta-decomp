@@ -8,43 +8,25 @@ extern S22C4 *D_002022C4;
 extern s32 gLoadBuf_00270F40[];
 #ifndef NONMATCHING
 extern s32 gMapSeLoadBss_004BC2D0[];
+extern s32 gMapSeLoadBss_004BC2D4[];
+extern s32 gMapSeLoadBss_004BC2D8[];
+extern s32 gMapSeLoadBss_004BC2DC[];
+extern s32 gMapSeLoadBss_004BC2E0[];
+extern u32 gMapSeLoadBss_004BC2E4[];
+extern u32 gMapSeLoadBss_004BC2E8[];
 #else
 /* data twins (src/game/data/save_system_start_bss.c): gMapSeLoadBss_004BC2D0 */
 static s32 gMapSeLoadBss_004BC2D0[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gMapSeLoadBss_004BC2D4[];
-#else
 /* data twins (src/game/data/save_system_start_bss.c): gMapSeLoadBss_004BC2D4 */
 static s32 gMapSeLoadBss_004BC2D4[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gMapSeLoadBss_004BC2D8[];
-#else
 /* data twins (src/game/data/save_system_start_bss.c): gMapSeLoadBss_004BC2D8 */
 static s32 gMapSeLoadBss_004BC2D8[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gMapSeLoadBss_004BC2DC[];
-#else
 /* data twins (src/game/data/save_system_start_bss.c): gMapSeLoadBss_004BC2DC */
 static s32 gMapSeLoadBss_004BC2DC[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gMapSeLoadBss_004BC2E0[];
-#else
 /* data twins (src/game/data/save_system_start_bss.c): gMapSeLoadBss_004BC2E0 */
 static s32 gMapSeLoadBss_004BC2E0[0x1];
-#endif
-#ifndef NONMATCHING
-extern u32 gMapSeLoadBss_004BC2E4[];
-#else
 /* data twins (src/game/data/save_system_start_bss.c): gMapSeLoadBss_004BC2E4 */
 static u32 gMapSeLoadBss_004BC2E4[0x1];
-#endif
-#ifndef NONMATCHING
-extern u32 gMapSeLoadBss_004BC2E8[];
-#else
 /* data twins (src/game/data/save_system_start_bss.c): gMapSeLoadBss_004BC2E8 */
 static u32 gMapSeLoadBss_004BC2E8[0x2];
 #endif

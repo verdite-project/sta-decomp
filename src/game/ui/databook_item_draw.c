@@ -15,41 +15,26 @@ extern s32 *gDatabookItemDrawSdata_00201D3C;
 #ifdef NONMATCHING
 extern u8 gEquipDrawBss_00495B60[];
 #endif
+extern Q2 gDatabookItemResetData_001F2F40;
+extern Flags8 D_004A1444[];
 #ifndef NONMATCHING
 extern f32 gDatabookItemDrawSbss_0020219C;
+extern f32 gDatabookItemDrawSbss_002021A0;
+extern s32 gDatabookItemDrawBss_004A1434[];
+extern s32 gDatabookItemDrawBss_004A1438[];
+extern f32 gDatabookItemDrawBss_004A143C[];
+extern s32 gDatabookItemDrawSbss_00202194;
 #else
 /* data twins (src/game/data/sbss.c): gDatabookItemDrawSbss_0020219C */
 static f32 gDatabookItemDrawSbss_0020219C;
-#endif
-#ifndef NONMATCHING
-extern f32 gDatabookItemDrawSbss_002021A0;
-#else
 /* data twins (src/game/data/sbss.c): gDatabookItemDrawSbss_002021A0 */
 static f32 gDatabookItemDrawSbss_002021A0;
-#endif
-#ifndef NONMATCHING
-extern s32 gDatabookItemDrawBss_004A1434[];
-#else
 /* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemDrawBss_004A1434 */
 static s32 gDatabookItemDrawBss_004A1434[0x1];
-#endif
-extern Q2 gDatabookItemResetData_001F2F40;
-#ifndef NONMATCHING
-extern s32 gDatabookItemDrawBss_004A1438[];
-#else
 /* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemDrawBss_004A1438 */
 static s32 gDatabookItemDrawBss_004A1438[0x1];
-#endif
-#ifndef NONMATCHING
-extern f32 gDatabookItemDrawBss_004A143C[];
-#else
 /* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemDrawBss_004A143C */
 static f32 gDatabookItemDrawBss_004A143C[0x1];
-#endif
-extern Flags8 D_004A1444[];
-#ifndef NONMATCHING
-extern s32 gDatabookItemDrawSbss_00202194;
-#else
 /* data twins (src/game/data/sbss.c): gDatabookItemDrawSbss_00202194 */
 static s32 gDatabookItemDrawSbss_00202194;
 #endif
@@ -288,10 +273,6 @@ s32 gDatabookItemDrawSdata_00201D38 = 6;
 s32 *gDatabookItemDrawSdata_00201D3C = (s32 *)gEquipDrawBss_00495B60;
 /* data twins (src/game/data/sbss.c): gDatabookItemDrawSbss_00202198 */
 s32 gDatabookItemDrawSbss_00202198;
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemDrawBss_004A1430, gDatabookItemDrawBss_004A1440 */
 s32 gDatabookItemDrawBss_004A1430[0x1];
 f32 gDatabookItemDrawBss_004A1440[0x4];

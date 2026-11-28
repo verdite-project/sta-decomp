@@ -7,7 +7,7 @@
    load_menu, load_menu_card, load_menu_draw, text_00196330.s,
    text_001973F0.s */
 
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/databook_item_reset.c */
+#ifndef NONMATCHING /* the NONMATCHING build defines these in their owners */
 f32 gDatabookItemResetBss_004A18B8[0x2];
 s32 gDatabookItemResetBss_004A18B0[0x2];
 u32 gDatabookItemResetBss_004A18AC[0x1];
@@ -17,42 +17,26 @@ u8 gDatabookItemResetBss_004A1884[0x18] __attribute__((aligned(4))); /* also D_0
 s8 gDatabookItemResetBss_004A1870[0x14];
 s8 gDatabookItemResetBss_004A1770[0x100];
 s32 gDatabookItemResetBss_004A1450[0xc8];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/databook_item_draw.c */
 u8 gDatabookItemDrawBss_004A1440[0x10]; /* also D_004A1444 */
 f32 gDatabookItemDrawBss_004A143C[0x1];
 s32 gDatabookItemDrawBss_004A1438[0x1];
 s32 gDatabookItemDrawBss_004A1434[0x1];
 s32 gDatabookItemDrawBss_004A1430[0x1];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/db_item_proc_draw_info.c */
 u8 gDbItemProcDrawInfoBss_004A142C[0x4];
 u8 gDbItemProcDrawInfoBss_004A1420[0xc];
 u8 gDbItemProcDrawInfoBss_004A141C[0x4];
 u8 gDbItemProcDrawInfoBss_004A1404[0x18] __attribute__((aligned(4))); /* also D_004A1408 */
 u8 gDbItemProcDrawInfoBss_004A13F0[0x14];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/databook_char_update_wrap.c */
 s32 gDatabookCharUpdateWrapBss_004A13E0[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/db_char_proc_draw_info.c */
 u8 gDbCharProcDrawInfoBss_004A13DC[0x4];
 u8 gDbCharProcDrawInfoBss_004A13D0[0xc];
 u8 gDbCharProcDrawInfoBss_004A13CC[0x4];
 u8 gDbCharProcDrawInfoBss_004A13B4[0x18] __attribute__((aligned(4))); /* also D_004A13B8 */
 u8 gDbCharProcDrawInfoBss_004A13A0[0x14];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/databook_char_update_wrap.c */
 s32 gDatabookCharUpdateWrapBss_004A11A0[0x80];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/load_menu.c */
 s32 gLoadMenuBss_004A119C[0x1];
 s32 gLoadMenuBss_004A1198[0x1];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/load_menu.c */
 u8 gLoadMenuBss_004A1194[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/load_menu.c */
 f32 gLoadMenuBss_004A1190[0x1];
 u8 gLoadMenuBss_004A118C[0x4];
 s32 gLoadMenuBss_004A1188[0x1];

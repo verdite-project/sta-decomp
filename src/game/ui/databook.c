@@ -36,144 +36,81 @@ typedef struct { s16 n; s8 v[14]; } E_ItemSort_GetEntry_0_00195B80;
 #ifdef NONMATCHING
 extern u8 gEquipDrawBss_00496B60[];
 #endif
-#ifndef NONMATCHING
-extern f32 gDatabookSdata_00201D30;
-#else
-/* data twins (src/game/data/sdata.c): gDatabookSdata_00201D30 */
-static f32 gDatabookSdata_00201D30 = -2.99f;
-#endif
-#ifndef NONMATCHING
-extern s32 gDatabookSbss_00202154;
-#else
-/* data twins (src/game/data/sbss.c): gDatabookSbss_00202154 */
-static s32 gDatabookSbss_00202154;
-#endif
-#ifndef NONMATCHING
-extern Pack1952B0 **gDatabookSbss_00202180;
-#else
-/* data twins (src/game/data/sbss.c): gDatabookSbss_00202180 */
-static Pack1952B0 **gDatabookSbss_00202180;
-#endif
-#ifndef NONMATCHING
-extern u8 gDatabookRodata_001FD270[];
-#else
-/* data twins (src/game/data/databook_rodata.c): gDatabookRodata_001FD270 */
-static u8 gDatabookRodata_001FD270[0x8] = "MAP\000\000\000\000\000";
-#endif
-#ifndef NONMATCHING
-extern u8 gDatabookRodata_001FD288[];
-#else
-/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookRodata_001FD288 */
-static u8 gDatabookRodata_001FD288[0x5] = "ITEM\000";
-#endif
 extern Q2 gDatabookData_001F2E40;
 extern s32 gDatabookData_001F2E60[];
 extern s8 gDatabookRodata_001FD268[];
-#ifndef NONMATCHING
-extern s8 *gDatabookSdata_00201D28;
-#else
-/* data twins (src/game/data/sdata.c): gDatabookSdata_00201D28 */
-static s8 *gDatabookSdata_00201D28 = (s8 *)gDatabookRodata_001FD268;
-#endif
-#ifndef NONMATCHING
-extern s8 *gDatabookSdata_00201D2C;
-#else
-/* data twins (src/game/data/sdata.c): gDatabookSdata_00201D2C */
-static s8 *gDatabookSdata_00201D2C = (s8 *)gDatabookRodata_001FD268;
-#endif
-#ifndef NONMATCHING
-extern u8 gDatabookSdata_00201D20[4];
-#else
-/* data twins (src/game/data/sdata.c): gDatabookSdata_00201D20 */
-static u8 gDatabookSdata_00201D20[0x4] = { 0x19, 0x1a, 0x1b, 0 };
-#endif
 extern Tbl *gDatabookSbss_0020215C;
 extern u32 gSoundSbss_002022B8;
-#ifndef NONMATCHING
-extern T_DbChar_Find_0_00195770 **gDatabookSbss_00202168;
-#else
-/* data twins (src/game/data/sbss.c): gDatabookSbss_00202168 */
-static T_DbChar_Find_0_00195770 **gDatabookSbss_00202168;
-#endif
-#ifndef NONMATCHING
-extern s32 *gDatabookSbss_00202160;
-#else
-/* data twins (src/game/data/sbss.c): gDatabookSbss_00202160 */
-static s32 *gDatabookSbss_00202160;
-#endif
 extern s32 *gDatabookSbss_00202164;
-#ifndef NONMATCHING
-extern E_DbMap_GetKillRate_0_001959E0 **gDatabookSbss_0020216C;
-#else
-/* data twins (src/game/data/sbss.c): gDatabookSbss_0020216C */
-static E_DbMap_GetKillRate_0_001959E0 **gDatabookSbss_0020216C;
-#endif
 extern E_ItemSort_GetEntry_0_00195B80 *gDatabookSbss_0020217C;
 extern s16 *gDatabookSbss_00202174;
-#ifndef NONMATCHING
-extern s8 gDatabookRodata_001FD290[];
-#else
-/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookRodata_001FD290 */
-static s8 gDatabookRodata_001FD290[0xf] = "menu/dbmap.txm\000";
-#endif
-#ifndef NONMATCHING
-extern s8 gDatabookRodata_001FD2A0[];
-#else
-/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookRodata_001FD2A0 */
-static s8 gDatabookRodata_001FD2A0[0x10] __attribute__((aligned(8))) = "menu/dbchar.txm\000";
-#endif
-#ifndef NONMATCHING
-extern s8 gDatabookRodata_001FD2B0[];
-#else
-/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookRodata_001FD2B0 */
-static s8 gDatabookRodata_001FD2B0[0x10] __attribute__((aligned(8))) = "menu/dbitem.txm\000";
-#endif
-#ifndef NONMATCHING
-extern s8 gDatabookRodata_001FD2C0[];
-#else
-/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookRodata_001FD2C0 */
-static s8 gDatabookRodata_001FD2C0[0xe] = "menu/help.txm\000";
-#endif
-#ifndef NONMATCHING
-extern s8 gDatabookRodata_001FD2D0[];
-#else
-/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookRodata_001FD2D0 */
-static s8 gDatabookRodata_001FD2D0[0x10] __attribute__((aligned(8))) = "menu/dbchar.sta\000";
-#endif
-#ifndef NONMATCHING
-extern s8 gDatabookRodata_001FD2E0[];
-#else
-/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookRodata_001FD2E0 */
-static s8 gDatabookRodata_001FD2E0[0xf] = "menu/dbmap.sta\000";
-#endif
-#ifndef NONMATCHING
-extern s8 gDatabookRodata_001FD2F0[];
-#else
-/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookRodata_001FD2F0 */
-static s8 gDatabookRodata_001FD2F0[0x20] __attribute__((aligned(8))) = "menu/itemsort.tbl\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
-#endif
-#ifndef NONMATCHING
-extern s8 gDatabookRodata_001FD310[];
-#else
-/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookRodata_001FD310 */
-static s8 gDatabookRodata_001FD310[0x18] __attribute__((aligned(8))) = "menu/itemmenu.tbl\000\000\000\000\000\000\000";
-#endif
 extern s8 * volatile gDatabookSbss_00202158;
 #ifndef NONMATCHING
+extern f32 gDatabookSdata_00201D30;
+extern s32 gDatabookSbss_00202154;
+extern Pack1952B0 **gDatabookSbss_00202180;
+extern u8 gDatabookRodata_001FD270[];
+extern u8 gDatabookRodata_001FD288[];
+extern s8 *gDatabookSdata_00201D28;
+extern s8 *gDatabookSdata_00201D2C;
+extern u8 gDatabookSdata_00201D20[4];
+extern T_DbChar_Find_0_00195770 **gDatabookSbss_00202168;
+extern s32 *gDatabookSbss_00202160;
+extern E_DbMap_GetKillRate_0_001959E0 **gDatabookSbss_0020216C;
+extern s8 gDatabookRodata_001FD290[];
+extern s8 gDatabookRodata_001FD2A0[];
+extern s8 gDatabookRodata_001FD2B0[];
+extern s8 gDatabookRodata_001FD2C0[];
+extern s8 gDatabookRodata_001FD2D0[];
+extern s8 gDatabookRodata_001FD2E0[];
+extern s8 gDatabookRodata_001FD2F0[];
+extern s8 gDatabookRodata_001FD310[];
 extern s32 *gDatabookSbss_00202170;
-#else
-/* data twins (src/game/data/sbss.c): gDatabookSbss_00202170 */
-static s32 *gDatabookSbss_00202170;
-#endif
-#ifndef NONMATCHING
 extern s32 *gDatabookSbss_00202178;
-#else
-/* data twins (src/game/data/sbss.c): gDatabookSbss_00202178 */
-static s32 *gDatabookSbss_00202178;
-#endif
-#ifndef NONMATCHING
 extern f32 *gDatabookSdata_00201D24;
 #else
+/* data twins (src/game/data/sdata.c): gDatabookSdata_00201D30 */
+static f32 gDatabookSdata_00201D30 = -2.99f;
+/* data twins (src/game/data/sbss.c): gDatabookSbss_00202154 */
+static s32 gDatabookSbss_00202154;
+/* data twins (src/game/data/sbss.c): gDatabookSbss_00202180 */
+static Pack1952B0 **gDatabookSbss_00202180;
+/* data twins (src/game/data/databook_rodata.c): gDatabookRodata_001FD270 */
+static u8 gDatabookRodata_001FD270[0x8] = "MAP\000\000\000\000\000";
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookRodata_001FD288 */
+static u8 gDatabookRodata_001FD288[0x5] = "ITEM\000";
+/* data twins (src/game/data/sdata.c): gDatabookSdata_00201D28 */
+static s8 *gDatabookSdata_00201D28 = (s8 *)gDatabookRodata_001FD268;
+/* data twins (src/game/data/sdata.c): gDatabookSdata_00201D2C */
+static s8 *gDatabookSdata_00201D2C = (s8 *)gDatabookRodata_001FD268;
+/* data twins (src/game/data/sdata.c): gDatabookSdata_00201D20 */
+static u8 gDatabookSdata_00201D20[0x4] = { 0x19, 0x1a, 0x1b, 0 };
+/* data twins (src/game/data/sbss.c): gDatabookSbss_00202168 */
+static T_DbChar_Find_0_00195770 **gDatabookSbss_00202168;
+/* data twins (src/game/data/sbss.c): gDatabookSbss_00202160 */
+static s32 *gDatabookSbss_00202160;
+/* data twins (src/game/data/sbss.c): gDatabookSbss_0020216C */
+static E_DbMap_GetKillRate_0_001959E0 **gDatabookSbss_0020216C;
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookRodata_001FD290 */
+static s8 gDatabookRodata_001FD290[0xf] = "menu/dbmap.txm\000";
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookRodata_001FD2A0 */
+static s8 gDatabookRodata_001FD2A0[0x10] __attribute__((aligned(8))) = "menu/dbchar.txm\000";
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookRodata_001FD2B0 */
+static s8 gDatabookRodata_001FD2B0[0x10] __attribute__((aligned(8))) = "menu/dbitem.txm\000";
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookRodata_001FD2C0 */
+static s8 gDatabookRodata_001FD2C0[0xe] = "menu/help.txm\000";
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookRodata_001FD2D0 */
+static s8 gDatabookRodata_001FD2D0[0x10] __attribute__((aligned(8))) = "menu/dbchar.sta\000";
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookRodata_001FD2E0 */
+static s8 gDatabookRodata_001FD2E0[0xf] = "menu/dbmap.sta\000";
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookRodata_001FD2F0 */
+static s8 gDatabookRodata_001FD2F0[0x20] __attribute__((aligned(8))) = "menu/itemsort.tbl\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookRodata_001FD310 */
+static s8 gDatabookRodata_001FD310[0x18] __attribute__((aligned(8))) = "menu/itemmenu.tbl\000\000\000\000\000\000\000";
+/* data twins (src/game/data/sbss.c): gDatabookSbss_00202170 */
+static s32 *gDatabookSbss_00202170;
+/* data twins (src/game/data/sbss.c): gDatabookSbss_00202178 */
+static s32 *gDatabookSbss_00202178;
 /* data twins (src/game/data/sdata.c): gDatabookSdata_00201D24 */
 static f32 *gDatabookSdata_00201D24 = (f32 *)gEquipDrawBss_00496B60;
 #endif
@@ -613,31 +550,15 @@ Tbl *gDatabookSbss_0020215C;
 s32 *gDatabookSbss_00202164;
 s16 *gDatabookSbss_00202174;
 E_ItemSort_GetEntry_0_00195B80 *gDatabookSbss_0020217C;
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 extern u8 gDatabookData_001F2E00[];
 /* data group (src/game/data/load_menu_draw_data.c): D_001F2E40__grp: gDatabookData_001F2E40@0x0 */
 s32 D_001F2E40__grp[0x8] __attribute__((aligned(16))) = { 0, 5, 0, (s32)gDatabookData_001F2E00, 7, -0x3fc00000, 0, 0 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/sbss.c): D_00202158__grp: gDatabookSbss_00202158@0x0 */
 u8 D_00202158__grp[0x4] __attribute__((aligned(8)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data twins (src/game/data/load_menu_draw_data.c): gDatabookData_001F2E00 */
 u8 gDatabookData_001F2E00[0x40] = { 0, 0, 0x40, 0xc0, 0xa6, 0xf, 0, 0, 0, 0, 0, 0xc0, 0xa5, 0xf, 0, 0, 0, 0, 0x80, 0xbf, 0xa4, 0xf, 0, 0, 0, 0, 0, 0, 0xa3, 0xf, 0, 0, 0, 0, 0x80, 0x3f, 0xa2, 0xf, 0, 0, 0, 0, 0, 0x40, 0xa1, 0xf, 0, 0, 0, 0, 0x40, 0x40, 0xa0, 0xf, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 /* data twins (src/game/data/databook_rodata.c): gDatabookRodata_001FD268 */
 s8 gDatabookRodata_001FD268[0x8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/load_menu_draw_data.c): D_001F2E60__grp: gDatabookData_001F2E60@0x0 */
 s32 D_001F2E60__grp[0x4] __attribute__((aligned(16))) = { 0, 1, 2, 0 };
 #endif

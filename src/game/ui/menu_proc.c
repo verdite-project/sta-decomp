@@ -12,13 +12,10 @@ extern void (*D_004A0F9C[])(s8 *);
 extern void (*gMenuProcBss_004A0F98[])(s32);
 #ifndef NONMATCHING
 extern s8 gMenuProcRodata_001FCCF0[];
+extern s8 gMenuProcRodata_001FCCF8[];
 #else
 /* data twins (src/game/data/ui_gauge_rodata2.c): gMenuProcRodata_001FCCF0 */
 static s8 gMenuProcRodata_001FCCF0[0x8] = { -0x7f, -0x65, -0x7f, 0x46, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s8 gMenuProcRodata_001FCCF8[];
-#else
 /* data twins (src/game/data/ui_gauge_rodata2.c): gMenuProcRodata_001FCCF8 */
 static s8 gMenuProcRodata_001FCCF8[0x8] = { -0x7f, 0x7e, -0x7f, 0x46, 0, 0, 0, 0 };
 #endif
@@ -193,10 +190,6 @@ void Menu_SetCursor_1_0018B840(s32 i, s32 v)
 s32 gMenuProcSbss_00202120[2];
 /* data twins (src/game/data/option_bss.c): gMenuProcBss_004A0F90 */
 s32 gMenuProcBss_004A0F90[0x2] __attribute__((aligned(4)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/option_bss.c): D_004A0F98__grp: gMenuProcBss_004A0F98@0x0 */
 u8 D_004A0F98__grp[0x28] __attribute__((aligned(8)));
 #endif

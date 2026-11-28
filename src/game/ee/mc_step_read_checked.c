@@ -3,25 +3,16 @@
 
 #ifndef NONMATCHING
 extern s32 gMcStepReadCheckedBss_004B638C[];
+extern s32 gMcStepReadCheckedBss_004B6390[];
+extern s32 gMcStepReadCheckedBss_004B6394[];
+extern s32 gMcStepReadCheckedBss_004B6398[];
 #else
 /* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): gMcStepReadCheckedBss_004B638C */
 static s32 gMcStepReadCheckedBss_004B638C[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gMcStepReadCheckedBss_004B6390[];
-#else
 /* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): gMcStepReadCheckedBss_004B6390 */
 static s32 gMcStepReadCheckedBss_004B6390[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gMcStepReadCheckedBss_004B6394[];
-#else
 /* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): gMcStepReadCheckedBss_004B6394 */
 static s32 gMcStepReadCheckedBss_004B6394[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gMcStepReadCheckedBss_004B6398[];
-#else
 /* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): gMcStepReadCheckedBss_004B6398 */
 static s32 gMcStepReadCheckedBss_004B6398[0x1];
 #endif

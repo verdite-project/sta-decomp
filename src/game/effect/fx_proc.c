@@ -361,12 +361,6 @@ extern Mtx gMatrixFromData_001F2170;
 extern f32 gMatrixFromData_001F2160__as_FxProc_SplashDamage_0_0014A5F0[];
 extern s8 gMatrixFromData_001F2160__as_FxProc_DropToGround_0_00149D20[];
 extern void *gPlayerSbss_002022E4__as_FxProc_StopLight_0_0014A860_;
-#ifndef NONMATCHING
-extern f32 gFxProcRodata_001FB738[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gFxProcRodata_001FB738 */
-static f32 gFxProcRodata_001FB738[0x2] = { 100000.0f, 0.0f };
-#endif
 extern Mtx gMatrixFromData_001F2170__as_FxProc_HomingProjectile_0_0014B1B0;
 extern void *gPlayerSbss_002022E4__as_FxProc_InitHoming_0_0014B9E0;
 extern s32 **gPlayerSbss_002022BC;
@@ -381,8 +375,11 @@ extern s32 gMatrixFromData_001F2170__as_FxProc_RandomJitter_0_0014C890__[];
 extern s32 gPlayerSbss_002022E4__as_FxProc_InitTowardEnemy_0_0014D410;
 extern s8 gMatrixFromData_001F2160__as_FxProc_MoveToward_0_0014D310_[];
 #ifndef NONMATCHING
+extern f32 gFxProcRodata_001FB738[];
 extern u16 gFxProcData_001F1E60[];
 #else
+/* data twins (src/game/data/fx_proc_rodata.c): gFxProcRodata_001FB738 */
+static f32 gFxProcRodata_001FB738[0x2] = { 100000.0f, 0.0f };
 /* data twins (src/game/data/fx_proc_data.c): gFxProcData_001F1E60 */
 static u16 gFxProcData_001F1E60[0x20] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 0, 0, 0, 0 };
 #endif

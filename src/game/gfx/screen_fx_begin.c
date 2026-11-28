@@ -6,23 +6,17 @@
 /* NEAR: logic matches; retail reloads gScreenFxBeginSbss_00201EEC before the gScreenFxBeginSbss_00201F08/F04 stores and
  * keeps the product in $t0. stmtperm over the store order (210) found nothing. */
 #include "common.h"
-#ifndef NONMATCHING
-extern s32 gScreenFxBeginSbss_00201EEC;
-#else
-/* data twins (src/game/data/sbss.c): gScreenFxBeginSbss_00201EEC */
-static s32 gScreenFxBeginSbss_00201EEC;
-#endif
 extern s32 gScreenFxBeginSbss_00201EF0;
 extern s32 gScreenFxDrawSbss_00201EF4;
 #ifndef NONMATCHING
+extern s32 gScreenFxBeginSbss_00201EEC;
 extern u32 gScreenFxBeginSbss_00201EF8;
-#else
-/* data twins (src/game/data/sbss.c): gScreenFxBeginSbss_00201EF8 */
-static u32 gScreenFxBeginSbss_00201EF8;
-#endif
-#ifndef NONMATCHING
 extern u32 gScreenFxBeginSbss_00201EFC;
 #else
+/* data twins (src/game/data/sbss.c): gScreenFxBeginSbss_00201EEC */
+static s32 gScreenFxBeginSbss_00201EEC;
+/* data twins (src/game/data/sbss.c): gScreenFxBeginSbss_00201EF8 */
+static u32 gScreenFxBeginSbss_00201EF8;
 /* data twins (src/game/data/sbss.c): gScreenFxBeginSbss_00201EFC */
 static u32 gScreenFxBeginSbss_00201EFC;
 #endif

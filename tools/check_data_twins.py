@@ -29,7 +29,7 @@ from elftools.elf.relocation import RelocationSection
 
 ROOT = Path(__file__).resolve().parent.parent
 TWINS = re.compile(r"/\* data twins \(([\w/.]+)\): ([\w, ]+) \*/")
-UNIT_BLOCK = re.compile(r"^#ifndef NONMATCHING /\* the NONMATCHING build defines these in ([\w/.]+) \*/\n(.*?)^#endif",
+UNIT_BLOCK = re.compile(r"^#ifndef NONMATCHING /\* the NONMATCHING build defines these in [^*]*\*/\n(.*?)^#endif",
                         re.M | re.S)
 INIT = {".data", ".rodata", ".sdata"}
 
@@ -47,15 +47,15 @@ def twins():
 
 
 def unit_blocks():
-    """{(unit, owner): set of names} the data units put under #ifndef."""
+    """{unit: set of names} the data units put under #ifndef."""
     out = collections.defaultdict(set)
     for p in sorted(glob.glob(str(ROOT / "src/game/data/*.c"))):
         t = Path(p).read_text()
         for m in UNIT_BLOCK.finditer(t):
-            for line in m.group(2).splitlines():
+            for line in m.group(1).splitlines():
                 d = re.search(r"\b(\w+)\s*(?:\[[^\]]*\])*\s*(?:__attribute__\(\(\w+(?:\([^()]*\))?\)\)\s*)?(?:=|;)", line)
                 if d:
-                    out[(str(Path(p).relative_to(ROOT)), m.group(1))].add(d.group(1))
+                    out[str(Path(p).relative_to(ROOT))].add(d.group(1))
     return out
 
 
@@ -183,14 +183,14 @@ def check():
     gs = groups()
     pairs = collections.defaultdict(set)
     for owner, unit, n in tw:
-        pairs[(unit, owner)].add(n)
+        pairs[unit].add(n)
     for owner, unit, blob, ms in gs:
-        pairs[(unit, owner)] |= {n for n, _ in ms}
+        pairs[unit] |= {n for n, _ in ms}
     blocks = unit_blocks()
     for key in set(blocks) | set(pairs):
         if blocks.get(key, set()) != pairs.get(key, set()):
             extra = blocks.get(key, set()) ^ pairs.get(key, set())
-            bad.append(f"{key[0]} / {key[1]}: unpaired {', '.join(sorted(extra))}")
+            bad.append(f"{key}: unpaired {', '.join(sorted(extra))}")
     objs = {}
     get = lambda p: objs.setdefault(p, Obj(p))
     for owner, unit, n in tw:

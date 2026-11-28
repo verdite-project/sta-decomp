@@ -32,55 +32,34 @@ typedef struct {
 } Ent;
 typedef struct { s32 data; s32 addr; u32 size; s32 mode; } Dma;
 extern s32 D_004BA4F8[];
-#ifndef NONMATCHING
-extern s32 gSeSbss_00202320;
-#else
-/* data twins (src/game/data/sbss.c): gSeSbss_00202320 */
-static s32 gSeSbss_00202320;
-#endif
-#ifndef NONMATCHING
-extern s32 gSeSbss_00202324;
-#else
-/* data twins (src/game/data/sbss.c): gSeSbss_00202324 */
-static s32 gSeSbss_00202324;
-#endif
 extern s8 D_004BA782[][4];
 extern E_Se_StopVoice_0_001DA530 D_004BA70C[];
 extern u32 gSeBss_004BAA28[];
-#ifndef NONMATCHING
-extern s32 gSeBss_004BA2F8[];
-#else
-/* data twins (src/game/data/bgm_bss_004BA0E0.c): gSeBss_004BA2F8 */
-static s32 gSeBss_004BA2F8[0x2];
-#endif
-#ifndef NONMATCHING
-extern u32 gSeBss_004BA2E4[];
-#else
-/* data twins (src/game/data/bgm_bss_004BA0E0.c): gSeBss_004BA2E4 */
-static u32 gSeBss_004BA2E4[0x1];
-#endif
-#ifndef NONMATCHING
-extern u32 gSeBss_004BA2E8[];
-#else
-/* data twins (src/game/data/bgm_bss_004BA0E0.c): gSeBss_004BA2E8 */
-static u32 gSeBss_004BA2E8[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gSeBss_004BA2EC[];
-#else
-/* data twins (src/game/data/bgm_bss_004BA0E0.c): gSeBss_004BA2EC */
-static s32 gSeBss_004BA2EC[0x1];
-#endif
-#ifndef NONMATCHING
-extern u32 gSeBss_004BA2F4[];
-#else
-/* data twins (src/game/data/bgm_bss_004BA0E0.c): gSeBss_004BA2F4 */
-static u32 gSeBss_004BA2F4[0x1];
-#endif
 extern Dma gSeDmaBss_004BAA60;
 #ifndef NONMATCHING
+extern s32 gSeSbss_00202320;
+extern s32 gSeSbss_00202324;
+extern s32 gSeBss_004BA2F8[];
+extern u32 gSeBss_004BA2E4[];
+extern u32 gSeBss_004BA2E8[];
+extern s32 gSeBss_004BA2EC[];
+extern u32 gSeBss_004BA2F4[];
 extern s32 gSeBss_004BA2F0[];
 #else
+/* data twins (src/game/data/sbss.c): gSeSbss_00202320 */
+static s32 gSeSbss_00202320;
+/* data twins (src/game/data/sbss.c): gSeSbss_00202324 */
+static s32 gSeSbss_00202324;
+/* data twins (src/game/data/bgm_bss_004BA0E0.c): gSeBss_004BA2F8 */
+static s32 gSeBss_004BA2F8[0x2];
+/* data twins (src/game/data/bgm_bss_004BA0E0.c): gSeBss_004BA2E4 */
+static u32 gSeBss_004BA2E4[0x1];
+/* data twins (src/game/data/bgm_bss_004BA0E0.c): gSeBss_004BA2E8 */
+static u32 gSeBss_004BA2E8[0x1];
+/* data twins (src/game/data/bgm_bss_004BA0E0.c): gSeBss_004BA2EC */
+static s32 gSeBss_004BA2EC[0x1];
+/* data twins (src/game/data/bgm_bss_004BA0E0.c): gSeBss_004BA2F4 */
+static u32 gSeBss_004BA2F4[0x1];
 /* data twins (src/game/data/bgm_bss_004BA0E0.c): gSeBss_004BA2F0 */
 static s32 gSeBss_004BA2F0[0x1];
 #endif

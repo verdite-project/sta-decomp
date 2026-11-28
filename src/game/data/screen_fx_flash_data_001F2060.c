@@ -14,13 +14,11 @@ void ScrCmd_ResetAllSlots_0_00164E80(void);
 void ScrCmd_SendEvent_1_00164EE0(void);
 void ScrCmd_SetVar_1_00164DC0(void);
 
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/fog.c */
+#ifndef NONMATCHING /* the NONMATCHING build defines these in their owners */
 f32 gFogData_001F2060[0x1] __attribute__((aligned(16))) = { 1.0f };
 s32 gFogData_001F2064[0x1] = { 0 };
 s32 gFogData_001F2068[0x1] = { 0 };
 s32 gFogData_001F206C[0x1] = { 0 };
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/player/player.c */
 f32 gPlayerData_001F2070[0x1] = { 2.0f };
 s32 gPlayerData_001F2074[0x1] = { 0 };
 f32 gPlayerData_001F2078[0x1] = { 1.0f };
@@ -37,8 +35,6 @@ f32 gPlayerData_001F20C8[0x2] = { 128.0f, 128.0f };
 f32 gPlayerData_001F20D0[0x1] = { 1.0f };
 f32 gPlayerData_001F20D4[0x1] = { 1.0f };
 f32 gPlayerData_001F20D8[0xa] __attribute__((aligned(8))) = { 1.0f, 128.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f };
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/math/matrix_from.c */
 f32 gMatrixFromData_001F2100[0x3] = { 1.0f, 0.0f, 0.0f };
 f32 gMatrixFromData_001F210C[0x1] = { 128.0f };
 f32 gMatrixFromData_001F2110[0x1] = { 1.0f };

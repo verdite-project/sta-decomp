@@ -13,18 +13,15 @@ typedef struct {
     union { u32 w; u8 b[4]; } c;
 } S_MapSheet_Draw_0_001ED630;
 typedef struct { s32 x0; s32 x4; s8 x8; s8 p9[3]; s8 xC; } S_MapSheet_Update_0_001ED740;
-#ifndef NONMATCHING
-extern s32 gMapSheetSdata_00201E78;
-#else
-/* data twins (src/game/data/sdata.c): gMapSheetSdata_00201E78 */
-static s32 gMapSheetSdata_00201E78 = -1;
-#endif
 extern S_MapSheet_Draw_0_001ED630 gMapSheetBss_004BE0E0;
 extern s32 gMenuData_001F27B0[];
 extern s32 gMenuData_001F27C0[];
 #ifndef NONMATCHING
+extern s32 gMapSheetSdata_00201E78;
 extern f32 gMapSheetSbss_00202404;
 #else
+/* data twins (src/game/data/sdata.c): gMapSheetSdata_00201E78 */
+static s32 gMapSheetSdata_00201E78 = -1;
 /* data twins (src/game/data/sbss.c): gMapSheetSbss_00202404 */
 static f32 gMapSheetSbss_00202404;
 #endif

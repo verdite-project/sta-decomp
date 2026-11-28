@@ -33,110 +33,62 @@ extern V gItemMenuDrawData_001F3130[];
 extern u8 gEquipDrawBss_00495B60[];
 extern u8 gEquipDrawBss_00496B60[];
 #endif
+extern s8 gItemMenuDrawBss_004A32A0[];
+extern S gItemMenuDrawData_001F3100[] __attribute__((aligned(16)));
+extern s8 gItemMenuProcDrawInfoBss_004A3150[];
+extern u8 gItemMenuDrawBss_004A329C[];
+extern Q2 gItemMenuDrawData_001F30C0;
 #ifndef NONMATCHING
 extern f32 gItemMenuDrawSdata_00201D70;
+extern f32 gItemMenuDrawSdata_00201D74;
+extern s32 *gItemMenuDrawSdata_00201D68;
+extern s32 gItemMenuDrawSbss_002021E4;
+extern s32 gItemMenuDrawSbss_002021E8;
+extern s32 gItemMenuDrawSbss_002021F8;
+extern s32 gItemMenuDrawSbss_00202200;
+extern s32 gItemMenuDrawBss_004A3290[];
+extern s8 gItemMenuDrawRodata_001FD5B0[];
+extern s32 gItemMenuDrawSbss_002021E0;
+extern s32 gItemMenuDrawSbss_002021EC;
+extern s32 gItemMenuDrawSbss_002021F4;
+extern s32 gItemMenuDrawBss_004A3294[];
+extern f32 gItemMenuDrawBss_004A3298[];
+extern s32 gItemMenuDrawSbss_002021F0;
+extern s32 gItemMenuDrawSbss_002021FC;
+extern f32 *gItemMenuDrawSdata_00201D6C;
 #else
 /* data twins (src/game/data/sdata.c): gItemMenuDrawSdata_00201D70 */
 static f32 gItemMenuDrawSdata_00201D70 = -2.99f;
-#endif
-#ifndef NONMATCHING
-extern f32 gItemMenuDrawSdata_00201D74;
-#else
 /* data twins (src/game/data/sdata.c): gItemMenuDrawSdata_00201D74 */
 static f32 gItemMenuDrawSdata_00201D74 = -300.0f;
-#endif
-#ifndef NONMATCHING
-extern s32 *gItemMenuDrawSdata_00201D68;
-#else
 /* data twins (src/game/data/sdata.c): gItemMenuDrawSdata_00201D68 */
 static s32 *gItemMenuDrawSdata_00201D68 = (s32 *)gEquipDrawBss_00495B60;
-#endif
-#ifndef NONMATCHING
-extern s32 gItemMenuDrawSbss_002021E4;
-#else
 /* data twins (src/game/data/sbss.c): gItemMenuDrawSbss_002021E4 */
 static s32 gItemMenuDrawSbss_002021E4;
-#endif
-#ifndef NONMATCHING
-extern s32 gItemMenuDrawSbss_002021E8;
-#else
 /* data twins (src/game/data/sbss.c): gItemMenuDrawSbss_002021E8 */
 static s32 gItemMenuDrawSbss_002021E8;
-#endif
-#ifndef NONMATCHING
-extern s32 gItemMenuDrawSbss_002021F8;
-#else
 /* data twins (src/game/data/sbss.c): gItemMenuDrawSbss_002021F8 */
 static s32 gItemMenuDrawSbss_002021F8;
-#endif
-#ifndef NONMATCHING
-extern s32 gItemMenuDrawSbss_00202200;
-#else
 /* data twins (src/game/data/sbss.c): gItemMenuDrawSbss_00202200 */
 static s32 gItemMenuDrawSbss_00202200;
-#endif
-#ifndef NONMATCHING
-extern s32 gItemMenuDrawBss_004A3290[];
-#else
 /* data twins (src/game/data/item_menu_draw_bss.c): gItemMenuDrawBss_004A3290 */
 static s32 gItemMenuDrawBss_004A3290[0x1];
-#endif
-extern s8 gItemMenuDrawBss_004A32A0[];
-extern S gItemMenuDrawData_001F3100[] __attribute__((aligned(16)));
-#ifndef NONMATCHING
-extern s8 gItemMenuDrawRodata_001FD5B0[];
-#else
 /* data twins (src/game/data/item_menu_draw_rodata.c): gItemMenuDrawRodata_001FD5B0 */
 static s8 gItemMenuDrawRodata_001FD5B0[0x8] = "+%d\000\000\000\000\000";
-#endif
-extern s8 gItemMenuProcDrawInfoBss_004A3150[];
-extern u8 gItemMenuDrawBss_004A329C[];
-#ifndef NONMATCHING
-extern s32 gItemMenuDrawSbss_002021E0;
-#else
 /* data twins (src/game/data/sbss.c): gItemMenuDrawSbss_002021E0 */
 static s32 gItemMenuDrawSbss_002021E0;
-#endif
-#ifndef NONMATCHING
-extern s32 gItemMenuDrawSbss_002021EC;
-#else
 /* data twins (src/game/data/sbss.c): gItemMenuDrawSbss_002021EC */
 static s32 gItemMenuDrawSbss_002021EC;
-#endif
-extern Q2 gItemMenuDrawData_001F30C0;
-#ifndef NONMATCHING
-extern s32 gItemMenuDrawSbss_002021F4;
-#else
 /* data twins (src/game/data/sbss.c): gItemMenuDrawSbss_002021F4 */
 static s32 gItemMenuDrawSbss_002021F4;
-#endif
-#ifndef NONMATCHING
-extern s32 gItemMenuDrawBss_004A3294[];
-#else
 /* data twins (src/game/data/item_menu_draw_bss.c): gItemMenuDrawBss_004A3294 */
 static s32 gItemMenuDrawBss_004A3294[0x1];
-#endif
-#ifndef NONMATCHING
-extern f32 gItemMenuDrawBss_004A3298[];
-#else
 /* data twins (src/game/data/item_menu_draw_bss.c): gItemMenuDrawBss_004A3298 */
 static f32 gItemMenuDrawBss_004A3298[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gItemMenuDrawSbss_002021F0;
-#else
 /* data twins (src/game/data/sbss.c): gItemMenuDrawSbss_002021F0 */
 static s32 gItemMenuDrawSbss_002021F0;
-#endif
-#ifndef NONMATCHING
-extern s32 gItemMenuDrawSbss_002021FC;
-#else
 /* data twins (src/game/data/sbss.c): gItemMenuDrawSbss_002021FC */
 static s32 gItemMenuDrawSbss_002021FC;
-#endif
-#ifndef NONMATCHING
-extern f32 *gItemMenuDrawSdata_00201D6C;
-#else
 /* data twins (src/game/data/sdata.c): gItemMenuDrawSdata_00201D6C */
 static f32 *gItemMenuDrawSdata_00201D6C = (f32 *)gEquipDrawBss_00496B60;
 #endif
@@ -676,17 +628,9 @@ void ItemMenuProc_Pos_0_0019DE90(s32 i, s8 *a1, s8 *a2) {
 #pragma explicit_zero_data on
 extern u8 gEquipDrawBss_00495B60[];
 extern u8 gEquipDrawBss_00496B60[];
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data twins (src/game/data/item_menu_draw_bss.c): gItemMenuDrawBss_004A329C, gItemMenuDrawBss_004A32A0 */
 u8 gItemMenuDrawBss_004A329C[0x4];
 s8 gItemMenuDrawBss_004A32A0[0x4];
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 void Databook_Draw_0_001952B0(void);
 void DbChar_Draw_0_00195E30(void);
 void DbItem_Draw_0_00196E20(void);
@@ -702,59 +646,23 @@ void Status_Draw_0_0019DF90(void);
 void Storage_Draw_0_001A30E0(void);
 /* data group (src/game/data/menu_draw_wrap_data.c): D_001F28D0__grp: gItemMenuDrawData_001F28D0@0x0 */
 s32 D_001F28D0__grp[0x18] __attribute__((aligned(16))) = { (s32)Status_Draw_0_0019DF90, (s32)ItemMenu_Draw_0_0019C6D0, (s32)Equip_Draw_0_00199190, 0, (s32)Databook_Draw_0_001952B0, (s32)DbMap_Draw_0_00198160, (s32)DbChar_Draw_0_00195E30, (s32)DbItem_Draw_0_00196E20, 0, 0, 0, (s32)Storage_Draw_0_001A30E0, 0, 0, (s32)Shop_Draw_0_001A1460, 0, (s32)Ending_DrawText_0_001ED850, (s32)Ending_Draw_0_001EDAD0, 0, (s32)Loading_DrawFrame_0_0018E270, (s32)GameOver_DrawFrame_0_0019E8B0, (s32)Ending_PlayMovie_2_00194EE0, 0, 0 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 extern u8 gItemMenuDrawData_001F3080[];
 /* data group (src/game/data/databook_item_reset_data.c): D_001F30C0__grp: gItemMenuDrawData_001F30C0@0x0 */
 s32 D_001F30C0__grp[0x8] __attribute__((aligned(16))) = { 0, 5, 0, (s32)gItemMenuDrawData_001F3080, 7, -0x3fc00000, 0, 0 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/databook_item_reset_data.c): D_001F3100__grp: gItemMenuDrawData_001F3100@0x0 */
 f32 D_001F3100__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/databook_item_reset_data.c): D_001F3120__grp: gItemMenuDrawData_001F3120@0x0 */
 f32 D_001F3120__grp[0x4] __attribute__((aligned(16))) = { 0.0f, 0.0f, 640.0f, 480.0f };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/databook_item_reset_data.c): D_001F3130__grp: gItemMenuDrawData_001F3130@0x0 */
 f32 D_001F3130__grp[0x4] __attribute__((aligned(16))) = { 0.0f, 0.0f, 640.0f, 480.0f };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data twins (src/game/data/databook_item_reset_data.c): gItemMenuDrawData_001F3080 */
 u8 gItemMenuDrawData_001F3080[0x40] = { 0, 0, 0x40, 0xc0, 0xa6, 0xf, 0, 0, 0, 0, 0, 0xc0, 0xa5, 0xf, 0, 0, 0, 0, 0x80, 0xbf, 0xa4, 0xf, 0, 0, 0, 0, 0, 0, 0xa3, 0xf, 0, 0, 0, 0, 0x80, 0x3f, 0xa2, 0xf, 0, 0, 0, 0, 0, 0x40, 0xa1, 0xf, 0, 0, 0, 0, 0x40, 0x40, 0xa0, 0xf, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/item_menu_draw_bss.c): D_004A1A4C__grp: gItemMenuDrawBss_004A1A4C@0x0 */
 unsigned char D_004A1A4C__grp[0x4] __attribute__((aligned(4)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/item_menu_draw_bss.c): D_004A32A4__grp: gItemMenuDrawBss_004A32A4@0x0 */
 unsigned char D_004A32A4__grp[0x4] __attribute__((aligned(4)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/item_menu_draw_bss.c): D_004A32A8__grp: gItemMenuDrawBss_004A32A8@0x0 */
 unsigned char D_004A32A8__grp[0x4] __attribute__((aligned(8)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/item_menu_draw_bss.c): D_004A32AC__grp: gItemMenuDrawBss_004A32AC@0x0 */
 unsigned char D_004A32AC__grp[0x4] __attribute__((aligned(4)));
 #endif

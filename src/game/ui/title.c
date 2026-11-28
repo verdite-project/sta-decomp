@@ -19,177 +19,99 @@ typedef struct { u8 p:3; u8 v:1; } BF3;
 typedef struct { u8 p:5; u8 v:1; } BF5;
 typedef struct { s32 pad[4]; s32 f10[7]; s32 pad2[1]; } St;
 typedef struct { s32 x0; s32 x4; u8 b8; char p9[3]; u8 bC; } Obj_Title_CheckSaveData_1_001A4570;
-#ifndef NONMATCHING
-extern s32 gTitleSbss_00202250;
-#else
-/* data twins (src/game/data/sbss.c): gTitleSbss_00202250 */
-static s32 gTitleSbss_00202250;
-#endif
-#ifndef NONMATCHING
-extern s32 gTitleSbss_00202258;
-#else
-/* data twins (src/game/data/sbss.c): gTitleSbss_00202258 */
-static s32 gTitleSbss_00202258;
-#endif
-#ifndef NONMATCHING
-extern s32 gTitleSbss_00202254;
-#else
-/* data twins (src/game/data/sbss.c): gTitleSbss_00202254 */
-static s32 gTitleSbss_00202254;
-#endif
-#ifndef NONMATCHING
-extern f32 gTitleSdata_00201D9C;
-#else
-/* data twins (src/game/data/sdata.c): gTitleSdata_00201D9C */
-static f32 gTitleSdata_00201D9C = 30.0f;
-#endif
-#ifndef NONMATCHING
-extern s32 gTitleSbss_0020223C;
-#else
-/* data twins (src/game/data/sbss.c): gTitleSbss_0020223C */
-static s32 gTitleSbss_0020223C;
-#endif
-#ifndef NONMATCHING
-extern s32 gTitleSbss_00202260;
-#else
-/* data twins (src/game/data/sbss.c): gTitleSbss_00202260 */
-static s32 gTitleSbss_00202260;
-#endif
-#ifndef NONMATCHING
-extern s32 gTitleSbss_0020225C;
-#else
-/* data twins (src/game/data/sbss.c): gTitleSbss_0020225C */
-static s32 gTitleSbss_0020225C;
-#endif
-#ifndef NONMATCHING
-extern s32 gTitleSbss_0020224C;
-#else
-/* data twins (src/game/data/sbss.c): gTitleSbss_0020224C */
-static s32 gTitleSbss_0020224C;
-#endif
-#ifndef NONMATCHING
-extern s32 gTitleSbss_00202248;
-#else
-/* data twins (src/game/data/sbss.c): gTitleSbss_00202248 */
-static s32 gTitleSbss_00202248;
-#endif
-#ifndef NONMATCHING
-extern s32 gTitleSbss_00202244;
-#else
-/* data twins (src/game/data/sbss.c): gTitleSbss_00202244 */
-static s32 gTitleSbss_00202244;
-#endif
-#ifndef NONMATCHING
-extern s32 gTitleSbss_00202240;
-#else
-/* data twins (src/game/data/sbss.c): gTitleSbss_00202240 */
-static s32 gTitleSbss_00202240;
-#endif
-#ifndef NONMATCHING
-extern s32 gTitleSdata_00201D94;
-#else
-/* data twins (src/game/data/sdata.c): gTitleSdata_00201D94 */
-static s32 gTitleSdata_00201D94 = -1;
-#endif
-#ifndef NONMATCHING
-extern f32 gTitleSdata_00201D98;
-#else
-/* data twins (src/game/data/sdata.c): gTitleSdata_00201D98 */
-static f32 gTitleSdata_00201D98 = -20.0f;
-#endif
-#ifndef NONMATCHING
-extern s32 gTitleBss_004A4360[];
-#else
-/* data twins (src/game/data/shop_bss_004A4360.c): gTitleBss_004A4360 */
-static s32 gTitleBss_004A4360[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gTitleBss_004A4364[];
-#else
-/* data twins (src/game/data/shop_bss_004A4360.c): gTitleBss_004A4364 */
-static s32 gTitleBss_004A4364[0x1];
-#endif
-#ifndef NONMATCHING
-extern void *gTitleBss_004A4368[];
-#else
-/* data twins (src/game/data/shop_bss_004A4360.c): gTitleBss_004A4368 */
-static void *gTitleBss_004A4368[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gTitleBss_004A436C[];
-#else
-/* data twins (src/game/data/shop_bss_004A4360.c): gTitleBss_004A436C */
-static s32 gTitleBss_004A436C[0x1];
-#endif
-#ifndef NONMATCHING
-extern f32 gTitleBss_004A4370[];
-#else
-/* data twins (src/game/data/shop_bss_004A4360.c): gTitleBss_004A4370 */
-static f32 gTitleBss_004A4370[0x1];
-#endif
 extern f32 D_004A4378[];
 extern s32 gStrCdrom0TargetOpeningPss1_001FD870[];
-#ifndef NONMATCHING
-extern Vec gTitleData_001F3310;
-#else
-/* data twins (src/game/data/title_nop_data.c): gTitleData_001F3310 */
-static Vec gTitleData_001F3310 = { 0.0f, 0.0f, 639.0f, 447.0f };
-#endif
-#ifndef NONMATCHING
-extern f32 gTitleSbss_00202264;
-#else
-/* data twins (src/game/data/sbss.c): gTitleSbss_00202264 */
-static f32 gTitleSbss_00202264;
-#endif
-#ifndef NONMATCHING
-extern s32 gTitleBss_004A4390[];
-#else
-/* data twins (src/game/data/save_byte_bss.c): gTitleBss_004A4390 */
-static s32 gTitleBss_004A4390[0x1] __attribute__((aligned(16)));
-#endif
 extern struct { unsigned char : 2; unsigned char f : 1; char pad[15]; } gTitleBss_004A43AC;
-#ifndef NONMATCHING
-extern s32 gTitleBss_004A4394[];
-#else
-/* data twins (src/game/data/save_byte_bss.c): gTitleBss_004A4394 */
-static s32 gTitleBss_004A4394[0x1];
-#endif
 extern u8 D_004A43A2[];
 extern s32 gStrNewGame_001F3380[];
 extern s32 gStrLoadGame_001F3390[];
-#ifndef NONMATCHING
-extern f32 gTitleBss_004A4398[];
-#else
-/* data twins (src/game/data/save_byte_bss.c): gTitleBss_004A4398 */
-static f32 gTitleBss_004A4398[0x2];
-#endif
 extern Q2 gTitleData_001F3360;
-#ifndef NONMATCHING
-extern s8 gTitleRodata_001FD890[];
-#else
-/* data twins (src/game/data/title_rodata.c): gTitleRodata_001FD890 */
-static s8 gTitleRodata_001FD890[0x1d] = "\\TARGET\\STA_TI.ADX\000\000\000\000\000\000\000\000\000\000\000";
-#endif
 extern s32 gTitleSdata_00201DA0;
 extern s16 gTitleBss_004A43A0[];
 extern BF3 gTitleBss_004A43AC__as_TitleMenu_Open_1_001A4420[];
 extern F gTitleBss_004A43AC__as_TitleMenu_Update_1_001A4010_[];
-#ifndef NONMATCHING
-extern s32 gTitleSbss_0020226C;
-#else
-/* data twins (src/game/data/sbss.c): gTitleSbss_0020226C */
-static s32 gTitleSbss_0020226C;
-#endif
-#ifndef NONMATCHING
-extern s32 gTitleSbss_00202268;
-#else
-/* data twins (src/game/data/sbss.c): gTitleSbss_00202268 */
-static s32 gTitleSbss_00202268;
-#endif
 extern s32 gTitleRodata_001FD8D0[];
 #ifndef NONMATCHING
+extern s32 gTitleSbss_00202250;
+extern s32 gTitleSbss_00202258;
+extern s32 gTitleSbss_00202254;
+extern f32 gTitleSdata_00201D9C;
+extern s32 gTitleSbss_0020223C;
+extern s32 gTitleSbss_00202260;
+extern s32 gTitleSbss_0020225C;
+extern s32 gTitleSbss_0020224C;
+extern s32 gTitleSbss_00202248;
+extern s32 gTitleSbss_00202244;
+extern s32 gTitleSbss_00202240;
+extern s32 gTitleSdata_00201D94;
+extern f32 gTitleSdata_00201D98;
+extern s32 gTitleBss_004A4360[];
+extern s32 gTitleBss_004A4364[];
+extern void *gTitleBss_004A4368[];
+extern s32 gTitleBss_004A436C[];
+extern f32 gTitleBss_004A4370[];
+extern Vec gTitleData_001F3310;
+extern f32 gTitleSbss_00202264;
+extern s32 gTitleBss_004A4390[];
+extern s32 gTitleBss_004A4394[];
+extern f32 gTitleBss_004A4398[];
+extern s8 gTitleRodata_001FD890[];
+extern s32 gTitleSbss_0020226C;
+extern s32 gTitleSbss_00202268;
 extern s32 gTitleSbss_00202270;
 #else
+/* data twins (src/game/data/sbss.c): gTitleSbss_00202250 */
+static s32 gTitleSbss_00202250;
+/* data twins (src/game/data/sbss.c): gTitleSbss_00202258 */
+static s32 gTitleSbss_00202258;
+/* data twins (src/game/data/sbss.c): gTitleSbss_00202254 */
+static s32 gTitleSbss_00202254;
+/* data twins (src/game/data/sdata.c): gTitleSdata_00201D9C */
+static f32 gTitleSdata_00201D9C = 30.0f;
+/* data twins (src/game/data/sbss.c): gTitleSbss_0020223C */
+static s32 gTitleSbss_0020223C;
+/* data twins (src/game/data/sbss.c): gTitleSbss_00202260 */
+static s32 gTitleSbss_00202260;
+/* data twins (src/game/data/sbss.c): gTitleSbss_0020225C */
+static s32 gTitleSbss_0020225C;
+/* data twins (src/game/data/sbss.c): gTitleSbss_0020224C */
+static s32 gTitleSbss_0020224C;
+/* data twins (src/game/data/sbss.c): gTitleSbss_00202248 */
+static s32 gTitleSbss_00202248;
+/* data twins (src/game/data/sbss.c): gTitleSbss_00202244 */
+static s32 gTitleSbss_00202244;
+/* data twins (src/game/data/sbss.c): gTitleSbss_00202240 */
+static s32 gTitleSbss_00202240;
+/* data twins (src/game/data/sdata.c): gTitleSdata_00201D94 */
+static s32 gTitleSdata_00201D94 = -1;
+/* data twins (src/game/data/sdata.c): gTitleSdata_00201D98 */
+static f32 gTitleSdata_00201D98 = -20.0f;
+/* data twins (src/game/data/shop_bss_004A4360.c): gTitleBss_004A4360 */
+static s32 gTitleBss_004A4360[0x1];
+/* data twins (src/game/data/shop_bss_004A4360.c): gTitleBss_004A4364 */
+static s32 gTitleBss_004A4364[0x1];
+/* data twins (src/game/data/shop_bss_004A4360.c): gTitleBss_004A4368 */
+static void *gTitleBss_004A4368[0x1];
+/* data twins (src/game/data/shop_bss_004A4360.c): gTitleBss_004A436C */
+static s32 gTitleBss_004A436C[0x1];
+/* data twins (src/game/data/shop_bss_004A4360.c): gTitleBss_004A4370 */
+static f32 gTitleBss_004A4370[0x1];
+/* data twins (src/game/data/title_nop_data.c): gTitleData_001F3310 */
+static Vec gTitleData_001F3310 = { 0.0f, 0.0f, 639.0f, 447.0f };
+/* data twins (src/game/data/sbss.c): gTitleSbss_00202264 */
+static f32 gTitleSbss_00202264;
+/* data twins (src/game/data/save_byte_bss.c): gTitleBss_004A4390 */
+static s32 gTitleBss_004A4390[0x1] __attribute__((aligned(16)));
+/* data twins (src/game/data/save_byte_bss.c): gTitleBss_004A4394 */
+static s32 gTitleBss_004A4394[0x1];
+/* data twins (src/game/data/save_byte_bss.c): gTitleBss_004A4398 */
+static f32 gTitleBss_004A4398[0x2];
+/* data twins (src/game/data/title_rodata.c): gTitleRodata_001FD890 */
+static s8 gTitleRodata_001FD890[0x1d] = "\\TARGET\\STA_TI.ADX\000\000\000\000\000\000\000\000\000\000\000";
+/* data twins (src/game/data/sbss.c): gTitleSbss_0020226C */
+static s32 gTitleSbss_0020226C;
+/* data twins (src/game/data/sbss.c): gTitleSbss_00202268 */
+static s32 gTitleSbss_00202268;
 /* data twins (src/game/data/sbss.c): gTitleSbss_00202270 */
 static s32 gTitleSbss_00202270;
 #endif
@@ -791,78 +713,30 @@ void Title_StartNewGame_0_001A4930(Obj_Title_CheckSaveData_1_001A4570 *o)
 #pragma explicit_zero_data on
 /* data twins (src/game/data/save_byte_bss.c): gTitleBss_004A43A0 */
 s16 gTitleBss_004A43A0[0x6];
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 extern u8 gTitleData_001F3320[];
 /* data group (src/game/data/title_nop_data.c): D_001F3360__grp: gTitleData_001F3360@0x0 */
 s32 D_001F3360__grp[0x8] __attribute__((aligned(16))) = { 0, 5, 0, (s32)gTitleData_001F3320, 7, -0x3fc00000, 0, 0 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/sdata.c): D_00201DA0__grp: gTitleSdata_00201DA0@0x0 */
 s32 D_00201DA0__grp[0x2] __attribute__((aligned(16))) = { 0, 1 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/save_byte_bss.c): D_004A43AC__grp: gTitleBss_004A43AC@0x0 */
 u8 D_004A43AC__grp[0x4] __attribute__((aligned(4)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/title_nop_data.c): gStrLoadGame_001F3390__grp: gStrLoadGame_001F3390@0x0 */
 char gStrLoadGame_001F3390__grp[0xd] __attribute__((aligned(16))) = "LOAD GAME\000\000\000\000";
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/title_nop_data.c): gStrNewGame_001F3380__grp: gStrNewGame_001F3380@0x0 */
 char gStrNewGame_001F3380__grp[0xd] __attribute__((aligned(16))) = "NEW GAME\000\000\000\000\000";
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data twins (src/game/data/title_nop_data.c): gTitleData_001F3320 */
 u8 gTitleData_001F3320[0x40] = { 0, 0, 0x40, 0xc0, 0xa6, 0xf, 0, 0, 0, 0, 0, 0xc0, 0xa5, 0xf, 0, 0, 0, 0, 0x80, 0xbf, 0xa4, 0xf, 0, 0, 0, 0, 0, 0, 0xa3, 0xf, 0, 0, 0, 0, 0x80, 0x3f, 0xa2, 0xf, 0, 0, 0, 0, 0, 0x40, 0xa1, 0xf, 0, 0, 0, 0, 0x40, 0x40, 0xa0, 0xf, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/enemy_list_rodata.c): D_001FD8D0__grp: gTitleRodata_001FD8D0@0x0 */
 char D_001FD8D0__grp[0x1e] __attribute__((aligned(16))) = "cdrom0:\\TARGET\\PROLOGUE.PSS;1\000";
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/title_rodata.c): gStrCdrom0TargetOpeningPss1_001FD870__grp: gStrCdrom0TargetOpeningPss1_001FD870@0x0 */
 char gStrCdrom0TargetOpeningPss1_001FD870__grp[0x1d] __attribute__((aligned(16))) = "cdrom0:\\TARGET\\OPENING.PSS;1\000";
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/title_nop_data.c): D_001F338D__grp: gTitleData_001F338D@0x0 */
 unsigned char D_001F338D__grp[0x3] __attribute__((aligned(1))) = { 0, 0, 0 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/title_nop_data.c): D_001F339D__grp: gTitleData_001F339D@0x0 */
 unsigned char D_001F339D__grp[0x3] __attribute__((aligned(1))) = { 0, 0, 0 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 void EnemyMgr_Update_0_001A4990(void);
 /* data group (src/game/data/enemy_list_rodata.c): jtbl_001FD8F0__grp: jtbl_001FD8F0@0x0 */
 int jtbl_001FD8F0__grp[0x8] __attribute__((aligned(16))) = { (int)((unsigned char *)EnemyMgr_Update_0_001A4990 + 0x6C0), (int)((unsigned char *)EnemyMgr_Update_0_001A4990 + 0x6A0), (int)((unsigned char *)EnemyMgr_Update_0_001A4990 + 0x6A0), (int)((unsigned char *)EnemyMgr_Update_0_001A4990 + 0x420), (int)((unsigned char *)EnemyMgr_Update_0_001A4990 + 0x6A0), (int)((unsigned char *)EnemyMgr_Update_0_001A4990 + 0x2C8), (int)((unsigned char *)EnemyMgr_Update_0_001A4990 + 0x420), 0 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/title_rodata.c): pad_001FD8AD__grp: pad_001FD8AD@0x0 */
 unsigned char pad_001FD8AD__grp[0x3] __attribute__((aligned(1))) = { 0, 0, 0 };
 #endif

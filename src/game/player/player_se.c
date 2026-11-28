@@ -7,13 +7,10 @@ extern s32 gGameMainSbss_00201E94;
 extern s8 *gPlayerSeSbss_002022F0;
 #ifndef NONMATCHING
 extern s32 gPlayerSeSbss_002022F4;
+extern s32 gPlayerSeSbss_002022F8;
 #else
 /* data twins (src/game/data/sbss.c): gPlayerSeSbss_002022F4 */
 static s32 gPlayerSeSbss_002022F4;
-#endif
-#ifndef NONMATCHING
-extern s32 gPlayerSeSbss_002022F8;
-#else
 /* data twins (src/game/data/sbss.c): gPlayerSeSbss_002022F8 */
 static s32 gPlayerSeSbss_002022F8;
 #endif

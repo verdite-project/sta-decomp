@@ -132,18 +132,15 @@ typedef struct { s32 p0; s32 p4; s32 id; s32 pC; s32 key; } Arg;
 extern Mdl **gMapSbss_00201E88[2];
 extern u16 gMapCommandBss_00317238[];
 extern u8 gDoorSbss_00202030;
-#ifndef NONMATCHING
-extern u8 gMapCommandSbss_00202034;
-#else
-/* data twins (src/game/data/sbss.c): gMapCommandSbss_00202034 */
-static u8 gMapCommandSbss_00202034;
-#endif
 extern s32 **gPlayerSbss_002022BC;
 extern s32 gMapSbss_00201E80;
 extern s32 gGameMainSbss_00201E94;
 #ifndef NONMATCHING
+extern u8 gMapCommandSbss_00202034;
 extern s32 gMapCommandSbss_00202038;
 #else
+/* data twins (src/game/data/sbss.c): gMapCommandSbss_00202034 */
+static u8 gMapCommandSbss_00202034;
 /* data twins (src/game/data/sbss.c): gMapCommandSbss_00202038 */
 static s32 gMapCommandSbss_00202038;
 #endif

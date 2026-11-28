@@ -104,10 +104,6 @@ void Option_Store_1_001A94E0(void *p)
 extern u8 gOptionModeBss_004A48A0[];
 /* data twins (src/game/data/sdata.c): gOptionModeSdata_00201E10 */
 u8 *gOptionModeSdata_00201E10 = (u8 *)gOptionModeBss_004A48A0;
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data twins (src/game/data/save_options_bss.c): gOptionModeBss_004A48A0 */
 u8 gOptionModeBss_004A48A0[0xe0];
 #endif

@@ -14,53 +14,32 @@ typedef struct { s32 x0; u8 pad[0x10]; Flags8 f14; } A;
 #ifdef NONMATCHING
 void func_00100000(void);
 #endif
-#ifndef NONMATCHING
-extern f32 gEndingDrawSbss_00202408;
-#else
-/* data twins (src/game/data/sbss.c): gEndingDrawSbss_00202408 */
-static f32 gEndingDrawSbss_00202408;
-#endif
-#ifndef NONMATCHING
-extern f32 gEndingDrawSbss_0020240C;
-#else
-/* data twins (src/game/data/sbss.c): gEndingDrawSbss_0020240C */
-static f32 gEndingDrawSbss_0020240C;
-#endif
-#ifndef NONMATCHING
-extern s32 gEndingDrawSbss_00202410;
-#else
-/* data twins (src/game/data/sbss.c): gEndingDrawSbss_00202410 */
-static s32 gEndingDrawSbss_00202410;
-#endif
 extern s32 gMenuData_001F27B0[];
 extern s32 gMenuData_001F27C0[];
 #ifndef NONMATCHING
+extern f32 gEndingDrawSbss_00202408;
+extern f32 gEndingDrawSbss_0020240C;
+extern s32 gEndingDrawSbss_00202410;
 extern f32 gEndingDrawSbss_00202414;
-#else
-/* data twins (src/game/data/sbss.c): gEndingDrawSbss_00202414 */
-static f32 gEndingDrawSbss_00202414;
-#endif
-#ifndef NONMATCHING
 extern f32 gEndingDrawSbss_00202418;
-#else
-/* data twins (src/game/data/sbss.c): gEndingDrawSbss_00202418 */
-static f32 gEndingDrawSbss_00202418;
-#endif
-#ifndef NONMATCHING
 extern s32 gEndingDrawRodata_00201A70[];
-#else
-/* data twins (src/game/data/movie_rodata2.c): gEndingDrawRodata_00201A70 */
-static s32 gEndingDrawRodata_00201A70[0x44] = { 0x5241545c, 0x5c544547, 0x5f415453, 0x412e4f47, 0x5844, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, (s32)func_00100000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
 extern f32 gEndingDrawSbss_0020241C;
-#else
-/* data twins (src/game/data/sbss.c): gEndingDrawSbss_0020241C */
-static f32 gEndingDrawSbss_0020241C;
-#endif
-#ifndef NONMATCHING
 extern s32 gEndingDrawSbss_00202420;
 #else
+/* data twins (src/game/data/sbss.c): gEndingDrawSbss_00202408 */
+static f32 gEndingDrawSbss_00202408;
+/* data twins (src/game/data/sbss.c): gEndingDrawSbss_0020240C */
+static f32 gEndingDrawSbss_0020240C;
+/* data twins (src/game/data/sbss.c): gEndingDrawSbss_00202410 */
+static s32 gEndingDrawSbss_00202410;
+/* data twins (src/game/data/sbss.c): gEndingDrawSbss_00202414 */
+static f32 gEndingDrawSbss_00202414;
+/* data twins (src/game/data/sbss.c): gEndingDrawSbss_00202418 */
+static f32 gEndingDrawSbss_00202418;
+/* data twins (src/game/data/movie_rodata2.c): gEndingDrawRodata_00201A70 */
+static s32 gEndingDrawRodata_00201A70[0x44] = { 0x5241545c, 0x5c544547, 0x5f415453, 0x412e4f47, 0x5844, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, (s32)func_00100000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+/* data twins (src/game/data/sbss.c): gEndingDrawSbss_0020241C */
+static f32 gEndingDrawSbss_0020241C;
 /* data twins (src/game/data/sbss.c): gEndingDrawSbss_00202420 */
 static s32 gEndingDrawSbss_00202420;
 #endif

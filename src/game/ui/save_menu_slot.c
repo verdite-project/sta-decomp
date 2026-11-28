@@ -53,84 +53,48 @@ typedef struct { s16 x0; s16 x2; s16 x4; s16 x6; u8 pad8[4]; s16 xC; u8 xE; u8 x
 typedef struct { u8 pad[0x20]; R r; } S1;
 typedef struct { u8 pad[0x50]; R r[1]; } S0;
 typedef struct { s32 x0; u32 flags; u8 b8; char p9; u8 bA; char pB[3]; u8 bE; } Obj_MenuProc_BackOnCancel_0_0018D000;
+extern f32 gSaveMenuSlotBss_004A1008[];
+extern Slot D_004A0900[];
+extern u8 D_004A095F[][0xF0];
 #ifndef NONMATCHING
 extern Tbl gSaveMenuSlotData_001F2A30 __attribute__((aligned(16)));
+extern f32 gSaveMenuSlotSbss_0020211C;
+extern s32 gSaveMenuSlotBss_004A0FFC[];
+extern f32 gSaveMenuSlotBss_004A100C[];
+extern S gSaveMenuSlotData_001F2A10[] __attribute__((aligned(16)));
+extern char gStrSavedataD_001FCD00[];
+extern char gStrHp4d4d_001FCD10[];
+extern char gStrMp4d4d_001FCD20[];
+extern char gSaveMenuSlotRodata_001FCD30[];
+extern char gStrTime2d2d2d_001FCD40[];
+extern char gStrEmpty_001FCD58[];
+extern char gSaveMenuSlotRodata_001FCD60[];
+extern s32 gSaveMenuSlotBss_004A0FF8[];
 #else
 /* data twins (src/game/data/save_menu_data.c): gSaveMenuSlotData_001F2A30 */
 static Tbl gSaveMenuSlotData_001F2A30 = { -1, 0, 0, 0, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern f32 gSaveMenuSlotSbss_0020211C;
-#else
 /* data twins (src/game/data/sbss.c): gSaveMenuSlotSbss_0020211C */
 static f32 gSaveMenuSlotSbss_0020211C;
-#endif
-#ifndef NONMATCHING
-extern s32 gSaveMenuSlotBss_004A0FFC[];
-#else
 /* data twins (src/game/data/option_bss.c): gSaveMenuSlotBss_004A0FFC */
 static s32 gSaveMenuSlotBss_004A0FFC[0x1];
-#endif
-extern f32 gSaveMenuSlotBss_004A1008[];
-#ifndef NONMATCHING
-extern f32 gSaveMenuSlotBss_004A100C[];
-#else
 /* data twins (src/game/data/option_bss.c): gSaveMenuSlotBss_004A100C */
 static f32 gSaveMenuSlotBss_004A100C[0x1];
-#endif
-#ifndef NONMATCHING
-extern S gSaveMenuSlotData_001F2A10[] __attribute__((aligned(16)));
-#else
 /* data twins (src/game/data/save_menu_data.c): gSaveMenuSlotData_001F2A10 */
 static S gSaveMenuSlotData_001F2A10[0x1] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
-#endif
-extern Slot D_004A0900[];
-#ifndef NONMATCHING
-extern char gStrSavedataD_001FCD00[];
-#else
 /* data twins (src/game/data/ui_gauge_rodata2.c): gStrSavedataD_001FCD00 */
 static char gStrSavedataD_001FCD00[0x10] = "SAVEDATA %d\000\000\000\000\000";
-#endif
-#ifndef NONMATCHING
-extern char gStrHp4d4d_001FCD10[];
-#else
 /* data twins (src/game/data/ui_gauge_rodata2.c): gStrHp4d4d_001FCD10 */
 static char gStrHp4d4d_001FCD10[0x10] = "HP %4d/%4d\000\000\000\000\000\000";
-#endif
-#ifndef NONMATCHING
-extern char gStrMp4d4d_001FCD20[];
-#else
 /* data twins (src/game/data/ui_gauge_rodata2.c): gStrMp4d4d_001FCD20 */
 static char gStrMp4d4d_001FCD20[0x10] = "MP %4d/%4d\000\000\000\000\000\000";
-#endif
-#ifndef NONMATCHING
-extern char gSaveMenuSlotRodata_001FCD30[];
-#else
 /* data twins (src/game/data/ui_gauge_rodata2.c): gSaveMenuSlotRodata_001FCD30 */
 static char gSaveMenuSlotRodata_001FCD30[0x10] = { 0x4c, 0x4f, 0x43, 0x41, 0x54, 0x49, 0x4f, 0x4e, 0, 0, 0, 0, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern char gStrTime2d2d2d_001FCD40[];
-#else
 /* data twins (src/game/data/ui_gauge_rodata2.c): gStrTime2d2d2d_001FCD40 */
 static char gStrTime2d2d2d_001FCD40[0x18] = "TIME %2d:%2d:%2d\000\000\000\000\000\000\000\000";
-#endif
-#ifndef NONMATCHING
-extern char gStrEmpty_001FCD58[];
-#else
 /* data twins (src/game/data/ui_gauge_rodata2.c): gStrEmpty_001FCD58 */
 static char gStrEmpty_001FCD58[0x8] = " EMPTY \000";
-#endif
-#ifndef NONMATCHING
-extern char gSaveMenuSlotRodata_001FCD60[];
-#else
 /* data twins (src/game/data/ui_gauge_rodata2.c): gSaveMenuSlotRodata_001FCD60 */
 static char gSaveMenuSlotRodata_001FCD60[0xd] = "----\000\000\000\000\000\000\000\000\000";
-#endif
-extern u8 D_004A095F[][0xF0];
-#ifndef NONMATCHING
-extern s32 gSaveMenuSlotBss_004A0FF8[];
-#else
 /* data twins (src/game/data/option_bss.c): gSaveMenuSlotBss_004A0FF8 */
 static s32 gSaveMenuSlotBss_004A0FF8[0x1];
 #endif
@@ -627,11 +591,6 @@ s32 gSaveMenuSlotBss_004A0FF4[0x1];
 s32 gSaveMenuSlotBss_004A1000[0x2] __attribute__((aligned(4)));
 f32 gSaveMenuSlotBss_004A1008[0x1];
 Flags8 gSaveMenuSlotBss_004A1010[0x10 / sizeof(Flags8)] __attribute__((aligned(4)));
-#endif
-
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/ui_gauge_rodata2.c): pad_001FCD6D__grp: pad_001FCD6D@0x0 */
 unsigned char pad_001FCD6D__grp[0x3] __attribute__((aligned(1))) = { 0, 0, 0 };
 #endif

@@ -159,16 +159,8 @@ void StorageProc_Pos_0_001A3500(s32 arg0, void *arg1, void *arg2) {
 extern u8 gStorageDrawData_001F32B0[];
 /* data group (src/game/data/title_nop_data.c): D_001F32F0__grp: gStorageDrawData_001F32F0@0x0 */
 s32 D_001F32F0__grp[0x8] __attribute__((aligned(16))) = { 0, 5, 0, (s32)gStorageDrawData_001F32B0, 7, -0x3fc00000, 0, 0 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data twins (src/game/data/title_nop_data.c): gStorageDrawData_001F32B0 */
 u8 gStorageDrawData_001F32B0[0x40] = { 0, 0, 0x40, 0xc0, 0xa6, 0xf, 0, 0, 0, 0, 0, 0xc0, 0xa5, 0xf, 0, 0, 0, 0, 0x80, 0xbf, 0xa4, 0xf, 0, 0, 0, 0, 0, 0, 0xa3, 0xf, 0, 0, 0, 0, 0x80, 0x3f, 0xa2, 0xf, 0, 0, 0, 0, 0, 0x40, 0xa1, 0xf, 0, 0, 0, 0, 0x40, 0x40, 0xa0, 0xf, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/storage_draw_rodata.c): D_001FD82C__grp: gStorageDrawRodata_001FD82C@0x0 */
 int D_001FD82C__grp[0x1] __attribute__((aligned(4))) = { 0 };
 #endif

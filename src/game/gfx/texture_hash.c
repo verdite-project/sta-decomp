@@ -223,38 +223,16 @@ void Tex_RegisterTtix_0_00178080(s32 **arg0) {
 #pragma explicit_zero_data on
 /* data twins (src/game/data/sdata.c): gTextureHashSdata_00201CB4 */
 s32 gTextureHashSdata_00201CB4 = 0x43494454;
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data twins (src/game/data/texture_bss.c): gTextureHashBss_0047F080 */
 E gTextureHashBss_0047F080[8];
-#endif
-
-
-#ifdef NONMATCHING
 /* data group (src/game/data/sfx_all_rodata.c): D_001FB910__grp: gTextureHashRodata_001FB910@0x0 */
 unsigned char D_001FB910__grp[0x1] __attribute__((aligned(16))) = { 0x54 };
-#endif
-
-#ifdef NONMATCHING
 /* data group (src/game/data/sfx_all_rodata.c): D_001FB911__grp: gTextureHashRodata_001FB911@0x0 */
 unsigned char D_001FB911__grp[0x1] __attribute__((aligned(1))) = { 0x58 };
-#endif
-
-#ifdef NONMATCHING
 /* data group (src/game/data/sfx_all_rodata.c): D_001FB912__grp: gTextureHashRodata_001FB912@0x0 */
 unsigned char D_001FB912__grp[0x1] __attribute__((aligned(2))) = { 0x4d };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/texture_bss.c): gTextureHashBss_004800C0__grp: gTextureHashBss_004800C0@0x0, gTextureHashBss_004800C8@0x8, gTextureHashBss_004800D0@0x10, gTextureHashBss_004800DC@0x1c, gTextureHashBss_00483090@0x2fd0 */
 unsigned char gTextureHashBss_004800C0__grp[0x3000] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/sfx_all_rodata.c): D_001FB8C8__grp: gTextureHashRodata_001FB8C8@0x0 */
 int D_001FB8C8__grp[0x2] __attribute__((aligned(8))) = { 0, 0 };
 #endif

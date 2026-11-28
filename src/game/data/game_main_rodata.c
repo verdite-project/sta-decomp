@@ -4,10 +4,8 @@
 /* used by: game_main, sound_start, text.s */
 #pragma explicit_zero_data on
 
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/game_main.c */
+#ifndef NONMATCHING /* the NONMATCHING build defines these in their owners */
 const u8 gGameMainRodata_001FAB40[0x18] = "\\TARGET\\STAZ.STZ\000\000\000\000\000\000\000\000";
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/sound_start.c */
 const s8 gSoundStartRodata_001FAB58[0x1] = { 0x53 };
 const u8 gSoundStartRodata_001FAB59[0x1] __attribute__((aligned(1))) = { 0x54 };
 const u8 gSoundStartRodata_001FAB5A[0x1] __attribute__((aligned(2))) = { 0x53 };
@@ -19,8 +17,6 @@ const u8 gSoundStartRodata_001FAB63[0x5] __attribute__((aligned(1))) = { 0x4d, 0
 const u8 gSoundStartRodata_001FAB68[0x1] = { 0x53 };
 const u8 gSoundStartRodata_001FAB69[0x1] __attribute__((aligned(1))) = { 0x54 };
 const u8 gSoundStartRodata_001FAB6A[0x1] __attribute__((aligned(2))) = { 0x4d };
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/game_main.c */
 const u8 gGameMainRodata_001FAB6B[0x5] __attribute__((aligned(1))) = { 0x49, 0, 0, 0, 0 };
 const u8 gGameMainRodata_001FAB70[0x1] = { 0x53 };
 const u8 gGameMainRodata_001FAB71[0x1] __attribute__((aligned(1))) = { 0x45 };

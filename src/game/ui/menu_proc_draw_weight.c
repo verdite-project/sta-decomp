@@ -52,23 +52,17 @@ extern u8 gStrCurse_001FC9B0[];
 extern u8 gStrSeal_001FC9B8[];
 #endif
 extern f32 gUiGaugeBss_0048D040[];
-#ifndef NONMATCHING
-extern s8 *gMenuProcDrawWeightData_001F2690[];
-#else
-/* data twins (src/game/data/ui_global_data_001F2630.c): gMenuProcDrawWeightData_001F2690 */
-static s8 *gMenuProcDrawWeightData_001F2690[0x8] = { (s8 *)gStrPoison_001FC980, (s8 *)gMenuProcDrawWeightRodata_001FC988, (s8 *)gMenuProcDrawWeightRodata_001FC998, (s8 *)gStrGravity_001FC9A8, (s8 *)gStrCurse_001FC9B0, (s8 *)gStrSeal_001FC9B8, 0, 0 };
-#endif
 extern s8 gMenuProcDrawItemStatsRodata_001FCAA0[];
 extern s8 D_001FCB38[];
 #ifndef NONMATCHING
+extern s8 *gMenuProcDrawWeightData_001F2690[];
 extern s32 gMenuProcDrawWeightSbss_00202078;
-#else
-/* data twins (src/game/data/sbss.c): gMenuProcDrawWeightSbss_00202078 */
-static s32 gMenuProcDrawWeightSbss_00202078;
-#endif
-#ifndef NONMATCHING
 extern s32 gMenuProcDrawWeightSbss_00202074;
 #else
+/* data twins (src/game/data/ui_global_data_001F2630.c): gMenuProcDrawWeightData_001F2690 */
+static s8 *gMenuProcDrawWeightData_001F2690[0x8] = { (s8 *)gStrPoison_001FC980, (s8 *)gMenuProcDrawWeightRodata_001FC988, (s8 *)gMenuProcDrawWeightRodata_001FC998, (s8 *)gStrGravity_001FC9A8, (s8 *)gStrCurse_001FC9B0, (s8 *)gStrSeal_001FC9B8, 0, 0 };
+/* data twins (src/game/data/sbss.c): gMenuProcDrawWeightSbss_00202078 */
+static s32 gMenuProcDrawWeightSbss_00202078;
 /* data twins (src/game/data/sbss.c): gMenuProcDrawWeightSbss_00202074 */
 static s32 gMenuProcDrawWeightSbss_00202074;
 #endif
@@ -191,40 +185,16 @@ extern u8 gMenuProcDrawWeightRodata_001FC998[];
 extern u8 gStrGravity_001FC9A8[];
 extern u8 gStrCurse_001FC9B0[];
 extern u8 gStrSeal_001FC9B8[];
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/ui_gauge_rodata.c): D_001FC988__grp: gMenuProcDrawWeightRodata_001FC988@0x0 */
 char D_001FC988__grp[0x10] __attribute__((aligned(8))) = "Paralyze\000\000\000\000\000\000\000\000";
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/ui_gauge_rodata.c): D_001FC998__grp: gMenuProcDrawWeightRodata_001FC998@0x0 */
 char D_001FC998__grp[0x10] __attribute__((aligned(8))) = "Darkness\000\000\000\000\000\000\000\000";
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/ui_gauge_rodata.c): gStrGravity_001FC9A8__grp: gStrGravity_001FC9A8@0x0 */
 char gStrGravity_001FC9A8__grp[0x8] __attribute__((aligned(8))) = "Gravity\000";
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/ui_gauge_rodata.c): gStrCurse_001FC9B0__grp: gStrCurse_001FC9B0@0x0 */
 char gStrCurse_001FC9B0__grp[0x6] __attribute__((aligned(16))) = "Curse\000";
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/ui_gauge_rodata.c): gStrPoison_001FC980__grp: gStrPoison_001FC980@0x0 */
 char gStrPoison_001FC980__grp[0x7] __attribute__((aligned(16))) = "Poison\000";
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/ui_gauge_rodata.c): gStrSeal_001FC9B8__grp: gStrSeal_001FC9B8@0x0 */
 char gStrSeal_001FC9B8__grp[0x5] __attribute__((aligned(8))) = "Seal\000";
 #endif

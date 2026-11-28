@@ -20,13 +20,10 @@ extern s32 gOptionBss_004A105C[];
 extern f32 gOptionBss_004A1060[];
 #ifndef NONMATCHING
 extern S gSaveMenuData_001F2A50[] __attribute__((aligned(16)));
+extern s8 gSaveMenuRodata_001FCDC8[];
 #else
 /* data twins (src/game/data/save_menu_data.c): gSaveMenuData_001F2A50 */
 static S gSaveMenuData_001F2A50[0x1] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
-#endif
-#ifndef NONMATCHING
-extern s8 gSaveMenuRodata_001FCDC8[];
-#else
 /* data twins (src/game/data/save_menu_rodata.c): gSaveMenuRodata_001FCDC8 */
 static s8 gSaveMenuRodata_001FCDC8[0x8] = "SLOT %d\000";
 #endif

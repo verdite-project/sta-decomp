@@ -5,19 +5,13 @@
    texture_hash */
 #pragma explicit_zero_data on
 
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/texture_hash.c */
+#ifndef NONMATCHING /* the NONMATCHING build defines these in their owners */
 const s32 gTextureHashRodata_001FB8C8[0x2] = { 0, 0 };
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/effect/sfx_all.c */
 const s8 gSfxAllRodata_001FB8D0[0x20] __attribute__((aligned(8))) = "SFX(%d) not found from STAM\000\000\000\000\000";
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/effect/sfx_all.c */
 const s8 gSfxAllRodata_001FB8F0[0x1] = { 0x53 };
 const s8 gSfxAllRodata_001FB8F1[0x1] __attribute__((aligned(1))) = { 0x54 };
 const s8 gSfxAllRodata_001FB8F2[0x1] __attribute__((aligned(2))) = { 0x41 };
 const s8 gSfxAllRodata_001FB8F3[0x5] __attribute__((aligned(1))) = { 0x4d, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/texture_find.c */
 const s8 gTextureFindRodata_001FB8F8[0x1] = { 0x54 };
 const u8 gTextureFindRodata_001FB8F9[0x1] __attribute__((aligned(1))) = { 0x58 };
 const u8 gTextureFindRodata_001FB8FA[0x1] __attribute__((aligned(2))) = { 0x46 };
@@ -29,11 +23,7 @@ const s8 gTextureFindRodata_001FB903[0x5] __attribute__((aligned(1))) = { 0x49, 
 const s8 gTextureFindRodata_001FB908[0x1] = { 0x54 };
 const s8 gTextureFindRodata_001FB909[0x1] __attribute__((aligned(1))) = { 0x54 };
 const s8 gTextureFindRodata_001FB90A[0x1] __attribute__((aligned(2))) = { 0x49 };
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/texture_hash.c */
 const s8 gTextureHashRodata_001FB90B[0x5] __attribute__((aligned(1))) = { 0x58, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/texture_hash.c */
 const s8 gTextureHashRodata_001FB910[0x1] = { 0x54 };
 const s8 gTextureHashRodata_001FB911[0x1] __attribute__((aligned(1))) = { 0x58 };
 const s8 gTextureHashRodata_001FB912[0x1] __attribute__((aligned(2))) = { 0x4d };

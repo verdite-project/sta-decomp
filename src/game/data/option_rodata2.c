@@ -4,11 +4,9 @@
 /* used by: load_menu, option */
 #pragma explicit_zero_data on
 
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/option.c */
+#ifndef NONMATCHING /* the NONMATCHING build defines these in their owners */
 const s8 gOptionRodata_001FD118[0x8] = "%d\000\000\000\000\000\000";
 const s8 gOptionRodata_001FD120[0x8] = "MAX\000\000\000\000\000";
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/load_menu.c */
 const s8 gLoadMenuRodata_001FD128[0x10] __attribute__((aligned(8))) = "SAVEDATA%d\000\000\000\000\000\000";
 const s8 gLoadMenuRodata_001FD138[0x10] __attribute__((aligned(8))) = "HP %4d/%4d\000\000\000\000\000\000";
 const s8 gLoadMenuRodata_001FD148[0x10] __attribute__((aligned(8))) = "MP %4d/%4d\000\000\000\000\000\000";

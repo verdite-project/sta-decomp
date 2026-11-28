@@ -12,42 +12,27 @@ typedef struct { u8 pad[2]; u8 x2; } Ent;
 typedef struct { u8 pad[4]; u8 x4; } Ent4;
 typedef struct { u8 pad[6]; u8 x6; u8 pad7[0x89]; } E_Notify_DrawItemGold_0_0019FA00;
 typedef struct { u8 x0; u8 x1; u8 x2; u8 x3; u8 x4; u8 x5; } Q;
-#ifndef NONMATCHING
-extern V gPauseMenuOpenData_001F3200[];
-#else
-/* data twins (src/game/data/pause_menu_open_data_001F3200.c): gPauseMenuOpenData_001F3200 */
-static V gPauseMenuOpenData_001F3200[0x1] = { { .w = { 0, 0, 0x44200000, 0x43e00000 } } };
-#endif
-#ifndef NONMATCHING
-extern V gPauseMenuOpenData_001F3210[];
-#else
-/* data twins (src/game/data/pause_menu_open_data_001F3200.c): gPauseMenuOpenData_001F3210 */
-static V gPauseMenuOpenData_001F3210[0x1] = { { .w = { 0, 0, 0x43000000, 0x43000000 } } };
-#endif
-#ifndef NONMATCHING
-extern s32 gNotifyBss_004A3324[];
-#else
-/* data twins (src/game/data/shop_bss_004A3310.c): gNotifyBss_004A3324 */
-static s32 gNotifyBss_004A3324[0x1];
-#endif
 extern s32 gShopBss_004A3328[];
 extern B gShopBss_004A332C[];
 extern u16 gShopBss_004A3310[];
 #ifndef NONMATCHING
+extern V gPauseMenuOpenData_001F3200[];
+extern V gPauseMenuOpenData_001F3210[];
+extern s32 gNotifyBss_004A3324[];
 extern s8 gNotifyRodata_001FD698[];
-#else
-/* data twins (src/game/data/notify_rodata.c): gNotifyRodata_001FD698 */
-static s8 gNotifyRodata_001FD698[0x8] = "%d\000\000\000\000\000\000";
-#endif
-#ifndef NONMATCHING
 extern s8 gNotifyRodata_001FD6A0[];
-#else
-/* data twins (src/game/data/notify_rodata.c): gNotifyRodata_001FD6A0 */
-static s8 gNotifyRodata_001FD6A0[0x8] = { -0x7f, 0x7e, 0x20, 0x25, 0x64, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
 extern s8 gNotifyRodata_001FD6A8[];
 #else
+/* data twins (src/game/data/pause_menu_open_data_001F3200.c): gPauseMenuOpenData_001F3200 */
+static V gPauseMenuOpenData_001F3200[0x1] = { { .w = { 0, 0, 0x44200000, 0x43e00000 } } };
+/* data twins (src/game/data/pause_menu_open_data_001F3200.c): gPauseMenuOpenData_001F3210 */
+static V gPauseMenuOpenData_001F3210[0x1] = { { .w = { 0, 0, 0x43000000, 0x43000000 } } };
+/* data twins (src/game/data/shop_bss_004A3310.c): gNotifyBss_004A3324 */
+static s32 gNotifyBss_004A3324[0x1];
+/* data twins (src/game/data/notify_rodata.c): gNotifyRodata_001FD698 */
+static s8 gNotifyRodata_001FD698[0x8] = "%d\000\000\000\000\000\000";
+/* data twins (src/game/data/notify_rodata.c): gNotifyRodata_001FD6A0 */
+static s8 gNotifyRodata_001FD6A0[0x8] = { -0x7f, 0x7e, 0x20, 0x25, 0x64, 0, 0, 0 };
 /* data twins (src/game/data/notify_rodata.c): gNotifyRodata_001FD6A8 */
 static s8 gNotifyRodata_001FD6A8[0x8] = { -0x7e, 0x62, 0x20, 0x25, 0x64, 0, 0, 0 };
 #endif

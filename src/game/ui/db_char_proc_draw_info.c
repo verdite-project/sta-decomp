@@ -33,48 +33,30 @@ s32 Item_GetCategory_0_001AFBD0(s32);
 E *Item_GetTable_1_001AFC90(void);
 double fptodp(f32);
 void Ui_DrawWindow_0_00183650(T *);
-#ifndef NONMATCHING
-extern S gDbCharProcDrawInfoData_001F2EE0 __attribute__((aligned(16)));
-#else
-/* data twins (src/game/data/databook_item_reset_data.c): gDbCharProcDrawInfoData_001F2EE0 */
-static S gDbCharProcDrawInfoData_001F2EE0 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
-#endif
 extern T gDbCharProcDrawInfoBss_004A13A0;
 extern s32 gDatabookCharUpdateWrapSbss_00202184;
 extern s32 gDbCharProcDrawInfoSbss_00202188;
 #ifndef NONMATCHING
+extern S gDbCharProcDrawInfoData_001F2EE0 __attribute__((aligned(16)));
 extern s8 gDbCharProcDrawInfoRodata_001FD328[];
-#else
-/* data twins (src/game/data/databook_item_reset_rodata.c): gDbCharProcDrawInfoRodata_001FD328 */
-static s8 gDbCharProcDrawInfoRodata_001FD328[0x8] = { 0x25, 0x64, 0x20, -0x7f, -0x6d, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
 extern s8 gStrHpD_001FD330[];
-#else
-/* data twins (src/game/data/databook_item_reset_rodata.c): gStrHpD_001FD330 */
-static s8 gStrHpD_001FD330[0x6] = "HP %d\000";
-#endif
-#ifndef NONMATCHING
 extern s8 gStrHp_001FD338[];
-#else
-/* data twins (src/game/data/databook_item_reset_rodata.c): gStrHp_001FD338 */
-static s8 gStrHp_001FD338[0x8] = "HP ----\000";
-#endif
-#ifndef NONMATCHING
 extern s8 gStr3d_001FD340[];
-#else
-/* data twins (src/game/data/databook_item_reset_rodata.c): gStr3d_001FD340 */
-static s8 gStr3d_001FD340[0x8] = "%3d\000\000\000\000\000";
-#endif
-#ifndef NONMATCHING
 extern s8 gDbCharProcDrawInfoRodata_001FD348[];
-#else
-/* data twins (src/game/data/databook_item_reset_rodata.c): gDbCharProcDrawInfoRodata_001FD348 */
-static s8 gDbCharProcDrawInfoRodata_001FD348[0x8] = { 0x2d, 0x2d, 0x2d, 0, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
 extern s8 gStr31f_001FD350[];
 #else
+/* data twins (src/game/data/databook_item_reset_data.c): gDbCharProcDrawInfoData_001F2EE0 */
+static S gDbCharProcDrawInfoData_001F2EE0 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDbCharProcDrawInfoRodata_001FD328 */
+static s8 gDbCharProcDrawInfoRodata_001FD328[0x8] = { 0x25, 0x64, 0x20, -0x7f, -0x6d, 0, 0, 0 };
+/* data twins (src/game/data/databook_item_reset_rodata.c): gStrHpD_001FD330 */
+static s8 gStrHpD_001FD330[0x6] = "HP %d\000";
+/* data twins (src/game/data/databook_item_reset_rodata.c): gStrHp_001FD338 */
+static s8 gStrHp_001FD338[0x8] = "HP ----\000";
+/* data twins (src/game/data/databook_item_reset_rodata.c): gStr3d_001FD340 */
+static s8 gStr3d_001FD340[0x8] = "%3d\000\000\000\000\000";
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDbCharProcDrawInfoRodata_001FD348 */
+static s8 gDbCharProcDrawInfoRodata_001FD348[0x8] = { 0x2d, 0x2d, 0x2d, 0, 0, 0, 0, 0 };
 /* data twins (src/game/data/databook_item_reset_rodata.c): gStr31f_001FD350 */
 static s8 gStr31f_001FD350[0x6] = "%3.1f\000";
 #endif
@@ -196,10 +178,6 @@ void DbCharProc_DrawInfo_0_00196330(O *o, s32 a1, u32 mode, s32 a3) {
 #pragma explicit_zero_data on
 /* data twins (src/game/data/sbss.c): gDbCharProcDrawInfoSbss_00202188 */
 s32 gDbCharProcDrawInfoSbss_00202188;
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/load_menu_bss_004A1120.c): gDbCharProcDrawInfoBss_004A13A0__grp: gDbCharProcDrawInfoBss_004A13A0@0x0, gDbCharProcDrawInfoBss_004A13B4@0x14, gDbCharProcDrawInfoBss_004A13CC@0x2c, gDbCharProcDrawInfoBss_004A13D0@0x30, gDbCharProcDrawInfoBss_004A13DC@0x3c */
 unsigned char gDbCharProcDrawInfoBss_004A13A0__grp[0x40] __attribute__((aligned(16)));
 #endif

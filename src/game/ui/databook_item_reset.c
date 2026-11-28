@@ -37,135 +37,75 @@ typedef struct { s32 x0; u32 n; } P_DbMap_ResetLayout_0_00198D80;
 extern Q2 gDatabookItemResetData_001F2F40;
 extern s32 gDatabookItemDrawSdata_00201D3C;
 extern u32 gDatabookItemResetSbss_00202190;
-#ifndef NONMATCHING
-extern char gDatabookItemResetRodata_001FD388[];
-#else
-/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookItemResetRodata_001FD388 */
-static char gDatabookItemResetRodata_001FD388[0x10] __attribute__((aligned(8))) = { -0x7f, 0x48, -0x7f, 0x48, -0x7f, 0x48, -0x7f, 0x48, 0, 0, 0, 0, 0, 0, 0, 0 };
-#endif
 extern s32 *gDatabookItemDrawSdata_00201D3C__as_DbItem_LoadEntry_0_00197F90;
-#ifndef NONMATCHING
-extern f32 gDatabookItemResetSdata_00201D44;
-#else
-/* data twins (src/game/data/sdata.c): gDatabookItemResetSdata_00201D44 */
-static f32 gDatabookItemResetSdata_00201D44 = -2.99f;
-#endif
-#ifndef NONMATCHING
-extern s32 gDatabookItemResetSbss_002021A8;
-#else
-/* data twins (src/game/data/sbss.c): gDatabookItemResetSbss_002021A8 */
-static s32 gDatabookItemResetSbss_002021A8;
-#endif
-#ifndef NONMATCHING
-extern s32 gDatabookItemResetBss_004A1450[];
-#else
-/* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemResetBss_004A1450 */
-static s32 gDatabookItemResetBss_004A1450[0xc8];
-#endif
-#ifndef NONMATCHING
-extern s32 gDatabookItemResetBss_004A18B0[];
-#else
-/* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemResetBss_004A18B0 */
-static s32 gDatabookItemResetBss_004A18B0[0x2];
-#endif
 extern S gDatabookItemResetData_001F2FE0 __attribute__((aligned(16)));
-#ifndef NONMATCHING
-extern u32 gDatabookItemResetSbss_002021A4;
-#else
-/* data twins (src/game/data/sbss.c): gDatabookItemResetSbss_002021A4 */
-static u32 gDatabookItemResetSbss_002021A4;
-#endif
-#ifndef NONMATCHING
-extern s8 gDatabookItemResetRodata_001FD398[];
-#else
-/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookItemResetRodata_001FD398 */
-static s8 gDatabookItemResetRodata_001FD398[0x8] = { 0x25, 0x64, 0x20, -0x7f, -0x6d, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s8 gDatabookItemResetRodata_001FD3A0[];
-#else
-/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookItemResetRodata_001FD3A0 */
-static s8 gDatabookItemResetRodata_001FD3A0[0x10] __attribute__((aligned(8))) = { -0x7f, 0x40, -0x7f, 0x40, -0x6d, 0x47, -0x61, 0x72, -0x6a, -0x3b, -0x69, -0x5a, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s8 gDatabookItemResetRodata_001FD3B0[];
-#else
-/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookItemResetRodata_001FD3B0 */
-static s8 gDatabookItemResetRodata_001FD3B0[0x10] __attribute__((aligned(8))) = { 0x20, 0x20, -0x7f, 0x48, -0x7f, 0x48, -0x7f, 0x48, -0x7f, 0x48, 0, 0, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s8 gDatabookItemResetRodata_001FD3C0[];
-#else
-/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookItemResetRodata_001FD3C0 */
-static s8 gDatabookItemResetRodata_001FD3C0[0x8] = { 0x2d, 0x2d, 0x2d, 0x20, -0x7f, -0x6d, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s8 gDatabookItemResetRodata_001FD3C8[];
-#else
-/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookItemResetRodata_001FD3C8 */
-static s8 gDatabookItemResetRodata_001FD3C8[0x8] = { 0x25, 0x33, 0x64, 0x20, -0x7f, -0x6d, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s8 gDatabookItemResetRodata_001FD3D0[];
-#else
-/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookItemResetRodata_001FD3D0 */
-static s8 gDatabookItemResetRodata_001FD3D0[0x10] __attribute__((aligned(8))) = { -0x7f, 0x40, -0x73, -0x3b, -0x73, -0x7e, -0x61, 0x72, -0x6a, -0x3b, -0x69, -0x5a, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s8 gDatabookItemResetRodata_001FD3E0[];
-#else
-/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookItemResetRodata_001FD3E0 */
-static s8 gDatabookItemResetRodata_001FD3E0[0x8] = { 0x20, 0x2d, 0x2d, 0x2d, 0x20, -0x7f, -0x6d, 0 };
-#endif
-#ifndef NONMATCHING
-extern s8 gDatabookItemResetRodata_001FD3E8[];
-#else
-/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookItemResetRodata_001FD3E8 */
-static s8 gDatabookItemResetRodata_001FD3E8[0x8] = { 0x20, 0x25, 0x33, 0x64, 0x20, -0x7f, -0x6d, 0 };
-#endif
-#ifndef NONMATCHING
-extern s8 gDatabookItemResetBss_004A1770[];
-#else
-/* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemResetBss_004A1770 */
-static s8 gDatabookItemResetBss_004A1770[0x100];
-#endif
-#ifndef NONMATCHING
-extern s8 gDatabookItemResetBss_004A1870[];
-#else
-/* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemResetBss_004A1870 */
-static s8 gDatabookItemResetBss_004A1870[0x14];
-#endif
 extern f32 gDatabookItemResetBss_004A1884[];
 extern f32 D_004A1888[];
-#ifndef NONMATCHING
-extern f32 gDatabookItemResetBss_004A189C[];
-#else
-/* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemResetBss_004A189C */
-static f32 gDatabookItemResetBss_004A189C[0x1];
-#endif
-#ifndef NONMATCHING
-extern f32 gDatabookItemResetBss_004A18A0[];
-#else
-/* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemResetBss_004A18A0 */
-static f32 gDatabookItemResetBss_004A18A0[0x3];
-#endif
-#ifndef NONMATCHING
-extern u32 gDatabookItemResetBss_004A18AC[];
-#else
-/* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemResetBss_004A18AC */
-static u32 gDatabookItemResetBss_004A18AC[0x1];
-#endif
-#ifndef NONMATCHING
-extern f32 gDatabookItemResetBss_004A18B8[];
-#else
-/* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemResetBss_004A18B8 */
-static f32 gDatabookItemResetBss_004A18B8[0x2];
-#endif
 extern Q2 gDatabookItemResetData_001F2FC0;
 extern u32 gSoundSbss_002022B8;
 #ifndef NONMATCHING
+extern char gDatabookItemResetRodata_001FD388[];
+extern f32 gDatabookItemResetSdata_00201D44;
+extern s32 gDatabookItemResetSbss_002021A8;
+extern s32 gDatabookItemResetBss_004A1450[];
+extern s32 gDatabookItemResetBss_004A18B0[];
+extern u32 gDatabookItemResetSbss_002021A4;
+extern s8 gDatabookItemResetRodata_001FD398[];
+extern s8 gDatabookItemResetRodata_001FD3A0[];
+extern s8 gDatabookItemResetRodata_001FD3B0[];
+extern s8 gDatabookItemResetRodata_001FD3C0[];
+extern s8 gDatabookItemResetRodata_001FD3C8[];
+extern s8 gDatabookItemResetRodata_001FD3D0[];
+extern s8 gDatabookItemResetRodata_001FD3E0[];
+extern s8 gDatabookItemResetRodata_001FD3E8[];
+extern s8 gDatabookItemResetBss_004A1770[];
+extern s8 gDatabookItemResetBss_004A1870[];
+extern f32 gDatabookItemResetBss_004A189C[];
+extern f32 gDatabookItemResetBss_004A18A0[];
+extern u32 gDatabookItemResetBss_004A18AC[];
+extern f32 gDatabookItemResetBss_004A18B8[];
 extern s8 gDatabookItemResetRodata_001FD3F0[];
 #else
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookItemResetRodata_001FD388 */
+static char gDatabookItemResetRodata_001FD388[0x10] __attribute__((aligned(8))) = { -0x7f, 0x48, -0x7f, 0x48, -0x7f, 0x48, -0x7f, 0x48, 0, 0, 0, 0, 0, 0, 0, 0 };
+/* data twins (src/game/data/sdata.c): gDatabookItemResetSdata_00201D44 */
+static f32 gDatabookItemResetSdata_00201D44 = -2.99f;
+/* data twins (src/game/data/sbss.c): gDatabookItemResetSbss_002021A8 */
+static s32 gDatabookItemResetSbss_002021A8;
+/* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemResetBss_004A1450 */
+static s32 gDatabookItemResetBss_004A1450[0xc8];
+/* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemResetBss_004A18B0 */
+static s32 gDatabookItemResetBss_004A18B0[0x2];
+/* data twins (src/game/data/sbss.c): gDatabookItemResetSbss_002021A4 */
+static u32 gDatabookItemResetSbss_002021A4;
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookItemResetRodata_001FD398 */
+static s8 gDatabookItemResetRodata_001FD398[0x8] = { 0x25, 0x64, 0x20, -0x7f, -0x6d, 0, 0, 0 };
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookItemResetRodata_001FD3A0 */
+static s8 gDatabookItemResetRodata_001FD3A0[0x10] __attribute__((aligned(8))) = { -0x7f, 0x40, -0x7f, 0x40, -0x6d, 0x47, -0x61, 0x72, -0x6a, -0x3b, -0x69, -0x5a, 0, 0, 0, 0 };
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookItemResetRodata_001FD3B0 */
+static s8 gDatabookItemResetRodata_001FD3B0[0x10] __attribute__((aligned(8))) = { 0x20, 0x20, -0x7f, 0x48, -0x7f, 0x48, -0x7f, 0x48, -0x7f, 0x48, 0, 0, 0, 0, 0, 0 };
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookItemResetRodata_001FD3C0 */
+static s8 gDatabookItemResetRodata_001FD3C0[0x8] = { 0x2d, 0x2d, 0x2d, 0x20, -0x7f, -0x6d, 0, 0 };
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookItemResetRodata_001FD3C8 */
+static s8 gDatabookItemResetRodata_001FD3C8[0x8] = { 0x25, 0x33, 0x64, 0x20, -0x7f, -0x6d, 0, 0 };
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookItemResetRodata_001FD3D0 */
+static s8 gDatabookItemResetRodata_001FD3D0[0x10] __attribute__((aligned(8))) = { -0x7f, 0x40, -0x73, -0x3b, -0x73, -0x7e, -0x61, 0x72, -0x6a, -0x3b, -0x69, -0x5a, 0, 0, 0, 0 };
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookItemResetRodata_001FD3E0 */
+static s8 gDatabookItemResetRodata_001FD3E0[0x8] = { 0x20, 0x2d, 0x2d, 0x2d, 0x20, -0x7f, -0x6d, 0 };
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookItemResetRodata_001FD3E8 */
+static s8 gDatabookItemResetRodata_001FD3E8[0x8] = { 0x20, 0x25, 0x33, 0x64, 0x20, -0x7f, -0x6d, 0 };
+/* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemResetBss_004A1770 */
+static s8 gDatabookItemResetBss_004A1770[0x100];
+/* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemResetBss_004A1870 */
+static s8 gDatabookItemResetBss_004A1870[0x14];
+/* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemResetBss_004A189C */
+static f32 gDatabookItemResetBss_004A189C[0x1];
+/* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemResetBss_004A18A0 */
+static f32 gDatabookItemResetBss_004A18A0[0x3];
+/* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemResetBss_004A18AC */
+static u32 gDatabookItemResetBss_004A18AC[0x1];
+/* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemResetBss_004A18B8 */
+static f32 gDatabookItemResetBss_004A18B8[0x2];
 /* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookItemResetRodata_001FD3F0 */
 static s8 gDatabookItemResetRodata_001FD3F0[0x8] = "%s\000\000\000\000\000\000";
 #endif
@@ -662,36 +602,16 @@ void DbMapProc_Pos_0_00199110(s32 arg0, void *arg1, void *arg2) {
 #pragma explicit_zero_data on
 /* data twins (src/game/data/sbss.c): gDatabookItemResetSbss_00202190 */
 u32 gDatabookItemResetSbss_00202190;
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemResetBss_004A1884 */
 f32 gDatabookItemResetBss_004A1884[0x6] __attribute__((aligned(4)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 extern u8 gDatabookItemResetData_001F2F00[];
 /* data group (src/game/data/databook_item_reset_data.c): D_001F2F40__grp: gDatabookItemResetData_001F2F40@0x0 */
 s32 D_001F2F40__grp[0x8] __attribute__((aligned(16))) = { 0, 5, 0, (s32)gDatabookItemResetData_001F2F00, 7, -0x3fc00000, 0, 0 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 extern u8 gDatabookItemResetData_001F2F80[];
 /* data group (src/game/data/databook_item_reset_data.c): D_001F2FC0__grp: gDatabookItemResetData_001F2FC0@0x0 */
 s32 D_001F2FC0__grp[0x8] __attribute__((aligned(16))) = { 0, 5, 0, (s32)gDatabookItemResetData_001F2F80, 7, -0x3fc00000, 0, 0 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/databook_item_reset_data.c): D_001F2FE0__grp: gDatabookItemResetData_001F2FE0@0x0 */
 f32 D_001F2FE0__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data twins (src/game/data/databook_item_reset_data.c): gDatabookItemResetData_001F2F00, gDatabookItemResetData_001F2F80 */
 u8 gDatabookItemResetData_001F2F00[0x40] = { 0, 0, 0x40, 0xc0, 0xa6, 0xf, 0, 0, 0, 0, 0, 0xc0, 0xa5, 0xf, 0, 0, 0, 0, 0x80, 0xbf, 0xa4, 0xf, 0, 0, 0, 0, 0, 0, 0xa3, 0xf, 0, 0, 0, 0, 0x80, 0x3f, 0xa2, 0xf, 0, 0, 0, 0, 0, 0x40, 0xa1, 0xf, 0, 0, 0, 0, 0x40, 0x40, 0xa0, 0xf, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 u8 gDatabookItemResetData_001F2F80[0x40] = { 0, 0, 0x40, 0xc0, 0xa6, 0xf, 0, 0, 0, 0, 0, 0xc0, 0xa5, 0xf, 0, 0, 0, 0, 0x80, 0xbf, 0xa4, 0xf, 0, 0, 0, 0, 0, 0, 0xa3, 0xf, 0, 0, 0, 0, 0x80, 0x3f, 0xa2, 0xf, 0, 0, 0, 0, 0, 0x40, 0xa1, 0xf, 0, 0, 0, 0, 0x40, 0x40, 0xa0, 0xf, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };

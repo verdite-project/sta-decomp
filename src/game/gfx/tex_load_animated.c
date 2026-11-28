@@ -88,7 +88,3 @@ s32 **o1; s32 **o2; Blk ***o0; s8 *d1; s8 *d2; s8 *d3; s32 size;
     }
 }
 #endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-#endif

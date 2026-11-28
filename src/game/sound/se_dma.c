@@ -12,39 +12,9 @@ typedef char *va_list;
 extern E_Se_UploadBankB_1_001DB510 D_004BA500[16];
 extern E_Se_FindFreeSlot_0_001DB6B0 D_004BA500__as_Se_FindFreeSlot_0_001DB6B0[];
 extern s16 gSeDmaBss_004BAA34[];
-#ifndef NONMATCHING
-extern s32 gSeDmaBss_004BAA2C[];
-#else
-/* data twins (src/game/data/save_system_start_bss.c): gSeDmaBss_004BAA2C */
-static s32 gSeDmaBss_004BAA2C[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gSeDmaBss_004BAA40[];
-#else
-/* data twins (src/game/data/save_system_start_bss.c): gSeDmaBss_004BAA40 */
-static s32 gSeDmaBss_004BAA40[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gSeDmaBss_004BAA44[];
-#else
-/* data twins (src/game/data/save_system_start_bss.c): gSeDmaBss_004BAA44 */
-static s32 gSeDmaBss_004BAA44[0x1];
-#endif
 extern s32 gSeDmaBss_004BAA48[];
 extern s32 gSeDmaBss_004BAA4C[];
 extern s32 gSeDmaBss_004BAA50[];
-#ifndef NONMATCHING
-extern s32 gSeDmaBss_004BAA54[];
-#else
-/* data twins (src/game/data/save_system_start_bss.c): gSeDmaBss_004BAA54 */
-static s32 gSeDmaBss_004BAA54[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gSeDmaBss_004BAA58[];
-#else
-/* data twins (src/game/data/save_system_start_bss.c): gSeDmaBss_004BAA58 */
-static s32 gSeDmaBss_004BAA58[0x2];
-#endif
 extern s32 gSeDmaBss_004BAA60[];
 extern s32 gSeDmaBss_004BAA64[];
 extern s32 gSeDmaBss_004BAA68[];
@@ -56,39 +26,42 @@ extern u32 gSeDmaBss_004BAA68__as_Se_DmaBegin_1_001DB9B0[];
 extern B D_004BA700[];
 extern C D_004BA780[];
 extern M D_004BA880[];
-#ifndef NONMATCHING
-extern s32 gSeDmaBss_004BAA20[];
-#else
-/* data twins (src/game/data/save_system_start_bss.c): gSeDmaBss_004BAA20 */
-static s32 gSeDmaBss_004BAA20[0x1];
-#endif
 extern s32 gSeBss_004BAA28[];
-#ifndef NONMATCHING
-extern s32 gSeDmaBss_004BAA30[];
-#else
-/* data twins (src/game/data/save_system_start_bss.c): gSeDmaBss_004BAA30 */
-static s32 gSeDmaBss_004BAA30[0x1];
-#endif
 extern A D_004BA500__as_Se_Init_1_001DBAC0[];
 extern s16 D_004BAA36__as_Se_Init_1_001DBAC0[];
 extern struct { char pad[0x280]; E e[0x68]; u8 t[16][32]; } D_004BA500__as_Se_ParseVoiceMap_0_001DBD20;
 extern s8 *gSeFlushSbss_00202328__as_Se_QueueCommand_1_001DBDB0;
 extern s8 gSeBss_004BA2E0__as_Se_QueueCommand_1_001DBDB0[];
 #ifndef NONMATCHING
+extern s32 gSeDmaBss_004BAA2C[];
+extern s32 gSeDmaBss_004BAA40[];
+extern s32 gSeDmaBss_004BAA44[];
+extern s32 gSeDmaBss_004BAA54[];
+extern s32 gSeDmaBss_004BAA58[];
+extern s32 gSeDmaBss_004BAA20[];
+extern s32 gSeDmaBss_004BAA30[];
 extern s16 gSeDmaData_001F38F0[];
-#else
-/* data twins (src/game/data/player_status_data.c): gSeDmaData_001F38F0 */
-static s16 gSeDmaData_001F38F0[0x1] = { 0 };
-#endif
-#ifndef NONMATCHING
 extern s16 gSeDmaData_001F38F2[];
-#else
-/* data twins (src/game/data/player_status_data.c): gSeDmaData_001F38F2 */
-static s16 gSeDmaData_001F38F2[0x7e] __attribute__((aligned(2))) = { 0xca, 0x195, 0x25f, 0x32a, 0x3f4, 0x4be, 0x588, 0x652, 0x71c, 0x7e5, 0x8ae, 0x976, 0xa3f, 0xb06, 0xbce, 0xc95, 0xd5b, 0xe21, 0xee6, 0xfab, 0x106f, 0x1133, 0x11f6, 0x12b8, 0x1379, 0x143a, 0x14fa, 0x15b9, 0x1677, 0x1734, 0x17f1, 0x18ac, 0x1967, 0x1a20, 0x1ad9, 0x1b90, 0x1c46, 0x1cfc, 0x1db0, 0x1e63, 0x1f14, 0x1fc5, 0x2074, 0x2122, 0x21cf, 0x227a, 0x2324, 0x23cd, 0x2474, 0x251a, 0x25bf, 0x2661, 0x2703, 0x27a3, 0x2841, 0x28de, 0x2979, 0x2a12, 0x2aaa, 0x2b41, 0x2bd5, 0x2c68, 0x2cf9, 0x2d88, 0x2e16, 0x2ea1, 0x2f2b, 0x2fb3, 0x3039, 0x30be, 0x3140, 0x31c1, 0x323f, 0x32bc, 0x3336, 0x33af, 0x3425, 0x349a, 0x350c, 0x357c, 0x35ea, 0x3657, 0x36c1, 0x3728, 0x378e, 0x37f2, 0x3853, 0x38b2, 0x390f, 0x396a, 0x39c2, 0x3a18, 0x3a6c, 0x3abe, 0x3b0d, 0x3b5a, 0x3ba4, 0x3bed, 0x3c33, 0x3c76, 0x3cb8, 0x3cf6, 0x3d33, 0x3d6d, 0x3da5, 0x3dda, 0x3e0d, 0x3e3d, 0x3e6b, 0x3e97, 0x3ec0, 0x3ee6, 0x3f0a, 0x3f2c, 0x3f4b, 0x3f68, 0x3f82, 0x3f9a, 0x3faf, 0x3fc2, 0x3fd2, 0x3fe0, 0x3feb, 0x3ff4, 0x3ffa, 0x3ffe };
-#endif
-#ifndef NONMATCHING
 extern s16 gSeDmaData_001F39EE[];
 #else
+/* data twins (src/game/data/save_system_start_bss.c): gSeDmaBss_004BAA2C */
+static s32 gSeDmaBss_004BAA2C[0x1];
+/* data twins (src/game/data/save_system_start_bss.c): gSeDmaBss_004BAA40 */
+static s32 gSeDmaBss_004BAA40[0x1];
+/* data twins (src/game/data/save_system_start_bss.c): gSeDmaBss_004BAA44 */
+static s32 gSeDmaBss_004BAA44[0x1];
+/* data twins (src/game/data/save_system_start_bss.c): gSeDmaBss_004BAA54 */
+static s32 gSeDmaBss_004BAA54[0x1];
+/* data twins (src/game/data/save_system_start_bss.c): gSeDmaBss_004BAA58 */
+static s32 gSeDmaBss_004BAA58[0x2];
+/* data twins (src/game/data/save_system_start_bss.c): gSeDmaBss_004BAA20 */
+static s32 gSeDmaBss_004BAA20[0x1];
+/* data twins (src/game/data/save_system_start_bss.c): gSeDmaBss_004BAA30 */
+static s32 gSeDmaBss_004BAA30[0x1];
+/* data twins (src/game/data/player_status_data.c): gSeDmaData_001F38F0 */
+static s16 gSeDmaData_001F38F0[0x1] = { 0 };
+/* data twins (src/game/data/player_status_data.c): gSeDmaData_001F38F2 */
+static s16 gSeDmaData_001F38F2[0x7e] __attribute__((aligned(2))) = { 0xca, 0x195, 0x25f, 0x32a, 0x3f4, 0x4be, 0x588, 0x652, 0x71c, 0x7e5, 0x8ae, 0x976, 0xa3f, 0xb06, 0xbce, 0xc95, 0xd5b, 0xe21, 0xee6, 0xfab, 0x106f, 0x1133, 0x11f6, 0x12b8, 0x1379, 0x143a, 0x14fa, 0x15b9, 0x1677, 0x1734, 0x17f1, 0x18ac, 0x1967, 0x1a20, 0x1ad9, 0x1b90, 0x1c46, 0x1cfc, 0x1db0, 0x1e63, 0x1f14, 0x1fc5, 0x2074, 0x2122, 0x21cf, 0x227a, 0x2324, 0x23cd, 0x2474, 0x251a, 0x25bf, 0x2661, 0x2703, 0x27a3, 0x2841, 0x28de, 0x2979, 0x2a12, 0x2aaa, 0x2b41, 0x2bd5, 0x2c68, 0x2cf9, 0x2d88, 0x2e16, 0x2ea1, 0x2f2b, 0x2fb3, 0x3039, 0x30be, 0x3140, 0x31c1, 0x323f, 0x32bc, 0x3336, 0x33af, 0x3425, 0x349a, 0x350c, 0x357c, 0x35ea, 0x3657, 0x36c1, 0x3728, 0x378e, 0x37f2, 0x3853, 0x38b2, 0x390f, 0x396a, 0x39c2, 0x3a18, 0x3a6c, 0x3abe, 0x3b0d, 0x3b5a, 0x3ba4, 0x3bed, 0x3c33, 0x3c76, 0x3cb8, 0x3cf6, 0x3d33, 0x3d6d, 0x3da5, 0x3dda, 0x3e0d, 0x3e3d, 0x3e6b, 0x3e97, 0x3ec0, 0x3ee6, 0x3f0a, 0x3f2c, 0x3f4b, 0x3f68, 0x3f82, 0x3f9a, 0x3faf, 0x3fc2, 0x3fd2, 0x3fe0, 0x3feb, 0x3ff4, 0x3ffa, 0x3ffe };
 /* data twins (src/game/data/player_status_data.c): gSeDmaData_001F39EE */
 static s16 gSeDmaData_001F39EE[0x1] __attribute__((aligned(2))) = { 0x3fff };
 #endif
@@ -439,10 +412,6 @@ s16 gSeDmaBss_004BAA34[0x6] __attribute__((aligned(4)));
 s32 gSeDmaBss_004BAA48[0x1];
 s32 gSeDmaBss_004BAA4C[0x1];
 s32 gSeDmaBss_004BAA50[0x1];
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/save_system_start_bss.c): gSeDmaBss_004BAA60__grp: gSeDmaBss_004BAA60@0x0, gSeDmaBss_004BAA64@0x4, gSeDmaBss_004BAA68@0x8, gSeDmaBss_004BAA6C@0xc */
 unsigned char gSeDmaBss_004BAA60__grp[0x10] __attribute__((aligned(16)));
 #endif

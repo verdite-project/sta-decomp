@@ -151,7 +151,3 @@ s32 Task_GetState_0_001E02A0(s8 *p) { if (p == NULL) return gTaskCallbackBss_004
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
 #endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-#endif

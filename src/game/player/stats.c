@@ -288,10 +288,6 @@ s32 Stats_CalcWeight_0_001D1170(void) {
 #pragma explicit_zero_data on
 /* data group (src/game/data/pad_get_connected_bss_004B5DD0.c): gStatsBss_004B5DD0__grp: gStatsBss_004B5DD0@0x0, gStatsBss_004B5DF0@0x20, gStatsBss_004B5DFC@0x2c, gStatsBss_004B5E00@0x30, gStatsBss_004B5E04@0x34, gStatsBss_004B5E08@0x38, gStatsBss_004B5E60@0x90, gStatsBss_004B5E8C@0xbc, gStatsBss_004B5E90@0xc0, gStatsBss_004B5E94@0xc4, gStatsBss_004B5E98@0xc8 */
 unsigned char gStatsBss_004B5DD0__grp[0x120] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/pad_get_connected_bss_004B5DD0.c): gStatsBss_004B5EF0__grp: gStatsBss_004B5EF0@0x0, gStatsBss_004B5F18@0x28, gStatsBss_004B5F1C@0x2c, gStatsBss_004B5F20@0x30, gStatsBss_004B5F24@0x34, gStatsBss_004B5F28@0x38, gStatsBss_004B5FA8@0xb8, gStatsBss_004B5FAC@0xbc, gStatsBss_004B5FB0@0xc0, gStatsBss_004B5FB4@0xc4, gStatsBss_004B5FB8@0xc8, gStatsBss_004B6038@0x148, gStatsBss_004B603C@0x14c, gStatsBss_004B6040@0x150, gStatsBss_004B6044@0x154, gStatsBss_004B6048@0x158, gStatsBss_004B60C8@0x1d8, gStatsBss_004B60CC@0x1dc, gStatsBss_004B60D0@0x1e0, gStatsBss_004B60D4@0x1e4, gStatsBss_004B60D8@0x1e8, gStatsBss_004B6130@0x240, gStatsBss_004B6158@0x268, gStatsBss_004B615C@0x26c, gStatsBss_004B6160@0x270, gStatsBss_004B6164@0x274, gStatsBss_004B6168@0x278, gStatsBss_004B617C@0x28c, gStatsBss_004B6180@0x290, gStatsBss_004B61E8@0x2f8, gStatsBss_004B61EC@0x2fc, gStatsBss_004B61F0@0x300, gStatsBss_004B61F4@0x304, gStatsBss_004B61F8@0x308, gStatsBss_004B6278@0x388, gStatsBss_004B627C@0x38c, gStatsBss_004B6280@0x390, gStatsBss_004B6284@0x394, gStatsBss_004B6288@0x398 */
 unsigned char gStatsBss_004B5EF0__grp[0x490] __attribute__((aligned(16)));
 #endif

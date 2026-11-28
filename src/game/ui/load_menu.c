@@ -144,90 +144,54 @@ extern S_LoadMenu_DrawSlotInfo_2_00192110 gLoadMenuData_001F2DA0 __attribute__((
 extern Row D_004A0900[];
 #ifndef NONMATCHING
 extern s8 gLoadMenuRodata_001FD128[];
+extern s8 gLoadMenuRodata_001FD138[];
+extern s8 gLoadMenuRodata_001FD148[];
+extern s8 gLoadMenuRodata_001FD158[];
+extern s8 gLoadMenuRodata_001FD170[];
+extern s8 gLoadMenuRodata_001FD188[];
+extern s8 gLoadMenuRodata_001FD190[];
 #else
 /* data twins (src/game/data/option_rodata2.c): gLoadMenuRodata_001FD128 */
 static s8 gLoadMenuRodata_001FD128[0x10] __attribute__((aligned(8))) = "SAVEDATA%d\000\000\000\000\000\000";
-#endif
-#ifndef NONMATCHING
-extern s8 gLoadMenuRodata_001FD138[];
-#else
 /* data twins (src/game/data/option_rodata2.c): gLoadMenuRodata_001FD138 */
 static s8 gLoadMenuRodata_001FD138[0x10] __attribute__((aligned(8))) = "HP %4d/%4d\000\000\000\000\000\000";
-#endif
-#ifndef NONMATCHING
-extern s8 gLoadMenuRodata_001FD148[];
-#else
 /* data twins (src/game/data/option_rodata2.c): gLoadMenuRodata_001FD148 */
 static s8 gLoadMenuRodata_001FD148[0x10] __attribute__((aligned(8))) = "MP %4d/%4d\000\000\000\000\000\000";
-#endif
-#ifndef NONMATCHING
-extern s8 gLoadMenuRodata_001FD158[];
-#else
 /* data twins (src/game/data/option_rodata2.c): gLoadMenuRodata_001FD158 */
 static s8 gLoadMenuRodata_001FD158[0x18] __attribute__((aligned(8))) = "LOCATION\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
-#endif
-#ifndef NONMATCHING
-extern s8 gLoadMenuRodata_001FD170[];
-#else
 /* data twins (src/game/data/option_rodata2.c): gLoadMenuRodata_001FD170 */
 static s8 gLoadMenuRodata_001FD170[0x18] __attribute__((aligned(8))) = "TIME %2d:%2d:%2d\000\000\000\000\000\000\000\000";
-#endif
-#ifndef NONMATCHING
-extern s8 gLoadMenuRodata_001FD188[];
-#else
 /* data twins (src/game/data/option_rodata2.c): gLoadMenuRodata_001FD188 */
 static s8 gLoadMenuRodata_001FD188[0x8] = " EMPTY \000";
-#endif
-#ifndef NONMATCHING
-extern s8 gLoadMenuRodata_001FD190[];
-#else
 /* data twins (src/game/data/option_rodata2.c): gLoadMenuRodata_001FD190 */
 static s8 gLoadMenuRodata_001FD190[0x10] __attribute__((aligned(8))) = { 0x2d, 0x2d, 0x2d, 0x2d, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 #endif
 /* .bss, from the top down (CodeWarrior writes it in reverse) */
 s32 D_004A10F0[0xc];
-#ifndef NONMATCHING
-extern s32 gLoadMenuBss_004A1124[];
-#else
-/* data twins (src/game/data/load_menu_bss_004A1120.c): gLoadMenuBss_004A1124 */
-static s32 gLoadMenuBss_004A1124[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gLoadMenuBss_004A1128[];
-#else
-/* data twins (src/game/data/load_menu_bss_004A1120.c): gLoadMenuBss_004A1128 */
-static s32 gLoadMenuBss_004A1128[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gLoadMenuBss_004A1130[];
-#else
-/* data twins (src/game/data/load_menu_bss_004A1120.c): gLoadMenuBss_004A1130 */
-static s32 gLoadMenuBss_004A1130[0x2];
-#endif
 extern u8 D_004A0950[];
-#ifndef NONMATCHING
-extern s32 gLoadMenuSbss_00202140;
-#else
-/* data twins (src/game/data/sbss.c): gLoadMenuSbss_00202140 */
-static s32 gLoadMenuSbss_00202140;
-#endif
 extern struct { unsigned char : 1; unsigned char f : 1; char pad[15]; } gLoadMenuBss_004A1194;
 extern s32 gLoadMenuBss_004A1180[];
 #ifndef NONMATCHING
+extern s32 gLoadMenuBss_004A1124[];
+extern s32 gLoadMenuBss_004A1128[];
+extern s32 gLoadMenuBss_004A1130[];
+extern s32 gLoadMenuSbss_00202140;
 extern f32 gLoadMenuBss_004A1190[];
-#else
-/* data twins (src/game/data/load_menu_bss_004A1120.c): gLoadMenuBss_004A1190 */
-static f32 gLoadMenuBss_004A1190[0x1];
-#endif
-#ifndef NONMATCHING
 extern S_LoadMenu_DrawSlot_1_00193AF0 gLoadMenuData_001F2DE0 __attribute__((aligned(16)));
-#else
-/* data twins (src/game/data/load_menu_draw_data.c): gLoadMenuData_001F2DE0 */
-static S_LoadMenu_DrawSlot_1_00193AF0 gLoadMenuData_001F2DE0 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
-#endif
-#ifndef NONMATCHING
 extern s8 gLoadMenuRodata_001FD208[];
 #else
+/* data twins (src/game/data/load_menu_bss_004A1120.c): gLoadMenuBss_004A1124 */
+static s32 gLoadMenuBss_004A1124[0x1];
+/* data twins (src/game/data/load_menu_bss_004A1120.c): gLoadMenuBss_004A1128 */
+static s32 gLoadMenuBss_004A1128[0x1];
+/* data twins (src/game/data/load_menu_bss_004A1120.c): gLoadMenuBss_004A1130 */
+static s32 gLoadMenuBss_004A1130[0x2];
+/* data twins (src/game/data/sbss.c): gLoadMenuSbss_00202140 */
+static s32 gLoadMenuSbss_00202140;
+/* data twins (src/game/data/load_menu_bss_004A1120.c): gLoadMenuBss_004A1190 */
+static f32 gLoadMenuBss_004A1190[0x1];
+/* data twins (src/game/data/load_menu_draw_data.c): gLoadMenuData_001F2DE0 */
+static S_LoadMenu_DrawSlot_1_00193AF0 gLoadMenuData_001F2DE0 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
 /* data twins (src/game/data/load_menu_rodata.c): gLoadMenuRodata_001FD208 */
 static s8 gLoadMenuRodata_001FD208[0x8] = "SLOT %d\000";
 #endif
@@ -1101,16 +1065,8 @@ s32 gLoadMenuBss_004A1188[0x1];
 f32 gLoadMenuBss_004A118C[0x1];
 s32 gLoadMenuBss_004A1198[0x1];
 s32 gLoadMenuBss_004A119C[0x1];
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/option_lerp_data.c): D_001F2DA0__grp: gLoadMenuData_001F2DA0@0x0 */
 f32 D_001F2DA0__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/load_menu_bss_004A1120.c): D_004A1194__grp: gLoadMenuBss_004A1194@0x0 */
 u8 D_004A1194__grp[0x4] __attribute__((aligned(4)));
 #endif

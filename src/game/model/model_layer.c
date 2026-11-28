@@ -22,34 +22,22 @@ typedef struct {
     u8 pad8[8];
     L x10;
 } O;
+extern u8 gGameMainBss_002F1840[];
 #ifndef NONMATCHING
 extern s32 gModelLayerSbss_00201FF8;
+extern s32 gModelLayerSbss_00201FFC;
+extern s32 gModelLayerSbss_00202000;
+extern s32 gModelLayerSbss_00202004;
+extern s32 gModelLayerSbss_00201FF4;
 #else
 /* data twins (src/game/data/sbss.c): gModelLayerSbss_00201FF8 */
 static s32 gModelLayerSbss_00201FF8;
-#endif
-#ifndef NONMATCHING
-extern s32 gModelLayerSbss_00201FFC;
-#else
 /* data twins (src/game/data/sbss.c): gModelLayerSbss_00201FFC */
 static s32 gModelLayerSbss_00201FFC;
-#endif
-#ifndef NONMATCHING
-extern s32 gModelLayerSbss_00202000;
-#else
 /* data twins (src/game/data/sbss.c): gModelLayerSbss_00202000 */
 static s32 gModelLayerSbss_00202000;
-#endif
-#ifndef NONMATCHING
-extern s32 gModelLayerSbss_00202004;
-#else
 /* data twins (src/game/data/sbss.c): gModelLayerSbss_00202004 */
 static s32 gModelLayerSbss_00202004;
-#endif
-extern u8 gGameMainBss_002F1840[];
-#ifndef NONMATCHING
-extern s32 gModelLayerSbss_00201FF4;
-#else
 /* data twins (src/game/data/sbss.c): gModelLayerSbss_00201FF4 */
 static s32 gModelLayerSbss_00201FF4;
 #endif

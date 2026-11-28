@@ -52,13 +52,10 @@ extern Mtx gMatrixFromData_001F2170;
 const char D_001FDA80[0x20] = { 0x6d, 0x61, 0x70, 0x2f, 0x6d, 0x25, 0x34, 0x2e, 0x30, 0x34, 0x64, 0x6d, 0x2e, 0x73, 0x74, 0x6d, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 #ifndef NONMATCHING
 extern s32 gMapAreaLoadSbss_002022B4;
+extern f32 gMapAreaLoadData_001F3850[4];
 #else
 /* data twins (src/game/data/sbss.c): gMapAreaLoadSbss_002022B4 */
 static s32 gMapAreaLoadSbss_002022B4;
-#endif
-#ifndef NONMATCHING
-extern f32 gMapAreaLoadData_001F3850[4];
-#else
 /* data twins (src/game/data/player_data.c): gMapAreaLoadData_001F3850 */
 static f32 gMapAreaLoadData_001F3850[0x4] = { 0.0f, 0.0f, 0.0f, 100.0f };
 #endif
@@ -340,76 +337,28 @@ void Map_SetupAmbient_0_001B7290(void)
 #pragma explicit_zero_data on
 /* data twins (src/game/data/sbss.c): gMapAreaLoadSbss_002022D0 */
 s32 gMapAreaLoadSbss_002022D0;
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/map_area_load_rodata.c): D_001FDA60__grp: gMapAreaLoadRodata_001FDA60@0x0 */
 unsigned char D_001FDA60__grp[0x1] __attribute__((aligned(16))) = { 0x53 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/map_area_load_rodata.c): D_001FDA61__grp: gMapAreaLoadRodata_001FDA61@0x0 */
 unsigned char D_001FDA61__grp[0x1] __attribute__((aligned(1))) = { 0x54 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/map_area_load_rodata.c): D_001FDA62__grp: gMapAreaLoadRodata_001FDA62@0x0 */
 unsigned char D_001FDA62__grp[0x6] __attribute__((aligned(2))) = { 0x4d, 0x49, 0, 0, 0, 0 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/map_area_load_rodata.c): D_001FDA68__grp: gMapAreaLoadRodata_001FDA68@0x0 */
 unsigned char D_001FDA68__grp[0x1] __attribute__((aligned(8))) = { 0x53 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/map_area_load_rodata.c): D_001FDA69__grp: gMapAreaLoadRodata_001FDA69@0x0 */
 unsigned char D_001FDA69__grp[0x1] __attribute__((aligned(1))) = { 0x54 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/map_area_load_rodata.c): D_001FDA6A__grp: gMapAreaLoadRodata_001FDA6A@0x0 */
 unsigned char D_001FDA6A__grp[0x1] __attribute__((aligned(2))) = { 0x45 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/map_area_load_rodata.c): D_001FDA6B__grp: gMapAreaLoadRodata_001FDA6B@0x0 */
 unsigned char D_001FDA6B__grp[0x5] __attribute__((aligned(1))) = { 0x4d, 0, 0, 0, 0 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/map_area_load_rodata.c): D_001FDA70__grp: gMapAreaLoadRodata_001FDA70@0x0 */
 unsigned char D_001FDA70__grp[0x1] __attribute__((aligned(16))) = { 0x53 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/map_area_load_rodata.c): D_001FDA71__grp: gMapAreaLoadRodata_001FDA71@0x0 */
 unsigned char D_001FDA71__grp[0x1] __attribute__((aligned(1))) = { 0x54 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/map_area_load_rodata.c): D_001FDA72__grp: gMapAreaLoadRodata_001FDA72@0x0 */
 unsigned char D_001FDA72__grp[0x1] __attribute__((aligned(2))) = { 0x4f };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/map_area_load_rodata.c): D_001FDA73__grp: gMapAreaLoadRodata_001FDA73@0x0 */
 unsigned char D_001FDA73__grp[0xd] __attribute__((aligned(1))) = { 0x49, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/map_area_load_rodata.c): D_001FDA5C__grp: gMapAreaLoadRodata_001FDA5C@0x0 */
 int D_001FDA5C__grp[0x1] __attribute__((aligned(4))) = { 0 };
 #endif

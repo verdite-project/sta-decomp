@@ -513,10 +513,6 @@ s32 gBgmSbss_00202310;
 s32 gBgmSbss_00202314;
 /* data twins (src/game/data/bgm_bss.c): gBgmBss_004B9F20 */
 E gBgmBss_004B9F20[4];
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/bgm_bss.c): gBgmBss_004B9FA0__grp: gBgmBss_004B9FA0@0x0, gBgmBss_004B9FA4@0x4, gBgmBss_004B9FA8@0x8, gBgmBss_004B9FAC@0xc, gBgmBss_004B9FB0@0x10, gBgmBss_004B9FC0@0x20, gBgmBss_004BA000@0x60 */
 unsigned char gBgmBss_004B9FA0__grp[0xa0] __attribute__((aligned(16)));
 #endif

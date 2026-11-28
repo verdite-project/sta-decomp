@@ -4,32 +4,23 @@
 typedef struct { u8 r, g, b, a; } Col;
 typedef struct { u8 b0:1; } B;
 typedef struct { u8 a:3; u8 b:5; } BF;
-#ifndef NONMATCHING
-extern s32 gMessageBss_004A0F54[];
-#else
-/* data twins (src/game/data/option_bss.c): gMessageBss_004A0F54 */
-static s32 gMessageBss_004A0F54[0x1];
-#endif
 extern f32 gMessageBss_004A0F58[];
 extern B gMessageBss_004A0F5C[];
 extern s8 gMessageBss_004A0F60[];
 extern f32 D_004A0F74[];
-#ifndef NONMATCHING
-extern s32 gMessageSbss_00202118;
-#else
-/* data twins (src/game/data/sbss.c): gMessageSbss_00202118 */
-static s32 gMessageSbss_00202118;
-#endif
 extern u16 gMapCommandBss_00317238[];
 #ifndef NONMATCHING
+extern s32 gMessageBss_004A0F54[];
+extern s32 gMessageSbss_00202118;
 extern u8 gMessageBss_004A0B50[];
-#else
-/* data twins (src/game/data/option_bss.c): gMessageBss_004A0B50 */
-static u8 gMessageBss_004A0B50[0x404] __attribute__((aligned(4)));
-#endif
-#ifndef NONMATCHING
 extern s32 gMessageBss_004A0F64[];
 #else
+/* data twins (src/game/data/option_bss.c): gMessageBss_004A0F54 */
+static s32 gMessageBss_004A0F54[0x1];
+/* data twins (src/game/data/sbss.c): gMessageSbss_00202118 */
+static s32 gMessageSbss_00202118;
+/* data twins (src/game/data/option_bss.c): gMessageBss_004A0B50 */
+static u8 gMessageBss_004A0B50[0x404] __attribute__((aligned(4)));
 /* data twins (src/game/data/option_bss.c): gMessageBss_004A0F64 */
 static s32 gMessageBss_004A0F64[0x1];
 #endif

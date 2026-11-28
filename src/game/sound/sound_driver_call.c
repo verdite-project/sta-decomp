@@ -10,23 +10,17 @@ const char D_001FE6C0[0x30] = { 0x3c, 0x43, 0x61, 0x6c, 0x6c, 0x52, 0x70, 0x63, 
 extern s32 gSoundDriverCallBss_004B9EF0[];
 extern u8 gSoundDriverCallBss_004B7A40[];
 extern u8 gSoundDriverCallBss_004B7CB0[];
-#ifndef NONMATCHING
-extern s32 gSoundDriverCallSdata_00201E38;
-#else
-/* data twins (src/game/data/sdata.c): gSoundDriverCallSdata_00201E38 */
-static s32 gSoundDriverCallSdata_00201E38 = -1;
-#endif
-#ifndef NONMATCHING
-extern s32 gSoundDriverCallSbss_00202300;
-#else
-/* data twins (src/game/data/sbss.c): gSoundDriverCallSbss_00202300 */
-static s32 gSoundDriverCallSbss_00202300;
-#endif
 extern s32 _gp;
 extern int gSoundDriverCallBss_004B7EB0[];
 #ifndef NONMATCHING
+extern s32 gSoundDriverCallSdata_00201E38;
+extern s32 gSoundDriverCallSbss_00202300;
 extern s32 gSoundDriverCallSbss_002022FC;
 #else
+/* data twins (src/game/data/sdata.c): gSoundDriverCallSdata_00201E38 */
+static s32 gSoundDriverCallSdata_00201E38 = -1;
+/* data twins (src/game/data/sbss.c): gSoundDriverCallSbss_00202300 */
+static s32 gSoundDriverCallSbss_00202300;
 /* data twins (src/game/data/sbss.c): gSoundDriverCallSbss_002022FC */
 static s32 gSoundDriverCallSbss_002022FC;
 #endif
@@ -356,10 +350,6 @@ void SndDrv_RpcServerThread_1_001D8BE0(void)
 #pragma explicit_zero_data on
 /* data twins (src/game/data/bgm_bss.c): gSoundDriverCallBss_004B9EF0 */
 s32 gSoundDriverCallBss_004B9EF0[0xc];
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/pad_get_connected_bss_004B5DD0.c): gPadState_004B6900__grp: gPadState_004B6900@0x0, gSoundDriverCallBss_004B6A00@0x100, gSoundDriverCallBss_004B6A20@0x120, gSoundDriverCallBss_004B6A68@0x168, gSoundDriverCallBss_004B7740@0xe40, gSoundDriverCallBss_004B7840@0xf40, gSoundDriverCallBss_004B7A40@0x1140, gSoundDriverCallBss_004B7C40@0x1340, gSoundDriverCallBss_004B7C90@0x1390, gSoundDriverCallBss_004B7CB0@0x13b0, gSoundDriverCallBss_004B7EB0@0x15b0 */
 u8 gPadState_004B6900__grp[0x15f0] __attribute__((aligned(16)));
 #endif

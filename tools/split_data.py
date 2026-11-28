@@ -434,11 +434,26 @@ def unsplit(names_owner, unit_of):
         text = (ROOT / own).read_text()
         for n in names:
             u = unit_of[n]
-            st = re.compile(rf"#ifndef NONMATCHING\n(?P<ext>[^\n]*\n)#else\n/\* data twins \({re.escape(u)}\): {n} \*/\n"
-                            rf"(?:[^\n]*\n)*?static [^\n]*\b{n}\b[^\n]*\n#endif\n")
-            m = st.search(text)
-            if m:
-                text = text[:m.start()] + m.group("ext") + text[m.end():]
+            # a static twin: its extern leaves the #ifndef part (it stands
+            # before the block), its marker and twin leave the #else part
+            blk = re.compile(r"#ifndef NONMATCHING\n((?:extern[^\n]*\n)+)#else\n((?:(?!#endif\n)[^\n]*\n)+?)#endif\n")
+            done_static = False
+            for m in blk.finditer(text):
+                if f"/* data twins ({u}): {n} */" not in m.group(2):
+                    continue
+                exts = m.group(1).splitlines(keepends=True)
+                mine = [e for e in exts if re.search(rf"\b{n}\b", e)]
+                rest_e = [e for e in exts if e not in mine]
+                body = m.group(2)
+                body = re.sub(rf"/\* data twins \({re.escape(u)}\): {n} \*/\n(?:(?:extern|void)[^\n]*\n)*static [^\n]*\b{n}\b[^\n]*\n",
+                              "", body)
+                new_blk = "".join(mine)
+                if rest_e and body.strip():
+                    new_blk += "#ifndef NONMATCHING\n" + "".join(rest_e) + "#else\n" + body + "#endif\n"
+                text = text[:m.start()] + new_blk + text[m.end():]
+                done_static = True
+                break
+            if done_static:
                 continue
             def fix_block(bm):
                 blk = bm.group(0)
@@ -903,6 +918,8 @@ def main():
     for u, m in by_unit.items():
         (ROOT / u).write_text(unit_edit(u, m))
     write_group_syms()
+    import merge_ifdefs
+    merge_ifdefs.main()
 
 
 if __name__ == "__main__":

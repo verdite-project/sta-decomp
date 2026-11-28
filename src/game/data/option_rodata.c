@@ -4,13 +4,11 @@
 /* used by: option */
 #pragma explicit_zero_data on
 
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/option.c */
+#ifndef NONMATCHING /* the NONMATCHING build defines these in their owners */
 const char gStrSoundSetting_001FCE08[0xe] = "SOUND SETTING\000";
 const char gOptionRodata_001FCE18[0x18] __attribute__((aligned(8))) = "SCREEN SETTING\000\000\000\000\000\000\000\000\000\000";
 const char gOptionRodata_001FCE30[0x1d] __attribute__((aligned(8))) = "CONTROLLER\012          SETTING\000";
 const char gOptionRodata_001FCE50[0x10] __attribute__((aligned(8))) = "QUIT GAME\000\000\000\000\000\000\000";
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/option.c */
 const char gStrMono_001FCE60[0x5] = "MONO\000";
 const char gStrStereo_001FCE68[0x7] = "STEREO\000";
 const char gOptionRodata_001FCE70[0x18] __attribute__((aligned(8))) = "Dolby ProLogic II\000\000\000\000\000\000\000";
@@ -20,24 +18,12 @@ const char gOptionRodata_001FCEA0[0x10] __attribute__((aligned(8))) = "SE VOLUME
 const char gOptionRodata_001FCEB0[0x10] __attribute__((aligned(8))) = "MOVE EFFECT\000\000\000\000\000";
 const char gStrScreenRatio_001FCEC0[0xd] = "SCREEN RATIO\000";
 const char gOptionRodata_001FCED0[0x10] __attribute__((aligned(8))) = "BRIGHTNESS\000\000\000\000\000\000";
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/option.c */
 const s32 gOptionRodata_001FCEE0[0x2] = { 0x333a34, 0 };
 const char gStr169_001FCEE8[0x5] = "16:9\000";
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/option.c */
 const char gOptionRodata_001FCEF0[0x30] __attribute__((aligned(8))) = "16:9(LB)\000\000\000\000\000\000\000\000VIBRATION\000\000\000\000\000\000\000KEY ASSIGN\000\000\000\000\000\000";
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/option.c */
 const s32 gOptionRodata_001FCF20[0x4] __attribute__((aligned(8))) = { 0x43835e83, 0x50827683, 0, 0 };
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/option.c */
 const s32 gOptionRodata_001FCF30[0x4] __attribute__((aligned(8))) = { 0x43835e83, 0x51827683, 0, 0 };
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/option.c */
 const s32 gOptionRodata_001FCF40[0x4] __attribute__((aligned(8))) = { 0x43835e83, 0x52827683, 0, 0 };
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/option.c */
 const s32 gOptionRodata_001FCF50[0x6] __attribute__((aligned(8))) = { 0x43835e83, 0x52827683, -0x757cba7f, 0x5b816f83, 0x5883, 0 };
 const s32 gOptionRodata_001FCF68[0x6] __attribute__((aligned(8))) = { 0x43835e83, 0x53827683, 0, 0, 0, 0 };
 const s32 gOptionRodata_001FCF80[0x6] __attribute__((aligned(8))) = { 0x43835e83, 0x53827683, -0x757cba7f, 0x5b816f83, 0x5883, 0 };
@@ -47,8 +33,6 @@ const s32 gOptionRodata_001FCFB0[0x4] __attribute__((aligned(8))) = { -0x516c257
 const s32 gOptionRodata_001FCFC0[0x2] = { -0xe760670, 0 };
 const s32 gOptionRodata_001FCFC8[0x4] __attribute__((aligned(8))) = { -0x426a4973, -0x25778c73, 0xae93, 0 };
 const s32 gOptionRodata_001FCFD8[0x4] __attribute__((aligned(8))) = { -0x426aba77, -0x25778c73, 0xae93, 0 };
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/option.c */
 const s32 gOptionRodata_001FCFE8[0x2] = { 0x5f938b8e, 0xe38f };
 const s32 gOptionRodata_001FCFF0[0x2] = { 0x5f938b8e, 0xba89 };
 const f32 gOptionRodata_001FCFF8[0x2] = { 4.7034407f, 0.0f };

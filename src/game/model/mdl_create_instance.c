@@ -145,10 +145,6 @@ extern unsigned char gMdlCreateInstanceBss_00486900[];
 extern unsigned char gMdlCreateInstanceBss_00486940[];
 /* data group (src/game/data/screen_fx_flash_data_001F2340.c): D_001F2340__grp: gMdlCreateInstanceData_001F2340@0x0 */
 int D_001F2340__grp[0x30] __attribute__((aligned(16))) = { 0x3f800000, 0, 0, 0, 0, 0x3f800000, 0, 0, 0, 0, 0x3f800000, 0, 0, 0, 0, 0x3f800000, (int)gMdlCreateInstanceBss_00486940, (int)gMdlCreateInstanceBss_00486900, (int)gPlayerBss_0031723C, (int)gMapCommandBss_00317238, (int)gMenuBss_00317230, (int)gDoorSbss_00202030, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data twins (src/game/data/ui_anim_bss.c): gMdlCreateInstanceBss_00486900, gMdlCreateInstanceBss_00486940 */
 unsigned char gMdlCreateInstanceBss_00486900[0x40];
 unsigned char gMdlCreateInstanceBss_00486940[0x40];

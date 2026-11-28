@@ -97,22 +97,16 @@ extern Mtx gMatrixFromData_001F2170;
 extern f32 D_00222A48[];
 extern s32 gMapSbss_00201E80;
 extern F7 D_00222A51[];
+extern s16 gScriptData_001F1C50[];
 #ifndef NONMATCHING
 extern s16 gActorData_001F1C30[];
+extern s16 gActorData_001F1C60[];
+extern s16 gActorData_001F1C10[];
 #else
 /* data twins (src/game/data/game_main_data.c): gActorData_001F1C30 */
 static s16 gActorData_001F1C30[0x10] __attribute__((aligned(4))) = { 0x1e0, 0x1e0, 0x1e0, 0x1e1, 0x1e6, 0x1e2, 0x1e3, 0x1e5, 0x1e0, 0x1e0, -1, -1, -1, -1, 0x1e4, -1 };
-#endif
-extern s16 gScriptData_001F1C50[];
-#ifndef NONMATCHING
-extern s16 gActorData_001F1C60[];
-#else
 /* data twins (src/game/data/game_main_data.c): gActorData_001F1C60 */
 static s16 gActorData_001F1C60[0x8] __attribute__((aligned(4))) = { 0x1f9, 0x1fa, 0x1fb, 0x1f9, 0x1fa, 0x1fb, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s16 gActorData_001F1C10[];
-#else
 /* data twins (src/game/data/game_main_data.c): gActorData_001F1C10 */
 static s16 gActorData_001F1C10[0x10] __attribute__((aligned(4))) = { 0x1db, 0x1db, 0x1db, 0x1da, 0x1dc, 0x1de, 0x1dd, -1, 0x1db, 0x1db, -1, -1, -1, -1, 0x1dd, -1 };
 #endif
@@ -1308,16 +1302,8 @@ void Actor_ResolveGround_0_0013A720(Actor *a) {
 extern u8 gActorBss_002704D0[];
 /* data group (src/game/data/fx_proc_data.c): D_001F1C80__grp: gActorData_001F1C80@0x0 */
 s32 D_001F1C80__grp[0x14] __attribute__((aligned(16))) = { 0, 0x3f800000, 0, 0, (s32)gActorBss_002704D0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data twins (src/game/data/sound_emitter_bss_002704D0.c): gActorBss_002704D0 */
 u8 gActorBss_002704D0[0x80];
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/game_main_data.c): D_001F1BAC__grp: gActorData_001F1BAC@0x0 */
 int D_001F1BAC__grp[0x1] __attribute__((aligned(4))) = { 0 };
 #endif

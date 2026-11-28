@@ -8,28 +8,19 @@ typedef struct { s32 state; s32 buttons; u8 next; u8 pad[5]; u8 pad_e; } Menu;
 typedef struct { u8 pad[0x10]; s32 count; u8 pad2[0x14]; f32 base; } Info;
 typedef struct { u8 r, g, b, a; } Col;
 typedef struct { s32 x0; u32 x4; u8 b8; char p9[5]; u8 bE; } Obj;
+extern s32 D_004A32CC[];
 #ifndef NONMATCHING
 extern s32 gPauseMenuEntrySbss_00202204;
+extern u8 gPauseMenuEntryRodata_001FD610[];
+extern u8 gPauseMenuEntryRodata_001FD648[];
+extern char gPauseMenuEntryRodata_001FD650[];
 #else
 /* data twins (src/game/data/sbss.c): gPauseMenuEntrySbss_00202204 */
 static s32 gPauseMenuEntrySbss_00202204;
-#endif
-extern s32 D_004A32CC[];
-#ifndef NONMATCHING
-extern u8 gPauseMenuEntryRodata_001FD610[];
-#else
 /* data twins (src/game/data/pause_menu_entry_rodata.c): gPauseMenuEntryRodata_001FD610 */
 static u8 gPauseMenuEntryRodata_001FD610[0x5] = "ITEM\000";
-#endif
-#ifndef NONMATCHING
-extern u8 gPauseMenuEntryRodata_001FD648[];
-#else
 /* data twins (src/game/data/pause_menu_entry_rodata2.c): gPauseMenuEntryRodata_001FD648 */
 static u8 gPauseMenuEntryRodata_001FD648[0x7] = "OPTION\000";
-#endif
-#ifndef NONMATCHING
-extern char gPauseMenuEntryRodata_001FD650[];
-#else
 /* data twins (src/game/data/pause_menu_entry_rodata2.c): gPauseMenuEntryRodata_001FD650 */
 static char gPauseMenuEntryRodata_001FD650[0x10] __attribute__((aligned(8))) = { -0x7e, 0x6f, -0x7e, 0x60, -0x7e, 0x74, -0x7e, 0x72, -0x7e, 0x64, 0, 0, 0, 0, 0, 0 };
 #endif

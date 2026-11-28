@@ -170,48 +170,30 @@ typedef struct { u8 pad[8]; u16 x8; u8 padA[0x90 - 0xA]; } Ent_ItemObj_AllocSlot
 typedef struct { u8 pad[8]; Obj3D *t[2][16]; } Tbl;
 extern A *gItemObjectSbss_00202290;
 extern B *gItemObjectSbss_00202288;
+extern s32 *gItemObjectBss_004B4B80[];
+extern F3b D_00222A54[];
+extern s8 gLoadBuf_00270F40[];
 #ifndef NONMATCHING
 extern s32 gItemObjectBss_004B4B78[];
+extern s32 gItemObjectBss_004B4B7C[];
+extern s32 *gItemObjectBss_004B4B84[];
+extern s8 gItemObjectRodata_001FD9D0[];
+extern s8 gItemObjectRodata_001FD9F0[];
+extern s32 gItemObjectBss_004AD670[];
+extern s32 gItemObjectBss_004B1770[];
 #else
 /* data twins (src/game/data/pad_get_connected_bss_004AC630.c): gItemObjectBss_004B4B78 */
 static s32 gItemObjectBss_004B4B78[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gItemObjectBss_004B4B7C[];
-#else
 /* data twins (src/game/data/pad_get_connected_bss_004AC630.c): gItemObjectBss_004B4B7C */
 static s32 gItemObjectBss_004B4B7C[0x1];
-#endif
-extern s32 *gItemObjectBss_004B4B80[];
-#ifndef NONMATCHING
-extern s32 *gItemObjectBss_004B4B84[];
-#else
 /* data twins (src/game/data/pad_get_connected_bss_004AC630.c): gItemObjectBss_004B4B84 */
 static s32 *gItemObjectBss_004B4B84[0x1];
-#endif
-extern F3b D_00222A54[];
-#ifndef NONMATCHING
-extern s8 gItemObjectRodata_001FD9D0[];
-#else
 /* data twins (src/game/data/save_parse_rodata.c): gItemObjectRodata_001FD9D0 */
 static s8 gItemObjectRodata_001FD9D0[0x20] __attribute__((aligned(8))) = "equip/e%4.04dm.stm\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
-#endif
-#ifndef NONMATCHING
-extern s8 gItemObjectRodata_001FD9F0[];
-#else
 /* data twins (src/game/data/save_parse_rodata.c): gItemObjectRodata_001FD9F0 */
 static s8 gItemObjectRodata_001FD9F0[0x20] __attribute__((aligned(8))) = "item/i%4.04dm.stm\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
-#endif
-extern s8 gLoadBuf_00270F40[];
-#ifndef NONMATCHING
-extern s32 gItemObjectBss_004AD670[];
-#else
 /* data twins (src/game/data/pad_get_connected_bss_004AC630.c): gItemObjectBss_004AD670 */
 static s32 gItemObjectBss_004AD670[0x340];
-#endif
-#ifndef NONMATCHING
-extern s32 gItemObjectBss_004B1770[];
-#else
 /* data twins (src/game/data/pad_get_connected_bss_004AC630.c): gItemObjectBss_004B1770 */
 static s32 gItemObjectBss_004B1770[0xd00];
 #endif
@@ -1351,28 +1333,12 @@ s32 gItemObjectBss_004B4B70[0x1];
 s32 gItemObjectBss_004B4B74[0x1];
 s32 *gItemObjectBss_004B4B80[0x1];
 s32 gItemObjectBss_004B4B88[0x2];
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/pad_get_connected_bss_004AC630.c): D_004AC970__grp: gItemObjectBss_004AC970@0x0 */
 u8 D_004AC970__grp[0xd00] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/pad_get_connected_bss_004AC630.c): D_004AE370__grp: gItemObjectBss_004AE370@0x0 */
 u8 D_004AE370__grp[0x3400] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/save_parse_rodata.c): D_001FD99B__grp: gItemObjectRodata_001FD99B@0x0 */
 unsigned char D_001FD99B__grp[0x5] __attribute__((aligned(1))) = { 0x61, 0, 0, 0, 0 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/save_parse_rodata.c): D_001FD9B3__grp: gItemObjectRodata_001FD9B3@0x0 */
 unsigned char D_001FD9B3__grp[0x5] __attribute__((aligned(1))) = { 0x61, 0, 0, 0, 0 };
 #endif

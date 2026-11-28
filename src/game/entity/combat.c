@@ -13,13 +13,10 @@ extern s8 gCombatRodata_001FABD0[4][6][7];
 extern s8 gCombatRodata_001FABD7[4][6][7];
 #ifndef NONMATCHING
 extern u8 gCombatSdata_00201C48;
+extern Ids gCombatSdata_00201C40;
 #else
 /* data twins (src/game/data/sdata.c): gCombatSdata_00201C48 */
 static u8 gCombatSdata_00201C48 = 1;
-#endif
-#ifndef NONMATCHING
-extern Ids gCombatSdata_00201C40;
-#else
 /* data twins (src/game/data/sdata.c): gCombatSdata_00201C40 */
 static Ids gCombatSdata_00201C40 = { 0x6400, 0x6400, 0x6400, 0x6400 };
 #endif

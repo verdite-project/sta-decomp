@@ -4,6 +4,6 @@
 /* used by: no code by name (reached through other data) */
 #pragma explicit_zero_data on
 
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/storage_draw.c */
+#ifndef NONMATCHING /* the NONMATCHING build defines these in their owners */
 const s32 gStorageDrawRodata_001FD82C[0x1] = { 0 };
 #endif

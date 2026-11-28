@@ -15,18 +15,6 @@ typedef struct { Vec a; Vec b; Vec c; f32 x30; f32 x34; B fl; u8 pad[7]; } Ent_L
 typedef struct { Ent_Light_Add_0_0015B980 sp[4]; Ent_Light_Add_0_0015B980 ents[2][64]; } W_Light_Add_0_0015B980;
 typedef struct { u128 q[4]; } M;
 extern s32 gLightBss_0030A2D0[];
-#ifndef NONMATCHING
-extern Vec gLightBss_0030A290;
-#else
-/* data twins (src/game/data/screen_fx_bss_0030A0D0.c): gLightBss_0030A290 */
-static Vec gLightBss_0030A290;
-#endif
-#ifndef NONMATCHING
-extern Vec gLightBss_0030A320;
-#else
-/* data twins (src/game/data/screen_fx_bss_0030A0D0.c): gLightBss_0030A320 */
-static Vec gLightBss_0030A320;
-#endif
 extern Vec gLightBss_0030A330;
 extern Vec gLightBss_0030A350;
 extern Vec gLightBss_0030A360;
@@ -47,8 +35,14 @@ extern f32 gLightBss_0030A3B4[];
 extern f32 gLightBss_0030A3B8[];
 extern f32 gLightBss_0030A3BC[];
 #ifndef NONMATCHING
+extern Vec gLightBss_0030A290;
+extern Vec gLightBss_0030A320;
 extern f32 gLightBss_0030A3C0[];
 #else
+/* data twins (src/game/data/screen_fx_bss_0030A0D0.c): gLightBss_0030A290 */
+static Vec gLightBss_0030A290;
+/* data twins (src/game/data/screen_fx_bss_0030A0D0.c): gLightBss_0030A320 */
+static Vec gLightBss_0030A320;
 /* data twins (src/game/data/screen_fx_bss_0030A0D0.c): gLightBss_0030A3C0 */
 static f32 gLightBss_0030A3C0[0x1];
 #endif
@@ -385,53 +379,21 @@ void Light_Init_1_0015BCA0(void) {
 /* data twins (src/game/data/screen_fx_bss_0030A0D0.c): gLightBss_0030A2D0, gLightBss_0030A310 */
 s32 gLightBss_0030A2D0[0x10];
 char gLightBss_0030A310[0x10];
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data twins (src/game/data/screen_fx_bss_0030A0D0.c): gLightBss_0030A350 */
 Vec gLightBss_0030A350;
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data twins (src/game/data/screen_fx_bss_0030A0D0.c): gLightBss_0030A3C4, gLightBss_0030C3D0 */
 f32 gLightBss_0030A3C4[0x803] __attribute__((aligned(4)));
 u16 gLightBss_0030C3D0[0x8];
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/screen_fx_bss_0030A0D0.c): gLightBss_0030A330__grp: gLightBss_0030A330@0x0, gLightBss_0030A334@0x4, gLightBss_0030A338@0x8 */
 unsigned char gLightBss_0030A330__grp[0x20] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/screen_fx_bss_0030A0D0.c): gLightBss_0030A360__grp: gLightBss_0030A360@0x0, gLightBss_0030A364@0x4, gLightBss_0030A368@0x8 */
 unsigned char gLightBss_0030A360__grp[0x10] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/screen_fx_bss_0030A0D0.c): gLightBss_0030A370__grp: gLightBss_0030A370@0x0, gLightBss_0030A374@0x4, gLightBss_0030A378@0x8 */
 unsigned char gLightBss_0030A370__grp[0x20] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/screen_fx_bss_0030A0D0.c): gLightBss_0030A390__grp: gLightBss_0030A390@0x0, gLightBss_0030A39C@0xc */
 unsigned char gLightBss_0030A390__grp[0x10] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/screen_fx_bss_0030A0D0.c): gLightBss_0030A3A0__grp: gLightBss_0030A3A0@0x0, gLightBss_0030A3AC@0xc */
 unsigned char gLightBss_0030A3A0__grp[0x10] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/screen_fx_bss_0030A0D0.c): gLightBss_0030A3B0__grp: gLightBss_0030A3B0@0x0, gLightBss_0030A3B4@0x4, gLightBss_0030A3B8@0x8, gLightBss_0030A3BC@0xc */
 unsigned char gLightBss_0030A3B0__grp[0x10] __attribute__((aligned(16)));
 #endif

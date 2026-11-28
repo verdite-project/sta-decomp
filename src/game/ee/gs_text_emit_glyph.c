@@ -122,10 +122,6 @@ INCLUDE_ASM(GsText_EmitGlyph_1_001E3178);
 #pragma explicit_zero_data on
 /* data group (src/game/data/sdata.c): D_00201B84__grp: gGsTextEmitGlyphSdata_00201B84@0x0 */
 s32 D_00201B84__grp[0x1] __attribute__((aligned(4))) = { 0x3d7fffff };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/sdata.c): gGsTextStyle_00201E60__grp: gGsTextStyle_00201E60@0x0 */
 int gGsTextStyle_00201E60__grp[0x2] __attribute__((section(".sdata"))) __attribute__((aligned(16))) = { 0, 0 };
 #endif

@@ -567,19 +567,7 @@ extern s32 gSoundSbss_002022B8;
 #ifdef NONMATCHING
 extern u8 gPlayerBss_004B4D10[];
 #endif
-#ifndef NONMATCHING
-extern f32 gPlayerSbss_002022DC;
-#else
-/* data twins (src/game/data/sbss.c): gPlayerSbss_002022DC */
-static f32 gPlayerSbss_002022DC;
-#endif
 extern u32 gGsPacketSdata_00201C5C;
-#ifndef NONMATCHING
-extern u8 gPlayerSdata_00201E24;
-#else
-/* data twins (src/game/data/sdata.c): gPlayerSdata_00201E24 */
-static u8 gPlayerSdata_00201E24 = 0x80;
-#endif
 extern f32 gPlayerData_001F2080[];
 extern f32 gPlayerData_001F2084[];
 extern f32 gPlayerData_001F208C[];
@@ -596,54 +584,6 @@ extern f32 gMatrixFromData_001F210C[];
 extern MtxF gMatrixFromData_001F2170;
 extern Vec gPlayerBss_004B4CE0[];
 extern f32 gPlayerBss_004B4CEC[];
-#ifndef NONMATCHING
-extern Vec gPlayerBss_004B4C50[];
-#else
-/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gPlayerBss_004B4C50 */
-static Vec gPlayerBss_004B4C50[0x1];
-#endif
-#ifndef NONMATCHING
-extern Vec gPlayerBss_004B4C60[];
-#else
-/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gPlayerBss_004B4C60 */
-static Vec gPlayerBss_004B4C60[0x1];
-#endif
-#ifndef NONMATCHING
-extern Vec gPlayerBss_004B4C70[];
-#else
-/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gPlayerBss_004B4C70 */
-static Vec gPlayerBss_004B4C70[0x1];
-#endif
-#ifndef NONMATCHING
-extern Vec gPlayerBss_004B4C80[];
-#else
-/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gPlayerBss_004B4C80 */
-static Vec gPlayerBss_004B4C80[0x1];
-#endif
-#ifndef NONMATCHING
-extern Vec gPlayerBss_004B4C90[];
-#else
-/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gPlayerBss_004B4C90 */
-static Vec gPlayerBss_004B4C90[0x1];
-#endif
-#ifndef NONMATCHING
-extern Vec gPlayerBss_004B4CA0[];
-#else
-/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gPlayerBss_004B4CA0 */
-static Vec gPlayerBss_004B4CA0[0x1];
-#endif
-#ifndef NONMATCHING
-extern Vec gPlayerBss_004B4CB0[];
-#else
-/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gPlayerBss_004B4CB0 */
-static Vec gPlayerBss_004B4CB0[0x1];
-#endif
-#ifndef NONMATCHING
-extern Vec gPlayerBss_004B4CC0[];
-#else
-/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gPlayerBss_004B4CC0 */
-static Vec gPlayerBss_004B4CC0[0x1];
-#endif
 extern Vec gPlayerBss_004B4CD0[];
 extern f32 gPlayerBss_004B4CDC[];
 extern u8 gGlowInitBss_0030D0E0[];
@@ -655,65 +595,17 @@ extern Vec gPlayerBss_004B4CF0;
 extern Flags8 D_00222A53[];
 extern f32 gMatrixFromData_001F2170__as_Player_GetHandMatrix_1_001C0660[];
 extern f32 gMatrixFromData_001F2170__as_Player_BlendHandMatrix_0_001C0860[];
-#ifndef NONMATCHING
-extern s32 gPlayerSbss_002022EC;
-#else
-/* data twins (src/game/data/sbss.c): gPlayerSbss_002022EC */
-static s32 gPlayerSbss_002022EC;
-#endif
-#ifndef NONMATCHING
-extern s32 gPlayerSbss_00201EB0;
-#else
-/* data twins (src/game/data/sbss.c): gPlayerSbss_00201EB0 */
-static s32 gPlayerSbss_00201EB0;
-#endif
 extern f32 gPlayerBss_004B4D00[];
 extern f32 gPlayerBss_004B4D04[];
 extern f32 gPlayerBss_004B4D08[];
 extern f32 gPlayerBss_004B4D0C[];
 extern u8 D_00222A54[];
 extern Vec gMatrixFromData_001F2140;
-#ifndef NONMATCHING
-extern f32 gPlayerSbss_002022E8;
-#else
-/* data twins (src/game/data/sbss.c): gPlayerSbss_002022E8 */
-static f32 gPlayerSbss_002022E8;
-#endif
 extern u16 gMenuBss_00317230[];
 extern u16 gMapCommandBss_00317238[];
 extern f32 gPlayerBss_0031723C[];
-#ifndef NONMATCHING
-extern f32 gPlayerBss_00317240[];
-#else
-/* data twins (src/game/data/vibration_bss.c): gPlayerBss_00317240 */
-static f32 gPlayerBss_00317240[0x1];
-#endif
-#ifndef NONMATCHING
-extern f32 gPlayerBss_0031724C[];
-#else
-/* data twins (src/game/data/vibration_bss.c): gPlayerBss_0031724C */
-static f32 gPlayerBss_0031724C[0x1];
-#endif
-#ifndef NONMATCHING
-extern f32 gPlayerBss_00317250[];
-#else
-/* data twins (src/game/data/vibration_bss.c): gPlayerBss_00317250 */
-static f32 gPlayerBss_00317250[0x1];
-#endif
 extern f32 gPlayerBss_00317254[];
 extern f32 D_00317258[];
-#ifndef NONMATCHING
-extern f32 gPlayerBss_0031726C[];
-#else
-/* data twins (src/game/data/vibration_bss.c): gPlayerBss_0031726C */
-static f32 gPlayerBss_0031726C[0x1];
-#endif
-#ifndef NONMATCHING
-extern f32 gPlayerBss_00317270[];
-#else
-/* data twins (src/game/data/vibration_bss.c): gPlayerBss_00317270 */
-static f32 gPlayerBss_00317270[0x1];
-#endif
 extern f32 gPlayerBss_00317274[];
 extern f32 D_00317278[];
 extern MtxF gMatrixFromData_001F2170__as_Player_UpdatePickup_0_001C0A10_;
@@ -723,12 +615,6 @@ extern f32 gZeroVec_003139A0__as_Player_UpdateEquipSounds_0_001BF940_[];
 extern s32 **gPlayerSbss_002022BC__as_Player_UpdateEquipSounds_0_001BF940_;
 extern s32 gMapSbss_00201E80__as_Player_UpdateEquipSounds_0_001BF940_;
 extern s8 gPlayerBss_004B4CF0__as_Player_UpdateEquipSounds_0_001BF940_[];
-#ifndef NONMATCHING
-extern s32 gPlayerSbss_002022D8;
-#else
-/* data twins (src/game/data/sbss.c): gPlayerSbss_002022D8 */
-static s32 gPlayerSbss_002022D8;
-#endif
 extern Obj_Player_DrawWeapon_0_001BCFF0 *gPlayerSbss_002022E4__as_PlayerProc_Attack_0_001C55A0;
 extern s32 gMapSbss_00201E80__as_PlayerProc_Collide_0_001C5150_;
 extern s32 gPlayerSbss_002022BC__as_PlayerProc_Collide_0_001C5150_;
@@ -763,32 +649,77 @@ extern void *gPlayerSbss_002022E4__as_Player_GetBodyState_1_001C9B60;
 extern s32 gPlayerSdata_00201E20__as_PlayerData_Get_2_001C9BA0;
 extern M2C_UNK gHudMarkerBss_004B4BE0[];
 #ifndef NONMATCHING
+extern f32 gPlayerSbss_002022DC;
+extern u8 gPlayerSdata_00201E24;
+extern Vec gPlayerBss_004B4C50[];
+extern Vec gPlayerBss_004B4C60[];
+extern Vec gPlayerBss_004B4C70[];
+extern Vec gPlayerBss_004B4C80[];
+extern Vec gPlayerBss_004B4C90[];
+extern Vec gPlayerBss_004B4CA0[];
+extern Vec gPlayerBss_004B4CB0[];
+extern Vec gPlayerBss_004B4CC0[];
+extern s32 gPlayerSbss_002022EC;
+extern s32 gPlayerSbss_00201EB0;
+extern f32 gPlayerSbss_002022E8;
+extern f32 gPlayerBss_00317240[];
+extern f32 gPlayerBss_0031724C[];
+extern f32 gPlayerBss_00317250[];
+extern f32 gPlayerBss_0031726C[];
+extern f32 gPlayerBss_00317270[];
+extern s32 gPlayerSbss_002022D8;
 extern char gStrRifle01_001FDC08[];
-#else
-/* data twins (src/game/data/player_rodata.c): gStrRifle01_001FDC08 */
-static char gStrRifle01_001FDC08[0x8] = "RIFLE01\000";
-#endif
-#ifndef NONMATCHING
 extern char gStrJyo_001FDC10[];
-#else
-/* data twins (src/game/data/player_rodata.c): gStrJyo_001FDC10 */
-static char gStrJyo_001FDC10[0x8] = "JYO\000\000\000\000\000";
-#endif
-#ifndef NONMATCHING
 extern char gStrDm09_001FDC18[];
-#else
-/* data twins (src/game/data/player_rodata.c): gStrDm09_001FDC18 */
-static char gStrDm09_001FDC18[0x6] = "DM_09\000";
-#endif
-#ifndef NONMATCHING
 extern char gStrDm10_001FDC20[];
-#else
-/* data twins (src/game/data/player_rodata.c): gStrDm10_001FDC20 */
-static char gStrDm10_001FDC20[0x6] = "DM_10\000";
-#endif
-#ifndef NONMATCHING
 extern char gStrTen_001FDC28[];
 #else
+/* data twins (src/game/data/sbss.c): gPlayerSbss_002022DC */
+static f32 gPlayerSbss_002022DC;
+/* data twins (src/game/data/sdata.c): gPlayerSdata_00201E24 */
+static u8 gPlayerSdata_00201E24 = 0x80;
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gPlayerBss_004B4C50 */
+static Vec gPlayerBss_004B4C50[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gPlayerBss_004B4C60 */
+static Vec gPlayerBss_004B4C60[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gPlayerBss_004B4C70 */
+static Vec gPlayerBss_004B4C70[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gPlayerBss_004B4C80 */
+static Vec gPlayerBss_004B4C80[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gPlayerBss_004B4C90 */
+static Vec gPlayerBss_004B4C90[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gPlayerBss_004B4CA0 */
+static Vec gPlayerBss_004B4CA0[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gPlayerBss_004B4CB0 */
+static Vec gPlayerBss_004B4CB0[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gPlayerBss_004B4CC0 */
+static Vec gPlayerBss_004B4CC0[0x1];
+/* data twins (src/game/data/sbss.c): gPlayerSbss_002022EC */
+static s32 gPlayerSbss_002022EC;
+/* data twins (src/game/data/sbss.c): gPlayerSbss_00201EB0 */
+static s32 gPlayerSbss_00201EB0;
+/* data twins (src/game/data/sbss.c): gPlayerSbss_002022E8 */
+static f32 gPlayerSbss_002022E8;
+/* data twins (src/game/data/vibration_bss.c): gPlayerBss_00317240 */
+static f32 gPlayerBss_00317240[0x1];
+/* data twins (src/game/data/vibration_bss.c): gPlayerBss_0031724C */
+static f32 gPlayerBss_0031724C[0x1];
+/* data twins (src/game/data/vibration_bss.c): gPlayerBss_00317250 */
+static f32 gPlayerBss_00317250[0x1];
+/* data twins (src/game/data/vibration_bss.c): gPlayerBss_0031726C */
+static f32 gPlayerBss_0031726C[0x1];
+/* data twins (src/game/data/vibration_bss.c): gPlayerBss_00317270 */
+static f32 gPlayerBss_00317270[0x1];
+/* data twins (src/game/data/sbss.c): gPlayerSbss_002022D8 */
+static s32 gPlayerSbss_002022D8;
+/* data twins (src/game/data/player_rodata.c): gStrRifle01_001FDC08 */
+static char gStrRifle01_001FDC08[0x8] = "RIFLE01\000";
+/* data twins (src/game/data/player_rodata.c): gStrJyo_001FDC10 */
+static char gStrJyo_001FDC10[0x8] = "JYO\000\000\000\000\000";
+/* data twins (src/game/data/player_rodata.c): gStrDm09_001FDC18 */
+static char gStrDm09_001FDC18[0x6] = "DM_09\000";
+/* data twins (src/game/data/player_rodata.c): gStrDm10_001FDC20 */
+static char gStrDm10_001FDC20[0x6] = "DM_10\000";
 /* data twins (src/game/data/player_rodata.c): gStrTen_001FDC28 */
 static char gStrTen_001FDC28[0x5] = "TEN\000\000";
 #endif
@@ -5225,60 +5156,20 @@ f32 gPlayerBss_00317244[0x1];
 f32 gPlayerBss_00317248[0x1];
 f32 gPlayerBss_00317254[0x6] __attribute__((aligned(4)));
 f32 gPlayerBss_00317274[0x1b] __attribute__((aligned(4)));
-#endif
-
-
-
-
-
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4C40__grp: gPlayerBss_004B4C40@0x0 */
 u8 D_004B4C40__grp[0x10] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/pad_get_connected_bss_004B4BB0.c): gPlayerBss_004B4CD0__grp: gPlayerBss_004B4CD0@0x0, gPlayerBss_004B4CDC@0xc */
 unsigned char gPlayerBss_004B4CD0__grp[0x10] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/pad_get_connected_bss_004B4BB0.c): gPlayerBss_004B4CE0__grp: gPlayerBss_004B4CE0@0x0, gPlayerBss_004B4CEC@0xc, gPlayerBss_004B4CF0@0x10, gPlayerBss_004B4D00@0x20, gPlayerBss_004B4D04@0x24, gPlayerBss_004B4D08@0x28, gPlayerBss_004B4D0C@0x2c, gPlayerBss_004B4D10@0x30 */
 unsigned char gPlayerBss_004B4CE0__grp[0x10d0] __attribute__((aligned(16)));
-#endif
-
-
-
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/player_data.c): gPlayerData_001F3860__grp: gPlayerData_001F3860@0x0, gPlayerData_001F3870@0x10, gPlayerData_001F3880@0x20 */
 int gPlayerData_001F3860__grp[0x18] __attribute__((aligned(16))) = { 0x447a0000, 0x466a6000, 0, 0x3f800000, 0x3f800000, 0x3dcccccd, 0, 0, 0x708, 0x96, 0xe10, 0x708, 0xa8c, 0x708, 0, 0, 0xa8c, 0x1c2, 0x1518, 0xa8c, 0xe10, 0xa8c, 0, 0 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/player_rodata.c): pad_001FDC2D__grp: pad_001FDC2D@0x0 */
 unsigned char pad_001FDC2D__grp[0x3] __attribute__((aligned(1))) = { 0, 0, 0 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/screen_fx_flash_data_001F2060.c): gPlayerData_001F2070__grp: gPlayerData_001F2070@0x0, gPlayerData_001F2074@0x4, gPlayerData_001F2078@0x8, gPlayerData_001F207C@0xc */
 unsigned int gPlayerData_001F2070__grp[0x4] __attribute__((aligned(16))) = { 0x40000000, 0x0, 0x3f800000, 0x0 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/screen_fx_flash_data_001F2060.c): gPlayerData_001F2080__grp: gPlayerData_001F2080@0x0, gPlayerData_001F2084@0x4, gPlayerData_001F208C@0xc, gPlayerData_001F2090@0x10, gPlayerData_001F2094@0x14, gPlayerData_001F209C@0x1c */
 unsigned int gPlayerData_001F2080__grp[0x10] __attribute__((aligned(16))) = { 0x0, 0xc2b40000, 0x0, 0x3f333333, 0x0, 0x0, 0x0, 0x3f333333, 0x0, 0x0, 0x0, 0xbf800000, 0x0, 0x0, 0x0, 0xbf800000 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/screen_fx_flash_data_001F2060.c): gPlayerData_001F20C0__grp: gPlayerData_001F20C0@0x0, gPlayerData_001F20C4@0x4, gPlayerData_001F20C8@0x8, gPlayerData_001F20D0@0x10, gPlayerData_001F20D4@0x14, gPlayerData_001F20D8@0x18 */
 unsigned int gPlayerData_001F20C0__grp[0x10] __attribute__((aligned(16))) = { 0x43000000, 0x43000000, 0x43000000, 0x43000000, 0x3f800000, 0x3f800000, 0x3f800000, 0x43000000, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 };
 #endif

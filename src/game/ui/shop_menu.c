@@ -49,164 +49,14 @@ typedef struct { u32 n; Item *items; } List;
 typedef struct { u8 pad[0x24]; List *list; } Res;
 typedef union { u32 w; s8 b[4]; } Col;
 typedef struct { u8 pad0[0x10]; u8 x10[0x18]; s32 x28; u8 x2C[4]; f32 x30; f32 x34; f32 x38; f32 x3C; } O;
-#ifndef NONMATCHING
-extern s32 gShopMenuSdata_00201E50;
-#else
-/* data twins (src/game/data/sdata.c): gShopMenuSdata_00201E50 */
-static s32 gShopMenuSdata_00201E50 = -1;
-#endif
-#ifndef NONMATCHING
-extern f32 gShopMenuSbss_00202360;
-#else
-/* data twins (src/game/data/sbss.c): gShopMenuSbss_00202360 */
-static f32 gShopMenuSbss_00202360;
-#endif
-#ifndef NONMATCHING
-extern s32 gShopMenuSbss_00202378;
-#else
-/* data twins (src/game/data/sbss.c): gShopMenuSbss_00202378 */
-static s32 gShopMenuSbss_00202378;
-#endif
 extern S gShopMenuData_001F3A90[] __attribute__((aligned(16)));
-#ifndef NONMATCHING
-extern S gShopMenuData_001F3AB0[] __attribute__((aligned(16)));
-#else
-/* data twins (src/game/data/map_se_stream_data.c): gShopMenuData_001F3AB0 */
-static S gShopMenuData_001F3AB0[0x1] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
-#endif
-#ifndef NONMATCHING
-extern s8 gShopMenuRodata_001FE748[];
-#else
-/* data twins (src/game/data/shop_menu_rodata.c): gShopMenuRodata_001FE748 */
-static s8 gShopMenuRodata_001FE748[0x8] __attribute__((aligned(4))) = { 0x25, 0x33, 0x64, 0, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s8 gShopMenuRodata_001FE750[];
-#else
-/* data twins (src/game/data/shop_menu_rodata.c): gShopMenuRodata_001FE750 */
-static s8 gShopMenuRodata_001FE750[0x8] __attribute__((aligned(4))) = { 0x2d, 0x2d, 0x2d, 0, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s8 gShopMenuRodata_001FE758[];
-#else
-/* data twins (src/game/data/shop_menu_rodata.c): gShopMenuRodata_001FE758 */
-static s8 gShopMenuRodata_001FE758[0x8] __attribute__((aligned(4))) = { 0x2f, 0x2d, 0x2d, 0x2d, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s8 gShopMenuRodata_001FE760[];
-#else
-/* data twins (src/game/data/shop_menu_rodata.c): gShopMenuRodata_001FE760 */
-static s8 gShopMenuRodata_001FE760[0x8] __attribute__((aligned(4))) = "/%d\000\000\000\000\000";
-#endif
-#ifndef NONMATCHING
-extern s8 gShopMenuRodata_001FE768[];
-#else
-/* data twins (src/game/data/shop_menu_rodata.c): gShopMenuRodata_001FE768 */
-static s8 gShopMenuRodata_001FE768[0x8] __attribute__((aligned(4))) = { 0x25, 0x33, 0x2e, 0x31, 0x66, 0, 0, 0 };
-#endif
 extern s32 gShopMenuBss_004BABB0[];
 extern s32 D_004BABC8[];
-#ifndef NONMATCHING
-extern s8 gShopMenuBss_004BABE0[];
-#else
-/* data twins (src/game/data/save_system_start_bss.c): gShopMenuBss_004BABE0 */
-static s8 gShopMenuBss_004BABE0[0x14];
-#endif
 extern f32 gShopMenuBss_004BABF4[];
 extern f32 D_004BABF8[];
-#ifndef NONMATCHING
-extern f32 gShopMenuBss_004BAC0C[];
-#else
-/* data twins (src/game/data/save_system_start_bss.c): gShopMenuBss_004BAC0C */
-static f32 gShopMenuBss_004BAC0C[0x1];
-#endif
-#ifndef NONMATCHING
-extern f32 gShopMenuBss_004BAC10[];
-#else
-/* data twins (src/game/data/save_system_start_bss.c): gShopMenuBss_004BAC10 */
-static f32 gShopMenuBss_004BAC10[0x3];
-#endif
-#ifndef NONMATCHING
-extern u32 gShopMenuBss_004BAC1C[];
-#else
-/* data twins (src/game/data/save_system_start_bss.c): gShopMenuBss_004BAC1C */
-static u32 gShopMenuBss_004BAC1C[0x1];
-#endif
-#ifndef NONMATCHING
-extern S gShopMenuData_001F3A70 __attribute__((aligned(16)));
-#else
-/* data twins (src/game/data/map_se_stream_data.c): gShopMenuData_001F3A70 */
-static S gShopMenuData_001F3A70 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
-#endif
-#ifndef NONMATCHING
-extern char gShopMenuBss_004BAA70[];
-#else
-/* data twins (src/game/data/save_system_start_bss.c): gShopMenuBss_004BAA70 */
-static char gShopMenuBss_004BAA70[0x100];
-#endif
-#ifndef NONMATCHING
-extern u8 gShopMenuBss_004BAB70[];
-#else
-/* data twins (src/game/data/save_system_start_bss.c): gShopMenuBss_004BAB70 */
-static u8 gShopMenuBss_004BAB70[0x14];
-#endif
 extern f32 gShopMenuBss_004BAB84[];
 extern f32 D_004BAB88[];
-#ifndef NONMATCHING
-extern f32 gShopMenuBss_004BAB9C[];
-#else
-/* data twins (src/game/data/save_system_start_bss.c): gShopMenuBss_004BAB9C */
-static f32 gShopMenuBss_004BAB9C[0x1];
-#endif
-#ifndef NONMATCHING
-extern f32 gShopMenuBss_004BABA0[];
-#else
-/* data twins (src/game/data/save_system_start_bss.c): gShopMenuBss_004BABA0 */
-static f32 gShopMenuBss_004BABA0[0x3];
-#endif
-#ifndef NONMATCHING
-extern u32 gShopMenuBss_004BABAC[];
-#else
-/* data twins (src/game/data/save_system_start_bss.c): gShopMenuBss_004BABAC */
-static u32 gShopMenuBss_004BABAC[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gShopMenuSbss_0020237C;
-#else
-/* data twins (src/game/data/sbss.c): gShopMenuSbss_0020237C */
-static s32 gShopMenuSbss_0020237C;
-#endif
 extern S gShopMenuData_001F3A50[] __attribute__((aligned(16)));
-#ifndef NONMATCHING
-extern f32 gShopMenuSbss_0020235C;
-#else
-/* data twins (src/game/data/sbss.c): gShopMenuSbss_0020235C */
-static f32 gShopMenuSbss_0020235C;
-#endif
-#ifndef NONMATCHING
-extern f32 gShopMenuSbss_00202364;
-#else
-/* data twins (src/game/data/sbss.c): gShopMenuSbss_00202364 */
-static f32 gShopMenuSbss_00202364;
-#endif
-#ifndef NONMATCHING
-extern f32 gShopMenuSbss_00202368;
-#else
-/* data twins (src/game/data/sbss.c): gShopMenuSbss_00202368 */
-static f32 gShopMenuSbss_00202368;
-#endif
-#ifndef NONMATCHING
-extern f32 gShopMenuSbss_0020236C;
-#else
-/* data twins (src/game/data/sbss.c): gShopMenuSbss_0020236C */
-static f32 gShopMenuSbss_0020236C;
-#endif
-#ifndef NONMATCHING
-extern f32 gShopMenuSbss_00202370;
-#else
-/* data twins (src/game/data/sbss.c): gShopMenuSbss_00202370 */
-static f32 gShopMenuSbss_00202370;
-#endif
 extern s8 D_001FE7D0__as_ShopProc_DrawCommand_2_001DED50[];
 extern s8 D_001FE7D8__as_ShopProc_DrawCommand_2_001DED50[];
 extern s8 D_001FE7E0__as_ShopProc_DrawCommand_2_001DED50[];
@@ -214,8 +64,83 @@ extern s8 D_001FE7E8__as_ShopProc_DrawCommand_2_001DED50[];
 extern s8 D_001FE7F0__as_ShopProc_DrawCommand_2_001DED50[];
 extern s8 D_001FE7F8__as_ShopProc_DrawCommand_2_001DED50[];
 #ifndef NONMATCHING
+extern s32 gShopMenuSdata_00201E50;
+extern f32 gShopMenuSbss_00202360;
+extern s32 gShopMenuSbss_00202378;
+extern S gShopMenuData_001F3AB0[] __attribute__((aligned(16)));
+extern s8 gShopMenuRodata_001FE748[];
+extern s8 gShopMenuRodata_001FE750[];
+extern s8 gShopMenuRodata_001FE758[];
+extern s8 gShopMenuRodata_001FE760[];
+extern s8 gShopMenuRodata_001FE768[];
+extern s8 gShopMenuBss_004BABE0[];
+extern f32 gShopMenuBss_004BAC0C[];
+extern f32 gShopMenuBss_004BAC10[];
+extern u32 gShopMenuBss_004BAC1C[];
+extern S gShopMenuData_001F3A70 __attribute__((aligned(16)));
+extern char gShopMenuBss_004BAA70[];
+extern u8 gShopMenuBss_004BAB70[];
+extern f32 gShopMenuBss_004BAB9C[];
+extern f32 gShopMenuBss_004BABA0[];
+extern u32 gShopMenuBss_004BABAC[];
+extern s32 gShopMenuSbss_0020237C;
+extern f32 gShopMenuSbss_0020235C;
+extern f32 gShopMenuSbss_00202364;
+extern f32 gShopMenuSbss_00202368;
+extern f32 gShopMenuSbss_0020236C;
+extern f32 gShopMenuSbss_00202370;
 extern s32 gShopMenuSbss_00202358;
 #else
+/* data twins (src/game/data/sdata.c): gShopMenuSdata_00201E50 */
+static s32 gShopMenuSdata_00201E50 = -1;
+/* data twins (src/game/data/sbss.c): gShopMenuSbss_00202360 */
+static f32 gShopMenuSbss_00202360;
+/* data twins (src/game/data/sbss.c): gShopMenuSbss_00202378 */
+static s32 gShopMenuSbss_00202378;
+/* data twins (src/game/data/map_se_stream_data.c): gShopMenuData_001F3AB0 */
+static S gShopMenuData_001F3AB0[0x1] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+/* data twins (src/game/data/shop_menu_rodata.c): gShopMenuRodata_001FE748 */
+static s8 gShopMenuRodata_001FE748[0x8] __attribute__((aligned(4))) = { 0x25, 0x33, 0x64, 0, 0, 0, 0, 0 };
+/* data twins (src/game/data/shop_menu_rodata.c): gShopMenuRodata_001FE750 */
+static s8 gShopMenuRodata_001FE750[0x8] __attribute__((aligned(4))) = { 0x2d, 0x2d, 0x2d, 0, 0, 0, 0, 0 };
+/* data twins (src/game/data/shop_menu_rodata.c): gShopMenuRodata_001FE758 */
+static s8 gShopMenuRodata_001FE758[0x8] __attribute__((aligned(4))) = { 0x2f, 0x2d, 0x2d, 0x2d, 0, 0, 0, 0 };
+/* data twins (src/game/data/shop_menu_rodata.c): gShopMenuRodata_001FE760 */
+static s8 gShopMenuRodata_001FE760[0x8] __attribute__((aligned(4))) = "/%d\000\000\000\000\000";
+/* data twins (src/game/data/shop_menu_rodata.c): gShopMenuRodata_001FE768 */
+static s8 gShopMenuRodata_001FE768[0x8] __attribute__((aligned(4))) = { 0x25, 0x33, 0x2e, 0x31, 0x66, 0, 0, 0 };
+/* data twins (src/game/data/save_system_start_bss.c): gShopMenuBss_004BABE0 */
+static s8 gShopMenuBss_004BABE0[0x14];
+/* data twins (src/game/data/save_system_start_bss.c): gShopMenuBss_004BAC0C */
+static f32 gShopMenuBss_004BAC0C[0x1];
+/* data twins (src/game/data/save_system_start_bss.c): gShopMenuBss_004BAC10 */
+static f32 gShopMenuBss_004BAC10[0x3];
+/* data twins (src/game/data/save_system_start_bss.c): gShopMenuBss_004BAC1C */
+static u32 gShopMenuBss_004BAC1C[0x1];
+/* data twins (src/game/data/map_se_stream_data.c): gShopMenuData_001F3A70 */
+static S gShopMenuData_001F3A70 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+/* data twins (src/game/data/save_system_start_bss.c): gShopMenuBss_004BAA70 */
+static char gShopMenuBss_004BAA70[0x100];
+/* data twins (src/game/data/save_system_start_bss.c): gShopMenuBss_004BAB70 */
+static u8 gShopMenuBss_004BAB70[0x14];
+/* data twins (src/game/data/save_system_start_bss.c): gShopMenuBss_004BAB9C */
+static f32 gShopMenuBss_004BAB9C[0x1];
+/* data twins (src/game/data/save_system_start_bss.c): gShopMenuBss_004BABA0 */
+static f32 gShopMenuBss_004BABA0[0x3];
+/* data twins (src/game/data/save_system_start_bss.c): gShopMenuBss_004BABAC */
+static u32 gShopMenuBss_004BABAC[0x1];
+/* data twins (src/game/data/sbss.c): gShopMenuSbss_0020237C */
+static s32 gShopMenuSbss_0020237C;
+/* data twins (src/game/data/sbss.c): gShopMenuSbss_0020235C */
+static f32 gShopMenuSbss_0020235C;
+/* data twins (src/game/data/sbss.c): gShopMenuSbss_00202364 */
+static f32 gShopMenuSbss_00202364;
+/* data twins (src/game/data/sbss.c): gShopMenuSbss_00202368 */
+static f32 gShopMenuSbss_00202368;
+/* data twins (src/game/data/sbss.c): gShopMenuSbss_0020236C */
+static f32 gShopMenuSbss_0020236C;
+/* data twins (src/game/data/sbss.c): gShopMenuSbss_00202370 */
+static f32 gShopMenuSbss_00202370;
 /* data twins (src/game/data/sbss.c): gShopMenuSbss_00202358 */
 static s32 gShopMenuSbss_00202358;
 #endif
@@ -991,25 +916,12 @@ void MenuProc_DrawLabel_0_001DF580(O *o, s32 a1, u32 mode, Col a3) {
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data twins (src/game/data/save_system_start_bss.c): gShopMenuBss_004BAB84, gShopMenuBss_004BABB0, gShopMenuBss_004BABF4 */
 f32 gShopMenuBss_004BAB84[0x6] __attribute__((aligned(4)));
 s32 gShopMenuBss_004BABB0[0xc];
 f32 gShopMenuBss_004BABF4[0x6] __attribute__((aligned(4)));
-#endif
-
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/map_se_stream_data.c): D_001F3A90__grp: gShopMenuData_001F3A90@0x0 */
 f32 D_001F3A90__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/map_se_stream_data.c): gShopMenuData_001F3A50__grp: gShopMenuData_001F3A50@0x0, gShopMenuData_001F3A60@0x10 */
 unsigned int gShopMenuData_001F3A50__grp[0x8] __attribute__((aligned(16))) = { 0x3f800000, 0x0, 0x0, 0x3f800000, 0x0, 0x0, 0x0, 0x0 };
 #endif

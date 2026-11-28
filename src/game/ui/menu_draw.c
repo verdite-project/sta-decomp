@@ -7,13 +7,10 @@ extern s32 gMenuDrawSbss_002020C0;
 extern E gMenuDrawBss_0048DB60[];
 #ifndef NONMATCHING
 extern Vec gMenuDrawRodata_001FCBA0[];
+extern Vec gMenuDrawRodata_001FCC30[];
 #else
 /* data twins (src/game/data/ui_gauge_rodata2.c): gMenuDrawRodata_001FCBA0 */
 static Vec gMenuDrawRodata_001FCBA0[0x9] = { 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 2.0f, 2.0f, 2.0f, 2.0f, 3.2f, 3.2f, 3.2f, 3.2f, 4.6f, 4.6f, 4.6f, 4.6f, 6.2f, 6.2f, 6.2f, 6.2f, 8.0f, 8.0f, 8.0f, 8.0f, 10.0f, 10.0f, 10.0f, 10.0f, 12.0f, 12.0f, 12.0f, 12.0f };
-#endif
-#ifndef NONMATCHING
-extern Vec gMenuDrawRodata_001FCC30[];
-#else
 /* data twins (src/game/data/ui_gauge_rodata2.c): gMenuDrawRodata_001FCC30 */
 static Vec gMenuDrawRodata_001FCC30[0x9] = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, -3.0f, 0.0f, 3.0f, 0.0f, -6.0f, 0.0f, 6.0f, 0.0f, -9.6f, 0.0f, 9.6f, 0.0f, -13.799999f, 0.0f, 13.799999f, 0.0f, -18.599998f, 0.0f, 18.599998f, 0.0f, -24.0f, 0.0f, 24.0f, 0.0f, -30.0f, 0.0f, 30.0f, 0.0f, -36.0f, 0.0f, 36.0f };
 #endif

@@ -4,11 +4,9 @@
 /* used by: credits, shop_menu */
 #pragma explicit_zero_data on
 
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/credits.c */
+#ifndef NONMATCHING /* the NONMATCHING build defines these in their owners */
 const s32 gCreditsRodata_001FE714[0x7] __attribute__((aligned(4))) = { 0, 0x48535550, 0x41545320, 0x5452, 0, 0, 0 };
 const char gCreditsRodata_001FE730[0x18] __attribute__((aligned(4))) = "\\TARGET\\STA_TI.ADX\000\000\000\000\000\000";
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/shop_menu.c */
 const s32 gShopMenuRodata_001FE748[0x2] __attribute__((aligned(4))) = { 0x643325, 0 };
 const s32 gShopMenuRodata_001FE750[0x2] __attribute__((aligned(4))) = { 0x2d2d2d, 0 };
 const s32 gShopMenuRodata_001FE758[0x2] __attribute__((aligned(4))) = { 0x2d2d2d2f, 0 };

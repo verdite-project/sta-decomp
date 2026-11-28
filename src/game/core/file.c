@@ -9,56 +9,35 @@ typedef struct { s32 x0; s32 x4; s32 x8; s32 xC; u16 flags; s16 x12; s32 fd; s32
 typedef struct { u8 c[4]; s32 x4; s32 x8; s32 xC; s32 x10; s32 x14; s32 x18; s32 x1C; } E;
 typedef struct { s32 a, b, n, c; E e[1]; } T;
 typedef struct { s32 x0; volatile s32 x4; s32 x8; s32 xC; u16 flags; s32 fd; s32 size; } F_Arc_Mount_2_0015AD00;
-#ifndef NONMATCHING
-extern s32 gFileSbss_00201F88;
-#else
-/* data twins (src/game/data/sbss.c): gFileSbss_00201F88 */
-static s32 gFileSbss_00201F88;
-#endif
 extern s8 *gFileSbss_00201F80;
-#ifndef NONMATCHING
-extern s32 gFileSbss_00201F8C;
-#else
-/* data twins (src/game/data/sbss.c): gFileSbss_00201F8C */
-static s32 gFileSbss_00201F8C;
-#endif
 extern F_File_Read_2_0015A470 *gFileSbss_00201F80__as_File_Read_2_0015A470;
-#ifndef NONMATCHING
-extern s32 gFileSdata_00201C7C;
-#else
-/* data twins (src/game/data/sdata.c): gFileSdata_00201C7C */
-static s32 gFileSdata_00201C7C = 3;
-#endif
 extern T gFileBss_002F20C0;
 extern s32 D_002F20C8[];
 extern F_Arc_FindByHash_2_0015ABD0 gFileBss_0030A0D0[];
 #ifndef NONMATCHING
+extern s32 gFileSbss_00201F88;
+extern s32 gFileSbss_00201F8C;
+extern s32 gFileSdata_00201C7C;
 extern s8 gFileRodata_001FB740[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gFileRodata_001FB740 */
-static s8 gFileRodata_001FB740[0x7] = "%s%s%s\000";
-#endif
-#ifndef NONMATCHING
 extern s8 gFileRodata_001FB748[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gFileRodata_001FB748 */
-static s8 gFileRodata_001FB748[0x7] = "host0:\000";
-#endif
-#ifndef NONMATCHING
 extern s8 gFileRodata_001FB750[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gFileRodata_001FB750 */
-static s8 gFileRodata_001FB750[0x8] = "S:/STA/\000";
-#endif
-#ifndef NONMATCHING
 extern s8 gFileRodata_001FB758[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gFileRodata_001FB758 */
-static s8 gFileRodata_001FB758[0x8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
 extern s8 gFileRodata_001FB760[];
 #else
+/* data twins (src/game/data/sbss.c): gFileSbss_00201F88 */
+static s32 gFileSbss_00201F88;
+/* data twins (src/game/data/sbss.c): gFileSbss_00201F8C */
+static s32 gFileSbss_00201F8C;
+/* data twins (src/game/data/sdata.c): gFileSdata_00201C7C */
+static s32 gFileSdata_00201C7C = 3;
+/* data twins (src/game/data/fx_proc_rodata.c): gFileRodata_001FB740 */
+static s8 gFileRodata_001FB740[0x7] = "%s%s%s\000";
+/* data twins (src/game/data/fx_proc_rodata.c): gFileRodata_001FB748 */
+static s8 gFileRodata_001FB748[0x7] = "host0:\000";
+/* data twins (src/game/data/fx_proc_rodata.c): gFileRodata_001FB750 */
+static s8 gFileRodata_001FB750[0x8] = "S:/STA/\000";
+/* data twins (src/game/data/fx_proc_rodata.c): gFileRodata_001FB758 */
+static s8 gFileRodata_001FB758[0x8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
 /* data twins (src/game/data/fx_proc_rodata.c): gFileRodata_001FB760 */
 static s8 gFileRodata_001FB760[0x10] = ";1\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
 #endif
@@ -572,10 +551,6 @@ void Arc_Mount_2_0015AD00(s8 *arg0, s32 arg1, s32 arg2) {
 s8 *gFileSbss_00201F80;
 /* data twins (src/game/data/screen_fx_bss_0030A0D0.c): gFileBss_0030A0D0 */
 F_Arc_FindByHash_2_0015ABD0 gFileBss_0030A0D0[0x10];
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/screen_fx_bss.c): D_002F20C0__grp: gFileBss_002F20C0@0x0 */
 u8 D_002F20C0__grp[0x4] __attribute__((aligned(16)));
 #endif

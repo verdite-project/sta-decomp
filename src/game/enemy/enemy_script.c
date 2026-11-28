@@ -114,497 +114,254 @@ typedef struct { W x0; W x8; W x10; W x18; } Arg_EnemyCmd_SpawnItem_0_001454E0;
 typedef struct { u8 b[12]; f32 v; } T_EnemyCmd_ShakeCamera_0_001455B0;
 typedef struct { char pad[8]; f32 f; } Obj_EnemyCmd_ShakeCamera_0_001455B0;
 typedef struct { char pad[0x154]; void *p; } S_EnemyCmd_ResetVectors_1_00145610;
-#ifndef NONMATCHING
-extern s32 gStrScrChrtestBin_001FAD20[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChrtestBin_001FAD20 */
-static s32 gStrScrChrtestBin_001FAD20[0x8] = { 0x2f726373, 0x74726863, 0x5f747365, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0021Bin_001FAD40[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0021Bin_001FAD40 */
-static s32 gStrScrChr0021Bin_001FAD40[0x8] = { 0x2f726373, 0x30726863, 0x5f313230, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0022Bin_001FAD60[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0022Bin_001FAD60 */
-static s32 gStrScrChr0022Bin_001FAD60[0x8] = { 0x2f726373, 0x30726863, 0x5f323230, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0023Bin_001FAD80[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0023Bin_001FAD80 */
-static s32 gStrScrChr0023Bin_001FAD80[0x8] = { 0x2f726373, 0x30726863, 0x5f333230, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0024Bin_001FADA0[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0024Bin_001FADA0 */
-static s32 gStrScrChr0024Bin_001FADA0[0x8] = { 0x2f726373, 0x30726863, 0x5f343230, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0025Bin_001FADC0[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0025Bin_001FADC0 */
-static s32 gStrScrChr0025Bin_001FADC0[0x8] = { 0x2f726373, 0x30726863, 0x5f353230, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0026Bin_001FADE0[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0026Bin_001FADE0 */
-static s32 gStrScrChr0026Bin_001FADE0[0x8] = { 0x2f726373, 0x30726863, 0x5f363230, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0027Bin_001FAE00[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0027Bin_001FAE00 */
-static s32 gStrScrChr0027Bin_001FAE00[0x8] = { 0x2f726373, 0x30726863, 0x5f373230, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0028Bin_001FAE20[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0028Bin_001FAE20 */
-static s32 gStrScrChr0028Bin_001FAE20[0x8] = { 0x2f726373, 0x30726863, 0x5f383230, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0029Bin_001FAE40[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0029Bin_001FAE40 */
-static s32 gStrScrChr0029Bin_001FAE40[0x8] = { 0x2f726373, 0x30726863, 0x5f393230, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0030Bin_001FAE60[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0030Bin_001FAE60 */
-static s32 gStrScrChr0030Bin_001FAE60[0x8] = { 0x2f726373, 0x30726863, 0x5f303330, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0031Bin_001FAE80[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0031Bin_001FAE80 */
-static s32 gStrScrChr0031Bin_001FAE80[0x8] = { 0x2f726373, 0x30726863, 0x5f313330, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0032Bin_001FAEA0[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0032Bin_001FAEA0 */
-static s32 gStrScrChr0032Bin_001FAEA0[0x8] = { 0x2f726373, 0x30726863, 0x5f323330, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0033Bin_001FAEC0[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0033Bin_001FAEC0 */
-static s32 gStrScrChr0033Bin_001FAEC0[0x8] = { 0x2f726373, 0x30726863, 0x5f333330, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0034Bin_001FAEE0[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0034Bin_001FAEE0 */
-static s32 gStrScrChr0034Bin_001FAEE0[0x8] = { 0x2f726373, 0x30726863, 0x5f343330, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0035Bin_001FAF00[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0035Bin_001FAF00 */
-static s32 gStrScrChr0035Bin_001FAF00[0x8] = { 0x2f726373, 0x30726863, 0x5f353330, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0036Bin_001FAF20[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0036Bin_001FAF20 */
-static s32 gStrScrChr0036Bin_001FAF20[0x8] = { 0x2f726373, 0x30726863, 0x5f363330, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0037Bin_001FAF40[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0037Bin_001FAF40 */
-static s32 gStrScrChr0037Bin_001FAF40[0x8] = { 0x2f726373, 0x30726863, 0x5f373330, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0038Bin_001FAF60[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0038Bin_001FAF60 */
-static s32 gStrScrChr0038Bin_001FAF60[0x8] = { 0x2f726373, 0x30726863, 0x5f383330, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0039Bin_001FAF80[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0039Bin_001FAF80 */
-static s32 gStrScrChr0039Bin_001FAF80[0x8] = { 0x2f726373, 0x30726863, 0x5f393330, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0040Bin_001FAFA0[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0040Bin_001FAFA0 */
-static s32 gStrScrChr0040Bin_001FAFA0[0x8] = { 0x2f726373, 0x30726863, 0x5f303430, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0041Bin_001FAFC0[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0041Bin_001FAFC0 */
-static s32 gStrScrChr0041Bin_001FAFC0[0x8] = { 0x2f726373, 0x30726863, 0x5f313430, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0042Bin_001FAFE0[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0042Bin_001FAFE0 */
-static s32 gStrScrChr0042Bin_001FAFE0[0x8] = { 0x2f726373, 0x30726863, 0x5f323430, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0043Bin_001FB000[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0043Bin_001FB000 */
-static s32 gStrScrChr0043Bin_001FB000[0x8] = { 0x2f726373, 0x30726863, 0x5f333430, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0044Bin_001FB020[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0044Bin_001FB020 */
-static s32 gStrScrChr0044Bin_001FB020[0x8] = { 0x2f726373, 0x30726863, 0x5f343430, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0045Bin_001FB040[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0045Bin_001FB040 */
-static s32 gStrScrChr0045Bin_001FB040[0x8] = { 0x2f726373, 0x30726863, 0x5f353430, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0046Bin_001FB060[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0046Bin_001FB060 */
-static s32 gStrScrChr0046Bin_001FB060[0x8] = { 0x2f726373, 0x30726863, 0x5f363430, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0047Bin_001FB080[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0047Bin_001FB080 */
-static s32 gStrScrChr0047Bin_001FB080[0x8] = { 0x2f726373, 0x30726863, 0x5f373430, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0048Bin_001FB0A0[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0048Bin_001FB0A0 */
-static s32 gStrScrChr0048Bin_001FB0A0[0x8] = { 0x2f726373, 0x30726863, 0x5f383430, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0049Bin_001FB0C0[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0049Bin_001FB0C0 */
-static s32 gStrScrChr0049Bin_001FB0C0[0x8] = { 0x2f726373, 0x30726863, 0x5f393430, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0050Bin_001FB0E0[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0050Bin_001FB0E0 */
-static s32 gStrScrChr0050Bin_001FB0E0[0x8] = { 0x2f726373, 0x30726863, 0x5f303530, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0051Bin_001FB100[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0051Bin_001FB100 */
-static s32 gStrScrChr0051Bin_001FB100[0x8] = { 0x2f726373, 0x30726863, 0x5f313530, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0052Bin_001FB120[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0052Bin_001FB120 */
-static s32 gStrScrChr0052Bin_001FB120[0x8] = { 0x2f726373, 0x30726863, 0x5f323530, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0053Bin_001FB140[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0053Bin_001FB140 */
-static s32 gStrScrChr0053Bin_001FB140[0x8] = { 0x2f726373, 0x30726863, 0x5f333530, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0054Bin_001FB160[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0054Bin_001FB160 */
-static s32 gStrScrChr0054Bin_001FB160[0x8] = { 0x2f726373, 0x30726863, 0x5f343530, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0055Bin_001FB180[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0055Bin_001FB180 */
-static s32 gStrScrChr0055Bin_001FB180[0x8] = { 0x2f726373, 0x30726863, 0x5f353530, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0056Bin_001FB1A0[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0056Bin_001FB1A0 */
-static s32 gStrScrChr0056Bin_001FB1A0[0x8] = { 0x2f726373, 0x30726863, 0x5f363530, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0057Bin_001FB1C0[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0057Bin_001FB1C0 */
-static s32 gStrScrChr0057Bin_001FB1C0[0x8] = { 0x2f726373, 0x30726863, 0x5f373530, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0058Bin_001FB1E0[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0058Bin_001FB1E0 */
-static s32 gStrScrChr0058Bin_001FB1E0[0x8] = { 0x2f726373, 0x30726863, 0x5f383530, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0059Bin_001FB200[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0059Bin_001FB200 */
-static s32 gStrScrChr0059Bin_001FB200[0x8] = { 0x2f726373, 0x30726863, 0x5f393530, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0060Bin_001FB220[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0060Bin_001FB220 */
-static s32 gStrScrChr0060Bin_001FB220[0x8] = { 0x2f726373, 0x30726863, 0x5f303630, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0061Bin_001FB240[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0061Bin_001FB240 */
-static s32 gStrScrChr0061Bin_001FB240[0x8] = { 0x2f726373, 0x30726863, 0x5f313630, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0062Bin_001FB260[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0062Bin_001FB260 */
-static s32 gStrScrChr0062Bin_001FB260[0x8] = { 0x2f726373, 0x30726863, 0x5f323630, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0063Bin_001FB280[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0063Bin_001FB280 */
-static s32 gStrScrChr0063Bin_001FB280[0x8] = { 0x2f726373, 0x30726863, 0x5f333630, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0064Bin_001FB2A0[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0064Bin_001FB2A0 */
-static s32 gStrScrChr0064Bin_001FB2A0[0x8] = { 0x2f726373, 0x30726863, 0x5f343630, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0065Bin_001FB2C0[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0065Bin_001FB2C0 */
-static s32 gStrScrChr0065Bin_001FB2C0[0x8] = { 0x2f726373, 0x30726863, 0x5f353630, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0066Bin_001FB2E0[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0066Bin_001FB2E0 */
-static s32 gStrScrChr0066Bin_001FB2E0[0x8] = { 0x2f726373, 0x30726863, 0x5f363630, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0067Bin_001FB300[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0067Bin_001FB300 */
-static s32 gStrScrChr0067Bin_001FB300[0x8] = { 0x2f726373, 0x30726863, 0x5f373630, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0068Bin_001FB320[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0068Bin_001FB320 */
-static s32 gStrScrChr0068Bin_001FB320[0x8] = { 0x2f726373, 0x30726863, 0x5f383630, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0069Bin_001FB340[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0069Bin_001FB340 */
-static s32 gStrScrChr0069Bin_001FB340[0x8] = { 0x2f726373, 0x30726863, 0x5f393630, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0070Bin_001FB360[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0070Bin_001FB360 */
-static s32 gStrScrChr0070Bin_001FB360[0x8] = { 0x2f726373, 0x30726863, 0x5f303730, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0071Bin_001FB380[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0071Bin_001FB380 */
-static s32 gStrScrChr0071Bin_001FB380[0x8] = { 0x2f726373, 0x30726863, 0x5f313730, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0072Bin_001FB3A0[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0072Bin_001FB3A0 */
-static s32 gStrScrChr0072Bin_001FB3A0[0x8] = { 0x2f726373, 0x30726863, 0x5f323730, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0073Bin_001FB3C0[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0073Bin_001FB3C0 */
-static s32 gStrScrChr0073Bin_001FB3C0[0x8] = { 0x2f726373, 0x30726863, 0x5f333730, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0081Bin_001FB3E0[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0081Bin_001FB3E0 */
-static s32 gStrScrChr0081Bin_001FB3E0[0x8] = { 0x2f726373, 0x30726863, 0x5f313830, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0082Bin_001FB400[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0082Bin_001FB400 */
-static s32 gStrScrChr0082Bin_001FB400[0x8] = { 0x2f726373, 0x30726863, 0x5f323830, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0083Bin_001FB420[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0083Bin_001FB420 */
-static s32 gStrScrChr0083Bin_001FB420[0x8] = { 0x2f726373, 0x30726863, 0x5f333830, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0091Bin_001FB440[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0091Bin_001FB440 */
-static s32 gStrScrChr0091Bin_001FB440[0x8] = { 0x2f726373, 0x30726863, 0x5f313930, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0092Bin_001FB460[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0092Bin_001FB460 */
-static s32 gStrScrChr0092Bin_001FB460[0x8] = { 0x2f726373, 0x30726863, 0x5f323930, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0094Bin_001FB480[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0094Bin_001FB480 */
-static s32 gStrScrChr0094Bin_001FB480[0x8] = { 0x2f726373, 0x30726863, 0x5f343930, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0095Bin_001FB4A0[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0095Bin_001FB4A0 */
-static s32 gStrScrChr0095Bin_001FB4A0[0x8] = { 0x2f726373, 0x30726863, 0x5f353930, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0098Bin_001FB4C0[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0098Bin_001FB4C0 */
-static s32 gStrScrChr0098Bin_001FB4C0[0x8] = { 0x2f726373, 0x30726863, 0x5f383930, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0101Bin_001FB4E0[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0101Bin_001FB4E0 */
-static s32 gStrScrChr0101Bin_001FB4E0[0x8] = { 0x2f726373, 0x30726863, 0x5f313031, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0102Bin_001FB500[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0102Bin_001FB500 */
-static s32 gStrScrChr0102Bin_001FB500[0x8] = { 0x2f726373, 0x30726863, 0x5f323031, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0103Bin_001FB520[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0103Bin_001FB520 */
-static s32 gStrScrChr0103Bin_001FB520[0x8] = { 0x2f726373, 0x30726863, 0x5f333031, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0104Bin_001FB540[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0104Bin_001FB540 */
-static s32 gStrScrChr0104Bin_001FB540[0x8] = { 0x2f726373, 0x30726863, 0x5f343031, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0105Bin_001FB560[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0105Bin_001FB560 */
-static s32 gStrScrChr0105Bin_001FB560[0x8] = { 0x2f726373, 0x30726863, 0x5f353031, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0107Bin_001FB580[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0107Bin_001FB580 */
-static s32 gStrScrChr0107Bin_001FB580[0x8] = { 0x2f726373, 0x30726863, 0x5f373031, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0108Bin_001FB5A0[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0108Bin_001FB5A0 */
-static s32 gStrScrChr0108Bin_001FB5A0[0x8] = { 0x2f726373, 0x30726863, 0x5f383031, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0109Bin_001FB5C0[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0109Bin_001FB5C0 */
-static s32 gStrScrChr0109Bin_001FB5C0[0x8] = { 0x2f726373, 0x30726863, 0x5f393031, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0110Bin_001FB5E0[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0110Bin_001FB5E0 */
-static s32 gStrScrChr0110Bin_001FB5E0[0x8] = { 0x2f726373, 0x30726863, 0x5f303131, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0118Bin_001FB600[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0118Bin_001FB600 */
-static s32 gStrScrChr0118Bin_001FB600[0x8] = { 0x2f726373, 0x30726863, 0x5f383131, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0119Bin_001FB620[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0119Bin_001FB620 */
-static s32 gStrScrChr0119Bin_001FB620[0x8] = { 0x2f726373, 0x30726863, 0x5f393131, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0120Bin_001FB640[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0120Bin_001FB640 */
-static s32 gStrScrChr0120Bin_001FB640[0x8] = { 0x2f726373, 0x30726863, 0x5f303231, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0122Bin_001FB660[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0122Bin_001FB660 */
-static s32 gStrScrChr0122Bin_001FB660[0x8] = { 0x2f726373, 0x30726863, 0x5f323231, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0123Bin_001FB680[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0123Bin_001FB680 */
-static s32 gStrScrChr0123Bin_001FB680[0x8] = { 0x2f726373, 0x30726863, 0x5f333231, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0124Bin_001FB6A0[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0124Bin_001FB6A0 */
-static s32 gStrScrChr0124Bin_001FB6A0[0x8] = { 0x2f726373, 0x30726863, 0x5f343231, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0125Bin_001FB6C0[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0125Bin_001FB6C0 */
-static s32 gStrScrChr0125Bin_001FB6C0[0x8] = { 0x2f726373, 0x30726863, 0x5f353231, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0126Bin_001FB6E0[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0126Bin_001FB6E0 */
-static s32 gStrScrChr0126Bin_001FB6E0[0x8] = { 0x2f726373, 0x30726863, 0x5f363231, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gStrScrChr0127Bin_001FB700[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0127Bin_001FB700 */
-static s32 gStrScrChr0127Bin_001FB700[0x8] = { 0x2f726373, 0x30726863, 0x5f373231, 0x6e69622e, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gEnemyScriptRodata_001FB720[];
-#else
-/* data twins (src/game/data/fx_proc_rodata.c): gEnemyScriptRodata_001FB720 */
-static s32 gEnemyScriptRodata_001FB720[0x6] = { 0x2f726373, 0x30726863, 0x5f303032, 0x6e69622e, 0, 0 };
-#endif
 extern void *gEnemyScriptSbss_00201FA8;
 extern s32 gMapSbss_00201E80;
 #ifndef NONMATCHING
+extern s32 gStrScrChrtestBin_001FAD20[];
+extern s32 gStrScrChr0021Bin_001FAD40[];
+extern s32 gStrScrChr0022Bin_001FAD60[];
+extern s32 gStrScrChr0023Bin_001FAD80[];
+extern s32 gStrScrChr0024Bin_001FADA0[];
+extern s32 gStrScrChr0025Bin_001FADC0[];
+extern s32 gStrScrChr0026Bin_001FADE0[];
+extern s32 gStrScrChr0027Bin_001FAE00[];
+extern s32 gStrScrChr0028Bin_001FAE20[];
+extern s32 gStrScrChr0029Bin_001FAE40[];
+extern s32 gStrScrChr0030Bin_001FAE60[];
+extern s32 gStrScrChr0031Bin_001FAE80[];
+extern s32 gStrScrChr0032Bin_001FAEA0[];
+extern s32 gStrScrChr0033Bin_001FAEC0[];
+extern s32 gStrScrChr0034Bin_001FAEE0[];
+extern s32 gStrScrChr0035Bin_001FAF00[];
+extern s32 gStrScrChr0036Bin_001FAF20[];
+extern s32 gStrScrChr0037Bin_001FAF40[];
+extern s32 gStrScrChr0038Bin_001FAF60[];
+extern s32 gStrScrChr0039Bin_001FAF80[];
+extern s32 gStrScrChr0040Bin_001FAFA0[];
+extern s32 gStrScrChr0041Bin_001FAFC0[];
+extern s32 gStrScrChr0042Bin_001FAFE0[];
+extern s32 gStrScrChr0043Bin_001FB000[];
+extern s32 gStrScrChr0044Bin_001FB020[];
+extern s32 gStrScrChr0045Bin_001FB040[];
+extern s32 gStrScrChr0046Bin_001FB060[];
+extern s32 gStrScrChr0047Bin_001FB080[];
+extern s32 gStrScrChr0048Bin_001FB0A0[];
+extern s32 gStrScrChr0049Bin_001FB0C0[];
+extern s32 gStrScrChr0050Bin_001FB0E0[];
+extern s32 gStrScrChr0051Bin_001FB100[];
+extern s32 gStrScrChr0052Bin_001FB120[];
+extern s32 gStrScrChr0053Bin_001FB140[];
+extern s32 gStrScrChr0054Bin_001FB160[];
+extern s32 gStrScrChr0055Bin_001FB180[];
+extern s32 gStrScrChr0056Bin_001FB1A0[];
+extern s32 gStrScrChr0057Bin_001FB1C0[];
+extern s32 gStrScrChr0058Bin_001FB1E0[];
+extern s32 gStrScrChr0059Bin_001FB200[];
+extern s32 gStrScrChr0060Bin_001FB220[];
+extern s32 gStrScrChr0061Bin_001FB240[];
+extern s32 gStrScrChr0062Bin_001FB260[];
+extern s32 gStrScrChr0063Bin_001FB280[];
+extern s32 gStrScrChr0064Bin_001FB2A0[];
+extern s32 gStrScrChr0065Bin_001FB2C0[];
+extern s32 gStrScrChr0066Bin_001FB2E0[];
+extern s32 gStrScrChr0067Bin_001FB300[];
+extern s32 gStrScrChr0068Bin_001FB320[];
+extern s32 gStrScrChr0069Bin_001FB340[];
+extern s32 gStrScrChr0070Bin_001FB360[];
+extern s32 gStrScrChr0071Bin_001FB380[];
+extern s32 gStrScrChr0072Bin_001FB3A0[];
+extern s32 gStrScrChr0073Bin_001FB3C0[];
+extern s32 gStrScrChr0081Bin_001FB3E0[];
+extern s32 gStrScrChr0082Bin_001FB400[];
+extern s32 gStrScrChr0083Bin_001FB420[];
+extern s32 gStrScrChr0091Bin_001FB440[];
+extern s32 gStrScrChr0092Bin_001FB460[];
+extern s32 gStrScrChr0094Bin_001FB480[];
+extern s32 gStrScrChr0095Bin_001FB4A0[];
+extern s32 gStrScrChr0098Bin_001FB4C0[];
+extern s32 gStrScrChr0101Bin_001FB4E0[];
+extern s32 gStrScrChr0102Bin_001FB500[];
+extern s32 gStrScrChr0103Bin_001FB520[];
+extern s32 gStrScrChr0104Bin_001FB540[];
+extern s32 gStrScrChr0105Bin_001FB560[];
+extern s32 gStrScrChr0107Bin_001FB580[];
+extern s32 gStrScrChr0108Bin_001FB5A0[];
+extern s32 gStrScrChr0109Bin_001FB5C0[];
+extern s32 gStrScrChr0110Bin_001FB5E0[];
+extern s32 gStrScrChr0118Bin_001FB600[];
+extern s32 gStrScrChr0119Bin_001FB620[];
+extern s32 gStrScrChr0120Bin_001FB640[];
+extern s32 gStrScrChr0122Bin_001FB660[];
+extern s32 gStrScrChr0123Bin_001FB680[];
+extern s32 gStrScrChr0124Bin_001FB6A0[];
+extern s32 gStrScrChr0125Bin_001FB6C0[];
+extern s32 gStrScrChr0126Bin_001FB6E0[];
+extern s32 gStrScrChr0127Bin_001FB700[];
+extern s32 gEnemyScriptRodata_001FB720[];
 extern P_EnemyCmd_PlaySe_1_001453A0 gEnemyScriptSdata_00201C50;
 #else
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChrtestBin_001FAD20 */
+static s32 gStrScrChrtestBin_001FAD20[0x8] = { 0x2f726373, 0x74726863, 0x5f747365, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0021Bin_001FAD40 */
+static s32 gStrScrChr0021Bin_001FAD40[0x8] = { 0x2f726373, 0x30726863, 0x5f313230, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0022Bin_001FAD60 */
+static s32 gStrScrChr0022Bin_001FAD60[0x8] = { 0x2f726373, 0x30726863, 0x5f323230, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0023Bin_001FAD80 */
+static s32 gStrScrChr0023Bin_001FAD80[0x8] = { 0x2f726373, 0x30726863, 0x5f333230, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0024Bin_001FADA0 */
+static s32 gStrScrChr0024Bin_001FADA0[0x8] = { 0x2f726373, 0x30726863, 0x5f343230, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0025Bin_001FADC0 */
+static s32 gStrScrChr0025Bin_001FADC0[0x8] = { 0x2f726373, 0x30726863, 0x5f353230, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0026Bin_001FADE0 */
+static s32 gStrScrChr0026Bin_001FADE0[0x8] = { 0x2f726373, 0x30726863, 0x5f363230, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0027Bin_001FAE00 */
+static s32 gStrScrChr0027Bin_001FAE00[0x8] = { 0x2f726373, 0x30726863, 0x5f373230, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0028Bin_001FAE20 */
+static s32 gStrScrChr0028Bin_001FAE20[0x8] = { 0x2f726373, 0x30726863, 0x5f383230, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0029Bin_001FAE40 */
+static s32 gStrScrChr0029Bin_001FAE40[0x8] = { 0x2f726373, 0x30726863, 0x5f393230, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0030Bin_001FAE60 */
+static s32 gStrScrChr0030Bin_001FAE60[0x8] = { 0x2f726373, 0x30726863, 0x5f303330, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0031Bin_001FAE80 */
+static s32 gStrScrChr0031Bin_001FAE80[0x8] = { 0x2f726373, 0x30726863, 0x5f313330, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0032Bin_001FAEA0 */
+static s32 gStrScrChr0032Bin_001FAEA0[0x8] = { 0x2f726373, 0x30726863, 0x5f323330, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0033Bin_001FAEC0 */
+static s32 gStrScrChr0033Bin_001FAEC0[0x8] = { 0x2f726373, 0x30726863, 0x5f333330, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0034Bin_001FAEE0 */
+static s32 gStrScrChr0034Bin_001FAEE0[0x8] = { 0x2f726373, 0x30726863, 0x5f343330, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0035Bin_001FAF00 */
+static s32 gStrScrChr0035Bin_001FAF00[0x8] = { 0x2f726373, 0x30726863, 0x5f353330, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0036Bin_001FAF20 */
+static s32 gStrScrChr0036Bin_001FAF20[0x8] = { 0x2f726373, 0x30726863, 0x5f363330, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0037Bin_001FAF40 */
+static s32 gStrScrChr0037Bin_001FAF40[0x8] = { 0x2f726373, 0x30726863, 0x5f373330, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0038Bin_001FAF60 */
+static s32 gStrScrChr0038Bin_001FAF60[0x8] = { 0x2f726373, 0x30726863, 0x5f383330, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0039Bin_001FAF80 */
+static s32 gStrScrChr0039Bin_001FAF80[0x8] = { 0x2f726373, 0x30726863, 0x5f393330, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0040Bin_001FAFA0 */
+static s32 gStrScrChr0040Bin_001FAFA0[0x8] = { 0x2f726373, 0x30726863, 0x5f303430, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0041Bin_001FAFC0 */
+static s32 gStrScrChr0041Bin_001FAFC0[0x8] = { 0x2f726373, 0x30726863, 0x5f313430, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0042Bin_001FAFE0 */
+static s32 gStrScrChr0042Bin_001FAFE0[0x8] = { 0x2f726373, 0x30726863, 0x5f323430, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0043Bin_001FB000 */
+static s32 gStrScrChr0043Bin_001FB000[0x8] = { 0x2f726373, 0x30726863, 0x5f333430, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0044Bin_001FB020 */
+static s32 gStrScrChr0044Bin_001FB020[0x8] = { 0x2f726373, 0x30726863, 0x5f343430, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0045Bin_001FB040 */
+static s32 gStrScrChr0045Bin_001FB040[0x8] = { 0x2f726373, 0x30726863, 0x5f353430, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0046Bin_001FB060 */
+static s32 gStrScrChr0046Bin_001FB060[0x8] = { 0x2f726373, 0x30726863, 0x5f363430, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0047Bin_001FB080 */
+static s32 gStrScrChr0047Bin_001FB080[0x8] = { 0x2f726373, 0x30726863, 0x5f373430, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0048Bin_001FB0A0 */
+static s32 gStrScrChr0048Bin_001FB0A0[0x8] = { 0x2f726373, 0x30726863, 0x5f383430, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0049Bin_001FB0C0 */
+static s32 gStrScrChr0049Bin_001FB0C0[0x8] = { 0x2f726373, 0x30726863, 0x5f393430, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0050Bin_001FB0E0 */
+static s32 gStrScrChr0050Bin_001FB0E0[0x8] = { 0x2f726373, 0x30726863, 0x5f303530, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0051Bin_001FB100 */
+static s32 gStrScrChr0051Bin_001FB100[0x8] = { 0x2f726373, 0x30726863, 0x5f313530, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0052Bin_001FB120 */
+static s32 gStrScrChr0052Bin_001FB120[0x8] = { 0x2f726373, 0x30726863, 0x5f323530, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0053Bin_001FB140 */
+static s32 gStrScrChr0053Bin_001FB140[0x8] = { 0x2f726373, 0x30726863, 0x5f333530, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0054Bin_001FB160 */
+static s32 gStrScrChr0054Bin_001FB160[0x8] = { 0x2f726373, 0x30726863, 0x5f343530, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0055Bin_001FB180 */
+static s32 gStrScrChr0055Bin_001FB180[0x8] = { 0x2f726373, 0x30726863, 0x5f353530, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0056Bin_001FB1A0 */
+static s32 gStrScrChr0056Bin_001FB1A0[0x8] = { 0x2f726373, 0x30726863, 0x5f363530, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0057Bin_001FB1C0 */
+static s32 gStrScrChr0057Bin_001FB1C0[0x8] = { 0x2f726373, 0x30726863, 0x5f373530, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0058Bin_001FB1E0 */
+static s32 gStrScrChr0058Bin_001FB1E0[0x8] = { 0x2f726373, 0x30726863, 0x5f383530, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0059Bin_001FB200 */
+static s32 gStrScrChr0059Bin_001FB200[0x8] = { 0x2f726373, 0x30726863, 0x5f393530, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0060Bin_001FB220 */
+static s32 gStrScrChr0060Bin_001FB220[0x8] = { 0x2f726373, 0x30726863, 0x5f303630, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0061Bin_001FB240 */
+static s32 gStrScrChr0061Bin_001FB240[0x8] = { 0x2f726373, 0x30726863, 0x5f313630, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0062Bin_001FB260 */
+static s32 gStrScrChr0062Bin_001FB260[0x8] = { 0x2f726373, 0x30726863, 0x5f323630, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0063Bin_001FB280 */
+static s32 gStrScrChr0063Bin_001FB280[0x8] = { 0x2f726373, 0x30726863, 0x5f333630, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0064Bin_001FB2A0 */
+static s32 gStrScrChr0064Bin_001FB2A0[0x8] = { 0x2f726373, 0x30726863, 0x5f343630, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0065Bin_001FB2C0 */
+static s32 gStrScrChr0065Bin_001FB2C0[0x8] = { 0x2f726373, 0x30726863, 0x5f353630, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0066Bin_001FB2E0 */
+static s32 gStrScrChr0066Bin_001FB2E0[0x8] = { 0x2f726373, 0x30726863, 0x5f363630, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0067Bin_001FB300 */
+static s32 gStrScrChr0067Bin_001FB300[0x8] = { 0x2f726373, 0x30726863, 0x5f373630, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0068Bin_001FB320 */
+static s32 gStrScrChr0068Bin_001FB320[0x8] = { 0x2f726373, 0x30726863, 0x5f383630, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0069Bin_001FB340 */
+static s32 gStrScrChr0069Bin_001FB340[0x8] = { 0x2f726373, 0x30726863, 0x5f393630, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0070Bin_001FB360 */
+static s32 gStrScrChr0070Bin_001FB360[0x8] = { 0x2f726373, 0x30726863, 0x5f303730, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0071Bin_001FB380 */
+static s32 gStrScrChr0071Bin_001FB380[0x8] = { 0x2f726373, 0x30726863, 0x5f313730, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0072Bin_001FB3A0 */
+static s32 gStrScrChr0072Bin_001FB3A0[0x8] = { 0x2f726373, 0x30726863, 0x5f323730, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0073Bin_001FB3C0 */
+static s32 gStrScrChr0073Bin_001FB3C0[0x8] = { 0x2f726373, 0x30726863, 0x5f333730, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0081Bin_001FB3E0 */
+static s32 gStrScrChr0081Bin_001FB3E0[0x8] = { 0x2f726373, 0x30726863, 0x5f313830, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0082Bin_001FB400 */
+static s32 gStrScrChr0082Bin_001FB400[0x8] = { 0x2f726373, 0x30726863, 0x5f323830, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0083Bin_001FB420 */
+static s32 gStrScrChr0083Bin_001FB420[0x8] = { 0x2f726373, 0x30726863, 0x5f333830, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0091Bin_001FB440 */
+static s32 gStrScrChr0091Bin_001FB440[0x8] = { 0x2f726373, 0x30726863, 0x5f313930, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0092Bin_001FB460 */
+static s32 gStrScrChr0092Bin_001FB460[0x8] = { 0x2f726373, 0x30726863, 0x5f323930, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0094Bin_001FB480 */
+static s32 gStrScrChr0094Bin_001FB480[0x8] = { 0x2f726373, 0x30726863, 0x5f343930, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0095Bin_001FB4A0 */
+static s32 gStrScrChr0095Bin_001FB4A0[0x8] = { 0x2f726373, 0x30726863, 0x5f353930, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0098Bin_001FB4C0 */
+static s32 gStrScrChr0098Bin_001FB4C0[0x8] = { 0x2f726373, 0x30726863, 0x5f383930, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0101Bin_001FB4E0 */
+static s32 gStrScrChr0101Bin_001FB4E0[0x8] = { 0x2f726373, 0x30726863, 0x5f313031, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0102Bin_001FB500 */
+static s32 gStrScrChr0102Bin_001FB500[0x8] = { 0x2f726373, 0x30726863, 0x5f323031, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0103Bin_001FB520 */
+static s32 gStrScrChr0103Bin_001FB520[0x8] = { 0x2f726373, 0x30726863, 0x5f333031, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0104Bin_001FB540 */
+static s32 gStrScrChr0104Bin_001FB540[0x8] = { 0x2f726373, 0x30726863, 0x5f343031, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0105Bin_001FB560 */
+static s32 gStrScrChr0105Bin_001FB560[0x8] = { 0x2f726373, 0x30726863, 0x5f353031, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0107Bin_001FB580 */
+static s32 gStrScrChr0107Bin_001FB580[0x8] = { 0x2f726373, 0x30726863, 0x5f373031, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0108Bin_001FB5A0 */
+static s32 gStrScrChr0108Bin_001FB5A0[0x8] = { 0x2f726373, 0x30726863, 0x5f383031, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0109Bin_001FB5C0 */
+static s32 gStrScrChr0109Bin_001FB5C0[0x8] = { 0x2f726373, 0x30726863, 0x5f393031, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0110Bin_001FB5E0 */
+static s32 gStrScrChr0110Bin_001FB5E0[0x8] = { 0x2f726373, 0x30726863, 0x5f303131, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0118Bin_001FB600 */
+static s32 gStrScrChr0118Bin_001FB600[0x8] = { 0x2f726373, 0x30726863, 0x5f383131, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0119Bin_001FB620 */
+static s32 gStrScrChr0119Bin_001FB620[0x8] = { 0x2f726373, 0x30726863, 0x5f393131, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0120Bin_001FB640 */
+static s32 gStrScrChr0120Bin_001FB640[0x8] = { 0x2f726373, 0x30726863, 0x5f303231, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0122Bin_001FB660 */
+static s32 gStrScrChr0122Bin_001FB660[0x8] = { 0x2f726373, 0x30726863, 0x5f323231, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0123Bin_001FB680 */
+static s32 gStrScrChr0123Bin_001FB680[0x8] = { 0x2f726373, 0x30726863, 0x5f333231, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0124Bin_001FB6A0 */
+static s32 gStrScrChr0124Bin_001FB6A0[0x8] = { 0x2f726373, 0x30726863, 0x5f343231, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0125Bin_001FB6C0 */
+static s32 gStrScrChr0125Bin_001FB6C0[0x8] = { 0x2f726373, 0x30726863, 0x5f353231, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0126Bin_001FB6E0 */
+static s32 gStrScrChr0126Bin_001FB6E0[0x8] = { 0x2f726373, 0x30726863, 0x5f363231, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0127Bin_001FB700 */
+static s32 gStrScrChr0127Bin_001FB700[0x8] = { 0x2f726373, 0x30726863, 0x5f373231, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gEnemyScriptRodata_001FB720 */
+static s32 gEnemyScriptRodata_001FB720[0x6] = { 0x2f726373, 0x30726863, 0x5f303032, 0x6e69622e, 0, 0 };
 /* data twins (src/game/data/sdata.c): gEnemyScriptSdata_00201C50 */
 static P_EnemyCmd_PlaySe_1_001453A0 gEnemyScriptSdata_00201C50 = { 5000.0f, 0.0f };
 #endif

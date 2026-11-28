@@ -5,7 +5,7 @@
 /* used by: font_draw, text_00184280.s, text_00185D70.s, ui_anim, ui_draw,
    ui_gauge */
 
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/ui_gauge.c */
+#ifndef NONMATCHING /* the NONMATCHING build defines these in their owners */
 void *gUiGaugeBss_0048D110[0xc];
 u8 gUiGaugeBss_0048D10C[0x4];
 u8 gUiGaugeBss_0048D108[0x4];
@@ -43,13 +43,9 @@ u8 gUiGaugeBss_004869B0[0x4];
 s32 gUiGaugeBss_004869A0[0x4];
 void *gUiGaugeBss_0048699C[0x1];
 u8 gUiGaugeBss_00486990[0xc];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/ui_anim.c */
 f32 gUiAnimBss_00486988[0x2];
 f32 gUiAnimBss_00486984[0x1];
 s32 gUiAnimBss_00486980[0x1];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/model/mdl_create_instance.c */
 u8 gMdlCreateInstanceBss_00486940[0x40];
 u8 gMdlCreateInstanceBss_00486900[0x40];
 #endif

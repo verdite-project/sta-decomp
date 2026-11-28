@@ -53,96 +53,54 @@ typedef struct {
 typedef struct { s32 x0; s32 x4; s8 *x8; } P;
 typedef struct { u8 pad0[4]; s32 x4; u8 pad8[8]; u8 x10[0x10]; u8 x20[0x10]; } R;
 typedef struct { u8 pad0[0x9C]; R *x9C; u8 padA0[0x24]; R *xC4; } G;
+extern E_UiAnim_IsDone_1_0017F3D0 gUiGaugeBss_00486990[];
+extern s32 gUiAnimSbss_00202048;
+extern s32 gUiAnimSbss_00202040;
 #ifndef NONMATCHING
 extern Q gUiAnimData_001F25E0[];
+extern f32 gUiAnimSbss_0020205C;
+extern s32 gUiAnimBss_00486980[];
+extern f32 gUiAnimBss_00486984[];
+extern f32 gUiAnimBss_00486988[];
+extern Q gUiAnimData_001F25D0[];
+extern f32 gUiAnimSbss_00202058;
+extern s32 gUiAnimSbss_0020203C;
+extern s32 gUiAnimSbss_0020204C;
+extern s32 gUiAnimSbss_00202044;
+extern s32 gUiAnimSdata_00201CC8;
+extern s32 gUiAnimSdata_00201CCC;
+extern S gUiAnimData_001F25B0[] __attribute__((aligned(16)));
+extern f32 gUiAnimSbss_00202054;
+extern f32 gUiAnimSbss_00202050;
 #else
 /* data twins (src/game/data/ui_global_data.c): gUiAnimData_001F25E0 */
 static Q gUiAnimData_001F25E0[0x1] = { { .f = { 40.0f, 180.0f, 52.0f, 254.0f } } };
-#endif
-#ifndef NONMATCHING
-extern f32 gUiAnimSbss_0020205C;
-#else
 /* data twins (src/game/data/sbss.c): gUiAnimSbss_0020205C */
 static f32 gUiAnimSbss_0020205C;
-#endif
-#ifndef NONMATCHING
-extern s32 gUiAnimBss_00486980[];
-#else
 /* data twins (src/game/data/ui_anim_bss.c): gUiAnimBss_00486980 */
 static s32 gUiAnimBss_00486980[0x1];
-#endif
-#ifndef NONMATCHING
-extern f32 gUiAnimBss_00486984[];
-#else
 /* data twins (src/game/data/ui_anim_bss.c): gUiAnimBss_00486984 */
 static f32 gUiAnimBss_00486984[0x1];
-#endif
-#ifndef NONMATCHING
-extern f32 gUiAnimBss_00486988[];
-#else
 /* data twins (src/game/data/ui_anim_bss.c): gUiAnimBss_00486988 */
 static f32 gUiAnimBss_00486988[0x2];
-#endif
-#ifndef NONMATCHING
-extern Q gUiAnimData_001F25D0[];
-#else
 /* data twins (src/game/data/ui_global_data.c): gUiAnimData_001F25D0 */
 static Q gUiAnimData_001F25D0[0x1] = { { .f = { 40.0f, 83.0f, 52.0f, 157.0f } } };
-#endif
-#ifndef NONMATCHING
-extern f32 gUiAnimSbss_00202058;
-#else
 /* data twins (src/game/data/sbss.c): gUiAnimSbss_00202058 */
 static f32 gUiAnimSbss_00202058;
-#endif
-extern E_UiAnim_IsDone_1_0017F3D0 gUiGaugeBss_00486990[];
-#ifndef NONMATCHING
-extern s32 gUiAnimSbss_0020203C;
-#else
 /* data twins (src/game/data/sbss.c): gUiAnimSbss_0020203C */
 static s32 gUiAnimSbss_0020203C;
-#endif
-extern s32 gUiAnimSbss_00202048;
-#ifndef NONMATCHING
-extern s32 gUiAnimSbss_0020204C;
-#else
 /* data twins (src/game/data/sbss.c): gUiAnimSbss_0020204C */
 static s32 gUiAnimSbss_0020204C;
-#endif
-extern s32 gUiAnimSbss_00202040;
-#ifndef NONMATCHING
-extern s32 gUiAnimSbss_00202044;
-#else
 /* data twins (src/game/data/sbss.c): gUiAnimSbss_00202044 */
 static s32 gUiAnimSbss_00202044;
-#endif
-#ifndef NONMATCHING
-extern s32 gUiAnimSdata_00201CC8;
-#else
 /* data twins (src/game/data/sdata.c): gUiAnimSdata_00201CC8 */
 static s32 gUiAnimSdata_00201CC8 = -2;
-#endif
-#ifndef NONMATCHING
-extern s32 gUiAnimSdata_00201CCC;
-#else
 /* data twins (src/game/data/sdata.c): gUiAnimSdata_00201CCC */
 static s32 gUiAnimSdata_00201CCC = -2;
-#endif
-#ifndef NONMATCHING
-extern S gUiAnimData_001F25B0[] __attribute__((aligned(16)));
-#else
 /* data twins (src/game/data/ui_global_data.c): gUiAnimData_001F25B0 */
 static S gUiAnimData_001F25B0[0x1] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
-#endif
-#ifndef NONMATCHING
-extern f32 gUiAnimSbss_00202054;
-#else
 /* data twins (src/game/data/sbss.c): gUiAnimSbss_00202054 */
 static f32 gUiAnimSbss_00202054;
-#endif
-#ifndef NONMATCHING
-extern f32 gUiAnimSbss_00202050;
-#else
 /* data twins (src/game/data/sbss.c): gUiAnimSbss_00202050 */
 static f32 gUiAnimSbss_00202050;
 #endif

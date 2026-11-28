@@ -20,47 +20,29 @@ extern G2C4 *D_002022C4;
 extern BF D_00222A54[];
 extern u8 gLoadBuf_00270F40[];
 extern f32 gMapBss_004B4B90[];
-#ifndef NONMATCHING
-extern s32 gMapBss_004B4BB0[];
-#else
-/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gMapBss_004B4BB0 */
-static s32 gMapBss_004B4BB0[0x1] __attribute__((aligned(16)));
-#endif
-#ifndef NONMATCHING
-extern s32 gMapBss_004B4BB4[];
-#else
-/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gMapBss_004B4BB4 */
-static s32 gMapBss_004B4BB4[0x1];
-#endif
 extern s16 gMapBss_004B4BBC[];
 extern s16 D_004B4BBE[];
 #ifndef NONMATCHING
+extern s32 gMapBss_004B4BB0[];
+extern s32 gMapBss_004B4BB4[];
 extern s32 gMapBss_004B4BC0[];
-#else
-/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gMapBss_004B4BC0 */
-static s32 gMapBss_004B4BC0[0x1];
-#endif
-#ifndef NONMATCHING
 extern s32 gMapBss_004B4BC4[];
-#else
-/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gMapBss_004B4BC4 */
-static s32 gMapBss_004B4BC4[0x1];
-#endif
-#ifndef NONMATCHING
 extern s32 gMapBss_004B4BC8[];
-#else
-/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gMapBss_004B4BC8 */
-static s32 gMapBss_004B4BC8[0x1];
-#endif
-#ifndef NONMATCHING
 extern s32 gMapBss_004B4BCC[];
-#else
-/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gMapBss_004B4BCC */
-static s32 gMapBss_004B4BCC[0x1];
-#endif
-#ifndef NONMATCHING
 extern s32 gMapBss_004B4BB8[];
 #else
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gMapBss_004B4BB0 */
+static s32 gMapBss_004B4BB0[0x1] __attribute__((aligned(16)));
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gMapBss_004B4BB4 */
+static s32 gMapBss_004B4BB4[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gMapBss_004B4BC0 */
+static s32 gMapBss_004B4BC0[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gMapBss_004B4BC4 */
+static s32 gMapBss_004B4BC4[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gMapBss_004B4BC8 */
+static s32 gMapBss_004B4BC8[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gMapBss_004B4BCC */
+static s32 gMapBss_004B4BCC[0x1];
 /* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gMapBss_004B4BB8 */
 static s32 gMapBss_004B4BB8[0x1];
 #endif
@@ -524,16 +506,8 @@ void MapObj_SpawnSfx_0_001B0D60(s16 arg0, s16 arg1, s32 arg2, s32 arg3) {
 #pragma explicit_zero_data on
 /* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gMapBss_004B4BBC */
 s16 gMapBss_004B4BBC[0x2];
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/pad_get_connected_bss_004AC630.c): gMapBss_004B4B90__grp: gMapBss_004B4B90@0x0, gMapBss_004B4B94@0x4 */
 unsigned char gMapBss_004B4B90__grp[0x8] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/sbss.c): gMapSbss_00201E80__grp: gMapSbss_00201E80@0x0, gMapSbss_00201E88@0x8, gMapSbss_00201E8C@0xc */
 unsigned char gMapSbss_00201E80__grp[0x10] __attribute__((section(".sbss"))) __attribute__((aligned(16)));
 #endif

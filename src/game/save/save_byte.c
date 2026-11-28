@@ -244,10 +244,6 @@ void Save_BuildOptions_1_001AB0A0(Big_Save_BuildOptions_1_001AB0A0 *b) {
 extern u8 gSaveByteBss_004A5A60[];
 /* data twins (src/game/data/sdata.c): gSaveByteSdata_00201DC4 */
 Rec_Save_InitNewGame_1_001AA760 *gSaveByteSdata_00201DC4 = (Rec_Save_InitNewGame_1_001AA760 *)gSaveByteBss_004A5A60;
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data twins (src/game/data/pad_get_connected_bss.c): gSaveByteBss_004A5A60 */
 u8 gSaveByteBss_004A5A60[0x49e0];
 #endif

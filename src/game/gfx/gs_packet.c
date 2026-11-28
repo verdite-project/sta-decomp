@@ -16,30 +16,12 @@ typedef union { u128 q; u32 w[4]; } Q_Gfx_KickFrame_1_00154B70;
 extern s32 gGsPacketBss_002F1990[];
 extern s32 gGsPacketBss_002F1994[];
 extern volatile s32 gGsPacketBss_002F1998[];
-#ifndef NONMATCHING
-extern volatile u64 gGsPacketBss_002F14E0[];
-#else
-/* data twins (src/game/data/gs_packet_bss.c): gGsPacketBss_002F14E0 */
-static volatile u64 gGsPacketBss_002F14E0[0x2];
-#endif
 extern volatile u64 gGsPacketBss_002F1500[];
 extern volatile u64 gGsPacketBss_002F1510[];
-#ifndef NONMATCHING
-extern volatile u64 gGsPacketBss_002F13F0[];
-#else
-/* data twins (src/game/data/gs_packet_bss.c): gGsPacketBss_002F13F0 */
-static volatile u64 gGsPacketBss_002F13F0[0x2];
-#endif
 extern volatile u64 gGsPacketBss_002F1410[];
 extern volatile u64 gGsPacketBss_002F1420[];
 extern G_GsPkt_DrawFadeRect_0_00153B50 gGameMainBss_002F1940;
 extern s32 gGsPacketSdata_00201C5C;
-#ifndef NONMATCHING
-extern f32 gGsPacketSdata_00201C60;
-#else
-/* data twins (src/game/data/sdata.c): gGsPacketSdata_00201C60 */
-static f32 gGsPacketSdata_00201C60 = 3000.0f;
-#endif
 extern f32 gGfxBuildViewMatricesSbss_00201F58, gGfxBuildViewMatricesSbss_00201F5C, gGfxBuildViewMatricesSbss_00201F60, gGfxBuildViewMatricesSbss_00201F64, gGfxBuildViewMatricesSbss_00201F68, gGfxBuildViewMatricesSbss_00201F6C, gGfxBuildViewMatricesSbss_00201F70, gGfxBuildViewMatricesSbss_00201F74;
 extern f32 gGsPacketBss_002F1600[4][4];
 extern f32 gGsPacketBss_002F1640[4][4];
@@ -52,20 +34,23 @@ extern u64 gGsPacketBss_002F1140[], gGsPacketBss_002F1148[], gGsPacketBss_002F11
 extern u8 gGameMainBss_002F1840[], gSoundEmitterBss_002F16C0[];
 extern u32 gGsPacketBss_002F19A8[];
 #ifndef NONMATCHING
+extern volatile u64 gGsPacketBss_002F14E0[];
+extern volatile u64 gGsPacketBss_002F13F0[];
+extern f32 gGsPacketSdata_00201C60;
 extern s32 gGsPacketSdata_00201C58;
-#else
-/* data twins (src/game/data/sdata.c): gGsPacketSdata_00201C58 */
-static s32 gGsPacketSdata_00201C58 = -1;
-#endif
-#ifndef NONMATCHING
 extern u64 gGsPacketBss_002F1490[];
-#else
-/* data twins (src/game/data/gs_packet_bss.c): gGsPacketBss_002F1490 */
-static u64 gGsPacketBss_002F1490[0xa];
-#endif
-#ifndef NONMATCHING
 extern u64 gGsPacketBss_002F1580[];
 #else
+/* data twins (src/game/data/gs_packet_bss.c): gGsPacketBss_002F14E0 */
+static volatile u64 gGsPacketBss_002F14E0[0x2];
+/* data twins (src/game/data/gs_packet_bss.c): gGsPacketBss_002F13F0 */
+static volatile u64 gGsPacketBss_002F13F0[0x2];
+/* data twins (src/game/data/sdata.c): gGsPacketSdata_00201C60 */
+static f32 gGsPacketSdata_00201C60 = 3000.0f;
+/* data twins (src/game/data/sdata.c): gGsPacketSdata_00201C58 */
+static s32 gGsPacketSdata_00201C58 = -1;
+/* data twins (src/game/data/gs_packet_bss.c): gGsPacketBss_002F1490 */
+static u64 gGsPacketBss_002F1490[0xa];
 /* data twins (src/game/data/gs_packet_bss.c): gGsPacketBss_002F1580 */
 static u64 gGsPacketBss_002F1580[0x8];
 #endif
@@ -729,65 +714,25 @@ u32 gGsPacketBss_002F199C[0x1];
 u32 gGsPacketBss_002F19A0[0x1];
 u32 gGsPacketBss_002F19A8[0x1];
 s32 gGsPacketBss_002F19AC[0x1];
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data twins (src/game/data/gs_packet_bss.c): gGsPacketBss_002F1600, gGsPacketBss_002F1640 */
 f32 gGsPacketBss_002F1600[4][4];
 f32 gGsPacketBss_002F1640[4][4];
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/gs_packet_bss.c): gGsPacketBss_002F1120__grp: gGsPacketBss_002F1120@0x0, gGsPacketBss_002F1124@0x4, gGsPacketBss_002F1128@0x8, gGsPacketBss_002F112C@0xc */
 unsigned char gGsPacketBss_002F1120__grp[0x10] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/gs_packet_bss.c): gGsPacketBss_002F1130__grp: gGsPacketBss_002F1130@0x0, gGsPacketBss_002F1134@0x4, gGsPacketBss_002F1138@0x8, gGsPacketBss_002F113C@0xc */
 unsigned char gGsPacketBss_002F1130__grp[0x10] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/gs_packet_bss.c): gGsPacketBss_002F1140__grp: gGsPacketBss_002F1140@0x0, gGsPacketBss_002F1148@0x8, gGsPacketBss_002F1150@0x10, gGsPacketBss_002F1158@0x18 */
 unsigned char gGsPacketBss_002F1140__grp[0x20] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/gs_packet_bss.c): gGsPacketBss_002F1160__grp: gGsPacketBss_002F1160@0x0, gGsPacketBss_002F1170@0x10, gGsPacketBss_002F11C0@0x60, gGsPacketBss_002F11C8@0x68, gGsPacketBss_002F11D0@0x70, gGsPacketBss_002F11D8@0x78, gGsPacketBss_002F11E0@0x80, gGsPacketBss_002F11E4@0x84, gGsPacketBss_002F1248@0xe8, gGsPacketBss_002F1250@0xf0, gGsPacketBss_002F12B0@0x150, gGsPacketBss_002F12B8@0x158, gGsPacketBss_002F12C0@0x160, gGsPacketBss_002F12C8@0x168, gGsPacketBss_002F12D0@0x170, gGsPacketBss_002F12D4@0x174, gGsPacketBss_002F1338@0x1d8, gGsPacketBss_002F1340@0x1e0, gGsPacketBss_002F1388@0x228, gGsPacketBss_002F1390@0x230 */
 unsigned char gGsPacketBss_002F1160__grp[0x240] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/gs_packet_bss.c): D_002F13A0__grp: gGsPacketBss_002F13A0@0x0 */
 unsigned char D_002F13A0__grp[0x28] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/gs_packet_bss.c): D_002F13C8__grp: gGsPacketBss_002F13C8@0x0 */
 unsigned char D_002F13C8__grp[0x8] __attribute__((aligned(8)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/gs_packet_bss.c): D_002F13D0__grp: gGsPacketBss_002F13D0@0x0 */
 unsigned char D_002F13D0__grp[0x20] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/gs_packet_bss.c): D_002F1400__grp: gGsPacketBss_002F1400@0x0 */
 unsigned char D_002F1400__grp[0x10] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/gs_packet_bss.c): D_002F14F0__grp: gGsPacketBss_002F14F0@0x0 */
 unsigned char D_002F14F0__grp[0x10] __attribute__((aligned(16)));
 #endif

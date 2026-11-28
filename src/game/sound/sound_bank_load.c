@@ -401,16 +401,8 @@ s32 SndBank_TransferStep_0_0012EA00(H_SndBank_ParseHeader_1_0012E8F0 *a0, u32 id
 #pragma explicit_zero_data on
 /* data twins (src/game/data/sbss.c): gSoundBankLoadSbss_00201EC0 */
 f32 gSoundBankLoadSbss_00201EC0;
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/sound_bss.c): gSoundBankLoadBss_00222B20__grp: gSoundBankLoadBss_00222B20@0x0, gSoundBankLoadBss_00222B50@0x30, gSoundBankLoadBss_00222B54@0x34, gSoundBankLoadBss_00222B58@0x38, gSoundBankLoadBss_00222B5C@0x3c, gSoundBankLoadBss_00222B60@0x40, gSoundBankLoadBss_00222B64@0x44, gSoundBankLoadBss_00222B68@0x48, gSoundBankLoadBss_00222B70@0x50, gSoundBankLoadBss_00222B74@0x54, gSoundBankLoadBss_00222B78@0x58, gSoundBankLoadBss_00222B7C@0x5c, gSoundBankLoadBss_00222B80@0x60, gSoundBankLoadBss_00222B84@0x64, gSoundBankLoadBss_00222BC0@0xa0, gSoundBankLoadBss_00222BC4@0xa4, gSoundBankLoadBss_0022CBBC@0xa09c, gSoundBankLoadBss_0022CBC0@0xa0a0, gSoundBankLoadBss_0022EB40@0xc020, gSoundBankLoadBss_0022EBC0@0xc0a0, gSoundBankLoadBss_0022EBC8@0xc0a8, gSoundBankLoadBss_0022EBD0@0xc0b0, gSoundBankLoadBss_0022EBD8@0xc0b8, gSoundBankLoadBss_0022EBDC@0xc0bc, gSoundBankLoadBss_0022EBE0@0xc0c0, gSoundBankLoadBss_0022EBE4@0xc0c4, gSoundBankLoadBss_0022EBE8@0xc0c8, gSoundBankLoadBss_0022EC00@0xc0e0, gSoundBankLoadBss_0022EC10@0xc0f0, gSoundBankLoadBss_0022EC14@0xc0f4, gSoundBankLoadBss_0022EC18@0xc0f8, gSoundBankLoadBss_0022EC1C@0xc0fc, gSoundBankLoadBss_0022EC20@0xc100, gSoundBankLoadBss_0022EC3C@0xc11c, gSoundBankLoadBss_0022EC40@0xc120, gSoundBankLoadBss_0022EC44@0xc124, gSoundBankLoadBss_0022EC48@0xc128 */
 unsigned char gSoundBankLoadBss_00222B20__grp[0xc130] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/sound_emitter_bss.c): gSoundBankLoadBss_0022F040__grp: gSoundBankLoadBss_0022F040@0x0, gSoundBankLoadBss_0022F044@0x4, gSoundBankLoadBss_0022F048@0x8, gSoundBankLoadBss_0022F04C@0xc, gSoundBankLoadBss_0022F050@0x10, gSoundBankLoadBss_0022F060@0x20, gSoundBankLoadBss_0022F070@0x30, gSoundBankLoadBss_0022F080@0x40, gSoundBankLoadBss_0022F084@0x44, gSoundBankLoadBss_0022F088@0x48, gSoundBankLoadBss_0022F08C@0x4c, gSoundBankLoadBss_0022F090@0x50 */
 unsigned char gSoundBankLoadBss_0022F040__grp[0x40050] __attribute__((aligned(16)));
 #endif

@@ -208,7 +208,3 @@ void SaveMenu_UpdateCardFlags_1_0018E120(s32 a0, Flags8 *f) {
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
 #endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-#endif

@@ -14,25 +14,16 @@ typedef struct { u8 pad[0x14]; f32 x14; f32 x18; u8 pad1C[0x10]; f32 x2C; f32 x3
 extern S gDbItemProcDrawInfoData_001F2F60[] __attribute__((aligned(16)));
 #ifndef NONMATCHING
 extern s8 gDbItemProcDrawInfoRodata_001FD368[];
+extern s8 gDbItemProcDrawInfoRodata_001FD370[];
+extern s8 gDbItemProcDrawInfoRodata_001FD378[];
+extern s8 gStr31f_001FD380[];
 #else
 /* data twins (src/game/data/databook_item_reset_rodata.c): gDbItemProcDrawInfoRodata_001FD368 */
 static s8 gDbItemProcDrawInfoRodata_001FD368[0x8] = { 0x25, 0x64, 0x20, -0x7f, -0x6d, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s8 gDbItemProcDrawInfoRodata_001FD370[];
-#else
 /* data twins (src/game/data/databook_item_reset_rodata.c): gDbItemProcDrawInfoRodata_001FD370 */
 static s8 gDbItemProcDrawInfoRodata_001FD370[0x8] = { 0x2d, 0x2d, 0x2d, 0, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s8 gDbItemProcDrawInfoRodata_001FD378[];
-#else
 /* data twins (src/game/data/databook_item_reset_rodata.c): gDbItemProcDrawInfoRodata_001FD378 */
 static s8 gDbItemProcDrawInfoRodata_001FD378[0x8] = { 0x25, 0x64, 0, 0, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s8 gStr31f_001FD380[];
-#else
 /* data twins (src/game/data/databook_item_reset_rodata.c): gStr31f_001FD380 */
 static s8 gStr31f_001FD380[0x6] = "%3.1f\000";
 #endif
@@ -165,10 +156,6 @@ void DbItemProc_DrawInfo_0_001973F0(s8 *o, s32 sel, u32 id, s32 n) {
 #pragma explicit_zero_data on
 /* data group (src/game/data/databook_item_reset_data.c): D_001F2F60__grp: gDbItemProcDrawInfoData_001F2F60@0x0 */
 f32 D_001F2F60__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/load_menu_bss_004A1120.c): gDbItemProcDrawInfoBss_004A13F0__grp: gDbItemProcDrawInfoBss_004A13F0@0x0, gDbItemProcDrawInfoBss_004A1404@0x14, gDbItemProcDrawInfoBss_004A141C@0x2c, gDbItemProcDrawInfoBss_004A1420@0x30, gDbItemProcDrawInfoBss_004A142C@0x3c */
 unsigned char gDbItemProcDrawInfoBss_004A13F0__grp[0x40] __attribute__((aligned(16)));
 #endif

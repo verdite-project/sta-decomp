@@ -36,7 +36,7 @@
    timer_init, timer_ticks, title, trap, ui_anim, ui_draw, ui_gauge,
    ui_global */
 
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/ending_draw.c */
+#ifndef NONMATCHING /* the NONMATCHING build defines these in their owners */
 u8 gEndingDrawSbss_00202420[0x60];
 f32 gEndingDrawSbss_0020241C;
 f32 gEndingDrawSbss_00202418;
@@ -44,63 +44,35 @@ f32 gEndingDrawSbss_00202414;
 s32 gEndingDrawSbss_00202410;
 f32 gEndingDrawSbss_0020240C;
 f32 gEndingDrawSbss_00202408;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/map_sheet.c */
 f32 gMapSheetSbss_00202404;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/movie.c */
 s32 gMovieSbss_00202400;
 s32 gMovieSbss_002023FC;
 s32 gMovieSbss_002023F8;
 s32 gMovieSbss_002023F4;
 s32 gMovieSbss_002023F0;
 s32 gMovieSbss_002023EC;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/save/save_system_step.c */
 s32 gSaveSystemStepSbss_002023E8;
 u8 gSaveSystemStepSbss_002023E4[0x4];
 s32 gSaveSystemStepSbss_002023E0;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/save/save_system_start.c */
 u8 gSaveSystemStartSbss_002023DC[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/save/save_system_step.c */
 s32 gSaveSystemStepSbss_002023D8;
 s32 gSaveSystemStepSbss_002023D4;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/save/save_system_start.c */
 s32 gSaveSystemStartSbss_002023D0;
 s32 gSaveSystemStartSbss_002023CC;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/save/save_system_step.c */
 s32 gSaveSystemStepSbss_002023C8;
 s32 gSaveSystemStepSbss_002023C4;
 s32 gSaveSystemStepSbss_002023C0;
 s32 gSaveSystemStepSbss_002023BC;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/save/save_system_start.c */
 s32 gSaveSystemStartSbss_002023B8;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/save/save_system_step.c */
 s32 gSaveSystemStepSbss_002023B4;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/map_se_stream.c */
 u8 gMapSeStreamSbss_002023B0[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/glow_fx.c */
 u8 gGlowFxSbss_002023AC[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/task_callback.c */
 s32 gTaskCallbackSbss_002023A8;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/play_time.c */
 u8 gPlayTimeSbss_002023A0[0x8]; /* also D_002023A5, D_002023A6, D_002023A7 */
 u8 gPlayTimeSbss_00202398[0x8]; /* also D_00202399, D_0020239A, D_0020239B, D_0020239D */
 u8 gPlayTimeSbss_00202390[0x8];
 u8 gPlayTimeSbss_00202388[0x8];
 u8 gPlayTimeSbss_00202380[0x8]; /* also D_00202385, D_00202386, D_00202387 */
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/shop_menu.c */
 s32 gShopMenuSbss_0020237C;
 u8 gShopMenuSbss_00202378[0x4];
 u8 gShopMenuSbss_00202370[0x8];
@@ -110,8 +82,6 @@ f32 gShopMenuSbss_00202364;
 f32 gShopMenuSbss_00202360;
 f32 gShopMenuSbss_0020235C;
 s32 gShopMenuSbss_00202358;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/credits.c */
 u8 gCreditsSbss_00202354[0x4]; /* also D_00202356 */
 u8 gCreditsSbss_00202350[0x4]; /* also D_00202352 */
 u8 gCreditsSbss_00202348[0x8];
@@ -120,95 +90,43 @@ s32 gCreditsSbss_00202340;
 u8 gCreditsSbss_0020233C[0x4];
 f32 gCreditsSbss_00202338;
 u8 gCreditsSbss_00202334[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/se_dma.c */
 s32 gSeDmaSbss_00202330;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/se.c */
 s32 gSeSbss_0020232C;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/se_flush.c */
 u8 gSeFlushSbss_00202328[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/se.c */
 s32 gSeSbss_00202324;
 s32 gSeSbss_00202320;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/bgm.c */
 s32 gBgmSbss_0020231C;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/sound_driver_flush.c */
 s32 gSoundDriverFlushSbss_00202318;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/bgm.c */
 u8 gBgmSbss_00202314[0x4];
 u8 gBgmSbss_00202310[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/stream.c */
 u8 gStreamSbss_0020230C[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/sound_driver_flush.c */
 s32 gSoundDriverFlushSbss_00202308;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/sound_driver_call.c */
 u8 gSoundDriverCallSbss_00202300[0x8];
 s32 gSoundDriverCallSbss_002022FC;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/player/player_se.c */
 s32 gPlayerSeSbss_002022F8;
 s32 gPlayerSeSbss_002022F4;
 u8 gPlayerSeSbss_002022F0[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/player/player.c */
 s32 gPlayerSbss_002022EC;
 f32 gPlayerSbss_002022E8;
 u8 gPlayerSbss_002022E4[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/hud_warning.c */
 s32 gHudWarningSbss_002022E0;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/player/player.c */
 f32 gPlayerSbss_002022DC;
 s32 gPlayerSbss_002022D8;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/map_object/map_object_all.c */
 u8 gMapObjectAllSbss_002022D4[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/map/map_area_load.c */
 u8 gMapAreaLoadSbss_002022D0[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/gfx_build_view_matrices.c */
 u8 gGfxBuildViewMatricesSbss_002022C0[0x10]; /* also D_002022C4 */
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/player/player.c */
 u8 gPlayerSbss_002022BC[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/sound.c */
 u8 gSoundSbss_002022B8[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/map/map_area_load.c */
 s32 gMapAreaLoadSbss_002022B4;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/item/item_object.c */
 u8 gItemObjectSbss_002022B0[0x4];
 u8 gItemObjectSbss_002022A0[0x10]; /* also D_002022A4 */
 u8 gItemObjectSbss_00202290[0x10];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/item/item_object_spawn.c */
 s32 gItemObjectSpawnSbss_0020228C;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/item/item_object.c */
 u8 gItemObjectSbss_00202288[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/enemy/enemy_model.c */
 u8 gEnemyModelSbss_00202284[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/enemy/enemy_list.c */
 u8 gEnemyListSbss_00202280[0x4];
 u8 gEnemyListSbss_00202278[0x8];
 s32 gEnemyListSbss_00202274;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/title.c */
 s32 gTitleSbss_00202270;
 s32 gTitleSbss_0020226C;
 s32 gTitleSbss_00202268;
@@ -223,8 +141,6 @@ s32 gTitleSbss_00202248;
 s32 gTitleSbss_00202244;
 s32 gTitleSbss_00202240;
 s32 gTitleSbss_0020223C;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/shop_draw.c */
 s32 gShopDrawSbss_00202238;
 s32 gShopDrawSbss_00202234;
 s32 gShopDrawSbss_00202230;
@@ -232,21 +148,13 @@ f32 gShopDrawSbss_0020222C;
 f32 gShopDrawSbss_00202228;
 s32 gShopDrawSbss_00202224;
 s32 gShopDrawSbss_00202220;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/game_over_reset.c */
 u8 gGameOverResetSbss_0020221C[0x4];
 s32 gGameOverResetSbss_00202218;
 s32 gGameOverResetSbss_00202214;
 s32 gGameOverResetSbss_00202210;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/game_over_update.c */
 s32 gGameOverUpdateSbss_0020220C;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/pause_menu_entry.c */
 s32 gPauseMenuEntrySbss_00202208;
 s32 gPauseMenuEntrySbss_00202204;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/item_menu_draw.c */
 s32 gItemMenuDrawSbss_00202200;
 s32 gItemMenuDrawSbss_002021FC;
 s32 gItemMenuDrawSbss_002021F8;
@@ -256,8 +164,6 @@ s32 gItemMenuDrawSbss_002021EC;
 s32 gItemMenuDrawSbss_002021E8;
 s32 gItemMenuDrawSbss_002021E4;
 s32 gItemMenuDrawSbss_002021E0;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/hud_draw.c */
 s32 gHudDrawSbss_002021DC;
 s32 gHudDrawSbss_002021D8;
 u8 gHudDrawSbss_002021D0[0x8];
@@ -265,37 +171,21 @@ s32 gHudDrawSbss_002021CC;
 f32 gHudDrawSbss_002021C8;
 f32 gHudDrawSbss_002021C4;
 s32 gHudDrawSbss_002021C0;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/player/equip_draw.c */
 f32 gEquipDrawSbss_002021BC;
 f32 gEquipDrawSbss_002021B8;
 s32 gEquipDrawSbss_002021B4;
 s32 gEquipDrawSbss_002021B0;
 s32 gEquipDrawSbss_002021AC;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/databook_item_reset.c */
 s32 gDatabookItemResetSbss_002021A8;
 u32 gDatabookItemResetSbss_002021A4;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/databook_item_draw.c */
 f32 gDatabookItemDrawSbss_002021A0;
 f32 gDatabookItemDrawSbss_0020219C;
 s32 gDatabookItemDrawSbss_00202198;
 s32 gDatabookItemDrawSbss_00202194;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/databook_item_reset.c */
 u32 gDatabookItemResetSbss_00202190;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/databook_char_update_wrap.c */
 s32 gDatabookCharUpdateWrapSbss_0020218C;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/db_char_proc_draw_info.c */
 s32 gDbCharProcDrawInfoSbss_00202188;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/databook_char_update_wrap.c */
 u32 gDatabookCharUpdateWrapSbss_00202184;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/databook.c */
 s8 *gDatabookSbss_00202180;
 u8 gDatabookSbss_0020217C[0x4];
 s32 *gDatabookSbss_00202178;
@@ -306,44 +196,22 @@ s8 *gDatabookSbss_00202168;
 u8 gDatabookSbss_00202164[0x4];
 u8 gDatabookSbss_00202160[0x4];
 u8 gDatabookSbss_0020215C[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/databook.c */
 u8 gDatabookSbss_00202158[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/databook.c */
 s32 gDatabookSbss_00202154;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/ending_play.c */
 s32 *gEndingPlaySbss_00202150;
 s32 *gEndingPlaySbss_0020214C;
 s32 gEndingPlaySbss_00202148;
 s32 gEndingPlaySbss_00202144;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/load_menu.c */
 s32 gLoadMenuSbss_00202140;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/load_menu_draw.c */
 f32 gLoadMenuDrawSbss_0020213C;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/option_lerp.c */
 s32 gOptionLerpSbss_00202138;
 s32 gOptionLerpSbss_00202134;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/option.c */
 s32 gOptionSbss_00202130;
 u8 gOptionSbss_0020212C[0x4]; /* also D_0020212F */
 s32 gOptionSbss_00202128;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/menu_proc.c */
 s32 gMenuProcSbss_00202120[0x2];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/save_menu_slot.c */
 f32 gSaveMenuSlotSbss_0020211C;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/message.c */
 s32 gMessageSbss_00202118;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/menu.c */
 f32 gMenuSbss_00202114;
 f32 gMenuSbss_00202110;
 f32 gMenuSbss_0020210C;
@@ -356,20 +224,12 @@ u8 gMenuSbss_002020E8[0x8];
 u8 gMenuSbss_002020E0[0x8];
 u8 gMenuSbss_002020DC[0x4];
 f32 gMenuSbss_002020D8;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/hud_draw.c */
 f32 gHudDrawSbss_002020D4;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/font_load.c */
 s32 gFontLoadSbss_002020D0;
 u8 gFontLoadSbss_002020CC[0x4];
 u8 gFontLoadSbss_002020C8[0x4];
 s32 gFontLoadSbss_002020C4;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/menu_draw.c */
 s32 gMenuDrawSbss_002020C0;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/ui_gauge.c */
 f32 gUiGaugeSbss_002020BC;
 f32 gUiGaugeSbss_002020B8;
 f32 gUiGaugeSbss_002020B4;
@@ -387,23 +247,13 @@ u8 gUiGaugeSbss_00202088[0x4];
 f32 gUiGaugeSbss_00202084;
 s32 gUiGaugeSbss_00202080;
 s32 gUiGaugeSbss_0020207C;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/menu_proc_draw_weight.c */
 u8 gMenuProcDrawWeightSbss_00202078[0x4];
 u8 gMenuProcDrawWeightSbss_00202074[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/ui_global.c */
 s32 gUiGlobalSbss_00202070;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/ui_draw.c */
 s32 gUiDrawSbss_0020206C;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/font_draw.c */
 void *gFontDrawSbss_00202068;
 s32 gFontDrawSbss_00202064;
 s32 gFontDrawSbss_00202060;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/ui_anim.c */
 f32 gUiAnimSbss_0020205C;
 f32 gUiAnimSbss_00202058;
 f32 gUiAnimSbss_00202054;
@@ -413,103 +263,47 @@ u8 gUiAnimSbss_00202048[0x4];
 s32 gUiAnimSbss_00202044;
 u8 gUiAnimSbss_00202040[0x4];
 s32 gUiAnimSbss_0020203C;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/script/map_command.c */
 s32 gMapCommandSbss_00202038;
 u8 gMapCommandSbss_00202034[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/map_object/door.c */
 u8 gDoorSbss_00202030[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/lz_decompress_b.c */
 u32 gLzDecompressBSbss_0020202C;
 u8 gLzDecompressBSbss_00202028[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/timer_init.c */
 u8 gTimerInitSbss_00202024[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/timer_ticks.c */
 s32 gTimerTicksSbss_00202020;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/timer_init.c */
 u8 gTimerInitSbss_0020201C[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/tex_resident.c */
 u8 gTexResidentSbss_00202018[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/texture.c */
 u8 gTextureSbss_00202010[0x8];
 s32 gTextureSbss_0020200C;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/model/model_emit.c */
 u8 gModelEmitSbss_00202008[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/model/model_layer.c */
 s32 gModelLayerSbss_00202004;
 s32 gModelLayerSbss_00202000;
 s32 gModelLayerSbss_00201FFC;
 s32 gModelLayerSbss_00201FF8;
 s32 gModelLayerSbss_00201FF4;
 s32 gModelLayerSbss_00201FF0;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/texture_anim.c */
 s32 gTextureAnimSbss_00201FEC;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/effect/sfx_system.c */
 u8 gSfxSystemSbss_00201FE8[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/effect/sfx_all.c */
 s32 gSfxAllSbss_00201FE4;
 u8 gSfxAllSbss_00201FE0[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/effect/fx_spawn.c */
 u8 gFxSpawnSbss_00201FDC[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/effect/sfx_system.c */
 u8 gSfxSystemSbss_00201FD8[0x4];
 u8 gSfxSystemSbss_00201FD4[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/effect/sfx_all.c */
 u8 gSfxAllSbss_00201FD0[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/effect/sfx_system.c */
 u8 gSfxSystemSbss_00201FC0[0x10];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/effect/sfx_all.c */
 u8 gSfxAllSbss_00201FB0[0x10];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/effect/sfx_system.c */
 u32 gSfxSystemSbss_00201FAC;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/enemy/enemy_script.c */
 u8 gEnemyScriptSbss_00201FA8[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/script/script_event.c */
 u8 gScriptEventSbss_00201FA4[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/effect/fx.c */
 u8 gFxSbss_00201FA0[0x4];
 s32 gFxSbss_00201F9C;
 s32 gFxSbss_00201F98;
 u8 gFxSbss_00201F94[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/game_main.c */
 s32 gGameMainSbss_00201F90;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/file.c */
 s32 gFileSbss_00201F8C;
 s32 gFileSbss_00201F88;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/cd.c */
 s32 gCdSbss_00201F84;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/file.c */
 u8 gFileSbss_00201F80[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/screen_fx_update.c */
 u8 gScreenFxUpdateSbss_00201F78[0x8];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/gfx_build_view_matrices.c */
 u8 gGfxBuildViewMatricesSbss_00201F74[0x4];
 u8 gGfxBuildViewMatricesSbss_00201F70[0x4];
 u8 gGfxBuildViewMatricesSbss_00201F6C[0x4];
@@ -518,122 +312,52 @@ u8 gGfxBuildViewMatricesSbss_00201F64[0x4];
 u8 gGfxBuildViewMatricesSbss_00201F60[0x4];
 u8 gGfxBuildViewMatricesSbss_00201F5C[0x4];
 u8 gGfxBuildViewMatricesSbss_00201F58[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/model/mdl_emit_strip_d.c */
 u32 gMdlEmitStripDSbss_00201F54;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/model/model_emit.c */
 u8 gModelEmitSbss_00201F50[0x4];
 u8 gModelEmitSbss_00201F4C[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/model/model_draw.c */
 s32 gModelDrawSbss_00201F48;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/gfx_upload.c */
 u8 gGfxUploadSbss_00201F44[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/effect/sfx_draw_billboard.c */
 u8 gSfxDrawBillboardSbss_00201F40[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/draw.c */
 s32 gDrawSbss_00201F3C;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/gfx_upload.c */
 u8 gGfxUploadSbss_00201F38[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/gs_packet.c */
 u8 gGsPacketSbss_00201F34[0x4];
 u8 gGsPacketSbss_00201F30[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/effect/sfx_all.c */
 s32 gSfxAllSbss_00201F2C;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/gs_packet.c */
 s32 gGsPacketSbss_00201F28;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/collision/coll_sweep_segments_init.c */
 s32 gCollSweepSegmentsInitSbss_00201F24;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/task_run.c */
 s32 gTaskRunSbss_00201F20;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/enemy/enemy_global.c */
 u8 gEnemyGlobalSbss_00201F1C[0x4];
 u8 gEnemyGlobalSbss_00201F18[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/entity/actors.c */
 u8 gActorsSbss_00201F14[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/enemy/enemy_ai.c */
 u8 gEnemyAiSbss_00201F10[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/screen_fx_begin.c */
 u8 gScreenFxBeginSbss_00201F0C[0x4];
 u8 gScreenFxBeginSbss_00201F08[0x4];
 u8 gScreenFxBeginSbss_00201F04[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/screen_fx_draw.c */
 u32 gScreenFxDrawSbss_00201F00;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/screen_fx_begin.c */
 u8 gScreenFxBeginSbss_00201EFC[0x4];
 u8 gScreenFxBeginSbss_00201EF8[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/screen_fx_draw.c */
 u32 gScreenFxDrawSbss_00201EF4;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/screen_fx_begin.c */
 u32 gScreenFxBeginSbss_00201EF0;
 u8 gScreenFxBeginSbss_00201EEC[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/sound_emitter.c */
 s32 gSoundEmitterSbss_00201EE8;
 u8 gSoundEmitterSbss_00201EE4[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/sound_emitter.c */
 u8 gSoundEmitterSbss_00201EE0[0x4]; /* also D_00201EE2 */
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/sound_emitter.c */
 u8 gSoundEmitterSbss_00201ED8[0x8];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/sound.c */
 u8 gSoundSbss_00201ED4[0x4]; /* also D_00201ED5, D_00201ED6, D_00201ED7 */
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/sound_emitter.c */
 u8 gSoundEmitterSbss_00201ED0[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/sound_bank_load.c */
 u8 gSoundBankLoadSbss_00201EC0[0x10]; /* also D_00201EC4 */
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/sound_start.c */
 u8 gSoundStartSbss_00201EBC[0x4];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/game_main.c */
 u8 gGameMainSbss_00201EB8[0x4];
 f32 gGameMainSbss_00201EB4;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/player/player.c */
 s32 gPlayerSbss_00201EB0;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/game_main.c */
 s32 gGameMainSbss_00201EAC;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/game_request.c */
 s32 gGameRequestSbss_00201EA8;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/game_main.c */
 s32 gGameMainSbss_00201EA4;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/game_request.c */
 s32 gGameRequestSbss_00201EA0;
 s32 gGameRequestSbss_00201E9C;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/game_main.c */
 s32 gGameMainSbss_00201E98;
 u8 gGameMainSbss_00201E94[0x4];
 f32 gGameMainSbss_00201E90;
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/map/map.c */
 u8 gMapSbss_00201E8C[0x4];
 u8 gMapSbss_00201E88[0x4];
 u8 gMapSbss_00201E80[0x8] __attribute__((aligned(16)));

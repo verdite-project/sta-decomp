@@ -75,42 +75,6 @@ typedef struct { u8 data[0x50000]; s32 rd; s32 cnt; s32 size; } B_Movie_ReadLoop
 typedef struct { s32 x0; s32 x4; s32 x8; } Q_Movie_ReadLoop_1_001ECAB0;
 extern char gMovieRodata_00201920[];
 extern char gMovieRodata_00201940[];
-#ifndef NONMATCHING
-extern char gStrCdrom0_00201950[];
-#else
-/* data twins (src/game/data/movie_rodata.c): gStrCdrom0_00201950 */
-static char gStrCdrom0_00201950[0x7] = "cdrom0\000";
-#endif
-#ifndef NONMATCHING
-extern char gMovieRodata_00201958[];
-#else
-/* data twins (src/game/data/movie_rodata.c): gMovieRodata_00201958 */
-static char gMovieRodata_00201958[0x8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern char gStr1_00201960[];
-#else
-/* data twins (src/game/data/movie_rodata.c): gStr1_00201960 */
-static char gStr1_00201960[0x8] = ";1\000\000\000\000\000\000";
-#endif
-#ifndef NONMATCHING
-extern char gStrSS_00201968[];
-#else
-/* data twins (src/game/data/movie_rodata.c): gStrSS_00201968 */
-static char gStrSS_00201968[0x5] = "%s%s\000";
-#endif
-#ifndef NONMATCHING
-extern char gMovieRodata_00201970[];
-#else
-/* data twins (src/game/data/movie_rodata.c): gMovieRodata_00201970 */
-static char gMovieRodata_00201970[0x8] = { 0x25, 0x73, 0x3a, 0x25, 0x73, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern char gStrHost0_00201978[];
-#else
-/* data twins (src/game/data/movie_rodata.c): gStrHost0_00201978 */
-static char gStrHost0_00201978[0x6] = "host0\000";
-#endif
 extern u8 gMovieBss_004BD310[];
 extern u8 D_004BD311[];
 extern u8 D_004BD312[];
@@ -123,163 +87,115 @@ extern s32 gMovieSbss_002023F8;
 extern s32 gMovieSbss_002023FC;
 extern s16 gMovieBss_004BE0D4[];
 extern s16 D_004BE0D6[];
-#ifndef NONMATCHING
-extern s16 gMovieBss_004BE0D8[];
-#else
-/* data twins (src/game/data/movie_bss.c): gMovieBss_004BE0D8 */
-static s16 gMovieBss_004BE0D8[0x4] __attribute__((aligned(4)));
-#endif
 extern char D_004BDF88[];
 extern u8 *D_004BDEC4[];
 extern volatile s32 D_004BDEC8[];
 extern s32 D_004BDECC[];
 extern T_MovieVideo_PutData_0_001EA0D0 gMovieSdata_00201E74;
 extern s32 D_004BDF9C[];
-#ifndef NONMATCHING
-extern s32 gMovieBss_004BDFC8[];
-#else
-/* data twins (src/game/data/movie_bss.c): gMovieBss_004BDFC8 */
-static s32 gMovieBss_004BDFC8[0x2] __attribute__((aligned(4)));
-#endif
-#ifndef NONMATCHING
-extern s64 gMovieBss_004BDFD0[];
-#else
-/* data twins (src/game/data/movie_bss.c): gMovieBss_004BDFD0 */
-static s64 gMovieBss_004BDFD0[0x1] __attribute__((aligned(4)));
-#endif
-#ifndef NONMATCHING
-extern s32 gMovieBss_004BE0D0[];
-#else
-/* data twins (src/game/data/movie_bss.c): gMovieBss_004BE0D0 */
-static s32 gMovieBss_004BE0D0[0x1];
-#endif
 extern volatile s32 D_004BDF0C[];
 extern s32 D_004BDF18[];
 extern s32 D_004BDF1C[];
 extern s32 D_004BDF20[];
 extern s32 D_004BDF24[];
-#ifndef NONMATCHING
-extern s32 gMovieBss_004BDF38[];
-#else
-/* data twins (src/game/data/movie_bss.c): gMovieBss_004BDF38 */
-static s32 gMovieBss_004BDF38[0x2] __attribute__((aligned(4)));
-#endif
 extern s32 gMovieBss_004BDF40[];
 extern s32 gMovieBss_004BDFF0[];
 extern s32 D_004BDFF4[];
 extern s32 gMovieBss_004BE040[];
 extern s32 D_004BE044[];
 extern s32 D_004BE04C[];
-#ifndef NONMATCHING
-extern s32 gMovieBss_004BE078[];
-#else
-/* data twins (src/game/data/movie_bss.c): gMovieBss_004BE078 */
-static s32 gMovieBss_004BE078[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gMovieBss_004BE07C[];
-#else
-/* data twins (src/game/data/movie_bss.c): gMovieBss_004BE07C */
-static s32 gMovieBss_004BE07C[0x1];
-#endif
 extern s32 _gp;
-#ifndef NONMATCHING
-extern s32 gStrCanTOpenFileS_00201A50[];
-#else
-/* data twins (src/game/data/movie_rodata2.c): gStrCanTOpenFileS_00201A50 */
-static s32 gStrCanTOpenFileS_00201A50[0x8] = { 0x276e6143, 0x704f2074, 0x66206e65, 0x20656c69, 0xa7325, 0, 0, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 gMovieSdata_00201E70;
-#else
-/* data twins (src/game/data/sdata.c): gMovieSdata_00201E70 */
-static s32 gMovieSdata_00201E70 = 1;
-#endif
-#ifndef NONMATCHING
-extern s32 gMovieBss_004BDFE8[];
-#else
-/* data twins (src/game/data/movie_bss.c): gMovieBss_004BDFE8 */
-static s32 gMovieBss_004BDFE8[0x2] __attribute__((aligned(4)));
-#endif
-#ifndef NONMATCHING
-extern s32 gMovieBss_004BE010[];
-#else
-/* data twins (src/game/data/movie_bss.c): gMovieBss_004BE010 */
-static s32 gMovieBss_004BE010[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gMovieBss_004BE014[];
-#else
-/* data twins (src/game/data/movie_bss.c): gMovieBss_004BE014 */
-static s32 gMovieBss_004BE014[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gMovieBss_004BE018[];
-#else
-/* data twins (src/game/data/movie_bss.c): gMovieBss_004BE018 */
-static s32 gMovieBss_004BE018[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gMovieBss_004BE01C[];
-#else
-/* data twins (src/game/data/movie_bss.c): gMovieBss_004BE01C */
-static s32 gMovieBss_004BE01C[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gMovieBss_004BE020[];
-#else
-/* data twins (src/game/data/movie_bss.c): gMovieBss_004BE020 */
-static s32 gMovieBss_004BE020[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gMovieBss_004BE024[];
-#else
-/* data twins (src/game/data/movie_bss.c): gMovieBss_004BE024 */
-static s32 gMovieBss_004BE024[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gMovieBss_004BE028[];
-#else
-/* data twins (src/game/data/movie_bss.c): gMovieBss_004BE028 */
-static s32 gMovieBss_004BE028[0x1];
-#endif
 extern u8 *gMovieBss_004BE02C[];
-#ifndef NONMATCHING
-extern s32 gMovieBss_004BE030[];
-#else
-/* data twins (src/game/data/movie_bss.c): gMovieBss_004BE030 */
-static s32 gMovieBss_004BE030[0x1];
-#endif
 extern u8 *gMovieBss_004BE038[];
 extern u8 gMovieBss_004BE080[];
 extern s32 gMovieSbss_00202400;
 #ifndef NONMATCHING
+extern char gStrCdrom0_00201950[];
+extern char gMovieRodata_00201958[];
+extern char gStr1_00201960[];
+extern char gStrSS_00201968[];
+extern char gMovieRodata_00201970[];
+extern char gStrHost0_00201978[];
+extern s16 gMovieBss_004BE0D8[];
+extern s32 gMovieBss_004BDFC8[];
+extern s64 gMovieBss_004BDFD0[];
+extern s32 gMovieBss_004BE0D0[];
+extern s32 gMovieBss_004BDF38[];
+extern s32 gMovieBss_004BE078[];
+extern s32 gMovieBss_004BE07C[];
+extern s32 gStrCanTOpenFileS_00201A50[];
+extern s32 gMovieSdata_00201E70;
+extern s32 gMovieBss_004BDFE8[];
+extern s32 gMovieBss_004BE010[];
+extern s32 gMovieBss_004BE014[];
+extern s32 gMovieBss_004BE018[];
+extern s32 gMovieBss_004BE01C[];
+extern s32 gMovieBss_004BE020[];
+extern s32 gMovieBss_004BE024[];
+extern s32 gMovieBss_004BE028[];
+extern s32 gMovieBss_004BE030[];
 extern s32 gMovieBss_004BDF34[];
-#else
-/* data twins (src/game/data/movie_bss.c): gMovieBss_004BDF34 */
-static s32 gMovieBss_004BDF34[0x1];
-#endif
-#ifndef NONMATCHING
 extern u32 gMovieBss_004BE000[];
-#else
-/* data twins (src/game/data/movie_bss.c): gMovieBss_004BE000 */
-static u32 gMovieBss_004BE000[0x1];
-#endif
-#ifndef NONMATCHING
 extern volatile u32 gMovieBss_004BE004[];
-#else
-/* data twins (src/game/data/movie_bss.c): gMovieBss_004BE004 */
-static volatile u32 gMovieBss_004BE004[0x1];
-#endif
-#ifndef NONMATCHING
 extern volatile u32 gMovieBss_004BE008[];
-#else
-/* data twins (src/game/data/movie_bss.c): gMovieBss_004BE008 */
-static volatile u32 gMovieBss_004BE008[0x2] __attribute__((aligned(4)));
-#endif
-#ifndef NONMATCHING
 extern s32 gMovieBss_004BE034[];
 #else
+/* data twins (src/game/data/movie_rodata.c): gStrCdrom0_00201950 */
+static char gStrCdrom0_00201950[0x7] = "cdrom0\000";
+/* data twins (src/game/data/movie_rodata.c): gMovieRodata_00201958 */
+static char gMovieRodata_00201958[0x8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
+/* data twins (src/game/data/movie_rodata.c): gStr1_00201960 */
+static char gStr1_00201960[0x8] = ";1\000\000\000\000\000\000";
+/* data twins (src/game/data/movie_rodata.c): gStrSS_00201968 */
+static char gStrSS_00201968[0x5] = "%s%s\000";
+/* data twins (src/game/data/movie_rodata.c): gMovieRodata_00201970 */
+static char gMovieRodata_00201970[0x8] = { 0x25, 0x73, 0x3a, 0x25, 0x73, 0, 0, 0 };
+/* data twins (src/game/data/movie_rodata.c): gStrHost0_00201978 */
+static char gStrHost0_00201978[0x6] = "host0\000";
+/* data twins (src/game/data/movie_bss.c): gMovieBss_004BE0D8 */
+static s16 gMovieBss_004BE0D8[0x4] __attribute__((aligned(4)));
+/* data twins (src/game/data/movie_bss.c): gMovieBss_004BDFC8 */
+static s32 gMovieBss_004BDFC8[0x2] __attribute__((aligned(4)));
+/* data twins (src/game/data/movie_bss.c): gMovieBss_004BDFD0 */
+static s64 gMovieBss_004BDFD0[0x1] __attribute__((aligned(4)));
+/* data twins (src/game/data/movie_bss.c): gMovieBss_004BE0D0 */
+static s32 gMovieBss_004BE0D0[0x1];
+/* data twins (src/game/data/movie_bss.c): gMovieBss_004BDF38 */
+static s32 gMovieBss_004BDF38[0x2] __attribute__((aligned(4)));
+/* data twins (src/game/data/movie_bss.c): gMovieBss_004BE078 */
+static s32 gMovieBss_004BE078[0x1];
+/* data twins (src/game/data/movie_bss.c): gMovieBss_004BE07C */
+static s32 gMovieBss_004BE07C[0x1];
+/* data twins (src/game/data/movie_rodata2.c): gStrCanTOpenFileS_00201A50 */
+static s32 gStrCanTOpenFileS_00201A50[0x8] = { 0x276e6143, 0x704f2074, 0x66206e65, 0x20656c69, 0xa7325, 0, 0, 0 };
+/* data twins (src/game/data/sdata.c): gMovieSdata_00201E70 */
+static s32 gMovieSdata_00201E70 = 1;
+/* data twins (src/game/data/movie_bss.c): gMovieBss_004BDFE8 */
+static s32 gMovieBss_004BDFE8[0x2] __attribute__((aligned(4)));
+/* data twins (src/game/data/movie_bss.c): gMovieBss_004BE010 */
+static s32 gMovieBss_004BE010[0x1];
+/* data twins (src/game/data/movie_bss.c): gMovieBss_004BE014 */
+static s32 gMovieBss_004BE014[0x1];
+/* data twins (src/game/data/movie_bss.c): gMovieBss_004BE018 */
+static s32 gMovieBss_004BE018[0x1];
+/* data twins (src/game/data/movie_bss.c): gMovieBss_004BE01C */
+static s32 gMovieBss_004BE01C[0x1];
+/* data twins (src/game/data/movie_bss.c): gMovieBss_004BE020 */
+static s32 gMovieBss_004BE020[0x1];
+/* data twins (src/game/data/movie_bss.c): gMovieBss_004BE024 */
+static s32 gMovieBss_004BE024[0x1];
+/* data twins (src/game/data/movie_bss.c): gMovieBss_004BE028 */
+static s32 gMovieBss_004BE028[0x1];
+/* data twins (src/game/data/movie_bss.c): gMovieBss_004BE030 */
+static s32 gMovieBss_004BE030[0x1];
+/* data twins (src/game/data/movie_bss.c): gMovieBss_004BDF34 */
+static s32 gMovieBss_004BDF34[0x1];
+/* data twins (src/game/data/movie_bss.c): gMovieBss_004BE000 */
+static u32 gMovieBss_004BE000[0x1];
+/* data twins (src/game/data/movie_bss.c): gMovieBss_004BE004 */
+static volatile u32 gMovieBss_004BE004[0x1];
+/* data twins (src/game/data/movie_bss.c): gMovieBss_004BE008 */
+static volatile u32 gMovieBss_004BE008[0x2] __attribute__((aligned(4)));
 /* data twins (src/game/data/movie_bss.c): gMovieBss_004BE034 */
 static s32 gMovieBss_004BE034[0x1];
 #endif
@@ -2009,94 +1925,34 @@ u8 *gMovieBss_004BE02C[0x1];
 u8 *gMovieBss_004BE038[0x2] __attribute__((aligned(4)));
 s32 gMovieBss_004BE040[0xe] __attribute__((aligned(4)));
 s16 gMovieBss_004BE0D4[0x2];
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/sdata.c): D_00201E74__grp: gMovieSdata_00201E74@0x0 */
 s32 D_00201E74__grp[0x1] __attribute__((aligned(4))) = { -0x48ff0000 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/sbss.c): D_002023EC__grp: gMovieSbss_002023EC@0x0 */
 unsigned char D_002023EC__grp[0x4] __attribute__((section(".sbss"))) __attribute__((aligned(4)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/sbss.c): D_002023F0__grp: gMovieSbss_002023F0@0x0 */
 unsigned char D_002023F0__grp[0x4] __attribute__((section(".sbss"))) __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/sbss.c): D_002023F4__grp: gMovieSbss_002023F4@0x0 */
 unsigned char D_002023F4__grp[0x4] __attribute__((section(".sbss"))) __attribute__((aligned(4)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/sbss.c): D_002023F8__grp: gMovieSbss_002023F8@0x0 */
 unsigned char D_002023F8__grp[0x4] __attribute__((section(".sbss"))) __attribute__((aligned(8)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/sbss.c): D_002023FC__grp: gMovieSbss_002023FC@0x0 */
 unsigned char D_002023FC__grp[0x4] __attribute__((section(".sbss"))) __attribute__((aligned(4)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/sbss.c): D_00202400__grp: gMovieSbss_00202400@0x0 */
 unsigned char D_00202400__grp[0x4] __attribute__((section(".sbss"))) __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/save_system_start_bss_004BCBC0.c): D_004BD310__grp: gMovieBss_004BD310@0x0 */
 unsigned char D_004BD310__grp[0x4] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/movie_bss.c): D_004BE080__grp: gMovieBss_004BE080@0x0 */
 unsigned char D_004BE080__grp[0x10] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/movie_bss.c): D_004BDFD8__grp: gMovieBss_004BDFD8@0x0 */
 unsigned char D_004BDFD8__grp[0x4] __attribute__((aligned(8)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/movie_bss.c): D_004BDFDC__grp: gMovieBss_004BDFDC@0x0 */
 unsigned char D_004BDFDC__grp[0x4] __attribute__((aligned(4)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/movie_bss.c): D_004BDFE0__grp: gMovieBss_004BDFE0@0x0 */
 unsigned char D_004BDFE0__grp[0x4] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/movie_bss.c): D_004BDFE4__grp: gMovieBss_004BDFE4@0x0 */
 unsigned char D_004BDFE4__grp[0x4] __attribute__((aligned(4)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/movie_bss.c): D_004BE090__grp: gMovieBss_004BE090@0x0 */
 unsigned char D_004BE090__grp[0x18] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/movie_bss.c): D_004BE0A8__grp: gMovieBss_004BE0A8@0x0 */
 unsigned char D_004BE0A8__grp[0x28] __attribute__((aligned(8)));
 #endif

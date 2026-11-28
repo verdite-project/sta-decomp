@@ -27,13 +27,10 @@ f32 D_001F1B90[4] = { 0.0627451f, 0.0627451f, 0.0627451f, 0.0f };
 V3 D_001F1BA0 = { (s32)gGameSaveRodata_001FAAE8, (s32)gGameSaveRodata_001FAAE8, (s32)gGameSaveRodata_001FAAE8 };
 #ifndef NONMATCHING
 extern s8 gGameSaveRodata_001FAAF8[];
+extern s8 gGameSaveRodata_001FAB00[];
 #else
 /* data twins (src/game/data/game_save_rodata.c): gGameSaveRodata_001FAAF8 */
 static s8 gGameSaveRodata_001FAAF8[0x5] = "PS2D\000";
-#endif
-#ifndef NONMATCHING
-extern s8 gGameSaveRodata_001FAB00[];
-#else
 /* data twins (src/game/data/game_save_rodata.c): gGameSaveRodata_001FAB00 */
 static s8 gGameSaveRodata_001FAB00[0x20] __attribute__((aligned(8))) = { -0x7d, 0x56, -0x7d, -0x7d, -0x7d, 0x68, -0x7d, 0x45, -0x7d, 0x5e, -0x7d, -0x71, -0x7f, 0x5b, -0x7d, 0x41, -0x7d, 0x72, -0x7d, 0x58, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 #endif

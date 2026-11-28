@@ -4,7 +4,7 @@
 /* used by: movie */
 #pragma explicit_zero_data on
 
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/movie.c */
+#ifndef NONMATCHING /* the NONMATCHING build defines these in their owners */
 const s32 gMovieRodata_00201920[0x8] = { 0x53656373, 0x72466669, 0x6f496565, 0x61654870, 0x72452070, 0x20726f72, 0x25207325, 0xa64 };
 const s32 gMovieRodata_00201940[0x4] = { 0x696c7366, 0x67706d62, 0x632e, 0 };
 const char gStrCdrom0_00201950[0x7] = "cdrom0\000";

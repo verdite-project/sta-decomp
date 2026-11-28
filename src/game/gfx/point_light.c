@@ -32,19 +32,13 @@ typedef struct {
 extern f32 gPointLightBss_0030C420[];
 #ifndef NONMATCHING
 extern f32 gPointLightBss_0030C424[];
+extern f32 gPointLightBss_0030C428[];
+extern f32 gPointLightBss_0030C42C[];
 #else
 /* data twins (src/game/data/screen_fx_bss_0030A0D0.c): gPointLightBss_0030C424 */
 static f32 gPointLightBss_0030C424[0x1];
-#endif
-#ifndef NONMATCHING
-extern f32 gPointLightBss_0030C428[];
-#else
 /* data twins (src/game/data/screen_fx_bss_0030A0D0.c): gPointLightBss_0030C428 */
 static f32 gPointLightBss_0030C428[0x1];
-#endif
-#ifndef NONMATCHING
-extern f32 gPointLightBss_0030C42C[];
-#else
 /* data twins (src/game/data/screen_fx_bss_0030A0D0.c): gPointLightBss_0030C42C */
 static f32 gPointLightBss_0030C42C[0x1];
 #endif
@@ -260,66 +254,25 @@ void PointLight_Init_0_0015C8D0(void) {
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data twins (src/game/data/screen_fx_bss_0030A0D0.c): gPointLightBss_0030C3E0, gPointLightBss_0030C420 */
 Vec gPointLightBss_0030C3E0;
 f32 gPointLightBss_0030C420[0x1];
-#endif
-
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/point_light_bss.c): D_0030C4C0__grp: gPointLightBss_0030C4C0@0x0 */
 u8 D_0030C4C0__grp[0xc20] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/point_light_bss.c): gPointLightBss_0030C48C__grp: gPointLightBss_0030C48C@0x0, gPointLightBss_0030C490@0x4 */
 unsigned char gPointLightBss_0030C48C__grp[0x14] __attribute__((aligned(4)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/point_light_bss.c): D_0030C440__grp: gPointLightBss_0030C440@0x0 */
 unsigned char D_0030C440__grp[0x30] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/point_light_bss.c): D_0030C470__grp: gPointLightBss_0030C470@0x0 */
 unsigned char D_0030C470__grp[0x1c] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/point_light_bss.c): D_0030C4A0__grp: gPointLightBss_0030C4A0@0x0 */
 unsigned char D_0030C4A0__grp[0x10] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/point_light_bss.c): D_0030C4B0__grp: gPointLightBss_0030C4B0@0x0 */
 unsigned char D_0030C4B0__grp[0x4] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/point_light_bss.c): D_0030C4B4__grp: gPointLightBss_0030C4B4@0x0 */
 unsigned char D_0030C4B4__grp[0x4] __attribute__((aligned(4)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/point_light_bss.c): D_0030C4B8__grp: gPointLightBss_0030C4B8@0x0 */
 unsigned char D_0030C4B8__grp[0x4] __attribute__((aligned(8)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/point_light_bss.c): D_0030C4BC__grp: gPointLightBss_0030C4BC@0x0 */
 unsigned char D_0030C4BC__grp[0x4] __attribute__((aligned(4)));
 #endif

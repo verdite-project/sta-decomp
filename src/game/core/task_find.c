@@ -48,7 +48,3 @@ INCLUDE_ASM(Task_Find_0_001E02C0);
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
 #endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-#endif

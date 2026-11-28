@@ -38,24 +38,18 @@ void TextParam_Init_1_00187A90(T *, s8 *, u64);
 s32 Text_Render_2_00188010(T *, Col);
 s64 fptodp(f32);
 void Ui_DrawWindow_0_00183650(s8 *);
-#ifndef NONMATCHING
-extern S gMenuProcDrawItemStatsData_001F2720 __attribute__((aligned(16)));
-#else
-/* data twins (src/game/data/ui_global_data_001F2630.c): gMenuProcDrawItemStatsData_001F2720 */
-static S gMenuProcDrawItemStatsData_001F2720 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
-#endif
 extern s8 gUiGaugeBss_0048CE40[];
 extern s8 gUiGaugeRodata_001FCA80[];
 extern s8 gUiGaugeRodata_001FCA88[];
 #ifndef NONMATCHING
+extern S gMenuProcDrawItemStatsData_001F2720 __attribute__((aligned(16)));
 extern s8 gMenuProcDrawItemStatsRodata_001FCA90[];
-#else
-/* data twins (src/game/data/ui_gauge_rodata.c): gMenuProcDrawItemStatsRodata_001FCA90 */
-static s8 gMenuProcDrawItemStatsRodata_001FCA90[0x5] = "/---\000";
-#endif
-#ifndef NONMATCHING
 extern s8 gStr3d_001FCA98[];
 #else
+/* data twins (src/game/data/ui_global_data_001F2630.c): gMenuProcDrawItemStatsData_001F2720 */
+static S gMenuProcDrawItemStatsData_001F2720 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+/* data twins (src/game/data/ui_gauge_rodata.c): gMenuProcDrawItemStatsRodata_001FCA90 */
+static s8 gMenuProcDrawItemStatsRodata_001FCA90[0x5] = "/---\000";
 /* data twins (src/game/data/ui_gauge_rodata.c): gStr3d_001FCA98 */
 static s8 gStr3d_001FCA98[0x5] = "/%3d\000";
 #endif

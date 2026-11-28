@@ -4,13 +4,9 @@
 /* used by: databook, ending_play */
 #pragma explicit_zero_data on
 
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/ending_play.c */
+#ifndef NONMATCHING /* the NONMATCHING build defines these in their owners */
 const char gStrCdrom0TargetEndingPss1_001FD230[0x20] = "cdrom0:\\TARGET\\ENDING.PSS;1\000\000\000\000\000";
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/ending_play.c */
 const s8 gEndingPlayRodata_001FD250[0x18] = "\\TARGET\\STA_SR.ADX\000\000\000\000\000\000";
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/databook.c */
 const s32 gDatabookRodata_001FD268[0x2] = { 0, 0 };
 const u8 gDatabookRodata_001FD270[0x8] = "MAP\000\000\000\000\000";
 #endif

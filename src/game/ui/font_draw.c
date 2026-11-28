@@ -9,19 +9,13 @@ typedef struct { u8 b[0x60]; } Buf;
 typedef union { u128 q[4]; u32 w[16]; } D40;
 #ifndef NONMATCHING
 extern s32 gFontDrawSbss_00202060;
+extern s32 gFontDrawSbss_00202064;
+extern Ent *gFontDrawSbss_00202068;
 #else
 /* data twins (src/game/data/sbss.c): gFontDrawSbss_00202060 */
 static s32 gFontDrawSbss_00202060;
-#endif
-#ifndef NONMATCHING
-extern s32 gFontDrawSbss_00202064;
-#else
 /* data twins (src/game/data/sbss.c): gFontDrawSbss_00202064 */
 static s32 gFontDrawSbss_00202064;
-#endif
-#ifndef NONMATCHING
-extern Ent *gFontDrawSbss_00202068;
-#else
 /* data twins (src/game/data/sbss.c): gFontDrawSbss_00202068 */
 static Ent *gFontDrawSbss_00202068;
 #endif

@@ -8,13 +8,10 @@ typedef struct { u8 pad0[0x40]; f32 x40; f32 x44; } Info;
 typedef struct { s32 x0; s32 x4; u8 p8[2]; u8 xA; u8 pB[3]; u8 xE; } O;
 #ifndef NONMATCHING
 extern s32 gOptionLerpSbss_00202134;
+extern s32 gOptionLerpSbss_00202138;
 #else
 /* data twins (src/game/data/sbss.c): gOptionLerpSbss_00202134 */
 static s32 gOptionLerpSbss_00202134;
-#endif
-#ifndef NONMATCHING
-extern s32 gOptionLerpSbss_00202138;
-#else
 /* data twins (src/game/data/sbss.c): gOptionLerpSbss_00202138 */
 static s32 gOptionLerpSbss_00202138;
 #endif

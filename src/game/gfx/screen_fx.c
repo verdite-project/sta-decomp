@@ -48,18 +48,6 @@ extern u64 gScreenFxUpdateSbss_00201F78;
 extern f32 gSoundEmitterBss_002F16C0[];
 extern f32 gGameMainBss_002F1840[];
 extern f32 gScreenFxBss_002F19E0[];
-#ifndef NONMATCHING
-extern f32 gScreenFxBss_002F2080[];
-#else
-/* data twins (src/game/data/screen_fx_bss.c): gScreenFxBss_002F2080 */
-static f32 gScreenFxBss_002F2080[0xf];
-#endif
-#ifndef NONMATCHING
-extern f32 gScreenFxBss_002F20BC[];
-#else
-/* data twins (src/game/data/screen_fx_bss.c): gScreenFxBss_002F20BC */
-static f32 gScreenFxBss_002F20BC[0x1];
-#endif
 extern struct { unsigned char : 7; unsigned char f : 1; char pad[15]; } gScreenFxBss_002F2078;
 extern s16 gScreenFxBss_002F1A64[];
 extern s16 D_002F1A66[];
@@ -85,14 +73,17 @@ extern s32 gScreenFxBss_002F1AC0[];
 extern s32 gScreenFxBss_002F1AD0[];
 extern s16 gScreenFxBss_002F1A48[];
 #ifndef NONMATCHING
+extern f32 gScreenFxBss_002F2080[];
+extern f32 gScreenFxBss_002F20BC[];
 extern s32 gScreenFxBss_002F1A80[];
-#else
-/* data twins (src/game/data/screen_fx_bss.c): gScreenFxBss_002F1A80 */
-static s32 gScreenFxBss_002F1A80[0x7];
-#endif
-#ifndef NONMATCHING
 extern s32 gScreenFxBss_002F1A60[];
 #else
+/* data twins (src/game/data/screen_fx_bss.c): gScreenFxBss_002F2080 */
+static f32 gScreenFxBss_002F2080[0xf];
+/* data twins (src/game/data/screen_fx_bss.c): gScreenFxBss_002F20BC */
+static f32 gScreenFxBss_002F20BC[0x1];
+/* data twins (src/game/data/screen_fx_bss.c): gScreenFxBss_002F1A80 */
+static s32 gScreenFxBss_002F1A80[0x7];
 /* data twins (src/game/data/screen_fx_bss.c): gScreenFxBss_002F1A60 */
 static s32 gScreenFxBss_002F1A60[0x1] __attribute__((aligned(16)));
 #endif
@@ -860,24 +851,10 @@ s32 gScreenFxBss_002F1AC0[0x4];
 s32 gScreenFxBss_002F1AD0[0x4];
 s32 gScreenFxBss_002F1AE0[0x1];
 f32 gScreenFxBss_002F2070[0x2];
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/gs_packet_bss_002F1990.c): gWeatherState_002F19B0__grp: gWeatherState_002F19B0@0x0, gScreenFxBss_002F19C0@0x10, gScreenFxBss_002F19C4@0x14, gScreenFxBss_002F19C8@0x18, gScreenFxBss_002F19D4@0x24, gScreenFxBss_002F19D8@0x28, gScreenFxBss_002F19DC@0x2c, gScreenFxBss_002F19E0@0x30, gScreenFxBss_002F1A48@0x98 */
 u8 gWeatherState_002F19B0__grp[0xa0] __attribute__((aligned(16)));
-#endif
-
-
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/screen_fx_bss.c): D_002F2078__grp: gScreenFxBss_002F2078@0x0 */
 u8 D_002F2078__grp[0x8] __attribute__((aligned(8)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/screen_fx_bss.c): D_002F1A9C__grp: gScreenFxBss_002F1A9C@0x0 */
 unsigned char D_002F1A9C__grp[0x4] __attribute__((aligned(4)));
 #endif

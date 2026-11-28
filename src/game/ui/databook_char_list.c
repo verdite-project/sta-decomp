@@ -5,16 +5,13 @@
 #include "game/math.h"
 #include "game/save.h"
 typedef union { u32 w; u8 b[4]; } Col;
+extern s32 *gDatabookItemDrawSdata_00201D3C;
 #ifndef NONMATCHING
 extern char gDatabookCharListRodata_001FD358[];
+extern f32 gDatabookCharListSdata_00201D40;
 #else
 /* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookCharListRodata_001FD358 */
 static char gDatabookCharListRodata_001FD358[0x10] __attribute__((aligned(8))) = { -0x7f, 0x48, -0x7f, 0x48, -0x7f, 0x48, -0x7f, 0x48, 0, 0, 0, 0, 0, 0, 0, 0 };
-#endif
-extern s32 *gDatabookItemDrawSdata_00201D3C;
-#ifndef NONMATCHING
-extern f32 gDatabookCharListSdata_00201D40;
-#else
 /* data twins (src/game/data/sdata.c): gDatabookCharListSdata_00201D40 */
 static f32 gDatabookCharListSdata_00201D40 = -2.99f;
 #endif

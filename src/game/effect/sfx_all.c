@@ -113,18 +113,6 @@ typedef struct Node_Sfx_SpawnFromStam_2_00169BD0 { s32 id; s32 size; u32 lo:8; u
 typedef ResNode Node_Sfx_LoadStam_1_00169D70;
 typedef struct { u8 pad[0x22]; s16 x22; } Obj_Sfx_LoadStam_1_00169D70;
 typedef struct { Obj_Sfx_LoadStam_1_00169D70 *obj; } Blk;
-#ifndef NONMATCHING
-extern u8 gSfxAllSbss_00201FE0;
-#else
-/* data twins (src/game/data/sbss.c): gSfxAllSbss_00201FE0 */
-static u8 gSfxAllSbss_00201FE0;
-#endif
-#ifndef NONMATCHING
-extern s32 gSfxAllSbss_00201FE4;
-#else
-/* data twins (src/game/data/sbss.c): gSfxAllSbss_00201FE4 */
-static s32 gSfxAllSbss_00201FE4;
-#endif
 extern B_Sfx_DrawAll_1_00168A40 *gSfxSystemSbss_00201FC0;
 extern L *gSfxSystemSbss_00201FD4;
 extern BF D_00222A50[];
@@ -133,25 +121,25 @@ extern E_Sfx_UpdateInstance_0_00168D70 *gSfxAllSbss_00201FD0;
 extern u8 gSfxAllBss_0042D7E0[];
 extern s8 gMatrixFromData_001F2160[];
 extern s8 gMatrixFromData_001F2170[];
-#ifndef NONMATCHING
-extern s32 gSfxAllSdata_00201C98;
-#else
-/* data twins (src/game/data/sdata.c): gSfxAllSdata_00201C98 */
-static s32 gSfxAllSdata_00201C98 = 1;
-#endif
 extern S_Sfx_UpdateTransforms_1_00169030 **gPlayerSbss_002022BC;
-#ifndef NONMATCHING
-extern s32 gSfxAllSbss_00201FB0;
-#else
-/* data twins (src/game/data/sbss.c): gSfxAllSbss_00201FB0 */
-static s32 gSfxAllSbss_00201FB0;
-#endif
 extern s32 gSfxSystemBss_0042D850[];
 extern s32 *gSfxSystemSbss_00201FE8;
 extern s32 gSfxSystemBss_003406E0[];
 #ifndef NONMATCHING
+extern u8 gSfxAllSbss_00201FE0;
+extern s32 gSfxAllSbss_00201FE4;
+extern s32 gSfxAllSdata_00201C98;
+extern s32 gSfxAllSbss_00201FB0;
 extern s8 gSfxAllRodata_001FB8D0[];
 #else
+/* data twins (src/game/data/sbss.c): gSfxAllSbss_00201FE0 */
+static u8 gSfxAllSbss_00201FE0;
+/* data twins (src/game/data/sbss.c): gSfxAllSbss_00201FE4 */
+static s32 gSfxAllSbss_00201FE4;
+/* data twins (src/game/data/sdata.c): gSfxAllSdata_00201C98 */
+static s32 gSfxAllSdata_00201C98 = 1;
+/* data twins (src/game/data/sbss.c): gSfxAllSbss_00201FB0 */
+static s32 gSfxAllSbss_00201FB0;
 /* data twins (src/game/data/sfx_all_rodata.c): gSfxAllRodata_001FB8D0 */
 static s8 gSfxAllRodata_001FB8D0[0x20] __attribute__((aligned(8))) = "SFX(%d) not found from STAM\000\000\000\000\000";
 #endif
@@ -631,10 +619,6 @@ E_Sfx_UpdateInstance_0_00168D70 *gSfxAllSbss_00201FD0;
 s32 gSfxAllBss_0033F6D0[0x400];
 /* data twins (src/game/data/texture_bss.c): gSfxAllBss_0042D7E0 */
 u8 gSfxAllBss_0042D7E0[0x70];
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/sfx_all_rodata.c): gSfxAllRodata_001FB8F0__grp: gSfxAllRodata_001FB8F0@0x0, gSfxAllRodata_001FB8F1@0x1, gSfxAllRodata_001FB8F2@0x2, gSfxAllRodata_001FB8F3@0x3 */
 int gSfxAllRodata_001FB8F0__grp[0x2] __attribute__((aligned(16))) = { 0x4d415453, 0 };
 #endif

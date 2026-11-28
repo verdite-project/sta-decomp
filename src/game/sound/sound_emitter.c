@@ -115,12 +115,6 @@ extern s32 gSoundBankLoadBss_0022F040[];
 E_SndEmit_StopAllA_1_0012F640 D_0026F0D0[0x40];
 f32 D_0026F090[0x10];
 extern s8 gSoundEmitterSdata_00201C38;
-#ifndef NONMATCHING
-extern s32 gSoundEmitterSbss_00201ED8;
-#else
-/* data twins (src/game/data/sbss.c): gSoundEmitterSbss_00201ED8 */
-static s32 gSoundEmitterSbss_00201ED8;
-#endif
 extern f32 gSoundEmitterBss_002F16C0[];
 extern f32 gMatrixFromData_001F2160[4];
 extern u8 gSoundEmitterSdata_00201C38__as_SndEmit_Update_1_0012F6F0;
@@ -130,26 +124,8 @@ extern E_SndEmit_StopAllB_1_0012F880 D_0026F0D0__as_SndEmit_StopAllB_1_0012F880[
 extern E_SndEmit_KillAll_1_0012F920 D_0026F0D0__as_SndEmit_KillAll_1_0012F920[64];
 extern Obj D_0026F0D0__as_SndEmit_SpawnFromMap_0_0012F9D0[];
 extern E_SndEmit_Init_1_0012FB80 D_0026F0D0__as_SndEmit_Init_1_0012FB80[64];
-#ifndef NONMATCHING
-extern s16 gSoundEmitterSbss_00201EE4;
-#else
-/* data twins (src/game/data/sbss.c): gSoundEmitterSbss_00201EE4 */
-static s16 gSoundEmitterSbss_00201EE4;
-#endif
 extern St_Strm_SetVolume_2_001303D0 gSoundEmitterSbss_00201EE0;
 extern s16 D_00201EE2;
-#ifndef NONMATCHING
-extern u8 gSoundEmitterRodata_001FABB8[];
-#else
-/* data twins (src/game/data/sound_emitter_rodata.c): gSoundEmitterRodata_001FABB8 */
-static u8 gSoundEmitterRodata_001FABB8[0x5] = "%s;1\000";
-#endif
-#ifndef NONMATCHING
-extern u8 gSoundEmitterRodata_001FABC0[];
-#else
-/* data twins (src/game/data/sound_emitter_rodata.c): gSoundEmitterRodata_001FABC0 */
-static u8 gSoundEmitterRodata_001FABC0[0x10] __attribute__((aligned(8))) = "%s\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
-#endif
 extern struct { unsigned char : 1; unsigned char f : 1; } gSoundEmitterSbss_00201EE0__as_Strm_Stop_2_00130440;
 extern St_Strm_Update_1_001304C0 gSoundEmitterSbss_00201EE0__as_Strm_Update_1_001304C0;
 extern St_Strm_PlayFile_2_00130590 gSoundEmitterSbss_00201EE0__as_Strm_PlayFile_2_00130590;
@@ -169,8 +145,20 @@ extern E_SndCh_StopNow_1_001314A0 gSoundBankLoadBss_0022CBC0__as_SndCh_StopNow_1
 extern E_SndCh_Stop_2_00131440 gSoundBankLoadBss_0022CBC0__as_SndCh_Stop_2_00131440[];
 extern void *gSoundEmitterSbss_00201ED0;
 #ifndef NONMATCHING
+extern s32 gSoundEmitterSbss_00201ED8;
+extern s16 gSoundEmitterSbss_00201EE4;
+extern u8 gSoundEmitterRodata_001FABB8[];
+extern u8 gSoundEmitterRodata_001FABC0[];
 extern s32 gSoundEmitterSbss_00201EE8;
 #else
+/* data twins (src/game/data/sbss.c): gSoundEmitterSbss_00201ED8 */
+static s32 gSoundEmitterSbss_00201ED8;
+/* data twins (src/game/data/sbss.c): gSoundEmitterSbss_00201EE4 */
+static s16 gSoundEmitterSbss_00201EE4;
+/* data twins (src/game/data/sound_emitter_rodata.c): gSoundEmitterRodata_001FABB8 */
+static u8 gSoundEmitterRodata_001FABB8[0x5] = "%s;1\000";
+/* data twins (src/game/data/sound_emitter_rodata.c): gSoundEmitterRodata_001FABC0 */
+static u8 gSoundEmitterRodata_001FABC0[0x10] __attribute__((aligned(8))) = "%s\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
 /* data twins (src/game/data/sbss.c): gSoundEmitterSbss_00201EE8 */
 static s32 gSoundEmitterSbss_00201EE8;
 #endif
@@ -1215,18 +1203,8 @@ s32 Snd_StartRequest_2_00131640(void) {
 s8 gSoundEmitterSdata_00201C38 = 1;
 /* data twins (src/game/data/sbss.c): gSoundEmitterSbss_00201ED0 */
 void *gSoundEmitterSbss_00201ED0;
-#endif
-
-
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/sbss.c): D_00201EE0__grp: gSoundEmitterSbss_00201EE0@0x0 */
 u8 D_00201EE0__grp[0x4] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/gs_packet_bss.c): gSoundEmitterBss_002F16C0__grp: gSoundEmitterBss_002F16C0@0x0, gSoundEmitterBss_002F16C4@0x4, gSoundEmitterBss_002F16C8@0x8, gSoundEmitterBss_002F16D0@0x10, gSoundEmitterBss_002F16D4@0x14, gSoundEmitterBss_002F16D8@0x18, gSoundEmitterBss_002F16E0@0x20, gSoundEmitterBss_002F16E4@0x24 */
 unsigned char gSoundEmitterBss_002F16C0__grp[0x40] __attribute__((aligned(16)));
 #endif

@@ -3,31 +3,19 @@
 #include "game/math.h"
 #ifndef NONMATCHING
 extern s32 gNoiseFbmSdata_00201C94;
+extern f32 gNoiseFbmSdata_00201C8C;
+extern f32 gNoiseFbmSdata_00201C90;
+extern f32 gNoiseFbmBss_003141F0[][2];
+extern f32 gNoiseFbmBss_00315200[][3];
 #else
 /* data twins (src/game/data/sdata.c): gNoiseFbmSdata_00201C94 */
 static s32 gNoiseFbmSdata_00201C94 = 1;
-#endif
-#ifndef NONMATCHING
-extern f32 gNoiseFbmSdata_00201C8C;
-#else
 /* data twins (src/game/data/sdata.c): gNoiseFbmSdata_00201C8C */
 static f32 gNoiseFbmSdata_00201C8C = -1000.0f;
-#endif
-#ifndef NONMATCHING
-extern f32 gNoiseFbmSdata_00201C90;
-#else
 /* data twins (src/game/data/sdata.c): gNoiseFbmSdata_00201C90 */
 static f32 gNoiseFbmSdata_00201C90 = 1.0f;
-#endif
-#ifndef NONMATCHING
-extern f32 gNoiseFbmBss_003141F0[][2];
-#else
 /* data twins (src/game/data/vibration_bss.c): gNoiseFbmBss_003141F0 */
 static f32 gNoiseFbmBss_003141F0[0x1010 / sizeof(f32[2])][2];
-#endif
-#ifndef NONMATCHING
-extern f32 gNoiseFbmBss_00315200[][3];
-#else
 /* data twins (src/game/data/vibration_bss.c): gNoiseFbmBss_00315200 */
 static f32 gNoiseFbmBss_00315200[0x1820 / sizeof(f32[3])][3];
 #endif

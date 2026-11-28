@@ -17,54 +17,33 @@ typedef struct { u64 a:6; u64 b:2; } BF;
 extern u8 gEquipDrawBss_00495B60[];
 extern u8 gEquipDrawBss_00496B60[];
 #endif
-#ifndef NONMATCHING
-extern f32 gShopDrawSdata_00201D8C;
-#else
-/* data twins (src/game/data/sdata.c): gShopDrawSdata_00201D8C */
-static f32 gShopDrawSdata_00201D8C = -2.99f;
-#endif
 extern Flags8 gShopDrawBss_004A4340[];
 extern s32 gShopDrawBss_004A4330[];
 extern s32 D_004A4334[];
 #ifndef NONMATCHING
+extern f32 gShopDrawSdata_00201D8C;
 extern s32 *gShopDrawSdata_00201D7C;
-#else
-/* data twins (src/game/data/sdata.c): gShopDrawSdata_00201D7C */
-static s32 *gShopDrawSdata_00201D7C = (s32 *)gEquipDrawBss_00495B60;
-#endif
-#ifndef NONMATCHING
 extern s32 gShopDrawSbss_00202224;
-#else
-/* data twins (src/game/data/sbss.c): gShopDrawSbss_00202224 */
-static s32 gShopDrawSbss_00202224;
-#endif
-#ifndef NONMATCHING
 extern s32 gShopDrawSbss_00202238;
-#else
-/* data twins (src/game/data/sbss.c): gShopDrawSbss_00202238 */
-static s32 gShopDrawSbss_00202238;
-#endif
-#ifndef NONMATCHING
 extern f32 gShopDrawSdata_00201D84;
-#else
-/* data twins (src/game/data/sdata.c): gShopDrawSdata_00201D84 */
-static f32 gShopDrawSdata_00201D84 = -2.99f;
-#endif
-#ifndef NONMATCHING
 extern f32 gShopDrawSdata_00201D88;
-#else
-/* data twins (src/game/data/sdata.c): gShopDrawSdata_00201D88 */
-static f32 gShopDrawSdata_00201D88 = -2.99f;
-#endif
-#ifndef NONMATCHING
 extern f32 gShopDrawSbss_00202228;
-#else
-/* data twins (src/game/data/sbss.c): gShopDrawSbss_00202228 */
-static f32 gShopDrawSbss_00202228;
-#endif
-#ifndef NONMATCHING
 extern f32 gShopDrawSbss_0020222C;
 #else
+/* data twins (src/game/data/sdata.c): gShopDrawSdata_00201D8C */
+static f32 gShopDrawSdata_00201D8C = -2.99f;
+/* data twins (src/game/data/sdata.c): gShopDrawSdata_00201D7C */
+static s32 *gShopDrawSdata_00201D7C = (s32 *)gEquipDrawBss_00495B60;
+/* data twins (src/game/data/sbss.c): gShopDrawSbss_00202224 */
+static s32 gShopDrawSbss_00202224;
+/* data twins (src/game/data/sbss.c): gShopDrawSbss_00202238 */
+static s32 gShopDrawSbss_00202238;
+/* data twins (src/game/data/sdata.c): gShopDrawSdata_00201D84 */
+static f32 gShopDrawSdata_00201D84 = -2.99f;
+/* data twins (src/game/data/sdata.c): gShopDrawSdata_00201D88 */
+static f32 gShopDrawSdata_00201D88 = -2.99f;
+/* data twins (src/game/data/sbss.c): gShopDrawSbss_00202228 */
+static f32 gShopDrawSbss_00202228;
 /* data twins (src/game/data/sbss.c): gShopDrawSbss_0020222C */
 static f32 gShopDrawSbss_0020222C;
 #endif
@@ -72,41 +51,26 @@ extern f32 gShopBss_004A3328[];
 extern u8 gPauseMenuOpenData_001F3220[];
 #pragma explicit_zero_data on
 Q2 gPauseMenuOpenData_001F3260 = { .w = { 0, 5, 0, (u32)gPauseMenuOpenData_001F3220, 7, 0xc0400000, 0, 0 } };
-#ifndef NONMATCHING
-extern s32 gShopDrawSbss_00202220;
-#else
-/* data twins (src/game/data/sbss.c): gShopDrawSbss_00202220 */
-static s32 gShopDrawSbss_00202220;
-#endif
-#ifndef NONMATCHING
-extern s32 gShopDrawSbss_00202230;
-#else
-/* data twins (src/game/data/sbss.c): gShopDrawSbss_00202230 */
-static s32 gShopDrawSbss_00202230;
-#endif
-#ifndef NONMATCHING
-extern s32 gShopDrawSbss_00202234;
-#else
-/* data twins (src/game/data/sbss.c): gShopDrawSbss_00202234 */
-static s32 gShopDrawSbss_00202234;
-#endif
 extern s16 gShopBss_004A3310[];
 extern Flags8 gShopBss_004A332C[];
 #ifndef NONMATCHING
+extern s32 gShopDrawSbss_00202220;
+extern s32 gShopDrawSbss_00202230;
+extern s32 gShopDrawSbss_00202234;
 extern s32 gShopDrawBss_004A3330[];
-#else
-/* data twins (src/game/data/shop_bss_004A3310.c): gShopDrawBss_004A3330 */
-static s32 gShopDrawBss_004A3330[0x400];
-#endif
-#ifndef NONMATCHING
 extern f32 gShopDrawBss_004A433C[];
-#else
-/* data twins (src/game/data/shop_bss_004A3310.c): gShopDrawBss_004A433C */
-static f32 gShopDrawBss_004A433C[0x1];
-#endif
-#ifndef NONMATCHING
 extern f32 *gShopDrawSdata_00201D80;
 #else
+/* data twins (src/game/data/sbss.c): gShopDrawSbss_00202220 */
+static s32 gShopDrawSbss_00202220;
+/* data twins (src/game/data/sbss.c): gShopDrawSbss_00202230 */
+static s32 gShopDrawSbss_00202230;
+/* data twins (src/game/data/sbss.c): gShopDrawSbss_00202234 */
+static s32 gShopDrawSbss_00202234;
+/* data twins (src/game/data/shop_bss_004A3310.c): gShopDrawBss_004A3330 */
+static s32 gShopDrawBss_004A3330[0x400];
+/* data twins (src/game/data/shop_bss_004A3310.c): gShopDrawBss_004A433C */
+static f32 gShopDrawBss_004A433C[0x1];
 /* data twins (src/game/data/sdata.c): gShopDrawSdata_00201D80 */
 static f32 *gShopDrawSdata_00201D80 = (f32 *)gEquipDrawBss_00496B60;
 #endif
@@ -697,10 +661,6 @@ extern u8 gEquipDrawBss_00496B60[];
 s32 gShopDrawBss_004A3320[0x1];
 s32 gShopDrawBss_004A4330[0x3];
 Flags8 gShopDrawBss_004A4340[0x10 / sizeof(Flags8)];
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/pause_menu_open_data_001F3200.c): gPauseMenuOpenData_001F3220__grp: gPauseMenuOpenData_001F3220@0x0 */
 int gPauseMenuOpenData_001F3220__grp[0x10] __attribute__((aligned(16))) = { -0x3fc00000, 0xfa6, -0x40000000, 0xfa5, -0x40800000, 0xfa4, 0, 0xfa3, 0x3f800000, 0xfa2, 0x40000000, 0xfa1, 0x40400000, 0xfa0, 0, 0 };
 #endif

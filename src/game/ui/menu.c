@@ -24,18 +24,6 @@ typedef struct { u8 b[4]; } Buf;
 typedef struct { u8 b0:1; u8 b1:1; u8 b2:1; u8 b3:1; u8 b4:1; } B_Menu_Draw_1_00189F40;
 typedef struct { u8 b0:1; u8 b1:1; u8 b2:1; } B_Pause_Update_0_0018A650;
 typedef struct { u8 pad[0x14]; B_Pause_Update_0_0018A650 x14; } Arg;
-#ifndef NONMATCHING
-extern volatile u32 gMenuBss_004A0B0C[];
-#else
-/* data twins (src/game/data/option_bss.c): gMenuBss_004A0B0C */
-static volatile u32 gMenuBss_004A0B0C[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gMenuSbss_002020E8;
-#else
-/* data twins (src/game/data/sbss.c): gMenuSbss_002020E8 */
-static s32 gMenuSbss_002020E8;
-#endif
 extern s32 gMenuSbss_002020DC;
 extern u32 D_004A01D8[];
 extern s32 D_004A01DC[];
@@ -51,68 +39,8 @@ extern u32 D_004A0428[];
 extern s32 D_004A042C[];
 extern u32 D_004A0678[];
 extern s32 D_004A067C[];
-#ifndef NONMATCHING
-extern s32 gMenuSbss_002020E0;
-#else
-/* data twins (src/game/data/sbss.c): gMenuSbss_002020E0 */
-static s32 gMenuSbss_002020E0;
-#endif
-#ifndef NONMATCHING
-extern s32 gMenuBss_00497B60[];
-#else
-/* data twins (src/game/data/ui_gauge_bss.c): gMenuBss_00497B60 */
-static s32 gMenuBss_00497B60[0x8];
-#endif
-#ifndef NONMATCHING
-extern f32 gMenuBss_004A0B10[];
-#else
-/* data twins (src/game/data/option_bss.c): gMenuBss_004A0B10 */
-static f32 gMenuBss_004A0B10[0x1];
-#endif
-#ifndef NONMATCHING
-extern f32 gMenuBss_004A0B14[];
-#else
-/* data twins (src/game/data/option_bss.c): gMenuBss_004A0B14 */
-static f32 gMenuBss_004A0B14[0x1];
-#endif
-#ifndef NONMATCHING
-extern f32 gMenuBss_004A0B18[];
-#else
-/* data twins (src/game/data/option_bss.c): gMenuBss_004A0B18 */
-static f32 gMenuBss_004A0B18[0x1];
-#endif
-#ifndef NONMATCHING
-extern f32 gMenuBss_004A0B1C[];
-#else
-/* data twins (src/game/data/option_bss.c): gMenuBss_004A0B1C */
-static f32 gMenuBss_004A0B1C[0x1];
-#endif
 extern M2C_UNK gMenuData_001F27B0[];
 extern M2C_UNK gMenuData_001F27C0[];
-#ifndef NONMATCHING
-extern s32 gMenuSdata_00201CF0;
-#else
-/* data twins (src/game/data/sdata.c): gMenuSdata_00201CF0 */
-static s32 gMenuSdata_00201CF0 = -1;
-#endif
-#ifndef NONMATCHING
-extern f32 gMenuSbss_0020210C;
-#else
-/* data twins (src/game/data/sbss.c): gMenuSbss_0020210C */
-static f32 gMenuSbss_0020210C;
-#endif
-#ifndef NONMATCHING
-extern f32 gMenuSbss_00202110;
-#else
-/* data twins (src/game/data/sbss.c): gMenuSbss_00202110 */
-static f32 gMenuSbss_00202110;
-#endif
-#ifndef NONMATCHING
-extern f32 gMenuSbss_00202114;
-#else
-/* data twins (src/game/data/sbss.c): gMenuSbss_00202114 */
-static f32 gMenuSbss_00202114;
-#endif
 extern B_Menu_Draw_1_00189F40 D_004A0B34[];
 extern u8 D_004A0B2A[];
 extern s8 gMenuBss_004A0B2C[];
@@ -121,82 +49,85 @@ extern s32 D_004A0AEC[];
 extern s8 gMenuBss_004A0B20[];
 extern void (*gMenuData_001F2930[])(void *);
 extern void (*gMenuData_001F2880[])(void *);
-#ifndef NONMATCHING
-extern s32 gMenuBss_004A0B24[];
-#else
-/* data twins (src/game/data/option_bss.c): gMenuBss_004A0B24 */
-static s32 gMenuBss_004A0B24[0x1];
-#endif
 extern u8 D_004A0B2B[];
 extern void (*gMenuData_001F27D0[])(void *);
-#ifndef NONMATCHING
-extern s32 gMenuSbss_002020F0;
-#else
-/* data twins (src/game/data/sbss.c): gMenuSbss_002020F0 */
-static s32 gMenuSbss_002020F0;
-#endif
 extern u8 gMenuBss_004A0B28[];
 extern s8 D_004A0B2F[];
 extern s8 D_004A0B29[];
 extern s8 D_004A0B2E[];
 extern s32 gMenuBss_004A0B30[];
 #ifndef NONMATCHING
+extern volatile u32 gMenuBss_004A0B0C[];
+extern s32 gMenuSbss_002020E8;
+extern s32 gMenuSbss_002020E0;
+extern s32 gMenuBss_00497B60[];
+extern f32 gMenuBss_004A0B10[];
+extern f32 gMenuBss_004A0B14[];
+extern f32 gMenuBss_004A0B18[];
+extern f32 gMenuBss_004A0B1C[];
+extern s32 gMenuSdata_00201CF0;
+extern f32 gMenuSbss_0020210C;
+extern f32 gMenuSbss_00202110;
+extern f32 gMenuSbss_00202114;
+extern s32 gMenuBss_004A0B24[];
+extern s32 gMenuSbss_002020F0;
 extern s32 gMenuSdata_00201CF4;
-#else
-/* data twins (src/game/data/sdata.c): gMenuSdata_00201CF4 */
-static s32 gMenuSdata_00201CF4 = -1;
-#endif
-#ifndef NONMATCHING
 extern f32 gMenuSbss_002020D8;
-#else
-/* data twins (src/game/data/sbss.c): gMenuSbss_002020D8 */
-static f32 gMenuSbss_002020D8;
-#endif
-#ifndef NONMATCHING
 extern f32 gMenuSbss_00202108;
-#else
-/* data twins (src/game/data/sbss.c): gMenuSbss_00202108 */
-static f32 gMenuSbss_00202108;
-#endif
-#ifndef NONMATCHING
 extern f32 gMenuData_001F29E0[];
-#else
-/* data twins (src/game/data/menu_draw_wrap_data.c): gMenuData_001F29E0 */
-static f32 gMenuData_001F29E0[0x1] = { -2.89f };
-#endif
-#ifndef NONMATCHING
 extern f32 gMenuData_001F29E4[];
-#else
-/* data twins (src/game/data/menu_draw_wrap_data.c): gMenuData_001F29E4 */
-static f32 gMenuData_001F29E4[0x1] = { -2.89f };
-#endif
-#ifndef NONMATCHING
 extern f32 gMenuData_001F29E8[];
-#else
-/* data twins (src/game/data/menu_draw_wrap_data.c): gMenuData_001F29E8 */
-static f32 gMenuData_001F29E8[0x1] = { -2.89f };
-#endif
-#ifndef NONMATCHING
 extern f32 gMenuData_001F29EC[];
-#else
-/* data twins (src/game/data/menu_draw_wrap_data.c): gMenuData_001F29EC */
-static f32 gMenuData_001F29EC[0x1] = { -2.89f };
-#endif
-#ifndef NONMATCHING
 extern f32 gMenuSbss_00202104;
-#else
-/* data twins (src/game/data/sbss.c): gMenuSbss_00202104 */
-static f32 gMenuSbss_00202104;
-#endif
-#ifndef NONMATCHING
 extern s64 gMenuSbss_002020F8;
-#else
-/* data twins (src/game/data/sbss.c): gMenuSbss_002020F8 */
-static s64 gMenuSbss_002020F8;
-#endif
-#ifndef NONMATCHING
 extern s32 gMenuSbss_00202100;
 #else
+/* data twins (src/game/data/option_bss.c): gMenuBss_004A0B0C */
+static volatile u32 gMenuBss_004A0B0C[0x1];
+/* data twins (src/game/data/sbss.c): gMenuSbss_002020E8 */
+static s32 gMenuSbss_002020E8;
+/* data twins (src/game/data/sbss.c): gMenuSbss_002020E0 */
+static s32 gMenuSbss_002020E0;
+/* data twins (src/game/data/ui_gauge_bss.c): gMenuBss_00497B60 */
+static s32 gMenuBss_00497B60[0x8];
+/* data twins (src/game/data/option_bss.c): gMenuBss_004A0B10 */
+static f32 gMenuBss_004A0B10[0x1];
+/* data twins (src/game/data/option_bss.c): gMenuBss_004A0B14 */
+static f32 gMenuBss_004A0B14[0x1];
+/* data twins (src/game/data/option_bss.c): gMenuBss_004A0B18 */
+static f32 gMenuBss_004A0B18[0x1];
+/* data twins (src/game/data/option_bss.c): gMenuBss_004A0B1C */
+static f32 gMenuBss_004A0B1C[0x1];
+/* data twins (src/game/data/sdata.c): gMenuSdata_00201CF0 */
+static s32 gMenuSdata_00201CF0 = -1;
+/* data twins (src/game/data/sbss.c): gMenuSbss_0020210C */
+static f32 gMenuSbss_0020210C;
+/* data twins (src/game/data/sbss.c): gMenuSbss_00202110 */
+static f32 gMenuSbss_00202110;
+/* data twins (src/game/data/sbss.c): gMenuSbss_00202114 */
+static f32 gMenuSbss_00202114;
+/* data twins (src/game/data/option_bss.c): gMenuBss_004A0B24 */
+static s32 gMenuBss_004A0B24[0x1];
+/* data twins (src/game/data/sbss.c): gMenuSbss_002020F0 */
+static s32 gMenuSbss_002020F0;
+/* data twins (src/game/data/sdata.c): gMenuSdata_00201CF4 */
+static s32 gMenuSdata_00201CF4 = -1;
+/* data twins (src/game/data/sbss.c): gMenuSbss_002020D8 */
+static f32 gMenuSbss_002020D8;
+/* data twins (src/game/data/sbss.c): gMenuSbss_00202108 */
+static f32 gMenuSbss_00202108;
+/* data twins (src/game/data/menu_draw_wrap_data.c): gMenuData_001F29E0 */
+static f32 gMenuData_001F29E0[0x1] = { -2.89f };
+/* data twins (src/game/data/menu_draw_wrap_data.c): gMenuData_001F29E4 */
+static f32 gMenuData_001F29E4[0x1] = { -2.89f };
+/* data twins (src/game/data/menu_draw_wrap_data.c): gMenuData_001F29E8 */
+static f32 gMenuData_001F29E8[0x1] = { -2.89f };
+/* data twins (src/game/data/menu_draw_wrap_data.c): gMenuData_001F29EC */
+static f32 gMenuData_001F29EC[0x1] = { -2.89f };
+/* data twins (src/game/data/sbss.c): gMenuSbss_00202104 */
+static f32 gMenuSbss_00202104;
+/* data twins (src/game/data/sbss.c): gMenuSbss_002020F8 */
+static s64 gMenuSbss_002020F8;
 /* data twins (src/game/data/sbss.c): gMenuSbss_00202100 */
 static s32 gMenuSbss_00202100;
 #endif
@@ -972,22 +903,10 @@ s8 gMenuBss_004A0B20[0x4];
 u8 gMenuBss_004A0B28[0x4];
 s8 gMenuBss_004A0B2C[0x4];
 s32 gMenuBss_004A0B30[0x8] __attribute__((aligned(4)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/menu_draw_wrap_data.c): D_001F27B0__grp: gMenuData_001F27B0@0x0 */
 f32 D_001F27B0__grp[0x4] __attribute__((aligned(16))) = { 0.0f, 0.0f, 640.0f, 448.0f };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/menu_draw_wrap_data.c): D_001F27C0__grp: gMenuData_001F27C0@0x0 */
 f32 D_001F27C0__grp[0x4] __attribute__((aligned(16))) = { 0.0f, 0.0f, 256.0f, 256.0f };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 void Credits_Update_0_001DCC30(void);
 void Databook_UpdateWrap_0_00195410(void);
 void DbChar_UpdateWrap_0_00196930(void);
@@ -1019,10 +938,6 @@ void Title_StartNewGame_0_001A4930(void);
 void Title_UpdateWrap_0_001A3EB0(void);
 /* data group (src/game/data/menu_draw_wrap_data.c): D_001F27D0__grp: gMenuData_001F27D0@0x0 */
 s32 D_001F27D0__grp[0x2c] __attribute__((aligned(16))) = { (s32)MenuProc_CheckReady_0_0018B2E0, (s32)Title_LoadGame_0_001A35B0, 0, (s32)Title_UpdateWrap_0_001A3EB0, (s32)Title_ResetOnEvent_0_001A3C70, (s32)Credits_Update_0_001DCC30, (s32)TitleMenu_Update_1_001A4010, (s32)Title_StartNewGame_0_001A4930, 0, (s32)SaveMenu_Open_1_0018D360, (s32)LoadMenu_Open_0_001939B0, (s32)SaveMenu_HandleEvent_0_0018C4C0, (s32)LoadMenu_HandleEvent_0_00192900, (s32)Option_Update_2_0018EAE0, 0, 0, 0, (s32)MapSheet_Update_0_001ED740, (s32)Hud_Update_1_0019B560, (s32)Pause_HandleEvent_0_0019E810, (s32)PauseMenu_Open_0_0019E2F0, (s32)ItemMenu_Open_0_0019D290, (s32)Equip_Open_0_001997A0, 0, (s32)Databook_UpdateWrap_0_00195410, (s32)DbMap_UpdateWrap_0_00198BD0, (s32)DbChar_UpdateWrap_0_00196930, (s32)DbItem_Open_0_001979C0, 0, 0, 0, (s32)Storage_Open_0_001A32A0, 0, 0, (s32)Shop_Open_1_001A1B40, 0, (s32)Ending_Update_0_001ED9A0, (s32)Ending_HandleEvent_0_001EDCC0, 0, (s32)Loading_Nop_0_0018E440, (s32)GameOver_Update_2_0019EDC0, (s32)Ending_OpenLoadMenu_0_00194F60, 0, 0 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 void Credits_DrawFrame_0_001DC900(void);
 void Hud_DrawMain_0_0019A8B0(void);
 void Hud_Draw_0_0018E480(void);
@@ -1040,10 +955,6 @@ void Title_PlayOpening_2_001A3C10(void);
 void Title_PlayPrologue_2_001A4890(void);
 /* data group (src/game/data/menu_draw_wrap_data.c): D_001F2880__grp: gMenuData_001F2880@0x0 */
 s32 D_001F2880__grp[0x14] __attribute__((aligned(16))) = { (s32)MenuProc_DrawList_0_0018B180, (s32)Title_Nop_2_001A35A0, 0, (s32)Title_DrawLogo_0_001A3CC0, (s32)Title_PlayOpening_2_001A3C10, (s32)Credits_DrawFrame_0_001DC900, (s32)Title_Draw_0_001A3FB0, (s32)Title_PlayPrologue_2_001A4890, 0, (s32)SaveMenu_DrawFrame_0_0018D1F0, (s32)LoadMenu_DrawFrame_0_00193880, (s32)MenuProc_DrawItemList_0_0018B860, (s32)LoadMenu_DrawList_0_00191CB0, (s32)Hud_Draw_0_0018E480, 0, 0, 0, (s32)MapSheet_Draw_0_001ED630, (s32)Hud_DrawMain_0_0019A8B0, (s32)Pause_DrawText_2_0019E7C0 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 void Credits_DrawBg_0_001DCE70(void);
 void Option_DrawFrame_0_0018E980(void);
 /* data group (src/game/data/menu_draw_wrap_data.c): D_001F2930__grp: gMenuData_001F2930@0x0 */

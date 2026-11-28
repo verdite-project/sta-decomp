@@ -5,13 +5,10 @@ typedef struct { u8 pad[0x10]; u32 fsize; } Tbl;
 extern Tbl gMcDirBuf_004B68C0[];
 #ifndef NONMATCHING
 extern u32 gMcStepWriteBss_004B639C[];
+extern s32 gMcStepWriteBss_004B63A0[];
 #else
 /* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): gMcStepWriteBss_004B639C */
 static u32 gMcStepWriteBss_004B639C[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gMcStepWriteBss_004B63A0[];
-#else
 /* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): gMcStepWriteBss_004B63A0 */
 static s32 gMcStepWriteBss_004B63A0[0x1];
 #endif

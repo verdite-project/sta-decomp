@@ -285,12 +285,6 @@ extern E gEnemyDataTbl_004A43B0[];
 extern E gEnemyManagerBss_004A43B8[];
 extern s32 gEnemyListBss_004A4878[];
 extern A_ActorList_Next_2_001A5460 **gEnemyListBss_004A4570[];
-#ifndef NONMATCHING
-extern s32 gEnemyListSbss_00202274;
-#else
-/* data twins (src/game/data/sbss.c): gEnemyListSbss_00202274 */
-static s32 gEnemyListSbss_00202274;
-#endif
 extern A_ActorList_AllocSlot_0_001A5530 **gEnemyListBss_004A4570__as_ActorList_AllocSlot_0_001A5530[];
 extern u8 **gEnemyListBss_004A4570__as_ActorList_FindFree_0_001A55E0[];
 extern A_ActorList_NextTargetable_0_001A5660 **gEnemyListBss_004A4570__as_ActorList_NextTargetable_0_001A5660[];
@@ -301,34 +295,25 @@ extern Flags8 D_00222A50[];
 extern G **gMapSbss_00201E80[2];
 extern G **gPlayerSbss_002022BC;
 extern u32 gSoundSbss_002022B8;
-#ifndef NONMATCHING
-extern f32 gEnemyListSdata_00201DAC;
-#else
-/* data twins (src/game/data/sdata.c): gEnemyListSdata_00201DAC */
-static f32 gEnemyListSdata_00201DAC __attribute__((aligned(4))) = 1.0f;
-#endif
 extern Big gGlowInitBss_0030D0E0;
 #ifndef NONMATCHING
+extern s32 gEnemyListSbss_00202274;
+extern f32 gEnemyListSdata_00201DAC;
 extern Vec gEnemyListData_001F37A0;
-#else
-/* data twins (src/game/data/title_nop_data.c): gEnemyListData_001F37A0 */
-static Vec gEnemyListData_001F37A0 = { 128.0f, 128.0f, 128.0f, 1.0f };
-#endif
-#ifndef NONMATCHING
 extern f32 gEnemyListRodata_001FD910[];
-#else
-/* data twins (src/game/data/enemy_list_rodata.c): gEnemyListRodata_001FD910 */
-static f32 gEnemyListRodata_001FD910[0x1] = { 128.0f };
-#endif
-#ifndef NONMATCHING
 extern f32 gEnemyListRodata_001FD914[];
-#else
-/* data twins (src/game/data/enemy_list_rodata.c): gEnemyListRodata_001FD914 */
-static f32 gEnemyListRodata_001FD914[0x1] = { 0.0f };
-#endif
-#ifndef NONMATCHING
 extern f32 gEnemyListRodata_001FD918[];
 #else
+/* data twins (src/game/data/sbss.c): gEnemyListSbss_00202274 */
+static s32 gEnemyListSbss_00202274;
+/* data twins (src/game/data/sdata.c): gEnemyListSdata_00201DAC */
+static f32 gEnemyListSdata_00201DAC __attribute__((aligned(4))) = 1.0f;
+/* data twins (src/game/data/title_nop_data.c): gEnemyListData_001F37A0 */
+static Vec gEnemyListData_001F37A0 = { 128.0f, 128.0f, 128.0f, 1.0f };
+/* data twins (src/game/data/enemy_list_rodata.c): gEnemyListRodata_001FD910 */
+static f32 gEnemyListRodata_001FD910[0x1] = { 128.0f };
+/* data twins (src/game/data/enemy_list_rodata.c): gEnemyListRodata_001FD914 */
+static f32 gEnemyListRodata_001FD914[0x1] = { 0.0f };
 /* data twins (src/game/data/enemy_list_rodata.c): gEnemyListRodata_001FD918 */
 static f32 gEnemyListRodata_001FD918[0x1] = { 128.0f };
 #endif
@@ -1416,31 +1401,13 @@ u8 **EnemyData_LoadTextures_0_001A7C70(s32 arg0) {
 /* data twins (src/game/data/sbss.c): gEnemyListSbss_00202278, gEnemyListSbss_00202280 */
 s32 gEnemyListSbss_00202278;
 s32 gEnemyListSbss_00202280;
-#endif
-
-
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 void Player_LoadModel_1_001C9CD0(void);
 /* data group (src/game/data/title_nop_data.c): D_001F33A0__grp: gEnemyListData_001F33A0@0x0 */
 s32 D_001F33A0__grp[0x100] __attribute__((aligned(16))) = { (s32)Player_LoadModel_1_001C9CD0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/save_byte_bss.c): gEnemyListBss_004A4570__grp: gEnemyListBss_004A4570@0x0, gEnemyListBss_004A4774@0x204, gEnemyListBss_004A4878@0x308 */
 unsigned char gEnemyListBss_004A4570__grp[0x310] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/enemy_list_rodata_001FD960.c): gEnemyListRodata_001FD960__grp: gEnemyListRodata_001FD960@0x0, gEnemyListRodata_001FD961@0x1, gEnemyListRodata_001FD962@0x2, gEnemyListRodata_001FD963@0x3 */
 unsigned int gEnemyListRodata_001FD960__grp[0x4] __attribute__((aligned(16))) = { 0x49435453, 0x0, 0x0, 0x0 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/enemy_list_rodata.c): D_001FD8C8__grp: gEnemyListRodata_001FD8C8@0x0 */
 int D_001FD8C8__grp[0x2] __attribute__((aligned(8))) = { 0, 0 };
 #endif

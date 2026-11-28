@@ -31,13 +31,10 @@ extern Tbl gVibrationBss_003174F0;
 extern Entry *gFxSbss_00201F94;
 #ifndef NONMATCHING
 extern s32 gFxSbss_00201F98;
+extern s32 gFxSbss_00201F9C;
 #else
 /* data twins (src/game/data/sbss.c): gFxSbss_00201F98 */
 static s32 gFxSbss_00201F98;
-#endif
-#ifndef NONMATCHING
-extern s32 gFxSbss_00201F9C;
-#else
 /* data twins (src/game/data/sbss.c): gFxSbss_00201F9C */
 static s32 gFxSbss_00201F9C;
 #endif

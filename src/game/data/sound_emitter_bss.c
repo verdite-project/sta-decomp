@@ -5,7 +5,7 @@
 /* used by: sound, sound_bank_load, sound_bank_step, sound_emitter,
    sound_start, text_0012F0F0.s */
 
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/sound_bank_load.c */
+#ifndef NONMATCHING /* the NONMATCHING build defines these in their owners */
 u8 gSoundBankLoadBss_0022F090[0x40000];
 u8 gSoundBankLoadBss_0022F08C[0x4];
 u8 gSoundBankLoadBss_0022F088[0x4];

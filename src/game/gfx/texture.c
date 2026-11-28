@@ -72,46 +72,28 @@ extern s32 gTextureBss_004830EC[];
 extern volatile s16 gTextureBss_004830DC[];
 extern s16 D_004830DE[];
 extern Blk_Tex_Upload_0_00175CD0 gVramBlocks_0047F0C0[];
+extern s32 gTextureBss_00438A10[];
 #ifndef NONMATCHING
 extern u8 gTextureBss_00438A30[];
+extern B_Tex_UploadQueued_1_00176350 gTextureBss_00438A70[];
+extern s32 gTextureSbss_0020200C;
+extern u64 gTextureSbss_00202010;
+extern E gTextureBss_0043F080[];
+extern s32 gTextureBss_00438A14[];
+extern s32 gTextureBss_00438A18[];
 #else
 /* data twins (src/game/data/texture_bss.c): gTextureBss_00438A30 */
 static u8 gTextureBss_00438A30[0x40];
-#endif
-#ifndef NONMATCHING
-extern B_Tex_UploadQueued_1_00176350 gTextureBss_00438A70[];
-#else
 /* data twins (src/game/data/texture_bss.c): gTextureBss_00438A70 */
 static B_Tex_UploadQueued_1_00176350 gTextureBss_00438A70[0x6610 / sizeof(B_Tex_UploadQueued_1_00176350)];
-#endif
-#ifndef NONMATCHING
-extern s32 gTextureSbss_0020200C;
-#else
 /* data twins (src/game/data/sbss.c): gTextureSbss_0020200C */
 static s32 gTextureSbss_0020200C;
-#endif
-#ifndef NONMATCHING
-extern u64 gTextureSbss_00202010;
-#else
 /* data twins (src/game/data/sbss.c): gTextureSbss_00202010 */
 static u64 gTextureSbss_00202010;
-#endif
-#ifndef NONMATCHING
-extern E gTextureBss_0043F080[];
-#else
 /* data twins (src/game/data/texture_bss.c): gTextureBss_0043F080 */
 static E gTextureBss_0043F080[0x40000 / sizeof(E)];
-#endif
-extern s32 gTextureBss_00438A10[];
-#ifndef NONMATCHING
-extern s32 gTextureBss_00438A14[];
-#else
 /* data twins (src/game/data/texture_bss.c): gTextureBss_00438A14 */
 static s32 gTextureBss_00438A14[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gTextureBss_00438A18[];
-#else
 /* data twins (src/game/data/texture_bss.c): gTextureBss_00438A18 */
 static s32 gTextureBss_00438A18[0x1];
 #endif
@@ -756,16 +738,8 @@ INCLUDE_ASM(Tex_Resident_0_001777C0);
 /* data twins (src/game/data/texture_bss.c): gTextureBss_00438A10, gTextureBss_00438A1C */
 s32 gTextureBss_00438A10[0x1];
 volatile u16 gTextureBss_00438A1C[0x2];
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/texture_bss.c): gTextureBss_004830C0__grp: gTextureBss_004830C0@0x0, gTextureBss_004830C4@0x4, gTextureBss_004830C8@0x8, gTextureBss_004830CC@0xc, gTextureBss_004830D0@0x10, gTextureBss_004830D4@0x14, gTextureBss_004830D8@0x18, gTextureBss_004830DC@0x1c, gTextureBss_004830E0@0x20, gTextureBss_004830E4@0x24, gTextureBss_004830E8@0x28, gTextureBss_004830EC@0x2c, gTextureBss_004830F0@0x30 */
 unsigned char gTextureBss_004830C0__grp[0x40] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/texture_bss.c): D_00438A20__grp: gTextureBss_00438A20@0x0 */
 unsigned char D_00438A20__grp[0x10] __attribute__((aligned(16)));
 #endif

@@ -18,19 +18,13 @@ typedef struct { s32 x0; u32 flags; char p8[2]; u8 bA; char pB[3]; u8 bE; } Obj;
 extern u16 gShopBss_004A3310[];
 #ifndef NONMATCHING
 extern s32 gShopBss_004A32E0[];
+extern s32 gShopBss_004A32E4[];
+extern s32 gShopBss_004A32E8[];
 #else
 /* data twins (src/game/data/shop_bss.c): gShopBss_004A32E0 */
 static s32 gShopBss_004A32E0[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gShopBss_004A32E4[];
-#else
 /* data twins (src/game/data/shop_bss.c): gShopBss_004A32E4 */
 static s32 gShopBss_004A32E4[0x1];
-#endif
-#ifndef NONMATCHING
-extern s32 gShopBss_004A32E8[];
-#else
 /* data twins (src/game/data/shop_bss.c): gShopBss_004A32E8 */
 static s32 gShopBss_004A32E8[0x1];
 #endif

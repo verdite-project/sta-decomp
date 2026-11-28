@@ -23,77 +23,44 @@ typedef struct { u8 pad[8]; f32 x8; } B;
 extern u8 gEquipDrawBss_00495B60[];
 extern u8 gEquipDrawBss_00496B60[];
 #endif
+extern s32 *gEquipDrawSdata_00201D4C;
+extern Q2 gEquipDrawData_001F3040;
 #ifndef NONMATCHING
 extern f32 gEquipDrawSdata_00201D5C;
+extern FW gEquipDrawBss_004A28D0[];
+extern f32 gEquipDrawSdata_00201D54;
+extern f32 gEquipDrawSdata_00201D58;
+extern s32 gEquipDrawSbss_002021B4;
+extern f32 gEquipDrawSbss_002021B8;
+extern f32 gEquipDrawSbss_002021BC;
+extern s32 gEquipDrawBss_004A28C4[];
+extern s32 gEquipDrawSbss_002021AC;
+extern s32 gEquipDrawBss_004A28C8[];
+extern f32 gEquipDrawBss_004A28CC[];
+extern f32 *gEquipDrawSdata_00201D50;
 #else
 /* data twins (src/game/data/sdata.c): gEquipDrawSdata_00201D5C */
 static f32 gEquipDrawSdata_00201D5C = -2.99f;
-#endif
-#ifndef NONMATCHING
-extern FW gEquipDrawBss_004A28D0[];
-#else
 /* data twins (src/game/data/item_menu_draw_bss.c): gEquipDrawBss_004A28D0 */
 static FW gEquipDrawBss_004A28D0[0x10 / sizeof(FW)] __attribute__((aligned(4)));
-#endif
-extern s32 *gEquipDrawSdata_00201D4C;
-#ifndef NONMATCHING
-extern f32 gEquipDrawSdata_00201D54;
-#else
 /* data twins (src/game/data/sdata.c): gEquipDrawSdata_00201D54 */
 static f32 gEquipDrawSdata_00201D54 = -2.99f;
-#endif
-#ifndef NONMATCHING
-extern f32 gEquipDrawSdata_00201D58;
-#else
 /* data twins (src/game/data/sdata.c): gEquipDrawSdata_00201D58 */
 static f32 gEquipDrawSdata_00201D58 = -2.99f;
-#endif
-#ifndef NONMATCHING
-extern s32 gEquipDrawSbss_002021B4;
-#else
 /* data twins (src/game/data/sbss.c): gEquipDrawSbss_002021B4 */
 static s32 gEquipDrawSbss_002021B4;
-#endif
-#ifndef NONMATCHING
-extern f32 gEquipDrawSbss_002021B8;
-#else
 /* data twins (src/game/data/sbss.c): gEquipDrawSbss_002021B8 */
 static f32 gEquipDrawSbss_002021B8;
-#endif
-#ifndef NONMATCHING
-extern f32 gEquipDrawSbss_002021BC;
-#else
 /* data twins (src/game/data/sbss.c): gEquipDrawSbss_002021BC */
 static f32 gEquipDrawSbss_002021BC;
-#endif
-#ifndef NONMATCHING
-extern s32 gEquipDrawBss_004A28C4[];
-#else
 /* data twins (src/game/data/item_menu_draw_bss.c): gEquipDrawBss_004A28C4 */
 static s32 gEquipDrawBss_004A28C4[0x1];
-#endif
-extern Q2 gEquipDrawData_001F3040;
-#ifndef NONMATCHING
-extern s32 gEquipDrawSbss_002021AC;
-#else
 /* data twins (src/game/data/sbss.c): gEquipDrawSbss_002021AC */
 static s32 gEquipDrawSbss_002021AC;
-#endif
-#ifndef NONMATCHING
-extern s32 gEquipDrawBss_004A28C8[];
-#else
 /* data twins (src/game/data/item_menu_draw_bss.c): gEquipDrawBss_004A28C8 */
 static s32 gEquipDrawBss_004A28C8[0x1];
-#endif
-#ifndef NONMATCHING
-extern f32 gEquipDrawBss_004A28CC[];
-#else
 /* data twins (src/game/data/item_menu_draw_bss.c): gEquipDrawBss_004A28CC */
 static f32 gEquipDrawBss_004A28CC[0x1];
-#endif
-#ifndef NONMATCHING
-extern f32 *gEquipDrawSdata_00201D50;
-#else
 /* data twins (src/game/data/sdata.c): gEquipDrawSdata_00201D50 */
 static f32 *gEquipDrawSdata_00201D50 = (f32 *)gEquipDrawBss_00496B60;
 #endif
@@ -591,35 +558,15 @@ s32 *gEquipDrawSdata_00201D4C = (s32 *)gEquipDrawBss_00495B60;
 s32 gEquipDrawSbss_002021B0;
 /* data twins (src/game/data/item_menu_draw_bss.c): gEquipDrawBss_004A28C0 */
 s32 gEquipDrawBss_004A28C0[0x1];
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 extern u8 gEquipDrawData_001F3000[];
 /* data group (src/game/data/databook_item_reset_data.c): D_001F3040__grp: gEquipDrawData_001F3040@0x0 */
 s32 D_001F3040__grp[0x8] __attribute__((aligned(16))) = { 0, 5, 0, (s32)gEquipDrawData_001F3000, 7, -0x3fc00000, 0, 0 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data twins (src/game/data/databook_item_reset_data.c): gEquipDrawData_001F3000 */
 u8 gEquipDrawData_001F3000[0x40] = { 0, 0, 0x40, 0xc0, 0xa6, 0xf, 0, 0, 0, 0, 0, 0xc0, 0xa5, 0xf, 0, 0, 0, 0, 0x80, 0xbf, 0xa4, 0xf, 0, 0, 0, 0, 0, 0, 0xa3, 0xf, 0, 0, 0, 0, 0x80, 0x3f, 0xa2, 0xf, 0, 0, 0, 0, 0, 0x40, 0xa1, 0xf, 0, 0, 0, 0, 0x40, 0x40, 0xa0, 0xf, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/ui_gauge_bss.c): D_00495B60__grp: gEquipDrawBss_00495B60@0x0 */
 u8 D_00495B60__grp[0x1000] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/ui_gauge_bss.c): D_00496B60__grp: gEquipDrawBss_00496B60@0x0 */
 u8 D_00496B60__grp[0x1000] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/item_menu_draw_bss.c): D_004A1A50__grp: gEquipDrawBss_004A1A50@0x0 */
 unsigned char D_004A1A50__grp[0xe70] __attribute__((aligned(16)));
 #endif

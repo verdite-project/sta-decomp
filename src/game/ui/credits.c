@@ -35,32 +35,23 @@ typedef struct { f32 x, y, z, w; } V4;
 #ifdef NONMATCHING
 extern u8 gCreditsRodata_001FE714[];
 #endif
-#ifndef NONMATCHING
-extern s16 gCreditsSdata_00201E40;
-#else
-/* data twins (src/game/data/sdata.c): gCreditsSdata_00201E40 */
-static s16 gCreditsSdata_00201E40 = 2;
-#endif
 extern f32 gCreditsSbss_00202334;
-#ifndef NONMATCHING
-extern s16 gCreditsSbss_0020233C;
-#else
-/* data twins (src/game/data/sbss.c): gCreditsSbss_0020233C */
-static s16 gCreditsSbss_0020233C;
-#endif
 extern s16 gCreditsSbss_00202350;
 extern s16 D_00202352;
 extern s16 gCreditsSbss_00202354;
 extern s16 D_00202356;
 #ifndef NONMATCHING
+extern s16 gCreditsSdata_00201E40;
+extern s16 gCreditsSbss_0020233C;
 extern f32 gCreditsSbss_00202338;
-#else
-/* data twins (src/game/data/sbss.c): gCreditsSbss_00202338 */
-static f32 gCreditsSbss_00202338;
-#endif
-#ifndef NONMATCHING
 extern s32 gCreditsSbss_00202340;
 #else
+/* data twins (src/game/data/sdata.c): gCreditsSdata_00201E40 */
+static s16 gCreditsSdata_00201E40 = 2;
+/* data twins (src/game/data/sbss.c): gCreditsSbss_0020233C */
+static s16 gCreditsSbss_0020233C;
+/* data twins (src/game/data/sbss.c): gCreditsSbss_00202338 */
+static f32 gCreditsSbss_00202338;
 /* data twins (src/game/data/sbss.c): gCreditsSbss_00202340 */
 static s32 gCreditsSbss_00202340;
 #endif
@@ -72,19 +63,13 @@ S gCreditsData_001F39F0[0x1] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
 S gCreditsData_001F3A10 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
 #ifndef NONMATCHING
 extern f32 gCreditsSbss_00202344;
+extern s32 gCreditsSdata_00201E4C;
+extern s32 gCreditsRodata_001FE730[];
 #else
 /* data twins (src/game/data/sbss.c): gCreditsSbss_00202344 */
 static f32 gCreditsSbss_00202344;
-#endif
-#ifndef NONMATCHING
-extern s32 gCreditsSdata_00201E4C;
-#else
 /* data twins (src/game/data/sdata.c): gCreditsSdata_00201E4C */
 static s32 gCreditsSdata_00201E4C = (s32)((u8 *)gCreditsRodata_001FE714 + 0x4);
-#endif
-#ifndef NONMATCHING
-extern s32 gCreditsRodata_001FE730[];
-#else
 /* data twins (src/game/data/shop_menu_rodata.c): gCreditsRodata_001FE730 */
 static s32 gCreditsRodata_001FE730[0x6] __attribute__((aligned(4))) = { 0x5241545c, 0x5c544547, 0x5f415453, 0x412e4954, 0x5844, 0 };
 #endif
@@ -400,11 +385,6 @@ f32 gCreditsSbss_00202334;
 u8 gCreditsSbss_00202348;
 s16 gCreditsSbss_00202350;
 s16 gCreditsSbss_00202354;
-#endif
-
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/shop_menu_rodata.c): D_001FE714__grp: gCreditsRodata_001FE714@0x0 */
 s32 D_001FE714__grp[0x7] __attribute__((aligned(4))) = { 0, 0x48535550, 0x41545320, 0x5452, 0, 0, 0 };
 #endif

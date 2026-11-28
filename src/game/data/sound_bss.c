@@ -6,7 +6,7 @@
    sound_bank_load, sound_bank_step, sound_emitter, sound_start, text.s,
    text_0012F0F0.s, ui_anim */
 
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/sound_bank_load.c */
+#ifndef NONMATCHING /* the NONMATCHING build defines these in their owners */
 u8 gSoundBankLoadBss_0022EC48[0x8]; /* also D_0022EC4A */
 s32 gSoundBankLoadBss_0022EC44[0x1];
 u8 gSoundBankLoadBss_0022EC40[0x4]; /* also D_0022EC41, D_0022EC42, D_0022EC43 */
@@ -44,7 +44,5 @@ s32 gSoundBankLoadBss_00222B58[0x1];
 s32 gSoundBankLoadBss_00222B54[0x1];
 u8 gSoundBankLoadBss_00222B50[0x4];
 u8 gSoundBankLoadBss_00222B20[0x30];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/game_main.c */
 u8 gGameMainBss_00222AF0[0x30];
 #endif

@@ -18,37 +18,22 @@ typedef struct {
 typedef struct { DispEnv disp[2]; u64 giftag0[2]; DrawEnv1 draw0; Clear clear0; u64 giftag1[2]; DrawEnv1 draw1; Clear clear1; } DBuff;
 #ifndef NONMATCHING
 extern s32 gStrCdrom0TargetEndingPss1_001FD230[];
+extern s32 *gEndingPlaySbss_00202150;
+extern s32 *gEndingPlaySbss_0020214C;
+extern s32 gEndingPlaySbss_00202148;
+extern s32 gEndingPlaySbss_00202144;
+extern s8 gEndingPlayRodata_001FD250[];
 #else
 /* data twins (src/game/data/databook_rodata.c): gStrCdrom0TargetEndingPss1_001FD230 */
 static s32 gStrCdrom0TargetEndingPss1_001FD230[0x8] = { 0x6f726463, 0x5c3a306d, 0x47524154, 0x455c5445, 0x4e49444e, 0x53502e47, 0x313b53, 0 };
-#endif
-#ifndef NONMATCHING
-extern s32 *gEndingPlaySbss_00202150;
-#else
 /* data twins (src/game/data/sbss.c): gEndingPlaySbss_00202150 */
 static s32 *gEndingPlaySbss_00202150;
-#endif
-#ifndef NONMATCHING
-extern s32 *gEndingPlaySbss_0020214C;
-#else
 /* data twins (src/game/data/sbss.c): gEndingPlaySbss_0020214C */
 static s32 *gEndingPlaySbss_0020214C;
-#endif
-#ifndef NONMATCHING
-extern s32 gEndingPlaySbss_00202148;
-#else
 /* data twins (src/game/data/sbss.c): gEndingPlaySbss_00202148 */
 static s32 gEndingPlaySbss_00202148;
-#endif
-#ifndef NONMATCHING
-extern s32 gEndingPlaySbss_00202144;
-#else
 /* data twins (src/game/data/sbss.c): gEndingPlaySbss_00202144 */
 static s32 gEndingPlaySbss_00202144;
-#endif
-#ifndef NONMATCHING
-extern s8 gEndingPlayRodata_001FD250[];
-#else
 /* data twins (src/game/data/databook_rodata.c): gEndingPlayRodata_001FD250 */
 static s8 gEndingPlayRodata_001FD250[0x18] = "\\TARGET\\STA_SR.ADX\000\000\000\000\000\000";
 #endif

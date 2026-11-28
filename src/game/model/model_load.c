@@ -94,48 +94,6 @@ typedef struct {
     Vec x30;
     u8 x40[1];
 } H_Mdl_UpdateBoneMatrices_0_00171270;
-#ifndef NONMATCHING
-extern volatile s32 gModelLoadBss_0042D880[];
-#else
-/* data twins (src/game/data/texture_bss.c): gModelLoadBss_0042D880 */
-static volatile s32 gModelLoadBss_0042D880[0x1];
-#endif
-#ifndef NONMATCHING
-extern volatile s32 gModelLoadBss_0042D884[];
-#else
-/* data twins (src/game/data/texture_bss.c): gModelLoadBss_0042D884 */
-static volatile s32 gModelLoadBss_0042D884[0x1];
-#endif
-#ifndef NONMATCHING
-extern volatile s32 gModelLoadBss_0042D888[];
-#else
-/* data twins (src/game/data/texture_bss.c): gModelLoadBss_0042D888 */
-static volatile s32 gModelLoadBss_0042D888[0x1];
-#endif
-#ifndef NONMATCHING
-extern volatile s32 gModelLoadBss_0042D88C[];
-#else
-/* data twins (src/game/data/texture_bss.c): gModelLoadBss_0042D88C */
-static volatile s32 gModelLoadBss_0042D88C[0x1];
-#endif
-#ifndef NONMATCHING
-extern volatile s32 gModelLoadBss_0042D890[];
-#else
-/* data twins (src/game/data/texture_bss.c): gModelLoadBss_0042D890 */
-static volatile s32 gModelLoadBss_0042D890[0x1];
-#endif
-#ifndef NONMATCHING
-extern volatile s32 gModelLoadBss_0042D894[];
-#else
-/* data twins (src/game/data/texture_bss.c): gModelLoadBss_0042D894 */
-static volatile s32 gModelLoadBss_0042D894[0x1];
-#endif
-#ifndef NONMATCHING
-extern volatile s32 gModelLoadBss_0042D898[];
-#else
-/* data twins (src/game/data/texture_bss.c): gModelLoadBss_0042D898 */
-static volatile s32 gModelLoadBss_0042D898[0x1];
-#endif
 extern E16 * volatile gModelLoadBss_0042D89C[];
 extern E8 * volatile gModelLoadBss_0042D8A0[];
 extern s32 * volatile gModelLoadBss_0042D8A4[];
@@ -143,14 +101,32 @@ extern E50 * volatile gModelLoadBss_0042D8A8[];
 extern s32 * volatile gModelLoadBss_0042D8AC[];
 extern E8 * volatile gModelLoadBss_0042D8B0[];
 #ifndef NONMATCHING
+extern volatile s32 gModelLoadBss_0042D880[];
+extern volatile s32 gModelLoadBss_0042D884[];
+extern volatile s32 gModelLoadBss_0042D888[];
+extern volatile s32 gModelLoadBss_0042D88C[];
+extern volatile s32 gModelLoadBss_0042D890[];
+extern volatile s32 gModelLoadBss_0042D894[];
+extern volatile s32 gModelLoadBss_0042D898[];
 extern volatile s32 gModelLoadBss_0042D8B4[];
-#else
-/* data twins (src/game/data/texture_bss.c): gModelLoadBss_0042D8B4 */
-static volatile s32 gModelLoadBss_0042D8B4[0x1];
-#endif
-#ifndef NONMATCHING
 extern volatile s32 gModelLoadBss_0042D8B8[];
 #else
+/* data twins (src/game/data/texture_bss.c): gModelLoadBss_0042D880 */
+static volatile s32 gModelLoadBss_0042D880[0x1];
+/* data twins (src/game/data/texture_bss.c): gModelLoadBss_0042D884 */
+static volatile s32 gModelLoadBss_0042D884[0x1];
+/* data twins (src/game/data/texture_bss.c): gModelLoadBss_0042D888 */
+static volatile s32 gModelLoadBss_0042D888[0x1];
+/* data twins (src/game/data/texture_bss.c): gModelLoadBss_0042D88C */
+static volatile s32 gModelLoadBss_0042D88C[0x1];
+/* data twins (src/game/data/texture_bss.c): gModelLoadBss_0042D890 */
+static volatile s32 gModelLoadBss_0042D890[0x1];
+/* data twins (src/game/data/texture_bss.c): gModelLoadBss_0042D894 */
+static volatile s32 gModelLoadBss_0042D894[0x1];
+/* data twins (src/game/data/texture_bss.c): gModelLoadBss_0042D898 */
+static volatile s32 gModelLoadBss_0042D898[0x1];
+/* data twins (src/game/data/texture_bss.c): gModelLoadBss_0042D8B4 */
+static volatile s32 gModelLoadBss_0042D8B4[0x1];
 /* data twins (src/game/data/texture_bss.c): gModelLoadBss_0042D8B8 */
 static volatile s32 gModelLoadBss_0042D8B8[0x2];
 #endif
@@ -576,34 +552,14 @@ void Mdl_UpdateBoneMatricesCur_0_00171540(s32 arg0, s32 arg1) {
 #pragma explicit_zero_data on
 /* data group (src/game/data/texture_bss.c): D_0042D89C__grp: gModelLoadBss_0042D89C@0x0 */
 u8 D_0042D89C__grp[0x4] __attribute__((aligned(4)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/texture_bss.c): D_0042D8A0__grp: gModelLoadBss_0042D8A0@0x0 */
 u8 D_0042D8A0__grp[0x4] __attribute__((aligned(16)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/texture_bss.c): D_0042D8A4__grp: gModelLoadBss_0042D8A4@0x0 */
 u8 D_0042D8A4__grp[0x4] __attribute__((aligned(4)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/texture_bss.c): D_0042D8A8__grp: gModelLoadBss_0042D8A8@0x0 */
 u8 D_0042D8A8__grp[0x4] __attribute__((aligned(8)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/texture_bss.c): D_0042D8AC__grp: gModelLoadBss_0042D8AC@0x0 */
 u8 D_0042D8AC__grp[0x4] __attribute__((aligned(4)));
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data group (src/game/data/texture_bss.c): D_0042D8B0__grp: gModelLoadBss_0042D8B0@0x0 */
 u8 D_0042D8B0__grp[0x4] __attribute__((aligned(16)));
 #endif

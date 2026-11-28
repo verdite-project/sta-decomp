@@ -56,10 +56,6 @@ void Gfx_BuildViewMatrices_0_00155090(void) {
     B.m[2].y = 0.0f;
     sceVu0MulMatrix(&gGsPacketBss_002F1600, &B, &D);
 }
-#endif
-
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
 /* data twins (src/game/data/sbss.c): gGfxBuildViewMatricesSbss_00201F58, gGfxBuildViewMatricesSbss_00201F5C, gGfxBuildViewMatricesSbss_00201F60, gGfxBuildViewMatricesSbss_00201F64, gGfxBuildViewMatricesSbss_00201F68, gGfxBuildViewMatricesSbss_00201F6C, gGfxBuildViewMatricesSbss_00201F70, gGfxBuildViewMatricesSbss_00201F74, gGfxBuildViewMatricesSbss_002022C0 */
 f32 gGfxBuildViewMatricesSbss_00201F58;
 f32 gGfxBuildViewMatricesSbss_00201F5C;
