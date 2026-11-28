@@ -26,7 +26,9 @@ const char D_001FCEE8[0x5] = "16:9\000";
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/option.c */
 const char D_001FCEF0[0x30] __attribute__((aligned(8))) = "16:9(LB)\000\000\000\000\000\000\000\000VIBRATION\000\000\000\000\000\000\000KEY ASSIGN\000\000\000\000\000\000";
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/option.c */
 const s32 D_001FCF20[0x4] __attribute__((aligned(8))) = { 0x43835e83, 0x50827683, 0, 0 };
+#endif
 const s32 D_001FCF30[0x4] __attribute__((aligned(8))) = { 0x43835e83, 0x51827683, 0, 0 };
 const s32 D_001FCF40[0x4] __attribute__((aligned(8))) = { 0x43835e83, 0x52827683, 0, 0 };
 const s32 D_001FCF50[0x6] __attribute__((aligned(8))) = { 0x43835e83, 0x52827683, -0x757cba7f, 0x5b816f83, 0x5883, 0 };

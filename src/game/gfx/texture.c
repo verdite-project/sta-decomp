@@ -96,7 +96,12 @@ extern u64 D_00202010;
 /* data twins (src/game/data/sbss.c): D_00202010 */
 static u64 D_00202010;
 #endif
+#ifndef NONMATCHING
 extern E D_0043F080[];
+#else
+/* data twins (src/game/data/texture_bss.c): D_0043F080 */
+static E D_0043F080[0x40000 / sizeof(E)];
+#endif
 extern s32 D_00438A10[];
 #ifndef NONMATCHING
 extern s32 D_00438A14[];

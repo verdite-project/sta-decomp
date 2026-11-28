@@ -88,3 +88,12 @@ s32 **o1; s32 **o2; Blk ***o0; s8 *d1; s8 *d2; s8 *d3; s32 size;
     }
 }
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sfx_all_rodata.c): D_001FB900, D_001FB901, D_001FB902, D_001FB903 */
+s8 D_001FB900[0x1] = { 0x54 };
+s8 D_001FB901[0x1] __attribute__((aligned(1))) = { 0x41 };
+s8 D_001FB902[0x1] __attribute__((aligned(2))) = { 0x4e };
+s8 D_001FB903[0x5] __attribute__((aligned(1))) = { 0x49, 0, 0, 0, 0 };
+#endif

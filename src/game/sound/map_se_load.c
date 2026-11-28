@@ -6,13 +6,48 @@ typedef struct { u8 pad[0x14]; s32 x14; u64 b0:1; u64 b1:1; u64 rest:62; } S22C4
 extern s32 D_001FE8A0[];
 extern S22C4 *D_002022C4;
 extern s32 D_00270F40[];
+#ifndef NONMATCHING
 extern s32 D_004BC2D0[];
+#else
+/* data twins (src/game/data/save_system_start_bss.c): D_004BC2D0 */
+static s32 D_004BC2D0[0x1];
+#endif
+#ifndef NONMATCHING
 extern s32 D_004BC2D4[];
+#else
+/* data twins (src/game/data/save_system_start_bss.c): D_004BC2D4 */
+static s32 D_004BC2D4[0x1];
+#endif
+#ifndef NONMATCHING
 extern s32 D_004BC2D8[];
+#else
+/* data twins (src/game/data/save_system_start_bss.c): D_004BC2D8 */
+static s32 D_004BC2D8[0x1];
+#endif
+#ifndef NONMATCHING
 extern s32 D_004BC2DC[];
+#else
+/* data twins (src/game/data/save_system_start_bss.c): D_004BC2DC */
+static s32 D_004BC2DC[0x1];
+#endif
+#ifndef NONMATCHING
 extern s32 D_004BC2E0[];
+#else
+/* data twins (src/game/data/save_system_start_bss.c): D_004BC2E0 */
+static s32 D_004BC2E0[0x1];
+#endif
+#ifndef NONMATCHING
 extern u32 D_004BC2E4[];
+#else
+/* data twins (src/game/data/save_system_start_bss.c): D_004BC2E4 */
+static u32 D_004BC2E4[0x1];
+#endif
+#ifndef NONMATCHING
 extern u32 D_004BC2E8[];
+#else
+/* data twins (src/game/data/save_system_start_bss.c): D_004BC2E8 */
+static u32 D_004BC2E8[0x2];
+#endif
 void MapSe_LoadTask_1_001E19A0(void);
 void FlushCache(s32);
 void memcpy(s32, s32 *, s32);

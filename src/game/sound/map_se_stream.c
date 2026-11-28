@@ -213,3 +213,9 @@ P *D_002023B0;
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/save_system_start_bss.c): D_004BB050 */
+S D_004BB050[0xc0 / sizeof(S)];
+#endif

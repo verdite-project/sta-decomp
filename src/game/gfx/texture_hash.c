@@ -11,10 +11,30 @@ typedef struct { u64 key; u8 p8[0x30]; Node *x38; s32 x3C; u8 p40[0x10]; } Ent_T
 typedef struct { s32 x0; s32 x4; u32 n; u8 pC[4]; Ent_Tex_Lookup_1_00177BB0 e[1]; } Tbl;
 typedef struct { s32 **a; s32 b; } Ent_Tex_RegisterTtix_0_00178080;
 extern E D_0047F080[8];
+#ifndef NONMATCHING
 extern s8 D_001FB908[];
+#else
+/* data twins (src/game/data/sfx_all_rodata.c): D_001FB908 */
+static s8 D_001FB908[0x1] = { 0x54 };
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FB909[];
+#else
+/* data twins (src/game/data/sfx_all_rodata.c): D_001FB909 */
+static s8 D_001FB909[0x1] __attribute__((aligned(1))) = { 0x54 };
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FB90A[];
+#else
+/* data twins (src/game/data/sfx_all_rodata.c): D_001FB90A */
+static s8 D_001FB90A[0x1] __attribute__((aligned(2))) = { 0x49 };
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FB90B[];
+#else
+/* data twins (src/game/data/sfx_all_rodata.c): D_001FB90B */
+static s8 D_001FB90B[0x5] __attribute__((aligned(1))) = { 0x58, 0, 0, 0, 0 };
+#endif
 extern s8 D_001FB910[];
 extern s8 D_001FB911[];
 extern s8 D_001FB912[];
@@ -218,4 +238,10 @@ void Tex_RegisterTtix_0_00178080(s32 **arg0) {
 #pragma explicit_zero_data on
 /* data twins (src/game/data/sdata.c): D_00201CB4 */
 s32 D_00201CB4 = 0x43494454;
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/texture_bss.c): D_0047F080 */
+E D_0047F080[8];
 #endif
