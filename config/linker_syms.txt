@@ -8,6 +8,11 @@
  * inside GsText_ParseEscape_1_001E2D70's jump table. */
 D_001FE918 = gGfxUploadRodata_001FE994 - 0x7C;
 
+/* Shift-JIS rows begin at trail byte 0x40. The two tables live inside
+ * the graphics rodata and the data following the credits callbacks. */
+gSjisTable81_001FE998 = gGfxUploadRodata_001FE994 + 0x4;
+gSjisTableE0_001F3AE0 = gCreditsInterpColorData_001F3AC8 + 0x18;
+
 /* crt0's link constants: the main thread's stack top and size, and the heap
  * size (-1: up to the stack). */
 _stack = 0x01F00000;
