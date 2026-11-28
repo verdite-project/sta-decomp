@@ -209,3 +209,7 @@ void MapSe_BindBank_0_001E1810(Ch *a0, s32 a1) {
 /* data twins (src/game/data/sbss.c): D_002023B0 */
 P *D_002023B0;
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+#endif

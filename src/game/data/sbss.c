@@ -157,14 +157,18 @@ s32 D_002022F8;
 s32 D_002022F4;
 u8 D_002022F0[0x4];
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/player/player.c */
 s32 D_002022EC;
 f32 D_002022E8;
 u8 D_002022E4[0x4];
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/hud_warning.c */
 s32 D_002022E0;
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/player/player.c */
 f32 D_002022DC;
 s32 D_002022D8;
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/map_object/map_object_all.c */
 u8 D_002022D4[0x4];
 #endif
@@ -174,7 +178,9 @@ u8 D_002022D0[0x4];
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/gfx_build_view_matrices.c */
 u8 D_002022C0[0x10]; /* also D_002022C4 */
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/player/player.c */
 u8 D_002022BC[0x4];
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/sound.c */
 u8 D_002022B8[0x4];
 #endif
@@ -195,9 +201,11 @@ u8 D_00202288[0x4];
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/enemy/enemy_model.c */
 u8 D_00202284[0x4];
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/enemy/enemy_list.c */
 u8 D_00202280[0x4];
 u8 D_00202278[0x8];
 s32 D_00202274;
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/title.c */
 s32 D_00202270;
 s32 D_0020226C;
@@ -596,7 +604,9 @@ u8 D_00201EBC[0x4];
 u8 D_00201EB8[0x4];
 f32 D_00201EB4;
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/player/player.c */
 s32 D_00201EB0;
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/game_main.c */
 s32 D_00201EAC;
 #endif

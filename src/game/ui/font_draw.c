@@ -27,18 +27,8 @@ static Ent *D_00202068;
 #endif
 extern s32 D_00201F3C;
 extern Ent D_004880B0[];
-#ifndef NONMATCHING
 extern s8 D_004870B0[];
-#else
-/* data twins (src/game/data/ui_anim_bss.c): D_004870B0 */
-static s8 D_004870B0[0x1000];
-#endif
-#ifndef NONMATCHING
 extern Pt D_004884B0[];
-#else
-/* data twins (src/game/data/ui_anim_bss.c): D_004884B0 */
-static Pt D_004884B0[0x1000];
-#endif
 extern D40 D_001F25F0;
 #ifndef NONMATCHING
 extern u8 D_001FB980[];

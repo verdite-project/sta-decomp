@@ -46,12 +46,7 @@ extern u64 D_00201F78;
 extern V_ScreenFx_ProjectPoint_0_00159160 D_001F2040[];
 extern f32 D_002F16C0[];
 extern f32 D_002F1840[];
-#ifndef NONMATCHING
 extern f32 D_002F19E0[];
-#else
-/* data twins (src/game/data/gs_packet_bss_002F1990.c): D_002F19E0 */
-static f32 D_002F19E0[0x1a];
-#endif
 #ifndef NONMATCHING
 extern f32 D_002F2080[];
 #else
@@ -87,12 +82,7 @@ extern s32 D_002F1AA0[];
 extern s32 D_002F1AB0[];
 extern s32 D_002F1AC0[];
 extern s32 D_002F1AD0[];
-#ifndef NONMATCHING
 extern s16 D_002F1A48[];
-#else
-/* data twins (src/game/data/gs_packet_bss_002F1990.c): D_002F1A48 */
-static s16 D_002F1A48[0x4];
-#endif
 #ifndef NONMATCHING
 extern s32 D_002F1A80[];
 #else
@@ -106,24 +96,9 @@ extern s32 D_002F1A60[];
 static s32 D_002F1A60[0x1] __attribute__((aligned(16)));
 #endif
 extern s32 D_002F19CC[];
-#ifndef NONMATCHING
 extern s32 D_002F19C0[];
-#else
-/* data twins (src/game/data/gs_packet_bss_002F1990.c): D_002F19C0 */
-static s32 D_002F19C0[0x1];
-#endif
-#ifndef NONMATCHING
 extern s32 D_002F19D8[];
-#else
-/* data twins (src/game/data/gs_packet_bss_002F1990.c): D_002F19D8 */
-static s32 D_002F19D8[0x1];
-#endif
-#ifndef NONMATCHING
 extern s32 D_002F19DC[];
-#else
-/* data twins (src/game/data/gs_packet_bss_002F1990.c): D_002F19DC */
-static s32 D_002F19DC[0x1];
-#endif
 extern W D_002F19B0__as_Weather_RespawnParticle_0_00157FE0;
 extern struct { unsigned char : 6; unsigned char f : 1; char pad[15]; } D_002F2078__as_ScreenFx_EnableWeather_0_00159500;
 extern s32 D_002F2070__as_ScreenFx_EnableWeather_0_00159500[];

@@ -16,21 +16,17 @@ u8 D_004A1884[0x18] __attribute__((aligned(4))); /* also D_004A1888 */
 s8 D_004A1870[0x14];
 s8 D_004A1770[0x100];
 s32 D_004A1450[0xc8];
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/databook_item_draw.c */
 u8 D_004A1440[0x10]; /* also D_004A1444 */
 f32 D_004A143C[0x1];
 s32 D_004A1438[0x1];
 s32 D_004A1434[0x1];
 s32 D_004A1430[0x1];
-#endif
 u8 D_004A142C[0x4];
 u8 D_004A1420[0xc];
 u8 D_004A141C[0x4];
 u8 D_004A1404[0x18] __attribute__((aligned(4))); /* also D_004A1408 */
 u8 D_004A13F0[0x14];
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/databook_char_update_wrap.c */
 s32 D_004A13E0[0x4];
-#endif
 u8 D_004A13DC[0x4];
 u8 D_004A13D0[0xc];
 u8 D_004A13CC[0x4];

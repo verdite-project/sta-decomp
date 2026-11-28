@@ -21,7 +21,12 @@ extern Vec D_0030A290;
 /* data twins (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A290 */
 static Vec D_0030A290;
 #endif
+#ifndef NONMATCHING
 extern Vec D_0030A320;
+#else
+/* data twins (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A320 */
+static Vec D_0030A320;
+#endif
 extern Vec D_0030A330;
 extern Vec D_0030A350;
 extern Vec D_0030A360;
@@ -369,3 +374,10 @@ void Light_Init_1_0015BCA0(void) {
 }
 #undef sceVu0AddVector
 #undef D_0030A2D0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A2D0, D_0030A310 */
+s32 D_0030A2D0[0x10];
+char D_0030A310[0x10];
+#endif

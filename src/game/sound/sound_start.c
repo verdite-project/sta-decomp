@@ -284,8 +284,4 @@ s32 Snd_LoadSystemBank_1_0012DEE0(s32 a) {
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/sound_emitter_bss.c): D_0022F050, D_0022F060, D_0022F070 */
-s32 D_0022F050[0x4];
-s32 D_0022F060[0x4];
-s32 D_0022F070[0x4];
 #endif

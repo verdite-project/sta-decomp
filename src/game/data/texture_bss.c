@@ -31,7 +31,9 @@ u8 D_0047F0C4[0x4]; /* also D_0047F0C6 */
 u8 D_0047F0C0[0x4]; /* also D_0047F0C2 */
 u8 D_0047F080[0x40]; /* also D_0047F084 */
 u8 D_0043F080[0x40000];
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/texture.c */
 u8 D_00438A70[0x6610];
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/texture.c */
 u8 D_00438A30[0x40];
 #endif

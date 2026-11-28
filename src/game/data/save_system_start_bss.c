@@ -32,29 +32,18 @@ u8 D_004BB010[0x40];
 u8 D_004BAC80[0x390]; /* also D_004BAC84 */
 u8 D_004BAC54[0x2c] __attribute__((aligned(4))); /* also D_004BAC58 */
 u8 D_004BAC50[0x4];
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/task_callback.c */
 u8 D_004BAC4C[0x4]; /* also D_004BAC4D */
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/task_find.c */
 s32 D_004BAC48[0x1];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/task_callback.c */
 s32 D_004BAC44[0x1];
 s32 D_004BAC40[0x1];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/task_step.c */
 u8 D_004BAC3C[0x4];
 u8 D_004BAC38[0x4];
 s32 D_004BAC34[0x1];
-#endif
 u8 D_004BAC30[0x4];
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/task_callback.c */
 u8 D_004BAC2C[0x4];
 u8 D_004BAC28[0x4];
-#endif
 u8 D_004BAC24[0x4];
 u8 D_004BAC20[0x4];
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/shop_menu.c */
 u32 D_004BAC1C[0x1];
 f32 D_004BAC10[0x3];
 f32 D_004BAC0C[0x1];
@@ -67,12 +56,9 @@ f32 D_004BAB9C[0x1];
 u8 D_004BAB84[0x18] __attribute__((aligned(4))); /* also D_004BAB88 */
 u8 D_004BAB70[0x14];
 u8 D_004BAA70[0x100];
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/se_dma.c */
 s32 D_004BAA6C[0x1];
 u8 D_004BAA68[0x4];
 s32 D_004BAA64[0x1];
-#endif
 u8 D_004BAA60[0x4];
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/sound/se_dma.c */
 s32 D_004BAA58[0x2];

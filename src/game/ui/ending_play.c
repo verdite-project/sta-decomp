@@ -16,7 +16,12 @@ typedef struct {
     u64 testb; u64 testbaddr;
 } Clear;
 typedef struct { DispEnv disp[2]; u64 giftag0[2]; DrawEnv1 draw0; Clear clear0; u64 giftag1[2]; DrawEnv1 draw1; Clear clear1; } DBuff;
+#ifndef NONMATCHING
 extern s32 D_001FD230[];
+#else
+/* data twins (src/game/data/databook_rodata.c): D_001FD230 */
+static s32 D_001FD230[0x8] = { 0x6f726463, 0x5c3a306d, 0x47524154, 0x455c5445, 0x4e49444e, 0x53502e47, 0x313b53, 0 };
+#endif
 #ifndef NONMATCHING
 extern s32 *D_00202150;
 #else

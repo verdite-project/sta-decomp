@@ -5,13 +5,9 @@
 /* used by: enemy_list, fog, glow, glow_init, item_object, map_area,
    map_object_draw, player, point_light, text_0015DBF0.s */
 
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/glow_add.c */
 u8 D_0030D588[0x208] __attribute__((aligned(8))); /* also D_0030D58A, D_0030D60A, D_0030D68C, D_0030D70E */
-#endif
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/glow.c */
 u8 D_0030D184[0x404] __attribute__((aligned(4))); /* also D_0030D188 */
 u8 D_0030D180[0x4];
-#endif
 u8 D_0030D170[0x10];
 u8 D_0030D0E8[0x88] __attribute__((aligned(8))); /* also D_0030D0EC */
 u8 D_0030D0E4[0x4];

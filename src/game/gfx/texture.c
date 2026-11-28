@@ -78,7 +78,12 @@ extern u8 D_00438A30[];
 /* data twins (src/game/data/texture_bss.c): D_00438A30 */
 static u8 D_00438A30[0x40];
 #endif
+#ifndef NONMATCHING
 extern B_Tex_UploadQueued_1_00176350 D_00438A70[];
+#else
+/* data twins (src/game/data/texture_bss.c): D_00438A70 */
+static B_Tex_UploadQueued_1_00176350 D_00438A70[0x6610 / sizeof(B_Tex_UploadQueued_1_00176350)];
+#endif
 #ifndef NONMATCHING
 extern s32 D_0020200C;
 #else

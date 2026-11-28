@@ -165,16 +165,105 @@ def twin(rec, own_ext, hdr_ext, labels, local, owner_text):
         for k in added:
             cache.pop(k, None)
     shape = re.match(rf"{re.escape(base)}\s*{re.escape(ptr)}\s*{re.escape(n)}\s*(\[)?", d) if d else None
-    if shape is None or bool(shape.group(1)) != bool(dims):
-        return None, "type does not fit"
     quals = " ".join(words[:-1])
-    if quals:
+    if shape is None or bool(shape.group(1)) != bool(dims):
+        d = None if ptr else struct_init(n, base, dims, quals, items, owner_text, need)
+        if d is None:
+            return None, "type does not fit"
+    elif quals:
         d = f"{quals} {d}"
     if attr:
         d = d.replace(" = ", f"{attr} = ", 1)
     ext = [f"void {s}(void);" if is_func(s) else f"extern u8 {s}[];"
            for s in sorted(need) if not re.search(rf"\b{s}\b", owner_text)]
     return (d, ext), where
+
+
+TYPEDEF_STRUCT = re.compile(r"typedef\s+struct\s*\w*\s*\{(?P<body>[^{}]*)\}\s*(?P<name>\w+)\s*"
+                            r"(?:__attribute__\(\(\w+(?:\([^()]*\))?\)\)\s*)?;")
+MEMBER = re.compile(r"^(?P<type>(?:(?:unsigned|signed|const|volatile)\s+)*\w+)\s+(?P<decls>[^;]+)$")
+
+
+def struct_defs(text):
+    return {m.group("name"): m.group("body") for m in TYPEDEF_STRUCT.finditer(text)}
+
+
+def layout(t, defs, depth=0):
+    """(size, align, [(offset, scalar type, ptr)]) of a type, or None for one
+    this cannot lay out (bitfields, unions, nested anonymous structs)."""
+    if t in data_to_c.ESZ:
+        n = data_to_c.ESZ[t]
+        return n, n, [(0, t, "")]
+    if t not in defs or depth > 8:
+        return None
+    off, align, flat = 0, 1, []
+    for d in defs[t].split(";"):
+        d = " ".join(d.split())
+        if not d:
+            continue
+        m = MEMBER.match(d)
+        if not m or ":" in d or "(" in d:
+            return None
+        mt = m.group("type").split()[-1]
+        for v in m.group("decls").split(","):
+            v = v.strip()
+            vm = re.fullmatch(r"(\**)\s*\w+\s*((?:\[[^\]]+\]\s*)*)", v)
+            if not vm:
+                return None
+            k = 1
+            for dim in re.findall(r"\[([^\]]+)\]", vm.group(2)):
+                try:
+                    k *= int(dim, 0)
+                except ValueError:
+                    return None
+            if vm.group(1):
+                es, ea, ef = 4, 4, [(0, mt, "*")]
+            else:
+                lo = layout(mt, defs, depth + 1)
+                if lo is None:
+                    return None
+                es, ea, ef = lo
+            off = (off + ea - 1) // ea * ea
+            align = max(align, ea)
+            for i in range(k):
+                flat += [(off + i * es + o, st, sp) for o, st, sp in ef]
+            off += es * k
+    size = (off + align - 1) // align * align
+    return size, align, flat
+
+
+def struct_init(n, base, dims, quals, items, text, need):
+    """A brace-elided initialiser for a struct type from splat's bytes, or None."""
+    defs = struct_defs(headers_text())
+    defs.update(struct_defs(text))
+    lo = layout(base, defs)
+    if lo is None or lo[0] == 0:
+        return None
+    size, _, flat = lo
+    data, syms = data_to_c.obj_bytes(items, False)
+    if dims:
+        if len(data) % size:
+            return None
+        count = len(data) // size
+    elif len(data) == size:
+        count = 1
+    else:
+        return None
+    vals = []
+    for k in range(count):
+        for o, st, sp in flat:
+            a = k * size + o
+            es = 4 if sp else data_to_c.ESZ[st]
+            sub = {0: syms[a]} if a in syms else {}
+            if any(x in syms for x in range(a + 1, a + es)):
+                return None
+            v = data_to_c.values(st, sp, data[a:a + es], sub, need)
+            if v is None:
+                return None
+            vals.append(v[0])
+    q = f"{quals} " if quals else ""
+    dim = f"[{count:#x}]" if dims else ""
+    return f"{q}{base} {n}{dim} = {{ {', '.join(vals)} }};"
 
 
 def pick_owner(rec):
@@ -273,8 +362,73 @@ def unit_edit(unit, names_owner):
     return "\n".join(out)
 
 
+def unsplit(names_owner, unit_of):
+    """Take the twins of names back: the owner's twin goes (a static one's
+    `extern` comes back out of its #ifndef), the data unit's definition
+    leaves its #ifndef block where it stands."""
+    by_owner = collections.defaultdict(list)
+    for n, own in names_owner.items():
+        by_owner[own].append(n)
+    for own, names in by_owner.items():
+        text = (ROOT / own).read_text()
+        for n in names:
+            u = unit_of[n]
+            st = re.compile(rf"#ifndef NONMATCHING\n(?P<ext>[^\n]*\n)#else\n/\* data twins \({re.escape(u)}\): {n} \*/\n"
+                            rf"(?:[^\n]*\n)*?static [^\n]*\b{n}\b[^\n]*\n#endif\n")
+            m = st.search(text)
+            if m:
+                text = text[:m.start()] + m.group("ext") + text[m.end():]
+                continue
+            def fix_block(bm):
+                blk = bm.group(0)
+                if f"data twins ({u})" not in blk:
+                    return blk
+                def drop(mm):
+                    rest = [x.strip() for x in mm.group(2).split(",") if x.strip() != n]
+                    return f"/* data twins ({mm.group(1)}): {', '.join(rest)} */\n" if rest else ""
+                blk = re.sub(rf"/\* data twins \(({re.escape(u)})\): ([\w, ]*\b{n}\b[\w, ]*) \*/\n", drop, blk)
+                # the definition: a type, then the name (never a statement)
+                blk = re.sub(rf"^(?:(?:const|volatile|unsigned|signed|struct)\s+)*\w+\s*\**\s*{n}\b[^\n]*;\n",
+                             "", blk, count=1, flags=re.M)
+                return blk
+            text = re.sub(r"^#ifdef NONMATCHING\n(?:(?!#endif)[^\n]*\n)*?#endif\n", fix_block, text, flags=re.M)
+        (ROOT / own).write_text(text)
+    by_unit = collections.defaultdict(set)
+    for n in names_owner:
+        by_unit[unit_of[n]].add(n)
+    for u, names in by_unit.items():
+        lines = (ROOT / u).read_text().split("\n")
+        out, block = [], None          # block: the #ifndef header line while inside one
+        for line in lines:
+            if line.startswith("#ifndef NONMATCHING /* the NONMATCHING build defines these in"):
+                block = line
+                out.append(line)
+                continue
+            if block is not None and line == "#endif":
+                block = None
+                out.append(line)
+                continue
+            d = re.search(r"\b(\w+)\s*(?:\[[^\]]*\])*\s*(?:__attribute__\(\(\w+(?:\([^()]*\))?\)\)\s*)?(?:=|;)", line)
+            if block is not None and d and d.group(1) in names:
+                # close the block before it, reopen it after
+                out += ["#endif", line, block]
+                continue
+            out.append(line)
+        text = "\n".join(out)
+        # empty blocks left behind
+        text = re.sub(r"^#ifndef NONMATCHING /\* the NONMATCHING build defines these in [\w/.]+ \*/\n#endif\n", "",
+                      text, flags=re.M)
+        (ROOT / u).write_text(text)
+
+
 def main():
     inv = json.loads((ROOT / "build/data_owners.json").read_text())
+    back = {r["name"]: r["owner"] for r in inv if r["class"] == "pinned" and r.get("owner")}
+    if back:
+        print(f"{len(back)} pinned twins go back: {', '.join(sorted(back)[:8])}{', ...' if len(back) > 8 else ''}",
+              file=sys.stderr)
+        if "--apply" in sys.argv:
+            unsplit(back, {r["name"]: r["unit"] for r in inv})
     units = [sys.argv[i + 1] for i, a in enumerate(sys.argv) if a == "--unit"]
     recs = [r for r in inv if r["class"] in ("single", "multi") and (not units or r["unit"] in units)]
     hdr_ext = externs(headers_text())

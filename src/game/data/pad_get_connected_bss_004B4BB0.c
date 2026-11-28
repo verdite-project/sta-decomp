@@ -15,6 +15,7 @@ f32 D_004B4CEC[0x1];
 u8 D_004B4CE0[0xc];
 f32 D_004B4CDC[0x1];
 u8 D_004B4CD0[0xc];
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/player/player.c */
 u8 D_004B4CC0[0x10];
 u8 D_004B4CB0[0x10];
 u8 D_004B4CA0[0x10];
@@ -23,6 +24,7 @@ u8 D_004B4C80[0x10];
 u8 D_004B4C70[0x10];
 u8 D_004B4C60[0x10];
 u8 D_004B4C50[0x10];
+#endif
 u8 D_004B4C40[0x10];
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/hud_marker.c */
 u8 D_004B4BE0[0x60];

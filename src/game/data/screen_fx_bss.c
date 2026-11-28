@@ -4,9 +4,7 @@
    (CodeWarrior writes uninitialised objects in reverse order). */
 /* used by: cd, file, screen_fx, screen_fx_update, text_00157630.s */
 
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/cd.c */
 u8 D_002F20C0[0x4];
-#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/screen_fx.c */
 f32 D_002F20BC[0x1];
 f32 D_002F2080[0xf];

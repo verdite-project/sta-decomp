@@ -9,6 +9,7 @@
 u8 D_003174F0[0x27010];
 u8 D_003174E0[0x10];
 u8 D_003172E0[0x200];
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/player/player.c */
 u8 D_00317274[0x6c] __attribute__((aligned(4))); /* also D_00317278 */
 f32 D_00317270[0x1];
 f32 D_0031726C[0x1];
@@ -19,6 +20,7 @@ f32 D_00317248[0x1];
 f32 D_00317244[0x1];
 f32 D_00317240[0x1];
 f32 D_0031723C[0x1];
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/script/map_command.c */
 u8 D_00317238[0x4]; /* also D_0031723A */
 #endif

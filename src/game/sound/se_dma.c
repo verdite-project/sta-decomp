@@ -46,19 +46,9 @@ extern s32 D_004BAA58[];
 static s32 D_004BAA58[0x2];
 #endif
 extern s32 D_004BAA60[];
-#ifndef NONMATCHING
 extern s32 D_004BAA64[];
-#else
-/* data twins (src/game/data/save_system_start_bss.c): D_004BAA64 */
-static s32 D_004BAA64[0x1];
-#endif
 extern s32 D_004BAA68[];
-#ifndef NONMATCHING
 extern s32 D_004BAA6C[];
-#else
-/* data twins (src/game/data/save_system_start_bss.c): D_004BAA6C */
-static s32 D_004BAA6C[0x1];
-#endif
 extern u32 D_004BAA48__as_Se_DmaBegin_1_001DB9B0[];
 extern u32 D_004BAA4C__as_Se_DmaBegin_1_001DB9B0[];
 extern u32 D_004BAA50__as_Se_DmaBegin_1_001DB9B0[];
@@ -443,11 +433,10 @@ s16 Se_VolumeCurveB_0_001DC0F0(s32 a) {
 #pragma explicit_zero_data on
 /* data twins (src/game/data/sbss.c): D_00202330 */
 s32 D_00202330;
-/* data twins (src/game/data/save_system_start_bss.c): D_004BAA24, D_004BAA34, D_004BAA48, D_004BAA4C, D_004BAA50, D_004BAA68 */
+/* data twins (src/game/data/save_system_start_bss.c): D_004BAA24, D_004BAA34, D_004BAA48, D_004BAA4C, D_004BAA50 */
 s32 D_004BAA24[0x1];
 s16 D_004BAA34[0x6] __attribute__((aligned(4)));
 s32 D_004BAA48[0x1];
 s32 D_004BAA4C[0x1];
 s32 D_004BAA50[0x1];
-s32 D_004BAA68[0x1];
 #endif

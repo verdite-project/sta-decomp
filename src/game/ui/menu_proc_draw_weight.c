@@ -46,12 +46,7 @@ extern u8 D_001FC9A8[];
 extern u8 D_001FC9B0[];
 extern u8 D_001FC9B8[];
 #endif
-#ifndef NONMATCHING
 extern f32 D_0048D040[];
-#else
-/* data twins (src/game/data/ui_anim_bss.c): D_0048D040 */
-static f32 D_0048D040[0x8];
-#endif
 #ifndef NONMATCHING
 extern s8 *D_001F2690[];
 #else

@@ -1215,10 +1215,4 @@ s32 Snd_StartRequest_2_00131640(void) {
 s8 D_00201C38 = 1;
 /* data twins (src/game/data/sbss.c): D_00201ED0 */
 void *D_00201ED0;
-/* data twins (src/game/data/sound_emitter_bss.c): D_0022F040, D_0022F084, D_0022F088, D_0022F08C, D_0022F090 */
-s32 D_0022F040[0x1] __attribute__((aligned(16)));
-s32 D_0022F084[0x1];
-u32 D_0022F088[0x1];
-u32 D_0022F08C[0x1];
-u8 D_0022F090[0x40000];
 #endif

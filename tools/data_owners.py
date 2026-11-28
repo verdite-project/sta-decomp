@@ -145,17 +145,21 @@ def inventory():
     # NAME = OWNER + 0xOFF for config/'s addresses): they must stay global
     rel = ROOT / "build/rel_syms.ld"
     rel_owners = set(re.findall(r"=\s*(\w+)\s*[+;]", rel.read_text())) if rel.exists() else set()
-    pin(objs, nonmatching_link())
     split = split_names()
     for n, r in objs.items():
         r["users"] = sorted(users[n])
         r["asm"] = sorted(asm_users[n])
         r["data"] = sorted(data_refs[n])
         r["alias"] = n in via_alias or n in rel_owners
-        if r["pinned"] and n not in split:
+    pin(objs, nonmatching_link())
+    for n, r in objs.items():
+        if n in split:
+            r["owner"] = split[n]
+        if r["pinned"]:
+            # a pinned twin is wrong: tools/split_data.py --apply takes it back
             r["class"] = "pinned"
         elif n in split:
-            r["class"], r["owner"] = "split", split[n]
+            r["class"] = "split"
         elif r["asm"]:
             r["class"] = "asm"
         elif len(r["users"]) == 1:
@@ -218,6 +222,46 @@ def escape_roots(objs):
     return out
 
 
+def views(objs):
+    """Objects a user declares with an element bigger than the object
+    (a column of a struct array walked with the struct's stride): their
+    reach is unknown, like a cast's."""
+    import split_data
+    import data_to_c
+    hdr = (ROOT / "include")
+    htext = "".join(p.read_text() for p in sorted(hdr.rglob("*.h")))
+    hdefs = split_data.struct_defs(htext)
+    hext = split_data.externs(htext)
+    out = {}
+    cache = {}
+    for n, r in objs.items():
+        for u in r["users"]:
+            if u not in cache:
+                t = (ROOT / u).read_text()
+                d = dict(hdefs)
+                d.update(split_data.struct_defs(t))
+                cache[u] = (split_data.externs(t), d)
+            ex, defs = cache[u]
+            e = (ex.get(n) or hext.get(n) or [None])[0]
+            if e is None:
+                continue
+            base = e["spec"].split()[-1]
+            if e["ptr"]:
+                es = 4
+            else:
+                lo = split_data.layout(base, defs)
+                es = lo[0] if lo else None
+            for dm in e["dims"][1:]:
+                try:
+                    es = es * int(dm, 0) if es else None
+                except ValueError:
+                    es = None
+            if es and r["size"] < es:
+                out[n] = f"a view: {u} declares it {base}{'*' if e['ptr'] else ''} ({es:#x} bytes), the object is {r['size']:#x}"
+                break
+    return out
+
+
 def over_reach(objs, link):
     """Objects code reaches at a constant offset past their end (a %hi/%lo
     pair or a gp-relative access whose addend is outside [0, size])."""
@@ -266,6 +310,8 @@ def pin(objs, link):
     import move_data
     sz = move_data.sizes()
     roots = escape_roots(objs)
+    for n, why in views(objs).items():
+        roots.setdefault(n, why)
     reach = over_reach(objs, link)
     for r in objs.values():
         r["pinned"] = reach.get(r["name"])

@@ -222,7 +222,9 @@ s32 D_00201DA0[0x2] = { 0, 1 };
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/enemy/enemy_mgr_update.c */
 s32 D_00201DA8 = -1;
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/enemy/enemy_list.c */
 f32 D_00201DAC[0x5] __attribute__((aligned(4))) = { 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/save/save_parse.c */
 s32 D_00201DC0[0x1] = { (s32)D_004A4980 };
 #endif
@@ -238,8 +240,10 @@ s32 D_00201E00[0x4] = { (s32)D_004A4880, 0, 0, 0 };
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/option_mode.c */
 s32 D_00201E10[0x4] = { (s32)D_004A48A0, 0, 0, 0 };
 #endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/player/player.c */
 s32 D_00201E20[0x1] = { (s32)D_004B4D10 };
 s32 D_00201E24[0x1] = { 0x80 };
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/hud_warning.c */
 u16 D_00201E28[0x4] = { 0x6040, 0, 0, 0 };
 #endif

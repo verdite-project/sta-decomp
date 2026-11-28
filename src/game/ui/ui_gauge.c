@@ -273,30 +273,10 @@ static f32 D_0020209C;
 extern S_Ui_DrawGauge_0_00182EF0 D_001F2630 __attribute__((aligned(16)));
 extern S_Ui_DrawGauge_0_00182EF0 D_001F2650 __attribute__((aligned(16)));
 extern S_Ui_DrawGauge_0_00182EF0 D_001F2670 __attribute__((aligned(16)));
-#ifndef NONMATCHING
 extern s32 D_0048CF40[];
-#else
-/* data twins (src/game/data/ui_anim_bss.c): D_0048CF40 */
-static s32 D_0048CF40[0x10];
-#endif
-#ifndef NONMATCHING
 extern s32 D_0048CFC0[];
-#else
-/* data twins (src/game/data/ui_anim_bss.c): D_0048CFC0 */
-static s32 D_0048CFC0[0x10];
-#endif
-#ifndef NONMATCHING
 extern s32 D_0048CF80[];
-#else
-/* data twins (src/game/data/ui_anim_bss.c): D_0048CF80 */
-static s32 D_0048CF80[0x10];
-#endif
-#ifndef NONMATCHING
 extern s32 D_0048D000[];
-#else
-/* data twins (src/game/data/ui_anim_bss.c): D_0048D000 */
-static s32 D_0048D000[0x10];
-#endif
 extern s8 D_001FCA80[];
 extern s8 D_001FCA88[];
 #ifndef NONMATCHING
@@ -1518,17 +1498,6 @@ s8 D_001FCA88[0x8] = { 0x2d, 0x2d, 0x2d, 0, 0, 0, 0, 0 };
 /* data twins (src/game/data/sbss.c): D_002020A8, D_002020AC */
 Col_Ui_DrawWindow_0_00183650 D_002020A8;
 s8 *D_002020AC;
-/* data twins (src/game/data/ui_anim_bss.c): D_0048CE40, D_0048D0E0, D_0048D0F0, D_0048D0F4, D_0048D0F8, D_0048D0FC, D_0048D100, D_0048D104, D_0048D108, D_0048D10C */
-char D_0048CE40[0x100];
-s32 D_0048D0E0[0x4];
-s32 D_0048D0F0[0x1];
-s32 D_0048D0F4[0x1];
-s32 D_0048D0F8[0x1];
-s32 D_0048D0FC[0x1];
-s32 D_0048D100[0x1];
-s32 D_0048D104[0x1];
-s32 D_0048D108[0x1];
-s32 D_0048D10C[0x1];
 /* data twins (src/game/data/ui_gauge_bss.c): D_0048D170 */
 s8 D_0048D170[0x1e0];
 #endif

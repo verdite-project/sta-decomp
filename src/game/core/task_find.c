@@ -47,6 +47,4 @@ INCLUDE_ASM(Task_Find_0_001E02C0);
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/save_system_start_bss.c): D_004BAC48 */
-s32 D_004BAC48[0x1];
 #endif

@@ -247,29 +247,32 @@ the object from its owner instead:
   move. That is an object whose address is cast (to an integer or another
   pointer type) and everything after it in its gap-free run, unless
   `config/data_extents.txt` says how far the code reaches from it (read off
-  the code); an object a `%hi/%lo` or gp-relative access reaches past the
-  end of; and a smaller-than-its-type "view" into a bigger array.
+  the code); a "view" (smaller than the element its users declare) and its
+  run after it the same way; and an object a `%hi/%lo` or gp-relative
+  access reaches past the end of.
 
 <!-- data-owners:start -->
 | objects (2026-11-28) | bss | data | rodata | sbss | sdata | all |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| NONMATCHING twin in its owner | 340 | 39 | 142 | 302 | 108 | 931 |
-| one user, not split yet | 58 | 89 | 106 | 8 | 13 | 274 |
-| several users, not split yet | 18 | 11 | 0 | 4 | 2 | 35 |
-| pinned | 238 | 16 | 66 | 3 | 0 | 323 |
-| used by asm only / by data only / unused | 146 | 25 | 76 | 7 | 1 | 255 |
+| NONMATCHING twin in its owner | 274 | 36 | 225 | 312 | 111 | 958 |
+| one user, not split yet | 11 | 70 | 14 | 2 | 10 | 107 |
+| several users, not split yet | 4 | 4 | 0 | 0 | 2 | 10 |
+| pinned | 445 | 54 | 75 | 3 | 0 | 577 |
+| used by asm only / by data only / unused | 66 | 16 | 76 | 7 | 1 | 166 |
 | total | 800 | 180 | 390 | 324 | 124 | 1818 |
 <!-- data-owners:end -->
 
 Next, in order of yield:
 
-1. **Extents of the biggest roots** (`config/data_extents.txt`): `D_00222B20`
-   (the pool, 32 objects after it), `D_0030A2D0`, `D_00438A70`, `D_004BAC50`,
-   `D_002F16C0`; `tools/data_owners.py --json` names each pinned object's
-   root and the cast.
-2. **Struct initialisers**: most "type does not fit" objects are initialised
-   data the owner declares as a struct of mixed members; `split_data.py`
-   rebuilds only scalar arrays and one-type structs (data_to_c.define()).
+1. **Extents of the roots** (`config/data_extents.txt`): 577 objects are
+   pinned, most of them after a root whose reach is unknown: an address cast,
+   or a "view" (a column of a struct array behind a label smaller than the
+   struct, walked with the struct's stride; it reaches every label of the
+   array). `tools/data_owners.py --json` names each pinned object's root;
+   read how far the code goes from it and add a line.
+2. **Initialisers the tool cannot write** ("type does not fit"): structs with
+   bitfields, unions or anonymous members (`split_data.py`'s layout() takes
+   scalars, pointers, arrays and nested typedef'd structs).
 3. **No extern**: owners that reach an object only through a macro or a
    cast of another symbol; give them an `extern` first.
 4. **Data used only by data or asm**: they go with their user once that is C.
@@ -277,6 +280,12 @@ Next, in order of yield:
    moves loses both twins.
 6. **Names**: rename `D_XXXXXXXX` objects in both copies as owners show what
    they are (the checker keeps the copies in step).
+
+`tools/split_data.py --apply` also takes back the twin of any object a
+later inventory pins (a new root, a new extent), so rerun it after changing
+`config/data_extents.txt` or the code: `./build.sh`, `tools/data_owners.py
+--json build/data_owners.json`, `tools/split_data.py --apply`, `./build.sh`,
+`ninja shift`, `./build.sh --matching`.
 
 ## Shiftable build
 

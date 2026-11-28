@@ -9,12 +9,7 @@
 typedef struct { s32 x0; s32 x4; s32 x8; s32 xC; } B;
 typedef struct { s8 x0; s8 x1; s8 x2; s8 x3; } C;
 extern struct { char pad[0x200]; B b[8]; C c[64]; char pad2[0xA0]; s8 t[8][32]; } D_004BA500;
-#ifndef NONMATCHING
 extern u32 D_004BA000[];
-#else
-/* data twins (src/game/data/bgm_bss.c): D_004BA000 */
-static u32 D_004BA000[0x10];
-#endif
 s32 SndDrv_CallWithData_1_001D8350(s32 a, s32 b, s32 c, s32 d, s32 e, void *m);
 u8 *SndDrv_GetRecvBuffer_1_001D8340(void);
 static inline void cpy(void *d, void *s, u32 n) { s32 i; for (i = 0; i < n; i++) ((u8 *)d)[i] = ((u8 *)s)[i]; }

@@ -63,12 +63,7 @@ extern f32 D_001F3850[4];
 static f32 D_001F3850[0x4] = { 0.0f, 0.0f, 0.0f, 100.0f };
 #endif
 extern f32 D_001F3860[4];
-#ifndef NONMATCHING
 extern f32 D_001F3870[];
-#else
-/* data twins (src/game/data/player_data.c): D_001F3870 */
-static f32 D_001F3870[0x4] = { 1.0f, 0.1f, 0.0f, 0.0f };
-#endif
 void Map_OnAreaLoaded_0_001B6800(S *a, s32 a1);
 void Map_OnAreaLoadedWrap_1_001B6FB0(s32 *arg0);
 void Map_LoadTextures_0_001B6FC0(u8 **arg0);

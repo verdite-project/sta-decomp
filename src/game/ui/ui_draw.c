@@ -245,6 +245,4 @@ void Ui_DrawSpriteRotated_1_00182080(s32 a0, f32 *r, f32 *uv, u8 *col, f32 ang) 
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/ui_anim_bss.c): D_0048C4B0 */
-Q_Ui_BeginSprites_1_00181420 D_0048C4B0[0x990 / sizeof(Q_Ui_BeginSprites_1_00181420)];
 #endif

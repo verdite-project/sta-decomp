@@ -4,9 +4,7 @@
    (CodeWarrior writes uninitialised objects in reverse order). */
 /* used by: font_load, menu, menu_draw, text_00188010.s, ui_gauge */
 
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/menu.c */
 s32 D_00497B60[0x8];
-#endif
 u8 D_00496B60[0x1000];
 u8 D_00495B60[0x1000];
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/menu_draw.c */

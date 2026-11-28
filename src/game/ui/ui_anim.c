@@ -134,18 +134,8 @@ static f32 D_00202050;
 extern E_UiAnim_SetTarget_1_0017F470 D_00486990__as_UiAnim_SetTarget_1_0017F470[];
 extern E_UiAnim_SetVisible_1_0017F7C0 D_00486990__as_UiAnim_SetVisible_1_0017F7C0[24];
 extern E_UiAnim_SetColor_0_0017F890 D_00486990__as_UiAnim_SetColor_0_0017F890[];
-#ifndef NONMATCHING
 extern P2 *D_0048699C[];
-#else
-/* data twins (src/game/data/ui_anim_bss.c): D_0048699C */
-static P2 *D_0048699C[0x1];
-#endif
-#ifndef NONMATCHING
 extern s32 D_004869A0[];
-#else
-/* data twins (src/game/data/ui_anim_bss.c): D_004869A0 */
-static s32 D_004869A0[0x4];
-#endif
 extern s32 D_004869B4[];
 extern f32 D_004869B8[];
 extern f32 D_004869D0[];
@@ -887,7 +877,4 @@ void UiProc_DrawText_0_00180CA0(O_UiProc_DrawText_0_00180CA0 *o, s32 a1, u32 mod
 /* data twins (src/game/data/sbss.c): D_00202040, D_00202048 */
 s32 D_00202040;
 s32 D_00202048;
-/* data twins (src/game/data/ui_anim_bss.c): D_004869B4, D_004869D0 */
-s32 D_004869B4[0x7] __attribute__((aligned(4)));
-f32 D_004869D0[0x1b8];
 #endif

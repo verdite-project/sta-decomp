@@ -213,7 +213,4 @@ void Glow_Enable_0_0015DB60(s32 arg0) {
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/point_light_bss.c): D_0030D180, D_0030D184 */
-s8 D_0030D180[0x4];
-s32 D_0030D184[0x101] __attribute__((aligned(4)));
 #endif

@@ -716,13 +716,11 @@ s32 D_00201C78 = 0x3d000000;
 s32 D_00201F28;
 f32 D_00201F30;
 f32 D_00201F34;
-/* data twins (src/game/data/gs_packet_bss.c): D_002F1410, D_002F1420, D_002F1500, D_002F1510, D_002F1600, D_002F1640 */
+/* data twins (src/game/data/gs_packet_bss.c): D_002F1410, D_002F1420, D_002F1500, D_002F1510 */
 volatile u64 D_002F1410[0x2];
 volatile u64 D_002F1420[0xe];
 volatile u64 D_002F1500[0x2];
 volatile u64 D_002F1510[0xe];
-f32 D_002F1600[4][4];
-f32 D_002F1640[4][4];
 /* data twins (src/game/data/gs_packet_bss_002F1990.c): D_002F1990, D_002F1994, D_002F1998, D_002F199C, D_002F19A0, D_002F19A8, D_002F19AC */
 s32 D_002F1990[0x1] __attribute__((aligned(16)));
 s32 D_002F1994[0x1];

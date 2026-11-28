@@ -57,12 +57,7 @@ extern s32 D_002020E0;
 /* data twins (src/game/data/sbss.c): D_002020E0 */
 static s32 D_002020E0;
 #endif
-#ifndef NONMATCHING
 extern s32 D_00497B60[];
-#else
-/* data twins (src/game/data/ui_gauge_bss.c): D_00497B60 */
-static s32 D_00497B60[0x8];
-#endif
 #ifndef NONMATCHING
 extern f32 D_004A0B10[];
 #else

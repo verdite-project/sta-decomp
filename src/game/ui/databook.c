@@ -54,12 +54,7 @@ extern Pack1952B0 **D_00202180;
 /* data twins (src/game/data/sbss.c): D_00202180 */
 static Pack1952B0 **D_00202180;
 #endif
-#ifndef NONMATCHING
 extern u8 D_001FD270[];
-#else
-/* data twins (src/game/data/databook_rodata.c): D_001FD270 */
-static u8 D_001FD270[0x8] = "MAP\000\000\000\000\000";
-#endif
 #ifndef NONMATCHING
 extern u8 D_001FD288[];
 #else
@@ -608,8 +603,6 @@ void DbCharProc_Layout_0_00195D80(s32 i, f32 *a1, f32 *a2) { s32 sp; f32 f; UiAn
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
 extern u8 D_00496B60[];
-/* data twins (src/game/data/databook_rodata.c): D_001FD268 */
-s8 D_001FD268[0x8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
 /* data twins (src/game/data/sbss.c): D_0020215C, D_00202164, D_00202174, D_0020217C */
 Tbl *D_0020215C;
 s32 *D_00202164;

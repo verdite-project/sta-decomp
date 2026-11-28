@@ -183,7 +183,12 @@ extern s32 D_004BE07C[];
 static s32 D_004BE07C[0x1];
 #endif
 extern s32 _gp;
+#ifndef NONMATCHING
 extern s32 D_00201A50[];
+#else
+/* data twins (src/game/data/movie_rodata2.c): D_00201A50 */
+static s32 D_00201A50[0x8] = { 0x276e6143, 0x704f2074, 0x66206e65, 0x20656c69, 0xa7325, 0, 0, 0 };
+#endif
 #ifndef NONMATCHING
 extern s32 D_00201E70;
 #else

@@ -30,9 +30,11 @@ u8 D_0030A350[0x10];
 u8 D_0030A338[0x18] __attribute__((aligned(8))); /* also D_0030A33C */
 u8 D_0030A334[0x4];
 u8 D_0030A330[0x4];
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/light.c */
 u8 D_0030A320[0x10];
 u8 D_0030A310[0x10];
 u8 D_0030A2D0[0x40];
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/light.c */
 u8 D_0030A290[0x40];
 #endif

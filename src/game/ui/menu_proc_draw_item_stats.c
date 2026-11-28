@@ -55,30 +55,10 @@ extern s8 D_001FCA98[];
 static s8 D_001FCA98[0x5] = "/%3d\000";
 #endif
 extern s8 D_001FCAA0[];
-#ifndef NONMATCHING
 extern s8 D_0048D0A0[];
-#else
-/* data twins (src/game/data/ui_anim_bss.c): D_0048D0A0 */
-static s8 D_0048D0A0[0x14];
-#endif
-#ifndef NONMATCHING
 extern f32 D_0048D0CC[];
-#else
-/* data twins (src/game/data/ui_anim_bss.c): D_0048D0CC */
-static f32 D_0048D0CC[0x1];
-#endif
-#ifndef NONMATCHING
 extern f32 D_0048D0D0[];
-#else
-/* data twins (src/game/data/ui_anim_bss.c): D_0048D0D0 */
-static f32 D_0048D0D0[0x3];
-#endif
-#ifndef NONMATCHING
 extern s32 D_0048D0DC[];
-#else
-/* data twins (src/game/data/ui_anim_bss.c): D_0048D0DC */
-static s32 D_0048D0DC[0x1];
-#endif
 extern f32 D_0048D0B4[];
 extern f32 D_0048D0B8[];
 static inline f32 u2f(u32 x) { return x; }
@@ -207,6 +187,4 @@ void MenuProc_DrawItemStats_0_00184280(O *o, s32 a1, u32 mode, s32 id) {
 #pragma explicit_zero_data on
 /* data twins (src/game/data/ui_gauge_rodata.c): D_001FCAA0 */
 s8 D_001FCAA0[0x10] = { 0x25, 0x33, 0x2e, 0x31, 0x66, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-/* data twins (src/game/data/ui_anim_bss.c): D_0048D0B4 */
-f32 D_0048D0B4[0x6] __attribute__((aligned(4)));
 #endif

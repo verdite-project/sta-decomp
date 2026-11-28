@@ -285,7 +285,12 @@ extern E D_004A43B0[];
 extern E D_004A43B8[];
 extern s32 D_004A4878[];
 extern A_ActorList_Next_2_001A5460 **D_004A4570[];
+#ifndef NONMATCHING
 extern s32 D_00202274;
+#else
+/* data twins (src/game/data/sbss.c): D_00202274 */
+static s32 D_00202274;
+#endif
 extern A_ActorList_AllocSlot_0_001A5530 **D_004A4570__as_ActorList_AllocSlot_0_001A5530[];
 extern u8 **D_004A4570__as_ActorList_FindFree_0_001A55E0[];
 extern A_ActorList_NextTargetable_0_001A5660 **D_004A4570__as_ActorList_NextTargetable_0_001A5660[];
@@ -296,12 +301,37 @@ extern Flags8 D_00222A50[];
 extern G **D_00201E80[2];
 extern G **D_002022BC;
 extern u32 D_002022B8;
+#ifndef NONMATCHING
 extern f32 D_00201DAC;
+#else
+/* data twins (src/game/data/sdata.c): D_00201DAC */
+static f32 D_00201DAC __attribute__((aligned(4))) = 1.0f;
+#endif
 extern Big D_0030D0E0;
+#ifndef NONMATCHING
 extern Vec D_001F37A0;
+#else
+/* data twins (src/game/data/title_nop_data.c): D_001F37A0 */
+static Vec D_001F37A0 = { 128.0f, 128.0f, 128.0f, 1.0f };
+#endif
+#ifndef NONMATCHING
 extern f32 D_001FD910[];
+#else
+/* data twins (src/game/data/enemy_list_rodata.c): D_001FD910 */
+static f32 D_001FD910[0x1] = { 128.0f };
+#endif
+#ifndef NONMATCHING
 extern f32 D_001FD914[];
+#else
+/* data twins (src/game/data/enemy_list_rodata.c): D_001FD914 */
+static f32 D_001FD914[0x1] = { 0.0f };
+#endif
+#ifndef NONMATCHING
 extern f32 D_001FD918[];
+#else
+/* data twins (src/game/data/enemy_list_rodata.c): D_001FD918 */
+static f32 D_001FD918[0x1] = { 128.0f };
+#endif
 #pragma explicit_zero_data on
 const f32 D_001FD91C[0xd] __attribute__((aligned(4))) = { 100.0f, 0.0f, 0.0f, 0.0f, 100.0f, 128.0f, 128.0f, 128.0f, 100.0f, 128.0f, 128.0f, 0.0f, 100.0f };
 const f32 D_001FD950[0x4] __attribute__((aligned(4))) = { 0.3f, 0.4f, 0.3f, 0.3f };
@@ -1380,3 +1410,10 @@ u8 **EnemyData_LoadTextures_0_001A7C70(s32 arg0) {
 #undef sceVu0AddVector
 #undef D_004A4570
 #undef D_001F2170
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00202278, D_00202280 */
+s32 D_00202278;
+s32 D_00202280;
+#endif

@@ -1301,7 +1301,8 @@ s32 D_00222744[0x1];
 s32 D_00222748[0x2];
 /* data twins (src/game/data/sound_bss.c): D_00222AF0 */
 s8 D_00222AF0[0x30];
-/* data twins (src/game/data/gs_packet_bss.c): D_002F1690, D_002F1694 */
-f32 D_002F1690[0x1];
-f32 D_002F1694[0xb] __attribute__((aligned(4)));
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
 #endif

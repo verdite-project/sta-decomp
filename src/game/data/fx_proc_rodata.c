@@ -4,6 +4,7 @@
 /* used by: enemy_script, file, fx_proc, iop */
 #pragma explicit_zero_data on
 
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/enemy/enemy_script.c */
 const char D_001FAD20[0x20] = "scr/chrtest_.bin\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
 const char D_001FAD40[0x20] = "scr/chr0021_.bin\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
 const char D_001FAD60[0x20] = "scr/chr0022_.bin\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
@@ -84,6 +85,7 @@ const char D_001FB6A0[0x20] = "scr/chr0124_.bin\000\000\000\000\000\000\000\000\
 const char D_001FB6C0[0x20] = "scr/chr0125_.bin\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
 const char D_001FB6E0[0x20] = "scr/chr0126_.bin\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
 const char D_001FB700[0x20] = "scr/chr0127_.bin\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
+#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/enemy/enemy_script.c */
 const s32 D_001FB720[0x6] = { 0x2f726373, 0x30726863, 0x5f303032, 0x6e69622e, 0, 0 };
 #endif

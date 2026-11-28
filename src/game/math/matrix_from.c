@@ -5,18 +5,8 @@ extern s8 D_001F2140[];
 extern s8 D_001F2160[];
 extern s8 D_001F2170[];
 extern f32 D_001F2150[];
-#ifndef NONMATCHING
 extern f32 D_001F2154[];
-#else
-/* data twins (src/game/data/screen_fx_flash_data.c): D_001F2154 */
-static f32 D_001F2154[0x1] = { 0.0f };
-#endif
-#ifndef NONMATCHING
 extern f32 D_001F2158[];
-#else
-/* data twins (src/game/data/screen_fx_flash_data.c): D_001F2158 */
-static f32 D_001F2158[0x2] = { 1.0f, 0.0f };
-#endif
 void Mtx_FromTransform_0_00145FB0(X *out, X *in);
 void Mtx_LookDir_1_00146020(Mtx *m, f32 x, f32 y, f32 z);
 void Mtx_RotateToward_0_00146140(s32 arg0, f32 x, f32 z);

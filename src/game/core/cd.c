@@ -33,6 +33,4 @@ void Cd_Init_2_0015B040(s32 arg0, s32 arg1) {
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/screen_fx_bss.c): D_002F20C0 */
-s32 D_002F20C0[0x1];
 #endif

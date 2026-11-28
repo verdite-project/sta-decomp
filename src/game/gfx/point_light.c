@@ -242,3 +242,7 @@ void PointLight_Init_0_0015C8D0(void) {
 #undef PointLight_CalcIntensity_0_0015BDE0
 #undef D_0030C420
 #undef D_0030C3E0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+#endif

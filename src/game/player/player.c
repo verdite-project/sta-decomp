@@ -564,9 +564,22 @@ extern u64 D_002F1420[];
 extern M_Player_UpdateArea_0_001BD4E0 **D_00201E80;
 extern M_Player_UpdateArea_0_001BD4E0 **D_002022BC;
 extern s32 D_002022B8;
+#ifdef NONMATCHING
+extern u8 D_004B4D10[];
+#endif
+#ifndef NONMATCHING
 extern f32 D_002022DC;
+#else
+/* data twins (src/game/data/sbss.c): D_002022DC */
+static f32 D_002022DC;
+#endif
 extern u32 D_00201C5C;
+#ifndef NONMATCHING
 extern u8 D_00201E24;
+#else
+/* data twins (src/game/data/sdata.c): D_00201E24 */
+static u8 D_00201E24 = 0x80;
+#endif
 extern f32 D_001F2080[];
 extern f32 D_001F2084[];
 extern f32 D_001F208C[];
@@ -583,14 +596,54 @@ extern f32 D_001F210C[];
 extern MtxF D_001F2170;
 extern Vec D_004B4CE0[];
 extern f32 D_004B4CEC[];
+#ifndef NONMATCHING
 extern Vec D_004B4C50[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4C50 */
+static Vec D_004B4C50[0x1];
+#endif
+#ifndef NONMATCHING
 extern Vec D_004B4C60[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4C60 */
+static Vec D_004B4C60[0x1];
+#endif
+#ifndef NONMATCHING
 extern Vec D_004B4C70[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4C70 */
+static Vec D_004B4C70[0x1];
+#endif
+#ifndef NONMATCHING
 extern Vec D_004B4C80[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4C80 */
+static Vec D_004B4C80[0x1];
+#endif
+#ifndef NONMATCHING
 extern Vec D_004B4C90[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4C90 */
+static Vec D_004B4C90[0x1];
+#endif
+#ifndef NONMATCHING
 extern Vec D_004B4CA0[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4CA0 */
+static Vec D_004B4CA0[0x1];
+#endif
+#ifndef NONMATCHING
 extern Vec D_004B4CB0[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4CB0 */
+static Vec D_004B4CB0[0x1];
+#endif
+#ifndef NONMATCHING
 extern Vec D_004B4CC0[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4CC0 */
+static Vec D_004B4CC0[0x1];
+#endif
 extern Vec D_004B4CD0[];
 extern f32 D_004B4CDC[];
 extern u8 D_0030D0E0[];
@@ -602,25 +655,65 @@ extern Vec D_004B4CF0;
 extern Flags8 D_00222A53[];
 extern f32 D_001F2170__as_Player_GetHandMatrix_1_001C0660[];
 extern f32 D_001F2170__as_Player_BlendHandMatrix_0_001C0860[];
+#ifndef NONMATCHING
 extern s32 D_002022EC;
+#else
+/* data twins (src/game/data/sbss.c): D_002022EC */
+static s32 D_002022EC;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00201EB0;
+#else
+/* data twins (src/game/data/sbss.c): D_00201EB0 */
+static s32 D_00201EB0;
+#endif
 extern f32 D_004B4D00[];
 extern f32 D_004B4D04[];
 extern f32 D_004B4D08[];
 extern f32 D_004B4D0C[];
 extern u8 D_00222A54[];
 extern Vec D_001F2140;
+#ifndef NONMATCHING
 extern f32 D_002022E8;
+#else
+/* data twins (src/game/data/sbss.c): D_002022E8 */
+static f32 D_002022E8;
+#endif
 extern u16 D_00317230[];
 extern u16 D_00317238[];
 extern f32 D_0031723C[];
+#ifndef NONMATCHING
 extern f32 D_00317240[];
+#else
+/* data twins (src/game/data/vibration_bss.c): D_00317240 */
+static f32 D_00317240[0x1];
+#endif
+#ifndef NONMATCHING
 extern f32 D_0031724C[];
+#else
+/* data twins (src/game/data/vibration_bss.c): D_0031724C */
+static f32 D_0031724C[0x1];
+#endif
+#ifndef NONMATCHING
 extern f32 D_00317250[];
+#else
+/* data twins (src/game/data/vibration_bss.c): D_00317250 */
+static f32 D_00317250[0x1];
+#endif
 extern f32 D_00317254[];
 extern f32 D_00317258[];
+#ifndef NONMATCHING
 extern f32 D_0031726C[];
+#else
+/* data twins (src/game/data/vibration_bss.c): D_0031726C */
+static f32 D_0031726C[0x1];
+#endif
+#ifndef NONMATCHING
 extern f32 D_00317270[];
+#else
+/* data twins (src/game/data/vibration_bss.c): D_00317270 */
+static f32 D_00317270[0x1];
+#endif
 extern f32 D_00317274[];
 extern f32 D_00317278[];
 extern MtxF D_001F2170__as_Player_UpdatePickup_0_001C0A10_;
@@ -630,7 +723,12 @@ extern f32 D_003139A0__as_Player_UpdateEquipSounds_0_001BF940_[];
 extern s32 **D_002022BC__as_Player_UpdateEquipSounds_0_001BF940_;
 extern s32 D_00201E80__as_Player_UpdateEquipSounds_0_001BF940_;
 extern s8 D_004B4CF0__as_Player_UpdateEquipSounds_0_001BF940_[];
+#ifndef NONMATCHING
 extern s32 D_002022D8;
+#else
+/* data twins (src/game/data/sbss.c): D_002022D8 */
+static s32 D_002022D8;
+#endif
 extern Obj_Player_DrawWeapon_0_001BCFF0 *D_002022E4__as_PlayerProc_Attack_0_001C55A0;
 extern s32 D_00201E80__as_PlayerProc_Collide_0_001C5150_;
 extern s32 D_002022BC__as_PlayerProc_Collide_0_001C5150_;
@@ -664,11 +762,36 @@ extern S_Player_IsActionLocked_0_001C9AE0 *D_002022E4__as_Player_IsActionLocked_
 extern void *D_002022E4__as_Player_GetBodyState_1_001C9B60;
 extern s32 D_00201E20__as_PlayerData_Get_2_001C9BA0;
 extern M2C_UNK D_004B4BE0[];
+#ifndef NONMATCHING
 extern char D_001FDC08[];
+#else
+/* data twins (src/game/data/player_rodata.c): D_001FDC08 */
+static char D_001FDC08[0x8] = "RIFLE01\000";
+#endif
+#ifndef NONMATCHING
 extern char D_001FDC10[];
+#else
+/* data twins (src/game/data/player_rodata.c): D_001FDC10 */
+static char D_001FDC10[0x8] = "JYO\000\000\000\000\000";
+#endif
+#ifndef NONMATCHING
 extern char D_001FDC18[];
+#else
+/* data twins (src/game/data/player_rodata.c): D_001FDC18 */
+static char D_001FDC18[0x6] = "DM_09\000";
+#endif
+#ifndef NONMATCHING
 extern char D_001FDC20[];
+#else
+/* data twins (src/game/data/player_rodata.c): D_001FDC20 */
+static char D_001FDC20[0x6] = "DM_10\000";
+#endif
+#ifndef NONMATCHING
 extern char D_001FDC28[];
+#else
+/* data twins (src/game/data/player_rodata.c): D_001FDC28 */
+static char D_001FDC28[0x5] = "TEN\000\000";
+#endif
 extern s8 *D_002022E4__as_Player_Destroy_1_001C9C30;
 extern s8 *D_002022E4__as_Player_LoadModel_1_001C9CD0;
 extern u8 D_004B4BE0__as_Player_LoadModel_1_001C9CD0[];
@@ -5087,3 +5210,19 @@ void PlayerData_InitNew_0_001C9EA0(void) {
 #undef D_004B4CE0
 #undef Inventory_Give_0_001CBCD0
 #undef Player_RecalcStats_1_001CEDC0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+extern u8 D_004B4D10[];
+/* data twins (src/game/data/sdata.c): D_00201E20 */
+G *D_00201E20 = (G *)D_004B4D10;
+/* data twins (src/game/data/sbss.c): D_002022BC, D_002022E4 */
+M_Player_UpdateArea_0_001BD4E0 **D_002022BC;
+Actor *D_002022E4;
+/* data twins (src/game/data/vibration_bss.c): D_0031723C, D_00317244, D_00317248, D_00317254, D_00317274 */
+f32 D_0031723C[0x1];
+f32 D_00317244[0x1];
+f32 D_00317248[0x1];
+f32 D_00317254[0x6] __attribute__((aligned(4)));
+f32 D_00317274[0x1b] __attribute__((aligned(4)));
+#endif
