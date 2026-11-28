@@ -263,7 +263,6 @@ src/game/math/angle_b.c
 src/game/math/cos_table.c
 src/game/entity/projectile_find.c
 src/game/entity/proj_find_enemy_in_cone.c
-asm/text_00146EF0.s
 src/game/map/map_line.c
 src/game/entity/projectile_target.c
 src/game/data/fx_proc_data.c
@@ -347,7 +346,6 @@ src/game/input/input_init.c
 asm/text_0015FC60.s
 src/game/input/vibration.c
 src/game/effect/fx_update_emitter.c
-asm/text_00160370.s
 src/game/math/deg_to_rad.c
 src/game/effect/fx_spawn.c
 src/game/effect/fx_update_children.c
@@ -392,9 +390,8 @@ src/game/model/mdl_emit_strip_d.c
 asm/text_0016DC70.s
 src/game/model/model_emit.c
 src/game/gfx/texture_load.c
-src/game/gfx/texture_find.c
 src/game/gfx/tex_load_animated.c
-asm/text_0016FB80.s
+src/game/gfx/texture_find.c
 src/game/model/model_load.c
 src/game/model/mtx_max_axis_scale.c
 asm/text_00171550.s
@@ -404,7 +401,6 @@ src/game/model/model_length.c
 src/game/math/matrix_compose.c
 src/game/gfx/gfx_end.c
 src/game/model/mdl_create_instance.c
-asm/text_00174230.s
 src/game/model/model_destroy.c
 src/game/gfx/texture_anim.c
 src/game/gfx/texture.c
@@ -602,7 +598,6 @@ src/game/map_object/chest.c
 src/game/map_object/map_object_check.c
 src/game/map_object/map_obj_snap_to_ground.c
 src/game/map_object/trap_update.c
-asm/text_001BA3F0.s
 src/game/map_object/trap.c
 src/game/map_object/map_object_reset.c
 src/game/data/player_data.c
@@ -724,7 +719,6 @@ src/game/ui/shop_menu.c
 src/game/core/play_time.c
 src/game/core/task_step.c
 src/game/core/task_find.c
-asm/text_001E02C0.s
 src/game/core/task_callback.c
 src/game/gfx/glow_fx.c
 src/game/sound/map_se_stream.c

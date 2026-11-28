@@ -1,10 +1,3 @@
-/* Best-effort C for the NONMATCHING build; the matching attempt is
- * wip/Mdl_CreateInstance_0_00174230.c. */
-#include "include_asm.h"
-
-#ifdef NONMATCHING
-// NEAR: 2 of 232 words differ (b52; b38 same). Fixed spill slots: whole body is an inline taking src (= *arg1, becomes a 16-aligned temp) and &off (off lives at its param home). Remaining: the h==NULL early return in the inline stores 0 to h slot and branches to the shared return (b 0xA4; sw zero,0xE0) instead of retail b 0xAE; daddu v0,zero,zero.
-/* round 3 near-miss: 12 words: only two spill slots differ (h is a temp in retail) */
 #include "common.h"
 typedef struct { s32 x0; s32 x4; s32 x8; s32 xC; } Ent;
 typedef struct {
@@ -35,67 +28,71 @@ typedef struct {
 } Obj;
 void FlushCache(s32);
 Obj **Pool_Alloc_3_001288C0(s32, s32);
-void Pool_ArrayAppend_0_001535B0(s32 *, Obj **);
+void Pool_ArrayAppend_0_001535B0(s32 *, s8 *);
 void memset(Obj *, s32, s32);
 void sceVu0CopyMatrix(Mtx *, Mtx *);
 extern Mtx gMdlCreateInstanceData_001F2340[];
-static inline Blk *getb(s32 d, u32 i, s32 sz) { return (Blk *)(d + i * sz); }
-static inline Obj **body(s32 *arg0, Src **arg1, s32 *poff, s32 arg3, Src *src) {
-    s32 n;
-    Obj *o;
+
+Obj **Mdl_CreateInstance_0_00174230(s32 *pool, Src **sourceHandle, s32 firstNode, s32 count) {
+    s8 *entry;
+    s32 nodeCount;
+    Obj *instance;
     s32 size;
-    Obj **h;
+    Obj **instanceHandle;
     s32 i;
     s32 j;
     Blk *blk;
     u8 *base;
-    Ent *e;
-    s32 es;
+    Src *src;
+    s32 entries;
     s32 v;
-    u8 c;
+    u8 parentIndex;
+    Ent *e;
 
-    n = 0;
-    if (*poff == -1) {
-        *poff = 0;
-        if (arg3 == -1) {
-            n = src->x14;
+    src = *sourceHandle;
+    nodeCount = 0;
+    if (firstNode == -1) {
+        firstNode = 0;
+        if (count == -1) {
+            nodeCount = src->x14;
         }
     }
-    if (arg3 != -1) {
-        n = arg3;
+    if (count != -1) {
+        nodeCount = count;
     }
     FlushCache(0);
-    size = (n * 0x140 + 0x200) * 2 + 0x40;
-    h = Pool_Alloc_3_001288C0(*arg0, size);
-    if (h == NULL) {
+    size = (nodeCount * 0x140 + 0x200) * 2 + 0x40;
+    instanceHandle = Pool_Alloc_3_001288C0(*pool, size);
+    entry = (s8 *)instanceHandle;
+    if (instanceHandle == NULL) {
         return NULL;
     }
-    Pool_ArrayAppend_0_001535B0(arg0 + 0x34 / 4, h);
-    memset(*h, 0, size);
-    o = *h;
-    o->x0 = arg1;
-    o->x4 = *poff;
-    o->x6 = n;
-    o->x8 = 0;
-    o->xC = 0;
-    o->x10 = 0;
-    o->x14 = 1.0f;
-    o->x18 = 0;
-    o->x1C = 0;
-    o->x24.w = 0;
-    o->x24.f.b0 = 1;
-    o->x24.f.b1 = 1;
-    o->x24.f.b2 = 1;
-    o->x24.f.b3 = 1;
-    o->x24.f.b4 = 1;
-    o->x24.f.b5 = 1;
-    o->x24.f.b6 = 0;
+    Pool_ArrayAppend_0_001535B0(pool + 0x34 / 4, entry);
+    memset(*instanceHandle, 0, size);
+    instance = *instanceHandle;
+    instance->x0 = sourceHandle;
+    instance->x4 = firstNode;
+    instance->x6 = nodeCount;
+    instance->x8 = 0;
+    instance->xC = 0;
+    instance->x10 = 0;
+    instance->x14 = 1.0f;
+    instance->x18 = 0;
+    instance->x1C = 0;
+    instance->x24.w = 0;
+    instance->x24.f.b0 = 1;
+    instance->x24.f.b1 = 1;
+    instance->x24.f.b2 = 1;
+    instance->x24.f.b3 = 1;
+    instance->x24.f.b4 = 1;
+    instance->x24.f.b5 = 1;
+    instance->x24.f.b6 = 0;
     src->x22++;
-    if (arg3 == -1) {
+    if (count == -1) {
         for (i = 0; i < 2; i++) {
-            blk = (Blk *)((s32)o->data + (u32)i * (n * 0x140 + 0x200));
+            blk = (Blk *)((s32)instance->data + (u32)i * (nodeCount * 0x140 + 0x200));
             base = *src->x10;
-            es = (s32)src->e;
+            entries = (s32)src->e;
             sceVu0CopyMatrix(&blk->nd[0].m1, gMdlCreateInstanceData_001F2340);
             sceVu0CopyMatrix(&blk->nd[0].m0, gMdlCreateInstanceData_001F2340);
             blk->nd[0].b130 = 0xFF;
@@ -103,8 +100,8 @@ static inline Obj **body(s32 *arg0, Src **arg1, s32 *poff, s32 arg3, Src *src) {
             blk->nd[0].f134 = 1.0f;
             blk->x0 = src->x3C & 7;
             blk->x4 = 0;
-            for (j = 0; j < n; j++) {
-                e = (Ent *)(es + (*poff + j) * 16);
+            for (j = 0; j < nodeCount; j++) {
+                e = (Ent *)(entries + (firstNode + j) * 16);
                 if (e->x8 == 0) {
                     sceVu0CopyMatrix(&blk->nd[j + 1].m0, gMdlCreateInstanceData_001F2340);
                     sceVu0CopyMatrix(&blk->nd[j + 1].m1, gMdlCreateInstanceData_001F2340);
@@ -112,10 +109,10 @@ static inline Obj **body(s32 *arg0, Src **arg1, s32 *poff, s32 arg3, Src *src) {
                     sceVu0CopyMatrix(&blk->nd[j + 1].m0, (Mtx *)(base + e->x8));
                     sceVu0CopyMatrix(&blk->nd[j + 1].m1, (Mtx *)(base + e->xC));
                 }
-                c = (base + e->x0)[2];
+                parentIndex = (base + e->x0)[2];
                 v = 0;
-                if (c != 0xFF) {
-                    v = c - *poff + 1;
+                if (parentIndex != 0xFF) {
+                    v = parentIndex - firstNode + 1;
                     if (v <= 0) {
                         v = 0;
                     }
@@ -127,13 +124,8 @@ static inline Obj **body(s32 *arg0, Src **arg1, s32 *poff, s32 arg3, Src *src) {
             }
         }
     }
-    return h;
+    return instanceHandle;
 }
-
-Obj **Mdl_CreateInstance_0_00174230(s32 *arg0, Src **arg1, s32 off, s32 arg3) { return body(arg0, arg1, &off, arg3, *arg1); }
-#else
-INCLUDE_ASM(Mdl_CreateInstance_0_00174230);
-#endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on

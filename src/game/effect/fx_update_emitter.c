@@ -1,17 +1,3 @@
-/* Best-effort C for the NONMATCHING build; the matching attempt is
- * wip/Fx_UpdateEmitter_0_00160370.c. */
-#include "include_asm.h"
-
-#ifdef NONMATCHING
-// NEAR: 1 of 816 words differ. Only diff: `or a0,a0,v0` vs retail `or a0,v0,a0` for the cv(o->x40.y, 8) | cc step.
-// Fixed vs prev (9 words): kq s32 temp so the k-bitfield is tested unmasked, then kk = kq inside the if.
-// Tried for the or: operand order, temps, c2 vars, inline orr/cv3, +/^, casts, cc types, barrier, b38: no change or block merge (812 words).
-
-
-
-
-
-
 #include "common.h"
 typedef union { s16 h; Flags8 f; } S;
 typedef struct { u8 b[0x14]; } Fr;
@@ -125,9 +111,8 @@ s32 Fx_UpdateEmitter_0_00160370(O *o, R *r, f32 dt) {
     f32 ang;
     f32 c;
     s8 ch;
-    u32 cc;
-    u32 c2;
-    u32 c3;
+    s32 packedColor;
+    u32 channel;
     u8 kk;
     s32 kq;
     u16 tw;
@@ -252,13 +237,17 @@ s32 Fx_UpdateEmitter_0_00160370(O *o, R *r, f32 dt) {
         }
     }
     kq = a->x12.k;
-    if (kq) { kk = kq; uv(r, o, a, kk); }
+    if (kq) {
+        kk = kq;
+        uv(r, o, a, kk);
+    }
     if (!(t->x17C == 1.0f) || o->x114.f.b3 || (a->x2A & 0x18)) {
-        cc = cv(t->x17C * (o->x40.w * *(f32 *)((u8 *)t->e[0] + 0x8C)), 24);
-        cc |= cv(o->x40.z, 16);
-        cc = cv(o->x40.y, 8) | cc;
-        c3 = cv(o->x40.x, 0);
-        r->x28 = c3 | cc;
+        packedColor = cv(t->x17C * (o->x40.w * *(f32 *)((u8 *)t->e[0] + 0x8C)), 24);
+        packedColor |= cv(o->x40.z, 16);
+        channel = cv(o->x40.y, 8);
+        packedColor = channel | packedColor;
+        channel = cv(o->x40.x, 0);
+        r->x28 = channel | packedColor;
     }
     if (t->x188.f.b2) {
         ch = ((TE *)((u8 *)t + 0x200))[o->x94].c;
@@ -274,6 +263,3 @@ s32 Fx_UpdateEmitter_0_00160370(O *o, R *r, f32 dt) {
     o->x8C += dt;
     return ret;
 }
-#else
-INCLUDE_ASM(Fx_UpdateEmitter_0_00160370);
-#endif
