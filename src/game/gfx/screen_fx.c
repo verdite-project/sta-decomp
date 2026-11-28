@@ -38,12 +38,13 @@ typedef struct {
     u8 pad4D[3];
 } S;
 typedef union { u128 q; f32 f[4]; } V_ScreenFx_ProjectPoint_0_00159160;
-extern Q gScreenFxData_001F2050;
+#pragma explicit_zero_data on
+V_ScreenFx_ProjectPoint_0_00159160 gScreenFxData_001F2040[0x1] = { { .f = { 0.0f, 0.0f, 0.0f, 1.0f } } };
+Q gScreenFxData_001F2050 = { .w = { 0, 0, 0, 0x3f800000 } };
 extern s32 gScreenFxBss_002F1AE0[];
 extern W gWeatherState_002F19B0;
 extern f32 gScreenFxBss_002F2070[];
 extern u64 gScreenFxUpdateSbss_00201F78;
-extern V_ScreenFx_ProjectPoint_0_00159160 gScreenFxData_001F2040[];
 extern f32 gSoundEmitterBss_002F16C0[];
 extern f32 gGameMainBss_002F1840[];
 extern f32 gScreenFxBss_002F19E0[];
@@ -867,17 +868,7 @@ f32 gScreenFxBss_002F2070[0x2];
 u8 gWeatherState_002F19B0__grp[0xa0] __attribute__((aligned(16)));
 #endif
 
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-/* data group (src/game/data/screen_fx_flash_data.c): D_001F2040__grp: gScreenFxData_001F2040@0x0 */
-f32 D_001F2040__grp[0x4] __attribute__((aligned(16))) = { 0.0f, 0.0f, 0.0f, 1.0f };
-#endif
 
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-/* data group (src/game/data/screen_fx_flash_data.c): D_001F2050__grp: gScreenFxData_001F2050@0x0 */
-f32 D_001F2050__grp[0x4] __attribute__((aligned(16))) = { 0.0f, 0.0f, 0.0f, 1.0f };
-#endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on

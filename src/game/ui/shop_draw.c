@@ -6,7 +6,7 @@
 #include "game/ui.h"
 #include "game/math.h"
 typedef struct { u16 v[8]; } H;
-typedef struct { u128 q[2]; } Q2;
+typedef union { u128 q[2]; u32 w[8]; } Q2;
 typedef struct { s32 *p; s32 n; f32 f; void *fn; s32 a; s32 b; void *cb; } Arg;
 typedef struct { s32 ev; s32 btn; u8 x8; u8 x9; u8 xA; u8 xB; u8 xC; u8 xD; u8 xE; } In;
 typedef struct { u8 pad[0xA]; u16 xA; u8 padC[0x30]; u8 x3C; u8 pad3D[0x53]; } E;
@@ -69,7 +69,9 @@ extern f32 gShopDrawSbss_0020222C;
 static f32 gShopDrawSbss_0020222C;
 #endif
 extern f32 gShopBss_004A3328[];
-extern Q2 gPauseMenuOpenData_001F3260;
+extern u8 gPauseMenuOpenData_001F3220[];
+#pragma explicit_zero_data on
+Q2 gPauseMenuOpenData_001F3260 = { .w = { 0, 5, 0, (u32)gPauseMenuOpenData_001F3220, 7, 0xc0400000, 0, 0 } };
 #ifndef NONMATCHING
 extern s32 gShopDrawSbss_00202220;
 #else
@@ -695,4 +697,10 @@ extern u8 gEquipDrawBss_00496B60[];
 s32 gShopDrawBss_004A3320[0x1];
 s32 gShopDrawBss_004A4330[0x3];
 Flags8 gShopDrawBss_004A4340[0x10 / sizeof(Flags8)];
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/pause_menu_open_data_001F3200.c): gPauseMenuOpenData_001F3220__grp: gPauseMenuOpenData_001F3220@0x0 */
+int gPauseMenuOpenData_001F3220__grp[0x10] __attribute__((aligned(16))) = { -0x3fc00000, 0xfa6, -0x40000000, 0xfa5, -0x40800000, 0xfa4, 0, 0xfa3, 0x3f800000, 0xfa2, 0x40000000, 0xfa1, 0x40400000, 0xfa0, 0, 0 };
 #endif

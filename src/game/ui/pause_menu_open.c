@@ -1,7 +1,7 @@
 #include "m2c.h"
 #include "game/data.h"
 #include "game/ui.h"
-typedef struct { u128 q[2]; } Q2;
+typedef union { u128 q[2]; u32 w[8]; } Q2;
 typedef UiArg Arg;
 typedef struct { s32 x0; } Ev;
 void UiAnim_SetColor_0_0017F890(s32, Q2 *, Arg *);
@@ -45,7 +45,6 @@ void PauseMenu_Open_0_0019E2F0(Ev *arg0) {
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
 extern unsigned char gPauseMenuOpenData_001F3180[];
-extern unsigned char gPauseMenuOpenData_001F3220[];
-/* data group (src/game/data/pause_menu_open_data.c): gPauseMenuOpenData_001F3160__grp: gPauseMenuOpenData_001F3160@0x0, gPauseMenuOpenData_001F3180@0x20, gPauseMenuOpenData_001F31C0@0x60, gPauseMenuOpenData_001F31E0@0x80, gPauseMenuOpenData_001F3200@0xa0, gPauseMenuOpenData_001F3210@0xb0, gPauseMenuOpenData_001F3220@0xc0, gPauseMenuOpenData_001F3260@0x100 */
-int gPauseMenuOpenData_001F3160__grp[0x48] __attribute__((aligned(16))) = { 0, 1, 2, 3, 4, 0, 0, 0, -0x3fc00000, 0xfa6, -0x40000000, 0xfa5, -0x40800000, 0xfa4, 0, 0xfa3, 0x3f800000, 0xfa2, 0x40000000, 0xfa1, 0x40400000, 0xfa0, 0, 0, 0, 5, 0, (int)gPauseMenuOpenData_001F3180, 7, -0x3fc00000, 0, 0, 0x3f800000, 0, 0, 0x3f800000, 0, 0, 0, 0, 0, 0, 0x44200000, 0x43e00000, 0, 0, 0x43000000, 0x43000000, -0x3fc00000, 0xfa6, -0x40000000, 0xfa5, -0x40800000, 0xfa4, 0, 0xfa3, 0x3f800000, 0xfa2, 0x40000000, 0xfa1, 0x40400000, 0xfa0, 0, 0, 0, 5, 0, (int)gPauseMenuOpenData_001F3220, 7, -0x3fc00000, 0, 0 };
+/* data group (src/game/data/pause_menu_open_data.c): gPauseMenuOpenData_001F3160__grp: gPauseMenuOpenData_001F3160@0x0, gPauseMenuOpenData_001F3180@0x20, gPauseMenuOpenData_001F31C0@0x60 */
+int gPauseMenuOpenData_001F3160__grp[0x20] __attribute__((aligned(16))) = { 0, 1, 2, 3, 4, 0, 0, 0, -0x3fc00000, 0xfa6, -0x40000000, 0xfa5, -0x40800000, 0xfa4, 0, 0xfa3, 0x3f800000, 0xfa2, 0x40000000, 0xfa1, 0x40400000, 0xfa0, 0, 0, 0, 5, 0, (int)gPauseMenuOpenData_001F3180, 7, -0x3fc00000, 0, 0 };
 #endif

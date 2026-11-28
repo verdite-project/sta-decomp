@@ -270,7 +270,8 @@ the object from its owner instead:
 <!-- data-owners:start -->
 | objects (2026-11-28) | bss | data | rodata | sbss | sdata | all |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| NONMATCHING twin or group in its owner | 800 | 180 | 390 | 324 | 124 | 1818 |
+| in its owner in both builds | 0 | 8 | 0 | 0 | 0 | 8 |
+| NONMATCHING twin or group in its owner | 800 | 172 | 390 | 324 | 124 | 1810 |
 | total | 800 | 180 | 390 | 324 | 124 | 1818 |
 <!-- data-owners:end -->
 
@@ -283,9 +284,15 @@ note), else to the C unit before its data unit in link order. Beyond that:
    unknown reach takes the rest of its run with it, so the run moves as
    one blob; read how far the code goes and add a line to split it.
 2. **Real moves**: rerun `tools/move_data.py` as units match; an object it
-   moves loses both copies. As of now it moves nothing (15 candidates fold
-   into their owner's code, 2 would leave link order, 13 are 128-bit qword
-   unions no C initialiser writes; it also tries struct initialisers).
+   moves loses both copies. 8 objects moved for both builds (with union
+   and padded-struct initialisers, and qword typedefs as unions with a
+   `u32 w[]` view, which keep their owners' code byte for byte); every
+   other candidate either folds into its owner's code or would leave link
+   order. After a move: take back the unit's twins and groups first
+   (split_data.unsplit / ungroup), add the owner's and the remainders'
+   subsegments to `config/sta.jp.yaml` and the remainders to the link
+   order (a data unit's head may move up to stay before its owner), then
+   `rm -rf asm; ./build.sh --matching` and rerun the NONMATCHING steps.
 3. **Names**: `config/game_data_names.txt` + `tools/apply_data_names.py`
    (README, "Data names"); 1808 are named: 135 for what they are (the 123
    ASCII strings after their text, the header-typed objects, the tables

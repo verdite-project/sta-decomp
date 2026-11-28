@@ -41,7 +41,7 @@ void Ui_DrawWindow_0_00183650(s8 *);
 #ifndef NONMATCHING
 extern S gMenuProcDrawItemStatsData_001F2720 __attribute__((aligned(16)));
 #else
-/* data twins (src/game/data/ui_global_data.c): gMenuProcDrawItemStatsData_001F2720 */
+/* data twins (src/game/data/ui_global_data_001F2630.c): gMenuProcDrawItemStatsData_001F2720 */
 static S gMenuProcDrawItemStatsData_001F2720 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
 #endif
 extern s8 gUiGaugeBss_0048CE40[];

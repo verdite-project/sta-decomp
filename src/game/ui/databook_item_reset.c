@@ -4,7 +4,7 @@
 #include "game/save.h"
 #include "game/ui.h"
 #include "game/math.h"
-typedef struct { u128 q[2]; } Q2;
+typedef union { u128 q[2]; u32 w[8]; } Q2;
 typedef UiArg Arg;
 typedef struct { u32 id; s32 x; s32 y; } Ent_DbItem_ResetLayout_0_00197DD0;
 typedef struct { s32 h0; u32 n; s32 h8; s32 hC; Ent_DbItem_ResetLayout_0_00197DD0 e[1]; } Tbl;

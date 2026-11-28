@@ -78,7 +78,7 @@ extern s8 gSeBss_004BA2E0__as_Se_QueueCommand_1_001DBDB0[];
 extern s16 gSeDmaData_001F38F0[];
 #else
 /* data twins (src/game/data/player_status_data.c): gSeDmaData_001F38F0 */
-static s16 gSeDmaData_001F38F0[0x1] __attribute__((aligned(16))) = { 0 };
+static s16 gSeDmaData_001F38F0[0x1] = { 0 };
 #endif
 #ifndef NONMATCHING
 extern s16 gSeDmaData_001F38F2[];

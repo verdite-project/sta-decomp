@@ -18,7 +18,12 @@ typedef struct { s32 sel; s32 x4; s32 x8; f32 xC; s32 x10; s32 x14; E e[2]; } M_
 extern M_SaveMenu_DrawFrame_0_0018D1F0 gOptionBss_004A1050;
 extern s32 gOptionBss_004A105C[];
 extern f32 gOptionBss_004A1060[];
+#ifndef NONMATCHING
 extern S gSaveMenuData_001F2A50[] __attribute__((aligned(16)));
+#else
+/* data twins (src/game/data/save_menu_data.c): gSaveMenuData_001F2A50 */
+static S gSaveMenuData_001F2A50[0x1] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+#endif
 #ifndef NONMATCHING
 extern s8 gSaveMenuRodata_001FCDC8[];
 #else
@@ -266,8 +271,3 @@ s32 gSaveMenuBss_004A1020[0xc] __attribute__((aligned(4)));
 #endif
 
 
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-/* data group (src/game/data/save_menu_data.c): D_001F2A50__grp: gSaveMenuData_001F2A50@0x0 */
-f32 D_001F2A50__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
-#endif

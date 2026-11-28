@@ -78,7 +78,12 @@ extern f32 gSaveMenuSlotBss_004A100C[];
 /* data twins (src/game/data/option_bss.c): gSaveMenuSlotBss_004A100C */
 static f32 gSaveMenuSlotBss_004A100C[0x1];
 #endif
+#ifndef NONMATCHING
 extern S gSaveMenuSlotData_001F2A10[] __attribute__((aligned(16)));
+#else
+/* data twins (src/game/data/save_menu_data.c): gSaveMenuSlotData_001F2A10 */
+static S gSaveMenuSlotData_001F2A10[0x1] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+#endif
 extern Slot D_004A0900[];
 #ifndef NONMATCHING
 extern char gStrSavedataD_001FCD00[];
@@ -624,11 +629,6 @@ f32 gSaveMenuSlotBss_004A1008[0x1];
 Flags8 gSaveMenuSlotBss_004A1010[0x10 / sizeof(Flags8)] __attribute__((aligned(4)));
 #endif
 
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-/* data group (src/game/data/save_menu_data.c): D_001F2A10__grp: gSaveMenuSlotData_001F2A10@0x0 */
-f32 D_001F2A10__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
-#endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on

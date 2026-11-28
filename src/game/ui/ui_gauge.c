@@ -191,7 +191,7 @@ extern G_MenuProc_DrawScrolled_0_00184CF0 gUiGaugeBss_0048D060;
 #ifndef NONMATCHING
 extern S_Ui_DrawGauge_0_00182EF0 gUiGaugeData_001F2700 __attribute__((aligned(16)));
 #else
-/* data twins (src/game/data/ui_global_data.c): gUiGaugeData_001F2700 */
+/* data twins (src/game/data/ui_global_data_001F2630.c): gUiGaugeData_001F2700 */
 static S_Ui_DrawGauge_0_00182EF0 gUiGaugeData_001F2700 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
 #endif
 #ifndef NONMATCHING
@@ -224,11 +224,16 @@ extern f32 gUiGaugeSbss_002020BC;
 /* data twins (src/game/data/sbss.c): gUiGaugeSbss_002020BC */
 static f32 gUiGaugeSbss_002020BC;
 #endif
+#ifndef NONMATCHING
 extern V gUiGaugeData_001F26F0[];
+#else
+/* data twins (src/game/data/ui_global_data_001F2630.c): gUiGaugeData_001F26F0 */
+static V gUiGaugeData_001F26F0[0x1] = { { .f = { 615.0f, 275.0f, 619.0f, 399.0f } } };
+#endif
 #ifndef NONMATCHING
 extern S_Ui_DrawGauge_0_00182EF0 gUiGaugeData_001F26D0 __attribute__((aligned(16)));
 #else
-/* data twins (src/game/data/ui_global_data.c): gUiGaugeData_001F26D0 */
+/* data twins (src/game/data/ui_global_data_001F2630.c): gUiGaugeData_001F26D0 */
 static S_Ui_DrawGauge_0_00182EF0 gUiGaugeData_001F26D0 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
 #endif
 extern char gUiGaugeBss_0048CE40[];
@@ -283,19 +288,19 @@ static f32 gUiGaugeSbss_0020209C;
 #ifndef NONMATCHING
 extern S_Ui_DrawGauge_0_00182EF0 gUiGaugeData_001F2630 __attribute__((aligned(16)));
 #else
-/* data twins (src/game/data/ui_global_data.c): gUiGaugeData_001F2630 */
+/* data twins (src/game/data/ui_global_data_001F2630.c): gUiGaugeData_001F2630 */
 static S_Ui_DrawGauge_0_00182EF0 gUiGaugeData_001F2630 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
 #endif
 #ifndef NONMATCHING
 extern S_Ui_DrawGauge_0_00182EF0 gUiGaugeData_001F2650 __attribute__((aligned(16)));
 #else
-/* data twins (src/game/data/ui_global_data.c): gUiGaugeData_001F2650 */
+/* data twins (src/game/data/ui_global_data_001F2630.c): gUiGaugeData_001F2650 */
 static S_Ui_DrawGauge_0_00182EF0 gUiGaugeData_001F2650 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
 #endif
 #ifndef NONMATCHING
 extern S_Ui_DrawGauge_0_00182EF0 gUiGaugeData_001F2670 __attribute__((aligned(16)));
 #else
-/* data twins (src/game/data/ui_global_data.c): gUiGaugeData_001F2670 */
+/* data twins (src/game/data/ui_global_data_001F2630.c): gUiGaugeData_001F2670 */
 static S_Ui_DrawGauge_0_00182EF0 gUiGaugeData_001F2670 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
 #endif
 extern s32 gUiGaugeBss_0048CF40[];
@@ -1528,11 +1533,6 @@ s8 gUiGaugeBss_0048D170[0x1e0];
 #endif
 
 
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-/* data group (src/game/data/ui_global_data.c): D_001F26F0__grp: gUiGaugeData_001F26F0@0x0 */
-f32 D_001F26F0__grp[0x4] __attribute__((aligned(16))) = { 615.0f, 275.0f, 619.0f, 399.0f };
-#endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on

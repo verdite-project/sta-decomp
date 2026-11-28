@@ -39,7 +39,7 @@ void sprintf(s8 *, s8 *, u64);
 #ifndef NONMATCHING
 extern S gMenuProcDrawWeightData_001F26B0 __attribute__((aligned(16)));
 #else
-/* data twins (src/game/data/ui_global_data.c): gMenuProcDrawWeightData_001F26B0 */
+/* data twins (src/game/data/ui_global_data_001F2630.c): gMenuProcDrawWeightData_001F26B0 */
 static S gMenuProcDrawWeightData_001F26B0 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
 #endif
 extern s8 gUiGaugeBss_0048CE40[];
@@ -55,7 +55,7 @@ extern f32 gUiGaugeBss_0048D040[];
 #ifndef NONMATCHING
 extern s8 *gMenuProcDrawWeightData_001F2690[];
 #else
-/* data twins (src/game/data/ui_global_data.c): gMenuProcDrawWeightData_001F2690 */
+/* data twins (src/game/data/ui_global_data_001F2630.c): gMenuProcDrawWeightData_001F2690 */
 static s8 *gMenuProcDrawWeightData_001F2690[0x8] = { (s8 *)gStrPoison_001FC980, (s8 *)gMenuProcDrawWeightRodata_001FC988, (s8 *)gMenuProcDrawWeightRodata_001FC998, (s8 *)gStrGravity_001FC9A8, (s8 *)gStrCurse_001FC9B0, (s8 *)gStrSeal_001FC9B8, 0, 0 };
 #endif
 extern s8 gMenuProcDrawItemStatsRodata_001FCAA0[];

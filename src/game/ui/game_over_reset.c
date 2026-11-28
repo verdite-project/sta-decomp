@@ -25,7 +25,8 @@ typedef struct {
     f32 x30, x34, x38, x3C;
 } A;
 extern s32 gGameOverResetSbss_0020221C;
-extern S gPauseMenuOpenData_001F31E0 __attribute__((aligned(16)));
+#pragma explicit_zero_data on
+S gPauseMenuOpenData_001F31E0 = { 0x3f800000, 0x3f80000000000000, 0.0f, 0.0f };
 #ifndef NONMATCHING
 extern char gGameOverResetRodata_001FD660[];
 #else

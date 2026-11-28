@@ -53,7 +53,12 @@ typedef struct {
 typedef struct { s32 x0; s32 x4; s8 *x8; } P;
 typedef struct { u8 pad0[4]; s32 x4; u8 pad8[8]; u8 x10[0x10]; u8 x20[0x10]; } R;
 typedef struct { u8 pad0[0x9C]; R *x9C; u8 padA0[0x24]; R *xC4; } G;
+#ifndef NONMATCHING
 extern Q gUiAnimData_001F25E0[];
+#else
+/* data twins (src/game/data/ui_global_data.c): gUiAnimData_001F25E0 */
+static Q gUiAnimData_001F25E0[0x1] = { { .f = { 40.0f, 180.0f, 52.0f, 254.0f } } };
+#endif
 #ifndef NONMATCHING
 extern f32 gUiAnimSbss_0020205C;
 #else
@@ -78,7 +83,12 @@ extern f32 gUiAnimBss_00486988[];
 /* data twins (src/game/data/ui_anim_bss.c): gUiAnimBss_00486988 */
 static f32 gUiAnimBss_00486988[0x2];
 #endif
+#ifndef NONMATCHING
 extern Q gUiAnimData_001F25D0[];
+#else
+/* data twins (src/game/data/ui_global_data.c): gUiAnimData_001F25D0 */
+static Q gUiAnimData_001F25D0[0x1] = { { .f = { 40.0f, 83.0f, 52.0f, 157.0f } } };
+#endif
 #ifndef NONMATCHING
 extern f32 gUiAnimSbss_00202058;
 #else
@@ -118,7 +128,12 @@ extern s32 gUiAnimSdata_00201CCC;
 /* data twins (src/game/data/sdata.c): gUiAnimSdata_00201CCC */
 static s32 gUiAnimSdata_00201CCC = -2;
 #endif
+#ifndef NONMATCHING
 extern S gUiAnimData_001F25B0[] __attribute__((aligned(16)));
+#else
+/* data twins (src/game/data/ui_global_data.c): gUiAnimData_001F25B0 */
+static S gUiAnimData_001F25B0[0x1] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+#endif
 #ifndef NONMATCHING
 extern f32 gUiAnimSbss_00202054;
 #else
@@ -880,20 +895,5 @@ s32 gUiAnimSbss_00202048;
 #endif
 
 
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-/* data group (src/game/data/ui_global_data.c): D_001F25B0__grp: gUiAnimData_001F25B0@0x0 */
-f32 D_001F25B0__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
-#endif
 
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-/* data group (src/game/data/ui_global_data.c): D_001F25D0__grp: gUiAnimData_001F25D0@0x0 */
-f32 D_001F25D0__grp[0x4] __attribute__((aligned(16))) = { 40.0f, 83.0f, 52.0f, 157.0f };
-#endif
 
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-/* data group (src/game/data/ui_global_data.c): D_001F25E0__grp: gUiAnimData_001F25E0@0x0 */
-f32 D_001F25E0__grp[0x4] __attribute__((aligned(16))) = { 40.0f, 180.0f, 52.0f, 254.0f };
-#endif

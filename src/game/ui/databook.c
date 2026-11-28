@@ -20,7 +20,7 @@ typedef struct {
     u8 pad0[8];
     u8 x8;
 } Obj1952B0;
-typedef struct { u128 q[2]; } Q2;
+typedef union { u128 q[2]; u32 w[8]; } Q2;
 typedef UiArg Arg;
 typedef struct { s32 id; s32 o1; s32 o2; } Ent_Databook_Update_0_00195460;
 typedef struct { s32 x0; u32 n; s32 x8; s32 xC; Ent_Databook_Update_0_00195460 e[1]; } Tbl;

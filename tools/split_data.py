@@ -192,8 +192,8 @@ def struct_defs(text):
 def layout(t, defs, depth=0):
     """(size, align, [(offset, scalar type, ptr)]) of a type, or None for one
     this cannot lay out (bitfields, unions, nested anonymous structs)."""
-    if t in data_to_c.ESZ:
-        n = data_to_c.ESZ[t]
+    if t in data_to_c.ESZ or t in ("u64", "s64"):
+        n = data_to_c.ESZ.get(t, 8)
         return n, n, [(0, t, "")]
     if t not in defs or depth > 8:
         return None
@@ -246,7 +246,9 @@ def union_member(base, text, defs):
     members = []
     for d in bodies[base].split(";"):
         d = " ".join(d.split())
-        m = MEMBER.match(d) if d else None
+        if not d:
+            continue
+        m = MEMBER.match(d)
         if not m or ":" in d:
             return None
         for v in m.group("decls").split(","):
@@ -277,10 +279,16 @@ def struct_init(n, base, dims, quals, items, text, need):
     data, syms = data_to_c.obj_bytes(items, False)
     if dims:
         if len(data) % size:
-            return None
+            # zero padding to the object's alignment after the last element
+            cut = len(data) // size * size
+            if not cut or any(data[cut:]) or any(a >= cut for a in syms):
+                return None
+            data = data[:cut]
         count = len(data) // size
-    elif len(data) == size:
-        count = 1
+    elif len(data) == size or (len(data) > size and not any(data[size:])
+                               and all(a < size for a in syms)):
+        count = 1           # (zero padding to the object's alignment after it)
+        data = data[:size]
     else:
         return None
     vals, per = [], []
@@ -288,10 +296,15 @@ def struct_init(n, base, dims, quals, items, text, need):
         one = []
         for o, st, sp in flat:
             a = k * size + o
-            es = 4 if sp else data_to_c.ESZ[st]
+            es = 4 if sp else data_to_c.ESZ.get(st, 8)
             sub = {0: syms[a]} if a in syms else {}
             if any(x in syms for x in range(a + 1, a + es)):
                 return None
+            if st in ("u64", "s64"):
+                if sub:
+                    return None
+                one.append(f"{int.from_bytes(data[a:a + 8], 'little'):#x}")
+                continue
             v = data_to_c.values(st, sp, data[a:a + es], sub, need)
             if v is None:
                 return None

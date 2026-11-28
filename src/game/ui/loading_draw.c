@@ -7,7 +7,8 @@ typedef struct { u32 n; E *e; } L;
 typedef struct { L *l[13]; } G;
 typedef struct { f32 m[4]; f32 x; f32 y; } S;
 typedef union { u32 w; s8 b[4]; } Col;
-extern S gLoadingDrawData_001F2A70[] __attribute__((aligned(16)));
+#pragma explicit_zero_data on
+S gLoadingDrawData_001F2A70[0x1] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
 void Loading_DrawText_2_0018E320(s8 *a0, s32 a1, s32 a2);
 G* MenuLayout_Get_1_00189050(s32 i);
 u8* MenuLayout_GetSub_1_00189020(s32 i);
@@ -59,8 +60,3 @@ void Loading_DrawText_2_0018E320(s8 *a0, s32 a1, s32 a2) {
     }
 }
 
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-/* data group (src/game/data/save_menu_data.c): D_001F2A70__grp: gLoadingDrawData_001F2A70@0x0 */
-f32 D_001F2A70__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
-#endif

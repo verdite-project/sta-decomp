@@ -1,13 +1,6 @@
 #include "common.h"
 
-/* data_001F2040: the game's data at 0x001F2040..., one object per label. */
-/* used by: actor, actor_attachments, actor_bone, attack_trace, draw,
-   enemy_list, enemy_model, enemy_reset, fog, fx_proc, fx_proc_random,
-   fx_spawn, game_main, glow_fx, item_object_spawn, light, map_area,
-   map_area_load, map_command, map_object_check, matrix_from, matrix_lerp,
-   model_emit, player, point_light, projectile_target, screen_fx, script_op,
-   sfx, sfx_all, sfx_draw, sound_emitter, text_00148D00.s, text_00155090.s,
-   text_00160370.s, text_00168480.s, text_00169F40.s, text_0016DC70.s */
+/* data_001F2060: the game's data at 0x001F2060..., one object per label. */
 #pragma explicit_zero_data on
 
 void ScrCmd_GetArg0_2_00164CC0(void);
@@ -21,12 +14,8 @@ void ScrCmd_ResetAllSlots_0_00164E80(void);
 void ScrCmd_SendEvent_1_00164EE0(void);
 void ScrCmd_SetVar_1_00164DC0(void);
 
-#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/screen_fx.c */
-f32 gScreenFxData_001F2040[0x4] = { 0.0f, 0.0f, 0.0f, 1.0f };
-f32 gScreenFxData_001F2050[0x4] = { 0.0f, 0.0f, 0.0f, 1.0f };
-#endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/fog.c */
-f32 gFogData_001F2060[0x1] = { 1.0f };
+f32 gFogData_001F2060[0x1] __attribute__((aligned(16))) = { 1.0f };
 s32 gFogData_001F2064[0x1] = { 0 };
 s32 gFogData_001F2068[0x1] = { 0 };
 s32 gFogData_001F206C[0x1] = { 0 };

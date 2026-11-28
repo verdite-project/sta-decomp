@@ -13,7 +13,7 @@ typedef struct { u8 pad[0x8]; List *list; } Res;
 typedef struct { s32 st; s32 fl; s8 x8; } S;
 typedef struct { u8 b0:1; u8 b1:1; u8 b2:1; u8 r:5; } F;
 typedef struct { s32 x0; s32 x4; u8 x8; u8 pad[5]; u8 xE; } P_TitleMenu_Update_1_001A4010;
-typedef struct { u128 q[2]; } Q2;
+typedef union { u128 q[2]; u32 w[8]; } Q2;
 typedef UiArg Arg;
 typedef struct { u8 p:3; u8 v:1; } BF3;
 typedef struct { u8 p:5; u8 v:1; } BF5;

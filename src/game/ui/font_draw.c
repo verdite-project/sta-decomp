@@ -6,7 +6,7 @@ typedef union { u128 q; u64 d[2]; u32 w[4]; f32 f[4]; } Q;
 typedef struct { s32 x0; u8 b[4]; } Ent;
 typedef struct { s16 x, y; } Pt;
 typedef struct { u8 b[0x60]; } Buf;
-typedef struct { u128 q[4]; } D40;
+typedef union { u128 q[4]; u32 w[16]; } D40;
 #ifndef NONMATCHING
 extern s32 gFontDrawSbss_00202060;
 #else
@@ -29,7 +29,8 @@ extern s32 gDrawSbss_00201F3C;
 extern Ent gUiGaugeBss_004880B0[];
 extern s8 gUiGaugeBss_004870B0[];
 extern Pt gUiGaugeBss_004884B0[];
-extern D40 gFontDrawData_001F25F0;
+#pragma explicit_zero_data on
+D40 gFontDrawData_001F25F0 = { .w = { 0x80000000, 0x80101010, 0x80202020, 0x80303030, 0x80404040, 0x80505050, 0x80606060, 0x80707070, 0x80ffffff, 0x80ffffff, 0x80ffffff, 0x80ffffff, 0x80ffffff, 0x80ffffff, 0x80ffffff, 0x80ffffff } };
 #ifndef NONMATCHING
 extern u8 gFontDrawRodata_001FB980[];
 #else
@@ -156,8 +157,3 @@ void Font_EmitGlyph_0_00181310(s32 x, s32 y, s8 ch, u8 *col, s32 **pp) {
 }
 
 
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-/* data group (src/game/data/ui_global_data.c): D_001F25F0__grp: gFontDrawData_001F25F0@0x0 */
-s32 D_001F25F0__grp[0x10] __attribute__((aligned(16))) = { -0x80000000, -0x7fefeff0, -0x7fdfdfe0, -0x7fcfcfd0, -0x7fbfbfc0, -0x7fafafb0, -0x7f9f9fa0, -0x7f8f8f90, -0x7f000001, -0x7f000001, -0x7f000001, -0x7f000001, -0x7f000001, -0x7f000001, -0x7f000001, -0x7f000001 };
-#endif

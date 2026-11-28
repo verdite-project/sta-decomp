@@ -160,7 +160,7 @@ extern Q2_Option_ResetLayoutA_0_00190340 gOptionData_001F2D60;
 #ifndef NONMATCHING
 extern f32 gOptionData_001F2B00[];
 #else
-/* data twins (src/game/data/save_menu_data.c): gOptionData_001F2B00 */
+/* data twins (src/game/data/save_menu_data_001F2A90.c): gOptionData_001F2B00 */
 static f32 gOptionData_001F2B00[0x8] = { 0.0f, 5.745e-42f, 0.33f, 5.747e-42f, 0.67f, 5.748e-42f, 1.0f, 5.75e-42f };
 #endif
 extern s32 gOptionSdata_00201D10;
@@ -170,7 +170,7 @@ extern s32 gOptionData_001F2D30[];
 #ifndef NONMATCHING
 extern f32 gOptionData_001F2B20[];
 #else
-/* data twins (src/game/data/save_menu_data.c): gOptionData_001F2B20 */
+/* data twins (src/game/data/save_menu_data_001F2A90.c): gOptionData_001F2B20 */
 static f32 gOptionData_001F2B20[0x8] = { 1.0f, 5.745e-42f, 1.33f, 5.747e-42f, 1.67f, 5.748e-42f, 2.0f, 5.75e-42f };
 #endif
 extern s32 gOptionSdata_00201D08;
@@ -1695,9 +1695,6 @@ s32 D_00201D10__grp[0x2] __attribute__((aligned(16))) = { 0, 1 };
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/save_menu_data.c): gOptionData_001F2A90, gOptionData_001F2AC0 */
-f32 gOptionData_001F2A90[0xc] = { -2.0f, 5.605e-42f, -1.0f, 5.607e-42f, 0.0f, 5.608e-42f, 1.0f, 5.61e-42f, 2.0f, 5.611e-42f, 0.0f, 0.0f };
-f32 gOptionData_001F2AC0[0x10] = { -4.0f, 5.605e-42f, -3.0f, 5.607e-42f, -2.0f, 5.608e-42f, -1.0f, 5.61e-42f, 0.0f, 5.611e-42f, 1.0f, 5.612e-42f, 1.5f, 5.614e-42f, 2.0f, 5.615e-42f };
 /* data twins (src/game/data/option_rodata.c): gOptionRodata_001FCEE0, gOptionRodata_001FCF50, gOptionRodata_001FCF68, gOptionRodata_001FCF80, gOptionRodata_001FCF98, gOptionRodata_001FCFA0, gOptionRodata_001FCFB0, gOptionRodata_001FCFC0, gOptionRodata_001FCFC8, gOptionRodata_001FCFD8, gStr169_001FCEE8 */
 u8 gOptionRodata_001FCEE0[0x8] = { 0x34, 0x3a, 0x33, 0, 0, 0, 0, 0 };
 u8 gOptionRodata_001FCF50[0x18] __attribute__((aligned(8))) = { 0x83, 0x5e, 0x83, 0x43, 0x83, 0x76, 0x82, 0x52, 0x81, 0x45, 0x83, 0x8a, 0x83, 0x6f, 0x81, 0x5b, 0x83, 0x58, 0, 0, 0, 0, 0, 0 };
@@ -1722,4 +1719,11 @@ unsigned char gOptionBss_004A1050__grp[0x40] __attribute__((aligned(16)));
 #pragma explicit_zero_data on
 /* data group (src/game/data/option_rodata.c): gOptionRodata_001FCFE8__grp: gOptionRodata_001FCFE8@0x0, gOptionRodata_001FCFF0@0x8, gOptionRodata_001FCFF8@0x10, gOptionRodata_001FD000@0x18, gOptionRodata_001FD010@0x28, gOptionRodata_001FD020@0x38, gOptionRodata_001FD030@0x48, gOptionRodata_001FD040@0x58, gOptionRodata_001FD048@0x60, gOptionRodata_001FD050@0x68, gOptionRodata_001FD058@0x70, gOptionRodata_001FD068@0x80, gOptionRodata_001FD078@0x90, gOptionRodata_001FD088@0xa0, gOptionRodata_001FD090@0xa8 */
 int gOptionRodata_001FCFE8__grp[0x46] __attribute__((aligned(8))) = { 0x5f938b8e, 0xe38f, 0x5f938b8e, 0xba89, 0x40968296, 0, -0x12756f6b, 0x588dcf95, 0, 0, 0x78834383, 0x67839383, 0, 0, 0x6a838183, 0x5b818583, 0, 0, -0x787ca97d, 0x67835b81, 0x62834a83, 0x6783, 0x5b817c83, 0x5983, 0, 0, -0x7d73aa73, 0, -0x7d73aa73, -0x70f5ba7f, -0x700f769b, 0x9c, -0x7d73aa73, -0x526bba7f, 0xcb8e, 0, -0xe760670, -0x7471ba7f, 0x5f93, 0, -0x66f4973, 0xf189, -0x66fba77, 0xf189, 0x4e4f, 0, 0x46464f, 0, 0, 0, 0x7050604, 0xb0a0908, 0xc0d0101, 0x1506140f, 0xa090807, 0xd00000b, 0x12100f0c, 0x9081211, 0x1010b0a, 0x10020c0d, 0x8121112, 0x10b0a09, 0x20c0d01, 0x12111210, 0xb0a0908, 0xc0d0000, 0x11121013, 0xa090812, 0xd00000b, 0x130c };
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/save_menu_data_001F2A90.c): gOptionData_001F2A90, gOptionData_001F2AC0 */
+f32 gOptionData_001F2A90[0xc] = { -2.0f, 5.605e-42f, -1.0f, 5.607e-42f, 0.0f, 5.608e-42f, 1.0f, 5.61e-42f, 2.0f, 5.611e-42f, 0.0f, 0.0f };
+f32 gOptionData_001F2AC0[0x10] = { -4.0f, 5.605e-42f, -3.0f, 5.607e-42f, -2.0f, 5.608e-42f, -1.0f, 5.61e-42f, 0.0f, 5.611e-42f, 1.0f, 5.612e-42f, 1.5f, 5.614e-42f, 2.0f, 5.615e-42f };
 #endif

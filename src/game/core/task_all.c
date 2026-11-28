@@ -1,7 +1,7 @@
 #include "common.h"
 #include "game/data.h"
 
-typedef struct { u128 q; } Q;
+typedef union { u128 q; u32 w[4]; } Q;
 extern Q gTaskAllData_001F2010;
 extern s32 gTaskRunBss_002F0F40[8];
 /* .bss, from the top down (CodeWarrior writes it in reverse) */

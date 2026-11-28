@@ -67,19 +67,15 @@ static s32 gCreditsSbss_00202340;
 extern u8 gCreditsSbss_00202348;
 extern f32 gCreditsSdata_00201E44;
 extern f32 gCreditsSdata_00201E48;
-#ifndef NONMATCHING
-extern S gCreditsData_001F3A10 __attribute__((aligned(16)));
-#else
-/* data twins (src/game/data/player_status_data.c): gCreditsData_001F3A10 */
-static S gCreditsData_001F3A10 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
-#endif
+#pragma explicit_zero_data on
+S gCreditsData_001F39F0[0x1] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+S gCreditsData_001F3A10 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
 #ifndef NONMATCHING
 extern f32 gCreditsSbss_00202344;
 #else
 /* data twins (src/game/data/sbss.c): gCreditsSbss_00202344 */
 static f32 gCreditsSbss_00202344;
 #endif
-extern S gCreditsData_001F39F0[] __attribute__((aligned(16)));
 #ifndef NONMATCHING
 extern s32 gCreditsSdata_00201E4C;
 #else
@@ -406,11 +402,6 @@ s16 gCreditsSbss_00202350;
 s16 gCreditsSbss_00202354;
 #endif
 
-#ifdef NONMATCHING
-#pragma explicit_zero_data on
-/* data group (src/game/data/player_status_data.c): D_001F39F0__grp: gCreditsData_001F39F0@0x0 */
-f32 D_001F39F0__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
-#endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on

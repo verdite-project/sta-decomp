@@ -8,7 +8,7 @@ typedef struct { f32 x, y; } V2;
 typedef struct { u32 idx; s32 f4; u8 pad8[0x24]; f32 x; f32 y; u8 pad34[0xC]; } Ent;
 typedef struct { u32 n; Ent *p; } L;
 typedef struct { u8 pad[0x20]; L *l; } O;
-typedef struct { u128 q[2]; } Q2;
+typedef union { u128 q[2]; u32 w[8]; } Q2;
 typedef UiArg Arg;
 typedef struct { s32 state; s32 btn; s8 x8; s8 pad[5]; u8 xE; } P;
 extern s32 *gDatabookItemDrawSdata_00201D3C;

@@ -9,7 +9,7 @@
 typedef union { s32 w; Flags8 f; } FW;
 typedef struct { u16 v[8]; } H;
 typedef struct { u8 pad[8]; u8 x8; } O;
-typedef struct { u128 q[2]; } Q2;
+typedef union { u128 q[2]; u32 w[8]; } Q2;
 typedef struct { s32 *p; s32 n; f32 f; void *fn; s32 a; s32 b; void *cb; } Arg;
 typedef struct { s32 x0; s32 x4; u8 x8; u8 pad9[3]; u8 xC; u8 xD; u8 xE; } S;
 typedef struct { u8 x0; u8 x1; u8 x2; u8 x3; } P;
