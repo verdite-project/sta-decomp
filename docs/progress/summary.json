@@ -3,17 +3,17 @@
   {
    "id": "game",
    "measures": {
-    "fuzzy_match_percent": 90.1276,
-    "matched_code": 719312,
-    "matched_code_percent": 90.1276,
+    "fuzzy_match_percent": 90.4839,
+    "matched_code": 722156,
+    "matched_code_percent": 90.4839,
     "matched_data": 2895914,
     "matched_data_percent": 99.9984,
-    "matched_functions": 2117,
-    "matched_functions_percent": 95.1889,
+    "matched_functions": 2119,
+    "matched_functions_percent": 95.2788,
     "total_code": 798104,
     "total_data": 2895959,
     "total_functions": 2224,
-    "total_units": 637
+    "total_units": 635
    },
    "name": "Game"
   },
@@ -47,17 +47,17 @@
   "complete_data": 896,
   "complete_data_percent": 0.0304,
   "complete_units": 15,
-  "fuzzy_match_percent": 91.8002,
-  "matched_code": 882112,
-  "matched_code_percent": 91.8002,
+  "fuzzy_match_percent": 92.0962,
+  "matched_code": 884956,
+  "matched_code_percent": 92.0962,
   "matched_data": 2949052,
   "matched_data_percent": 99.9985,
-  "matched_functions": 2984,
-  "matched_functions_percent": 96.5383,
+  "matched_functions": 2986,
+  "matched_functions_percent": 96.603,
   "total_code": 960904,
   "total_data": 2949097,
   "total_functions": 3091,
-  "total_units": 826
+  "total_units": 824
  },
  "units": [
   {
@@ -2594,27 +2594,15 @@
   },
   {
    "category": "game",
-   "code_matched": 0,
-   "code_total": 0,
-   "complete": false,
-   "data_matched": 0,
-   "data_total": 0,
-   "functions_matched": 0,
-   "functions_total": 0,
-   "fuzzy": 100.0,
-   "name": "game/gfx/screen_fx_begin"
-  },
-  {
-   "category": "game",
-   "code_matched": 0,
+   "code_matched": 148,
    "code_total": 148,
    "complete": false,
    "data_matched": 0,
    "data_total": 0,
-   "functions_matched": 0,
+   "functions_matched": 1,
    "functions_total": 1,
-   "fuzzy": 0.0,
-   "name": "text_001329D0"
+   "fuzzy": 100.0,
+   "name": "game/gfx/screen_fx_begin"
   },
   {
    "category": "game",
@@ -4514,27 +4502,15 @@
   },
   {
    "category": "game",
-   "code_matched": 0,
-   "code_total": 0,
-   "complete": false,
-   "data_matched": 0,
-   "data_total": 0,
-   "functions_matched": 0,
-   "functions_total": 0,
-   "fuzzy": 100.0,
-   "name": "game/effect/sfx_create"
-  },
-  {
-   "category": "game",
-   "code_matched": 0,
+   "code_matched": 2696,
    "code_total": 2696,
    "complete": false,
    "data_matched": 0,
    "data_total": 0,
-   "functions_matched": 0,
+   "functions_matched": 1,
    "functions_total": 1,
-   "fuzzy": 0.0,
-   "name": "text_00169F40"
+   "fuzzy": 100.0,
+   "name": "game/effect/sfx_create"
   },
   {
    "category": "game",

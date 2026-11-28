@@ -1,12 +1,3 @@
-/* Best-effort C for the NONMATCHING build; the matching attempt is
- * wip/Sfx_Create_2_00169F40.c. */
-#include "include_asm.h"
-
-#ifdef NONMATCHING
-/* NEAR 47/674 (unchanged). Only diff: in tex() retail hoists lhu of h->x14,x16,x12 above the first uv store/conversion
- * (loads x10, x14, x16, x12 up front into v0/a1/a0/a2); ours loads each right before its conversion. Tried u16/u32/s32 locals
- * in a nested block (copy-propagated away), locals at tex top (register blowup, +10 words), f32 temps, uv pointer, const Hd*,
- * inlining tex body into the caller. */
 #include "common.h"
 typedef struct {
     u8 type : 3;
@@ -84,6 +75,22 @@ static inline void reloc(E *e) {
     }
 }
 static inline u32 rgba(u32 r, u32 g, u32 b, u32 a) { return (a << 24) | (b << 16) | (g << 8) | r; }
+static inline void setTextureCoordinates(L *layer, const volatile Hd *header) {
+    u16 u0;
+    u16 v0;
+    u16 u1;
+    u16 v1;
+
+    u0 = header->x10;
+    u1 = header->x14;
+    v1 = header->x16;
+    v0 = header->x12;
+    layer->uv[0] = u0;
+    layer->uv[1] = v0;
+    layer->uv[2] = u1;
+    layer->uv[3] = v1;
+}
+
 static inline void tex(E *e, Sub *sub, Hd *h, L *l) {
     s32 t = 0;
     if (h->type == 1) {
@@ -91,10 +98,7 @@ static inline void tex(E *e, Sub *sub, Hd *h, L *l) {
         if (e->xE74 != NULL) v = Tex_Find_1_00177AF0(h->x8.d, e->xE74);
         if (v == 0) v = Tex_FindByHash_1_00177B20(h->x8.d);
         sub->x10 = v;
-        l->uv[0] = h->x10;
-        l->uv[1] = h->x12;
-        l->uv[2] = h->x14;
-        l->uv[3] = h->x16;
+        setTextureCoordinates(l, h);
         t = 1;
     }
     l->prim = ((u64)t << 4) | 0x148;
@@ -222,9 +226,6 @@ E *Sfx_Create_2_00169F40(s8 **a0, s32 a1, s32 *tbl, s32 a3, s32 f5, s32 f6, u16 
     }
     return e;
 }
-#else
-INCLUDE_ASM(Sfx_Create_2_00169F40);
-#endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on

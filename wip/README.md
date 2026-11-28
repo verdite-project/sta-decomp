@@ -106,7 +106,6 @@ register and scheduling differences.
 | Script_FindLabel_1_00166970 | round Y/Z near-miss (agent's best attempt; see comments in file) |
 | Sfx_SortByDepth_0_001679E0 | round Y/Z near-miss (agent's best attempt; see comments in file) |
 | Sfx_DrawMesh_0_00167C90 | round Y/Z near-miss (agent's best attempt; see comments in file) |
-| Sfx_Create_2_00169F40 | round Y/Z near-miss (agent's best attempt; see comments in file) |
 | Sfx_LoadSystemStam_1_0016AE30 | round Y/Z near-miss (agent's best attempt; see comments in file) |
 | Mdl_SetLayerForMesh_0_0016B360 | round Y/Z near-miss (agent's best attempt; see comments in file) |
 | Dma_SprClear_1_00178C00 | round Y/Z near-miss (agent's best attempt; see comments in file) |

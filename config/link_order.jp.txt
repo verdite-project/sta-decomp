@@ -216,7 +216,6 @@ src/game/sound/sound_emitter.c
 src/game/data/sound_emitter_bss_002704D0.c
 src/game/gfx/screen_fx_draw.c
 src/game/gfx/screen_fx_begin.c
-asm/text_001329D0.s
 src/game/gfx/screen_fx_model.c
 src/game/entity/combat_apply.c
 src/game/data/sound_emitter_rodata.c
@@ -376,7 +375,6 @@ src/game/effect/sfx_draw_billboard.c
 asm/text_00168480.s
 src/game/effect/sfx_all.c
 src/game/effect/sfx_create.c
-asm/text_00169F40.s
 src/game/effect/sfx_system.c
 src/game/model/model_layer.c
 src/game/model/mdl_clip_frustum.c
