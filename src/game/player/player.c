@@ -1,6 +1,7 @@
 #include "actor.h"
 #include "m2c.h"
 #include "common.h"
+#include "game/math.h"
 #include "obj3d.h"
 #include "game/core.h"
 #include "game/data.h"
@@ -39,7 +40,6 @@ typedef struct {
     Flags8 f5A1;
 } O;
 typedef struct { Vec m[2]; } M_Player_DrawWeapon_0_001BCFF0;
-typedef struct { f32 m[4][4]; } MtxF;
 typedef union { u32 w; struct { u8 r, g, b, a; } c; } Col_Player_UpdateArea_0_001BD4E0;
 typedef struct { u8 pad0[0x36]; u8 x36[0xB6 - 0x36]; u8 xB6, xB7, xB8, xB9; u8 padBA[4]; u16 xBE; u16 xC0; u8 xC2; } T158;
 typedef struct { s32 x0; u8 pad4[0x154]; T158 *x158; u8 pad15C[0x2C]; u8 *x188; } M_Player_UpdateArea_0_001BD4E0;

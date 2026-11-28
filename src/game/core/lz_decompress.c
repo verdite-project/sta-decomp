@@ -1,8 +1,8 @@
 #include "common.h"
 #include "game/data.h"
+#include "game/core.h"
 /* .bss, from the top down (CodeWarrior writes it in reverse) */
 u16 D_00486100[0x400];
-u32 Bits_Read_2_00179720(u32 **pp, s32 n);
 static inline u32 gl(u32 **pp, u32 b) {
     if (Bits_Read_2_00179720(pp, 1) == 0) return b + 1;
     if (Bits_Read_2_00179720(pp, 1) == 0) return Bits_Read_2_00179720(pp, 1) + b + 2;

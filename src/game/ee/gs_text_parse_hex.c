@@ -1,5 +1,5 @@
 #include "common.h"
-s32 HexDigit_3_001E2FF8(u16 c);
+#include "game/ee.h"
 u16 *GsText_ParseHex_0_001E2E78(u16 *p, u32 *out) {
     u8 d[8];
     s32 i, t;

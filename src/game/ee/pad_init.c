@@ -1,4 +1,5 @@
 #include "common.h"
+#include "game/ee.h"
 typedef struct {
     u8 p0[0x120]; u16 x120; u16 x122; u8 p124[0x40]; u16 x164; u8 p166[0x14];
     u8 x17A; u8 p17B; u8 x17C; u8 p17D; s8 x17E; s8 x17F; u8 x180; u8 p181; u8 x182;

@@ -1,16 +1,6 @@
 #include "common.h"
 #include "game/data.h"
 #include "game/ee.h"
-s32 Mc_StepCheck_4_001D3E30(void);
-s32 Mc_StepGetDir_4_001D3FE8(void);
-s32 Mc_StepReadChecked_3_001D4A78(void);
-s32 Mc_StepWrite_4_001D5280(void);
-s32 Mc_StepCopyFile_4_001D58C0(void);
-s32 Mc_StepFormat_4_001D6428(void);
-s32 Mc_StepChdir_5_001D6550(void);
-s32 Mc_StepMkdir_5_001D6688(void);
-s32 Mc_StepRead_4_001D5F88(void);
-s32 Mc_StepFindFile_5_001D67A8(void);
 
 s32 Mc_Update_4_001D6D00(void) {
     s32 r = -1;

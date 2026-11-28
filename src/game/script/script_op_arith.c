@@ -1,3 +1,4 @@
+#include "game/script.h"
 /* Best-effort C for the NONMATCHING build; the matching attempt is
  * wip/Script_OpArith_1_00165A30.c. */
 #include "include_asm.h"

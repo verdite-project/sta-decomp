@@ -1,4 +1,5 @@
 #include "common.h"
+#include "game/ee.h"
 typedef struct { u8 b[0x1C0]; } PadBuf;
 typedef struct { PadBuf buf[8]; u8 open[8]; } PadState;
 extern PadState gPadState_004B6900;

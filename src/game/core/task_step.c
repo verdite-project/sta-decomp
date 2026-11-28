@@ -6,7 +6,6 @@ extern void (*volatile gTaskCallbackBss_004BAC28[])(u8 *);
 extern u8 *volatile gTaskCallbackBss_004BAC30[];
 extern volatile s32 gTaskCallbackBss_004BAC34[];
 extern volatile u32 gTaskCallbackBss_004BAC38[];
-extern volatile s32 gTaskCallbackBss_004BAC3C[];
 extern u8 gTaskCallbackBss_004BAC4C[];
 extern Flags8 D_004BAC4D[];
 s32 Task_RunAll_1_001DFCB0(u8 *a);
