@@ -3,17 +3,17 @@
   {
    "id": "game",
    "measures": {
-    "fuzzy_match_percent": 89.6946,
-    "matched_code": 715856,
-    "matched_code_percent": 89.6946,
+    "fuzzy_match_percent": 90.1276,
+    "matched_code": 719312,
+    "matched_code_percent": 90.1276,
     "matched_data": 2895914,
     "matched_data_percent": 99.9984,
-    "matched_functions": 2112,
-    "matched_functions_percent": 94.964,
+    "matched_functions": 2117,
+    "matched_functions_percent": 95.1889,
     "total_code": 798104,
     "total_data": 2895959,
     "total_functions": 2224,
-    "total_units": 642
+    "total_units": 637
    },
    "name": "Game"
   },
@@ -47,17 +47,17 @@
   "complete_data": 896,
   "complete_data_percent": 0.0304,
   "complete_units": 15,
-  "fuzzy_match_percent": 91.4406,
-  "matched_code": 878656,
-  "matched_code_percent": 91.4406,
+  "fuzzy_match_percent": 91.8002,
+  "matched_code": 882112,
+  "matched_code_percent": 91.8002,
   "matched_data": 2949052,
   "matched_data_percent": 99.9985,
-  "matched_functions": 2979,
-  "matched_functions_percent": 96.3766,
+  "matched_functions": 2984,
+  "matched_functions_percent": 96.5383,
   "total_code": 960904,
   "total_data": 2949097,
   "total_functions": 3091,
-  "total_units": 831
+  "total_units": 826
  },
  "units": [
   {
@@ -3398,27 +3398,15 @@
   },
   {
    "category": "game",
-   "code_matched": 0,
-   "code_total": 0,
-   "complete": false,
-   "data_matched": 0,
-   "data_total": 0,
-   "functions_matched": 0,
-   "functions_total": 0,
-   "fuzzy": 100.0,
-   "name": "game/collision/coll_ray_vs_model"
-  },
-  {
-   "category": "game",
-   "code_matched": 0,
+   "code_matched": 1512,
    "code_total": 1512,
    "complete": false,
    "data_matched": 0,
    "data_total": 0,
-   "functions_matched": 0,
+   "functions_matched": 1,
    "functions_total": 1,
-   "fuzzy": 0.0,
-   "name": "text_0014FA30"
+   "fuzzy": 100.0,
+   "name": "game/collision/coll_ray_vs_model"
   },
   {
    "category": "game",
@@ -4118,27 +4106,15 @@
   },
   {
    "category": "game",
-   "code_matched": 0,
-   "code_total": 0,
-   "complete": false,
-   "data_matched": 0,
-   "data_total": 0,
-   "functions_matched": 0,
-   "functions_total": 0,
-   "fuzzy": 100.0,
-   "name": "game/input/input_init"
-  },
-  {
-   "category": "game",
-   "code_matched": 0,
+   "code_matched": 296,
    "code_total": 296,
    "complete": false,
    "data_matched": 0,
    "data_total": 0,
-   "functions_matched": 0,
+   "functions_matched": 1,
    "functions_total": 1,
-   "fuzzy": 0.0,
-   "name": "text_0015FC60"
+   "fuzzy": 100.0,
+   "name": "game/input/input_init"
   },
   {
    "category": "game",
@@ -6542,27 +6518,15 @@
   },
   {
    "category": "game",
-   "code_matched": 0,
-   "code_total": 0,
-   "complete": false,
-   "data_matched": 0,
-   "data_total": 0,
-   "functions_matched": 0,
-   "functions_total": 0,
-   "fuzzy": 100.0,
-   "name": "game/enemy/enemy_data_alloc"
-  },
-  {
-   "category": "game",
-   "code_matched": 0,
+   "code_matched": 196,
    "code_total": 196,
    "complete": false,
    "data_matched": 0,
    "data_total": 0,
-   "functions_matched": 0,
+   "functions_matched": 1,
    "functions_total": 1,
-   "fuzzy": 0.0,
-   "name": "text_001A7D90"
+   "fuzzy": 100.0,
+   "name": "game/enemy/enemy_data_alloc"
   },
   {
    "category": "game",
@@ -7238,27 +7202,15 @@
   },
   {
    "category": "game",
-   "code_matched": 0,
-   "code_total": 0,
-   "complete": false,
-   "data_matched": 0,
-   "data_total": 0,
-   "functions_matched": 0,
-   "functions_total": 0,
-   "fuzzy": 100.0,
-   "name": "game/ui/hud_draw_compass"
-  },
-  {
-   "category": "game",
-   "code_matched": 0,
+   "code_matched": 1052,
    "code_total": 1052,
    "complete": false,
    "data_matched": 0,
    "data_total": 0,
-   "functions_matched": 0,
+   "functions_matched": 1,
    "functions_total": 1,
-   "fuzzy": 0.0,
-   "name": "text_001BBCC0"
+   "fuzzy": 100.0,
+   "name": "game/ui/hud_draw_compass"
   },
   {
    "category": "game",
@@ -7274,27 +7226,15 @@
   },
   {
    "category": "game",
-   "code_matched": 0,
-   "code_total": 0,
-   "complete": false,
-   "data_matched": 0,
-   "data_total": 0,
-   "functions_matched": 0,
-   "functions_total": 0,
-   "fuzzy": 100.0,
-   "name": "game/ui/hud_draw_quad"
-  },
-  {
-   "category": "game",
-   "code_matched": 0,
+   "code_matched": 400,
    "code_total": 400,
    "complete": false,
    "data_matched": 0,
    "data_total": 0,
-   "functions_matched": 0,
+   "functions_matched": 1,
    "functions_total": 1,
-   "fuzzy": 0.0,
-   "name": "text_001BC610"
+   "fuzzy": 100.0,
+   "name": "game/ui/hud_draw_quad"
   },
   {
    "category": "game",

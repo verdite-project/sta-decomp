@@ -8,7 +8,7 @@ typedef struct {
     u8 pad0[0x3A2];
     M x3A2;
     u8 pad3A3[0xD];
-    s32 x3B0;
+    void *x3B0;
     u8 pad3B4[0xA];
     u8 x3BE;
     u8 pad3BF[0x11];
@@ -20,7 +20,7 @@ typedef struct {
     s8 x421;
     u16 x422;
     u8 pad424[0x2C];
-    s32 x450;
+    void *x450;
 } P;
 extern s32 gHudWarningSbss_002022E0;
 #ifndef NONMATCHING
@@ -34,7 +34,6 @@ extern Flags8 D_00222A54[];
 void Hud_DrawWarning_0_001BC7A0(u32 a0, s32 a1, s32 a2);
 f32 sinf(f32);
 void GsPkt_SetReg_3_001543E0(s32, s32);
-void Hud_DrawQuad_1_001BC610(s32, s32, s32, s32, u32, s32, s32);
 void Hud_DrawCompass_0_001BBCC0(void);
 s32 PlayerData_GetStatusTimer_0_001CE200(s32);
 
@@ -91,7 +90,7 @@ void Hud_DrawWarning_0_001BC7A0(u32 a0, s32 a1, s32 a2) {
     GsPkt_SetReg_3_001543E0(0x42, 0x44);
     GsPkt_Flush_1_001544C0();
     Hud_DrawQuad_1_001BC610(-320, -224.0f + gHudWarningSbss_002022E0, 320, 224.0f - gHudWarningSbss_002022E0, a << 24 | b << 16 | g << 8 | r, 1, 0);
-    Hud_DrawQuad_1_001BC610(-320, -224.0f + gHudWarningSbss_002022E0, 320, 224.0f - gHudWarningSbss_002022E0, (u8)amp << 24 | b << 16 | g << 8 | r, 1, *(s32 *)(p + 0x3B4));
+    Hud_DrawQuad_1_001BC610(-320, -224.0f + gHudWarningSbss_002022E0, 320, 224.0f - gHudWarningSbss_002022E0, (u8)amp << 24 | b << 16 | g << 8 | r, 1, *(void **)(p + 0x3B4));
 }
 
 /* Hud_DrawOverlay_0_001BCB60 */

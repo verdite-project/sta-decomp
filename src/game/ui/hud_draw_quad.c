@@ -1,9 +1,5 @@
-/* Best-effort C for the NONMATCHING build; the matching attempt is
- * wip/Hud_DrawQuad_1_001BC610.c. */
-#include "include_asm.h"
-
-#ifdef NONMATCHING
 #include "m2c.h"
+#include "game/ui.h"
 typedef struct {
     s32 x0, x4, x8, xC, x10, x14, x18, x1C, x20, x24, x28, x2C, x30, x34, x38, x3C, x40;
     s32 col;
@@ -18,18 +14,18 @@ typedef struct { u64 : 30; u64 w : 4; } TB;
 void memset(void *, s32, s32);
 void Draw_Sprite_1_00155BD0(Src *);
 void Tex_Bind_1_00176B10(void *);
-void Hud_DrawQuad_1_001BC610(s16 a, s16 b, s16 c, s16 d, s32 col, s32 f, void *t) {
+void Hud_DrawQuad_1_001BC610(s32 a, s32 b, s32 c, s32 d, u32 col, s32 f, void *t) {
     Src s;
     memset(&s, 0, 0x50);
     s.col = col;
     s.b0 = 1;
     s.b1 = 0;
     s.b2 = f;
-    s.x0 = (a + 0x800) << 4;
-    s.x4 = (b + 0x800) << 4;
-    s.x10 = (c + 0x800) << 4;
-    s.x14 = (d + 0x800) << 4;
+    s.x0 = ((s16)a + 0x800) << 4;
+    s.x4 = ((s16)b + 0x800) << 4;
     s.x8 = -1;
+    s.x10 = ((s16)c + 0x800) << 4;
+    s.x14 = ((s16)d + 0x800) << 4;
     s.x18 = -1;
     s.x20 = 0;
     s.x24 = 0;
@@ -41,6 +37,3 @@ void Hud_DrawQuad_1_001BC610(s16 a, s16 b, s16 c, s16 d, s32 col, s32 f, void *t
     }
     Draw_Sprite_1_00155BD0(&s);
 }
-#else
-INCLUDE_ASM(Hud_DrawQuad_1_001BC610);
-#endif

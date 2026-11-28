@@ -33,7 +33,6 @@ register and scheduling differences.
 | Fx_UpdateChildren_1_00162700 | shared inline count helper: orig has 2 nops before `div` in the `rate < fp` branch, `(f32)period` in $f1 (ours $f2) |
 | Fx_UpdateChildrenEx_1_001629E0 | same inline helper as Fx_UpdateChildren_1_00162700; fixing one should fix both |
 | Proj_FindTarget_0_00146C70 | 4 words, regs only: loaded entry `e` (`lw 0x4B4(s0)`) lands in a1, orig a3 |
-| Hud_DrawQuad_1_001BC610 | 23 words, scheduling: orig computes the `b1` bitfield value (`andi t0,zero,1`) before the `f&1` andi |
 | FxProc_TrackEnemyBone_0_0014BC90 | final float block: orig computes `2.0f * 0.05f` at runtime; MWCC folds it to 0.1f in every form tried |
 | PlayerProc_Attack_0_001C55A0 | arg copies land one temp reg higher in orig (a2→t5, a1→t6, a3→t4, t0→t3, t1→t2) |
 | Ui_DrawElem_1_00182C10 | float load/mul order for pos[0..3]; `lq` vs `ld`/`sd` on a 24-byte copy; loop init not in `beqz` delay slot |
@@ -50,7 +49,6 @@ register and scheduling differences.
 | Mdl_EmitPolys_1_0016EF70 | right size/branches, loop regalloc differs (orig spills a0, i in t9); far (155 words) |
 | Tex_Resident_0_001777C0 | ~50 words, regs only (size calc reuses a0; Vram_AllocForTex_0_00176BF0 result in a1; TEX0 bitfield temps t0/v0 vs ours t1/t0) |
 | Vram_AllocBlock_1_00176FB0 | 159 words; saved-reg swap (orig: sign-extended idx/return in s2, raw param s1) shifts all temps |
-| Hud_DrawCompass_0_001BBCC0 | 8 words; one `mult1` dest v1 vs a0 (2800 statement orders tried) |
 | Tex_Lookup_1_00177BB0 | 88 words; free-list unlink/insert regalloc (idx in a3 vs v1, idx*48 reused) |
 | Actor_ResolveGround_0_0013A720 | 2 words; `addu` operand order in `p->x2C + p->x18->xB5*0x140 + 0x234` |
 | Enemy_ScatterPart_0_001A8700 | 45 words; saved-reg assignment / setup scheduling |
@@ -82,7 +80,6 @@ register and scheduling differences.
 | Mdl_ClipFrustum_0_0016BD00 | far; right size, float temp allocation off throughout |
 | MenuProc_DrawWeight_0_00185D70 | 2 words; temp reg of the 24-byte `buf = gMenuProcDrawWeightData_001F26B0` lq/sq copy (a2 vs a0) |
 | FxProc_ChaseEnemy_0_00148D00 | angle-wrap `PI + a` sum shared (orig recomputes), bitfield `++` reuses reg |
-| Coll_RayVsModel_1_0014FA30 | one extra spill slot, frame 16 bytes bigger |
 | Map_FindChunk_0_001B6190 | uses string literals "STMI"/"STEM"/"STOI" (>8 bytes padded); batch.py can't link literals |
 | DbCharProc_DrawInfo_0_00196330 | 3 words; `Item_GetTable_1_001AFC90()[a3]` index temp a0 vs a2 (same as ItemMenuProc_DrawInfo_0_0019CEF0) |
 | EnemyMgr_Update_0_001A4990 | ~50 instrs; 11-entry loops start with `addu sN,v1,zero` + pad nop |
@@ -103,7 +100,6 @@ register and scheduling differences.
 | Weather_RespawnParticle_0_00157FE0 | round Y/Z near-miss (agent's best attempt; see comments in file) |
 | PointLight_Init_0_0015C8D0 | round Y/Z near-miss (agent's best attempt; see comments in file) |
 | Quat_ToMatrix_2_0015E180 | round Y/Z near-miss (agent's best attempt; see comments in file) |
-| Input_Init_2_0015FC60 | round Y/Z near-miss (agent's best attempt; see comments in file) |
 | Fx_HashKey_1_00164A60 | round Y/Z near-miss (agent's best attempt; see comments in file) |
 | Script_FetchOperand_2_00165940 | round Y/Z near-miss (agent's best attempt; see comments in file) |
 | Script_FindLabel_1_00166970 | round Y/Z near-miss (agent's best attempt; see comments in file) |
@@ -120,7 +116,6 @@ register and scheduling differences.
 | Shop_Update_0_001A1C80 | round Y/Z near-miss (agent's best attempt; see comments in file) |
 | EnemyMgr_ReleaseData_0_001A51E0 | round Y/Z near-miss (agent's best attempt; see comments in file) |
 | Enemy_Draw_1_001A5DE0 | round Y/Z near-miss (agent's best attempt; see comments in file) |
-| EnemyData_Alloc_0_001A7D90 | round Y/Z near-miss (agent's best attempt; see comments in file) |
 | Enemy_InitPartState_1_001A8510 | round Y/Z near-miss (agent's best attempt; see comments in file) |
 | ItemObj_TestVisible_0_001ACD90 | round Y/Z near-miss (agent's best attempt; see comments in file) |
 | ItemObj_SpawnProjectile_0_001AD2C0 | round Y/Z near-miss (agent's best attempt; see comments in file) |

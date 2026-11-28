@@ -1,10 +1,3 @@
-/* Best-effort C for the NONMATCHING build; the matching attempt is
- * wip/Coll_RayVsModel_1_0014FA30.c. */
-#include "include_asm.h"
-
-#ifdef NONMATCHING
-// NEAR: 10 of 378 words differ (was 79). Only the head scheduling differs: retail loads g->x14, computes g+0x40, loads gSfxAllSbss_00201F2C and h, h+0x40, then reloads g (spilled) for x16/x18/x10; ours loads x16/x18 right after x14. Fixes so far: Z -> M1.m[3] (stack overlap), (s32)g->data/(s32)h->data hoists, split hd into 2 statements (fixes final addu order), decl perm of e/n/v/it/t, statement perm of cnt/bx/q4/it/q8.
-
 #include "common.h"
 typedef struct { s32 off[4]; s32 x10[8]; s32 x30[8]; } Hdr;
 typedef struct { u16 n; u16 pad; s32 off; u8 p8[0x18]; } Item;
@@ -29,6 +22,7 @@ s32 Coll_BoxOverlap_0_0014F8C0(Vec *, Vec *, Box *, Mtx *);
 s32 Coll_SweptVsTriangle_1_0014F520(Res *, Vec *, Vec *, Vec *, Vec *, s32, s32, f32 *);
 
 s32 Coll_RayVsModel_1_0014FA30(Out *out, H *h, Vec *ray, u8 mask, F *flag, s32 first) {
+    u8 *headerStart;
     u8 *base190;
     G *g;
     Hdr *hd;
@@ -60,8 +54,10 @@ s32 Coll_RayVsModel_1_0014FA30(Out *out, H *h, Vec *ray, u8 mask, F *flag, s32 f
     if (h == 0) return 0;
     if (h->g == 0) return 0;
     if ((g = *h->g) == 0) return 0;
-    hd = (Hdr *)((s32)g->data + g->x14 * 16 + g->x16 * 8);
-    hd = (Hdr *)((s32)hd + g->x18 * 4);
+    headerStart = g->data;
+    headerStart = (u8 *)((s32)headerStart + g->x14 * 16);
+    hd = (Hdr *)(headerStart + g->x16 * 8);
+    hd = (Hdr *)((u8 *)hd + g->x18 * 4);
     b160 = *g->x10;
     base190 = (u8 *)((s32)h->data + gSfxAllSbss_00201F2C * (h->x6 * 320 + 0x200));
     if (g->x1C == 0) return 0;
@@ -134,6 +130,3 @@ s32 Coll_RayVsModel_1_0014FA30(Out *out, H *h, Vec *ray, u8 mask, F *flag, s32 f
     }
     return ret;
 }
-#else
-INCLUDE_ASM(Coll_RayVsModel_1_0014FA30);
-#endif
