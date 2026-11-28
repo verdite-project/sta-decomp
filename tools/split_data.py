@@ -233,11 +233,44 @@ def layout(t, defs, depth=0):
     return size, align, flat
 
 
+TYPEDEF_UNION = re.compile(r"typedef\s+union\s*\w*\s*\{(?P<body>[^{}]*)\}\s*(?P<name>\w+)\s*;")
+
+
+def union_member(base, text, defs):
+    """(member name, its layout) of a typedef'd union: the first member that
+    covers the whole union with plain scalars (a u128 has no C literal; a
+    designated initialiser `.member` picks another view of the same bytes)."""
+    bodies = {m.group("name"): m.group("body") for m in TYPEDEF_UNION.finditer(headers_text() + text)}
+    if base not in bodies:
+        return None
+    members = []
+    for d in bodies[base].split(";"):
+        d = " ".join(d.split())
+        m = MEMBER.match(d) if d else None
+        if not m or ":" in d:
+            return None
+        for v in m.group("decls").split(","):
+            vm = re.fullmatch(r"(\w+)\s*((?:\[[^\]]+\]\s*)*)", v.strip())
+            if not vm:
+                return None
+            k = 1
+            for dim in re.findall(r"\[([^\]]+)\]", vm.group(2)):
+                k *= int(dim, 0)
+            lo = layout(m.group("type").split()[-1], defs)
+            members.append((vm.group(1), (lo[0] * k, lo[1], [(o + i * lo[0], st, sp) for i in range(k) for o, st, sp in lo[2]]) if lo else None))
+    size = max((lo[0] for _, lo in members if lo), default=0)
+    for name, lo in members:
+        if lo and lo[0] == size and all(st != "u128" for _, st, _ in lo[2]):
+            return name, lo
+    return None
+
+
 def struct_init(n, base, dims, quals, items, text, need):
     """A brace-elided initialiser for a struct type from splat's bytes, or None."""
     defs = struct_defs(headers_text())
     defs.update(struct_defs(text))
-    lo = layout(base, defs)
+    um = union_member(base, text, defs)
+    lo = um[1] if um else layout(base, defs)
     if lo is None or lo[0] == 0:
         return None
     size, _, flat = lo
@@ -250,8 +283,9 @@ def struct_init(n, base, dims, quals, items, text, need):
         count = 1
     else:
         return None
-    vals = []
+    vals, per = [], []
     for k in range(count):
+        one = []
         for o, st, sp in flat:
             a = k * size + o
             es = 4 if sp else data_to_c.ESZ[st]
@@ -261,10 +295,19 @@ def struct_init(n, base, dims, quals, items, text, need):
             v = data_to_c.values(st, sp, data[a:a + es], sub, need)
             if v is None:
                 return None
-            vals.append(v[0])
+            one.append(v[0])
+        per.append(one)
+    if um:
+        # a union: each element as its plain-scalar member
+        vals = [f"{{ .{um[0]} = {{ {', '.join(one)} }} }}" for one in per]
+    else:
+        vals = [v for one in per for v in one]
     q = f"{quals} " if quals else ""
     dim = f"[{count:#x}]" if dims else ""
-    return f"{q}{base} {n}{dim} = {{ {', '.join(vals)} }};"
+    body = ", ".join(vals)
+    if um and not dims:
+        body = vals[0][2:-2]                # one union: { .w = { ... } }
+    return f"{q}{base} {n}{dim} = {{ {body} }};"
 
 
 def pick_owner(rec):
