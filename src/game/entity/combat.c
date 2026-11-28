@@ -11,8 +11,18 @@ typedef struct { u8 p:4; u8 v:3; } BF30;
 typedef struct { u8 p:1; u8 v:1; } BF31;
 extern s8 D_001FABD0[4][6][7];
 extern s8 D_001FABD7[4][6][7];
+#ifndef NONMATCHING
 extern u8 D_00201C48;
+#else
+/* data twins (src/game/data/sdata.c): D_00201C48 */
+static u8 D_00201C48 = 1;
+#endif
+#ifndef NONMATCHING
 extern Ids D_00201C40;
+#else
+/* data twins (src/game/data/sdata.c): D_00201C40 */
+static Ids D_00201C40 = { 0x6400, 0x6400, 0x6400, 0x6400 };
+#endif
 extern s32 D_00201E80;
 void Combat_CalcDamage_1_00132DB0(O_Combat_CalcDamage_1_00132DB0 *o, s32 a1, u8 *pa, u8 *pb, u8 *pc, u8 *pd);
 f32 Combat_CalcHitAngle_0_00133D00(s8 *a, f32 *o1, f32 *o2, f32 *o3);

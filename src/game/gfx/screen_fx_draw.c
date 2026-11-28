@@ -398,3 +398,10 @@ void ScreenFx_Draw_0_00132930(s32 arg0) {
 #undef GsPkt_EndAD_3_00154420
 #undef GsPkt_SetReg_3_001543E0
 #undef ScreenFx_DrawBlurPasses_0_00131970
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00201EF4, D_00201F00 */
+u32 D_00201EF4;
+u32 D_00201F00;
+#endif

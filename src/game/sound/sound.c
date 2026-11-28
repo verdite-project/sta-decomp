@@ -422,3 +422,10 @@ s32 Snd_UpdateBgm_0_0012C7C0(void) {
 }
 #undef SndEmit_StopAllB_1_0012F880
 #undef Snd_RequestStopAll_1_001313A0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00201ED4, D_002022B8 */
+u8 D_00201ED4[4];
+u32 D_002022B8;
+#endif

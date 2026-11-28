@@ -11,16 +11,59 @@ typedef struct { s32 idx; u8 pad[0x3B]; u8 a; } Elem;
 typedef struct { u32 n; Elem *e; } List;
 typedef struct { u8 pad[0x3C]; List *list; } Ctx;
 typedef struct { s32 x0; u8 pad[0x10]; Flags8 f14; } A;
+#ifdef NONMATCHING
+void func_00100000(void);
+#endif
+#ifndef NONMATCHING
 extern f32 D_00202408;
+#else
+/* data twins (src/game/data/sbss.c): D_00202408 */
+static f32 D_00202408;
+#endif
+#ifndef NONMATCHING
 extern f32 D_0020240C;
+#else
+/* data twins (src/game/data/sbss.c): D_0020240C */
+static f32 D_0020240C;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00202410;
+#else
+/* data twins (src/game/data/sbss.c): D_00202410 */
+static s32 D_00202410;
+#endif
 extern s32 D_001F27B0[];
 extern s32 D_001F27C0[];
+#ifndef NONMATCHING
 extern f32 D_00202414;
+#else
+/* data twins (src/game/data/sbss.c): D_00202414 */
+static f32 D_00202414;
+#endif
+#ifndef NONMATCHING
 extern f32 D_00202418;
+#else
+/* data twins (src/game/data/sbss.c): D_00202418 */
+static f32 D_00202418;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00201A70[];
+#else
+/* data twins (src/game/data/movie_rodata2.c): D_00201A70 */
+static s32 D_00201A70[0x44] = { 0x5241545c, 0x5c544547, 0x5f415453, 0x412e4f47, 0x5844, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, (s32)func_00100000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+#endif
+#ifndef NONMATCHING
 extern f32 D_0020241C;
+#else
+/* data twins (src/game/data/sbss.c): D_0020241C */
+static f32 D_0020241C;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00202420;
+#else
+/* data twins (src/game/data/sbss.c): D_00202420 */
+static s32 D_00202420;
+#endif
 void Ending_Update_0_001ED9A0(T *a);
 void Ending_HandleEvent_0_001EDCC0(A *a);
 void Ui_DrawElemWrap_1_001829A0(E *, s8 *);
@@ -174,3 +217,8 @@ void Ending_HandleEvent_0_001EDCC0(A *a) {
         }
     }
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+void func_00100000(void);
+#endif

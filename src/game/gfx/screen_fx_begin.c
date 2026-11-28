@@ -6,11 +6,26 @@
 /* NEAR: logic matches; retail reloads D_00201EEC before the D_00201F08/F04 stores and
  * keeps the product in $t0. stmtperm over the store order (210) found nothing. */
 #include "common.h"
+#ifndef NONMATCHING
 extern s32 D_00201EEC;
+#else
+/* data twins (src/game/data/sbss.c): D_00201EEC */
+static s32 D_00201EEC;
+#endif
 extern s32 D_00201EF0;
 extern s32 D_00201EF4;
+#ifndef NONMATCHING
 extern u32 D_00201EF8;
+#else
+/* data twins (src/game/data/sbss.c): D_00201EF8 */
+static u32 D_00201EF8;
+#endif
+#ifndef NONMATCHING
 extern u32 D_00201EFC;
+#else
+/* data twins (src/game/data/sbss.c): D_00201EFC */
+static u32 D_00201EFC;
+#endif
 extern u32 D_00201F00;
 extern u32 D_00201F04;
 extern u32 D_00201F08;
@@ -34,4 +49,13 @@ void ScreenFx_Begin_0_001329D0(s32 n, s32 w, s32 h) {
 }
 #else
 INCLUDE_ASM(ScreenFx_Begin_0_001329D0);
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00201EF0, D_00201F04, D_00201F08, D_00201F0C */
+s32 D_00201EF0;
+u32 D_00201F04;
+u32 D_00201F08;
+u8 D_00201F0C;
 #endif

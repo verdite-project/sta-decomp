@@ -238,3 +238,10 @@ void Save_BuildOptions_1_001AB0A0(Big_Save_BuildOptions_1_001AB0A0 *b) {
     init_Save_BuildOptions_1_001AB0A0(&b->r1, D_001FD998, 0xA0, 0x90, 0x80);
     init_Save_BuildOptions_1_001AB0A0(&b->r2, D_001FD988, 0x20, 0x10, 0);
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+extern u8 D_004A5A60[];
+/* data twins (src/game/data/sdata.c): D_00201DC4 */
+Rec_Save_InitNewGame_1_001AA760 *D_00201DC4 = (Rec_Save_InitNewGame_1_001AA760 *)D_004A5A60;
+#endif

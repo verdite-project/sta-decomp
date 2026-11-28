@@ -15,7 +15,12 @@ typedef struct { Vec a; Vec b; Vec c; f32 x30; f32 x34; B fl; u8 pad[7]; } Ent_L
 typedef struct { Ent_Light_Add_0_0015B980 sp[4]; Ent_Light_Add_0_0015B980 ents[2][64]; } W_Light_Add_0_0015B980;
 typedef struct { u128 q[4]; } M;
 extern s32 D_0030A2D0[];
+#ifndef NONMATCHING
 extern Vec D_0030A290;
+#else
+/* data twins (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A290 */
+static Vec D_0030A290;
+#endif
 extern Vec D_0030A320;
 extern Vec D_0030A330;
 extern Vec D_0030A350;

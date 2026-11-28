@@ -14,13 +14,33 @@ typedef struct { u8 pad[6]; u8 x6; u8 pad7[0x89]; } E_Notify_DrawItemGold_0_0019
 typedef struct { u8 x0; u8 x1; u8 x2; u8 x3; u8 x4; u8 x5; } Q;
 extern V D_001F3200[];
 extern V D_001F3210[];
+#ifndef NONMATCHING
 extern s32 D_004A3324[];
+#else
+/* data twins (src/game/data/shop_bss_004A3310.c): D_004A3324 */
+static s32 D_004A3324[0x1];
+#endif
 extern s32 D_004A3328[];
 extern B D_004A332C[];
 extern u16 D_004A3310[];
+#ifndef NONMATCHING
 extern s8 D_001FD698[];
+#else
+/* data twins (src/game/data/notify_rodata.c): D_001FD698 */
+static s8 D_001FD698[0x8] = "%d\000\000\000\000\000\000";
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD6A0[];
+#else
+/* data twins (src/game/data/notify_rodata.c): D_001FD6A0 */
+static s8 D_001FD6A0[0x8] = { -0x7f, 0x7e, 0x20, 0x25, 0x64, 0, 0, 0 };
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD6A8[];
+#else
+/* data twins (src/game/data/notify_rodata.c): D_001FD6A8 */
+static s8 D_001FD6A8[0x8] = { -0x7e, 0x62, 0x20, 0x25, 0x64, 0, 0, 0 };
+#endif
 void Notify_DrawBackground_0_0019EF60(s8 *arg0);
 void GsPkt_SetReg_3_001543E0(s32, s32);
 void Ui_DrawSpriteRotated_1_00182080(s32, f32, V *, V *, C *, s32);

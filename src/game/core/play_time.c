@@ -9,7 +9,12 @@ extern Clk D_00202388;
 extern Clk D_00202398;
 extern Pair D_00202380;
 extern Pair D_002023A0;
+#ifndef NONMATCHING
 extern int D_00202390;
+#else
+/* data twins (src/game/data/sbss.c): D_00202390 */
+static int D_00202390;
+#endif
 s32 PlayTime_Update_1_001DF670(void);
 s32 PlayTime_Diff_2_001DF790(Clk a, Clk b);
 void PlayTime_DiffNow_2_001DF910(void);
@@ -178,3 +183,12 @@ void PlayTime_Reset_1_001DFBB0(void) {
 }
 #undef sceCdReadClock
 #undef D_00202380
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00202380, D_00202388, D_00202398, D_002023A0 */
+Pair D_00202380;
+Clk D_00202388;
+Clk D_00202398;
+Pair D_002023A0;
+#endif

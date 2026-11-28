@@ -132,11 +132,21 @@ typedef struct { s32 p0; s32 p4; s32 id; s32 pC; s32 key; } Arg;
 extern Mdl **D_00201E88[2];
 extern u16 D_00317238[];
 extern u8 D_00202030;
+#ifndef NONMATCHING
 extern u8 D_00202034;
+#else
+/* data twins (src/game/data/sbss.c): D_00202034 */
+static u8 D_00202034;
+#endif
 extern s32 **D_002022BC;
 extern s32 D_00201E80;
 extern s32 D_00201E94;
+#ifndef NONMATCHING
 extern s32 D_00202038;
+#else
+/* data twins (src/game/data/sbss.c): D_00202038 */
+static s32 D_00202038;
+#endif
 extern s8 **D_00201E80__as_MapCmd_PlaySeAtXYZ_1_0017BC00_[2];
 extern S_MapCmd_SetPlayerPos_1_0017CF40 *D_002022E4__as_MapCmd_SetPlayerPos_1_0017CF40;
 extern Actor_ *D_002022E4__as_MapCmd_SetPlayerVar3_0_0017CD00;
@@ -2727,3 +2737,9 @@ void MapCmd_GetSfxParamB_0_0017EAF0(Arg *a) {
 #undef DD
 #undef C
 #undef D
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/vibration_bss.c): D_00317238 */
+u16 D_00317238[0x2];
+#endif

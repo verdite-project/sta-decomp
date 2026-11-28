@@ -23,7 +23,12 @@ typedef struct {
     s32 x450;
 } P;
 extern s32 D_002022E0;
+#ifndef NONMATCHING
 extern B2 D_00201E28;
+#else
+/* data twins (src/game/data/sdata.c): D_00201E28 */
+static B2 D_00201E28 = { 0x40, 0x60 };
+#endif
 extern u64 D_002F1420[];
 extern Flags8 D_00222A54[];
 void Hud_DrawWarning_0_001BC7A0(u32 a0, s32 a1, s32 a2);
@@ -161,3 +166,9 @@ void Hud_DrawOverlay_0_001BCB60(void) {
 }
 #undef GsPkt_SetReg_3_001543E0
 #undef Hud_DrawWarning_0_001BC7A0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_002022E0 */
+s32 D_002022E0;
+#endif

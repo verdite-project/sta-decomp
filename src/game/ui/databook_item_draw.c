@@ -12,14 +12,47 @@ typedef struct { u128 q[2]; } Q2;
 typedef UiArg Arg;
 typedef struct { s32 state; s32 btn; s8 x8; s8 pad[5]; u8 xE; } P;
 extern s32 *D_00201D3C;
+#ifdef NONMATCHING
+extern u8 D_00495B60[];
+#endif
+#ifndef NONMATCHING
 extern f32 D_0020219C;
+#else
+/* data twins (src/game/data/sbss.c): D_0020219C */
+static f32 D_0020219C;
+#endif
+#ifndef NONMATCHING
 extern f32 D_002021A0;
+#else
+/* data twins (src/game/data/sbss.c): D_002021A0 */
+static f32 D_002021A0;
+#endif
+#ifndef NONMATCHING
 extern s32 D_004A1434[];
+#else
+/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A1434 */
+static s32 D_004A1434[0x1];
+#endif
 extern Q2 D_001F2F40;
+#ifndef NONMATCHING
 extern s32 D_004A1438[];
+#else
+/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A1438 */
+static s32 D_004A1438[0x1];
+#endif
+#ifndef NONMATCHING
 extern f32 D_004A143C[];
+#else
+/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A143C */
+static f32 D_004A143C[0x1];
+#endif
 extern Flags8 D_004A1444[];
+#ifndef NONMATCHING
 extern s32 D_00202194;
+#else
+/* data twins (src/game/data/sbss.c): D_00202194 */
+static s32 D_00202194;
+#endif
 void DbItem_Open_0_001979C0(s32 arg0);
 void DbItem_Update_0_00197B80(P *p);
 void memset(void *, s32, s32);
@@ -246,3 +279,16 @@ void DbItem_Update_0_00197B80(P *p) {
     Ui_LoadItemImage_3_00183DC0(D_00201D3C[D_004A1430[0]]);
 }
 #undef DbItem_Update_0_00197B80
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+extern u8 D_00495B60[];
+/* data twins (src/game/data/sdata.c): D_00201D38, D_00201D3C */
+s32 D_00201D38 = 6;
+s32 *D_00201D3C = (s32 *)D_00495B60;
+/* data twins (src/game/data/sbss.c): D_00202198 */
+s32 D_00202198;
+/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A1430, D_004A1440 */
+s32 D_004A1430[0x1];
+f32 D_004A1440[0x4];
+#endif

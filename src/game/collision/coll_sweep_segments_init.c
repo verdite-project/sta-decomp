@@ -81,3 +81,9 @@ void Coll_SweepSegmentsInit_1_00151E50(Out *out, Seg *a1, Seg *a2, Seg *a3, Seg 
 #else
 INCLUDE_ASM(Coll_SweepSegmentsInit_1_00151E50);
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00201F24 */
+s32 D_00201F24;
+#endif

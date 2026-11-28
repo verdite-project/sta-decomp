@@ -43,7 +43,12 @@ extern u8 D_0022EC17[];
 extern s32 D_002022B8;
 extern Flags8 D_0022EC42[];
 extern s32 D_0022F060[];
+#ifndef NONMATCHING
 extern u8 **D_00201EBC;
+#else
+/* data twins (src/game/data/sbss.c): D_00201EBC */
+static u8 **D_00201EBC;
+#endif
 extern s8 D_00201ED4;
 void Snd_StartStream2_0_0012DE00(void);
 s32 Snd_LoadSystemBank_1_0012DEE0(s32 a);
@@ -276,3 +281,11 @@ s32 Snd_LoadSystemBank_1_0012DEE0(s32 a) {
     Pool_Free_2_00128580(a, D_00201EBC);
     return 0;
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sound_emitter_bss.c): D_0022F050, D_0022F060, D_0022F070 */
+s32 D_0022F050[0x4];
+s32 D_0022F060[0x4];
+s32 D_0022F070[0x4];
+#endif

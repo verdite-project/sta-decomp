@@ -21,7 +21,12 @@ typedef struct { s32 a; s32 b; s32 x8; s32 xC; s32 x10; u16 x14; u16 x16; u8 x18
 typedef struct { s32 x0; s32 x4; s32 x8; u8 xC; u8 xD; u8 xE; u8 xF; } S_Bgm_Tick_0_001D9A80;
 typedef struct { s32 x0; s32 x4; s32 x8; u8 xC; u8 xD; u8 xE; } S_Bgm_DmaChunk_0_001D9BC0;
 typedef struct { u32 data, addr, size, mode; } Dma;
+#ifndef NONMATCHING
 extern u8 D_004B9FAC[];
+#else
+/* data twins (src/game/data/bgm_bss.c): D_004B9FAC */
+static u8 D_004B9FAC[0x4];
+#endif
 extern struct { u16 a; u16 b; char pad[12]; } D_004B9FA8;
 extern S_Bgm_Update_0_001D9680 D_004B9FA0;
 extern E D_004B9F20[4];
@@ -30,9 +35,24 @@ extern s32 D_004B9F44[];
 extern s32 D_004B9F64[];
 extern s32 D_004B9F84[];
 extern s16 D_004B9FAA[];
+#ifndef NONMATCHING
 extern s32 D_004B9FA4[];
+#else
+/* data twins (src/game/data/bgm_bss.c): D_004B9FA4 */
+static s32 D_004B9FA4[0x1];
+#endif
+#ifndef NONMATCHING
 extern Dma D_004B9FC0;
+#else
+/* data twins (src/game/data/bgm_bss.c): D_004B9FC0 */
+static Dma D_004B9FC0;
+#endif
+#ifndef NONMATCHING
 extern s32 D_0020231C;
+#else
+/* data twins (src/game/data/sbss.c): D_0020231C */
+static s32 D_0020231C;
+#endif
 void Bgm_DrvGetStatus_0_001D8FA0(void);
 u8 Bgm_GetState_0_001D8FB0(void);
 s32 Bgm_Play_0_001D8FC0(s32 a0, s32 a1, s32 a2, s32 a3, u32 i, u32 j, Out *out);
@@ -500,3 +520,13 @@ s32 *Bgm_RpcCallback_0_001D9DC0(u32 cmd, s32 *p, s32 unused, s32 *size)
     return &D_0020231C;
 }
 #undef Bgm_DmaChunk_0_001D9BC0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00202310, D_00202314 */
+s32 D_00202310;
+s32 D_00202314;
+/* data twins (src/game/data/bgm_bss.c): D_004B9F20, D_004B9FB0 */
+E D_004B9F20[4];
+s32 D_004B9FB0[0x4];
+#endif

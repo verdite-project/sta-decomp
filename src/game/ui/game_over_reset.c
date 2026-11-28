@@ -26,7 +26,12 @@ typedef struct {
 } A;
 extern s32 D_0020221C;
 extern S D_001F31E0 __attribute__((aligned(16)));
+#ifndef NONMATCHING
 extern char D_001FD660[];
+#else
+/* data twins (src/game/data/pause_menu_entry_rodata2.c): D_001FD660 */
+static char D_001FD660[0x20] __attribute__((aligned(8))) = { -0x7e, 0x66, -0x7e, 0x60, -0x7e, 0x6c, -0x7e, 0x64, -0x7f, 0x40, -0x7e, 0x6e, -0x7e, 0x75, -0x7e, 0x64, -0x7e, 0x71, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+#endif
 void GameOver_Reset_0_0019E8A0(void);
 void GameOver_DrawFrame_0_0019E8B0(Arg *arg0);
 void GameOverProc_DrawText_0_0019EA60(A *o, s32 mode, u32 kind, u32 c);
@@ -151,3 +156,12 @@ void GameOverProc_DrawText_0_0019EA60(A *o, s32 mode, u32 kind, u32 c) {
     }
 }
 #undef D_0020221C
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00202210, D_00202214, D_00202218, D_0020221C */
+s32 D_00202210;
+s32 D_00202214;
+s32 D_00202218;
+s32 D_0020221C;
+#endif

@@ -16,9 +16,24 @@ typedef struct { u8 pad[6]; u8 lv; u8 pad7[0x89]; } E_Shop_Heal_0_001A1000;
 typedef struct { u8 pad[2]; u8 n; u8 p3[2]; u8 kind; } K_Shop_Heal_0_001A1000;
 typedef struct { s32 x0; u32 flags; char p8[2]; u8 bA; char pB[3]; u8 bE; } Obj;
 extern u16 D_004A3310[];
+#ifndef NONMATCHING
 extern s32 D_004A32E0[];
+#else
+/* data twins (src/game/data/shop_bss.c): D_004A32E0 */
+static s32 D_004A32E0[0x1];
+#endif
+#ifndef NONMATCHING
 extern s32 D_004A32E4[];
+#else
+/* data twins (src/game/data/shop_bss.c): D_004A32E4 */
+static s32 D_004A32E4[0x1];
+#endif
+#ifndef NONMATCHING
 extern s32 D_004A32E8[];
+#else
+/* data twins (src/game/data/shop_bss.c): D_004A32E8 */
+static s32 D_004A32E8[0x1];
+#endif
 extern void *D_004A32EC[];
 /* .bss, from the top down (CodeWarrior writes it in reverse) */
 s32 D_004A32F0[0x8];
@@ -448,3 +463,15 @@ void ShopProc_BackB_0_001A13F0(Obj *o)
     o->flags = 0;
 }
 #undef D_004A332C
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/shop_bss.c): D_004A32EC */
+void *D_004A32EC[0x1];
+/* data twins (src/game/data/shop_bss_004A3310.c): D_004A3310, D_004A3318, D_004A331C, D_004A3328, D_004A332C */
+u16 D_004A3310[0x4] __attribute__((aligned(16)));
+s32 D_004A3318[0x1];
+s32 D_004A331C[0x1];
+s32 D_004A3328[0x1];
+B D_004A332C[0x4 / sizeof(B)];
+#endif

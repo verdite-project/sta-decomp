@@ -37,12 +37,42 @@ extern S D_001F2EE0 __attribute__((aligned(16)));
 extern T D_004A13A0;
 extern s32 D_00202184;
 extern s32 D_00202188;
+#ifndef NONMATCHING
 extern s8 D_001FD328[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD328 */
+static s8 D_001FD328[0x8] = { 0x25, 0x64, 0x20, -0x7f, -0x6d, 0, 0, 0 };
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD330[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD330 */
+static s8 D_001FD330[0x6] = "HP %d\000";
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD338[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD338 */
+static s8 D_001FD338[0x8] = "HP ----\000";
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD340[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD340 */
+static s8 D_001FD340[0x8] = "%3d\000\000\000\000\000";
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD348[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD348 */
+static s8 D_001FD348[0x8] = { 0x2d, 0x2d, 0x2d, 0, 0, 0, 0, 0 };
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD350[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD350 */
+static s8 D_001FD350[0x6] = "%3.1f\000";
+#endif
 static inline f32 u2f(u32 x) { return x; }
 
 void DbCharProc_DrawInfo_0_00196330(O *o, s32 a1, u32 mode, s32 a3) {
@@ -155,4 +185,10 @@ void DbCharProc_DrawInfo_0_00196330(O *o, s32 a1, u32 mode, s32 a3) {
         break;
     }
 }
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00202188 */
+s32 D_00202188;
 #endif

@@ -18,7 +18,9 @@ s32 D_001F25F0[0x10] = { -0x80000000, -0x7fefeff0, -0x7fdfdfe0, -0x7fcfcfd0, -0x
 f32 D_001F2630[0x8] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
 f32 D_001F2650[0x8] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
 f32 D_001F2670[0x8] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/menu_proc_draw_weight.c */
 s32 D_001F2690[0x8] = { (s32)D_001FC980, (s32)D_001FC988, (s32)D_001FC998, (s32)D_001FC9A8, (s32)D_001FC9B0, (s32)D_001FC9B8, 0, 0 };
+#endif
 f32 D_001F26B0[0x8] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
 f32 D_001F26D0[0x8] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
 f32 D_001F26F0[0x4] = { 615.0f, 275.0f, 619.0f, 399.0f };

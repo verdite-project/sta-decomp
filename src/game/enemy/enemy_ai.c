@@ -36,7 +36,12 @@ typedef struct {
     Vec x130[3];
 } S;
 typedef struct { u8 pad[0x1C]; u8 x1C:2; } R;
+#ifndef NONMATCHING
 extern u8 D_00201F10;
+#else
+/* data twins (src/game/data/sbss.c): D_00201F10 */
+static u8 D_00201F10;
+#endif
 void Enemy_UpdateAI_1_00136400(Obj613 *a, f32 dt);
 void Enemy_InitState_1_00136700(Actor *a0);
 u32 Enemy_Get5B4b5_1_0013E4D0(Obj613 *);

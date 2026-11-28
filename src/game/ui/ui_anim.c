@@ -54,28 +54,98 @@ typedef struct { s32 x0; s32 x4; s8 *x8; } P;
 typedef struct { u8 pad0[4]; s32 x4; u8 pad8[8]; u8 x10[0x10]; u8 x20[0x10]; } R;
 typedef struct { u8 pad0[0x9C]; R *x9C; u8 padA0[0x24]; R *xC4; } G;
 extern Q D_001F25E0[];
+#ifndef NONMATCHING
 extern f32 D_0020205C;
+#else
+/* data twins (src/game/data/sbss.c): D_0020205C */
+static f32 D_0020205C;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00486980[];
+#else
+/* data twins (src/game/data/ui_anim_bss.c): D_00486980 */
+static s32 D_00486980[0x1];
+#endif
+#ifndef NONMATCHING
 extern f32 D_00486984[];
+#else
+/* data twins (src/game/data/ui_anim_bss.c): D_00486984 */
+static f32 D_00486984[0x1];
+#endif
+#ifndef NONMATCHING
 extern f32 D_00486988[];
+#else
+/* data twins (src/game/data/ui_anim_bss.c): D_00486988 */
+static f32 D_00486988[0x2];
+#endif
 extern Q D_001F25D0[];
+#ifndef NONMATCHING
 extern f32 D_00202058;
+#else
+/* data twins (src/game/data/sbss.c): D_00202058 */
+static f32 D_00202058;
+#endif
 extern E_UiAnim_IsDone_1_0017F3D0 D_00486990[];
+#ifndef NONMATCHING
 extern s32 D_0020203C;
+#else
+/* data twins (src/game/data/sbss.c): D_0020203C */
+static s32 D_0020203C;
+#endif
 extern s32 D_00202048;
+#ifndef NONMATCHING
 extern s32 D_0020204C;
+#else
+/* data twins (src/game/data/sbss.c): D_0020204C */
+static s32 D_0020204C;
+#endif
 extern s32 D_00202040;
+#ifndef NONMATCHING
 extern s32 D_00202044;
+#else
+/* data twins (src/game/data/sbss.c): D_00202044 */
+static s32 D_00202044;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00201CC8;
+#else
+/* data twins (src/game/data/sdata.c): D_00201CC8 */
+static s32 D_00201CC8 = -2;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00201CCC;
+#else
+/* data twins (src/game/data/sdata.c): D_00201CCC */
+static s32 D_00201CCC = -2;
+#endif
 extern S D_001F25B0[] __attribute__((aligned(16)));
+#ifndef NONMATCHING
 extern f32 D_00202054;
+#else
+/* data twins (src/game/data/sbss.c): D_00202054 */
+static f32 D_00202054;
+#endif
+#ifndef NONMATCHING
 extern f32 D_00202050;
+#else
+/* data twins (src/game/data/sbss.c): D_00202050 */
+static f32 D_00202050;
+#endif
 extern E_UiAnim_SetTarget_1_0017F470 D_00486990__as_UiAnim_SetTarget_1_0017F470[];
 extern E_UiAnim_SetVisible_1_0017F7C0 D_00486990__as_UiAnim_SetVisible_1_0017F7C0[24];
 extern E_UiAnim_SetColor_0_0017F890 D_00486990__as_UiAnim_SetColor_0_0017F890[];
+#ifndef NONMATCHING
 extern P2 *D_0048699C[];
+#else
+/* data twins (src/game/data/ui_anim_bss.c): D_0048699C */
+static P2 *D_0048699C[0x1];
+#endif
+#ifndef NONMATCHING
 extern s32 D_004869A0[];
+#else
+/* data twins (src/game/data/ui_anim_bss.c): D_004869A0 */
+static s32 D_004869A0[0x4];
+#endif
 extern s32 D_004869B4[];
 extern f32 D_004869B8[];
 extern f32 D_004869D0[];
@@ -811,3 +881,13 @@ void UiProc_DrawText_0_00180CA0(O_UiProc_DrawText_0_00180CA0 *o, s32 a1, u32 mod
 #undef MenuLayout_GetSub_1_00189020
 #undef D_00202040
 #undef D_00202048
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00202040, D_00202048 */
+s32 D_00202040;
+s32 D_00202048;
+/* data twins (src/game/data/ui_anim_bss.c): D_004869B4, D_004869D0 */
+s32 D_004869B4[0x7] __attribute__((aligned(4)));
+f32 D_004869D0[0x1b8];
+#endif

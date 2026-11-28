@@ -23,10 +23,14 @@ s32 D_001F2FC0[0x8] = { 0, 5, 0, (s32)D_001F2F80, 7, -0x3fc00000, 0, 0 };
 f32 D_001F2FE0[0x8] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
 s32 D_001F3000[0x10] = { -0x3fc00000, 0xfa6, -0x40000000, 0xfa5, -0x40800000, 0xfa4, 0, 0xfa3, 0x3f800000, 0xfa2, 0x40000000, 0xfa1, 0x40400000, 0xfa0, 0, 0 };
 s32 D_001F3040[0x8] = { 0, 5, 0, (s32)D_001F3000, 7, -0x3fc00000, 0, 0 };
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/hud_draw.c */
 s32 D_001F3060[0x1] = { 0 };
+#endif
 f32 D_001F3064[0x2] __attribute__((aligned(4))) = { 10.0f, 0.0f };
 s32 D_001F306C[0x1] = { 0 };
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/hud_draw.c */
 s32 D_001F3070[0x1] = { 0 };
+#endif
 f32 D_001F3074[0x2] __attribute__((aligned(4))) = { 10.0f, 0.0f };
 s32 D_001F307C[0x1] = { 0 };
 s32 D_001F3080[0x10] = { -0x3fc00000, 0xfa6, -0x40000000, 0xfa5, -0x40800000, 0xfa4, 0, 0xfa3, 0x3f800000, 0xfa2, 0x40000000, 0xfa1, 0x40400000, 0xfa0, 0, 0 };

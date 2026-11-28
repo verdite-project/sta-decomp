@@ -8,9 +8,24 @@ typedef struct { u8 r, g, b, a; } Col;
 typedef struct { u8 p0[0x4]; u16 x4; u8 p6[4]; u16 xA; u8 pC[0x1D]; u8 x29; u8 p2A[0x66]; } E;
 typedef struct { u8 p0[0x14]; f32 x14; f32 x18; u8 p1C[0x10]; f32 x2C; f32 x30; u8 p34[8]; u32 x3C; } G;
 extern S D_001F30E0 __attribute__((aligned(16)));
+#ifndef NONMATCHING
 extern s8 D_001FD5B8[];
+#else
+/* data twins (src/game/data/item_menu_draw_rodata.c): D_001FD5B8 */
+static s8 D_001FD5B8[0x8] = { 0x25, 0x33, 0x64, 0, 0, 0, 0, 0 };
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD5C0[];
+#else
+/* data twins (src/game/data/item_menu_draw_rodata.c): D_001FD5C0 */
+static s8 D_001FD5C0[0x6] = "(+%d)\000";
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD5C8[];
+#else
+/* data twins (src/game/data/item_menu_draw_rodata.c): D_001FD5C8 */
+static s8 D_001FD5C8[0x6] = "%3.1f\000";
+#endif
 extern s8 D_004A3150[];
 extern G D_004A3250;
 void Text_Draw_2_001875C0(f32, f32, f32, s8 *, s32, Col);

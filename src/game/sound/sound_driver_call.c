@@ -10,11 +10,26 @@ const char D_001FE6C0[0x30] = { 0x3c, 0x43, 0x61, 0x6c, 0x6c, 0x52, 0x70, 0x63, 
 extern s32 D_004B9EF0[];
 extern u8 D_004B7A40[];
 extern u8 D_004B7CB0[];
+#ifndef NONMATCHING
 extern s32 D_00201E38;
+#else
+/* data twins (src/game/data/sdata.c): D_00201E38 */
+static s32 D_00201E38 = -1;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00202300;
+#else
+/* data twins (src/game/data/sbss.c): D_00202300 */
+static s32 D_00202300;
+#endif
 extern s32 _gp;
 extern int D_004B7EB0[];
+#ifndef NONMATCHING
 extern s32 D_002022FC;
+#else
+/* data twins (src/game/data/sbss.c): D_002022FC */
+static s32 D_002022FC;
+#endif
 extern s32 D_004B7C40[];
 extern s32 D_004B7C90[];
 extern s32 D_004B7A40__as_SndDrv_GetRecvBuffer_1_001D8340[];
@@ -336,3 +351,9 @@ void SndDrv_RpcServerThread_1_001D8BE0(void)
     sceSifRegisterRpc(D_004B7C40, 0x102A, SndDrv_RpcServerFunc_1_001D8AB0, D_004B7840, NULL, NULL, D_004B7C90);
     sceSifRpcLoop(D_004B7C90);
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/bgm_bss.c): D_004B9EF0 */
+s32 D_004B9EF0[0xc];
+#endif

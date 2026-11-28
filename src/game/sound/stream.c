@@ -100,3 +100,9 @@ void Strm_DrvInit_0_001D8E30(void)
         D_0020230C = 1;
     }
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_0020230C */
+u16 D_0020230C;
+#endif

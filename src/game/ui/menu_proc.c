@@ -10,8 +10,18 @@ typedef struct { s32 x0; s32 x4; u8 pad8[8]; f32 x10; f32 x14; f32 x18; s32 x1C;
 extern s32 D_004A0F90[];
 extern void (*D_004A0F9C[])(s8 *);
 extern void (*D_004A0F98[])(s32);
+#ifndef NONMATCHING
 extern s8 D_001FCCF0[];
+#else
+/* data twins (src/game/data/ui_gauge_rodata2.c): D_001FCCF0 */
+static s8 D_001FCCF0[0x8] = { -0x7f, -0x65, -0x7f, 0x46, 0, 0, 0, 0 };
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FCCF8[];
+#else
+/* data twins (src/game/data/ui_gauge_rodata2.c): D_001FCCF8 */
+static s8 D_001FCCF8[0x8] = { -0x7f, 0x7e, -0x7f, 0x46, 0, 0, 0, 0 };
+#endif
 extern M D_004A0F90__as_MenuProc_Run_1_0018B320;
 void MenuProc_Set_1_0018B150(void *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, f32 fparg0);
 void MenuProc_DrawList_0_0018B180(s8 *arg0);
@@ -176,3 +186,11 @@ void Menu_SetCursor_1_0018B840(s32 i, s32 v)
 {
     D_00202120[i] = v;
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00202120 */
+s32 D_00202120[2];
+/* data twins (src/game/data/option_bss.c): D_004A0F90 */
+s32 D_004A0F90[0x2] __attribute__((aligned(4)));
+#endif

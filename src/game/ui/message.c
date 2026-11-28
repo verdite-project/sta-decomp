@@ -4,15 +4,35 @@
 typedef struct { u8 r, g, b, a; } Col;
 typedef struct { u8 b0:1; } B;
 typedef struct { u8 a:3; u8 b:5; } BF;
+#ifndef NONMATCHING
 extern s32 D_004A0F54[];
+#else
+/* data twins (src/game/data/option_bss.c): D_004A0F54 */
+static s32 D_004A0F54[0x1];
+#endif
 extern f32 D_004A0F58[];
 extern B D_004A0F5C[];
 extern s8 D_004A0F60[];
 extern f32 D_004A0F74[];
+#ifndef NONMATCHING
 extern s32 D_00202118;
+#else
+/* data twins (src/game/data/sbss.c): D_00202118 */
+static s32 D_00202118;
+#endif
 extern u16 D_00317238[];
+#ifndef NONMATCHING
 extern u8 D_004A0B50[];
+#else
+/* data twins (src/game/data/option_bss.c): D_004A0B50 */
+static u8 D_004A0B50[0x404] __attribute__((aligned(4)));
+#endif
+#ifndef NONMATCHING
 extern s32 D_004A0F64[];
+#else
+/* data twins (src/game/data/option_bss.c): D_004A0F64 */
+static s32 D_004A0F64[0x1];
+#endif
 extern BF D_004A0F68[];
 extern s16 D_004A0F6C[];
 extern s32 D_004A0F80[];
@@ -155,3 +175,13 @@ f32 Msg_GetAlpha_0_0018B110(void) {
     }
     return (f32) (*D_004A0FAC);
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/option_bss.c): D_004A0F58, D_004A0F5C, D_004A0F60, D_004A0F68, D_004A0F80 */
+f32 D_004A0F58[0x1];
+B D_004A0F5C[0x4 / sizeof(B)];
+s8 D_004A0F60[0x4];
+BF D_004A0F68[0x18 / sizeof(BF)] __attribute__((aligned(4)));
+s32 D_004A0F80[0x4] __attribute__((aligned(4)));
+#endif

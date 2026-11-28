@@ -22,12 +22,37 @@ typedef struct {
     u8 pad8[8];
     L x10;
 } O;
+#ifndef NONMATCHING
 extern s32 D_00201FF8;
+#else
+/* data twins (src/game/data/sbss.c): D_00201FF8 */
+static s32 D_00201FF8;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00201FFC;
+#else
+/* data twins (src/game/data/sbss.c): D_00201FFC */
+static s32 D_00201FFC;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00202000;
+#else
+/* data twins (src/game/data/sbss.c): D_00202000 */
+static s32 D_00202000;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00202004;
+#else
+/* data twins (src/game/data/sbss.c): D_00202004 */
+static s32 D_00202004;
+#endif
 extern u8 D_002F1840[];
+#ifndef NONMATCHING
 extern s32 D_00201FF4;
+#else
+/* data twins (src/game/data/sbss.c): D_00201FF4 */
+static s32 D_00201FF4;
+#endif
 void Mdl_SetLayerTex_0_0016B2D0(s32 a, P_Mdl_SetLayerTex_0_0016B2D0 p, s32 base, s32 n);
 s32 Mdl_SetLayerForMesh_0_0016B360(H_Mdl_SetLayerForMesh_0_0016B360 *h, F f, s32 a2);
 s32 Mdl_SetLayerSimple_0_0016B480(P_Mdl_SetLayerSimple_0_0016B480 p, s32 b);
@@ -376,3 +401,9 @@ void Mdl_DrawLit_0_0016B970(O *o, L *m, Vec *v, s8 *a3, s32 t0, s32 t1, s32 t2) 
     }
 }
 #undef sceVu0AddVector
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00201FF0 */
+s32 D_00201FF0;
+#endif

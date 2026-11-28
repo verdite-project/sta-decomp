@@ -12,10 +12,30 @@ typedef struct { u8 p0[0x54]; Q *x54; u8 p58[4]; Q *x5C; } G;
 typedef struct { u8 pad[4]; u16 x4; u8 pad6[0x1A]; u16 x20; u8 pad22[0x1A]; u8 x3C; u8 pad3D[0x53]; } E;
 typedef struct { u8 pad[0x14]; f32 x14; f32 x18; u8 pad1C[0x10]; f32 x2C; f32 x30; u8 pad34[8]; u32 x3C; } H;
 extern S D_001F2F60[] __attribute__((aligned(16)));
+#ifndef NONMATCHING
 extern s8 D_001FD368[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD368 */
+static s8 D_001FD368[0x8] = { 0x25, 0x64, 0x20, -0x7f, -0x6d, 0, 0, 0 };
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD370[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD370 */
+static s8 D_001FD370[0x8] = { 0x2d, 0x2d, 0x2d, 0, 0, 0, 0, 0 };
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD378[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD378 */
+static s8 D_001FD378[0x8] = { 0x25, 0x64, 0, 0, 0, 0, 0, 0 };
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD380[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD380 */
+static s8 D_001FD380[0x6] = "%3.1f\000";
+#endif
 extern s32 D_00202190;
 extern H D_004A13F0;
 void Ui_DrawSprite_2_00181680(s32, void *, void *, void *, S *, s32);

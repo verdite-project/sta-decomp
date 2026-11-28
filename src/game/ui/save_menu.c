@@ -17,9 +17,19 @@ typedef struct { u8 p0[0xAC]; s8 *xAC; } G;
 typedef struct { s32 sel; s32 x4; s32 x8; f32 xC; s32 x10; s32 x14; E e[2]; } M_SaveMenu_SelectDevice_0_0018D7B0;
 extern M_SaveMenu_DrawFrame_0_0018D1F0 D_004A1050;
 extern s32 D_004A105C[];
+#ifndef NONMATCHING
 extern f32 D_004A1060[];
+#else
+/* data twins (src/game/data/option_bss.c): D_004A1060 */
+static f32 D_004A1060[0x2] __attribute__((aligned(4)));
+#endif
 extern S D_001F2A50[] __attribute__((aligned(16)));
+#ifndef NONMATCHING
 extern s8 D_001FCDC8[];
+#else
+/* data twins (src/game/data/save_menu_rodata.c): D_001FCDC8 */
+static s8 D_001FCDC8[0x8] = "SLOT %d\000";
+#endif
 void SaveMenu_ConfirmLoad_0_0018D060(O_SaveMenu_ConfirmLoad_0_0018D060 *o);
 void SaveMenu_Exit_0_0018D140(O_SaveMenu_Exit_0_0018D140 *o);
 void SaveMenu_DrawFrame_0_0018D1F0(u8 *a0);
@@ -253,3 +263,9 @@ void SaveMenu_SelectDevice_0_0018D7B0(s8 *arg0) {
 }
 #undef MenuProc_Set_1_0018B150
 #undef D_004A1050
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/option_bss.c): D_004A1020 */
+s32 D_004A1020[0xc] __attribute__((aligned(4)));
+#endif

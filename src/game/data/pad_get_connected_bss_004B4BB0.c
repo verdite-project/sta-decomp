@@ -24,8 +24,13 @@ u8 D_004B4C70[0x10];
 u8 D_004B4C60[0x10];
 u8 D_004B4C50[0x10];
 u8 D_004B4C40[0x10];
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/hud_marker.c */
 u8 D_004B4BE0[0x60];
+#endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/gfx_build_view_matrices.c */
 f32 D_004B4BD0[0x4];
+#endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/map/map.c */
 s32 D_004B4BCC[0x1];
 s32 D_004B4BC8[0x1];
 s32 D_004B4BC4[0x1];
@@ -34,3 +39,4 @@ u8 D_004B4BBC[0x4]; /* also D_004B4BBE */
 s32 D_004B4BB8[0x1];
 s32 D_004B4BB4[0x1];
 s32 D_004B4BB0[0x1] __attribute__((aligned(16)));
+#endif

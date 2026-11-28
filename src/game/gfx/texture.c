@@ -72,14 +72,39 @@ extern s32 D_004830EC[];
 extern volatile s16 D_004830DC[];
 extern s16 D_004830DE[];
 extern Blk_Tex_Upload_0_00175CD0 D_0047F0C0[];
+#ifndef NONMATCHING
 extern u8 D_00438A30[];
+#else
+/* data twins (src/game/data/texture_bss.c): D_00438A30 */
+static u8 D_00438A30[0x40];
+#endif
 extern B_Tex_UploadQueued_1_00176350 D_00438A70[];
+#ifndef NONMATCHING
 extern s32 D_0020200C;
+#else
+/* data twins (src/game/data/sbss.c): D_0020200C */
+static s32 D_0020200C;
+#endif
+#ifndef NONMATCHING
 extern u64 D_00202010;
+#else
+/* data twins (src/game/data/sbss.c): D_00202010 */
+static u64 D_00202010;
+#endif
 extern E D_0043F080[];
 extern s32 D_00438A10[];
+#ifndef NONMATCHING
 extern s32 D_00438A14[];
+#else
+/* data twins (src/game/data/texture_bss.c): D_00438A14 */
+static s32 D_00438A14[0x1];
+#endif
+#ifndef NONMATCHING
 extern s32 D_00438A18[];
+#else
+/* data twins (src/game/data/texture_bss.c): D_00438A18 */
+static s32 D_00438A18[0x1];
+#endif
 extern volatile u16 D_00438A1C[];
 extern s32 D_004830F0[];
 extern s32 D_004830F4[];
@@ -714,4 +739,11 @@ s16 Tex_Release_1_00177570(E30 *p) {
 /* best-effort C: tex_resident.c */
 #else
 INCLUDE_ASM(Tex_Resident_0_001777C0);
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/texture_bss.c): D_00438A10, D_00438A1C */
+s32 D_00438A10[0x1];
+volatile u16 D_00438A1C[0x2];
 #endif

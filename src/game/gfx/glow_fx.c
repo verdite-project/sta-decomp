@@ -9,7 +9,12 @@ typedef struct { s32 h; s32 x4, x8, xC; char p[0x20]; f32 x30, x34; char q[8]; }
 typedef struct { s32 v; char p[0x3C]; } F;
 typedef struct { s32 v; char pad[0x3C]; } E_GlowFx_Init_0_001E1200;
 extern E_GlowFx_Update_0_001E0C10 D_004BAC50[16];
+#ifndef NONMATCHING
 extern u8 D_002023AC;
+#else
+/* data twins (src/game/data/sbss.c): D_002023AC */
+static u8 D_002023AC;
+#endif
 extern Vec D_001F2160;
 s32 GlowFx_Stop_0_001E0D30(s32 i, s32 unused, f32 t);
 s32 GlowFx_SetParams_0_001E0F30(s32 i, s32 p, s32 q, f32 x, f32 y);

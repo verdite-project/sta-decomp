@@ -170,16 +170,51 @@ typedef struct { u8 pad[8]; u16 x8; u8 padA[0x90 - 0xA]; } Ent_ItemObj_AllocSlot
 typedef struct { u8 pad[8]; Obj3D *t[2][16]; } Tbl;
 extern A *D_00202290;
 extern B *D_00202288;
+#ifndef NONMATCHING
 extern s32 D_004B4B78[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004AC630.c): D_004B4B78 */
+static s32 D_004B4B78[0x1];
+#endif
+#ifndef NONMATCHING
 extern s32 D_004B4B7C[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004AC630.c): D_004B4B7C */
+static s32 D_004B4B7C[0x1];
+#endif
 extern s32 *D_004B4B80[];
+#ifndef NONMATCHING
 extern s32 *D_004B4B84[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004AC630.c): D_004B4B84 */
+static s32 *D_004B4B84[0x1];
+#endif
 extern F3b D_00222A54[];
+#ifndef NONMATCHING
 extern s8 D_001FD9D0[];
+#else
+/* data twins (src/game/data/save_parse_rodata.c): D_001FD9D0 */
+static s8 D_001FD9D0[0x20] __attribute__((aligned(8))) = "equip/e%4.04dm.stm\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD9F0[];
+#else
+/* data twins (src/game/data/save_parse_rodata.c): D_001FD9F0 */
+static s8 D_001FD9F0[0x20] __attribute__((aligned(8))) = "item/i%4.04dm.stm\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
+#endif
 extern s8 D_00270F40[];
+#ifndef NONMATCHING
 extern s32 D_004AD670[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004AC630.c): D_004AD670 */
+static s32 D_004AD670[0x340];
+#endif
+#ifndef NONMATCHING
 extern s32 D_004B1770[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004AC630.c): D_004B1770 */
+static s32 D_004B1770[0xd00];
+#endif
 extern Ent *D_002022B0;
 extern Bone *D_002022B0__as_ItemMdl_SetTransform_0_001ABF70;
 extern Obj D_004AE370__as_ItemMdl_SetTransform_0_001ABF70[2][64];
@@ -1303,3 +1338,17 @@ Obj3D *ItemObj_AllocSlot_1_001AE360(s16 id, u8 side) {
 #undef Mdl_UpdateBoneMatricesCur_0_00171540
 #undef Sfx_SetTransform_1_001677C0
 #undef D_002022B0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00202288, D_00202290, D_002022A0, D_002022B0 */
+B *D_00202288;
+A *D_00202290;
+s32 D_002022A0;
+Ent *D_002022B0;
+/* data twins (src/game/data/pad_get_connected_bss_004AC630.c): D_004B4B70, D_004B4B74, D_004B4B80, D_004B4B88 */
+s32 D_004B4B70[0x1];
+s32 D_004B4B74[0x1];
+s32 *D_004B4B80[0x1];
+s32 D_004B4B88[0x2];
+#endif

@@ -8,15 +8,60 @@ typedef struct { s32 x0; s32 x4; s32 x8; s32 xC; s32 x10; s32 x14; s32 x18; s32 
 typedef struct { s32 x0[8]; s32 n; u8 p24[0x1C]; E e[14]; u8 pad[0x40]; } S_SaveSys_ClassifyEntry_2_001E8310;
 extern char D_00201760[];
 extern char D_00201770[];
+#ifndef NONMATCHING
 extern char D_00201778[];
+#else
+/* data twins (src/game/data/save_system_step_rodata.c): D_00201778 */
+static char D_00201778[0x8] __attribute__((aligned(4))) = "%s\000\000\000\000\000\000";
+#endif
+#ifndef NONMATCHING
 extern char D_00201780[];
+#else
+/* data twins (src/game/data/save_system_step_rodata.c): D_00201780 */
+static char D_00201780[0x8] __attribute__((aligned(4))) = { 0x2f, 0x25, 0x73, 0x2f, 0x25, 0x73, 0, 0 };
+#endif
+#ifndef NONMATCHING
 extern char D_00201788[];
+#else
+/* data twins (src/game/data/save_system_step_rodata.c): D_00201788 */
+static char D_00201788[0x10] __attribute__((aligned(4))) = { 0x73, 0x74, 0x61, 0x5f, 0x61, 0x62, 0x79, 0x73, 0x73, 0x2e, 0x69, 0x63, 0x6f, 0, 0, 0 };
+#endif
+#ifndef NONMATCHING
 extern char D_00201798[];
+#else
+/* data twins (src/game/data/save_system_step_rodata.c): D_00201798 */
+static char D_00201798[0x10] __attribute__((aligned(4))) = { 0x53, 0x59, 0x53, 0x54, 0x45, 0x4d, 0x44, 0x41, 0x54, 0x41, 0, 0, 0, 0, 0, 0 };
+#endif
+#ifndef NONMATCHING
 extern char D_002017A8[];
+#else
+/* data twins (src/game/data/save_system_step_rodata.c): D_002017A8 */
+static char D_002017A8[0x10] __attribute__((aligned(4))) = { 0x2f, 0x25, 0x73, 0x2f, 0x25, 0x73, 0x25, 0x64, 0, 0, 0, 0, 0, 0, 0, 0 };
+#endif
+#ifndef NONMATCHING
 extern char D_002017B8[];
+#else
+/* data twins (src/game/data/save_system_step_rodata.c): D_002017B8 */
+static char D_002017B8[0x10] __attribute__((aligned(4))) = { 0x47, 0x41, 0x4d, 0x45, 0x44, 0x41, 0x54, 0x41, 0, 0, 0, 0, 0, 0, 0, 0 };
+#endif
+#ifndef NONMATCHING
 extern char D_002017C8[];
+#else
+/* data twins (src/game/data/save_system_step_rodata.c): D_002017C8 */
+static char D_002017C8[0x15] __attribute__((aligned(4))) = "/%s/icon.sys\000\000\000\000\000\000\000\000\000";
+#endif
+#ifndef NONMATCHING
 extern s32 D_002023B4;
+#else
+/* data twins (src/game/data/sbss.c): D_002023B4 */
+static s32 D_002023B4;
+#endif
+#ifndef NONMATCHING
 extern s32 D_002023C0;
+#else
+/* data twins (src/game/data/sbss.c): D_002023C0 */
+static s32 D_002023C0;
+#endif
 extern s32 D_004BC380[];
 extern s32 D_004BC384[];
 extern s32 D_004BC388[];
@@ -29,7 +74,12 @@ s32 D_004BC740[0x110];
 s32 D_004BC3A0[0xe8];
 extern u8 D_004BCBC0[];
 extern u8 D_004BCF40[];
+#ifndef NONMATCHING
 extern s32 D_002023BC;
+#else
+/* data twins (src/game/data/sbss.c): D_002023BC */
+static s32 D_002023BC;
+#endif
 extern s32 D_004BC390[];
 extern s32 D_004BC744[];
 void SaveSys_StepScan_1_001E7880(void);
@@ -690,3 +740,21 @@ void SaveSys_ClassifyEntry_2_001E8310(s32 idx, s32 *pa, s32 *pb) {
     if (pb != NULL) *pb = b;
 }
 #undef D_004BC380
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/save_system_step_rodata.c): D_00201760, D_00201770 */
+char D_00201760[0x10] __attribute__((aligned(4))) = { 0x42, 0x49, 0x53, 0x4c, 0x50, 0x53, 0x2d, 0x32, 0x35, 0x32, 0x31, 0x37, 0, 0, 0, 0 };
+char D_00201770[0x8] __attribute__((aligned(4))) = { 0x2f, 0x25, 0x73, 0x2f, 0x2a, 0, 0, 0 };
+/* data twins (src/game/data/sbss.c): D_002023C4, D_002023C8, D_002023D4, D_002023D8, D_002023E0, D_002023E4, D_002023E8 */
+s32 D_002023C4;
+s32 D_002023C8;
+s32 D_002023D4;
+s32 D_002023D8;
+s32 D_002023E0;
+s32 D_002023E4;
+s32 D_002023E8;
+/* data twins (src/game/data/save_system_start_bss_004BCBC0.c): D_004BCBC0, D_004BCF40 */
+u8 D_004BCBC0[0x380];
+u8 D_004BCF40[0x3d0];
+#endif

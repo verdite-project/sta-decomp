@@ -54,3 +54,9 @@ void Task_Register_0_0014DB10(s32 arg0) {
         Task_SetCallback_1_001E0560(D_002F0F40, D_00201F20);
     }
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00201F20 */
+s32 D_00201F20;
+#endif

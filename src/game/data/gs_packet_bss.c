@@ -27,11 +27,15 @@ u8 D_002F16D0[0x4];
 u8 D_002F16C8[0x8];
 u8 D_002F16C4[0x4];
 u8 D_002F16C0[0x4];
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/game_main.c */
 u8 D_002F1694[0x2c] __attribute__((aligned(4))); /* also D_002F1698 */
 f32 D_002F1690[0x1];
+#endif
 u8 D_002F1680[0x10];
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/gs_packet.c */
 u8 D_002F1640[0x40];
 u8 D_002F1600[0x40];
+#endif
 u8 D_002F15E4[0x1c] __attribute__((aligned(4))); /* also D_002F15E8 */
 u8 D_002F15E0[0x4];
 u8 D_002F15D8[0x8];
@@ -40,16 +44,22 @@ u8 D_002F15D0[0x4];
 u8 D_002F15C8[0x8];
 u8 D_002F15C4[0x4];
 u8 D_002F15C0[0x4];
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/gs_packet.c */
 u8 D_002F1580[0x40];
 u8 D_002F1510[0x70];
 u8 D_002F1500[0x10]; /* also D_002F1504 */
+#endif
 u8 D_002F14F0[0x10];
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/gs_packet.c */
 u8 D_002F14E0[0x10];
 u8 D_002F1490[0x50];
 u8 D_002F1420[0x70];
 u8 D_002F1410[0x10]; /* also D_002F1414 */
+#endif
 u8 D_002F1400[0x10];
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/gs_packet.c */
 u8 D_002F13F0[0x10];
+#endif
 u8 D_002F13D0[0x20];
 u8 D_002F13C8[0x8];
 u8 D_002F13A0[0x28]; /* also D_002F13A8 */

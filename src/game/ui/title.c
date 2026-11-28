@@ -19,45 +19,180 @@ typedef struct { u8 p:3; u8 v:1; } BF3;
 typedef struct { u8 p:5; u8 v:1; } BF5;
 typedef struct { s32 pad[4]; s32 f10[7]; s32 pad2[1]; } St;
 typedef struct { s32 x0; s32 x4; u8 b8; char p9[3]; u8 bC; } Obj_Title_CheckSaveData_1_001A4570;
+#ifndef NONMATCHING
 extern s32 D_00202250;
+#else
+/* data twins (src/game/data/sbss.c): D_00202250 */
+static s32 D_00202250;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00202258;
+#else
+/* data twins (src/game/data/sbss.c): D_00202258 */
+static s32 D_00202258;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00202254;
+#else
+/* data twins (src/game/data/sbss.c): D_00202254 */
+static s32 D_00202254;
+#endif
+#ifndef NONMATCHING
 extern f32 D_00201D9C;
+#else
+/* data twins (src/game/data/sdata.c): D_00201D9C */
+static f32 D_00201D9C = 30.0f;
+#endif
+#ifndef NONMATCHING
 extern s32 D_0020223C;
+#else
+/* data twins (src/game/data/sbss.c): D_0020223C */
+static s32 D_0020223C;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00202260;
+#else
+/* data twins (src/game/data/sbss.c): D_00202260 */
+static s32 D_00202260;
+#endif
+#ifndef NONMATCHING
 extern s32 D_0020225C;
+#else
+/* data twins (src/game/data/sbss.c): D_0020225C */
+static s32 D_0020225C;
+#endif
+#ifndef NONMATCHING
 extern s32 D_0020224C;
+#else
+/* data twins (src/game/data/sbss.c): D_0020224C */
+static s32 D_0020224C;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00202248;
+#else
+/* data twins (src/game/data/sbss.c): D_00202248 */
+static s32 D_00202248;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00202244;
+#else
+/* data twins (src/game/data/sbss.c): D_00202244 */
+static s32 D_00202244;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00202240;
+#else
+/* data twins (src/game/data/sbss.c): D_00202240 */
+static s32 D_00202240;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00201D94;
+#else
+/* data twins (src/game/data/sdata.c): D_00201D94 */
+static s32 D_00201D94 = -1;
+#endif
+#ifndef NONMATCHING
 extern f32 D_00201D98;
+#else
+/* data twins (src/game/data/sdata.c): D_00201D98 */
+static f32 D_00201D98 = -20.0f;
+#endif
+#ifndef NONMATCHING
 extern s32 D_004A4360[];
+#else
+/* data twins (src/game/data/shop_bss_004A4360.c): D_004A4360 */
+static s32 D_004A4360[0x1];
+#endif
+#ifndef NONMATCHING
 extern s32 D_004A4364[];
+#else
+/* data twins (src/game/data/shop_bss_004A4360.c): D_004A4364 */
+static s32 D_004A4364[0x1];
+#endif
+#ifndef NONMATCHING
 extern void *D_004A4368[];
+#else
+/* data twins (src/game/data/shop_bss_004A4360.c): D_004A4368 */
+static void *D_004A4368[0x1];
+#endif
+#ifndef NONMATCHING
 extern s32 D_004A436C[];
+#else
+/* data twins (src/game/data/shop_bss_004A4360.c): D_004A436C */
+static s32 D_004A436C[0x1];
+#endif
+#ifndef NONMATCHING
 extern f32 D_004A4370[];
+#else
+/* data twins (src/game/data/shop_bss_004A4360.c): D_004A4370 */
+static f32 D_004A4370[0x1];
+#endif
 extern f32 D_004A4378[];
 extern s32 D_001FD870[];
+#ifndef NONMATCHING
 extern Vec D_001F3310;
+#else
+/* data twins (src/game/data/title_nop_data.c): D_001F3310 */
+static Vec D_001F3310 = { 0.0f, 0.0f, 639.0f, 447.0f };
+#endif
+#ifndef NONMATCHING
 extern f32 D_00202264;
+#else
+/* data twins (src/game/data/sbss.c): D_00202264 */
+static f32 D_00202264;
+#endif
+#ifndef NONMATCHING
 extern s32 D_004A4390[];
+#else
+/* data twins (src/game/data/save_byte_bss.c): D_004A4390 */
+static s32 D_004A4390[0x1] __attribute__((aligned(16)));
+#endif
 extern struct { unsigned char : 2; unsigned char f : 1; char pad[15]; } D_004A43AC;
+#ifndef NONMATCHING
 extern s32 D_004A4394[];
+#else
+/* data twins (src/game/data/save_byte_bss.c): D_004A4394 */
+static s32 D_004A4394[0x1];
+#endif
 extern u8 D_004A43A2[];
 extern s32 D_001F3380[];
 extern s32 D_001F3390[];
+#ifndef NONMATCHING
 extern f32 D_004A4398[];
+#else
+/* data twins (src/game/data/save_byte_bss.c): D_004A4398 */
+static f32 D_004A4398[0x2];
+#endif
 extern Q2 D_001F3360;
+#ifndef NONMATCHING
 extern s8 D_001FD890[];
+#else
+/* data twins (src/game/data/title_rodata.c): D_001FD890 */
+static s8 D_001FD890[0x1d] = "\\TARGET\\STA_TI.ADX\000\000\000\000\000\000\000\000\000\000\000";
+#endif
 extern s32 D_00201DA0;
 extern s16 D_004A43A0[];
 extern BF3 D_004A43AC__as_TitleMenu_Open_1_001A4420[];
 extern F D_004A43AC__as_TitleMenu_Update_1_001A4010_[];
+#ifndef NONMATCHING
 extern s32 D_0020226C;
+#else
+/* data twins (src/game/data/sbss.c): D_0020226C */
+static s32 D_0020226C;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00202268;
+#else
+/* data twins (src/game/data/sbss.c): D_00202268 */
+static s32 D_00202268;
+#endif
 extern s32 D_001FD8D0[];
+#ifndef NONMATCHING
 extern s32 D_00202270;
+#else
+/* data twins (src/game/data/sbss.c): D_00202270 */
+static s32 D_00202270;
+#endif
 void Title_LoadGame_0_001A35B0(P_Title_LoadGame_0_001A35B0 *p);
 void TitleProc_Back_0_001A3B60(Obj_Title_LoadGame_0_001A35B0 *o);
 void Title_PlayOpening_2_001A3C10(void *arg0);
@@ -651,3 +786,9 @@ void Title_StartNewGame_0_001A4930(Obj_Title_CheckSaveData_1_001A4570 *o)
         Game_RequestMode12B_0_0012C0C0();
     }
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/save_byte_bss.c): D_004A43A0 */
+s16 D_004A43A0[0x6];
+#endif

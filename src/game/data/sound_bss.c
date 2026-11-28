@@ -43,4 +43,6 @@ s32 D_00222B58[0x1];
 s32 D_00222B54[0x1];
 u8 D_00222B50[0x4];
 u8 D_00222B20[0x30];
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/game_main.c */
 u8 D_00222AF0[0x30];
+#endif

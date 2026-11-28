@@ -142,25 +142,90 @@ typedef struct {
 typedef struct { s32 x0; s32 x4; u8 x8; u8 x9; u8 xA; u8 xB; u8 xC; u8 xD; u8 xE; } Obj_LoadMenu_SelectSlotB_0_00194150;
 extern S_LoadMenu_DrawSlotInfo_2_00192110 D_001F2DA0 __attribute__((aligned(16)));
 extern Row D_004A0900[];
+#ifndef NONMATCHING
 extern s8 D_001FD128[];
+#else
+/* data twins (src/game/data/option_rodata2.c): D_001FD128 */
+static s8 D_001FD128[0x10] __attribute__((aligned(8))) = "SAVEDATA%d\000\000\000\000\000\000";
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD138[];
+#else
+/* data twins (src/game/data/option_rodata2.c): D_001FD138 */
+static s8 D_001FD138[0x10] __attribute__((aligned(8))) = "HP %4d/%4d\000\000\000\000\000\000";
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD148[];
+#else
+/* data twins (src/game/data/option_rodata2.c): D_001FD148 */
+static s8 D_001FD148[0x10] __attribute__((aligned(8))) = "MP %4d/%4d\000\000\000\000\000\000";
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD158[];
+#else
+/* data twins (src/game/data/option_rodata2.c): D_001FD158 */
+static s8 D_001FD158[0x18] __attribute__((aligned(8))) = "LOCATION\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD170[];
+#else
+/* data twins (src/game/data/option_rodata2.c): D_001FD170 */
+static s8 D_001FD170[0x18] __attribute__((aligned(8))) = "TIME %2d:%2d:%2d\000\000\000\000\000\000\000\000";
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD188[];
+#else
+/* data twins (src/game/data/option_rodata2.c): D_001FD188 */
+static s8 D_001FD188[0x8] = " EMPTY \000";
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD190[];
+#else
+/* data twins (src/game/data/option_rodata2.c): D_001FD190 */
+static s8 D_001FD190[0x10] __attribute__((aligned(8))) = { 0x2d, 0x2d, 0x2d, 0x2d, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+#endif
 /* .bss, from the top down (CodeWarrior writes it in reverse) */
 s32 D_004A10F0[0xc];
+#ifndef NONMATCHING
 extern s32 D_004A1124[];
+#else
+/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A1124 */
+static s32 D_004A1124[0x1];
+#endif
+#ifndef NONMATCHING
 extern s32 D_004A1128[];
+#else
+/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A1128 */
+static s32 D_004A1128[0x1];
+#endif
+#ifndef NONMATCHING
 extern s32 D_004A1130[];
+#else
+/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A1130 */
+static s32 D_004A1130[0x2];
+#endif
 extern u8 D_004A0950[];
+#ifndef NONMATCHING
 extern s32 D_00202140;
+#else
+/* data twins (src/game/data/sbss.c): D_00202140 */
+static s32 D_00202140;
+#endif
 extern struct { unsigned char : 1; unsigned char f : 1; char pad[15]; } D_004A1194;
 extern s32 D_004A1180[];
+#ifndef NONMATCHING
 extern f32 D_004A1190[];
+#else
+/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A1190 */
+static f32 D_004A1190[0x1];
+#endif
 extern S_LoadMenu_DrawSlot_1_00193AF0 D_001F2DE0 __attribute__((aligned(16)));
+#ifndef NONMATCHING
 extern s8 D_001FD208[];
+#else
+/* data twins (src/game/data/load_menu_rodata.c): D_001FD208 */
+static s8 D_001FD208[0x8] = "SLOT %d\000";
+#endif
 void LoadMenu_DrawSlotInfo_2_00192110(A_LoadMenu_DrawSlotInfo_2_00192110 *o, s32 unused, u32 kind, s32 idx);
 void LoadMenu_HandleEvent_0_00192900(A_LoadMenu_HandleEvent_0_00192900 *a);
 void LoadMenu_SelectSlot_0_001929C0(O_LoadMenu_SelectSlot_0_001929C0 *o);
@@ -1015,3 +1080,20 @@ void LoadMenu_WaitCard_0_00194440(s8 *arg0) {
 #undef MenuProc_Set_1_0018B150
 #undef LoadMenu_SelectSlotB_0_00194150
 #undef Snd_PlaySe_3_00131600
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A1120, D_004A112C, D_004A1138, D_004A113C, D_004A1140, D_004A1150, D_004A1180, D_004A1184, D_004A1188, D_004A118C, D_004A1198, D_004A119C */
+s32 D_004A1120[0x1] __attribute__((aligned(16)));
+s32 D_004A112C[0x1];
+f32 D_004A1138[0x1];
+f32 D_004A113C[0x1];
+Flags8 D_004A1140[0x10 / sizeof(Flags8)];
+s32 D_004A1150[0xc];
+s32 D_004A1180[0x1];
+s32 D_004A1184[0x1];
+s32 D_004A1188[0x1];
+f32 D_004A118C[0x1];
+s32 D_004A1198[0x1];
+s32 D_004A119C[0x1];
+#endif

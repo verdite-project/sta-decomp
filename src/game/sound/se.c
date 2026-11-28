@@ -32,18 +32,58 @@ typedef struct {
 } Ent;
 typedef struct { s32 data; s32 addr; u32 size; s32 mode; } Dma;
 extern s32 D_004BA4F8[];
+#ifndef NONMATCHING
 extern s32 D_00202320;
+#else
+/* data twins (src/game/data/sbss.c): D_00202320 */
+static s32 D_00202320;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00202324;
+#else
+/* data twins (src/game/data/sbss.c): D_00202324 */
+static s32 D_00202324;
+#endif
 extern s8 D_004BA782[][4];
 extern E_Se_StopVoice_0_001DA530 D_004BA70C[];
 extern u32 D_004BAA28[];
+#ifndef NONMATCHING
 extern s32 D_004BA2F8[];
+#else
+/* data twins (src/game/data/bgm_bss_004BA0E0.c): D_004BA2F8 */
+static s32 D_004BA2F8[0x2];
+#endif
+#ifndef NONMATCHING
 extern u32 D_004BA2E4[];
+#else
+/* data twins (src/game/data/bgm_bss_004BA0E0.c): D_004BA2E4 */
+static u32 D_004BA2E4[0x1];
+#endif
+#ifndef NONMATCHING
 extern u32 D_004BA2E8[];
+#else
+/* data twins (src/game/data/bgm_bss_004BA0E0.c): D_004BA2E8 */
+static u32 D_004BA2E8[0x1];
+#endif
+#ifndef NONMATCHING
 extern s32 D_004BA2EC[];
+#else
+/* data twins (src/game/data/bgm_bss_004BA0E0.c): D_004BA2EC */
+static s32 D_004BA2EC[0x1];
+#endif
+#ifndef NONMATCHING
 extern u32 D_004BA2F4[];
+#else
+/* data twins (src/game/data/bgm_bss_004BA0E0.c): D_004BA2F4 */
+static u32 D_004BA2F4[0x1];
+#endif
 extern Dma D_004BAA60;
+#ifndef NONMATCHING
 extern s32 D_004BA2F0[];
+#else
+/* data twins (src/game/data/bgm_bss_004BA0E0.c): D_004BA2F0 */
+static s32 D_004BA2F0[0x1];
+#endif
 extern struct { char pad[0x200]; B_Se_SendVoiceParams_0_001DA1D0 b[8]; C_Se_SendVoiceParams_0_001DA1D0 c[64]; } D_004BA500__as_Se_SendVoiceParams_0_001DA1D0;
 extern struct { char pad[0x280]; C_Se_SendVoiceParams_0_001DA1D0 c[64]; } D_004BA500__as_Se_StopVoice_0_001DA530;
 extern struct { char pad[0x200]; B_Se_SetVoiceParams_0_001DA620 b[8]; C_Se_SetVoiceParams_0_001DA620 c[64]; } D_004BA500__as_Se_SetVoiceParams_0_001DA620;
@@ -548,3 +588,14 @@ s32 Se_PollTransferB_0_001DB4D0(void) {
     return 1;
 }
 #undef Se_DmaStep_1_001DB830
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_0020232C */
+s32 D_0020232C;
+/* data twins (src/game/data/bgm_bss_004BA0E0.c): D_004BA2E0 */
+s32 D_004BA2E0[0x1];
+/* data twins (src/game/data/save_system_start_bss.c): D_004BA920, D_004BAA28 */
+s8 D_004BA920[0x100 / sizeof(s8[32])][32];
+u32 D_004BAA28[0x1];
+#endif

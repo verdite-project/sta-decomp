@@ -57,3 +57,19 @@ void Gfx_BuildViewMatrices_0_00155090(void) {
     sceVu0MulMatrix(&D_002F1600, &B, &D);
 }
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00201F58, D_00201F5C, D_00201F60, D_00201F64, D_00201F68, D_00201F6C, D_00201F70, D_00201F74, D_002022C0 */
+f32 D_00201F58;
+f32 D_00201F5C;
+f32 D_00201F60;
+f32 D_00201F64;
+f32 D_00201F68;
+f32 D_00201F6C;
+f32 D_00201F70;
+f32 D_00201F74;
+s32 D_002022C0;
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4BD0 */
+Vec D_004B4BD0;
+#endif

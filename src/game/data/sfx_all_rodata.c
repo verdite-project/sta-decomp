@@ -6,7 +6,9 @@
 #pragma explicit_zero_data on
 
 const s32 D_001FB8C8[0x2] = { 0, 0 };
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/effect/sfx_all.c */
 const s8 D_001FB8D0[0x20] __attribute__((aligned(8))) = "SFX(%d) not found from STAM\000\000\000\000\000";
+#endif
 const s8 D_001FB8F0[0x1] = { 0x53 };
 const s8 D_001FB8F1[0x1] __attribute__((aligned(1))) = { 0x54 };
 const s8 D_001FB8F2[0x1] __attribute__((aligned(2))) = { 0x41 };

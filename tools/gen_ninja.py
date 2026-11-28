@@ -413,6 +413,21 @@ def include_asm_text(srcs: list[str], objs: list[str]) -> list[str]:
     return out
 
 
+def data_twin_sources() -> tuple[list[str], list[str]]:
+    """The game units with NONMATCHING data twins and the data units whose
+    definitions they twin (tools/split_data.py)."""
+    owners, units = [], []
+    for p in sorted((ROOT / "src/game").rglob("*.c")):
+        t = p.read_text()
+        rel = str(p.relative_to(ROOT))
+        if rel.startswith("src/game/data/"):
+            if "#ifndef NONMATCHING /* the NONMATCHING build defines these in" in t:
+                units.append(rel)
+        elif "/* data twins (" in t:
+            owners.append(rel)
+    return owners, units
+
+
 def replaced_chunks(srcs: list[str]) -> set[str]:
     """The asm chunks a NONMATCHING build leaves out: their C stands in."""
     first_label = {}
@@ -547,6 +562,24 @@ def main() -> None:
              " | tools/shift_check.py")
     n.append("build build/sta.rom: rom build/sta.elf")
     n.append("build build/sta.ok: check build/sta.rom")
+    # NONMATCHING data twins (tools/split_data.py): the side of each pair the
+    # current build does not compile goes to build/twins/, and
+    # tools/check_data_twins.py compares the two (part of the default)
+    owners, units = data_twin_sources()
+    other = units if NONMATCHING else owners
+    n.append("rule cc_other\n"
+             f"  command = {'' if NONMATCHING else 'CDEFS=-DNONMATCHING '}tools/compile_c.sh $in $out\n"
+             "  description = CC (other build) $in\n")
+    twin_objs = []
+    for s in other:
+        o = f"build/twins/{s}.o"
+        twin_objs.append(o)
+        n.append(f"build {o}: cc_other {s} | tools/compile_c.sh tools/mwfix.py config/game_cflags.txt " + hdrs)
+    mine = [obj_for(s) for s in (owners if NONMATCHING else units)]
+    n.append("rule check_twins\n"
+             "  command = .venv/bin/python tools/check_data_twins.py --stamp $out\n"
+             "  description = CHECK data twins\n")
+    n.append(f"build build/twins.ok: check_twins {' '.join(twin_objs + mine)} | tools/check_data_twins.py")
     n.append("build nonmatching: phony build/sta.elf")
     n.append("rule regen\n"
              f"  command = .venv/bin/python tools/gen_ninja.py{'' if NONMATCHING else ' --matching'}\n"
@@ -555,7 +588,8 @@ def main() -> None:
     # a unit with INCLUDE_ASM markers lays out the .text (a marker added to
     # another unit: tools/merge_tu.py reruns this)
     regen_in = ["tools/gen_ninja.py", f"config/link_order.{VER}.txt",
-                f"config/sta.{VER}.ld.in"] + sorted(include_asm_units(srcs))
+                f"config/sta.{VER}.ld.in"] + sorted(include_asm_units(srcs)) \
+        + sum(data_twin_sources(), [])
     n.append(f"build build.ninja build/sta.ld objdiff.json: regen | {' '.join(regen_in)}")
     # objdiff's progress report over every object of the link
     all_objs = objs + [f"build/target/{stem(s)}.o" for s in c_units] \
@@ -571,7 +605,7 @@ def main() -> None:
              "  description = PROGRESS\n"
              "  pool = console\n")
     n.append("build progress: progress build/report.json | tools/progress.py")
-    n.append(f"default {'build/sta.elf' if NONMATCHING else 'build/sta.ok'}")
+    n.append(f"default {'build/sta.elf' if NONMATCHING else 'build/sta.ok'} build/twins.ok")
     (ROOT / "build.ninja").write_text("\n".join(n) + "\n")
     mode = f"NONMATCHING ({len(all_srcs) - len(srcs)} asm chunks replaced by C)" if NONMATCHING else "matching"
     print(f"build.ninja: {len(srcs)} units, {len(c_units)} target objects, {mode}")

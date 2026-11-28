@@ -63,3 +63,9 @@ s32 Glow_Add_0_0015DBF0(s32 kind, f32 *a, f32 *b, f32 r, f32 h) {
 #else
 INCLUDE_ASM(Glow_Add_0_0015DBF0);
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/point_light_bss.c): D_0030D588 */
+LL D_0030D588[0x4] __attribute__((aligned(8)));
+#endif

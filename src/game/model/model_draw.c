@@ -409,3 +409,9 @@ void Mdl_DrawMeshesD_1_0016D830(O_Mdl_DrawMeshesD_1_0016D830 *o, P_Mdl_DrawMeshe
 #undef Mdl_EmitMeshVu1B_1_0016EB70
 #undef Mdl_EmitMeshVu1_1_0016E760
 #undef D_00222A50
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00201F48 */
+s32 D_00201F48;
+#endif

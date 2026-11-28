@@ -53,3 +53,9 @@ void GameOver_Update_2_0019EDC0(Arg *arg0) {
         D_0020221C = Approachf_3_00187770(D_0020221C, 1.0f, 3.5f);
     }
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_0020220C */
+s32 D_0020220C;
+#endif

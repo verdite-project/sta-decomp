@@ -50,10 +50,25 @@ extern s32 D_002022C4;
 extern Mtx D_001F2170;
 #pragma explicit_zero_data on
 const char D_001FDA80[0x20] = { 0x6d, 0x61, 0x70, 0x2f, 0x6d, 0x25, 0x34, 0x2e, 0x30, 0x34, 0x64, 0x6d, 0x2e, 0x73, 0x74, 0x6d, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+#ifndef NONMATCHING
 extern s32 D_002022B4;
+#else
+/* data twins (src/game/data/sbss.c): D_002022B4 */
+static s32 D_002022B4;
+#endif
+#ifndef NONMATCHING
 extern f32 D_001F3850[4];
+#else
+/* data twins (src/game/data/player_data.c): D_001F3850 */
+static f32 D_001F3850[0x4] = { 0.0f, 0.0f, 0.0f, 100.0f };
+#endif
 extern f32 D_001F3860[4];
+#ifndef NONMATCHING
 extern f32 D_001F3870[];
+#else
+/* data twins (src/game/data/player_data.c): D_001F3870 */
+static f32 D_001F3870[0x4] = { 1.0f, 0.1f, 0.0f, 0.0f };
+#endif
 void Map_OnAreaLoaded_0_001B6800(S *a, s32 a1);
 void Map_OnAreaLoadedWrap_1_001B6FB0(s32 *arg0);
 void Map_LoadTextures_0_001B6FC0(u8 **arg0);
@@ -325,3 +340,9 @@ void Map_SetupAmbient_0_001B7290(void)
     D_001F3870[0] = t->f;
 }
 #undef sceVu0CopyVector
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_002022D0 */
+s32 D_002022D0;
+#endif

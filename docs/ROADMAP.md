@@ -222,6 +222,62 @@ scorers of 100+ tokens.
 - Per function: m2c for a first draft → decomp.me (a "PS2 mwccps2" preset)
   or objdiff → drop into `src/`.
 
+## Data owners
+
+Every data object should be defined by the code unit that uses it. The
+matching build needs each data-only unit (`src/game/data/`) whole at its
+retail address, so an object moves there for both builds only when
+`tools/move_data.py` can place the owner's section where retail has it
+(d95e8d6 moved 23; the 28 candidates left either fold into the owner's code
+or do not fit its declared type). For the rest the NONMATCHING build gets
+the object from its owner instead:
+
+- `tools/data_owners.py --report` (after `./build.sh`, the NONMATCHING
+  objects): every object of the data units, its users in the NONMATCHING
+  link, and a class.
+- `tools/split_data.py --apply`: the owner gets a twin under `#ifdef
+  NONMATCHING` (written in the owner's declared type, `static` when nothing
+  else names it), the data unit's definition goes under `#ifndef
+  NONMATCHING`. The matching build compiles what it did before.
+- `tools/check_data_twins.py` (ninja, part of the default target in both
+  modes; `build/twins/` holds the other build's side): each twin has the
+  data unit's bytes, size and relocations.
+- **Pinned** objects stay where the data unit has them in both builds: the
+  code can reach past them into their neighbours, so the neighbours must not
+  move. That is an object whose address is cast (to an integer or another
+  pointer type) and everything after it in its gap-free run, unless
+  `config/data_extents.txt` says how far the code reaches from it (read off
+  the code); an object a `%hi/%lo` or gp-relative access reaches past the
+  end of; and a smaller-than-its-type "view" into a bigger array.
+
+<!-- data-owners:start -->
+| objects (2026-11-28) | bss | data | rodata | sbss | sdata | all |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| NONMATCHING twin in its owner | 340 | 39 | 142 | 302 | 108 | 931 |
+| one user, not split yet | 58 | 89 | 106 | 8 | 13 | 274 |
+| several users, not split yet | 18 | 11 | 0 | 4 | 2 | 35 |
+| pinned | 238 | 16 | 66 | 3 | 0 | 323 |
+| used by asm only / by data only / unused | 146 | 25 | 76 | 7 | 1 | 255 |
+| total | 800 | 180 | 390 | 324 | 124 | 1818 |
+<!-- data-owners:end -->
+
+Next, in order of yield:
+
+1. **Extents of the biggest roots** (`config/data_extents.txt`): `D_00222B20`
+   (the pool, 32 objects after it), `D_0030A2D0`, `D_00438A70`, `D_004BAC50`,
+   `D_002F16C0`; `tools/data_owners.py --json` names each pinned object's
+   root and the cast.
+2. **Struct initialisers**: most "type does not fit" objects are initialised
+   data the owner declares as a struct of mixed members; `split_data.py`
+   rebuilds only scalar arrays and one-type structs (data_to_c.define()).
+3. **No extern**: owners that reach an object only through a macro or a
+   cast of another symbol; give them an `extern` first.
+4. **Data used only by data or asm**: they go with their user once that is C.
+5. **Real moves**: rerun `tools/move_data.py` as units match; an object it
+   moves loses both twins.
+6. **Names**: rename `D_XXXXXXXX` objects in both copies as owners show what
+   they are (the checker keeps the copies in step).
+
 ## Shiftable build
 
 The goal is that the image can move: a function that grows, a table that

@@ -52,7 +52,12 @@ typedef struct {
 extern G D_004830C0;
 extern Blk D_0047F0C0[];
 extern E30 D_004800C0[];
+#ifndef NONMATCHING
 extern s32 D_00202018;
+#else
+/* data twins (src/game/data/sbss.c): D_00202018 */
+static s32 D_00202018;
+#endif
 u16 Vram_AllocForTex_0_00176BF0(E30 *, u16);
 
 void Tex_Resident_0_001777C0(u16 a0, u64 *a1, u64 *a2) {

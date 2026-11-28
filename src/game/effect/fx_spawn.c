@@ -481,3 +481,9 @@ void Fx_EvalTrack_1_00162490(s8 *dst, A_Fx_EvalTrack_1_00162490 *a, f32 t) {
         Fx_EvalCurve_1_00163700(dst + 0x70, t, a->w[4], base, fr, 0.0f, 0);
     }
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00201FDC */
+u16 D_00201FDC;
+#endif

@@ -2,7 +2,12 @@
 #include "game/data.h"
 #include "game/sound.h"
 typedef struct { s32 a; s32 b; char pad[0x18]; } E;
+#ifndef NONMATCHING
 extern volatile s32 D_00202308;
+#else
+/* data twins (src/game/data/sbss.c): D_00202308 */
+static volatile s32 D_00202308;
+#endif
 extern s16 D_0020230C;
 extern E D_004B9F20[4];
 extern s32 D_004B9FA0[];
@@ -50,3 +55,9 @@ void SndDrv_AllocBuffer_1_001D8F30(void) {
     D_004B9FB4[0] = 0x2000;
     D_00202314 = 0x8000;
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00202318 */
+s32 D_00202318;
+#endif

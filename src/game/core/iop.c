@@ -4,7 +4,12 @@
 #include "game/data.h"
 typedef struct { s32 next; s32 len; s32 f8; s32 dsz; } Ent;
 typedef struct { s8 *src; s8 *dst; s32 len; s32 z; } Req;
+#ifndef NONMATCHING
 extern u8 D_001FB770[];
+#else
+/* data twins (src/game/data/fx_proc_rodata.c): D_001FB770 */
+static u8 D_001FB770[0x1d] = "cdrom0:\\IOPRP250.IMG;1\000\000\000\000\000\000\000";
+#endif
 extern u8 _end[];
 void Iop_LoadModulesFromArc_2_0015C9F0(s32 a0);
 void Iop_Reboot_3_0015CB50(void);

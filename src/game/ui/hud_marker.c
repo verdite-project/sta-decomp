@@ -93,3 +93,9 @@ void Hud_AddMarker_0_001BC320(f32 *a0, s32 a1) {
     }
 }
 #undef Hud_RandomizeMarker_0_001BC170
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4BE0 */
+E D_004B4BE0[2];
+#endif

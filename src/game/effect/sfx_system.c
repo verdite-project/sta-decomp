@@ -28,7 +28,12 @@ typedef struct { u16 prev; u16 next; u16 sib; } N;
 typedef struct { u8 pad[0x114]; u8 b0:1; u8 b1:1; u8 b2:1; u8 pad115[0xB]; } O;
 typedef struct { char pad[0x94]; unsigned char : 3; unsigned char f : 1; } T;
 typedef struct { char pad[0x210]; T *t; } Obj;
+#ifndef NONMATCHING
 extern s32 D_00201CB0;
+#else
+/* data twins (src/game/data/sdata.c): D_00201CB0 */
+static s32 D_00201CB0 = 0x61495450;
+#endif
 extern s16 D_00201CA0;
 extern void *D_00201FC0;
 extern L *D_00201FD4;
@@ -267,3 +272,17 @@ u16 Sfx_GetFreeSlots_1_0016B230(void)
     return Pool_GetBlockUsable_1_00128830(D_0042D850) / 1728;
 }
 #undef D_0042D850
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sdata.c): D_00201CA0 */
+s16 D_00201CA0 = -1;
+/* data twins (src/game/data/sbss.c): D_00201FAC, D_00201FC0, D_00201FD4, D_00201FD8, D_00201FE8 */
+u32 D_00201FAC;
+void *D_00201FC0;
+L *D_00201FD4;
+s16 D_00201FD8;
+s32 D_00201FE8;
+/* data twins (src/game/data/texture_bss.c): D_0042D850 */
+s8 D_0042D850[0x30];
+#endif

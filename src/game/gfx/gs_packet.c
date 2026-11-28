@@ -16,15 +16,30 @@ typedef union { u128 q; u32 w[4]; } Q_Gfx_KickFrame_1_00154B70;
 extern s32 D_002F1990[];
 extern s32 D_002F1994[];
 extern volatile s32 D_002F1998[];
+#ifndef NONMATCHING
 extern volatile u64 D_002F14E0[];
+#else
+/* data twins (src/game/data/gs_packet_bss.c): D_002F14E0 */
+static volatile u64 D_002F14E0[0x2];
+#endif
 extern volatile u64 D_002F1500[];
 extern volatile u64 D_002F1510[];
+#ifndef NONMATCHING
 extern volatile u64 D_002F13F0[];
+#else
+/* data twins (src/game/data/gs_packet_bss.c): D_002F13F0 */
+static volatile u64 D_002F13F0[0x2];
+#endif
 extern volatile u64 D_002F1410[];
 extern volatile u64 D_002F1420[];
 extern G_GsPkt_DrawFadeRect_0_00153B50 D_002F1940;
 extern s32 D_00201C5C;
+#ifndef NONMATCHING
 extern f32 D_00201C60;
+#else
+/* data twins (src/game/data/sdata.c): D_00201C60 */
+static f32 D_00201C60 = 3000.0f;
+#endif
 extern f32 D_00201F58, D_00201F5C, D_00201F60, D_00201F64, D_00201F68, D_00201F6C, D_00201F70, D_00201F74;
 extern f32 D_002F1600[4][4];
 extern f32 D_002F1640[4][4];
@@ -36,9 +51,24 @@ extern s32 D_002F1130[], D_002F1134[], D_002F1138[], D_002F113C[];
 extern u64 D_002F1140[], D_002F1148[], D_002F1150[], D_002F1158[];
 extern u8 D_002F1840[], D_002F16C0[];
 extern u32 D_002F19A8[];
+#ifndef NONMATCHING
 extern s32 D_00201C58;
+#else
+/* data twins (src/game/data/sdata.c): D_00201C58 */
+static s32 D_00201C58 = -1;
+#endif
+#ifndef NONMATCHING
 extern u64 D_002F1490[];
+#else
+/* data twins (src/game/data/gs_packet_bss.c): D_002F1490 */
+static u64 D_002F1490[0xa];
+#endif
+#ifndef NONMATCHING
 extern u64 D_002F1580[];
+#else
+/* data twins (src/game/data/gs_packet_bss.c): D_002F1580 */
+static u64 D_002F1580[0x8];
+#endif
 extern s8 D_002F1390[];
 extern s8 D_002F1160[];
 void GsPkt_ResetFrame_1_00153770(void);
@@ -671,3 +701,34 @@ void Gfx_FlipBuffers_2_00155370(void) {
     }
 }
 #undef D_00201C5C
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sdata.c): D_00201C5C, D_00201C64, D_00201C68, D_00201C6C, D_00201C70, D_00201C74, D_00201C78 */
+s32 D_00201C5C = -0x80000000;
+s32 D_00201C64 = 0x40490fd8;
+s32 D_00201C68 = 0x40400000;
+s32 D_00201C6C = 0x3d000000;
+s32 D_00201C70 = 0x40490fd8;
+s32 D_00201C74 = 0x40400000;
+s32 D_00201C78 = 0x3d000000;
+/* data twins (src/game/data/sbss.c): D_00201F28, D_00201F30, D_00201F34 */
+s32 D_00201F28;
+f32 D_00201F30;
+f32 D_00201F34;
+/* data twins (src/game/data/gs_packet_bss.c): D_002F1410, D_002F1420, D_002F1500, D_002F1510, D_002F1600, D_002F1640 */
+volatile u64 D_002F1410[0x2];
+volatile u64 D_002F1420[0xe];
+volatile u64 D_002F1500[0x2];
+volatile u64 D_002F1510[0xe];
+f32 D_002F1600[4][4];
+f32 D_002F1640[4][4];
+/* data twins (src/game/data/gs_packet_bss_002F1990.c): D_002F1990, D_002F1994, D_002F1998, D_002F199C, D_002F19A0, D_002F19A8, D_002F19AC */
+s32 D_002F1990[0x1] __attribute__((aligned(16)));
+s32 D_002F1994[0x1];
+volatile s32 D_002F1998[0x1];
+u32 D_002F199C[0x1];
+u32 D_002F19A0[0x1];
+u32 D_002F19A8[0x1];
+s32 D_002F19AC[0x1];
+#endif

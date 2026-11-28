@@ -39,9 +39,24 @@ extern u8 D_0022EC21[];
 extern u8 D_0022EC22[];
 extern u8 D_0022EC40[];
 extern s32 D_0022F040[];
+#ifndef NONMATCHING
 extern s32 D_0022F044[];
+#else
+/* data twins (src/game/data/sound_emitter_bss.c): D_0022F044 */
+static s32 D_0022F044[0x1];
+#endif
+#ifndef NONMATCHING
 extern s32 D_0022F048[];
+#else
+/* data twins (src/game/data/sound_emitter_bss.c): D_0022F048 */
+static s32 D_0022F048[0x1];
+#endif
+#ifndef NONMATCHING
 extern Flags8 D_0022F04C[];
+#else
+/* data twins (src/game/data/sound_emitter_bss.c): D_0022F04C */
+static Flags8 D_0022F04C[0x4 / sizeof(Flags8)];
+#endif
 extern s32 D_0022F088[];
 extern s32 D_0022F08C[];
 extern s8 D_00222BC1[];
@@ -396,3 +411,9 @@ s32 SndBank_TransferStep_0_0012EA00(H_SndBank_ParseHeader_1_0012E8F0 *a0, u32 id
 #undef D_0022F040
 #undef SndBank_ParseHeader_1_0012E8F0
 #undef D_00222BC0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00201EC0 */
+f32 D_00201EC0;
+#endif

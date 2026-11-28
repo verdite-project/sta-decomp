@@ -465,3 +465,9 @@ void Draw_ShadowDisc_0_00156920(S *s) {
 }
 #undef sceVu0CopyVector
 #undef Draw_SelectionRing_0_00156450
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00201F3C */
+s32 D_00201F3C;
+#endif

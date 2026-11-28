@@ -12,7 +12,12 @@ typedef struct { s32 h0; u32 count; s32 *base; } Mgr;
 typedef void (*Fn)(Cmd *);
 extern Fn D_001F2400[];
 extern Fn D_001F1CD0[];
+#ifndef NONMATCHING
 extern Fn D_0033F540[];
+#else
+/* data twins (src/game/data/vibration_bss_0033F540.c): D_0033F540 */
+static Fn D_0033F540[0x190 / sizeof(Fn)];
+#endif
 extern Fn D_001F21B0[];
 void Script_OpCompare_1_00165DF0(void *o, Ctx *s);
 s8 Script_Exec_2_00166170(Mgr *o, Slot *s);

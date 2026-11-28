@@ -94,21 +94,66 @@ typedef struct {
     Vec x30;
     u8 x40[1];
 } H_Mdl_UpdateBoneMatrices_0_00171270;
+#ifndef NONMATCHING
 extern volatile s32 D_0042D880[];
+#else
+/* data twins (src/game/data/texture_bss.c): D_0042D880 */
+static volatile s32 D_0042D880[0x1];
+#endif
+#ifndef NONMATCHING
 extern volatile s32 D_0042D884[];
+#else
+/* data twins (src/game/data/texture_bss.c): D_0042D884 */
+static volatile s32 D_0042D884[0x1];
+#endif
+#ifndef NONMATCHING
 extern volatile s32 D_0042D888[];
+#else
+/* data twins (src/game/data/texture_bss.c): D_0042D888 */
+static volatile s32 D_0042D888[0x1];
+#endif
+#ifndef NONMATCHING
 extern volatile s32 D_0042D88C[];
+#else
+/* data twins (src/game/data/texture_bss.c): D_0042D88C */
+static volatile s32 D_0042D88C[0x1];
+#endif
+#ifndef NONMATCHING
 extern volatile s32 D_0042D890[];
+#else
+/* data twins (src/game/data/texture_bss.c): D_0042D890 */
+static volatile s32 D_0042D890[0x1];
+#endif
+#ifndef NONMATCHING
 extern volatile s32 D_0042D894[];
+#else
+/* data twins (src/game/data/texture_bss.c): D_0042D894 */
+static volatile s32 D_0042D894[0x1];
+#endif
+#ifndef NONMATCHING
 extern volatile s32 D_0042D898[];
+#else
+/* data twins (src/game/data/texture_bss.c): D_0042D898 */
+static volatile s32 D_0042D898[0x1];
+#endif
 extern E16 * volatile D_0042D89C[];
 extern E8 * volatile D_0042D8A0[];
 extern s32 * volatile D_0042D8A4[];
 extern E50 * volatile D_0042D8A8[];
 extern s32 * volatile D_0042D8AC[];
 extern E8 * volatile D_0042D8B0[];
+#ifndef NONMATCHING
 extern volatile s32 D_0042D8B4[];
+#else
+/* data twins (src/game/data/texture_bss.c): D_0042D8B4 */
+static volatile s32 D_0042D8B4[0x1];
+#endif
+#ifndef NONMATCHING
 extern volatile s32 D_0042D8B8[];
+#else
+/* data twins (src/game/data/texture_bss.c): D_0042D8B8 */
+static volatile s32 D_0042D8B8[0x2];
+#endif
 Blk* Mdl_LoadChunk_0_00170000(s32 *a0, s32 a1, Hdr_Mdl_LoadChunk_0_00170000 *hdr);
 void Mdl_Free_0_00170250(s32 *a0, H_Mdl_Free_0_00170250 **a1);
 s32 Mdl_Relocate_1_00170380(Ch *c, Obj_Mdl_Relocate_1_00170380 *o);

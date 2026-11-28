@@ -32,23 +32,34 @@ u8 D_0047F0C0[0x4]; /* also D_0047F0C2 */
 u8 D_0047F080[0x40]; /* also D_0047F084 */
 u8 D_0043F080[0x40000];
 u8 D_00438A70[0x6610];
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/texture.c */
 u8 D_00438A30[0x40];
+#endif
 u8 D_00438A20[0x10]; /* also D_00438A22, D_00438A24 */
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/texture.c */
 u8 D_00438A1C[0x4]; /* also D_00438A1E */
 s32 D_00438A18[0x1];
 s32 D_00438A14[0x1];
 u8 D_00438A10[0x4];
+#endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/texture_anim.c */
 u8 D_00437DC0[0xc50]; /* also D_00437DC8, D_004380D8, D_004383E8, D_004386F8 */
+#endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/model/model_emit.c */
 u8 D_0042DDC0[0xa000];
 u8 D_0042D8C0[0x500];
+#endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/model/model_load.c */
 s32 D_0042D8B8[0x2];
 s32 D_0042D8B4[0x1];
+#endif
 u8 D_0042D8B0[0x4];
 u8 D_0042D8AC[0x4];
 u8 D_0042D8A8[0x4];
 u8 D_0042D8A4[0x4];
 u8 D_0042D8A0[0x4];
 u8 D_0042D89C[0x4];
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/model/model_load.c */
 s32 D_0042D898[0x1];
 s32 D_0042D894[0x1];
 s32 D_0042D890[0x1];
@@ -56,5 +67,10 @@ s32 D_0042D88C[0x1];
 s32 D_0042D888[0x1];
 s32 D_0042D884[0x1];
 s32 D_0042D880[0x1];
+#endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/effect/sfx_system.c */
 u8 D_0042D850[0x30];
+#endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/effect/sfx_all.c */
 u8 D_0042D7E0[0x70];
+#endif

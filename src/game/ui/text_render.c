@@ -17,7 +17,12 @@ extern s32 D_002020C8;
 extern f32 D_00201CEC;
 extern E D_0048DB60[];
 extern TEX *D_0048D350[];
+#ifndef NONMATCHING
 extern u16 D_0048D360[];
+#else
+/* data twins (src/game/data/ui_gauge_bss.c): D_0048D360 */
+static u16 D_0048D360[0x400];
+#endif
 void Sjis_ToWide_2_001E5C60(u16 *, s32, u16 *, u16);
 f32 Text_MeasureWidth_2_001889E0(u16 *, s16, f32, f32);
 R *Font_FindGlyph_2_00188910(s32, u16);
@@ -144,4 +149,10 @@ s32 Text_Render_2_00188010(T *t, Col col) {
     }
     return ret;
 }
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sdata.c): D_00201CEC */
+f32 D_00201CEC = 22.0f;
 #endif

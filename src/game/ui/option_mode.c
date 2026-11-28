@@ -98,3 +98,10 @@ void Option_Store_1_001A94E0(void *p)
 }
 #undef memcpy
 #undef D_00201E10
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+extern u8 D_004A48A0[];
+/* data twins (src/game/data/sdata.c): D_00201E10 */
+u8 *D_00201E10 = (u8 *)D_004A48A0;
+#endif

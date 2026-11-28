@@ -16,9 +16,24 @@ typedef struct { u8 pad[0x140]; Pt pos[2][8][11]; } W;
 extern s32 D_00201F2C;
 extern f32 D_00201E90;
 extern f32 D_002F1AE0[];
+#ifndef NONMATCHING
 extern f32 D_002F1AE4[];
+#else
+/* data twins (src/game/data/screen_fx_bss.c): D_002F1AE4 */
+static f32 D_002F1AE4[0x1];
+#endif
+#ifndef NONMATCHING
 extern f32 D_002F1AE8[];
+#else
+/* data twins (src/game/data/screen_fx_bss.c): D_002F1AE8 */
+static f32 D_002F1AE8[0x1];
+#endif
+#ifndef NONMATCHING
 extern f32 D_002F1AEC[];
+#else
+/* data twins (src/game/data/screen_fx_bss.c): D_002F1AEC */
+static f32 D_002F1AEC[0x1];
+#endif
 extern f32 D_002F2070[];
 extern W D_002F19B0;
 extern void GsPkt_BeginAD_3_001545D0(void);

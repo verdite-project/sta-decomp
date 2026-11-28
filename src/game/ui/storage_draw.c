@@ -9,11 +9,21 @@ typedef union { u128 q[2]; s32 w[8]; f32 f[8]; void *p[8]; } Q2;
 typedef struct { s32 *p; s32 n; f32 f; void *fn; s32 a; s32 b; void *cb; } Arg;
 typedef struct { s32 x0; } O;
 typedef struct { s32 state; s32 input; s8 b8; s8 b9; u8 pad[4]; u8 bE; } S;
+#ifndef NONMATCHING
 extern f32 D_00201D90;
+#else
+/* data twins (src/game/data/sdata.c): D_00201D90 */
+static f32 D_00201D90 = -2.99f;
+#endif
 /* .bss, from the top down (CodeWarrior writes it in reverse) */
 s32 D_004A4350[0x4];
 extern Q2 D_001F32F0;
+#ifndef NONMATCHING
 extern s32 D_001F32A0[];
+#else
+/* data twins (src/game/data/title_nop_data.c): D_001F32A0 */
+static s32 D_001F32A0[0x4] = { 0, 1, 2, 3 };
+#endif
 void Storage_Draw_0_001A30E0(u8 *arg0);
 void Storage_DrawStatus_0_001A31E0(f32 f);
 void Storage_Open_0_001A32A0(O *p);

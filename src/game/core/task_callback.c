@@ -8,14 +8,29 @@ typedef struct { u8 a; u8 b; u8 pad2[6]; s32 x8; u16 xC; u8 padE[10]; s32 x18; }
 typedef s32 (*Fn)(Ent *);
 typedef struct { u8 x0; u8 x1; u8 p2[6]; s32 x8; u8 pC[2]; u16 xE; s32 x10; s32 x14; } T;
 extern L D_004BAC30;
+#ifndef NONMATCHING
 extern s32 D_004BAC40[];
+#else
+/* data twins (src/game/data/save_system_start_bss.c): D_004BAC40 */
+static s32 D_004BAC40[0x1];
+#endif
+#ifndef NONMATCHING
 extern s32 D_004BAC44[];
+#else
+/* data twins (src/game/data/save_system_start_bss.c): D_004BAC44 */
+static s32 D_004BAC44[0x1];
+#endif
 extern V4 D_004BAC20[];
 extern s32 D_004BAC34[];
 extern s32 D_004BAC38[];
 extern BF D_004BAC4C[];
 extern Fn D_004BAC28[];
+#ifndef NONMATCHING
 extern Fn D_004BAC2C[];
+#else
+/* data twins (src/game/data/save_system_start_bss.c): D_004BAC2C */
+static Fn D_004BAC2C[0x4 / sizeof(Fn)];
+#endif
 extern s32 (*D_004BAC24[])(T *, s32);
 extern u8 *D_004BAC30__as_Task_Schedule_1_001E0680[];
 extern u32 D_004BAC38__as_Task_Schedule_1_001E0680[];
@@ -222,3 +237,12 @@ s32 Task_Dispatch_0_001E0AB0(T *p) {
     return -1;
 }
 #undef D_004BAC30
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_002023A8 */
+s32 D_002023A8;
+/* data twins (src/game/data/save_system_start_bss.c): D_004BAC28, D_004BAC4C */
+Fn D_004BAC28[0x4 / sizeof(Fn)];
+BF D_004BAC4C[0x4 / sizeof(BF)];
+#endif

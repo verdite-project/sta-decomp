@@ -5,8 +5,18 @@
 typedef struct { u8 pad[0x9C]; s16 id; u8 pad2[0xA]; u8 b0:1; u8 b1:1; } O;
 extern s32 D_00201E94;
 extern s8 *D_002022F0;
+#ifndef NONMATCHING
 extern s32 D_002022F4;
+#else
+/* data twins (src/game/data/sbss.c): D_002022F4 */
+static s32 D_002022F4;
+#endif
+#ifndef NONMATCHING
 extern s32 D_002022F8;
+#else
+/* data twins (src/game/data/sbss.c): D_002022F8 */
+static s32 D_002022F8;
+#endif
 /* .bss, from the top down (CodeWarrior writes it in reverse) */
 f32 D_004B5DC0[0x4];
 f32 D_004B5DB0[0x4];
@@ -446,3 +456,9 @@ void Player_ReleaseHeldItem_0_001CAE90(void) {
 #undef D_004B5DB0
 #undef D_004B5DC0
 #undef ItemObj_Free_1_001AF4A0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_002022F0 */
+s8 *D_002022F0;
+#endif

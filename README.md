@@ -57,6 +57,12 @@ and its C sits in a file of its own under `#ifdef NONMATCHING` (empty in a
 matching build), so it keeps the declarations it was written with. The
 matching attempts stay in `wip/`.
 
+Data follows the same split: where an object cannot move into the unit that
+uses it for the matching build, the owner defines a twin of it under
+`#ifdef NONMATCHING` and its data unit keeps the retail definition under
+`#ifndef NONMATCHING`; `tools/check_data_twins.py` (part of every build)
+checks the two agree. See "Data owners" in `docs/ROADMAP.md`.
+
 Host requirements: 64-bit Linux with 32-bit glibc (the ee-gcc tools are i386
 binaries), a host gcc with `-m32` support, flex, bison, curl, git and Python 3.
 Arch: `sudo pacman -S lib32-glibc lib32-gcc-libs flex bison`.

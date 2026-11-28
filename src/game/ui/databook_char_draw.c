@@ -11,7 +11,12 @@ typedef struct { f32 x, y; } V2;
 typedef struct { u32 idx; s32 f4; u8 pad8[0x24]; f32 x; f32 y; u8 pad34[0xC]; } Ent;
 typedef struct { u32 n; Ent *p; } L;
 typedef struct { u8 pad[0x24]; L *l; } O;
+#ifndef NONMATCHING
 extern f32 D_00201D34;
+#else
+/* data twins (src/game/data/sdata.c): D_00201D34 */
+static f32 D_00201D34 = -2.99f;
+#endif
 extern s32 D_00202188;
 void DbChar_Draw_0_00195E30(u8 *arg0);
 void DbChar_DrawStats_1_00195F70(f32 f);

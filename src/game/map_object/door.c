@@ -126,3 +126,9 @@ s32 Door_UpdateLocked_0_001B90F0(void) {
     return 0;
 }
 #undef MapObj_CheckFacing_0_001B9610
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00202030 */
+s8 D_00202030;
+#endif

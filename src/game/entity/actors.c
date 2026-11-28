@@ -27,7 +27,12 @@ void Actor_UpdateTransform_0_0013B4F0(Actor *, f32, s32);
 void Actor_UpdateCollision_0_0013B220(Actor *, f32, s32);
 void Mdl_ResetBones_0_00171610(s32);
 void sceVu0CopyVector(s32, s8 *);
+#ifndef NONMATCHING
 extern u8 D_00201F14;
+#else
+/* data twins (src/game/data/sbss.c): D_00201F14 */
+static u8 D_00201F14;
+#endif
 
 void Actors_UpdateAll_1_0013BBC0(f32 dt) {
     s32 it1;

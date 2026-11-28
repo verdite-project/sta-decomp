@@ -33,37 +33,150 @@ typedef struct { s16 v; s16 id; } E_DbMap_GetKillRate_0_001959E0;
 typedef struct { s32 id; s32 off; } E_Msg_GetText_2_00195B10;
 typedef struct { char p0[4]; u32 n; char p8[8]; E_Msg_GetText_2_00195B10 e[1]; } T_Msg_GetText_2_00195B10;
 typedef struct { s16 n; s8 v[14]; } E_ItemSort_GetEntry_0_00195B80;
+#ifdef NONMATCHING
+extern u8 D_00496B60[];
+#endif
+#ifndef NONMATCHING
 extern f32 D_00201D30;
+#else
+/* data twins (src/game/data/sdata.c): D_00201D30 */
+static f32 D_00201D30 = -2.99f;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00202154;
+#else
+/* data twins (src/game/data/sbss.c): D_00202154 */
+static s32 D_00202154;
+#endif
+#ifndef NONMATCHING
 extern Pack1952B0 **D_00202180;
+#else
+/* data twins (src/game/data/sbss.c): D_00202180 */
+static Pack1952B0 **D_00202180;
+#endif
+#ifndef NONMATCHING
 extern u8 D_001FD270[];
+#else
+/* data twins (src/game/data/databook_rodata.c): D_001FD270 */
+static u8 D_001FD270[0x8] = "MAP\000\000\000\000\000";
+#endif
+#ifndef NONMATCHING
 extern u8 D_001FD288[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD288 */
+static u8 D_001FD288[0x5] = "ITEM\000";
+#endif
 extern Q2 D_001F2E40;
 extern s32 D_001F2E60[];
 extern s8 D_001FD268[];
+#ifndef NONMATCHING
 extern s8 *D_00201D28;
+#else
+/* data twins (src/game/data/sdata.c): D_00201D28 */
+static s8 *D_00201D28 = (s8 *)D_001FD268;
+#endif
+#ifndef NONMATCHING
 extern s8 *D_00201D2C;
+#else
+/* data twins (src/game/data/sdata.c): D_00201D2C */
+static s8 *D_00201D2C = (s8 *)D_001FD268;
+#endif
+#ifndef NONMATCHING
 extern u8 D_00201D20[4];
+#else
+/* data twins (src/game/data/sdata.c): D_00201D20 */
+static u8 D_00201D20[0x4] = { 0x19, 0x1a, 0x1b, 0 };
+#endif
 extern Tbl *D_0020215C;
 extern u32 D_002022B8;
+#ifndef NONMATCHING
 extern T_DbChar_Find_0_00195770 **D_00202168;
+#else
+/* data twins (src/game/data/sbss.c): D_00202168 */
+static T_DbChar_Find_0_00195770 **D_00202168;
+#endif
+#ifndef NONMATCHING
 extern s32 *D_00202160;
+#else
+/* data twins (src/game/data/sbss.c): D_00202160 */
+static s32 *D_00202160;
+#endif
 extern s32 *D_00202164;
+#ifndef NONMATCHING
 extern E_DbMap_GetKillRate_0_001959E0 **D_0020216C;
+#else
+/* data twins (src/game/data/sbss.c): D_0020216C */
+static E_DbMap_GetKillRate_0_001959E0 **D_0020216C;
+#endif
 extern E_ItemSort_GetEntry_0_00195B80 *D_0020217C;
 extern s16 *D_00202174;
+#ifndef NONMATCHING
 extern s8 D_001FD290[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD290 */
+static s8 D_001FD290[0xf] = "menu/dbmap.txm\000";
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD2A0[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD2A0 */
+static s8 D_001FD2A0[0x10] __attribute__((aligned(8))) = "menu/dbchar.txm\000";
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD2B0[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD2B0 */
+static s8 D_001FD2B0[0x10] __attribute__((aligned(8))) = "menu/dbitem.txm\000";
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD2C0[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD2C0 */
+static s8 D_001FD2C0[0xe] = "menu/help.txm\000";
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD2D0[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD2D0 */
+static s8 D_001FD2D0[0x10] __attribute__((aligned(8))) = "menu/dbchar.sta\000";
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD2E0[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD2E0 */
+static s8 D_001FD2E0[0xf] = "menu/dbmap.sta\000";
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD2F0[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD2F0 */
+static s8 D_001FD2F0[0x20] __attribute__((aligned(8))) = "menu/itemsort.tbl\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD310[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD310 */
+static s8 D_001FD310[0x18] __attribute__((aligned(8))) = "menu/itemmenu.tbl\000\000\000\000\000\000\000";
+#endif
 extern s8 * volatile D_00202158;
+#ifndef NONMATCHING
 extern s32 *D_00202170;
+#else
+/* data twins (src/game/data/sbss.c): D_00202170 */
+static s32 *D_00202170;
+#endif
+#ifndef NONMATCHING
 extern s32 *D_00202178;
+#else
+/* data twins (src/game/data/sbss.c): D_00202178 */
+static s32 *D_00202178;
+#endif
+#ifndef NONMATCHING
 extern f32 *D_00201D24;
+#else
+/* data twins (src/game/data/sdata.c): D_00201D24 */
+static f32 *D_00201D24 = (f32 *)D_00496B60;
+#endif
 void Databook_Draw_0_001952B0(Obj1952B0 *o);
 void Databook_UpdateWrap_0_00195410(s32 arg0);
 s32 Databook_GetTab_0_00195420(s32 i);
@@ -491,3 +604,15 @@ void Databook_LoadRes_3_00195C00(s8 *arg0) {
 
 /* DbCharProc_Layout_0_00195D80 */
 void DbCharProc_Layout_0_00195D80(s32 i, f32 *a1, f32 *a2) { s32 sp; f32 f; UiAnim_Get_1_0017F840(3, &sp);  if (i >= D_00202154 - 3 && i <= D_00202154 + 3) { f = a2[2] - (f32)i; D_00201D24[i] = f; a1[5] = f; return; } D_00201D24[i] = -5.0f; a1[5] = -5.0f; }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+extern u8 D_00496B60[];
+/* data twins (src/game/data/databook_rodata.c): D_001FD268 */
+s8 D_001FD268[0x8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
+/* data twins (src/game/data/sbss.c): D_0020215C, D_00202164, D_00202174, D_0020217C */
+Tbl *D_0020215C;
+s32 *D_00202164;
+s16 *D_00202174;
+E_ItemSort_GetEntry_0_00195B80 *D_0020217C;
+#endif

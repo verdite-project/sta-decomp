@@ -113,8 +113,18 @@ typedef struct Node_Sfx_SpawnFromStam_2_00169BD0 { s32 id; s32 size; u32 lo:8; u
 typedef ResNode Node_Sfx_LoadStam_1_00169D70;
 typedef struct { u8 pad[0x22]; s16 x22; } Obj_Sfx_LoadStam_1_00169D70;
 typedef struct { Obj_Sfx_LoadStam_1_00169D70 *obj; } Blk;
+#ifndef NONMATCHING
 extern u8 D_00201FE0;
+#else
+/* data twins (src/game/data/sbss.c): D_00201FE0 */
+static u8 D_00201FE0;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00201FE4;
+#else
+/* data twins (src/game/data/sbss.c): D_00201FE4 */
+static s32 D_00201FE4;
+#endif
 extern B_Sfx_DrawAll_1_00168A40 *D_00201FC0;
 extern L *D_00201FD4;
 extern BF D_00222A50[];
@@ -123,13 +133,28 @@ extern E_Sfx_UpdateInstance_0_00168D70 *D_00201FD0;
 extern u8 D_0042D7E0[];
 extern s8 D_001F2160[];
 extern s8 D_001F2170[];
+#ifndef NONMATCHING
 extern s32 D_00201C98;
+#else
+/* data twins (src/game/data/sdata.c): D_00201C98 */
+static s32 D_00201C98 = 1;
+#endif
 extern S_Sfx_UpdateTransforms_1_00169030 **D_002022BC;
+#ifndef NONMATCHING
 extern s32 D_00201FB0;
+#else
+/* data twins (src/game/data/sbss.c): D_00201FB0 */
+static s32 D_00201FB0;
+#endif
 extern s32 D_0042D850[];
 extern s32 *D_00201FE8;
 extern s32 D_003406E0[];
+#ifndef NONMATCHING
 extern s8 D_001FB8D0[];
+#else
+/* data twins (src/game/data/sfx_all_rodata.c): D_001FB8D0 */
+static s8 D_001FB8D0[0x20] __attribute__((aligned(8))) = "SFX(%d) not found from STAM\000\000\000\000\000";
+#endif
 extern const s8 D_001FB8F0[];
 extern s8 D_001FB8F1[];
 extern s8 D_001FB8F2[];
@@ -591,3 +616,19 @@ s32 Sfx_LoadStam_1_00169D70(s32 *a0, Blk **a1, u32 n) {
     return cnt;
 }
 #undef Node_FindById_2_0014DCD0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sdata.c): D_00201C9C, D_00201CA4, D_00201CA8, D_00201CB8 */
+u16 D_00201C9C = 0xffff;
+u16 D_00201CA4 = 0xffff;
+s32 D_00201CA8 = 0x49535453;
+s32 D_00201CB8 = 0x4d584653;
+/* data twins (src/game/data/sbss.c): D_00201F2C, D_00201FD0 */
+s32 D_00201F2C;
+E_Sfx_UpdateInstance_0_00168D70 *D_00201FD0;
+/* data twins (src/game/data/vibration_bss_0033F540.c): D_0033F6D0 */
+s32 D_0033F6D0[0x400];
+/* data twins (src/game/data/texture_bss.c): D_0042D7E0 */
+u8 D_0042D7E0[0x70];
+#endif

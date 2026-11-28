@@ -7,11 +7,26 @@ typedef union { u128 q; u32 w[4]; } Q_Ui_DrawSprite_2_00181680;
 typedef struct { f32 x, y; } P2;
 typedef union { u128 q; u64 d[2]; u32 w[4]; f32 f[4]; } Q_Ui_DrawSpriteRotated_1_00182080;
 typedef struct { Q_Ui_DrawSpriteRotated_1_00182080 q[9]; } E;
+#ifndef NONMATCHING
 extern s32 D_0020206C;
+#else
+/* data twins (src/game/data/sbss.c): D_0020206C */
+static s32 D_0020206C;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00201CD4;
+#else
+/* data twins (src/game/data/sdata.c): D_00201CD4 */
+static s32 D_00201CD4 = -1;
+#endif
 extern s32 D_00201F3C;
 extern Q_Ui_BeginSprites_1_00181420 D_0048C4B0[];
+#ifndef NONMATCHING
 extern s32 D_00201CD8;
+#else
+/* data twins (src/game/data/sdata.c): D_00201CD8 */
+static s32 D_00201CD8 = 0x80;
+#endif
 void Ui_DrawSprite_2_00181680(s32 id, f32 *r, f32 *uv, u8 *col, f32 *m, s32 mode);
 void Ui_DrawSpriteRotated_1_00182080(s32 a0, f32 *r, f32 *uv, u8 *col, f32 ang);
 s32 GsPkt_Alloc_3_00154A80(s32);
@@ -227,3 +242,9 @@ void Ui_DrawSpriteRotated_1_00182080(s32 a0, f32 *r, f32 *uv, u8 *col, f32 ang) 
     D_0020206C++;
 }
 #undef D_0048C4B0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/ui_anim_bss.c): D_0048C4B0 */
+Q_Ui_BeginSprites_1_00181420 D_0048C4B0[0x990 / sizeof(Q_Ui_BeginSprites_1_00181420)];
+#endif

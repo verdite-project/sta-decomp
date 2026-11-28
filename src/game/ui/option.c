@@ -1490,3 +1490,104 @@ void Option_DrawSliderValue_1_00191580(A191110_Option_DrawSliderValue_1_00191580
     }
 }
 #undef Text_DrawScaledH_1_001874F0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+extern u8 D_001FCE60[];
+extern u8 D_001FCE68[];
+extern u8 D_001FCE70[];
+extern u8 D_001FCE88[];
+extern u8 D_001FCE90[];
+extern u8 D_001FCEA0[];
+extern u8 D_001FCEB0[];
+extern u8 D_001FCEC0[];
+extern u8 D_001FCED0[];
+extern u8 D_001FCEE0[];
+extern u8 D_001FCEE8[];
+extern u8 D_001FCEF0[];
+extern u8 D_001FCF20[];
+extern u8 D_001FCF30[];
+extern u8 D_001FCF40[];
+extern u8 D_001FCF50[];
+extern u8 D_001FCF68[];
+extern u8 D_001FCF80[];
+extern u8 D_001FCF98[];
+extern u8 D_001FCFA0[];
+extern u8 D_001FCFB0[];
+extern u8 D_001FCFC0[];
+extern u8 D_001FCFC8[];
+extern u8 D_001FCFD8[];
+extern u8 D_001FCFF0[];
+extern u8 D_001FCFF8[];
+extern u8 D_001FD000[];
+extern u8 D_001FD010[];
+extern u8 D_001FD020[];
+extern u8 D_001FD030[];
+extern u8 D_001FD040[];
+extern u8 D_001FD048[];
+extern u8 D_001FD050[];
+extern u8 D_001FD058[];
+extern u8 D_001FD068[];
+extern u8 D_001FD078[];
+extern u8 D_001FD088[];
+extern u8 D_001FD090[];
+/* data twins (src/game/data/save_menu_data.c): D_001F2A90, D_001F2AC0, D_001F2B00, D_001F2B20 */
+f32 D_001F2A90[0xc] = { -2.0f, 5.605e-42f, -1.0f, 5.607e-42f, 0.0f, 5.608e-42f, 1.0f, 5.61e-42f, 2.0f, 5.611e-42f, 0.0f, 0.0f };
+f32 D_001F2AC0[0x10] = { -4.0f, 5.605e-42f, -3.0f, 5.607e-42f, -2.0f, 5.608e-42f, -1.0f, 5.61e-42f, 0.0f, 5.611e-42f, 1.0f, 5.612e-42f, 1.5f, 5.614e-42f, 2.0f, 5.615e-42f };
+f32 D_001F2B00[0x8] = { 0.0f, 5.745e-42f, 0.33f, 5.747e-42f, 0.67f, 5.748e-42f, 1.0f, 5.75e-42f };
+f32 D_001F2B20[0x8] = { 1.0f, 5.745e-42f, 1.33f, 5.747e-42f, 1.67f, 5.748e-42f, 2.0f, 5.75e-42f };
+/* data twins (src/game/data/option_lerp_data.c): D_001F2B50, D_001F2B60, D_001F2B70, D_001F2B80, D_001F2B90, D_001F2BB0, D_001F2CD0, D_001F2D00, D_001F2D30 */
+s32 D_001F2B50[0x4] = { (s32)D_001FCE60, (s32)D_001FCE68, (s32)D_001FCE70, 0 };
+s32 D_001F2B60[0x4] = { (s32)D_001FCE88, (s32)D_001FCE90, (s32)D_001FCEA0, 0 };
+s32 D_001F2B70[0x4] = { (s32)D_001FCEB0, (s32)D_001FCEC0, (s32)D_001FCED0, 0 };
+s32 D_001F2B80[0x4] = { (s32)D_001FCEE0, (s32)D_001FCEE8, (s32)D_001FCEF0, 0 };
+s32 D_001F2B90[0x8] = { (s32)D_001FCF20, (s32)D_001FCF30, (s32)D_001FCF40, (s32)D_001FCF50, (s32)D_001FCF68, (s32)D_001FCF80, 0, 0 };
+s32 D_001F2BB0[0x18] = { (s32)D_001FCF98, (s32)D_001FCFA0, (s32)D_001FCFB0, (s32)D_001FCFC0, (s32)D_001FCFC8, (s32)D_001FCFD8, (s32)D_001FCFE8, (s32)D_001FCFF0, (s32)D_001FCFF8, (s32)D_001FD000, (s32)D_001FD010, (s32)D_001FD020, (s32)D_001FD030, (s32)D_001FD040, (s32)D_001FD048, (s32)D_001FD050, (s32)D_001FD058, (s32)D_001FD068, (s32)D_001FD050, (s32)D_001FD078, (s32)D_001FD088, (s32)D_001FD090, 0, 0 };
+s32 D_001F2CD0[0x4] = { 0, 1, 2, 3 };
+s32 D_001F2D00[0x4] = { 0, 1, 2, 0 };
+s32 D_001F2D30[0x4] = { 0, 1, 2, 0 };
+/* data twins (src/game/data/option_rodata.c): D_001FCE08, D_001FCE18, D_001FCE30, D_001FCE50 */
+u8 D_001FCE08[0xe] = "SOUND SETTING\000";
+u8 D_001FCE18[0x18] __attribute__((aligned(8))) = "SCREEN SETTING\000\000\000\000\000\000\000\000\000\000";
+u8 D_001FCE30[0x1d] __attribute__((aligned(8))) = "CONTROLLER\012          SETTING\000";
+u8 D_001FCE50[0x10] __attribute__((aligned(8))) = "QUIT GAME\000\000\000\000\000\000\000";
+/* data twins (src/game/data/option_rodata2.c): D_001FD118, D_001FD120 */
+s8 D_001FD118[0x8] = "%d\000\000\000\000\000\000";
+s8 D_001FD120[0x8] = "MAX\000\000\000\000\000";
+/* data twins (src/game/data/sdata.c): D_00201CF8, D_00201D00, D_00201D08, D_00201D18, D_00201D1C */
+s32 D_00201CF8[0x2] = { (s32)((u8 *)D_001FCEF0 + 0x10), (s32)((u8 *)D_001FCEF0 + 0x20) };
+s32 D_00201D00[0x2] = { (s32)((u8 *)D_001FD090 + 0x8), (s32)((u8 *)D_001FD090 + 0x10) };
+s32 D_00201D08 = 2;
+s32 D_00201D18 = 1;
+f32 D_00201D1C = -1.0f;
+/* data twins (src/game/data/sbss.c): D_00202128, D_0020212C, D_00202130 */
+s32 D_00202128;
+s32 D_0020212C;
+s32 D_00202130;
+/* data twins (src/game/data/load_menu_bss.c): D_004A10C0, D_004A10C4, D_004A10C8, D_004A10D0, D_004A10D4, D_004A10D8, D_004A10DC, D_004A10E0, D_004A10E4, D_004A10E8 */
+s32 D_004A10C0[0x1];
+s32 D_004A10C4[0x1];
+s32 D_004A10C8[0x2];
+s32 D_004A10D0[0x1];
+s32 D_004A10D4[0x1];
+f32 D_004A10D8[0x1];
+F_Option_Update_2_0018EAE0 D_004A10DC[0x4 / sizeof(F_Option_Update_2_0018EAE0)];
+s32 D_004A10E0[0x1];
+s32 D_004A10E4[0x1];
+s32 D_004A10E8[0x2];
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/option_rodata.c): D_001FCE60, D_001FCE68, D_001FCE70, D_001FCE88, D_001FCE90, D_001FCEA0, D_001FCEB0, D_001FCEC0, D_001FCED0, D_001FCEF0 */
+u8 D_001FCE60[0x5] = "MONO\000";
+u8 D_001FCE68[0x7] = "STEREO\000";
+u8 D_001FCE70[0x18] __attribute__((aligned(8))) = "Dolby ProLogic II\000\000\000\000\000\000\000";
+u8 D_001FCE88[0x6] = "SOUND\000";
+u8 D_001FCE90[0x10] __attribute__((aligned(8))) = "BGM VOLUME\000\000\000\000\000\000";
+u8 D_001FCEA0[0x10] __attribute__((aligned(8))) = "SE VOLUME\000\000\000\000\000\000\000";
+u8 D_001FCEB0[0x10] __attribute__((aligned(8))) = "MOVE EFFECT\000\000\000\000\000";
+u8 D_001FCEC0[0xd] = "SCREEN RATIO\000";
+u8 D_001FCED0[0x10] __attribute__((aligned(8))) = "BRIGHTNESS\000\000\000\000\000\000";
+u8 D_001FCEF0[0x30] __attribute__((aligned(8))) = "16:9(LB)\000\000\000\000\000\000\000\000VIBRATION\000\000\000\000\000\000\000KEY ASSIGN\000\000\000\000\000\000";
+#endif

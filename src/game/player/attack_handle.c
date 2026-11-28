@@ -12,7 +12,12 @@ typedef struct {
     u8 pad[0xC];
 } Buf;
 typedef struct { u8 pad[4]; u32 w; u8 pad2[8]; V4 a; V8 b; } Src;
+#ifndef NONMATCHING
 extern s8 D_001FDE10[];
+#else
+/* data twins (src/game/data/attack_handle_rodata.c): D_001FDE10 */
+static s8 D_001FDE10[0x2d] __attribute__((aligned(4))) = "abnormal sfxevent-parameter. in SFX(%d)\012\000\000\000\000\000";
+#endif
 void Attack_HandleSfxEvent_1_001D3810(s8 *a0, s32 id, E *e, s8 *a3, s32 t0, s32 t1, s32 t2);
 void Attack_ApplyHit_0_001D3A90(s8 *a0, s8 *a1, s32 a2, s32 a3, s32 t0, u8 t1);
 void Fx_GetWorldMatrix_1_00163C80(s8 *, Vec *);

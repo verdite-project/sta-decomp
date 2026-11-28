@@ -54,7 +54,12 @@ extern Q_Mdl_EmitMeshVu1_1_0016E760 D_0042DDC0[][2];
 extern Q_Mdl_EmitMeshVu1_1_0016E760 D_0042D8C0[][2];
 extern u32 D_00201F4C;
 extern u32 D_00202008;
+#ifndef NONMATCHING
 extern u8 D_00201CBC[4];
+#else
+/* data twins (src/game/data/sdata.c): D_00201CBC */
+static u8 D_00201CBC[0x4] = { 0, 0x10, 0x20, 0x40 };
+#endif
 extern A2_Mdl_BindTexture_0_0016F440 D_00222790[];
 extern s8 D_001FB8F8[];
 void Mdl_EmitStrip_1_0016DED0(A0_Mdl_EmitStrip_1_0016DED0 *a0, A1_Mdl_EmitStrip_1_0016DED0 *a1, A2_Mdl_EmitStrip_1_0016DED0 *a2, P4 a3);
@@ -568,3 +573,14 @@ void Mdl_BindTexture_0_0016F440(A0_Mdl_BindTexture_0_0016F440 *a0, A1_Mdl_BindTe
 #undef GsPkt_SetReg_3_001543E0
 #undef D_00222A50
 #undef D_00222A51
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00201F4C, D_00201F50, D_00202008 */
+u32 D_00201F4C;
+u32 D_00201F50;
+u32 D_00202008;
+/* data twins (src/game/data/texture_bss.c): D_0042D8C0, D_0042DDC0 */
+Q_Mdl_EmitMeshVu1_1_0016E760 D_0042D8C0[0x500 / sizeof(Q_Mdl_EmitMeshVu1_1_0016E760[2])][2];
+Q_Mdl_EmitMeshVu1_1_0016E760 D_0042DDC0[0xa000 / sizeof(Q_Mdl_EmitMeshVu1_1_0016E760[2])][2];
+#endif

@@ -85,3 +85,10 @@ void Enemy_UpdateFade_0_0013D760(O *o, f32 dt) {
     }
     o->x5D4 = v;
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00201F18, D_00201F1C */
+s8 D_00201F18;
+s8 D_00201F1C;
+#endif

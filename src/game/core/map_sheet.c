@@ -13,11 +13,21 @@ typedef struct {
     union { u32 w; u8 b[4]; } c;
 } S_MapSheet_Draw_0_001ED630;
 typedef struct { s32 x0; s32 x4; s8 x8; s8 p9[3]; s8 xC; } S_MapSheet_Update_0_001ED740;
+#ifndef NONMATCHING
 extern s32 D_00201E78;
+#else
+/* data twins (src/game/data/sdata.c): D_00201E78 */
+static s32 D_00201E78 = -1;
+#endif
 extern S_MapSheet_Draw_0_001ED630 D_004BE0E0;
 extern s32 D_001F27B0[];
 extern s32 D_001F27C0[];
+#ifndef NONMATCHING
 extern f32 D_00202404;
+#else
+/* data twins (src/game/data/sbss.c): D_00202404 */
+static f32 D_00202404;
+#endif
 void MapSheet_Update_0_001ED740(S_MapSheet_Update_0_001ED740 *a);
 void Menu_SetSubMode_0_0018A330(s32);
 void Ui_DrawSpriteRotated_1_00182080(f32, s32, void *, void *, void *, s32);

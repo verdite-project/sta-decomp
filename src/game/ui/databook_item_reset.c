@@ -37,22 +37,82 @@ typedef struct { s32 x0; u32 n; } P_DbMap_ResetLayout_0_00198D80;
 extern Q2 D_001F2F40;
 extern s32 D_00201D3C;
 extern u32 D_00202190;
+#ifndef NONMATCHING
 extern char D_001FD388[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD388 */
+static char D_001FD388[0x10] __attribute__((aligned(8))) = { -0x7f, 0x48, -0x7f, 0x48, -0x7f, 0x48, -0x7f, 0x48, 0, 0, 0, 0, 0, 0, 0, 0 };
+#endif
 extern s32 *D_00201D3C__as_DbItem_LoadEntry_0_00197F90;
+#ifndef NONMATCHING
 extern f32 D_00201D44;
+#else
+/* data twins (src/game/data/sdata.c): D_00201D44 */
+static f32 D_00201D44 = -2.99f;
+#endif
+#ifndef NONMATCHING
 extern s32 D_002021A8;
+#else
+/* data twins (src/game/data/sbss.c): D_002021A8 */
+static s32 D_002021A8;
+#endif
 extern s32 D_004A1450[];
 extern s32 D_004A18B0[];
 extern S D_001F2FE0 __attribute__((aligned(16)));
+#ifndef NONMATCHING
 extern u32 D_002021A4;
+#else
+/* data twins (src/game/data/sbss.c): D_002021A4 */
+static u32 D_002021A4;
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD398[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD398 */
+static s8 D_001FD398[0x8] = { 0x25, 0x64, 0x20, -0x7f, -0x6d, 0, 0, 0 };
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD3A0[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD3A0 */
+static s8 D_001FD3A0[0x10] __attribute__((aligned(8))) = { -0x7f, 0x40, -0x7f, 0x40, -0x6d, 0x47, -0x61, 0x72, -0x6a, -0x3b, -0x69, -0x5a, 0, 0, 0, 0 };
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD3B0[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD3B0 */
+static s8 D_001FD3B0[0x10] __attribute__((aligned(8))) = { 0x20, 0x20, -0x7f, 0x48, -0x7f, 0x48, -0x7f, 0x48, -0x7f, 0x48, 0, 0, 0, 0, 0, 0 };
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD3C0[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD3C0 */
+static s8 D_001FD3C0[0x8] = { 0x2d, 0x2d, 0x2d, 0x20, -0x7f, -0x6d, 0, 0 };
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD3C8[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD3C8 */
+static s8 D_001FD3C8[0x8] = { 0x25, 0x33, 0x64, 0x20, -0x7f, -0x6d, 0, 0 };
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD3D0[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD3D0 */
+static s8 D_001FD3D0[0x10] __attribute__((aligned(8))) = { -0x7f, 0x40, -0x73, -0x3b, -0x73, -0x7e, -0x61, 0x72, -0x6a, -0x3b, -0x69, -0x5a, 0, 0, 0, 0 };
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD3E0[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD3E0 */
+static s8 D_001FD3E0[0x8] = { 0x20, 0x2d, 0x2d, 0x2d, 0x20, -0x7f, -0x6d, 0 };
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD3E8[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD3E8 */
+static s8 D_001FD3E8[0x8] = { 0x20, 0x25, 0x33, 0x64, 0x20, -0x7f, -0x6d, 0 };
+#endif
 extern s8 D_004A1770[];
 extern s8 D_004A1870[];
 extern f32 D_004A1884[];
@@ -63,7 +123,12 @@ extern u32 D_004A18AC[];
 extern f32 D_004A18B8[];
 extern Q2 D_001F2FC0;
 extern u32 D_002022B8;
+#ifndef NONMATCHING
 extern s8 D_001FD3F0[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD3F0 */
+static s8 D_001FD3F0[0x8] = "%s\000\000\000\000\000\000";
+#endif
 char* DbItem_GetListName_1_00197F30(s32 i);
 void DbItemProc_Pos_0_00198100(s32 arg0, void *arg1, void *arg2);
 void DbMap_Draw_0_00198160(u8 *arg0);
@@ -552,3 +617,9 @@ void DbMapProc_Pos_0_00199110(s32 arg0, void *arg1, void *arg2) {
     UiAnim_Get_1_0017F840(0, &sp4C);
     M2C_FIELD(arg1, f32 *, 0x14) = (f32) (M2C_FIELD(arg2, f32 *, 8) - (f32) arg0);
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00202190 */
+u32 D_00202190;
+#endif

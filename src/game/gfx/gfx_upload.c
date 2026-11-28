@@ -8,15 +8,30 @@ extern u32 D_002F1944[];
 extern u32 D_002F1990[];
 extern u32 D_002F1994[];
 extern u32 D_002F1998[];
+#ifndef NONMATCHING
 extern u32 D_002F19A4[];
+#else
+/* data twins (src/game/data/gs_packet_bss_002F1990.c): D_002F19A4 */
+static u32 D_002F19A4[0x1];
+#endif
 extern u32 D_002F19A8[];
 extern u32 D_002F19AC[];
 extern u32 D_00201F4C;
 extern u32 D_00201F48;
+#ifndef NONMATCHING
 extern u32 D_00201F44;
+#else
+/* data twins (src/game/data/sbss.c): D_00201F44 */
+static u32 D_00201F44;
+#endif
 extern u32 D_00201F40;
 extern u32 D_00201F3C;
+#ifndef NONMATCHING
 extern u32 D_00201F38;
+#else
+/* data twins (src/game/data/sbss.c): D_00201F38 */
+static u32 D_00201F38;
+#endif
 extern s8 D_4A0[];
 extern s8 D_4B0[];
 extern s8 D_1B90[];

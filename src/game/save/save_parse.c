@@ -190,3 +190,12 @@ s32 Save_GetData_1_001A9400(void) {
     return D_00201DC0;
 }
 #undef D_00201DC0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+extern u8 D_004A4980[];
+extern u8 D_004A4880[];
+/* data twins (src/game/data/sdata.c): D_00201DC0, D_00201E00 */
+PlayerData *D_00201DC0 = (PlayerData *)D_004A4980;
+Big_Save_ParseOptions_1_001A8B90 *D_00201E00 = (Big_Save_ParseOptions_1_001A8B90 *)D_004A4880;
+#endif

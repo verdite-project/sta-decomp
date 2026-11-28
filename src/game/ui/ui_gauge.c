@@ -86,24 +86,64 @@ typedef struct {
 typedef struct { u8 pad0[0x54]; R_MenuProc_DrawGauge_0_00185030 *x54; u8 pad58[4]; R_MenuProc_DrawGauge_0_00185030 *x5C; } G;
 typedef struct { s16 lo; s16 hi; } P;
 extern S_Ui_DrawGauge_0_00182EF0 D_001F2770[] __attribute__((aligned(16)));
+#ifndef NONMATCHING
 extern f32 D_002020A4;
+#else
+/* data twins (src/game/data/sbss.c): D_002020A4 */
+static f32 D_002020A4;
+#endif
+#ifndef NONMATCHING
 extern f32 D_002020A0;
+#else
+/* data twins (src/game/data/sbss.c): D_002020A0 */
+static f32 D_002020A0;
+#endif
 extern u8 D_0048D141[];
 extern u8 D_0048D142[];
 extern u8 D_0048D143[];
 extern s8 D_0048D170[];
+#ifndef NONMATCHING
 extern u8 D_001FC9C0[];
+#else
+/* data twins (src/game/data/ui_gauge_rodata.c): D_001FC9C0 */
+static u8 D_001FC9C0[0x18] = "item/imgs%04d.tdc\000\000\000\000\000\000\000";
+#endif
+#ifndef NONMATCHING
 extern u8 D_001FC9D8[];
+#else
+/* data twins (src/game/data/ui_gauge_rodata.c): D_001FC9D8 */
+static u8 D_001FC9D8[0x18] __attribute__((aligned(8))) = "imgs%04d\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
+#endif
 extern O_Ui_LoadItemImageSmall_3_001833E0 *D_0048D110[];
 extern Col_Ui_DrawWindow_0_00183650 D_002020A8;
 extern s32 D_0048D0E0[];
 extern s32 D_0048D0E4[];
 extern M2C_UNK D_001FC9F0[];
 extern M2C_UNK D_001FCA08[];
+#ifndef NONMATCHING
 extern s32 D_00201CDC;
+#else
+/* data twins (src/game/data/sdata.c): D_00201CDC */
+static s32 D_00201CDC = -1;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00201CE0;
+#else
+/* data twins (src/game/data/sdata.c): D_00201CE0 */
+static s32 D_00201CE0 = -1;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00201CE4;
+#else
+/* data twins (src/game/data/sdata.c): D_00201CE4 */
+static s32 D_00201CE4 = -1;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00201CE8;
+#else
+/* data twins (src/game/data/sdata.c): D_00201CE8 */
+static s32 D_00201CE8 = -1;
+#endif
 extern s8 *D_002020AC;
 extern s32 D_0048D0F0[];
 extern s32 D_0048D0F4[];
@@ -115,8 +155,18 @@ extern s32 D_0048D108[];
 extern s32 D_0048D10C[];
 extern M2C_UNK D_001FCA10[];
 extern M2C_UNK D_001FCA20[];
+#ifndef NONMATCHING
 extern s8 D_001FCA30[];
+#else
+/* data twins (src/game/data/ui_gauge_rodata.c): D_001FCA30 */
+static s8 D_001FCA30[0x18] = "chrimg/cimg%04d.tdc\000\000\000\000\000";
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FCA48[];
+#else
+/* data twins (src/game/data/ui_gauge_rodata.c): D_001FCA48 */
+static s8 D_001FCA48[0x18] __attribute__((aligned(8))) = "cimg%04d\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
+#endif
 extern M2C_UNK D_001FCA60[];
 extern M2C_UNK D_001FCA78[];
 extern Ent D_0048D170__as_Ui_LoadItemImageSmall_3_001833E0[];
@@ -139,34 +189,134 @@ extern s8 *D_0048D0E4__as_Ui_LoadItemImage_3_00183DC0[];
 extern Res *D_002020AC__as_Ui_IsImageLoading_0_00183FF0;
 extern G_MenuProc_DrawScrolled_0_00184CF0 D_0048D060;
 extern S_Ui_DrawGauge_0_00182EF0 D_001F2700 __attribute__((aligned(16)));
+#ifndef NONMATCHING
 extern f32 D_00202084;
+#else
+/* data twins (src/game/data/sbss.c): D_00202084 */
+static f32 D_00202084;
+#endif
+#ifndef NONMATCHING
 extern f32 D_002020B0;
+#else
+/* data twins (src/game/data/sbss.c): D_002020B0 */
+static f32 D_002020B0;
+#endif
+#ifndef NONMATCHING
 extern f32 D_002020B4;
+#else
+/* data twins (src/game/data/sbss.c): D_002020B4 */
+static f32 D_002020B4;
+#endif
+#ifndef NONMATCHING
 extern f32 D_002020B8;
+#else
+/* data twins (src/game/data/sbss.c): D_002020B8 */
+static f32 D_002020B8;
+#endif
+#ifndef NONMATCHING
 extern f32 D_002020BC;
+#else
+/* data twins (src/game/data/sbss.c): D_002020BC */
+static f32 D_002020BC;
+#endif
 extern V D_001F26F0[];
 extern S_Ui_DrawGauge_0_00182EF0 D_001F26D0 __attribute__((aligned(16)));
 extern char D_0048CE40[];
+#ifndef NONMATCHING
 extern s32 D_0020207C;
+#else
+/* data twins (src/game/data/sbss.c): D_0020207C */
+static s32 D_0020207C;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00202080;
+#else
+/* data twins (src/game/data/sbss.c): D_00202080 */
+static s32 D_00202080;
+#endif
+#ifndef NONMATCHING
 extern f32 D_00202088;
+#else
+/* data twins (src/game/data/sbss.c): D_00202088 */
+static f32 D_00202088;
+#endif
+#ifndef NONMATCHING
 extern f32 D_0020208C;
+#else
+/* data twins (src/game/data/sbss.c): D_0020208C */
+static f32 D_0020208C;
+#endif
+#ifndef NONMATCHING
 extern f32 D_00202090;
+#else
+/* data twins (src/game/data/sbss.c): D_00202090 */
+static f32 D_00202090;
+#endif
+#ifndef NONMATCHING
 extern f32 D_00202094;
+#else
+/* data twins (src/game/data/sbss.c): D_00202094 */
+static f32 D_00202094;
+#endif
+#ifndef NONMATCHING
 extern f32 D_00202098;
+#else
+/* data twins (src/game/data/sbss.c): D_00202098 */
+static f32 D_00202098;
+#endif
+#ifndef NONMATCHING
 extern f32 D_0020209C;
+#else
+/* data twins (src/game/data/sbss.c): D_0020209C */
+static f32 D_0020209C;
+#endif
 extern S_Ui_DrawGauge_0_00182EF0 D_001F2630 __attribute__((aligned(16)));
 extern S_Ui_DrawGauge_0_00182EF0 D_001F2650 __attribute__((aligned(16)));
 extern S_Ui_DrawGauge_0_00182EF0 D_001F2670 __attribute__((aligned(16)));
+#ifndef NONMATCHING
 extern s32 D_0048CF40[];
+#else
+/* data twins (src/game/data/ui_anim_bss.c): D_0048CF40 */
+static s32 D_0048CF40[0x10];
+#endif
+#ifndef NONMATCHING
 extern s32 D_0048CFC0[];
+#else
+/* data twins (src/game/data/ui_anim_bss.c): D_0048CFC0 */
+static s32 D_0048CFC0[0x10];
+#endif
+#ifndef NONMATCHING
 extern s32 D_0048CF80[];
+#else
+/* data twins (src/game/data/ui_anim_bss.c): D_0048CF80 */
+static s32 D_0048CF80[0x10];
+#endif
+#ifndef NONMATCHING
 extern s32 D_0048D000[];
+#else
+/* data twins (src/game/data/ui_anim_bss.c): D_0048D000 */
+static s32 D_0048D000[0x10];
+#endif
 extern s8 D_001FCA80[];
 extern s8 D_001FCA88[];
+#ifndef NONMATCHING
 extern s8 D_001FCB80[];
+#else
+/* data twins (src/game/data/ui_gauge_rodata2.c): D_001FCB80 */
+static s8 D_001FCB80[0x8] __attribute__((aligned(16))) = "%d\000\000\000\000\000\000";
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FCB88[];
+#else
+/* data twins (src/game/data/ui_gauge_rodata2.c): D_001FCB88 */
+static s8 D_001FCB88[0x8] = "+%d\000\000\000\000\000";
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FCB90[];
+#else
+/* data twins (src/game/data/ui_gauge_rodata2.c): D_001FCB90 */
+static s8 D_001FCB90[0x10] = " \000\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
+#endif
 void Ui_DrawCursorB_0_00183090(f32 *arg0, s32 arg1, s32 arg2, s32 arg3);
 void Ui_DrawElemAt_0_001832D0(s8 *arg0, s32 arg1, s32 arg2);
 void Ui_LoadItemImageSmall_3_001833E0(s32 arg0, s32 arg1);
@@ -1359,3 +1509,26 @@ void MenuProc_DrawStatValue_0_00186990(O_Menu_DrawStatRing_0_00186440 *o, s32 id
 #undef MenuLayout_GetSub_1_00189020
 #undef Ui_DrawList_1_001829B0
 #undef Text_Render_2_00188010
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/ui_gauge_rodata.c): D_001FCA80, D_001FCA88 */
+s8 D_001FCA80[0x8] = { 0x25, 0x33, 0x64, 0, 0, 0, 0, 0 };
+s8 D_001FCA88[0x8] = { 0x2d, 0x2d, 0x2d, 0, 0, 0, 0, 0 };
+/* data twins (src/game/data/sbss.c): D_002020A8, D_002020AC */
+Col_Ui_DrawWindow_0_00183650 D_002020A8;
+s8 *D_002020AC;
+/* data twins (src/game/data/ui_anim_bss.c): D_0048CE40, D_0048D0E0, D_0048D0F0, D_0048D0F4, D_0048D0F8, D_0048D0FC, D_0048D100, D_0048D104, D_0048D108, D_0048D10C */
+char D_0048CE40[0x100];
+s32 D_0048D0E0[0x4];
+s32 D_0048D0F0[0x1];
+s32 D_0048D0F4[0x1];
+s32 D_0048D0F8[0x1];
+s32 D_0048D0FC[0x1];
+s32 D_0048D100[0x1];
+s32 D_0048D104[0x1];
+s32 D_0048D108[0x1];
+s32 D_0048D10C[0x1];
+/* data twins (src/game/data/ui_gauge_bss.c): D_0048D170 */
+s8 D_0048D170[0x1e0];
+#endif

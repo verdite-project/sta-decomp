@@ -17,11 +17,36 @@ typedef struct {
 } Clear;
 typedef struct { DispEnv disp[2]; u64 giftag0[2]; DrawEnv1 draw0; Clear clear0; u64 giftag1[2]; DrawEnv1 draw1; Clear clear1; } DBuff;
 extern s32 D_001FD230[];
+#ifndef NONMATCHING
 extern s32 *D_00202150;
+#else
+/* data twins (src/game/data/sbss.c): D_00202150 */
+static s32 *D_00202150;
+#endif
+#ifndef NONMATCHING
 extern s32 *D_0020214C;
+#else
+/* data twins (src/game/data/sbss.c): D_0020214C */
+static s32 *D_0020214C;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00202148;
+#else
+/* data twins (src/game/data/sbss.c): D_00202148 */
+static s32 D_00202148;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00202144;
+#else
+/* data twins (src/game/data/sbss.c): D_00202144 */
+static s32 D_00202144;
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD250[];
+#else
+/* data twins (src/game/data/databook_rodata.c): D_001FD250 */
+static s8 D_001FD250[0x18] = "\\TARGET\\STA_SR.ADX\000\000\000\000\000\000";
+#endif
 void Ending_PlayMovie_2_00194EE0(void *arg0);
 void Ending_OpenLoadMenu_0_00194F60(void *arg0);
 void Ending_StaffRoll_2_00194FC0(void);

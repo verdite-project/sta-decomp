@@ -225,3 +225,9 @@ E *Sfx_Create_2_00169F40(s8 **a0, s32 a1, s32 *tbl, s32 a3, s32 f5, s32 f6, u16 
 #else
 INCLUDE_ASM(Sfx_Create_2_00169F40);
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sdata.c): D_00201CAC */
+s32 D_00201CAC = 0x61545452;
+#endif

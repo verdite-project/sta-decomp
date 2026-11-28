@@ -32,22 +32,55 @@ typedef struct {
 } A;
 typedef union { u32 w; u8 b[4]; } Col_TitleProc_DrawPushStart_0_001DD510;
 typedef struct { f32 x, y, z, w; } V4;
+#ifdef NONMATCHING
+extern u8 D_001FE714[];
+#endif
+#ifndef NONMATCHING
 extern s16 D_00201E40;
+#else
+/* data twins (src/game/data/sdata.c): D_00201E40 */
+static s16 D_00201E40 = 2;
+#endif
 extern f32 D_00202334;
+#ifndef NONMATCHING
 extern s16 D_0020233C;
+#else
+/* data twins (src/game/data/sbss.c): D_0020233C */
+static s16 D_0020233C;
+#endif
 extern s16 D_00202350;
 extern s16 D_00202352;
 extern s16 D_00202354;
 extern s16 D_00202356;
+#ifndef NONMATCHING
 extern f32 D_00202338;
+#else
+/* data twins (src/game/data/sbss.c): D_00202338 */
+static f32 D_00202338;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00202340;
+#else
+/* data twins (src/game/data/sbss.c): D_00202340 */
+static s32 D_00202340;
+#endif
 extern u8 D_00202348;
 extern f32 D_00201E44;
 extern f32 D_00201E48;
 extern S D_001F3A10 __attribute__((aligned(16)));
+#ifndef NONMATCHING
 extern f32 D_00202344;
+#else
+/* data twins (src/game/data/sbss.c): D_00202344 */
+static f32 D_00202344;
+#endif
 extern S D_001F39F0[] __attribute__((aligned(16)));
+#ifndef NONMATCHING
 extern s32 D_00201E4C;
+#else
+/* data twins (src/game/data/sdata.c): D_00201E4C */
+static s32 D_00201E4C = (s32)((u8 *)D_001FE714 + 0x4);
+#endif
 extern s32 D_001FE730[];
 void Credits_Update_0_001DCC30(O *o);
 void CreditsProc_DrawText_0_001DCF80(A *o, s32 idx, u32 kind);
@@ -349,3 +382,16 @@ void Credits_HandleEvent_0_001DD650(s32 *arg0) {
 #undef D_00201E48
 #undef D_00202334
 #undef D_00202348
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+extern u8 D_001FE714[];
+/* data twins (src/game/data/sdata.c): D_00201E44, D_00201E48 */
+f32 D_00201E44 = -128.0f;
+f32 D_00201E48 = -128.0f;
+/* data twins (src/game/data/sbss.c): D_00202334, D_00202348, D_00202350, D_00202354 */
+f32 D_00202334;
+u8 D_00202348;
+s16 D_00202350;
+s16 D_00202354;
+#endif

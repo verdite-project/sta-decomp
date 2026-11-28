@@ -30,3 +30,9 @@ P **EnemyData_Alloc_0_001A7D90(s16 a) {
 #else
 INCLUDE_ASM(EnemyData_Alloc_0_001A7D90);
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/save_byte_bss.c): D_004A4774 */
+s16 D_004A4774[0x82] __attribute__((aligned(4)));
+#endif

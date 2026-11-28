@@ -17,7 +17,12 @@ typedef struct {
     s32 arr[8];
 } Buf;
 extern u8 D_004A0900[][0xF0];
+#ifndef NONMATCHING
 extern s32 D_004A1058[];
+#else
+/* data twins (src/game/data/option_bss.c): D_004A1058 */
+static s32 D_004A1058[0x1];
+#endif
 extern f32 D_004A105C[];
 void SaveMenu_Load_0_0018DA20(Obj *o);
 void SaveMenu_CheckCard_0_0018DFB0(Obj *o);
@@ -204,3 +209,12 @@ void SaveMenu_UpdateCardFlags_1_0018E120(s32 a0, Flags8 *f) {
     case 3: break;
     }
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/option_bss.c): D_004A1054, D_004A105C, D_004A1068, D_004A106C */
+s32 D_004A1054[0x1];
+f32 D_004A105C[0x1];
+s32 D_004A1068[0x1];
+s32 D_004A106C[0x1];
+#endif

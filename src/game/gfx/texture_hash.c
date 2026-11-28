@@ -213,3 +213,9 @@ void Tex_RegisterTtix_0_00178080(s32 **arg0) {
         }
     }
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sdata.c): D_00201CB4 */
+s32 D_00201CB4 = 0x43494454;
+#endif

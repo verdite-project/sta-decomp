@@ -78,3 +78,9 @@ void Mdl_EmitStripD_0_0016DC70(void *a0, s32 a1, void *b, s32 idx0, C c0) {
 #else
 INCLUDE_ASM(Mdl_EmitStripD_0_0016DC70);
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00201F54 */
+u32 D_00201F54;
+#endif

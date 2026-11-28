@@ -102,3 +102,10 @@ s32 Lz_DecompressB_1_001797E0(u8 *dst, u8 *hdr, s32 a2, u32 size) {
 #else
 INCLUDE_ASM(Lz_DecompressB_1_001797E0);
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00202028, D_0020202C */
+u8 D_00202028;
+u32 D_0020202C;
+#endif

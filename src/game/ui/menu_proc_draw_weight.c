@@ -38,12 +38,40 @@ u64 fptodp(f32);
 void sprintf(s8 *, s8 *, u64);
 extern S D_001F26B0 __attribute__((aligned(16)));
 extern s8 D_0048CE40[];
+#ifdef NONMATCHING
+extern u8 D_001FC980[];
+extern u8 D_001FC988[];
+extern u8 D_001FC998[];
+extern u8 D_001FC9A8[];
+extern u8 D_001FC9B0[];
+extern u8 D_001FC9B8[];
+#endif
+#ifndef NONMATCHING
 extern f32 D_0048D040[];
+#else
+/* data twins (src/game/data/ui_anim_bss.c): D_0048D040 */
+static f32 D_0048D040[0x8];
+#endif
+#ifndef NONMATCHING
 extern s8 *D_001F2690[];
+#else
+/* data twins (src/game/data/ui_global_data.c): D_001F2690 */
+static s8 *D_001F2690[0x8] = { (s8 *)D_001FC980, (s8 *)D_001FC988, (s8 *)D_001FC998, (s8 *)D_001FC9A8, (s8 *)D_001FC9B0, (s8 *)D_001FC9B8, 0, 0 };
+#endif
 extern s8 D_001FCAA0[];
 extern s8 D_001FCB38[];
+#ifndef NONMATCHING
 extern s32 D_00202078;
+#else
+/* data twins (src/game/data/sbss.c): D_00202078 */
+static s32 D_00202078;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00202074;
+#else
+/* data twins (src/game/data/sbss.c): D_00202074 */
+static s32 D_00202074;
+#endif
 static inline f32 u2f(u32 x) { return x; }
 static inline void txt(s8 *s, Col c, O *o, s32 k, f32 sc) {
     T t;
@@ -153,4 +181,14 @@ void MenuProc_DrawWeight_0_00185D70(O *o, s32 a1, u32 mode, C *a3) {
         break;
     }
 }
+#endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+extern u8 D_001FC980[];
+extern u8 D_001FC988[];
+extern u8 D_001FC998[];
+extern u8 D_001FC9A8[];
+extern u8 D_001FC9B0[];
+extern u8 D_001FC9B8[];
 #endif

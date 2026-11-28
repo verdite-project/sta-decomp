@@ -1259,3 +1259,49 @@ loop_1:
 }
 #undef D_00222B5C
 #undef Game_MainLoop_2_0012B350
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/game_main_data.c): D_001F1BB0, D_001F1BC0, D_001F1BC4, D_001F1BC8, D_001F1BCC */
+s8 D_001F1BB0[0x10] __attribute__((aligned(4))) = { 0, 0, 0, 0, 0, 0, -0x38, -0x3e, 0, -0x40, -0x58, -0x3c, 0, 0, -0x80, 0x3f };
+f32 D_001F1BC0[0x1] = { 15000.0f };
+f32 D_001F1BC4[0x1] = { 32000.0f };
+f32 D_001F1BC8[0x1] = { 0.4999995f };
+f32 D_001F1BCC[0x1] = { 0.0f };
+/* data twins (src/game/data/game_main_rodata.c): D_001FAB40 */
+u8 D_001FAB40[0x18] = "\\TARGET\\STAZ.STZ\000\000\000\000\000\000\000\000";
+/* data twins (src/game/data/sdata.c): D_00201C00, D_00201C10, D_00201C14, D_00201C18, D_00201C1C, D_00201C20, D_00201C24, D_00201C2C, D_00201C30, D_00201C34 */
+s32 D_00201C00 = 0x1900000;
+s32 D_00201C10 = (s32)D_00222A80;
+f32 D_00201C14 = 450.0f;
+f32 D_00201C18 = 1.0f;
+f32 D_00201C1C = 655500.0f;
+u32 D_00201C20 = 1;
+u32 D_00201C24 = 0xffff0;
+f32 D_00201C2C = 1.5707964f;
+s32 D_00201C30 = 0xa;
+s32 D_00201C34 = 0x270f;
+/* data twins (src/game/data/sbss.c): D_00201E90, D_00201E94, D_00201E98, D_00201EA4, D_00201EAC, D_00201EB4, D_00201EB8, D_00201F90 */
+f32 D_00201E90;
+s32 D_00201E94;
+s32 D_00201E98;
+s32 D_00201EA4;
+s32 D_00201EAC;
+f32 D_00201EB4;
+u8 D_00201EB8;
+s32 D_00201F90;
+/* data twins (src/game/data/game_main_bss.c): D_00222700, D_00222730, D_00222734, D_00222738, D_0022273C, D_00222740, D_00222744, D_00222748 */
+s8 D_00222700[0x30];
+s32 D_00222730[0x1];
+s32 D_00222734[0x1];
+s32 D_00222738[0x1];
+s32 D_0022273C[0x1];
+s32 D_00222740[0x1];
+s32 D_00222744[0x1];
+s32 D_00222748[0x2];
+/* data twins (src/game/data/sound_bss.c): D_00222AF0 */
+s8 D_00222AF0[0x30];
+/* data twins (src/game/data/gs_packet_bss.c): D_002F1690, D_002F1694 */
+f32 D_002F1690[0x1];
+f32 D_002F1694[0xb] __attribute__((aligned(4)));
+#endif

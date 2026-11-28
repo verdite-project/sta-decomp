@@ -42,7 +42,15 @@ extern Rec_MapState_SetBit_0_001A9CA0 *D_00201DC4__as_MapState_SetBit_0_001A9CA0
 extern Rec_MapState_GetField_0_001A9D50 *D_00201DC4__as_MapState_GetField_0_001A9D50;
 extern Rec_MapState_SetField_0_001A9E10 *D_00201DC4__as_MapState_SetField_0_001A9E10;
 extern G_MapState_TestBit_0_001A9BE0 *D_00201DC4__as_MapState_TestBit_0_001A9BE0;
+#ifdef NONMATCHING
+extern u8 D_004AA440[];
+#endif
+#ifndef NONMATCHING
 extern u8 *D_00201DC8;
+#else
+/* data twins (src/game/data/sdata.c): D_00201DC8 */
+static u8 *D_00201DC8 __attribute__((aligned(8))) = (u8 *)D_004AA440;
+#endif
 extern S_MapState_GetKillCount_0_001A9FF0 *D_00201DC4__as_MapState_GetBestKillRate_0_001AA090;
 extern Big *D_00201DC4__as_MapState_IncVisits_0_001AA130;
 extern E_MapState_GetCounter_0_001AA1E0 *D_00201DC4__as_MapState_GetCounter_0_001AA1E0;
@@ -542,3 +550,8 @@ u8 Inventory_GetSlotFlag_0_001AA6B0(s16 i)
 /* Inventory_GetSlotCount_0_001AA6D0 */
 u8 Inventory_GetSlotCount_0_001AA6D0(s16 i) { if (D_00201DC0__as_Inventory_GetSlotCount_0_001AA6D0->e[i].b5) return D_00201DC0__as_Inventory_GetSlotCount_0_001AA6D0->e[i].b2; return 0; }
 #undef D_00201DC0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+extern u8 D_004AA440[];
+#endif

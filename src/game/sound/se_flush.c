@@ -56,3 +56,13 @@ s32 Se_ReadStatus_0_001D9F10(void) {
     return r;
 }
 #undef SndDrv_GetRecvBuffer_1_001D8340
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sdata.c): D_00201E3C */
+s32 D_00201E3C = 1;
+/* data twins (src/game/data/sbss.c): D_00202328 */
+u8 *D_00202328;
+/* data twins (src/game/data/bgm_bss_004BA0E0.c): D_004BA0E0 */
+u8 D_004BA0E0[0x200];
+#endif

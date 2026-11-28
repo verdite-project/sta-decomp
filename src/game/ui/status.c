@@ -7,7 +7,12 @@ typedef union { u32 w; struct { u8 r, g, b, a; } c; } Col;
 typedef struct { u8 pad[8]; u8 x8; } E;
 typedef struct { u16 v[8]; } H;
 typedef struct { f32 v[4]; } F;
+#ifndef NONMATCHING
 extern f32 D_00201D78;
+#else
+/* data twins (src/game/data/sdata.c): D_00201D78 */
+static f32 D_00201D78 = -2.99f;
+#endif
 void Status_Draw_0_0019DF90(E *e);
 void Status_DrawStats_0_0019E090(f32 f);
 s8* Msg_GetText_2_00195B10(s32);

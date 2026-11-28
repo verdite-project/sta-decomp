@@ -124,3 +124,9 @@ void ScreenFx_Init_1_00159A60(void) {
     p[3] = 1.0f; }
 }
 #undef sceVu0CopyVector
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00201F78 */
+B8 D_00201F78[8];
+#endif

@@ -19,20 +19,84 @@ typedef struct { s16 v[10]; } Ids;
 typedef struct { u8 b[4]; } Col;
 typedef struct { u8 pad[0x14]; f32 x14; } A;
 typedef struct { u8 pad[8]; f32 x8; } B;
+#ifdef NONMATCHING
+extern u8 D_00495B60[];
+extern u8 D_00496B60[];
+#endif
+#ifndef NONMATCHING
 extern f32 D_00201D5C;
+#else
+/* data twins (src/game/data/sdata.c): D_00201D5C */
+static f32 D_00201D5C = -2.99f;
+#endif
+#ifndef NONMATCHING
 extern FW D_004A28D0[];
+#else
+/* data twins (src/game/data/item_menu_draw_bss.c): D_004A28D0 */
+static FW D_004A28D0[0x10 / sizeof(FW)] __attribute__((aligned(4)));
+#endif
 extern s32 *D_00201D4C;
+#ifndef NONMATCHING
 extern f32 D_00201D54;
+#else
+/* data twins (src/game/data/sdata.c): D_00201D54 */
+static f32 D_00201D54 = -2.99f;
+#endif
+#ifndef NONMATCHING
 extern f32 D_00201D58;
+#else
+/* data twins (src/game/data/sdata.c): D_00201D58 */
+static f32 D_00201D58 = -2.99f;
+#endif
+#ifndef NONMATCHING
 extern s32 D_002021B4;
+#else
+/* data twins (src/game/data/sbss.c): D_002021B4 */
+static s32 D_002021B4;
+#endif
+#ifndef NONMATCHING
 extern f32 D_002021B8;
+#else
+/* data twins (src/game/data/sbss.c): D_002021B8 */
+static f32 D_002021B8;
+#endif
+#ifndef NONMATCHING
 extern f32 D_002021BC;
+#else
+/* data twins (src/game/data/sbss.c): D_002021BC */
+static f32 D_002021BC;
+#endif
+#ifndef NONMATCHING
 extern s32 D_004A28C4[];
+#else
+/* data twins (src/game/data/item_menu_draw_bss.c): D_004A28C4 */
+static s32 D_004A28C4[0x1];
+#endif
 extern Q2 D_001F3040;
+#ifndef NONMATCHING
 extern s32 D_002021AC;
+#else
+/* data twins (src/game/data/sbss.c): D_002021AC */
+static s32 D_002021AC;
+#endif
+#ifndef NONMATCHING
 extern s32 D_004A28C8[];
+#else
+/* data twins (src/game/data/item_menu_draw_bss.c): D_004A28C8 */
+static s32 D_004A28C8[0x1];
+#endif
+#ifndef NONMATCHING
 extern f32 D_004A28CC[];
+#else
+/* data twins (src/game/data/item_menu_draw_bss.c): D_004A28CC */
+static f32 D_004A28CC[0x1];
+#endif
+#ifndef NONMATCHING
 extern f32 *D_00201D50;
+#else
+/* data twins (src/game/data/sdata.c): D_00201D50 */
+static f32 *D_00201D50 = (f32 *)D_00496B60;
+#endif
 void Equip_Draw_0_00199190(u8 *arg0);
 void Equip_DrawStatus_0_00199260(O *o, f32 f);
 void Equip_Open_0_001997A0(s32 *arg0);
@@ -515,3 +579,16 @@ void EquipProc_Pos_0_0019A6A0(s32 i, A *a, B *b) {
         break;
     }
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+extern u8 D_00495B60[];
+extern u8 D_00496B60[];
+/* data twins (src/game/data/sdata.c): D_00201D48, D_00201D4C */
+s32 D_00201D48 = 6;
+s32 *D_00201D4C = (s32 *)D_00495B60;
+/* data twins (src/game/data/sbss.c): D_002021B0 */
+s32 D_002021B0;
+/* data twins (src/game/data/item_menu_draw_bss.c): D_004A28C0 */
+s32 D_004A28C0[0x1];
+#endif

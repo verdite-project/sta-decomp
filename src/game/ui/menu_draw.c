@@ -5,8 +5,18 @@ typedef union { u32 w; struct { u8 r, g, b, a; } c; } Col;
 typedef struct { s32 n; f32 f[4]; s16 h[4]; Col col; } E;
 extern s32 D_002020C0;
 extern E D_0048DB60[];
+#ifndef NONMATCHING
 extern Vec D_001FCBA0[];
+#else
+/* data twins (src/game/data/ui_gauge_rodata2.c): D_001FCBA0 */
+static Vec D_001FCBA0[0x9] = { 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 2.0f, 2.0f, 2.0f, 2.0f, 3.2f, 3.2f, 3.2f, 3.2f, 4.6f, 4.6f, 4.6f, 4.6f, 6.2f, 6.2f, 6.2f, 6.2f, 8.0f, 8.0f, 8.0f, 8.0f, 10.0f, 10.0f, 10.0f, 10.0f, 12.0f, 12.0f, 12.0f, 12.0f };
+#endif
+#ifndef NONMATCHING
 extern Vec D_001FCC30[];
+#else
+/* data twins (src/game/data/ui_gauge_rodata2.c): D_001FCC30 */
+static Vec D_001FCC30[0x9] = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, -3.0f, 0.0f, 3.0f, 0.0f, -6.0f, 0.0f, 6.0f, 0.0f, -9.6f, 0.0f, 9.6f, 0.0f, -13.799999f, 0.0f, 13.799999f, 0.0f, -18.599998f, 0.0f, 18.599998f, 0.0f, -24.0f, 0.0f, 24.0f, 0.0f, -30.0f, 0.0f, 30.0f, 0.0f, -36.0f, 0.0f, 36.0f };
+#endif
 void GsPkt_SetReg_3_001543E0(s32, s32);
 void Ui_DrawSpriteRotated_1_00182080(s32, f32, Vec *, Vec *, Col *, s32);
 
@@ -96,3 +106,11 @@ void Menu_DrawBackground_0_00187B20(s32 mode) {
     Ui_BeginSprites_1_00181420();
     D_002020C0 = 0;
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_002020C0 */
+s32 D_002020C0;
+/* data twins (src/game/data/ui_gauge_bss.c): D_0048DB60 */
+E D_0048DB60[0x8000 / sizeof(E)];
+#endif

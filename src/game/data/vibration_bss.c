@@ -19,9 +19,15 @@ f32 D_00317248[0x1];
 f32 D_00317244[0x1];
 f32 D_00317240[0x1];
 f32 D_0031723C[0x1];
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/script/map_command.c */
 u8 D_00317238[0x4]; /* also D_0031723A */
+#endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/menu.c */
 u16 D_00317230[0x4];
+#endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/math/noise_fbm.c */
 s32 D_00316A20[0x204];
 u8 D_00315200[0x1820];
 u8 D_003141F0[0x1010];
 f32 D_003139E0[0x204];
+#endif

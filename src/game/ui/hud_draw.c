@@ -26,24 +26,79 @@ typedef struct { s32 k0; s32 k4; u8 t8; u8 pad[7]; } K;
 typedef struct { u8 pad[0x20]; u16 x20; u8 pad22[0x6E]; } E_Hud_UpdateShortcuts_0_0019BFF0;
 typedef struct { u8 pad0[0xA]; u16 type; u8 pad1[0x30]; u8 max; u8 pad2[0x53]; } Rec;
 typedef struct { u8 pad[8]; s8 st; u8 pad2[7]; } Out;
+#ifndef NONMATCHING
 extern s32 D_002021C0;
+#else
+/* data twins (src/game/data/sbss.c): D_002021C0 */
+static s32 D_002021C0;
+#endif
+#ifndef NONMATCHING
 extern s32 D_002021CC;
+#else
+/* data twins (src/game/data/sbss.c): D_002021CC */
+static s32 D_002021CC;
+#endif
+#ifndef NONMATCHING
 extern s32 D_002021D8;
+#else
+/* data twins (src/game/data/sbss.c): D_002021D8 */
+static s32 D_002021D8;
+#endif
+#ifndef NONMATCHING
 extern s32 D_002021DC;
+#else
+/* data twins (src/game/data/sbss.c): D_002021DC */
+static s32 D_002021DC;
+#endif
 extern s32 D_002021C4;
 extern s32 D_002021C8;
 extern struct { unsigned char f : 1; char pad[15]; } D_001F306C, D_001F307C;
 extern E_Hud_ClearTimers_0_0019A840 D_004A28E0[64];
 extern E_Hud_ClearTimers_0_0019A840 D_004A2CE0[64];
+#ifndef NONMATCHING
 extern s8 D_001FD408[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD408 */
+static s8 D_001FD408[0x8] = "HP\000\000\000\000\000\000";
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD410[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD410 */
+static s8 D_001FD410[0x8] = { 0x25, 0x34, 0x64, 0x2f, 0, 0, 0, 0 };
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD418[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD418 */
+static s8 D_001FD418[0x8] = { 0x25, 0x64, 0, 0, 0, 0, 0, 0 };
+#endif
+#ifndef NONMATCHING
 extern s8 D_001FD420[];
+#else
+/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD420 */
+static s8 D_001FD420[0xd] = "MP\000\000\000\000\000\000\000\000\000\000\000";
+#endif
 extern f32 D_001F3060[];
 extern f32 D_001F3070[];
+#ifndef NONMATCHING
 extern s32 D_00201D60;
+#else
+/* data twins (src/game/data/sdata.c): D_00201D60 */
+static s32 D_00201D60 = -1;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00201D64;
+#else
+/* data twins (src/game/data/sdata.c): D_00201D64 */
+static s32 D_00201D64 = -1;
+#endif
+#ifndef NONMATCHING
 extern f32 D_002021D0;
+#else
+/* data twins (src/game/data/sbss.c): D_002021D0 */
+static f32 D_002021D0;
+#endif
 extern K D_004A30E0[];
 extern s16 D_001FD3F8[];
 void Hud_Reset_0_0019A7E0(void);
@@ -781,3 +836,14 @@ void Hud_UpdateWeaponSlots_0_0019C560(void) {
 }
 #undef Item_GetTable_1_001AFC90
 #undef D_004A30E0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/databook_item_reset_data.c): D_001F3060, D_001F3070 */
+f32 D_001F3060[0x1] = { 0.0f };
+f32 D_001F3070[0x1] = { 0.0f };
+/* data twins (src/game/data/sbss.c): D_002020D4, D_002021C4, D_002021C8 */
+f32 D_002020D4;
+s32 D_002021C4;
+s32 D_002021C8;
+#endif

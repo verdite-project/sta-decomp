@@ -115,7 +115,12 @@ extern s32 D_0022F040[];
 E_SndEmit_StopAllA_1_0012F640 D_0026F0D0[0x40];
 f32 D_0026F090[0x10];
 extern s8 D_00201C38;
+#ifndef NONMATCHING
 extern s32 D_00201ED8;
+#else
+/* data twins (src/game/data/sbss.c): D_00201ED8 */
+static s32 D_00201ED8;
+#endif
 extern f32 D_002F16C0[];
 extern f32 D_001F2160[4];
 extern u8 D_00201C38__as_SndEmit_Update_1_0012F6F0;
@@ -125,11 +130,26 @@ extern E_SndEmit_StopAllB_1_0012F880 D_0026F0D0__as_SndEmit_StopAllB_1_0012F880[
 extern E_SndEmit_KillAll_1_0012F920 D_0026F0D0__as_SndEmit_KillAll_1_0012F920[64];
 extern Obj D_0026F0D0__as_SndEmit_SpawnFromMap_0_0012F9D0[];
 extern E_SndEmit_Init_1_0012FB80 D_0026F0D0__as_SndEmit_Init_1_0012FB80[64];
+#ifndef NONMATCHING
 extern s16 D_00201EE4;
+#else
+/* data twins (src/game/data/sbss.c): D_00201EE4 */
+static s16 D_00201EE4;
+#endif
 extern St_Strm_SetVolume_2_001303D0 D_00201EE0;
 extern s16 D_00201EE2;
+#ifndef NONMATCHING
 extern u8 D_001FABB8[];
+#else
+/* data twins (src/game/data/sound_emitter_rodata.c): D_001FABB8 */
+static u8 D_001FABB8[0x5] = "%s;1\000";
+#endif
+#ifndef NONMATCHING
 extern u8 D_001FABC0[];
+#else
+/* data twins (src/game/data/sound_emitter_rodata.c): D_001FABC0 */
+static u8 D_001FABC0[0x10] __attribute__((aligned(8))) = "%s\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
+#endif
 extern struct { unsigned char : 1; unsigned char f : 1; } D_00201EE0__as_Strm_Stop_2_00130440;
 extern St_Strm_Update_1_001304C0 D_00201EE0__as_Strm_Update_1_001304C0;
 extern St_Strm_PlayFile_2_00130590 D_00201EE0__as_Strm_PlayFile_2_00130590;
@@ -148,7 +168,12 @@ extern u8 D_0022EC22__as_Snd_SetMasterVolume_1_001313C0[];
 extern E_SndCh_StopNow_1_001314A0 D_0022CBC0__as_SndCh_StopNow_1_001314A0[];
 extern E_SndCh_Stop_2_00131440 D_0022CBC0__as_SndCh_Stop_2_00131440[];
 extern void *D_00201ED0;
+#ifndef NONMATCHING
 extern s32 D_00201EE8;
+#else
+/* data twins (src/game/data/sbss.c): D_00201EE8 */
+static s32 D_00201EE8;
+#endif
 extern E D_00222BC0[];
 extern T *volatile D_00201ED0__as_Snd_PlaySeAt_2_001315A0;
 extern Snd *D_00201ED0__as_Snd_StartRequest_2_00131640;
@@ -1183,3 +1208,17 @@ s32 Snd_StartRequest_2_00131640(void) {
 #undef sceVu0ApplyMatrix
 #undef sceVu0InnerProduct
 #undef D_002F16C0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sdata.c): D_00201C38 */
+s8 D_00201C38 = 1;
+/* data twins (src/game/data/sbss.c): D_00201ED0 */
+void *D_00201ED0;
+/* data twins (src/game/data/sound_emitter_bss.c): D_0022F040, D_0022F084, D_0022F088, D_0022F08C, D_0022F090 */
+s32 D_0022F040[0x1] __attribute__((aligned(16)));
+s32 D_0022F084[0x1];
+u32 D_0022F088[0x1];
+u32 D_0022F08C[0x1];
+u8 D_0022F090[0x40000];
+#endif

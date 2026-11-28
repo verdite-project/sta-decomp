@@ -8,11 +8,31 @@ typedef struct { s32 state; s32 buttons; u8 next; u8 pad[5]; u8 pad_e; } Menu;
 typedef struct { u8 pad[0x10]; s32 count; u8 pad2[0x14]; f32 base; } Info;
 typedef struct { u8 r, g, b, a; } Col;
 typedef struct { s32 x0; u32 x4; u8 b8; char p9[5]; u8 bE; } Obj;
+#ifndef NONMATCHING
 extern s32 D_00202204;
+#else
+/* data twins (src/game/data/sbss.c): D_00202204 */
+static s32 D_00202204;
+#endif
 extern s32 D_004A32CC[];
+#ifndef NONMATCHING
 extern u8 D_001FD610[];
+#else
+/* data twins (src/game/data/pause_menu_entry_rodata.c): D_001FD610 */
+static u8 D_001FD610[0x5] = "ITEM\000";
+#endif
+#ifndef NONMATCHING
 extern u8 D_001FD648[];
+#else
+/* data twins (src/game/data/pause_menu_entry_rodata2.c): D_001FD648 */
+static u8 D_001FD648[0x7] = "OPTION\000";
+#endif
+#ifndef NONMATCHING
 extern char D_001FD650[];
+#else
+/* data twins (src/game/data/pause_menu_entry_rodata2.c): D_001FD650 */
+static char D_001FD650[0x10] __attribute__((aligned(8))) = { -0x7e, 0x6f, -0x7e, 0x60, -0x7e, 0x74, -0x7e, 0x72, -0x7e, 0x64, 0, 0, 0, 0, 0, 0 };
+#endif
 void PauseMenu_Update_0_0019E400(Menu *m);
 s32 PauseMenu_GetEntry_0_0019E780(s32 i);
 void Pause_HandleEvent_0_0019E810(Obj *o);
@@ -132,3 +152,11 @@ void Pause_HandleEvent_0_0019E810(Obj *o)
         PlayTime_Resume_1_001DF960();
     }
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00202208 */
+s32 D_00202208;
+/* data twins (src/game/data/shop_bss.c): D_004A32C8 */
+s32 D_004A32C8[0x6] __attribute__((aligned(8)));
+#endif

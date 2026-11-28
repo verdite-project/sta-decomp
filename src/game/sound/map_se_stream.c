@@ -11,7 +11,12 @@ typedef struct Ch { s32 x0; s32 x4; u32 type : 8; u32 off : 24; u16 xC; u16 xE; 
 extern E D_004BB110[16];
 extern S D_004BB050[];
 extern P *D_002023B0;
+#ifndef NONMATCHING
 extern s32 D_00201E54;
+#else
+/* data twins (src/game/data/sdata.c): D_00201E54 */
+static s32 D_00201E54 = -1;
+#endif
 extern G D_00222A54[];
 extern s32 D_00270F40[];
 extern E_ImageLoader_Init_0_001E1770 D_004BB110__as_ImageLoader_Init_0_001E1770[16];
@@ -198,3 +203,9 @@ void MapSe_BindBank_0_001E1810(Ch *a0, s32 a1) {
     }
     }
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_002023B0 */
+P *D_002023B0;
+#endif

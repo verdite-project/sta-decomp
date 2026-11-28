@@ -183,3 +183,9 @@ void Enemy_UpdateSfxTransform_0_001A83E0(s8 *arg0) {
     }
 }
 #undef sceVu0CopyMatrix
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00202284 */
+u8 *D_00202284;
+#endif

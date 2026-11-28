@@ -459,3 +459,9 @@ void MapObj_Create_0_001BB8A0(s32 a0, O_MapObj_Create_0_001BB8A0 *o, s32 a2) {
 }
 #undef Map_DecodeTransform_0_001B59E0
 #undef Mdl_UpdateBoneMatricesCur_0_00171540
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_002022D4 */
+O_MapObj_UpdateAll_0_001BAB70 *D_002022D4;
+#endif

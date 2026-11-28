@@ -105,3 +105,9 @@ void LoadMenu_DrawList_0_00191CB0(O *o) {
     Menu_DrawBackground_0_00187B20(0);
     Ui_SetAlphaClamped_0_00182050(0x80);
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_0020213C */
+f32 D_0020213C;
+#endif

@@ -29,28 +29,102 @@ typedef struct { char p0[0xA]; u16 h; char pc[0x1D]; u8 b; char rest[0x66]; } E_
 extern Fn D_001F28D0[];
 extern V D_001F3120[];
 extern V D_001F3130[];
+#ifdef NONMATCHING
+extern u8 D_00495B60[];
+extern u8 D_00496B60[];
+#endif
+#ifndef NONMATCHING
 extern f32 D_00201D70;
+#else
+/* data twins (src/game/data/sdata.c): D_00201D70 */
+static f32 D_00201D70 = -2.99f;
+#endif
+#ifndef NONMATCHING
 extern f32 D_00201D74;
+#else
+/* data twins (src/game/data/sdata.c): D_00201D74 */
+static f32 D_00201D74 = -300.0f;
+#endif
+#ifndef NONMATCHING
 extern s32 *D_00201D68;
+#else
+/* data twins (src/game/data/sdata.c): D_00201D68 */
+static s32 *D_00201D68 = (s32 *)D_00495B60;
+#endif
+#ifndef NONMATCHING
 extern s32 D_002021E4;
+#else
+/* data twins (src/game/data/sbss.c): D_002021E4 */
+static s32 D_002021E4;
+#endif
+#ifndef NONMATCHING
 extern s32 D_002021E8;
+#else
+/* data twins (src/game/data/sbss.c): D_002021E8 */
+static s32 D_002021E8;
+#endif
+#ifndef NONMATCHING
 extern s32 D_002021F8;
+#else
+/* data twins (src/game/data/sbss.c): D_002021F8 */
+static s32 D_002021F8;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00202200;
+#else
+/* data twins (src/game/data/sbss.c): D_00202200 */
+static s32 D_00202200;
+#endif
 extern s32 D_004A3290[];
 extern s8 D_004A32A0[];
 extern S D_001F3100[] __attribute__((aligned(16)));
+#ifndef NONMATCHING
 extern s8 D_001FD5B0[];
+#else
+/* data twins (src/game/data/item_menu_draw_rodata.c): D_001FD5B0 */
+static s8 D_001FD5B0[0x8] = "+%d\000\000\000\000\000";
+#endif
 extern s8 D_004A3150[];
 extern u8 D_004A329C[];
+#ifndef NONMATCHING
 extern s32 D_002021E0;
+#else
+/* data twins (src/game/data/sbss.c): D_002021E0 */
+static s32 D_002021E0;
+#endif
+#ifndef NONMATCHING
 extern s32 D_002021EC;
+#else
+/* data twins (src/game/data/sbss.c): D_002021EC */
+static s32 D_002021EC;
+#endif
 extern Q2 D_001F30C0;
+#ifndef NONMATCHING
 extern s32 D_002021F4;
+#else
+/* data twins (src/game/data/sbss.c): D_002021F4 */
+static s32 D_002021F4;
+#endif
 extern s32 D_004A3294[];
 extern f32 D_004A3298[];
+#ifndef NONMATCHING
 extern s32 D_002021F0;
+#else
+/* data twins (src/game/data/sbss.c): D_002021F0 */
+static s32 D_002021F0;
+#endif
+#ifndef NONMATCHING
 extern s32 D_002021FC;
+#else
+/* data twins (src/game/data/sbss.c): D_002021FC */
+static s32 D_002021FC;
+#endif
+#ifndef NONMATCHING
 extern f32 *D_00201D6C;
+#else
+/* data twins (src/game/data/sdata.c): D_00201D6C */
+static f32 *D_00201D6C = (f32 *)D_00496B60;
+#endif
 extern BF D_004A329C__as_ItemMenu_Update_0_0019D580[];
 extern BF D_004A329C__as_ItemMenu_UseItem_0_0019DA70[];
 extern u8 D_004A32A0__as_ItemMenu_UseItem_0_0019DA70[];
@@ -582,3 +656,9 @@ void ItemMenuProc_Pos_0_0019DE90(s32 i, s8 *a1, s8 *a2) {
 #undef ItemMenuProc_Pos_0_0019DE90
 #undef UiAnim_SetTarget_1_0017F470
 #undef Item_GetTable_1_001AFC90
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+extern u8 D_00495B60[];
+extern u8 D_00496B60[];
+#endif

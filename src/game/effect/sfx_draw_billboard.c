@@ -173,3 +173,9 @@ void Sfx_DrawBillboard_0_00168480(E *e, Sub *sub, M *m, S *s) {
 #else
 INCLUDE_ASM(Sfx_DrawBillboard_0_00168480);
 #endif
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00201F40 */
+s32 D_00201F40;
+#endif

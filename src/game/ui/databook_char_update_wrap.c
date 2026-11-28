@@ -118,3 +118,13 @@ void DbChar_Update_0_00196940(Ev *arg0) {
     }
     Ui_LoadCharImage_3_00183B90(D_004A11A0[D_004A13E0[0]]);
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00202184, D_0020218C */
+u32 D_00202184;
+s32 D_0020218C;
+/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A11A0, D_004A13E0 */
+s32 D_004A11A0[0x80];
+s32 D_004A13E0[0x4];
+#endif

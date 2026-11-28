@@ -194,10 +194,20 @@ extern s32 D_001FB6A0[];
 extern s32 D_001FB6C0[];
 extern s32 D_001FB6E0[];
 extern s32 D_001FB700[];
+#ifndef NONMATCHING
 extern s32 D_001FB720[];
+#else
+/* data twins (src/game/data/fx_proc_rodata.c): D_001FB720 */
+static s32 D_001FB720[0x6] = { 0x2f726373, 0x30726863, 0x5f303032, 0x6e69622e, 0, 0 };
+#endif
 extern void *D_00201FA8;
 extern s32 D_00201E80;
+#ifndef NONMATCHING
 extern P_EnemyCmd_PlaySe_1_001453A0 D_00201C50;
+#else
+/* data twins (src/game/data/sdata.c): D_00201C50 */
+static P_EnemyCmd_PlaySe_1_001453A0 D_00201C50 = { 5000.0f, 0.0f };
+#endif
 extern S_EnemyCmd_Set5B4b6_1_00143920 *D_00201FA8__as_EnemyCmd_Set5B4b6_1_00143920;
 extern S_EnemyCmd_Set5B4b5_1_00143930 *D_00201FA8__as_EnemyCmd_Set5B4b5_1_00143930;
 extern s8 *D_00201FA8__as_EnemyCmd_GetRelativePos_0_00143960;
@@ -2730,3 +2740,9 @@ void EnemyCmd_ResetVectors_1_00145610(u8 *arg0)
 #undef Enemy_CopyRotation_2_00140440
 #undef EnemyScr_BroadcastFrameEvent_0_001410C0
 #undef Enemy_Ptr6F0_1_0013FFA0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00201FA8 */
+void *D_00201FA8;
+#endif

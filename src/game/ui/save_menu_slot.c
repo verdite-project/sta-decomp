@@ -54,21 +54,76 @@ typedef struct { u8 pad[0x20]; R r; } S1;
 typedef struct { u8 pad[0x50]; R r[1]; } S0;
 typedef struct { s32 x0; u32 flags; u8 b8; char p9; u8 bA; char pB[3]; u8 bE; } Obj_MenuProc_BackOnCancel_0_0018D000;
 extern Tbl D_001F2A30 __attribute__((aligned(16)));
+#ifndef NONMATCHING
 extern f32 D_0020211C;
+#else
+/* data twins (src/game/data/sbss.c): D_0020211C */
+static f32 D_0020211C;
+#endif
+#ifndef NONMATCHING
 extern s32 D_004A0FFC[];
+#else
+/* data twins (src/game/data/option_bss.c): D_004A0FFC */
+static s32 D_004A0FFC[0x1];
+#endif
 extern f32 D_004A1008[];
+#ifndef NONMATCHING
 extern f32 D_004A100C[];
+#else
+/* data twins (src/game/data/option_bss.c): D_004A100C */
+static f32 D_004A100C[0x1];
+#endif
 extern S D_001F2A10[] __attribute__((aligned(16)));
 extern Slot D_004A0900[];
+#ifndef NONMATCHING
 extern char D_001FCD00[];
+#else
+/* data twins (src/game/data/ui_gauge_rodata2.c): D_001FCD00 */
+static char D_001FCD00[0x10] = "SAVEDATA %d\000\000\000\000\000";
+#endif
+#ifndef NONMATCHING
 extern char D_001FCD10[];
+#else
+/* data twins (src/game/data/ui_gauge_rodata2.c): D_001FCD10 */
+static char D_001FCD10[0x10] = "HP %4d/%4d\000\000\000\000\000\000";
+#endif
+#ifndef NONMATCHING
 extern char D_001FCD20[];
+#else
+/* data twins (src/game/data/ui_gauge_rodata2.c): D_001FCD20 */
+static char D_001FCD20[0x10] = "MP %4d/%4d\000\000\000\000\000\000";
+#endif
+#ifndef NONMATCHING
 extern char D_001FCD30[];
+#else
+/* data twins (src/game/data/ui_gauge_rodata2.c): D_001FCD30 */
+static char D_001FCD30[0x10] = { 0x4c, 0x4f, 0x43, 0x41, 0x54, 0x49, 0x4f, 0x4e, 0, 0, 0, 0, 0, 0, 0, 0 };
+#endif
+#ifndef NONMATCHING
 extern char D_001FCD40[];
+#else
+/* data twins (src/game/data/ui_gauge_rodata2.c): D_001FCD40 */
+static char D_001FCD40[0x18] = "TIME %2d:%2d:%2d\000\000\000\000\000\000\000\000";
+#endif
+#ifndef NONMATCHING
 extern char D_001FCD58[];
+#else
+/* data twins (src/game/data/ui_gauge_rodata2.c): D_001FCD58 */
+static char D_001FCD58[0x8] = " EMPTY \000";
+#endif
+#ifndef NONMATCHING
 extern char D_001FCD60[];
+#else
+/* data twins (src/game/data/ui_gauge_rodata2.c): D_001FCD60 */
+static char D_001FCD60[0xd] = "----\000\000\000\000\000\000\000\000\000";
+#endif
 extern u8 D_004A095F[][0xF0];
+#ifndef NONMATCHING
 extern s32 D_004A0FF8[];
+#else
+/* data twins (src/game/data/option_bss.c): D_004A0FF8 */
+static s32 D_004A0FF8[0x1];
+#endif
 void MenuProc_DrawItemList_0_0018B860(Obj_MenuProc_DrawItemList_0_0018B860 *o);
 void SaveMenu_DrawSlotInfo_2_0018BCC0(O_MenuProc_DrawItemList_0_0018B860 *o, s32 unused, u32 id, s32 n);
 void Menu_LerpLayout_0_0018C140(f32 *a0, f32 *a1, u8 *a2, f32 f);
@@ -552,3 +607,14 @@ void MenuProc_BackOnCancel_0_0018D000(Obj_MenuProc_BackOnCancel_0_0018D000 *o)
         Snd_PlaySe_3_00131600(0x67, o->bE);
     }
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/option_bss.c): D_004A0FC0, D_004A0FF0, D_004A0FF4, D_004A1000, D_004A1008, D_004A1010 */
+s32 D_004A0FC0[0xc] __attribute__((aligned(4)));
+s32 D_004A0FF0[0x1];
+s32 D_004A0FF4[0x1];
+s32 D_004A1000[0x2] __attribute__((aligned(4)));
+f32 D_004A1008[0x1];
+Flags8 D_004A1010[0x10 / sizeof(Flags8)] __attribute__((aligned(4)));
+#endif

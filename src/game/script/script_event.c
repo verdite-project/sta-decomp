@@ -171,3 +171,9 @@ void Script_InitContext_1_00166F90(H **arg0, s32 arg1, s32 arg2, u32 arg3) {
         memset(&p->r[i], 0, 0x258);
     }
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00201FA4 */
+Mgr_Script_RunEvent_2_00166C10 *D_00201FA4;
+#endif

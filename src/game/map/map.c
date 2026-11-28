@@ -20,15 +20,50 @@ extern G2C4 *D_002022C4;
 extern BF D_00222A54[];
 extern u8 D_00270F40[];
 extern f32 D_004B4B90[];
+#ifndef NONMATCHING
 extern s32 D_004B4BB0[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4BB0 */
+static s32 D_004B4BB0[0x1] __attribute__((aligned(16)));
+#endif
+#ifndef NONMATCHING
 extern s32 D_004B4BB4[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4BB4 */
+static s32 D_004B4BB4[0x1];
+#endif
 extern s16 D_004B4BBC[];
 extern s16 D_004B4BBE[];
+#ifndef NONMATCHING
 extern s32 D_004B4BC0[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4BC0 */
+static s32 D_004B4BC0[0x1];
+#endif
+#ifndef NONMATCHING
 extern s32 D_004B4BC4[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4BC4 */
+static s32 D_004B4BC4[0x1];
+#endif
+#ifndef NONMATCHING
 extern s32 D_004B4BC8[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4BC8 */
+static s32 D_004B4BC8[0x1];
+#endif
+#ifndef NONMATCHING
 extern s32 D_004B4BCC[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4BCC */
+static s32 D_004B4BCC[0x1];
+#endif
+#ifndef NONMATCHING
 extern s32 D_004B4BB8[];
+#else
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4BB8 */
+static s32 D_004B4BB8[0x1];
+#endif
 extern f32 D_004B4B94[];
 /* .bss, from the top down (CodeWarrior writes it in reverse) */
 f32 D_004B4B98[0x6] __attribute__((aligned(8)));
@@ -484,3 +519,11 @@ void MapObj_SpawnSfx_0_001B0D60(s16 arg0, s16 arg1, s32 arg2, s32 arg3) {
     }
 }
 #undef D_00201E80
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/pad_get_connected_bss_004AC630.c): D_004B4B94 */
+f32 D_004B4B94[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4BBC */
+s16 D_004B4BBC[0x2];
+#endif

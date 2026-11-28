@@ -24,8 +24,18 @@ typedef struct { u8 b[4]; } Buf;
 typedef struct { u8 b0:1; u8 b1:1; u8 b2:1; u8 b3:1; u8 b4:1; } B_Menu_Draw_1_00189F40;
 typedef struct { u8 b0:1; u8 b1:1; u8 b2:1; } B_Pause_Update_0_0018A650;
 typedef struct { u8 pad[0x14]; B_Pause_Update_0_0018A650 x14; } Arg;
+#ifndef NONMATCHING
 extern volatile u32 D_004A0B0C[];
+#else
+/* data twins (src/game/data/option_bss.c): D_004A0B0C */
+static volatile u32 D_004A0B0C[0x1];
+#endif
+#ifndef NONMATCHING
 extern s32 D_002020E8;
+#else
+/* data twins (src/game/data/sbss.c): D_002020E8 */
+static s32 D_002020E8;
+#endif
 extern s32 D_002020DC;
 extern u32 D_004A01D8[];
 extern s32 D_004A01DC[];
@@ -41,18 +51,68 @@ extern u32 D_004A0428[];
 extern s32 D_004A042C[];
 extern u32 D_004A0678[];
 extern s32 D_004A067C[];
+#ifndef NONMATCHING
 extern s32 D_002020E0;
+#else
+/* data twins (src/game/data/sbss.c): D_002020E0 */
+static s32 D_002020E0;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00497B60[];
+#else
+/* data twins (src/game/data/ui_gauge_bss.c): D_00497B60 */
+static s32 D_00497B60[0x8];
+#endif
+#ifndef NONMATCHING
 extern f32 D_004A0B10[];
+#else
+/* data twins (src/game/data/option_bss.c): D_004A0B10 */
+static f32 D_004A0B10[0x1];
+#endif
+#ifndef NONMATCHING
 extern f32 D_004A0B14[];
+#else
+/* data twins (src/game/data/option_bss.c): D_004A0B14 */
+static f32 D_004A0B14[0x1];
+#endif
+#ifndef NONMATCHING
 extern f32 D_004A0B18[];
+#else
+/* data twins (src/game/data/option_bss.c): D_004A0B18 */
+static f32 D_004A0B18[0x1];
+#endif
+#ifndef NONMATCHING
 extern f32 D_004A0B1C[];
+#else
+/* data twins (src/game/data/option_bss.c): D_004A0B1C */
+static f32 D_004A0B1C[0x1];
+#endif
 extern M2C_UNK D_001F27B0[];
 extern M2C_UNK D_001F27C0[];
+#ifndef NONMATCHING
 extern s32 D_00201CF0;
+#else
+/* data twins (src/game/data/sdata.c): D_00201CF0 */
+static s32 D_00201CF0 = -1;
+#endif
+#ifndef NONMATCHING
 extern f32 D_0020210C;
+#else
+/* data twins (src/game/data/sbss.c): D_0020210C */
+static f32 D_0020210C;
+#endif
+#ifndef NONMATCHING
 extern f32 D_00202110;
+#else
+/* data twins (src/game/data/sbss.c): D_00202110 */
+static f32 D_00202110;
+#endif
+#ifndef NONMATCHING
 extern f32 D_00202114;
+#else
+/* data twins (src/game/data/sbss.c): D_00202114 */
+static f32 D_00202114;
+#endif
 extern B_Menu_Draw_1_00189F40 D_004A0B34[];
 extern u8 D_004A0B2A[];
 extern s8 D_004A0B2C[];
@@ -61,25 +121,85 @@ extern s32 D_004A0AEC[];
 extern s8 D_004A0B20[];
 extern void (*D_001F2930[])(void *);
 extern void (*D_001F2880[])(void *);
+#ifndef NONMATCHING
 extern s32 D_004A0B24[];
+#else
+/* data twins (src/game/data/option_bss.c): D_004A0B24 */
+static s32 D_004A0B24[0x1];
+#endif
 extern u8 D_004A0B2B[];
 extern void (*D_001F27D0[])(void *);
+#ifndef NONMATCHING
 extern s32 D_002020F0;
+#else
+/* data twins (src/game/data/sbss.c): D_002020F0 */
+static s32 D_002020F0;
+#endif
 extern u8 D_004A0B28[];
 extern s8 D_004A0B2F[];
 extern s8 D_004A0B29[];
 extern s8 D_004A0B2E[];
 extern s32 D_004A0B30[];
+#ifndef NONMATCHING
 extern s32 D_00201CF4;
+#else
+/* data twins (src/game/data/sdata.c): D_00201CF4 */
+static s32 D_00201CF4 = -1;
+#endif
+#ifndef NONMATCHING
 extern f32 D_002020D8;
+#else
+/* data twins (src/game/data/sbss.c): D_002020D8 */
+static f32 D_002020D8;
+#endif
+#ifndef NONMATCHING
 extern f32 D_00202108;
+#else
+/* data twins (src/game/data/sbss.c): D_00202108 */
+static f32 D_00202108;
+#endif
+#ifndef NONMATCHING
 extern f32 D_001F29E0[];
+#else
+/* data twins (src/game/data/menu_draw_wrap_data.c): D_001F29E0 */
+static f32 D_001F29E0[0x1] = { -2.89f };
+#endif
+#ifndef NONMATCHING
 extern f32 D_001F29E4[];
+#else
+/* data twins (src/game/data/menu_draw_wrap_data.c): D_001F29E4 */
+static f32 D_001F29E4[0x1] = { -2.89f };
+#endif
+#ifndef NONMATCHING
 extern f32 D_001F29E8[];
+#else
+/* data twins (src/game/data/menu_draw_wrap_data.c): D_001F29E8 */
+static f32 D_001F29E8[0x1] = { -2.89f };
+#endif
+#ifndef NONMATCHING
 extern f32 D_001F29EC[];
+#else
+/* data twins (src/game/data/menu_draw_wrap_data.c): D_001F29EC */
+static f32 D_001F29EC[0x1] = { -2.89f };
+#endif
+#ifndef NONMATCHING
 extern f32 D_00202104;
+#else
+/* data twins (src/game/data/sbss.c): D_00202104 */
+static f32 D_00202104;
+#endif
+#ifndef NONMATCHING
 extern s64 D_002020F8;
+#else
+/* data twins (src/game/data/sbss.c): D_002020F8 */
+static s64 D_002020F8;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00202100;
+#else
+/* data twins (src/game/data/sbss.c): D_00202100 */
+static s32 D_00202100;
+#endif
 extern u16 D_00317230[];
 extern u16 D_00317238[];
 extern u16 D_0031723A[];
@@ -840,3 +960,16 @@ f:
         D_002020F8 = v;
     }
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_002020DC */
+s32 D_002020DC;
+/* data twins (src/game/data/vibration_bss.c): D_00317230 */
+u16 D_00317230[0x4];
+/* data twins (src/game/data/option_bss.c): D_004A0B20, D_004A0B28, D_004A0B2C, D_004A0B30 */
+s8 D_004A0B20[0x4];
+u8 D_004A0B28[0x4];
+s8 D_004A0B2C[0x4];
+s32 D_004A0B30[0x8] __attribute__((aligned(4)));
+#endif

@@ -1,0 +1,12 @@
+# How far the code reaches from a data object whose address it casts
+# (tools/data_owners.py: such an object is a "root", and without an entry
+# here the NONMATCHING build keeps it and everything after it in its run
+# where the data unit has it). One line per root: NAME EXTENT, the bytes
+# from NAME the code can touch through the cast, or `self` for the object
+# alone. Read off the code; the comment says where.
+D_00201E80 0x10   # four object-list pointers: [2], [3] (map_object_sfx.c, chest.c [k + 2], k < 2)
+D_002F1120 0x10   # one-qword DMA packet, tag 0x30000001 (gs_packet.c)
+D_002F1130 0x10   # one-qword DMA packet, tag 0x30000001 (gs_packet.c)
+D_002F1140 0x20   # two-qword DMA packet, tag 0x30000002 (gs_packet.c)
+D_00201DA0 0x8    # a two-entry label list, n = 2 (title.c)
+D_004B5DD0 self   # E_Stats_CalcAttack_0_001CF510[2], typed (stats.c)

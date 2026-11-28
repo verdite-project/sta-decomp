@@ -166,3 +166,12 @@ s32 SaveSys_StartFormat_0_001E6410(void) {
     return 0;
 }
 #undef D_004BC380
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_002023B8, D_002023CC, D_002023D0, D_002023DC */
+s32 D_002023B8;
+s32 D_002023CC;
+s32 D_002023D0;
+s32 D_002023DC;
+#endif

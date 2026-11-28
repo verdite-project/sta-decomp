@@ -157,3 +157,8 @@ cond:
     Gfx_ResetBlendState_0_00145790();
 }
 
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/screen_fx_flash_data.c): D_001F2130 */
+Vec D_001F2130 = { 1.0f, 0.0f, 0.0f, 0.0f };
+#endif

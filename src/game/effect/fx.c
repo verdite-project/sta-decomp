@@ -29,8 +29,18 @@ typedef struct { char pad[0x10]; s32 v; } T;
 extern s32 D_00201FC0;
 extern Tbl D_003174F0;
 extern Entry *D_00201F94;
+#ifndef NONMATCHING
 extern s32 D_00201F98;
+#else
+/* data twins (src/game/data/sbss.c): D_00201F98 */
+static s32 D_00201F98;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00201F9C;
+#else
+/* data twins (src/game/data/sbss.c): D_00201F9C */
+static s32 D_00201F9C;
+#endif
 extern void *D_00201FA0;
 s32 Fx_GetParentIdx_0_00163C40(void *arg0);
 void Fx_GetWorldMatrix_1_00163C80(O *o, Mtx *out);
@@ -248,3 +258,10 @@ void Fx_BeginFrame_0_00164350(void)
 #undef D_003174F0
 #undef D_00201F94
 #undef D_00201FA0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_00201F94, D_00201FA0 */
+Entry *D_00201F94;
+void *D_00201FA0;
+#endif

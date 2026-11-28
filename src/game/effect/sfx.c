@@ -371,3 +371,9 @@ void Sfx_OffsetAll_1_00167850(f32 *arg0) {
 }
 #undef sceVu0CopyVector
 #undef D_003407E0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/vibration_bss_0033F540.c): D_003406D0 */
+u8 D_003406D0[0x10];
+#endif

@@ -3,7 +3,12 @@
 #include "game/data.h"
 #include "game/input.h"
 #include "game/ui.h"
+#ifndef NONMATCHING
 extern s32 D_00201EA0;
+#else
+/* data twins (src/game/data/sbss.c): D_00201EA0 */
+static s32 D_00201EA0;
+#endif
 extern u8 D_00222A53[];
 s32 Game_GetBusy_0_0012C020(void);
 void Game_RequestTitle_0_0012C040(void);
@@ -91,3 +96,12 @@ s32 Game_TryRequestEvent_0_0012C110(s32 arg0) {
     Menu_SetSubMode_0_0018A330(arg0 & 0xFF);
     return 1;
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sdata.c): D_00201C28 */
+s32 D_00201C28 = 1;
+/* data twins (src/game/data/sbss.c): D_00201E9C, D_00201EA8 */
+s32 D_00201E9C;
+s32 D_00201EA8;
+#endif

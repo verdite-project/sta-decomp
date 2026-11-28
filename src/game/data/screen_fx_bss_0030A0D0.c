@@ -33,5 +33,9 @@ u8 D_0030A330[0x4];
 u8 D_0030A320[0x10];
 u8 D_0030A310[0x10];
 u8 D_0030A2D0[0x40];
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/light.c */
 u8 D_0030A290[0x40];
+#endif
+#ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/file.c */
 u8 D_0030A0D0[0x1c0];
+#endif

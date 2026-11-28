@@ -915,3 +915,9 @@ s32 Item_LoadTableB_0_001AFFA0(void *a) {
     return 0;
 }
 #undef D_002022B0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): D_0020228C */
+s32 D_0020228C;
+#endif

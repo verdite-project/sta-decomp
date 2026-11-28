@@ -70,7 +70,12 @@ typedef struct { u8 pad[8]; Sub_TexAnim_DrawAll_0_00175BB0 s; u8 pad2[0x310 - 8 
 typedef struct { int id; char pad[0x30C]; } Item;
 typedef struct { int a, b; Item item[4]; } Mgr;
 extern s32 D_00201F48;
+#ifndef NONMATCHING
 extern s32 D_00201FEC;
+#else
+/* data twins (src/game/data/sbss.c): D_00201FEC */
+static s32 D_00201FEC;
+#endif
 extern s32 D_00202008;
 extern T_TexAnim_InitTables_0_001746A0 D_0042D8C0[][2];
 extern T_TexAnim_InitTables_0_001746A0 D_0042DDC0[][2];
@@ -530,3 +535,9 @@ void TexAnim_Init_0_00175C80(void)
 }
 #undef memset
 #undef D_00437DC0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/texture_bss.c): D_00437DC0 */
+Elem D_00437DC0[4];
+#endif

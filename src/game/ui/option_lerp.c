@@ -6,8 +6,18 @@ typedef struct { u8 pad0[0xC]; P2 *xC; s32 x10; f32 x14; } A;
 typedef struct { s32 x0; s32 x4; f32 x8; } B;
 typedef struct { u8 pad0[0x40]; f32 x40; f32 x44; } Info;
 typedef struct { s32 x0; s32 x4; u8 p8[2]; u8 xA; u8 pB[3]; u8 xE; } O;
+#ifndef NONMATCHING
 extern s32 D_00202134;
+#else
+/* data twins (src/game/data/sbss.c): D_00202134 */
+static s32 D_00202134;
+#endif
+#ifndef NONMATCHING
 extern s32 D_00202138;
+#else
+/* data twins (src/game/data/sbss.c): D_00202138 */
+static s32 D_00202138;
+#endif
 extern Flags8 D_004A10DC[];
 void Option_LerpLayout_0_00191820(s32 i, A *a, B *b);
 void OptionProc_Back_0_00191C40(O *o);
@@ -105,3 +115,9 @@ void OptionProc_Back_0_00191C40(O *o) {
         Snd_PlaySe_3_00131600(0x67, o->xE);
     }
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/load_menu_bss.c): D_004A10B0 */
+f32 D_004A10B0[0x4];
+#endif
