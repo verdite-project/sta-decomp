@@ -1,22 +1,19 @@
-#include "common.h"
-typedef struct Node { struct Node *next; } Node;
-typedef struct { u8 pad[4]; u8 type; u8 pad2[0x3B]; } E;
+#include "game/ee.h"
 typedef struct { u8 pad[8]; u16 n; } H;
-typedef struct { s32 x0; s32 x4; H *x8; E *xC; s32 x10; s32 x14; Node *x18; } G;
+typedef struct { s32 x0; s32 x4; H *x8; CreditsEntry *xC; s32 x10; s32 x14; CreditsNode *x18; } G;
 extern G gCreditsLoadBss_004BC2F0[];
-Node *Credits_AllocNode_1_001E3FD8(E *);
-void Credits_ParseHeader_0_001E40D0(Node *);
-void Credits_BindCallbacks_1_001E4080(Node *);
+CreditsNode *Credits_AllocNode_1_001E3FD8(CreditsEntry *);
+void Credits_ParseHeader_0_001E40D0(CreditsNode *);
 
 s32 Credits_Run_1_001E3EC0(void)
 {
     s32 n;
     s32 i;
-    E *e;
-    Node *r;
-    Node *p;
+    CreditsEntry *e;
+    CreditsNode *r;
+    CreditsNode *p;
 
-    e = (E *)((u8 *)gCreditsLoadBss_004BC2F0->x8 + 0x20); n = gCreditsLoadBss_004BC2F0->x8->n; gCreditsLoadBss_004BC2F0->xC = e;
+    e = (CreditsEntry *)((u8 *)gCreditsLoadBss_004BC2F0->x8 + 0x20); n = gCreditsLoadBss_004BC2F0->x8->n; gCreditsLoadBss_004BC2F0->xC = e;
     for (i = 0; --n != -1; i++) {
         r = Credits_AllocNode_1_001E3FD8(&e[i]);
         if (r == NULL) break;

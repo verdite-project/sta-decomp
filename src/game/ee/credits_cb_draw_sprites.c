@@ -1,4 +1,4 @@
-#include "common.h"
+#include "game/ee.h"
 typedef struct { u8 b[8]; } B8;
 typedef struct { u8 pad[0x2C]; s8 x2C; } O;
 typedef struct { u8 p0[4]; O *x4; u8 p8[0x10]; u16 *x18; s32 x1C; f32 x20; f32 x24; u8 p28[8]; u8 x30[4]; u8 x34; u8 p35[0xB]; B8 x40[8]; } T;
@@ -7,7 +7,8 @@ typedef struct { f32 x0; u8 p4[0x6C]; f32 x70; f32 x74; } G;
 extern G gCreditsLoadBss_004BC2F0;
 s32 Credits_EvalAnim_1_001E4900(u32, O *, Buf *);
 
-void CreditsCb_DrawSprites_0_001E4318(T *p) {
+void CreditsCb_DrawSprites_0_001E4318(CreditsNode *node) {
+    T *p = (T *)node;
     Buf buf;
     s32 i;
     if (Credits_EvalAnim_1_001E4900(gCreditsLoadBss_004BC2F0.x0, p->x4, &buf) == 0) {

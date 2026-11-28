@@ -4,12 +4,10 @@
 
 #ifdef NONMATCHING
 /* round 3 near-miss: ee-gcc, ~70 insns after alignment, 3 short */
-#include "common.h"
+#include "game/ee.h"
 typedef struct { f32 x0, y0, x1, y1; } __attribute__((aligned(8))) R;
-typedef struct { s64 d[4]; } Vt;
-typedef struct { Vt v[4]; s32 tag; s32 clip; s32 pad[2]; } Pkt;
 typedef struct { s32 x0; s32 p4; u16 x8; } F;
-typedef struct { u8 p0[8]; s32 x8; u8 pC[0xC]; u32 x18; Pkt *x1C; u32 x20; s32 x24; F *x28; u16 x2C; } A;
+typedef struct { u8 p0[8]; s32 x8; u8 pC[0xC]; u32 x18; GsTextPacket *x1C; u32 x20; s32 x24; F *x28; u16 x2C; } A;
 typedef struct { u8 p0[0x10]; Vec x10; Vec x20; f32 x30; f32 x34; u8 p38[8]; f32 x40; f32 x44; u8 p48[8]; s32 x50; s32 x54; s32 x58; s32 p5C; f32 x60; u8 p64[0xC]; f32 x70; f32 x74; f32 x78; f32 x7C; } S;
 typedef struct { f32 x0, x4, x8, xC; s16 x10, x12, x14, x16; } G;
 extern A *gGsText_00201E5C;
@@ -17,8 +15,7 @@ extern S *gGsTextStyle_00201E60;
 extern const f32 gGsTextEmitGlyphSdata_00201B84;
 void memset(void *, s32, s32);
 void Vu0_CopyQword_3_001DC328(void *, void *);
-void GsText_SetVertex_0_001E3758(Pkt *, s32, f32, f32, f32, f32);
-void GsText_EmitQuad_1_001E3790(Pkt *);
+void GsText_EmitQuad_1_001E3790(GsTextPacket *);
 
 static inline s32 outside(R r) {
     S *s = gGsTextStyle_00201E60;
@@ -31,7 +28,7 @@ static inline s32 outs2(R q) {
     if (gGsTextStyle_00201E60->x78 < q.x0 || q.x1 < gGsTextStyle_00201E60->x70 || gGsTextStyle_00201E60->x7C < q.y0 || q.y1 < gGsTextStyle_00201E60->x74) return 1;
     return 0;
 }
-static inline void clip(Pkt *k, R q) {
+static inline void clip(GsTextPacket *k, R q) {
     if (gGsTextStyle_00201E60->x78 < q.x0 || q.x1 < gGsTextStyle_00201E60->x70 || gGsTextStyle_00201E60->x7C < q.y0 || q.y1 < gGsTextStyle_00201E60->x74) k->clip = 1; else k->clip = 0;
 }
 s32 GsText_EmitGlyph_1_001E3178(G *g) {
@@ -40,11 +37,11 @@ s32 GsText_EmitGlyph_1_001E3178(G *g) {
     Vec uv1;
     Vec a;
     Vec b;
-    Pkt pkt;
+    GsTextPacket pkt;
     f32 o;
     s32 n;
-    Pkt *p;
-    Pkt **pp;
+    GsTextPacket *p;
+    GsTextPacket **pp;
 
     memset(&a, 0, 0x10);
     a.w = 1.0f;

@@ -1,6 +1,5 @@
-/* Best-effort C for the NONMATCHING build; the matching attempt is
- * wip/Trap_Update_0_001BA3F0.c.
- * The matching build takes it from the assembly of MapObj_SnapToGround_0_001B9F10. */
+#include "include_asm.h"
+
 #ifdef NONMATCHING
 /* NEAR 1 of 162 words (unchanged): final mul.s f12,f1,f0 vs retail f12,f0,f1 (u2f(t+0xE) first, evaluated after the select).
    MWCC puts the plain variable b first whatever the source order; making u2f evaluate first hoists it above the select (50 diffs).
@@ -59,4 +58,6 @@ void Trap_Update_0_001BA3F0(s8 *p, u32 i, f32 dt, f32 x) {
     }
     Trap_SetState_0_001BA850(p, dt, i, x);
 }
+#else
+INCLUDE_ASM(Trap_Update_0_001BA3F0);
 #endif
