@@ -9,7 +9,7 @@ typedef struct {
 } MapArea;
 
 typedef struct {
-    s32 unk00;
+    s16 otherCounts[2];
     s16 counts[2];
     Obj3D *objects[32];
 } ItemObjectPool;
