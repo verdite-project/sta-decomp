@@ -1,8 +1,3 @@
-/* Best-effort C for the NONMATCHING build; the matching attempt is
- * wip/FxProc_ChaseEnemy_0_00148D00.c. */
-#include "include_asm.h"
-
-#ifdef NONMATCHING
 #include "common.h"
 typedef union { u32 w; struct { u8 s : 3; u8 r : 5; } f; } ST;
 typedef struct {
@@ -25,8 +20,6 @@ typedef struct {
     u8 padBC[0x58];
     Flags8 x114;
 } O;
-#define WRAP(x) ((((3.1415927f + (x)) - 6.2831855f * (s32)(0.15915494f * (3.1415927f + (x)))) + ((3.1415927f + (x)) < 0.0f ? 6.2831855f : 0.0f)) - 3.1415927f)
-#define WRAP3(x) (((3.1415927f + (x)) < 0.0f ? 6.2831855f : 0.0f) + ((3.1415927f + (x)) - 6.2831855f * (s32)(0.15915494f * (3.1415927f + (x)))) - 3.1415927f)
 f32 sqrtf(f32);
 s8 *ActorList_Next_2_001A5460(s32 *);
 u32 Enemy_GetCurrentParamIdx_0_0013E110(s8 *);
@@ -55,13 +48,28 @@ static inline s8 *find(u16 id) {
     return 0;
 }
 
+static inline f32 wrapAngle(f32 a) {
+    f32 bias;
+    f32 offset;
+    f32 remainder;
+
+    if (3.1415927f + a < 0.0f) {
+        bias = 6.2831855f;
+    } else {
+        bias = 0.0f;
+    }
+    offset = 3.1415927f + (f32)a;
+    remainder = offset - (6.2831855f * (s32)(0.15915494f * offset));
+    return (remainder + bias) - 3.1415927f;
+}
+
 static inline void orbit(Vec *v, f32 t, s8 *p, O *o) {
     Mtx m;
     f32 a = 3.1415927f * t;
     v->y = 100.0f * Angle_Wrap2PiB_2_00146B90(a);
     v->z = 0.0f;
     v->w = 1.0f;
-    sceVu0RotMatrixY(WRAP3(a), &m, &gMatrixFromData_001F2170);
+    sceVu0RotMatrixY(wrapAngle(a), &m, &gMatrixFromData_001F2170);
     sceVu0ApplyMatrix(v, &m, v);
     sceVu0AddVector(v, Enemy_Ptr6F0_1_0013FFA0(p), v);
     v->y += o->x54;
@@ -91,7 +99,8 @@ void FxProc_ChaseEnemy_0_00148D00(O *o, f32 dt) {
         o->x88 = (f32)(u32)(o->x114.f.b1 = 0);
         return;
     }
-    switch (s = st.f.s) {
+    s = ((volatile ST *)&st)->f.s;
+    switch (s) {
     case 0:
         o->x10.x = 0.0f;
         o->x10.y = -100.0f;
@@ -151,6 +160,3 @@ void FxProc_ChaseEnemy_0_00148D00(O *o, f32 dt) {
     }
     o->xA8.w = st.w;
 }
-#else
-INCLUDE_ASM(FxProc_ChaseEnemy_0_00148D00);
-#endif
