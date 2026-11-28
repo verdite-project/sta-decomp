@@ -1,43 +1,8 @@
-#include "common.h"
-
-typedef struct {
-    u8 pad0[0x18];
-    u16 nodeIndex;
-    u16 id;
-    u8 pad1C[0x14];
-} MapObjEntry;
-
-typedef struct {
-    u8 pad0[4];
-    u16 type;
-    u16 alternateNodeIndex;
-    u8 pad8[0xA];
-    Flags8 flags;
-    u8 pad13;
-    u16 threshold;
-    u8 resistance[6];
-    u8 pad1C[0x24];
-} MapObjNode;
-
-typedef struct {
-    u8 pad0[0x50];
-    u8 flags;
-    u8 pad51[0x2F];
-} MapObjState;
-
-typedef struct {
-    s32 id;
-    u8 pad4[0x134];
-    MapObjEntry *entries;
-    u8 pad13C[0x34];
-    MapObjNode *nodes;
-    u8 pad174[0xC];
-    MapObjState *states;
-} MapObject;
+#include "game/map_object_records.h"
 
 typedef struct {
     u8 pad0[0x30];
-    MapObject *object;
+    MapObjArea *object;
     MapObjEntry *entry;
     MapObjState *state;
 } MapObjHit;
@@ -56,13 +21,13 @@ void MapObj_PlayAnimImpl_1_001B8350(s32, u32, s32);
 s8 *MapObj_Find_1_001B19A0(s32);
 s32 Event_CheckTrigger_0_00179F80(MapObjEvent *);
 
-static inline MapObjNode *getHitNode(MapObject *object, s32 index) {
+static inline MapObjNode *getHitNode(MapObjArea *object, s32 index) {
     MapObjState *states = object->states;
     MapObjEntry *entries = object->entries;
     MapObjNode *nodes = object->nodes;
     MapObjState *state = &states[index];
     MapObjEntry *entry = &entries[index];
-    u8 flags = state->flags;
+    u8 flags = state->flags.b;
     MapObjNode *node = &nodes[entry->nodeIndex];
 
     if ((flags & 3) && node->flags.f.b3) {
@@ -75,9 +40,9 @@ s32 MapObj_Hit_0_001B85B0(u16 *attack, MapObjHit *hit) {
     s32 objectId;
     s32 index;
     MapObjNode *node;
-    MapObject *object;
+    MapObjArea *object;
     MapObjEntry *current;
-    MapObject *updated;
+    MapObjArea *updated;
     MapObjEntry *entry;
     u16 resistance[8];
     MapObjEvent event;
@@ -92,7 +57,7 @@ s32 MapObj_Hit_0_001B85B0(u16 *attack, MapObjHit *hit) {
             if (node->type != 2) {
                 return 0;
             }
-            if (hit->state->flags & 3) {
+            if (hit->state->flags.b & 3) {
                 return 0;
             }
             memset(resistance, 0, sizeof(resistance));
@@ -104,7 +69,7 @@ s32 MapObj_Hit_0_001B85B0(u16 *attack, MapObjHit *hit) {
             resistance[7] = node->resistance[5];
             if (Combat_SumResist_0_001AB500(attack, resistance) >= node->threshold) {
                 MapObj_PlayAnimImpl_1_001B8350(objectId, index, 0);
-                updated = (MapObject *)MapObj_Find_1_001B19A0(objectId);
+                updated = (MapObjArea *)MapObj_Find_1_001B19A0(objectId);
                 if (updated != NULL) {
                     entry = &updated->entries[(u32)index];
                     if (entry->id % 100) {

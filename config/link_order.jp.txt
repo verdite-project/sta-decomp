@@ -589,7 +589,6 @@ src/game/map_object/map_obj_play_anim_impl.c
 asm/text_001B8350.s
 src/game/map_object/map_obj_hit.c
 src/game/map_object/map_obj_set_anim_frame.c
-asm/text_001B87C0.s
 src/game/map_object/map_object_draw.c
 src/game/map_object/door.c
 src/game/map_object/chest.c
