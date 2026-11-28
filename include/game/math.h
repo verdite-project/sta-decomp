@@ -18,5 +18,6 @@ void Mtx_LerpScaled_1_0015E730(Vec *, Vec *, Vec *, f32);
 void Noise_Eval_1_0015ED80(Noise *p, u32 n, f32 *out, f32 x, f32 lo, f32 hi);
 f32 Noise_Fbm_1_0015F040(f32, f32, f32, f32);
 void Noise_InitWrap_2_0015ED70(void);
+void Quat_FromAxisAngle_2_0015E500(void *arg0, void *arg1, f32 fparg0);
 
 #endif

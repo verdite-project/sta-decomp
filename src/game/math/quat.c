@@ -1,9 +1,9 @@
 #include "common.h"
 #include "m2c.h"
 #include "game/data.h"
+#include "game/math.h"
 void Quat_ToMatrix_2_0015E180(Mtx *out, Vec *q);
 void Mtx_ToQuat_2_0015E290(f32 *out, f32 (*a)[4]);
-void Quat_FromAxisAngle_2_0015E500(void *arg0, void *arg1, f32 fparg0);
 void Quat_ToMatrixB_2_0015E580(f32 *m, Vec *q);
 void sceVu0CopyVector(void *, void *);
 void sceVu0CopyMatrix(Mtx *, Mtx *);

@@ -3,7 +3,6 @@
 #include "game/collision.h"
 typedef struct { Vec p; Vec d; } Seg;
 s32 Coll_CylinderVsSegment_0_0014EC00(Seg *c, Vec *v, f32 r, f32 h);
-s32 Coll_SphereVsSphere_0_0014EE10(s8 *arg0, s8 *arg1);
 s32 Coll_RayVsAabb_1_0014F0C0(void *arg0, void *arg1, void *arg2, f32 fparg0);
 s32 Coll_SphereVsTriangle_1_0014F210(Vec *out, Vec *sph, Vec *tri, Vec *n, s32 a4, s32 a5, f32 *dist);
 s32 Coll_SweptVsTriangle_1_0014F520(Vec *out, Vec *p, Vec *q, Vec *v, Vec *n, s32 i, s32 two, f32 *dist);

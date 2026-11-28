@@ -93,7 +93,6 @@ void Mdl_GetSectionPtrs_1_00171050(O *, L *);
 void Coll_QueryMapCells_0_001520E0(Tgt *, Mdl *, s32, u8, s32, s32 *, s32, Ent_MapObj_CheckActivate_0_001B1A20 *, Obj_MapObj_QueryColliders_0_001B1DF0 *, s32);
 s32 Coll_RayVsModel_1_0014FA30(H_MapColl_RayVsObjects_0_001B2180 *, s32 *, Q2 *, void *, O_MapColl_RayVsObjects_0_001B2180 *, s32);
 void memset(void *, s32, s32);
-s32 Coll_SphereVsSphere_0_0014EE10(f32 *, s8 *);
 s32 Coll_RayVsMesh_1_0014DDE0(s32 *, s8 *, s32, f32 *, s8 *, u8, u8);
 s32 Coll_CapsuleVsMesh_1_0014E230(s8 *, s8 *, s32, Vec *, Vec *, s8 *, u8, u8);
 f32 Vec_DistSq_3_0015DF20(Vec *, Vec *);

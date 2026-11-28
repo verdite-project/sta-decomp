@@ -1,7 +1,7 @@
 #include "common.h"
+#include "game/ee.h"
 
 typedef struct { s32 x0; s32 x4; } H;
-H *Credits_Alloc_1_001E4030(s32 n, s32 flush);
 void *memset(void *p, s32 c, u32 n);
 
 H *Credits_AllocNode_1_001E3FD8(s32 a)

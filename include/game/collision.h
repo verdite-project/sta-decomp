@@ -10,6 +10,7 @@ extern s16 D_00222A16[];
 extern s16 D_00222A18[];
 
 s32 Coll_SegmentVsSphere_1_0014EF40(Vec *a, Vec *b, Vec *s, f32 r);
+s32 Coll_SphereVsSphere_0_0014EE10(s8 *arg0, s8 *arg1);
 f32 Vec_DistB_3_0015DF50(Vec*, void *);
 
 #endif
