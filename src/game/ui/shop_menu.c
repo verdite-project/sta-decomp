@@ -49,46 +49,101 @@ typedef struct { u32 n; Item *items; } List;
 typedef struct { u8 pad[0x24]; List *list; } Res;
 typedef union { u32 w; s8 b[4]; } Col;
 typedef struct { u8 pad0[0x10]; u8 x10[0x18]; s32 x28; u8 x2C[4]; f32 x30; f32 x34; f32 x38; f32 x3C; } O;
-extern s32 D_00201E50;
-extern f32 D_00202360;
-extern s32 D_00202378;
-extern S D_001F3A90[] __attribute__((aligned(16)));
-extern S D_001F3AB0[] __attribute__((aligned(16)));
-extern s8 D_001FE748[];
-extern s8 D_001FE750[];
-extern s8 D_001FE758[];
-extern s8 D_001FE760[];
-extern s8 D_001FE768[];
-extern s32 D_004BABB0[];
+extern S gShopMenuData_001F3A90[] __attribute__((aligned(16)));
+extern s32 gShopMenuBss_004BABB0[];
 extern s32 D_004BABC8[];
-extern s8 D_004BABE0[];
-extern f32 D_004BABF4[];
+extern f32 gShopMenuBss_004BABF4[];
 extern f32 D_004BABF8[];
-extern f32 D_004BAC0C[];
-extern f32 D_004BAC10[];
-extern u32 D_004BAC1C[];
-extern S D_001F3A70 __attribute__((aligned(16)));
-extern char D_004BAA70[];
-extern u8 D_004BAB70[];
-extern f32 D_004BAB84[];
+extern f32 gShopMenuBss_004BAB84[];
 extern f32 D_004BAB88[];
-extern f32 D_004BAB9C[];
-extern f32 D_004BABA0[];
-extern u32 D_004BABAC[];
-extern s32 D_0020237C;
-extern S D_001F3A50[] __attribute__((aligned(16)));
-extern f32 D_0020235C;
-extern f32 D_00202364;
-extern f32 D_00202368;
-extern f32 D_0020236C;
-extern f32 D_00202370;
+extern S gShopMenuData_001F3A50[] __attribute__((aligned(16)));
 extern s8 D_001FE7D0__as_ShopProc_DrawCommand_2_001DED50[];
 extern s8 D_001FE7D8__as_ShopProc_DrawCommand_2_001DED50[];
 extern s8 D_001FE7E0__as_ShopProc_DrawCommand_2_001DED50[];
 extern s8 D_001FE7E8__as_ShopProc_DrawCommand_2_001DED50[];
 extern s8 D_001FE7F0__as_ShopProc_DrawCommand_2_001DED50[];
 extern s8 D_001FE7F8__as_ShopProc_DrawCommand_2_001DED50[];
-extern s32 D_00202358;
+#ifndef NONMATCHING
+extern s32 gShopMenuSdata_00201E50;
+extern f32 gShopMenuSbss_00202360;
+extern s32 gShopMenuSbss_00202378;
+extern S gShopMenuData_001F3AB0[] __attribute__((aligned(16)));
+extern s8 gShopMenuRodata_001FE748[];
+extern s8 gShopMenuRodata_001FE750[];
+extern s8 gShopMenuRodata_001FE758[];
+extern s8 gShopMenuRodata_001FE760[];
+extern s8 gShopMenuRodata_001FE768[];
+extern s8 gShopMenuBss_004BABE0[];
+extern f32 gShopMenuBss_004BAC0C[];
+extern f32 gShopMenuBss_004BAC10[];
+extern u32 gShopMenuBss_004BAC1C[];
+extern S gShopMenuData_001F3A70 __attribute__((aligned(16)));
+extern char gShopMenuBss_004BAA70[];
+extern u8 gShopMenuBss_004BAB70[];
+extern f32 gShopMenuBss_004BAB9C[];
+extern f32 gShopMenuBss_004BABA0[];
+extern u32 gShopMenuBss_004BABAC[];
+extern s32 gShopMenuSbss_0020237C;
+extern f32 gShopMenuSbss_0020235C;
+extern f32 gShopMenuSbss_00202364;
+extern f32 gShopMenuSbss_00202368;
+extern f32 gShopMenuSbss_0020236C;
+extern f32 gShopMenuSbss_00202370;
+extern s32 gShopMenuSbss_00202358;
+#else
+/* data twins (src/game/data/sdata.c): gShopMenuSdata_00201E50 */
+static s32 gShopMenuSdata_00201E50 = -1;
+/* data twins (src/game/data/sbss.c): gShopMenuSbss_00202360 */
+static f32 gShopMenuSbss_00202360;
+/* data twins (src/game/data/sbss.c): gShopMenuSbss_00202378 */
+static s32 gShopMenuSbss_00202378;
+/* data twins (src/game/data/map_se_stream_data.c): gShopMenuData_001F3AB0 */
+static S gShopMenuData_001F3AB0[0x1] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+/* data twins (src/game/data/shop_menu_rodata.c): gShopMenuRodata_001FE748 */
+static s8 gShopMenuRodata_001FE748[0x8] __attribute__((aligned(4))) = { 0x25, 0x33, 0x64, 0, 0, 0, 0, 0 };
+/* data twins (src/game/data/shop_menu_rodata.c): gShopMenuRodata_001FE750 */
+static s8 gShopMenuRodata_001FE750[0x8] __attribute__((aligned(4))) = { 0x2d, 0x2d, 0x2d, 0, 0, 0, 0, 0 };
+/* data twins (src/game/data/shop_menu_rodata.c): gShopMenuRodata_001FE758 */
+static s8 gShopMenuRodata_001FE758[0x8] __attribute__((aligned(4))) = { 0x2f, 0x2d, 0x2d, 0x2d, 0, 0, 0, 0 };
+/* data twins (src/game/data/shop_menu_rodata.c): gShopMenuRodata_001FE760 */
+static s8 gShopMenuRodata_001FE760[0x8] __attribute__((aligned(4))) = "/%d\000\000\000\000\000";
+/* data twins (src/game/data/shop_menu_rodata.c): gShopMenuRodata_001FE768 */
+static s8 gShopMenuRodata_001FE768[0x8] __attribute__((aligned(4))) = { 0x25, 0x33, 0x2e, 0x31, 0x66, 0, 0, 0 };
+/* data twins (src/game/data/save_system_start_bss.c): gShopMenuBss_004BABE0 */
+static s8 gShopMenuBss_004BABE0[0x14];
+/* data twins (src/game/data/save_system_start_bss.c): gShopMenuBss_004BAC0C */
+static f32 gShopMenuBss_004BAC0C[0x1];
+/* data twins (src/game/data/save_system_start_bss.c): gShopMenuBss_004BAC10 */
+static f32 gShopMenuBss_004BAC10[0x3];
+/* data twins (src/game/data/save_system_start_bss.c): gShopMenuBss_004BAC1C */
+static u32 gShopMenuBss_004BAC1C[0x1];
+/* data twins (src/game/data/map_se_stream_data.c): gShopMenuData_001F3A70 */
+static S gShopMenuData_001F3A70 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+/* data twins (src/game/data/save_system_start_bss.c): gShopMenuBss_004BAA70 */
+static char gShopMenuBss_004BAA70[0x100];
+/* data twins (src/game/data/save_system_start_bss.c): gShopMenuBss_004BAB70 */
+static u8 gShopMenuBss_004BAB70[0x14];
+/* data twins (src/game/data/save_system_start_bss.c): gShopMenuBss_004BAB9C */
+static f32 gShopMenuBss_004BAB9C[0x1];
+/* data twins (src/game/data/save_system_start_bss.c): gShopMenuBss_004BABA0 */
+static f32 gShopMenuBss_004BABA0[0x3];
+/* data twins (src/game/data/save_system_start_bss.c): gShopMenuBss_004BABAC */
+static u32 gShopMenuBss_004BABAC[0x1];
+/* data twins (src/game/data/sbss.c): gShopMenuSbss_0020237C */
+static s32 gShopMenuSbss_0020237C;
+/* data twins (src/game/data/sbss.c): gShopMenuSbss_0020235C */
+static f32 gShopMenuSbss_0020235C;
+/* data twins (src/game/data/sbss.c): gShopMenuSbss_00202364 */
+static f32 gShopMenuSbss_00202364;
+/* data twins (src/game/data/sbss.c): gShopMenuSbss_00202368 */
+static f32 gShopMenuSbss_00202368;
+/* data twins (src/game/data/sbss.c): gShopMenuSbss_0020236C */
+static f32 gShopMenuSbss_0020236C;
+/* data twins (src/game/data/sbss.c): gShopMenuSbss_00202370 */
+static f32 gShopMenuSbss_00202370;
+/* data twins (src/game/data/sbss.c): gShopMenuSbss_00202358 */
+static s32 gShopMenuSbss_00202358;
+#endif
 void Menu_DrawHelpText_1_001DD700(s32 a0, s32 a1);
 void ShopProc_DrawItemInfo_0_001DDA20(O_ShopProc_DrawItemInfo_0_001DDA20 *o, s32 kind, u32 id, s32 a3);
 void ShopProc_DrawItemStats_0_001DE2D0(O_ShopProc_DrawItemStats_0_001DE2D0 *o, s32 a1, u32 mode, s32 id);
@@ -145,9 +200,9 @@ void Menu_DrawHelpText_1_001DD700(s32 a0, s32 a1) {
     s8 *s;
     col.w = 0x80808080;
     a0 += a1;
-    if (D_00201E50 != a0) {
-        D_00201E50 = a0;
-        D_00202360 = D_002020D4;
+    if (gShopMenuSdata_00201E50 != a0) {
+        gShopMenuSdata_00201E50 = a0;
+        gShopMenuSbss_00202360 = gHudDrawSbss_002020D4;
     }
     s = Msg_GetText_2_00195B10(a0 + 0x12C);
     if (s == 0) {
@@ -159,7 +214,7 @@ void Menu_DrawHelpText_1_001DD700(s32 a0, s32 a1) {
     t.x8.a = 2;
     t.x24 = 1.0f;
     t.x20 = 0.7f;
-    t.x14 = 3.0f * (D_002020D4 - D_00202360);
+    t.x14 = 3.0f * (gHudDrawSbss_002020D4 - gShopMenuSbss_00202360);
     Text_Render_2_00188010(&t, col);
     Menu_DrawBackground_0_00187B20(1);
 }
@@ -177,9 +232,9 @@ f32 d, a, t, dx, dy;
     base = MenuLayout_GetSub_1_00189020(2);
     Menu_DrawBackground_0_00187B20(0);
     if (arg1 == -1) {
-        D_00202378 = -1;
+        gShopMenuSbss_00202378 = -1;
     } else {
-        D_00202378 = arg1;
+        gShopMenuSbss_00202378 = arg1;
     }
     for (i = 0; i < l->n; i++) {
         e = l->p[i];
@@ -217,7 +272,7 @@ void ShopProc_DrawItemInfo_0_001DDA20(O_ShopProc_DrawItemInfo_0_001DDA20 *o, s32
     E_ShopProc_DrawItemInfo_0_001DDA20 *e;
     s32 v;
 
-    t = D_001F3A90[0];
+    t = gShopMenuData_001F3A90[0];
     if (id < 300) {
         t.x = o->x30;
         t.y = o->x34;
@@ -232,7 +287,7 @@ void ShopProc_DrawItemInfo_0_001DDA20(O_ShopProc_DrawItemInfo_0_001DDA20 *o, s32
     switch (id) {
     case 300: {
         S t2 __attribute__((aligned(16)));
-        t2 = D_001F3AB0[0];
+        t2 = gShopMenuData_001F3AB0[0];
         q = &MenuLayout_GetSub_1_00189020__as_ShopProc_DrawItemInfo_0_001DDA20(0)->q54[kind + 15];
         col.w = 0x30808080;
         t2.x = o->x38;
@@ -254,11 +309,11 @@ void ShopProc_DrawItemInfo_0_001DDA20(O_ShopProc_DrawItemInfo_0_001DDA20 *o, s32
     case 0:
         switch (id) {
         case 10001:
-            D_004BAC0C[0] = o->x38;
-            D_004BAC10[0] = o->x3C;
-            D_004BABF8[0] = D_004BABF4[0] = 1.25f;
-            D_004BAC1C[0] = 0x80FFFFFF;
-            Ui_DrawWindow_0_00183650(D_004BABE0);
+            gShopMenuBss_004BAC0C[0] = o->x38;
+            gShopMenuBss_004BAC10[0] = o->x3C;
+            D_004BABF8[0] = gShopMenuBss_004BABF4[0] = 1.25f;
+            gShopMenuBss_004BAC1C[0] = 0x80FFFFFF;
+            Ui_DrawWindow_0_00183650(gShopMenuBss_004BABE0);
             break;
         }
         break;
@@ -268,14 +323,14 @@ void ShopProc_DrawItemInfo_0_001DDA20(O_ShopProc_DrawItemInfo_0_001DDA20 *o, s32
             if (n > 0) {
                 v = 0;
                 flag = 0;
-                if (n != D_004BABB0[kind]) {
+                if (n != gShopMenuBss_004BABB0[kind]) {
                     D_004BABC8[kind] = 0;
-                    D_004BABB0[kind] = n;
+                    gShopMenuBss_004BABB0[kind] = n;
                 }
                 if (D_004BABC8[kind] < 0x80)
                     D_004BABC8[kind] += 0x10;
                 col.w = 0x80808080;
-                switch (D_00202378) {
+                switch (gShopMenuSbss_00202378) {
                 case 0:
                     break;
                 case 1:
@@ -292,15 +347,15 @@ void ShopProc_DrawItemInfo_0_001DDA20(O_ShopProc_DrawItemInfo_0_001DDA20 *o, s32
                     flag = 0;
                     break;
                 }
-                sprintf(buf, D_001FE748, v);
+                sprintf(buf, gShopMenuRodata_001FE748, v);
                 if (Item_GetCategory_0_001AFBD0(n) == 0) {
-                    strcpy(buf, D_001FE750);
+                    strcpy(buf, gShopMenuRodata_001FE750);
                 } else if (Item_GetCategory_0_001AFBD0(n) == 1) {
                     e = &Item_GetTable_1_001AFC90()[(s16)n];
                     switch (e->x20) {
                     case 5:
                     case 6:
-                        strcpy(buf, D_001FE750);
+                        strcpy(buf, gShopMenuRodata_001FE750);
                         break;
                     default:
                         Item_GetDurability_0_001848A0(n);
@@ -333,9 +388,9 @@ void ShopProc_DrawItemInfo_0_001DDA20(O_ShopProc_DrawItemInfo_0_001DDA20 *o, s32
                 }
                 col.w = 0x80808080;
                 if (v == 0)
-                    strcpy(buf, D_001FE758);
+                    strcpy(buf, gShopMenuRodata_001FE758);
                 else
-                    sprintf(buf, D_001FE760, v);
+                    sprintf(buf, gShopMenuRodata_001FE760, v);
                 Text_Draw_2_001875C0(buf, 0, col, o->x38, o->x3C, 0.8f);
             }
             break;
@@ -346,14 +401,14 @@ void ShopProc_DrawItemInfo_0_001DDA20(O_ShopProc_DrawItemInfo_0_001DDA20 *o, s32
         case 0x12E:
             if ((s16)n > 0) {
                 E_ShopProc_DrawItemInfo_0_001DDA20 *e2 = &Item_GetTable_1_001AFC90()[a3];
-                if (n != D_004BABB0[kind]) {
+                if (n != gShopMenuBss_004BABB0[kind]) {
                     D_004BABC8[kind] = 0;
-                    D_004BABB0[kind] = n;
+                    gShopMenuBss_004BABB0[kind] = n;
                 }
                 if (D_004BABC8[kind] < 0x80)
                     D_004BABC8[kind] += 0x10;
                 col.w = 0x80808080;
-                sprintf(buf, D_001FE768, (double)(u2f_ShopProc_DrawItemInfo_0_001DDA20(e2->x4) / 10.0f));
+                sprintf(buf, gShopMenuRodata_001FE768, (double)(u2f_ShopProc_DrawItemInfo_0_001DDA20(e2->x4) / 10.0f));
                 Text_Draw_2_001875C0(buf, 2, col, ((volatile O_ShopProc_DrawItemInfo_0_001DDA20 *)o)->x38, o->x3C, 0.9f);
             }
             break;
@@ -417,10 +472,10 @@ void ShopProc_DrawItemStats_0_001DE2D0(O_ShopProc_DrawItemStats_0_001DE2D0 *o, s
     Col_ShopProc_DrawItemStats_0_001DE2D0 cE;
     Col_ShopProc_DrawItemStats_0_001DE2D0 cD;
     u32 s;
-    buf = D_001F3A70;
+    buf = gShopMenuData_001F3A70;
     c0.w = 0x80808080;
     if ((u32)(mode - 1000) <= 1 || mode == 1002) {
-        switch (D_00202378) {
+        switch (gShopMenuSbss_00202378) {
         case 2: case 3: case 4: case 5: case 6:
             return;
         }
@@ -465,7 +520,7 @@ void ShopProc_DrawItemStats_0_001DE2D0(O_ShopProc_DrawItemStats_0_001DE2D0 *o, s
             s32 m;
             Item_GetDurability_0_001848A0(id);
             m = 0;
-            switch (D_00202378) {
+            switch (gShopMenuSbss_00202378) {
             case 1:
             case 4:
                 f = u2f_ShopProc_DrawItemStats_0_001DE2D0(*Inventory_GetSlot_1_001A97D0__as_ShopProc_DrawItemStats_0_001DE2D0(id));
@@ -486,19 +541,19 @@ void ShopProc_DrawItemStats_0_001DE2D0(O_ShopProc_DrawItemStats_0_001DE2D0 *o, s
             } else {
                 cD.w = 0x80808080;
             }
-            sprintf__as_ShopProc_DrawItemStats_0_001DE2D0(D_004BAA70, D_001FE748, (s32)f);
+            sprintf__as_ShopProc_DrawItemStats_0_001DE2D0(gShopMenuBss_004BAA70, gShopMenuRodata_001FE748, (s32)f);
             if (Item_GetCategory_0_001AFBD0(id) == 0) {
-                strcpy(D_004BAA70, D_001FE750);
+                strcpy(gShopMenuBss_004BAA70, gShopMenuRodata_001FE750);
             } else if (Item_GetCategory_0_001AFBD0(id) == 1) {
                 E_ShopProc_DrawItemStats_0_001DE2D0 *e = &Item_GetTable_1_001AFC90()[id];
                 switch (e->x20) {
                 case 5:
                 case 6:
-                    strcpy(D_004BAA70, D_001FE750);
+                    strcpy(gShopMenuBss_004BAA70, gShopMenuRodata_001FE750);
                     break;
                 }
             }
-            Text_Draw_2_001875C0__as_ShopProc_DrawItemStats_0_001DE2D0(D_004BAA70, 0, cD, ((volatile O_ShopProc_DrawItemStats_0_001DE2D0 *)o)->x38, o->x3C, 0.9f);
+            Text_Draw_2_001875C0__as_ShopProc_DrawItemStats_0_001DE2D0(gShopMenuBss_004BAA70, 0, cD, ((volatile O_ShopProc_DrawItemStats_0_001DE2D0 *)o)->x38, o->x3C, 0.9f);
         }
         break;
     case 0x25E:
@@ -522,11 +577,11 @@ void ShopProc_DrawItemStats_0_001DE2D0(O_ShopProc_DrawItemStats_0_001DE2D0 *o, s
                 }
                 cE.w = 0x80808080;
                 if (v == 0) {
-                    strcpy(D_004BAA70, D_001FE758);
+                    strcpy(gShopMenuBss_004BAA70, gShopMenuRodata_001FE758);
                 } else {
-                    sprintf__as_ShopProc_DrawItemStats_0_001DE2D0(D_004BAA70, D_001FE790, v);
+                    sprintf__as_ShopProc_DrawItemStats_0_001DE2D0(gShopMenuBss_004BAA70, D_001FE790, v);
                 }
-                Text_Draw_2_001875C0__as_ShopProc_DrawItemStats_0_001DE2D0(D_004BAA70, 0, cE, ((volatile O_ShopProc_DrawItemStats_0_001DE2D0 *)o)->x38, o->x3C, 0.9f);
+                Text_Draw_2_001875C0__as_ShopProc_DrawItemStats_0_001DE2D0(gShopMenuBss_004BAA70, 0, cE, ((volatile O_ShopProc_DrawItemStats_0_001DE2D0 *)o)->x38, o->x3C, 0.9f);
                 return;
             }
         }
@@ -553,18 +608,18 @@ void ShopProc_DrawItemStats_0_001DE2D0(O_ShopProc_DrawItemStats_0_001DE2D0 *o, s
         if (id > 0) {
             E_ShopProc_DrawItemStats_0_001DE2D0 *e = &Item_GetTable_1_001AFC90()[id];
             c1.w = 0x80808080;
-            sprintf__as_ShopProc_DrawItemStats_0_001DE2D0(D_004BAA70, D_001FE768, fptodp(u2f_ShopProc_DrawItemStats_0_001DE2D0(e->x4) / 10.0f));
-            Text_Draw_2_001875C0__as_ShopProc_DrawItemStats_0_001DE2D0(D_004BAA70, 0, c1, ((volatile O_ShopProc_DrawItemStats_0_001DE2D0 *)o)->x38, o->x3C, 0.9f);
+            sprintf__as_ShopProc_DrawItemStats_0_001DE2D0(gShopMenuBss_004BAA70, gShopMenuRodata_001FE768, fptodp(u2f_ShopProc_DrawItemStats_0_001DE2D0(e->x4) / 10.0f));
+            Text_Draw_2_001875C0__as_ShopProc_DrawItemStats_0_001DE2D0(gShopMenuBss_004BAA70, 0, c1, ((volatile O_ShopProc_DrawItemStats_0_001DE2D0 *)o)->x38, o->x3C, 0.9f);
             return;
         }
         break;
     case 0x2711:
-        D_004BAB9C[0] = o->x38;
-        D_004BABA0[0] = o->x3C;
-        D_004BAB84[0] = 1.0f;
-        D_004BABAC[0] = 0x80FFFFFF;
+        gShopMenuBss_004BAB9C[0] = o->x38;
+        gShopMenuBss_004BABA0[0] = o->x3C;
+        gShopMenuBss_004BAB84[0] = 1.0f;
+        gShopMenuBss_004BABAC[0] = 0x80FFFFFF;
         D_004BAB88[0] = 1.0f;
-        Ui_DrawWindow_0_00183650(D_004BAB70);
+        Ui_DrawWindow_0_00183650(gShopMenuBss_004BAB70);
         return;
     case 0x3E8:
         buf.x = o->x30;
@@ -582,15 +637,15 @@ void ShopProc_DrawItemStats_0_001DE2D0(O_ShopProc_DrawItemStats_0_001DE2D0 *o, s
             u8 *r = Inventory_GetSlot_1_001A97D0__as_ShopProc_DrawItemStats_0_001DE2D0(id);
             cA.w = 0x80808080;
             if (r[5] == 2) {
-                sprintf__as_ShopProc_DrawItemStats_0_001DE2D0(D_004BAA70, D_001FE7A0, 5);
+                sprintf__as_ShopProc_DrawItemStats_0_001DE2D0(gShopMenuBss_004BAA70, D_001FE7A0, 5);
             } else {
-                sprintf__as_ShopProc_DrawItemStats_0_001DE2D0(D_004BAA70, D_001FE7A0, e->x6);
+                sprintf__as_ShopProc_DrawItemStats_0_001DE2D0(gShopMenuBss_004BAA70, D_001FE7A0, e->x6);
             }
-            Text_Draw_2_001875C0__as_ShopProc_DrawItemStats_0_001DE2D0(D_004BAA70, 2, cA, ((volatile O_ShopProc_DrawItemStats_0_001DE2D0 *)o)->x38, o->x3C, 0.9f);
+            Text_Draw_2_001875C0__as_ShopProc_DrawItemStats_0_001DE2D0(gShopMenuBss_004BAA70, 2, cA, ((volatile O_ShopProc_DrawItemStats_0_001DE2D0 *)o)->x38, o->x3C, 0.9f);
             return;
         }
-        sprintf__as_ShopProc_DrawItemStats_0_001DE2D0(D_004BAA70, D_001FE750);
-        Text_Draw_2_001875C0__as_ShopProc_DrawItemStats_0_001DE2D0(D_004BAA70, 2, c0, ((volatile O_ShopProc_DrawItemStats_0_001DE2D0 *)o)->x38, o->x3C, 0.9f);
+        sprintf__as_ShopProc_DrawItemStats_0_001DE2D0(gShopMenuBss_004BAA70, gShopMenuRodata_001FE750);
+        Text_Draw_2_001875C0__as_ShopProc_DrawItemStats_0_001DE2D0(gShopMenuBss_004BAA70, 2, c0, ((volatile O_ShopProc_DrawItemStats_0_001DE2D0 *)o)->x38, o->x3C, 0.9f);
         break;
     }
 }
@@ -608,8 +663,8 @@ f32 d, a, t, dx, dy;
     l = MenuLayout_Get_1_00189050__as_ShopMenu_DrawRingC_0_001DEB00(6)->l;
     base = MenuLayout_GetSub_1_00189020(6);
     Menu_DrawBackground_0_00187B20(0);
-    D_00202378 = arg1;
-    D_0020237C = arg;
+    gShopMenuSbss_00202378 = arg1;
+    gShopMenuSbss_0020237C = arg;
     for (i = 0; i < l->n; i++) {
         e = l->p[i];
         {
@@ -658,8 +713,8 @@ void ShopProc_DrawCommand_2_001DED50(O_ShopProc_DrawCommand_2_001DED50 *o, s32 s
     E_ShopProc_DrawCommand_2_001DED50 *e;
     s32 k;
 
-    t = D_001F3A50[0];
-    D_0020235C += 0.1f;
+    t = gShopMenuData_001F3A50[0];
+    gShopMenuSbss_0020235C += 0.1f;
     if (id < 2000) {
         t.x = o->x30;
         t.y = o->x34;
@@ -668,7 +723,7 @@ void ShopProc_DrawCommand_2_001DED50(O_ShopProc_DrawCommand_2_001DED50 *o, s32 s
             o->c.b[0xD - 0xC] = 0x40;
             o->c.b[0xE - 0xC] = 0x40;
         }
-        switch (D_00202378) {
+        switch (gShopMenuSbss_00202378) {
         case 0:
         case 1:
             break;
@@ -695,22 +750,22 @@ void ShopProc_DrawCommand_2_001DED50(O_ShopProc_DrawCommand_2_001DED50 *o, s32 s
         Ui_DrawSprite_2_00181680(o->x28, (s8 *)o, o->x10, &o->c, &t, id);
     }
     if (n == id - 1500) {
-        D_00202368 = 32.0f + o->x38 + 75.0f * sinf(0.1f * D_0020235C);
-        D_00202364 = 32.0f + o->x3C + 75.0f * cosf(0.1f * D_0020235C);
+        gShopMenuSbss_00202368 = 32.0f + o->x38 + 75.0f * sinf(0.1f * gShopMenuSbss_0020235C);
+        gShopMenuSbss_00202364 = 32.0f + o->x3C + 75.0f * cosf(0.1f * gShopMenuSbss_0020235C);
         e = MenuLayout_GetSub_1_00189020__as_ShopProc_DrawCommand_2_001DED50(6)->x34;
         t.x = o->x38;
         t.y = o->x3C;
         t.m[3] = 1.0f;
         t.m[0] = 1.0f;
-        Color_Pulse_1_00187960(D_002020D4, &o->c);
+        Color_Pulse_1_00187960(gHudDrawSbss_002020D4, &o->c);
         Ui_DrawSprite_2_00181680(e->x4, e->x10, e->x20, &o->c, &t, id);
     }
     if (n == id - 500) {
-        D_00202370 = 32.0f + o->x38 + 75.0f * sinf(3.14f + 0.1f * D_0020235C);
-        D_0020236C = 32.0f + o->x3C + 75.0f * cosf(3.14f + 0.1f * D_0020235C);
+        gShopMenuSbss_00202370 = 32.0f + o->x38 + 75.0f * sinf(3.14f + 0.1f * gShopMenuSbss_0020235C);
+        gShopMenuSbss_0020236C = 32.0f + o->x3C + 75.0f * cosf(3.14f + 0.1f * gShopMenuSbss_0020235C);
         if (n != 4) {
-            D_00202368 = 32.0f + o->x38 + 75.0f * sinf(0.1f * D_0020235C);
-            D_00202364 = 32.0f + o->x3C + 75.0f * cosf(0.1f * D_0020235C);
+            gShopMenuSbss_00202368 = 32.0f + o->x38 + 75.0f * sinf(0.1f * gShopMenuSbss_0020235C);
+            gShopMenuSbss_00202364 = 32.0f + o->x3C + 75.0f * cosf(0.1f * gShopMenuSbss_0020235C);
         }
         k = 0;
         switch (n) {
@@ -734,35 +789,35 @@ void ShopProc_DrawCommand_2_001DED50(O_ShopProc_DrawCommand_2_001DED50 *o, s32 s
         t.y = o->x3C;
         t.m[3] = 1.0f;
         t.m[0] = 1.0f;
-        Color_Pulse_1_00187960(D_002020D4, &o->c);
+        Color_Pulse_1_00187960(gHudDrawSbss_002020D4, &o->c);
         Ui_DrawSprite_2_00181680(e->x4, e->x10, e->x20, &o->c, &t, id);
     }
     if (id == 5000) {
         c1.w = 0x80808080;
         c1.b[3] = o->c.b[3] * 2;
-        switch (D_00202378) {
+        switch (gShopMenuSbss_00202378) {
         case 0:
             break;
         case 1:
-            strcpy(D_004BAA70, D_001FE7D0__as_ShopProc_DrawCommand_2_001DED50);
+            strcpy(gShopMenuBss_004BAA70, D_001FE7D0__as_ShopProc_DrawCommand_2_001DED50);
             break;
         case 2:
-            strcpy(D_004BAA70, D_001FE7D8__as_ShopProc_DrawCommand_2_001DED50);
+            strcpy(gShopMenuBss_004BAA70, D_001FE7D8__as_ShopProc_DrawCommand_2_001DED50);
             break;
         case 3:
-            strcpy(D_004BAA70, D_001FE7E0__as_ShopProc_DrawCommand_2_001DED50);
+            strcpy(gShopMenuBss_004BAA70, D_001FE7E0__as_ShopProc_DrawCommand_2_001DED50);
             break;
         case 4:
-            strcpy(D_004BAA70, D_001FE7E8__as_ShopProc_DrawCommand_2_001DED50);
+            strcpy(gShopMenuBss_004BAA70, D_001FE7E8__as_ShopProc_DrawCommand_2_001DED50);
             break;
         case 5:
-            strcpy(D_004BAA70, D_001FE7F0__as_ShopProc_DrawCommand_2_001DED50);
+            strcpy(gShopMenuBss_004BAA70, D_001FE7F0__as_ShopProc_DrawCommand_2_001DED50);
             break;
         case 6:
-            strcpy(D_004BAA70, D_001FE7F8__as_ShopProc_DrawCommand_2_001DED50);
+            strcpy(gShopMenuBss_004BAA70, D_001FE7F8__as_ShopProc_DrawCommand_2_001DED50);
             break;
         }
-        Text_Draw_2_001875C0__as_ShopProc_DrawCommand_2_001DED50(o->x38, o->x3C, 0.9f, D_004BAA70, 0, c1);
+        Text_Draw_2_001875C0__as_ShopProc_DrawCommand_2_001DED50(o->x38, o->x3C, 0.9f, gShopMenuBss_004BAA70, 0, c1);
     }
     if (sel == 100) {
         c2.w = 0x80808080;
@@ -771,8 +826,8 @@ void ShopProc_DrawCommand_2_001DED50(O_ShopProc_DrawCommand_2_001DED50 *o, s32 s
             Text_Draw_2_001875C0__as_ShopProc_DrawCommand_2_001DED50(o->x38, o->x3C, 0.9f, D_001FE798, 0, c2);
         }
         if (id == 0x65) {
-            sprintf__as_ShopProc_DrawCommand_2_001DED50(D_004BAA70, D_001FE7A0, PlayerData_GetGold_0_001CBA30());
-            Text_Draw_2_001875C0__as_ShopProc_DrawCommand_2_001DED50(o->x38, o->x3C, 0.9f, D_004BAA70, 2, c2);
+            sprintf__as_ShopProc_DrawCommand_2_001DED50(gShopMenuBss_004BAA70, D_001FE7A0, PlayerData_GetGold_0_001CBA30());
+            Text_Draw_2_001875C0__as_ShopProc_DrawCommand_2_001DED50(o->x38, o->x3C, 0.9f, gShopMenuBss_004BAA70, 2, c2);
         }
     }
 }
@@ -793,18 +848,18 @@ void Menu_DrawItemDesc_1_001DF360(s32 on, s32 id) {
     t.xE = 100;
     col.w = 0x80808080;
     if (on) {
-        D_00202358 += 0x10;
-        if (D_00202358 > 0x80) D_00202358 = 0x80;
+        gShopMenuSbss_00202358 += 0x10;
+        if (gShopMenuSbss_00202358 > 0x80) gShopMenuSbss_00202358 = 0x80;
     } else {
-        D_00202358 = 0;
+        gShopMenuSbss_00202358 = 0;
     }
-    col.c.a = D_00202358;
+    col.c.a = gShopMenuSbss_00202358;
     Text_Render_2_00188010(&t, col);
 }
 
 /* Menu_ResetDescScroll_0_001DF460 */
 void Menu_ResetDescScroll_0_001DF460(void) {
-    D_00202358 = 0;
+    gShopMenuSbss_00202358 = 0;
 }
 
 /* Menu_DrawItemFrame_0_001DF470 */
@@ -858,3 +913,15 @@ void MenuProc_DrawLabel_0_001DF580(O *o, s32 a1, u32 mode, Col a3) {
 #undef Ui_DrawSprite_2_00181680
 #undef Text_Draw_2_001875C0
 #undef Msg_GetText_2_00195B10
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/save_system_start_bss.c): gShopMenuBss_004BAB84, gShopMenuBss_004BABB0, gShopMenuBss_004BABF4 */
+f32 gShopMenuBss_004BAB84[0x6] __attribute__((aligned(4)));
+s32 gShopMenuBss_004BABB0[0xc];
+f32 gShopMenuBss_004BABF4[0x6] __attribute__((aligned(4)));
+/* data group (src/game/data/map_se_stream_data.c): D_001F3A90__grp: gShopMenuData_001F3A90@0x0 */
+f32 D_001F3A90__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+/* data group (src/game/data/map_se_stream_data.c): gShopMenuData_001F3A50__grp: gShopMenuData_001F3A50@0x0, gShopMenuData_001F3A60@0x10 */
+unsigned int gShopMenuData_001F3A50__grp[0x8] __attribute__((aligned(16))) = { 0x3f800000, 0x0, 0x0, 0x3f800000, 0x0, 0x0, 0x0, 0x0 };
+#endif

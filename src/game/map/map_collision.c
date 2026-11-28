@@ -69,7 +69,7 @@ typedef struct {
     Flags8 x1D8;
 } O_MapColl_SphereCast_0_001B2B90;
 typedef struct { u8 b0:1; u8 b1:1; u8 b2:6; } BF_MapColl_RayCastAll_0_001B2F30;
-extern u16 D_00317238[];
+extern u16 gMapCommandBss_00317238[];
 extern BF_MapColl_RayCast_0_001B23E0 D_00222A52__as_MapColl_RayCast_0_001B23E0[];
 s32 MapObj_CheckActivate_0_001B1A20(Obj_MapObj_CheckActivate_0_001B1A20 *o, s32 idx, s32 a2);
 s32 MapObj_GetSection_0_001B1CB0(s32 arg0, void *arg1, s32 *arg2);
@@ -135,7 +135,7 @@ s32 MapObj_CheckActivate_0_001B1A20(Obj_MapObj_CheckActivate_0_001B1A20 *o, s32 
     e = &o->e80[idx];
     k = c->v % 100;
     if (k != 0) {
-    s = D_002022E4->unk518 + 0x180;
+    s = gPlayerSbss_002022E4->unk518 + 0x180;
     sceVu0CopyVector(&p, s + 0x40);
     t = 3.1415927f + (*(H **)(s + 0x18))->x24;
     yaw = 180.0f * ((t - 6.2831855f * (s32)(0.15915494f * t)) + (t < 0.0f ? 6.2831855f : 0.0f) - 3.1415927f) / 3.1415927f;
@@ -143,7 +143,7 @@ s32 MapObj_CheckActivate_0_001B1A20(Obj_MapObj_CheckActivate_0_001B1A20 *o, s32 
     sceVu0SubVector(&q, &m[3], &p);
     { f32 d = sqrtf(sceVu0InnerProduct(&q, &q)); q.w = d; } a = 180.0f * atan2f(-q.x, -q.z) / 3.1415927f;
     b = 180.0f * atan2f(m[2].x, m[2].z) / 3.1415927f;
-    fl = (D_00317238[0] & 0x2000) != 0;
+    fl = (gMapCommandBss_00317238[0] & 0x2000) != 0;
     r = send(&msg, a2, k, o->id, idx, &q, yaw, b, a, fl);
     } else {
         r = 0;

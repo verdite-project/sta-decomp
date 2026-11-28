@@ -10,7 +10,7 @@ typedef struct { u8 pad[0x18]; P *p; } Sub_Actor_BuildRotMatrix_0_00146600;
 typedef struct { u8 pad[0x518]; u8 *x518; } A_Actor_BuildRotMatrix_0_00146600;
 typedef struct { u8 pad[0x1A8]; Hdr *x1A8; } Sub_Actor_GetBone_0_001468F0;
 typedef struct { u8 pad[0x518]; Sub_Actor_GetBone_0_001468F0 *x518; } A_Actor_GetBone_0_001468F0;
-extern Mtx D_001F2170;
+extern Mtx gMatrixFromData_001F2170;
 s32 Actor_GetBoneWorldMatrix_0_001464A0(A_Actor_GetBoneWorldMatrix_0_001464A0 *a, u8 idx, Mtx *out);
 void Actor_GetDirNormalized_0_00146570(void *a, f32 *v);
 void Actor_GetDir_1_001465C0(void *a, f32 *v);
@@ -34,7 +34,7 @@ s32 Actor_GetBoneWorldMatrix_0_001464A0(A_Actor_GetBoneWorldMatrix_0_001464A0 *a
     Hdr *h;
     Bone *b;
     h = a->x518->x1A8;
-    b = &((Bone *)((u8 *)((s32)h + 0x40) + D_00201F2C * (h->h6 * 0x140 + 0x200) + 0xC0))[idx + 1];
+    b = &((Bone *)((u8 *)((s32)h + 0x40) + gSfxAllSbss_00201F2C * (h->h6 * 0x140 + 0x200) + 0xC0))[idx + 1];
     if (b != 0) {
         sceVu0CopyVector(&v, &b->m.m[3]);
         Mtx_AxisAngle_2_0015EBB0(3.1415927f, &m, &b->m.m[1]);
@@ -87,12 +87,12 @@ void Actor_BuildRotMatrix_0_00146600(A_Actor_BuildRotMatrix_0_00146600 *a, Mtx *
     Sub_Actor_BuildRotMatrix_0_00146600 *s;
     if (a != NULL) {
         s = (Sub_Actor_BuildRotMatrix_0_00146600 *)(a->x518 + 0x180);
-        sceVu0RotMatrixX(WRAP(WRAP(s->p->x20)), m, &D_001F2170);
+        sceVu0RotMatrixX(WRAP(WRAP(s->p->x20)), m, &gMatrixFromData_001F2170);
         sceVu0RotMatrixY(WRAP(WRAP(3.1415927f + s->p->x24)), m, m);
         sceVu0CopyVector(&m->m[3], s->p);
         m->m[3].w = 1.0f;
     } else {
-        sceVu0CopyMatrix(m, &D_001F2170);
+        sceVu0CopyMatrix(m, &gMatrixFromData_001F2170);
     }
 }
 #undef sceVu0CopyVector
@@ -101,5 +101,5 @@ void Actor_BuildRotMatrix_0_00146600(A_Actor_BuildRotMatrix_0_00146600 *a, Mtx *
 Bone *Actor_GetBone_0_001468F0(A_Actor_GetBone_0_001468F0 *a, u8 idx) {
     Hdr *h;
     h = a->x518->x1A8;
-    return &((Bone *)((u8 *)((s32)h + 0x40) + D_00201F2C * (h->h6 * 0x140 + 0x200) + 0xC0))[idx + 1];
+    return &((Bone *)((u8 *)((s32)h + 0x40) + gSfxAllSbss_00201F2C * (h->h6 * 0x140 + 0x200) + 0xC0))[idx + 1];
 }

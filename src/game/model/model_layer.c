@@ -22,12 +22,25 @@ typedef struct {
     u8 pad8[8];
     L x10;
 } O;
-extern s32 D_00201FF8;
-extern s32 D_00201FFC;
-extern s32 D_00202000;
-extern s32 D_00202004;
-extern u8 D_002F1840[];
-extern s32 D_00201FF4;
+extern u8 gGameMainBss_002F1840[];
+#ifndef NONMATCHING
+extern s32 gModelLayerSbss_00201FF8;
+extern s32 gModelLayerSbss_00201FFC;
+extern s32 gModelLayerSbss_00202000;
+extern s32 gModelLayerSbss_00202004;
+extern s32 gModelLayerSbss_00201FF4;
+#else
+/* data twins (src/game/data/sbss.c): gModelLayerSbss_00201FF8 */
+static s32 gModelLayerSbss_00201FF8;
+/* data twins (src/game/data/sbss.c): gModelLayerSbss_00201FFC */
+static s32 gModelLayerSbss_00201FFC;
+/* data twins (src/game/data/sbss.c): gModelLayerSbss_00202000 */
+static s32 gModelLayerSbss_00202000;
+/* data twins (src/game/data/sbss.c): gModelLayerSbss_00202004 */
+static s32 gModelLayerSbss_00202004;
+/* data twins (src/game/data/sbss.c): gModelLayerSbss_00201FF4 */
+static s32 gModelLayerSbss_00201FF4;
+#endif
 void Mdl_SetLayerTex_0_0016B2D0(s32 a, P_Mdl_SetLayerTex_0_0016B2D0 p, s32 base, s32 n);
 s32 Mdl_SetLayerForMesh_0_0016B360(H_Mdl_SetLayerForMesh_0_0016B360 *h, F f, s32 a2);
 s32 Mdl_SetLayerSimple_0_0016B480(P_Mdl_SetLayerSimple_0_0016B480 p, s32 b);
@@ -56,14 +69,14 @@ int GsPkt_EndLayer_1_00155900__as_Mdl_FlushLayer_0_0016B280();
 int GsPkt_SetLayerTop_0_001548F0__as_Mdl_FlushLayer_0_0016B280();
 
 void Mdl_FlushLayer_0_0016B280(void) {
-    if (D_00201FF8 != 0) {
+    if (gModelLayerSbss_00201FF8 != 0) {
         GsPkt_CloseChain_1_001549D0();
         GsPkt_EndLayer_1_00155900();
         GsPkt_SetLayerTop_0_001548F0(0);
-        D_00201FF8 = 0;
+        gModelLayerSbss_00201FF8 = 0;
     }
-    D_00201FFC = 0;
-    D_00202000 = 0;
+    gModelLayerSbss_00201FFC = 0;
+    gModelLayerSbss_00202000 = 0;
 }
 #undef GsPkt_CloseChain_1_001549D0
 #undef GsPkt_EndLayer_1_00155900
@@ -72,15 +85,15 @@ void Mdl_FlushLayer_0_0016B280(void) {
 /* Mdl_SetLayerTex_0_0016B2D0 */
 void Mdl_SetLayerTex_0_0016B2D0(s32 a, P_Mdl_SetLayerTex_0_0016B2D0 p, s32 base, s32 n) {
     s32 v = p.lo + base;
-    if (D_00201FFC != v || D_00202004 != n + 8 || D_00202000 != 0) {
-        D_00201FFC = v;
+    if (gModelLayerSbss_00201FFC != v || gModelLayerSbss_00202004 != n + 8 || gModelLayerSbss_00202000 != 0) {
+        gModelLayerSbss_00201FFC = v;
         GsPkt_CloseChain_1_001549D0();
         GsPkt_EndLayer_1_00155900();
-        GsPkt_SetLayer_1_00154700(D_00201FFC, n);
-        D_00201FF8 = 1;
+        GsPkt_SetLayer_1_00154700(gModelLayerSbss_00201FFC, n);
+        gModelLayerSbss_00201FF8 = 1;
     }
-    D_00202004 = n + 8;
-    D_00202000 = 0;
+    gModelLayerSbss_00202004 = n + 8;
+    gModelLayerSbss_00202000 = 0;
 }
 
 /* Mdl_SetLayerForMesh_0_0016B360 */
@@ -99,7 +112,7 @@ s32 Mdl_SetLayerForMesh_0_0016B360(H_Mdl_SetLayerForMesh_0_0016B360 *h, F f, s32
     R *r;
 
     if (f.f.b4) {
-        d = D_00201F2C;
+        d = gSfxAllSbss_00201F2C;
         if (h == NULL || (m = h->m) == NULL) {
             r = NULL;
         } else {
@@ -112,16 +125,16 @@ s32 Mdl_SetLayerForMesh_0_0016B360(H_Mdl_SetLayerForMesh_0_0016B360 *h, F f, s32
     g = f;
     k = (g.f.lo) + a2;
     ret = 0;
-    if (D_00201FFC != k || D_00202004 != 0 || D_00202000 != 0) {
-        D_00201FFC = k;
+    if (gModelLayerSbss_00201FFC != k || gModelLayerSbss_00202004 != 0 || gModelLayerSbss_00202000 != 0) {
+        gModelLayerSbss_00201FFC = k;
         GsPkt_CloseChain_1_001549D0();
         GsPkt_EndLayer_1_00155900();
-        GsPkt_SetLayerTop_0_001548F0(D_00201FFC);
+        GsPkt_SetLayerTop_0_001548F0(gModelLayerSbss_00201FFC);
         ret = 1;
-        D_00201FF8 = 1;
+        gModelLayerSbss_00201FF8 = 1;
     }
-    D_00202000 = 0;
-    D_00202004 = 0;
+    gModelLayerSbss_00202000 = 0;
+    gModelLayerSbss_00202004 = 0;
     return ret;
 }
 #undef sceVu0AddVector
@@ -133,16 +146,16 @@ void GsPkt_CloseChain_1_001549D0__as_Mdl_SetLayerSimple_0_0016B480(s32);
 s32 Mdl_SetLayerSimple_0_0016B480(P_Mdl_SetLayerSimple_0_0016B480 p, s32 b) {
     s32 t = p.lo + b;
     s32 r = 0;
-    if (D_00201FFC != t || D_00202004 != 0 || D_00202000 != 0) {
-        D_00201FFC = t;
+    if (gModelLayerSbss_00201FFC != t || gModelLayerSbss_00202004 != 0 || gModelLayerSbss_00202000 != 0) {
+        gModelLayerSbss_00201FFC = t;
         GsPkt_CloseChain_1_001549D0(t);
         GsPkt_EndLayer_1_00155900();
-        GsPkt_SetLayerTop_0_001548F0(D_00201FFC);
+        GsPkt_SetLayerTop_0_001548F0(gModelLayerSbss_00201FFC);
         r = 1;
-        D_00201FF8 = r;
+        gModelLayerSbss_00201FF8 = r;
     }
-    D_00202000 = 0;
-    D_00202004 = 0;
+    gModelLayerSbss_00202000 = 0;
+    gModelLayerSbss_00202004 = 0;
     return r;
 }
 #undef GsPkt_CloseChain_1_001549D0
@@ -157,16 +170,16 @@ s32 Mdl_SetLayerForBounds_0_0016B500(void *a0, P_Mdl_SetLayerForBounds_0_0016B50
     sceVu0CopyVector(&v, a0);
     w = &v.w;
     *w = 1.0f;
-    sceVu0ApplyMatrix(&v, D_002F1840, &v);
+    sceVu0ApplyMatrix(&v, gGameMainBss_002F1840, &v);
     if (*w < 0.0f) *w = 0.0f;
     if (!(*w <= 32000.0f)) *w = 32000.0f;
     k = 511.0f - 512.0f * *w / 32000.0f;
-    D_00201FFC = n;
+    gModelLayerSbss_00201FFC = n;
     GsPkt_CloseChain_1_001549D0();
     GsPkt_EndLayer_1_00155900();
-    GsPkt_SetLayerB_0_00154610(D_00201FFC, k);
-    D_00201FF8 = 1;
-    D_00202000 = 1;
+    GsPkt_SetLayerB_0_00154610(gModelLayerSbss_00201FFC, k);
+    gModelLayerSbss_00201FF8 = 1;
+    gModelLayerSbss_00202000 = 1;
     return 1;
 }
 
@@ -218,8 +231,8 @@ void Mdl_DecodeVertsScaled_0_0016B730(Vec *out, s32 mode, u16 *hdr, u16 *idx, vo
     Vec *o;
     s32 m;
     u16 bits = hdr[3];
-    if (D_00201FF4 != bits) {
-        D_00201FF4 = bits;
+    if (gModelLayerSbss_00201FF4 != bits) {
+        gModelLayerSbss_00201FF4 = bits;
     }
     for (i = 0, o = out; i < 7; i++, o++) {
         m = bits;
@@ -316,8 +329,8 @@ void Mdl_DrawLit_0_0016B970(O *o, L *m, Vec *v, s8 *a3, s32 t0, s32 t1, s32 t2) 
                 for (k = 0; k < (n = cnt); k++) {
                     e = TextColour_Get_1_0015D580(buf[k]);
                     r = *(f32 *)(e + 0x54);
-                    w = -((Vec *)(e + (D_00201F2C << 5)))->w;
-                    sceVu0SubVector(&d, e + (D_00201F2C << 5), &p);
+                    w = -((Vec *)(e + (gSfxAllSbss_00201F2C << 5)))->w;
+                    sceVu0SubVector(&d, e + (gSfxAllSbss_00201F2C << 5), &p);
                     d.w = 0.0f;
                     dot = sceVu0InnerProduct(&d, &d);
                     sceVu0Normalize(&d, &d);
@@ -327,7 +340,7 @@ void Mdl_DrawLit_0_0016B970(O *o, L *m, Vec *v, s8 *a3, s32 t0, s32 t1, s32 t2) 
                     if (f < 0.0f) f = 0.0f;
                     f = f * f;
                     f = f * f;
-                    sceVu0ScaleVector(&dst->col[idx], e + (D_00201F2C << 5) + 0x10, f);
+                    sceVu0ScaleVector(&dst->col[idx], e + (gSfxAllSbss_00201F2C << 5) + 0x10, f);
                     dst->dir[idx].w = *(f32 *)(e + 0x58);
                 }
             }
@@ -364,7 +377,7 @@ void Mdl_DrawLit_0_0016B970(O *o, L *m, Vec *v, s8 *a3, s32 t0, s32 t1, s32 t2) 
             tag.w[3] = 0x6C0A002B;
             q[2].q = tag.q;
         }
-        D_00201FF0 = (s32)m;
+        gModelLayerSbss_00201FF0 = (s32)m;
     } else {
         q = GsPkt_Alloc_3_00154A80(1);
         tag2.w[0] = 0x3000000B;
@@ -372,7 +385,13 @@ void Mdl_DrawLit_0_0016B970(O *o, L *m, Vec *v, s8 *a3, s32 t0, s32 t1, s32 t2) 
         tag2.w[2] = 0x10000000;
         tag2.w[3] = 0x6C0B002A;
         q[0].q = tag2.q;
-        D_00201FF0 = tag2.w[1] + 0x10;
+        gModelLayerSbss_00201FF0 = tag2.w[1] + 0x10;
     }
 }
 #undef sceVu0AddVector
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): gModelLayerSbss_00201FF0 */
+s32 gModelLayerSbss_00201FF0;
+#endif

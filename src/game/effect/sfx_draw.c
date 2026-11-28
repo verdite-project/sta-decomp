@@ -18,14 +18,14 @@ typedef struct { Vec v[10]; } __attribute__((aligned(16))) V10;
 typedef struct { u8 pad[0x10]; V10 v; u8 padB0[0x10]; u8 xC0[0x30]; Vec xF0; } O;
 typedef struct { u8 pad[0x20]; f32 x20, x24, x28, x2C; } R;
 typedef struct { u8 pad[0x518]; s8 *x518; } Act;
-extern N *D_00201FD0;
-extern B *D_00201FC0;
-extern L *D_00201FD4;
-extern Act *D_002022E4;
-extern s8 D_001F2160[];
-extern Vec D_001F2130;
-extern Vec D_001F2140;
-extern Vec D_001F2150;
+extern N *gSfxAllSbss_00201FD0;
+extern B *gSfxSystemSbss_00201FC0;
+extern L *gSfxSystemSbss_00201FD4;
+extern Act *gPlayerSbss_002022E4;
+extern s8 gMatrixFromData_001F2160[];
+extern Vec gMatrixFromData_001F2130;
+extern Vec gMatrixFromData_001F2140;
+extern Vec gMatrixFromData_001F2150;
 O *Mdl_GetFrameData_0_001715B0(P3 ****);
 void sceVu0AddVector(Vec *, P3 *, Vec *);
 void Mdl_SetLayerForBounds_0_0016B500(Vec *, u32, s32);
@@ -70,9 +70,9 @@ void Sfx_DrawMesh_0_00167C90(E *e, Sub *sub, M *m, S *s) {
 body:
     {
         k = idx;
-        n = &D_00201FD0[k];
-        b = &D_00201FC0[k];
-        ns = (NS *)n + D_00201F2C;
+        n = &gSfxAllSbss_00201FD0[k];
+        b = &gSfxSystemSbss_00201FC0[k];
+        ns = (NS *)n + gSfxAllSbss_00201F2C;
         o = getO(n);
         if (o && n->xC && ns->xC && o && n->b2) {
             w.w = *(u32 *)&s->x4;
@@ -99,7 +99,7 @@ body:
                 hi = r->x24;
                 a = r->x28;
                 c = r->x2C;
-                d = Vec_Distance_3_00146940((D_002022E4 != 0 && D_002022E4->x518 != 0) ? D_002022E4->x518 + 0x1C0 : D_001F2160, &q);
+                d = Vec_Distance_3_00146940((gPlayerSbss_002022E4 != 0 && gPlayerSbss_002022E4->x518 != 0) ? gPlayerSbss_002022E4->x518 + 0x1C0 : gMatrixFromData_001F2160, &q);
                 t = (d - lo) / (hi - lo);
                 if (1.0f < t) t = 1.0f;
                 if (0.0f < t) { g = c - a; g = a + t * g; g = 1.0f - g; }
@@ -111,14 +111,14 @@ body:
             lt.v[0].y = 0.0f;
             lt.v[0].z = f;
             lt.v[0].w = 0.0f;
-            sceVu0CopyVector(&lt.v[1], &D_001F2130);
-            sceVu0CopyVector(&lt.v[2], &D_001F2140);
-            sceVu0CopyVector(&lt.v[3], &D_001F2150);
-            sceVu0CopyVector(&lt.v[4], &D_003139A0);
-            sceVu0CopyVector(&lt.v[5], &D_003139A0);
-            sceVu0CopyVector(&lt.v[6], &D_003139A0);
-            sceVu0CopyVector(&lt.v[7], &D_003139A0);
-            sceVu0CopyVector(&lt.v[8], &D_003139A0);
+            sceVu0CopyVector(&lt.v[1], &gMatrixFromData_001F2130);
+            sceVu0CopyVector(&lt.v[2], &gMatrixFromData_001F2140);
+            sceVu0CopyVector(&lt.v[3], &gMatrixFromData_001F2150);
+            sceVu0CopyVector(&lt.v[4], &gZeroVec_003139A0);
+            sceVu0CopyVector(&lt.v[5], &gZeroVec_003139A0);
+            sceVu0CopyVector(&lt.v[6], &gZeroVec_003139A0);
+            sceVu0CopyVector(&lt.v[7], &gZeroVec_003139A0);
+            sceVu0CopyVector(&lt.v[8], &gZeroVec_003139A0);
             lt.v[9].x = 1.0f;
             lt.v[9].y = 1.0f;
             lt.v[9].z = 1.0f;
@@ -150,10 +150,13 @@ body:
             Mdl_DrawMeshesB_1_0016CD80(***n->xC, *n->xC, o, *(u32 *)&s->x4);
             GsPkt_CloseChain_1_001549D0();
         }
-        idx = D_00201FD4[k].x4;
+        idx = gSfxSystemSbss_00201FD4[k].x4;
     }
 cond:
     if (idx != 0xFFFF) goto body;
     Gfx_ResetBlendState_0_00145790();
 }
 
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+#endif

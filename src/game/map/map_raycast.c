@@ -3,7 +3,7 @@ typedef union { u128 q; f32 f[4]; } Q;
 typedef struct { Q a; Q b; } Ray;
 typedef union { u128 q[4]; f32 f[16]; } S;
 s32 MapColl_RayCast_0_001B23E0(u8 *, S *, Ray *, u16, u8, u8);
-extern s32 D_00201E80;
+extern s32 gMapSbss_00201E80;
 
 s32 Map_RaycastNearest_0_00145840(Ray *ray, u8 a1, s32 a2, S *out) {
     s32 found[2];
@@ -18,7 +18,7 @@ s32 Map_RaycastNearest_0_00145840(Ray *ray, u8 a1, s32 a2, S *out) {
     f32 min;
     S *p;
 
-    for (i = 0, pp = (u8 ***)(&D_00201E80 + 2), pf = found, pb = best; i < 2; i++, pp++, pf++, pb++) {
+    for (i = 0, pp = (u8 ***)(&gMapSbss_00201E80 + 2), pf = found, pb = best; i < 2; i++, pp++, pf++, pb++) {
         if (*pp == 0 || ((**pp)[0x1D8] & 1) == 0) {
             *pf = 0;
             continue;

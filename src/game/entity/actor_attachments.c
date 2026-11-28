@@ -55,8 +55,8 @@ typedef struct { char pad[0x160]; u8 flags; } S;
 typedef struct { u8 pad[0x5A0]; u8 b0:1; u8 b1:1; u8 b2:1; } Ent;
 typedef struct { char pad[0x1A4]; s32 v; } B;
 typedef struct { char pad[0x518]; B *b; } Obj_Actor_IsFlag1Clear_1_0013BA70;
-extern Mtx D_001F2170;
-extern s32 D_00201E80;
+extern Mtx gMatrixFromData_001F2170;
+extern s32 gMapSbss_00201E80;
 extern F7 D_00222A51[];
 void Actor_UpdateAttachments_0_0013AB00(Actor *a0, f32 f);
 void Actor_UpdatePhysics_0_0013ACE0(Actor *a, f32 g);
@@ -288,7 +288,7 @@ void Actor_UpdatePhysics_0_0013ACE0(Actor *a, f32 g) {
         e->xD0.y += k * 0.25f;
         sceVu0ScaleVector(&v, &e->xD0, g);
         sceVu0AddVector(&e->xA0, &v, &e->xA0);
-        sceVu0CopyMatrix(&M, &D_001F2170);
+        sceVu0CopyMatrix(&M, &gMatrixFromData_001F2170);
         M.m[0].x = e->xC0.x;
         M.m[1].y = e->xC0.y;
         M.m[2].z = e->xC0.z;
@@ -336,7 +336,7 @@ void Actor_UpdateCollision_0_0013B220(Obj_Actor_UpdateAttachments_0_0013AB00 *a,
         Actor_OffsetColliders_1_00137730(a, &b->vA0);
         Actor_ResolveActorCollision_0_0013A2C0(a, dt);
     }
-    if (!Ent_IsNull0_1_0013EE30__as_Actor_UpdateCollision_0_0013B220(a) && ((&D_00201E80)[2] || (&D_00201E80)[3])) {
+    if (!Ent_IsNull0_1_0013EE30__as_Actor_UpdateCollision_0_0013B220(a) && ((&gMapSbss_00201E80)[2] || (&gMapSbss_00201E80)[3])) {
         if (a->f53C) {
             a->f53C(a, dt);
         } else {
@@ -425,7 +425,7 @@ void Actor_UpdateTransform_0_0013B4F0(Actor *a, s32 flag, f32 f) {
             P.p->w = e->vA0.w * s->f4;
             Q.p->w < 0.0f ? sceVu0CopyVector__as_Actor_UpdateTransform_0_0013B4F0(Q.p, P.p) : (void)0;
             if (D_00222A51[0].b7 && !Ent_IsNull0_1_0013EE30__as_Actor_UpdateTransform_0_0013B4F0(a)) {
-                sceVu0CopyMatrix__as_Actor_UpdateTransform_0_0013B4F0(&L1.m, &D_001F2170);
+                sceVu0CopyMatrix__as_Actor_UpdateTransform_0_0013B4F0(&L1.m, &gMatrixFromData_001F2170);
                 L1.col = 0x4000FF00;
                 sceVu0CopyVector__as_Actor_UpdateTransform_0_0013B4F0(&L1.a, Q.p);
                 sceVu0SubVector__as_Actor_UpdateTransform_0_0013B4F0(&L1.b, P.p, Q.p);
@@ -460,7 +460,7 @@ void Actor_UpdateTransform_0_0013B4F0(Actor *a, s32 flag, f32 f) {
                 b->w = f;
                 if (D_00222A51[0].b7 && !Ent_IsNull0_1_0013EE30__as_Actor_UpdateTransform_0_0013B4F0(a) && !(Enemy_GetPart_1_0013DC70__as_Actor_UpdateTransform_0_0013B4F0(a, j)->x160 & 1) &&
                     j != s->p18->xB7 && j != s->p18->xB6) {
-                    sceVu0CopyMatrix__as_Actor_UpdateTransform_0_0013B4F0(&L2.m, &D_001F2170);
+                    sceVu0CopyMatrix__as_Actor_UpdateTransform_0_0013B4F0(&L2.m, &gMatrixFromData_001F2170);
                     L2.col = 0x40FFFFFF;
                     sceVu0CopyVector__as_Actor_UpdateTransform_0_0013B4F0(&L2.a, &g->a);
                     sceVu0CopyVector__as_Actor_UpdateTransform_0_0013B4F0(&L2.b, b);

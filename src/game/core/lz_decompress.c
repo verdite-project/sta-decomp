@@ -13,20 +13,20 @@ static inline u32 gb(u32 **pp, s32 n) {
     u32 r = 0;
     s32 total = n;
     while (n != 0) {
-        if (D_00202028 == 0) {
-            D_00202028 = 32;
-            D_0020202C = **pp;
+        if (gLzDecompressBSbss_00202028 == 0) {
+            gLzDecompressBSbss_00202028 = 32;
+            gLzDecompressBSbss_0020202C = **pp;
             (*pp)++;
         }
-        if (n < D_00202028) {
-            r |= (D_0020202C & (0xFFFFFFFF >> (32 - n))) << (total - n);
-            D_00202028 -= (u8)n;
-            D_0020202C >>= n;
+        if (n < gLzDecompressBSbss_00202028) {
+            r |= (gLzDecompressBSbss_0020202C & (0xFFFFFFFF >> (32 - n))) << (total - n);
+            gLzDecompressBSbss_00202028 -= (u8)n;
+            gLzDecompressBSbss_0020202C >>= n;
             break;
         }
-        r |= (D_0020202C & (0xFFFFFFFF >> (32 - D_00202028))) << (total - n);
-        n -= D_00202028;
-        D_00202028 = 0;
+        r |= (gLzDecompressBSbss_0020202C & (0xFFFFFFFF >> (32 - gLzDecompressBSbss_00202028))) << (total - n);
+        n -= gLzDecompressBSbss_00202028;
+        gLzDecompressBSbss_00202028 = 0;
     }
     return r;
 }
@@ -59,8 +59,8 @@ s32 Lz_Decompress_2_00179040(u8 *dst0, u8 *in, s32 a2, u32 size) {
     src = (u32 *)(in + 8);
     n = 0;
     lit = (u8 *)src + off;
-    D_00202028 = 0;
-    D_0020202C = 0;
+    gLzDecompressBSbss_00202028 = 0;
+    gLzDecompressBSbss_0020202C = 0;
     for (i = 0; i < 0x400; i++) {
         D_00486100[i] = i + 1;
     }

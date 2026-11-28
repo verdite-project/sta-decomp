@@ -36,9 +36,9 @@ typedef struct { s8 pad[0x1C]; u16 key; s8 pad2[0x12]; } Ent;
 typedef struct { s32 id; s8 pad[0xA8]; Ent *cur; s8 pad1[0x134 - 0xB0]; Ent *ents; } Obj_MapObj_GetCount_0_001B17E0;
 typedef struct { u8 pad[0x1A]; u16 x1A; u8 pad1C[0x14]; } E;
 typedef struct { s32 x0; u8 pad4[0xAC]; E *xB0; u8 padB4[0x84]; E *x138; } X;
-extern s32 D_00201E80;
-extern Obj_MapObj_GetCount_0_001B17E0 **D_002022BC;
-extern X **D_002022BC__as_MapObj_GetCountB_0_001B18D0;
+extern s32 gMapSbss_00201E80;
+extern Obj_MapObj_GetCount_0_001B17E0 **gPlayerSbss_002022BC;
+extern X **gPlayerSbss_002022BC__as_MapObj_GetCountB_0_001B18D0;
 void MapObj_GetSfxMatrix_0_001B1050(s32 id, s32 key, s32 a2);
 void MapObj_SetSfxFlag_0_001B11F0(s32 id, s32 key, s32 a2);
 s32 MapObj_GetCamera_0_001B1560(s32 id, f32 *a, f32 *b, f32 *c, f32 *d);
@@ -52,8 +52,8 @@ void Sfx_SetFlag_0_00167640(s32, s32);
 /* MapObj_GetSfxMatrix_0_001B1050 */
 /* MapObj_GetSfxMatrix_0_001B1050 */
 /* MapObj_GetSfxMatrix_0_001B1050 */
-#define C (((Chr_MapObj_GetSfxMatrix_0_001B1050 ***)&D_00201E80)[2])
-#define D (((Chr_MapObj_GetSfxMatrix_0_001B1050 ***)&D_00201E80)[3])
+#define C (((Chr_MapObj_GetSfxMatrix_0_001B1050 ***)&gMapSbss_00201E80)[2])
+#define D (((Chr_MapObj_GetSfxMatrix_0_001B1050 ***)&gMapSbss_00201E80)[3])
 static inline s32 ok_MapObj_GetSfxMatrix_0_001B1050(Chr_MapObj_GetSfxMatrix_0_001B1050 **p) {
     s32 r;
     if (p != 0) {
@@ -96,8 +96,8 @@ void MapObj_GetSfxMatrix_0_001B1050(s32 id, s32 key, s32 a2) {
 #undef D
 
 /* MapObj_SetSfxFlag_0_001B11F0 */
-#define C (((Chr_MapObj_SetSfxFlag_0_001B11F0 ***)&D_00201E80)[2])
-#define D (((Chr_MapObj_SetSfxFlag_0_001B11F0 ***)&D_00201E80)[3])
+#define C (((Chr_MapObj_SetSfxFlag_0_001B11F0 ***)&gMapSbss_00201E80)[2])
+#define D (((Chr_MapObj_SetSfxFlag_0_001B11F0 ***)&gMapSbss_00201E80)[3])
 static inline s32 ok_MapObj_SetSfxFlag_0_001B11F0(Chr_MapObj_SetSfxFlag_0_001B11F0 **p) {
     s32 r;
     if (p != 0) {
@@ -144,8 +144,8 @@ void MapObj_SetSfxFlag_0_001B11F0(s32 id, s32 key, s32 a2) {
 #undef D
 
 /* MapObj_SetCamera_0_001B13B0 */
-#define C (((Obj_MapObj_GetSfxMatrix_0_001B1050 ***)&D_00201E80)[2])
-#define D (((Obj_MapObj_GetSfxMatrix_0_001B1050 ***)&D_00201E80)[3])
+#define C (((Obj_MapObj_GetSfxMatrix_0_001B1050 ***)&gMapSbss_00201E80)[2])
+#define D (((Obj_MapObj_GetSfxMatrix_0_001B1050 ***)&gMapSbss_00201E80)[3])
 static inline s32 IS(Obj_MapObj_GetSfxMatrix_0_001B1050 **p) { if (p != NULL) return (((Inner *)*p)->f & 1) != 0; else return 0; }
 static inline s32 IS2(Obj_MapObj_GetSfxMatrix_0_001B1050 **p) { s32 r = 0; if (p != NULL) r = (((Inner *)*p)->f & 1) != 0; return r; }
 
@@ -175,8 +175,8 @@ s32 MapObj_SetCamera_0_001B13B0(s32 arg0, f32 a, f32 b, f32 c, f32 d) {
 #undef D
 
 /* MapObj_GetCamera_0_001B1560 */
-#define P8 M2C_FIELD(&D_00201E80, Obj_MapObj_GetCamera_0_001B1560 ***, 8)
-#define PC M2C_FIELD(&D_00201E80, Obj_MapObj_GetCamera_0_001B1560 ***, 0xC)
+#define P8 M2C_FIELD(&gMapSbss_00201E80, Obj_MapObj_GetCamera_0_001B1560 ***, 8)
+#define PC M2C_FIELD(&gMapSbss_00201E80, Obj_MapObj_GetCamera_0_001B1560 ***, 0xC)
 static inline s32 isAct_MapObj_GetSfxMatrix_0_001B1050(Obj_MapObj_GetCamera_0_001B1560 **p) {
     if (p != NULL) return ((*p)->flags & 1) != 0;
     return 0;
@@ -205,8 +205,8 @@ s32 MapObj_GetCamera_0_001B1560(s32 id, f32 *a, f32 *b, f32 *c, f32 *d) {
 #undef PC
 
 /* MapObj_SetNodeFlag_0_001B16E0 */
-#define P8 M2C_FIELD(&D_00201E80, Obj_MapObj_GetSfxMatrix_0_001B1050_ ***, 8)
-#define PC M2C_FIELD(&D_00201E80, Obj_MapObj_GetSfxMatrix_0_001B1050_ ***, 0xC)
+#define P8 M2C_FIELD(&gMapSbss_00201E80, Obj_MapObj_GetSfxMatrix_0_001B1050_ ***, 8)
+#define PC M2C_FIELD(&gMapSbss_00201E80, Obj_MapObj_GetSfxMatrix_0_001B1050_ ***, 0xC)
 static inline s32 isAct_MapObj_SetNodeFlag_0_001B16E0(Obj_MapObj_GetSfxMatrix_0_001B1050_ **p) {
     if (p != NULL) return ((*p)->flags & 1) != 0;
     return 0;
@@ -243,12 +243,12 @@ s32 MapObj_SetNodeFlag_0_001B16E0(s32 arg0, s32 arg1, s8 arg2) {
 /* MapObj_GetCount_0_001B17E0 */
 static inline s32 idx(s32 *out) {
     Obj_MapObj_GetCount_0_001B17E0 *o;
-    if (D_002022BC != NULL) {
-        o = (Obj_MapObj_GetCount_0_001B17E0 *)*(s32 *)D_002022BC;
+    if (gPlayerSbss_002022BC != NULL) {
+        o = (Obj_MapObj_GetCount_0_001B17E0 *)*(s32 *)gPlayerSbss_002022BC;
     } else {
         return -1;
     }
-    if (D_002022BC == NULL) {
+    if (gPlayerSbss_002022BC == NULL) {
         if (out) *out = -1;
         return -1;
     }
@@ -259,8 +259,8 @@ static inline s32 idx(s32 *out) {
 s32 MapObj_GetCount_0_001B17E0(s32 *out) {
     Obj_MapObj_GetCount_0_001B17E0 *o;
     s32 i;
-    if (D_002022BC != NULL) {
-        o = *D_002022BC;
+    if (gPlayerSbss_002022BC != NULL) {
+        o = *gPlayerSbss_002022BC;
     } else {
         return -1;
     }
@@ -286,12 +286,12 @@ static inline s32 cur(X **pp, X *x, s32 *out) {
 s32 MapObj_GetCountB_0_001B18D0(s32 *out) {
     X *x;
     s32 i;
-    if (D_002022BC__as_MapObj_GetCountB_0_001B18D0) {
-        x = *D_002022BC__as_MapObj_GetCountB_0_001B18D0;
+    if (gPlayerSbss_002022BC__as_MapObj_GetCountB_0_001B18D0) {
+        x = *gPlayerSbss_002022BC__as_MapObj_GetCountB_0_001B18D0;
     } else {
         return -1;
     }
-    i = cur(D_002022BC__as_MapObj_GetCountB_0_001B18D0, x, out);
+    i = cur(gPlayerSbss_002022BC__as_MapObj_GetCountB_0_001B18D0, x, out);
     if (i == -1) return -1;
     return x->x138[i].x1A;
 }

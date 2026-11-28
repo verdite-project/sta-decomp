@@ -4,7 +4,7 @@ typedef struct { u128 q[4]; } Res;
 typedef struct { u8 pad[0x6E]; u16 n; u8 pad70[0x168]; u8 f1D8; } Obj;
 void func_00102A60(Vec *, Vec *);
 s32 MapColl_CapsuleCast_1_001B2800(Obj *, Res *, Ray *, u16, u8, u8);
-extern s32 D_00201E80;
+extern s32 gMapSbss_00201E80;
 static inline void vdist(Vec *out, Vec *a, Vec *b) {
     __asm__(
         "lqc2 $vf16, 0(%1)\n"
@@ -48,7 +48,7 @@ s32 Map_RaycastSegment_0_00145A80(Vec *a_, Vec *b, u8 m, s32 n, Res *out_) {
     func_00102A60(&ray.a, a);
     func_00102A60(&ray.b, b);
     i = 0;
-    q = (Obj ***)(&D_00201E80 + 2);
+    q = (Obj ***)(&gMapSbss_00201E80 + 2);
     okp = ok;
     hp = hit;
     bp = best;

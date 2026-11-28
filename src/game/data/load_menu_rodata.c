@@ -4,4 +4,6 @@
 /* used by: load_menu */
 #pragma explicit_zero_data on
 
-const s8 D_001FD208[0x8] = "SLOT %d\000";
+#ifndef NONMATCHING /* the NONMATCHING build defines these in their owners */
+const s8 gLoadMenuRodata_001FD208[0x8] = "SLOT %d\000";
+#endif

@@ -7,7 +7,12 @@ typedef union { u32 w; struct { u8 r, g, b, a; } c; } Col;
 typedef struct { u8 pad[8]; u8 x8; } E;
 typedef struct { u16 v[8]; } H;
 typedef struct { f32 v[4]; } F;
-extern f32 D_00201D78;
+#ifndef NONMATCHING
+extern f32 gStatusSdata_00201D78;
+#else
+/* data twins (src/game/data/sdata.c): gStatusSdata_00201D78 */
+static f32 gStatusSdata_00201D78 = -2.99f;
+#endif
 void Status_Draw_0_0019DF90(E *e);
 void Status_DrawStats_0_0019E090(f32 f);
 s8* Msg_GetText_2_00195B10(s32);
@@ -27,15 +32,15 @@ void Status_DrawStats_0_0019E090__as_Status_Draw_0_0019DF90(f32, E *);
 void Status_Draw_0_0019DF90(E *e) {
     Col c;
     Menu_SetFlags_0_0018A310(0xC);
-    if (!(D_00201D78 <= -2.49f)) Status_DrawStats_0_0019E090(D_00201D78, e);
+    if (!(gStatusSdata_00201D78 <= -2.49f)) Status_DrawStats_0_0019E090(gStatusSdata_00201D78, e);
     if (e->x8 == 0x14) {
-        D_00201D78 = Approachf_3_00187770(D_00201D78, -0.02f, 3.5f);
+        gStatusSdata_00201D78 = Approachf_3_00187770(gStatusSdata_00201D78, -0.02f, 3.5f);
         c.w = 0x80FFFFFF;
-        if (D_004A32C8[0] >= 0) {
-            Text_Draw_2_001875C0(Msg_GetText_2_00195B10(D_004A32C8[0] + 0xA), 2, c, 622.0f, 17.0f, 1.0f);
+        if (gPauseMenuEntryBss_004A32C8[0] >= 0) {
+            Text_Draw_2_001875C0(Msg_GetText_2_00195B10(gPauseMenuEntryBss_004A32C8[0] + 0xA), 2, c, 622.0f, 17.0f, 1.0f);
         }
     } else {
-        D_00201D78 = Approachf_3_00187770(D_00201D78, -2.99f, 3.5f);
+        gStatusSdata_00201D78 = Approachf_3_00187770(gStatusSdata_00201D78, -2.99f, 3.5f);
     }
 }
 #undef Status_DrawStats_0_0019E090
@@ -72,5 +77,5 @@ void Status_DrawStats_0_0019E090(f32 f) {
     Menu_DrawRingD_0_00185510(f, &t70);
     Menu_DrawRingE_0_00185B40(f, s);
     UiAnim_UpdateAll_1_0017F5C0();
-    Menu_DrawFrame_0_00185390(f, 1, 5, D_004A32C8[0]);
+    Menu_DrawFrame_0_00185390(f, 1, 5, gPauseMenuEntryBss_004A32C8[0]);
 }

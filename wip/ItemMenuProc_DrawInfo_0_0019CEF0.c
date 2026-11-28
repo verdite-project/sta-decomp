@@ -3,12 +3,12 @@ typedef struct { f32 m[4]; f32 x; f32 y; } S;
 typedef struct { u8 r, g, b, a; } Col;
 typedef struct { u8 p0[0x4]; u16 x4; u8 p6[4]; u16 xA; u8 pC[0x1D]; u8 x29; u8 p2A[0x66]; } E;
 typedef struct { u8 p0[0x14]; f32 x14; f32 x18; u8 p1C[0x10]; f32 x2C; f32 x30; u8 p34[8]; u32 x3C; } G;
-extern S D_001F30E0 __attribute__((aligned(16)));
-extern s8 D_001FD5B8[];
-extern s8 D_001FD5C0[];
-extern s8 D_001FD5C8[];
-extern s8 D_004A3150[];
-extern G D_004A3250;
+extern S gItemMenuProcDrawInfoData_001F30E0 __attribute__((aligned(16)));
+extern s8 gItemMenuProcDrawInfoRodata_001FD5B8[];
+extern s8 gStrD_001FD5C0[];
+extern s8 gStr31f_001FD5C8[];
+extern s8 gItemMenuProcDrawInfoBss_004A3150[];
+extern G gItemMenuProcDrawInfoBss_004A3250;
 void Text_Draw_2_001875C0(f32, f32, f32, s8 *, s32, Col);
 void Ui_DrawSprite_2_00181680(s32, s8 *, s8 *, void *, S *, s32);
 void sprintf(s8 *, s8 *, ...);
@@ -27,7 +27,7 @@ void ItemMenuProc_DrawInfo_0_0019CEF0(s8 *a0, s32 a1, u32 a2, s32 a3) {
     s8 *q;
     E *e;
 
-    t = D_001F30E0;
+    t = gItemMenuProcDrawInfoData_001F30E0;
     if (a2 < 300) {
         t.x = *(f32 *)(a0 + 0x30);
         t.y = *(f32 *)(a0 + 0x34);
@@ -44,30 +44,30 @@ void ItemMenuProc_DrawInfo_0_0019CEF0(s8 *a0, s32 a1, u32 a2, s32 a3) {
         if (a3 > 0) {
             *(u32 *)&col = 0x80808080;
             if (chk(&Item_GetTable_1_001AFC90()[a3])) {
-                sprintf(D_004A3150, D_001FD5B8, Inventory_GetEntry_1_001CC3F0(a3)[2]);
-                Text_Draw_2_001875C0(*(f32 *)(a0 + 0x38), *(f32 *)(a0 + 0x3C), 0.9f, D_004A3150, 2, col);
-                sprintf(D_004A3150, D_001FD5C0, Inventory_GetEntry_1_001CC3F0(a3)[3]);
-                Text_Draw_2_001875C0(8.0f + *(f32 *)(a0 + 0x38), 3.0f + *(f32 *)(a0 + 0x3C), 0.7f, D_004A3150, 0, col);
+                sprintf(gItemMenuProcDrawInfoBss_004A3150, gItemMenuProcDrawInfoRodata_001FD5B8, Inventory_GetEntry_1_001CC3F0(a3)[2]);
+                Text_Draw_2_001875C0(*(f32 *)(a0 + 0x38), *(f32 *)(a0 + 0x3C), 0.9f, gItemMenuProcDrawInfoBss_004A3150, 2, col);
+                sprintf(gItemMenuProcDrawInfoBss_004A3150, gStrD_001FD5C0, Inventory_GetEntry_1_001CC3F0(a3)[3]);
+                Text_Draw_2_001875C0(8.0f + *(f32 *)(a0 + 0x38), 3.0f + *(f32 *)(a0 + 0x3C), 0.7f, gItemMenuProcDrawInfoBss_004A3150, 0, col);
             } else {
-                sprintf(D_004A3150, D_001FD5B8, Inventory_GetEntry_1_001CC3F0(a3)[2]);
-                Text_Draw_2_001875C0(*(f32 *)(a0 + 0x38), *(f32 *)(a0 + 0x3C), 0.9f, D_004A3150, 2, col);
+                sprintf(gItemMenuProcDrawInfoBss_004A3150, gItemMenuProcDrawInfoRodata_001FD5B8, Inventory_GetEntry_1_001CC3F0(a3)[2]);
+                Text_Draw_2_001875C0(*(f32 *)(a0 + 0x38), *(f32 *)(a0 + 0x3C), 0.9f, gItemMenuProcDrawInfoBss_004A3150, 2, col);
             }
         }
         break;
     case 10001:
-        D_004A3250.x2C = *(f32 *)(a0 + 0x38);
-        D_004A3250.x30 = *(f32 *)(a0 + 0x3C);
-        D_004A3250.x14 = 1.25f;
-        D_004A3250.x18 = 1.25f;
-        D_004A3250.x3C = 0x80FFFFFF;
-        Ui_DrawWindow_0_00183650(&D_004A3250);
+        gItemMenuProcDrawInfoBss_004A3250.x2C = *(f32 *)(a0 + 0x38);
+        gItemMenuProcDrawInfoBss_004A3250.x30 = *(f32 *)(a0 + 0x3C);
+        gItemMenuProcDrawInfoBss_004A3250.x14 = 1.25f;
+        gItemMenuProcDrawInfoBss_004A3250.x18 = 1.25f;
+        gItemMenuProcDrawInfoBss_004A3250.x3C = 0x80FFFFFF;
+        Ui_DrawWindow_0_00183650(&gItemMenuProcDrawInfoBss_004A3250);
         break;
     case 400:
         if (a3 > 0) {
             e = Item_GetTable_1_001AFC90() + a3;
             *(u32 *)&col2 = 0x80808080;
-            sprintf(D_004A3150, D_001FD5C8, fptodp(u2f(e->x4) / 10.0f));
-            Text_Draw_2_001875C0(*(f32 *)(a0 + 0x38), *(f32 *)(a0 + 0x3C), 0.9f, D_004A3150, 0, col2);
+            sprintf(gItemMenuProcDrawInfoBss_004A3150, gStr31f_001FD5C8, fptodp(u2f(e->x4) / 10.0f));
+            Text_Draw_2_001875C0(*(f32 *)(a0 + 0x38), *(f32 *)(a0 + 0x3C), 0.9f, gItemMenuProcDrawInfoBss_004A3150, 0, col2);
         }
         break;
     case 500:

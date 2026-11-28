@@ -6,9 +6,16 @@ typedef struct { u8 pad0[0xC]; P2 *xC; s32 x10; f32 x14; } A;
 typedef struct { s32 x0; s32 x4; f32 x8; } B;
 typedef struct { u8 pad0[0x40]; f32 x40; f32 x44; } Info;
 typedef struct { s32 x0; s32 x4; u8 p8[2]; u8 xA; u8 pB[3]; u8 xE; } O;
-extern s32 D_00202134;
-extern s32 D_00202138;
-extern Flags8 D_004A10DC[];
+#ifndef NONMATCHING
+extern s32 gOptionLerpSbss_00202134;
+extern s32 gOptionLerpSbss_00202138;
+#else
+/* data twins (src/game/data/sbss.c): gOptionLerpSbss_00202134 */
+static s32 gOptionLerpSbss_00202134;
+/* data twins (src/game/data/sbss.c): gOptionLerpSbss_00202138 */
+static s32 gOptionLerpSbss_00202138;
+#endif
+extern Flags8 gOptionBss_004A10DC[];
 void Option_LerpLayout_0_00191820(s32 i, A *a, B *b);
 void OptionProc_Back_0_00191C40(O *o);
 f32 fabsf(f32);
@@ -23,70 +30,70 @@ void Option_LerpLayout_0_00191820(s32 i, A *a, B *b) {
     f32 v;
 
     UiAnim_Get_1_0017F840(0xD, &info);
-    if (D_00202128 == 1) {
-        if (i < D_004A10D0[0]) {
-            d = a->xC[a->x10 - 1].a - D_004A10B0[i];
+    if (gOptionSbss_00202128 == 1) {
+        if (i < gOptionBss_004A10D0[0]) {
+            d = a->xC[a->x10 - 1].a - gOptionLerpBss_004A10B0[i];
             h = 0.5f * d;
             if (!(fabsf(d) <= 0.01f)) {
-                D_004A10B0[i] = a->x14 = h + D_004A10B0[i];
+                gOptionLerpBss_004A10B0[i] = a->x14 = h + gOptionLerpBss_004A10B0[i];
             } else {
-                a->x14 = D_004A10B0[i];
+                a->x14 = gOptionLerpBss_004A10B0[i];
             }
-        } else if (i > D_004A10D0[0]) {
-            d = a->xC[0].a - D_004A10B0[i];
+        } else if (i > gOptionBss_004A10D0[0]) {
+            d = a->xC[0].a - gOptionLerpBss_004A10B0[i];
             h = 0.5f * d;
             if (!(fabsf(d) <= 0.01f)) {
-                D_004A10B0[i] = a->x14 = h + D_004A10B0[i];
+                gOptionLerpBss_004A10B0[i] = a->x14 = h + gOptionLerpBss_004A10B0[i];
             } else {
-                a->x14 = D_004A10B0[i];
+                a->x14 = gOptionLerpBss_004A10B0[i];
             }
         } else {
             info->x44 = 0.5f * (info->x40 - b->x8);
             if (!(fabsf(info->x40 - b->x8) <= 0.01f)) {
                 b->x8 = b->x8 + info->x44;
             }
-            D_004A10B0[i] = a->x14 = b->x8 - (f32)i;
+            gOptionLerpBss_004A10B0[i] = a->x14 = b->x8 - (f32)i;
         }
-    } else if (D_00202128 == 2) {
+    } else if (gOptionSbss_00202128 == 2) {
         if (i == 0) {
-            D_00202134 = 1;
+            gOptionLerpSbss_00202134 = 1;
         }
-        if (i != D_004A10D0[0]) {
-            if (D_004A10D0[0] - i + 2 >= 0) {
-                d = (b->x8 - (f32)i) - D_004A10B0[i];
+        if (i != gOptionBss_004A10D0[0]) {
+            if (gOptionBss_004A10D0[0] - i + 2 >= 0) {
+                d = (b->x8 - (f32)i) - gOptionLerpBss_004A10B0[i];
                 h = 0.5f * d;
                 if (!(fabsf(d) <= 0.01f)) {
-                    D_004A10B0[i] = a->x14 = h + D_004A10B0[i];
-                    D_00202134 = 0;
+                    gOptionLerpBss_004A10B0[i] = a->x14 = h + gOptionLerpBss_004A10B0[i];
+                    gOptionLerpSbss_00202134 = 0;
                 } else {
-                    a->x14 = D_004A10B0[i];
+                    a->x14 = gOptionLerpBss_004A10B0[i];
                 }
             }
         } else {
-            a->x14 = D_004A10B0[i];
+            a->x14 = gOptionLerpBss_004A10B0[i];
         }
-        if (i == b->x4 - 1 && D_00202134) {
-            D_00202128 = 0;
+        if (i == b->x4 - 1 && gOptionLerpSbss_00202134) {
+            gOptionSbss_00202128 = 0;
         }
-    } else if (D_00202128 == 3) {
+    } else if (gOptionSbss_00202128 == 3) {
         v = a->xC[0].a;
         if (i == 0) {
-            D_00202138 = 1;
+            gOptionLerpSbss_00202138 = 1;
         }
-        if (D_004A10B0[i] < 1.99f && !(D_004A10B0[i] <= v + 0.01f)) {
-            d = v - D_004A10B0[i];
+        if (gOptionLerpBss_004A10B0[i] < 1.99f && !(gOptionLerpBss_004A10B0[i] <= v + 0.01f)) {
+            d = v - gOptionLerpBss_004A10B0[i];
             h = 0.5f * d;
             if (!(fabsf(d) <= 0.01f)) {
-                D_004A10B0[i] = a->x14 = h + D_004A10B0[i];
-                D_00202138 = 0;
+                gOptionLerpBss_004A10B0[i] = a->x14 = h + gOptionLerpBss_004A10B0[i];
+                gOptionLerpSbss_00202138 = 0;
             } else {
-                a->x14 = D_004A10B0[i];
+                a->x14 = gOptionLerpBss_004A10B0[i];
             }
         } else {
-            a->x14 = D_004A10B0[i];
+            a->x14 = gOptionLerpBss_004A10B0[i];
         }
-        if (i == b->x4 - 1 && D_00202138) {
-            D_00202128 = 0;
+        if (i == b->x4 - 1 && gOptionLerpSbss_00202138) {
+            gOptionSbss_00202128 = 0;
             b->x8 = v;
             info->x40 = v;
         }
@@ -98,10 +105,16 @@ void Option_LerpLayout_0_00191820(s32 i, A *a, B *b) {
 /* OptionProc_Back_0_00191C40 */
 void OptionProc_Back_0_00191C40(O *o) {
     if (o->x4 & 0x2000) {
-        D_004A10DC[0].f.b3 = 0;
+        gOptionBss_004A10DC[0].f.b3 = 0;
         o->xA = 2;
         o->x0 = 0x16;
         o->x4 = 0;
         Snd_PlaySe_3_00131600(0x67, o->xE);
     }
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/load_menu_bss.c): gOptionLerpBss_004A10B0 */
+f32 gOptionLerpBss_004A10B0[0x4];
+#endif

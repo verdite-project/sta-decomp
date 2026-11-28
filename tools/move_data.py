@@ -52,7 +52,7 @@ from names import is_func  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 ALIASES = ROOT / "config/data_aliases.txt"
-DEF = re.compile(r"^(?P<decl>[^;/\n]*?\b(?P<name>D_[0-9A-F]{8})\b[^;/\n]*);(?P<note>.*)$", re.M)
+DEF = re.compile(r"^(?P<decl>[^;/\n]*?\b(?P<name>(?:D|g[A-Z][A-Za-z0-9]*)_[0-9A-F]{8})\b[^;/\n]*);(?P<note>.*)$", re.M)
 EXTERN = re.compile(r"^\s*extern\s+(?P<type>(?:(?:volatile|const|unsigned|signed|struct)\s+)*\w+)\s*(?P<ptr>\**)\s*"
                     r"(?P<name>\w+)\s*(?P<dim>\[[^\]]*\])?\s*"
                     r"(?P<attr>__attribute__\(\(\w+(?:\([^()]*\))?\)\)\s*)?;[^\n]*\n?", re.M)
@@ -462,8 +462,16 @@ def _init_owner_text(own, names, labels, kind, text):
             while len(items) > 1 and zero(items[-1]):
                 items = items[:-1]
         d = data_to_c.define(n, items, decl, const, need, trim)
-        if d is None or not re.match(rf"(const )?{re.escape(m.group('type').split()[-1])}\b", d):
-            return None
+        base = m.group("type").split()[-1]
+        if d is None or not re.match(rf"(const )?{re.escape(base)}\b", d):
+            # a struct of mixed members: a brace-elided initialiser
+            # (tools/split_data.py's layout of the owner's typedef)
+            import split_data
+            quals = "const" if const else ""
+            d = None if m.group("ptr") else split_data.struct_init(n, base, m.group("dim") is not None, quals,
+                                                                   items, text, need)
+            if d is None:
+                return None
         size = len(data_to_c.obj_bytes(items, trim)[0])
         defs.append([d, natural(size), min(natural(size), lab[1] & -lab[1], start & -start)])
         first = m.start() if first is None else min(first, m.start())

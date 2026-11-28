@@ -3,9 +3,9 @@
 typedef struct { s32 a; s32 b; } H_SndBank_LoadStep_1_0012ED60;
 typedef struct { s32 st; s32 pad[3]; } S;
 typedef struct { s32 a; u32 size; s32 b; s32 c; s8 data[]; } H_SndBank_IopTransferA_0_0012EF40;
-extern S D_0022F040[];
-extern u32 D_0022F088[];
-extern u32 D_0022F08C[];
+extern S gSoundBankLoadBss_0022F040[];
+extern u32 gSoundBankLoadBss_0022F088[];
+extern u32 gSoundBankLoadBss_0022F08C[];
 s32 SndBank_LoadStep_1_0012ED60(H_SndBank_LoadStep_1_0012ED60 *a0, u32 idx);
 s32 SndBank_IopTransferA_0_0012EF40(H_SndBank_IopTransferA_0_0012EF40 *arg0, u32 arg1);
 s32 SndBank_IopTransferC_0_0012F3A0(H_SndBank_LoadStep_1_0012ED60 *, u32);
@@ -30,7 +30,7 @@ s32 SndBank_LoadStep_1_0012ED60(H_SndBank_LoadStep_1_0012ED60 *a0, u32 idx) {
     S *s0;
     s32 x0, x1, x2;
 
-    s0 = &D_0022F040[idx];
+    s0 = &gSoundBankLoadBss_0022F040[idx];
     s3 = (H_SndBank_LoadStep_1_0012ED60 *)((u8 *)a0 + a0->a);
     s2 = (H_SndBank_LoadStep_1_0012ED60 *)((u8 *)s3 + s3->a);
     x0 = a0->b;
@@ -60,7 +60,7 @@ s32 SndBank_LoadStep_1_0012ED60(H_SndBank_LoadStep_1_0012ED60 *a0, u32 idx) {
             break;
         }
     case 2:
-        if (Se_SetChannel_0_001DAEF0(idx, D_0022EBC0[idx], 0) == -1) break;
+        if (Se_SetChannel_0_001DAEF0(idx, gSoundBankLoadBss_0022EBC0[idx], 0) == -1) break;
         s0->st = 3;
     case 3:
         r = SndBank_IopTransferA_0_0012EF40(s2, idx);
@@ -73,7 +73,7 @@ s32 SndBank_LoadStep_1_0012ED60(H_SndBank_LoadStep_1_0012ED60 *a0, u32 idx) {
             break;
         }
     case 4:
-        if (Se_BindBank_0_001DA9A0(D_0022EBC8[idx], D_0022EBC0[idx]) == -1) break;
+        if (Se_BindBank_0_001DA9A0(gSoundBankLoadBss_0022EBC8[idx], gSoundBankLoadBss_0022EBC0[idx]) == -1) break;
         s0->st = 5;
     case 5:
         s0->st = 0;
@@ -95,40 +95,40 @@ s32 SndBank_IopTransferA_0_0012EF40(H_SndBank_IopTransferA_0_0012EF40 *arg0, u32
     s8 *q;
 
     ret = -1;
-    switch (D_0022F084[0]) {
+    switch (gSoundBankLoadBss_0022F084[0]) {
     case 0:
         if (arg1 >= 4) break;
-        p = &D_0022EBC8[arg1];
+        p = &gSoundBankLoadBss_0022EBC8[arg1];
         *p = Se_FindFreeBank_0_001DAC30();
         if (*p == -1) break;
         if (arg0->size > 0x40000) break;
-        D_0022F08C[0] = arg0->size;
-        D_0022F084[0] = 1;
-        D_0022F080[0] = 0;
-        D_0022F088[0] = 0;
+        gSoundBankLoadBss_0022F08C[0] = arg0->size;
+        gSoundBankLoadBss_0022F084[0] = 1;
+        gSoundBankLoadBss_0022F080[0] = 0;
+        gSoundBankLoadBss_0022F088[0] = 0;
     case 1:
         q = (s8 *)((s32)arg0->data + ((arg0->c + 0xF) & ~0xF));
-        D_0022F088[0] = D_0022F08C[0];
-        memcpy(D_0022F090, q, D_0022F088[0]);
+        gSoundBankLoadBss_0022F088[0] = gSoundBankLoadBss_0022F08C[0];
+        memcpy(gSoundBankLoadBss_0022F090, q, gSoundBankLoadBss_0022F088[0]);
         FlushCache(0);
-        D_0022F084[0] = 2;
+        gSoundBankLoadBss_0022F084[0] = 2;
     case 2:
-        r = Se_UploadBank_1_001DAA90(D_0022EBC8[arg1], D_0022F090, D_0022F088[0]);
+        r = Se_UploadBank_1_001DAA90(gSoundBankLoadBss_0022EBC8[arg1], gSoundBankLoadBss_0022F090, gSoundBankLoadBss_0022F088[0]);
         if (r == 1) {
-            D_0022F084[0] = 3;
+            gSoundBankLoadBss_0022F084[0] = 3;
         } else if (r == 0) {
             ret = 0;
             break;
         } else {
-            D_0022F084[0] = 0;
+            gSoundBankLoadBss_0022F084[0] = 0;
             break;
         }
     case 3:
-        D_0022F084[0] = 0;
+        gSoundBankLoadBss_0022F084[0] = 0;
         ret = 1;
         break;
     default:
-        D_0022F084[0] = 0;
+        gSoundBankLoadBss_0022F084[0] = 0;
         break;
     }
     FlushCache(0);

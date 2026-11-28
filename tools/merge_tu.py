@@ -472,7 +472,7 @@ def merge(paths, bss=None):
     data_defined = set()
     for (p, *_), body in zip(ps, bodies):
         if p.startswith("src/game/data/"):
-            data_defined |= {m.group(1) for m in re.finditer(r"^(?:static\s+)?const\b[^;=\n]*?\b(D_[0-9A-F]{8})\b", body, re.M)}
+            data_defined |= {m.group(1) for m in re.finditer(r"^(?:static\s+)?const\b[^;=\n]*?\b((?:D|g[A-Z][A-Za-z0-9]*)_[0-9A-F]{8})\b", body, re.M)}
     for body in bodies:
         for m in EXTERN.finditer(body):
             ext_first.setdefault(m.group(3), m)

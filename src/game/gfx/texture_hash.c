@@ -10,25 +10,30 @@ typedef struct {
 typedef struct { u64 key; u8 p8[0x30]; Node *x38; s32 x3C; u8 p40[0x10]; } Ent_Tex_Lookup_1_00177BB0;
 typedef struct { s32 x0; s32 x4; u32 n; u8 pC[4]; Ent_Tex_Lookup_1_00177BB0 e[1]; } Tbl;
 typedef struct { s32 **a; s32 b; } Ent_Tex_RegisterTtix_0_00178080;
-extern E D_0047F080[8];
-extern s8 D_001FB908[];
-extern s8 D_001FB909[];
-extern s8 D_001FB90A[];
-extern s8 D_001FB90B[];
-extern s8 D_001FB910[];
-extern s8 D_001FB911[];
-extern s8 D_001FB912[];
+extern E gTextureHashBss_0047F080[8];
+extern s8 gTextureFindRodata_001FB908[];
+extern s8 gTextureFindRodata_001FB909[];
+extern s8 gTextureFindRodata_001FB90A[];
+#ifndef NONMATCHING
+extern s8 gTextureHashRodata_001FB90B[];
+#else
+/* data twins (src/game/data/sfx_all_rodata.c): gTextureHashRodata_001FB90B */
+static s8 gTextureHashRodata_001FB90B[0x5] __attribute__((aligned(1))) = { 0x58, 0, 0, 0, 0 };
+#endif
+extern s8 gTextureHashRodata_001FB910[];
+extern s8 gTextureHashRodata_001FB911[];
+extern s8 gTextureHashRodata_001FB912[];
 #pragma explicit_zero_data on
 const s8 D_001FB913[0xd] __attribute__((aligned(1))) = { 0x49, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-extern s32 D_00201CB4;
-extern Node D_004800C0[];
-extern s16 D_004800DC[];
+extern s32 gTextureHashSdata_00201CB4;
+extern Node gTextureHashBss_004800C0[];
+extern s16 gTextureHashBss_004800DC[];
 extern s16 D_004800DE[];
-extern s16 D_004830C8[];
+extern s16 gTextureBss_004830C8[];
 extern s16 D_004830CA[];
-extern s16 D_004830CC[];
+extern s16 gTextureBss_004830CC[];
 extern s16 D_004830CE[];
-extern Ent_Tex_RegisterTtix_0_00178080 D_0047F080__as_Tex_RegisterTtix_0_00178080[];
+extern Ent_Tex_RegisterTtix_0_00178080 gTextureHashBss_0047F080__as_Tex_RegisterTtix_0_00178080[];
 void* Tex_Find_1_00177AF0(s32 a, s32 b);
 void* Tex_FindByHash_1_00177B20(u64 a);
 Node* Tex_Lookup_1_00177BB0(u64 key, s32 **r, s32 off);
@@ -61,7 +66,7 @@ void *Tex_FindByHash_1_00177B20(u64 a) {
     void *r = NULL;
     if (a == (u64)-1) return r;
     for (i = 0; i < 8; i++) {
-        if (D_0047F080[i].p != NULL && (r = Tex_Lookup_1_00177BB0(a, D_0047F080[i].p, D_0047F080[i].x)) != NULL) break;
+        if (gTextureHashBss_0047F080[i].p != NULL && (r = Tex_Lookup_1_00177BB0(a, gTextureHashBss_0047F080[i].p, gTextureHashBss_0047F080[i].x)) != NULL) break;
     }
     return r;
 }
@@ -72,10 +77,10 @@ void *Tex_FindByHash_1_00177B20(u64 a) {
 static inline s32 getsz_Tex_Lookup_1_00177BB0(s32 *s) {
     H *v;
     B *b;
-    if (*s == (D_001FB908[0] | (D_001FB909[0] << 8) | (D_001FB90A[0] << 16) | (D_001FB90B[0] << 24))) {
+    if (*s == (gTextureFindRodata_001FB908[0] | (gTextureFindRodata_001FB909[0] << 8) | (gTextureFindRodata_001FB90A[0] << 16) | (gTextureHashRodata_001FB90B[0] << 24))) {
         return 0;
     }
-    v = Node_FindById_2_0014DCD0(s, D_00201CB4);
+    v = Node_FindById_2_0014DCD0(s, gTextureHashSdata_00201CB4);
     if (v != NULL) {
         b = (B *)(v + 1); return ((s32)b->data + ((b->size + 0xF) & ~0xF)) - (s32)s;
     }
@@ -85,31 +90,31 @@ static inline s32 getsz_Tex_Lookup_1_00177BB0(s32 *s) {
 static inline void link(s16 idx) {
     s16 h;
     D_004830CE[0]++;
-    h = D_004830CC[0];
+    h = gTextureBss_004830CC[0];
     if (h == -1) {
-        D_004830CC[0] = idx;
-        D_004800DC[idx * 24] = idx;
+        gTextureBss_004830CC[0] = idx;
+        gTextureHashBss_004800DC[idx * 24] = idx;
         D_004800DE[idx * 24] = idx;
     } else {
-        D_004800DC[idx * 24] = h;
+        gTextureHashBss_004800DC[idx * 24] = h;
         D_004800DE[idx * 24] = D_004800DE[h * 24];
-        D_004800DE[D_004800DC[idx * 24] * 24] = idx;
-        D_004800DC[D_004800DE[idx * 24] * 24] = idx;
-        D_004830CC[0] = idx;
+        D_004800DE[gTextureHashBss_004800DC[idx * 24] * 24] = idx;
+        gTextureHashBss_004800DC[D_004800DE[idx * 24] * 24] = idx;
+        gTextureBss_004830CC[0] = idx;
     }
 }
 static inline Node *unlink(s16 idx) {
     s16 *pv;
     Node *n;
-    n = &D_004800C0[idx];
+    n = &gTextureHashBss_004800C0[idx];
     D_004830CA[0]--;
-    pv = &D_004800DC[idx * 24];
+    pv = &gTextureHashBss_004800DC[idx * 24];
     if (idx == *pv) {
-        D_004830C8[0] = -1;
+        gTextureBss_004830C8[0] = -1;
     } else {
         D_004800DE[*pv * 24] = D_004800DE[idx * 24];
-        D_004800DC[D_004800DE[idx * 24] * 24] = *pv;
-        if (*(volatile s16 *)D_004830C8 == idx) D_004830C8[0] = *pv;
+        gTextureHashBss_004800DC[D_004800DE[idx * 24] * 24] = *pv;
+        if (*(volatile s16 *)gTextureBss_004830C8 == idx) gTextureBss_004830C8[0] = *pv;
     }
     return n;
 }
@@ -130,7 +135,7 @@ Node *Tex_Lookup_1_00177BB0(u64 key, s32 **r, s32 off) {
         if (key == e[i].key) break;
     }
     k.d = key;
-    if (k.s.w == (D_001FB910[0] | (D_001FB911[0] << 8) | (D_001FB912[0] << 16) | (D_001FB913[0] << 24)) && k.s.c[0] == 'X') {
+    if (k.s.w == (gTextureHashRodata_001FB910[0] | (gTextureHashRodata_001FB911[0] << 8) | (gTextureHashRodata_001FB912[0] << 16) | (D_001FB913[0] << 24)) && k.s.c[0] == 'X') {
         n = (k.s.c[1] - '0') * 100 + (k.s.c[2] - '0') * 10;
         n += k.s.c[3] - '0';
         nd = TexAnim_GetFrame_0_00175850(n);
@@ -141,7 +146,7 @@ Node *Tex_Lookup_1_00177BB0(u64 key, s32 **r, s32 off) {
         e->x3C++;
         nd = e->x38;
     } else {
-    idx = D_004830C8[0];
+    idx = gTextureBss_004830C8[0];
     nd = unlink(idx);
     link(idx);
     nd->x10 = r;
@@ -177,8 +182,8 @@ void Tex_ReleaseList_0_00178030(void *p)
     if (!p)
         return;
     for (i = 0; i < 8; i++) {
-        if (D_0047F080[i].p == p) {
-            D_0047F080[i].p = NULL;
+        if (gTextureHashBss_0047F080[i].p == p) {
+            gTextureHashBss_0047F080[i].p = NULL;
             return;
         }
     }
@@ -189,10 +194,10 @@ static inline s32 getsz_Tex_RegisterTtix_0_00178080(s32 *s) {
     H *v;
     s8 *p;
     B *b;
-    if (*s == (D_001FB908[0] | (D_001FB909[0] << 8) | (D_001FB90A[0] << 16) | (D_001FB90B[0] << 24))) {
+    if (*s == (gTextureFindRodata_001FB908[0] | (gTextureFindRodata_001FB909[0] << 8) | (gTextureFindRodata_001FB90A[0] << 16) | (gTextureHashRodata_001FB90B[0] << 24))) {
         return 0;
     }
-    v = Node_FindById_2_0014DCD0(s, D_00201CB4);
+    v = Node_FindById_2_0014DCD0(s, gTextureHashSdata_00201CB4);
     if (v != NULL) {
 b = (B *)(v + 1); return ((s32)b->data + ((b->size + 0xF) & ~0xF)) - (s32)s;
     }
@@ -205,11 +210,29 @@ void Tex_RegisterTtix_0_00178080(s32 **arg0) {
     n = getsz_Tex_RegisterTtix_0_00178080(*arg0);
     if (n != -1) {
         for (i = 0; i < 8; i++) {
-            if (D_0047F080__as_Tex_RegisterTtix_0_00178080[i].a == NULL) {
-                D_0047F080__as_Tex_RegisterTtix_0_00178080[i].a = arg0;
-                D_0047F080__as_Tex_RegisterTtix_0_00178080[i].b = n;
+            if (gTextureHashBss_0047F080__as_Tex_RegisterTtix_0_00178080[i].a == NULL) {
+                gTextureHashBss_0047F080__as_Tex_RegisterTtix_0_00178080[i].a = arg0;
+                gTextureHashBss_0047F080__as_Tex_RegisterTtix_0_00178080[i].b = n;
                 return;
             }
         }
     }
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sdata.c): gTextureHashSdata_00201CB4 */
+s32 gTextureHashSdata_00201CB4 = 0x43494454;
+/* data twins (src/game/data/texture_bss.c): gTextureHashBss_0047F080 */
+E gTextureHashBss_0047F080[8];
+/* data group (src/game/data/sfx_all_rodata.c): D_001FB910__grp: gTextureHashRodata_001FB910@0x0 */
+unsigned char D_001FB910__grp[0x1] __attribute__((aligned(16))) = { 0x54 };
+/* data group (src/game/data/sfx_all_rodata.c): D_001FB911__grp: gTextureHashRodata_001FB911@0x0 */
+unsigned char D_001FB911__grp[0x1] __attribute__((aligned(1))) = { 0x58 };
+/* data group (src/game/data/sfx_all_rodata.c): D_001FB912__grp: gTextureHashRodata_001FB912@0x0 */
+unsigned char D_001FB912__grp[0x1] __attribute__((aligned(2))) = { 0x4d };
+/* data group (src/game/data/texture_bss.c): gTextureHashBss_004800C0__grp: gTextureHashBss_004800C0@0x0, gTextureHashBss_004800C8@0x8, gTextureHashBss_004800D0@0x10, gTextureHashBss_004800DC@0x1c, gTextureHashBss_00483090@0x2fd0 */
+unsigned char gTextureHashBss_004800C0__grp[0x3000] __attribute__((aligned(16)));
+/* data group (src/game/data/sfx_all_rodata.c): D_001FB8C8__grp: gTextureHashRodata_001FB8C8@0x0 */
+int D_001FB8C8__grp[0x2] __attribute__((aligned(8))) = { 0, 0 };
+#endif

@@ -7,7 +7,8 @@ typedef struct { u32 n; E *e; } L;
 typedef struct { L *l[13]; } G;
 typedef struct { f32 m[4]; f32 x; f32 y; } S;
 typedef union { u32 w; s8 b[4]; } Col;
-extern S D_001F2A70[] __attribute__((aligned(16)));
+#pragma explicit_zero_data on
+S gLoadingDrawData_001F2A70[0x1] = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
 void Loading_DrawText_2_0018E320(s8 *a0, s32 a1, s32 a2);
 G* MenuLayout_Get_1_00189050(s32 i);
 u8* MenuLayout_GetSub_1_00189020(s32 i);
@@ -41,7 +42,7 @@ void Loading_DrawText_2_0018E320(s8 *a0, s32 a1, s32 a2) {
     S t __attribute__((aligned(16)));
     Col col;
 
-    t = D_001F2A70[0];
+    t = gLoadingDrawData_001F2A70[0];
     t.x = *(f32 *)(a0 + 0x30);
     t.y = *(f32 *)(a0 + 0x34);
     *(u32 *)(a0 + 0x2C) = 0xA0A0A0A0;
@@ -52,9 +53,10 @@ void Loading_DrawText_2_0018E320(s8 *a0, s32 a1, s32 a2) {
     } else if (a1 != 0) {
         col.w = 0x80808080;
         col.b[3] = 0x30;
-        Color_Pulse_1_00187960(D_002020D4, &col);
+        Color_Pulse_1_00187960(gHudDrawSbss_002020D4, &col);
         Ui_DrawSprite_2_00181680(*(s32 *)(a0 + 0x28), a0, a0 + 0x10, &col, &t, a2);
     } else {
         Ui_DrawSprite_2_00181680(*(s32 *)(a0 + 0x28), a0, a0 + 0x10, a0 + 0x2C, &t, a2);
     }
 }
+

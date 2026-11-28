@@ -26,12 +26,19 @@ typedef struct {
 typedef struct { u8 pad[0x10]; u8 s[0x4D0]; } Raw;
 typedef union { struct { u32 n[4]; Entry e[2][64]; } a; Raw r[2][64]; } Tbl;
 typedef struct { char pad[0x10]; s32 v; } T;
-extern s32 D_00201FC0;
-extern Tbl D_003174F0;
-extern Entry *D_00201F94;
-extern s32 D_00201F98;
-extern s32 D_00201F9C;
-extern void *D_00201FA0;
+extern s32 gSfxSystemSbss_00201FC0;
+extern Tbl gVibrationBss_003174F0;
+extern Entry *gFxSbss_00201F94;
+#ifndef NONMATCHING
+extern s32 gFxSbss_00201F98;
+extern s32 gFxSbss_00201F9C;
+#else
+/* data twins (src/game/data/sbss.c): gFxSbss_00201F98 */
+static s32 gFxSbss_00201F98;
+/* data twins (src/game/data/sbss.c): gFxSbss_00201F9C */
+static s32 gFxSbss_00201F9C;
+#endif
+extern void *gFxSbss_00201FA0;
 s32 Fx_GetParentIdx_0_00163C40(void *arg0);
 void Fx_GetWorldMatrix_1_00163C80(O *o, Mtx *out);
 void Fx_GetWorldPos_1_00163D90(B *o, Vec *out);
@@ -56,15 +63,15 @@ s32 Fx_GetParentIdx_0_00163C40(void *arg0) {
     if (temp_4 == 0xFFFF) {
         return 0;
     }
-    return D_00201FC0 + (temp_4 * 0x120);
+    return gSfxSystemSbss_00201FC0 + (temp_4 * 0x120);
 }
 
 /* Fx_GetWorldMatrix_1_00163C80 */
-#define D_00201FC0 D_00201FC0__as_Fx_GetWorldMatrix_1_00163C80
-extern O *D_00201FC0__as_Fx_GetWorldMatrix_1_00163C80;
+#define gSfxSystemSbss_00201FC0 gSfxSystemSbss_00201FC0__as_Fx_GetWorldMatrix_1_00163C80
+extern O *gSfxSystemSbss_00201FC0__as_Fx_GetWorldMatrix_1_00163C80;
 static inline O *get(u16 id) {
     if (id == 0xFFFF) return 0;
-    return &D_00201FC0[id];
+    return &gSfxSystemSbss_00201FC0[id];
 }
 
 void Fx_GetWorldMatrix_1_00163C80(O *o, Mtx *out) {
@@ -91,11 +98,11 @@ void Fx_GetWorldMatrix_1_00163C80(O *o, Mtx *out) {
         sceVu0MulMatrix(out, &p, out);
     }
 }
-#undef D_00201FC0
+#undef gSfxSystemSbss_00201FC0
 
 /* Fx_GetWorldPos_1_00163D90 */
-#define D_00201FC0 D_00201FC0__as_Fx_GetWorldPos_1_00163D90
-extern B *D_00201FC0__as_Fx_GetWorldPos_1_00163D90;
+#define gSfxSystemSbss_00201FC0 gSfxSystemSbss_00201FC0__as_Fx_GetWorldPos_1_00163D90
+extern B *gSfxSystemSbss_00201FC0__as_Fx_GetWorldPos_1_00163D90;
 #define Fx_GetParentIdx_0_00163C40 Fx_GetParentIdx_0_00163C40__as_Fx_GetWorldPos_1_00163D90
 B *Fx_GetParentIdx_0_00163C40__as_Fx_GetWorldPos_1_00163D90(B *);
 #define Fx_GetWorldMatrix_1_00163C80 Fx_GetWorldMatrix_1_00163C80__as_Fx_GetWorldPos_1_00163D90
@@ -103,7 +110,7 @@ void Fx_GetWorldMatrix_1_00163C80__as_Fx_GetWorldPos_1_00163D90(B *, Mtx *);
 static inline B *parent(B *o) {
     u16 i = o->xA0;
     if (i == 0xFFFF) return 0;
-    return &D_00201FC0[i];
+    return &gSfxSystemSbss_00201FC0[i];
 }
 static inline void G(B *o, Vec *out) {
     B *p;
@@ -159,13 +166,13 @@ void Fx_GetWorldPos_1_00163D90(B *o, Vec *out) {
 }
 #undef Fx_GetParentIdx_0_00163C40
 #undef Fx_GetWorldMatrix_1_00163C80
-#undef D_00201FC0
+#undef gSfxSystemSbss_00201FC0
 
 /* Fx_DrawSprites_0_00163FF0 */
 static inline Entry *find(s32 id) {
     u32 i;
-    for (i = 0; i < D_003174F0.a.n[D_00201F2C]; i++) {
-        if (D_003174F0.a.e[D_00201F2C][i].id == id) return &D_003174F0.a.e[D_00201F2C][i];
+    for (i = 0; i < gVibrationBss_003174F0.a.n[gSfxAllSbss_00201F2C]; i++) {
+        if (gVibrationBss_003174F0.a.e[gSfxAllSbss_00201F2C][i].id == id) return &gVibrationBss_003174F0.a.e[gSfxAllSbss_00201F2C][i];
     }
     return 0;
 }
@@ -177,74 +184,81 @@ s32 Fx_DrawSprites_0_00163FF0(u32 a0, u8 *a1, s32 a2) {
     id = Fx_HashKey_1_00164A60(a0, a1, a2);
     e = find(id);
     if (e) {
-        if (D_00201F94 != e) {
+        if (gFxSbss_00201F94 != e) {
             Q q;
             p = GsPkt_Alloc_3_00154A80(1);
             q.q = 0;
             q.w[0] = 0x50000000;
             q.w[1] = (u32)((u8 *)e + 0x20);
             *p = q;
-            D_00201F9C++;
+            gFxSbss_00201F9C++;
         }
     } else {
         Q q;
         union { u32 w; u8 b[4]; } col;
         Raw *r;
         col.w = a0;
-        r = &D_003174F0.r[D_00201F2C][D_003174F0.a.n[D_00201F2C]];
+        r = &gVibrationBss_003174F0.r[gSfxAllSbss_00201F2C][gVibrationBss_003174F0.a.n[gSfxAllSbss_00201F2C]];
         e = (Entry *)r->s;
-        ((Entry *)r->s)->d50 = ((u64)D_00201F98 << 32) | ((u64)1 << 48);
-        ((Entry *)r->s)->d4C0 = (s64)D_00201F98 | (0x10004000 | ((u64)5 << 32));
+        ((Entry *)r->s)->d50 = ((u64)gFxSbss_00201F98 << 32) | ((u64)1 << 48);
+        ((Entry *)r->s)->d4C0 = (s64)gFxSbss_00201F98 | (0x10004000 | ((u64)5 << 32));
 
         e->c[0] = col.b[0] / 9.0f;
         e->c[1] = col.b[1] / 9.0f;
         e->c[2] = col.b[2] / 9.0f;
         e->c[3] = col.b[3] / 9.0f;
         Lightning_BuildStrip_0_00164440(e, (u8 *)e + 0xA0, a1 + 0x10, a1 + 0x50, a2);
-        D_003174F0.a.n[D_00201F2C]++;
+        gVibrationBss_003174F0.a.n[gSfxAllSbss_00201F2C]++;
         e->id = id;
         p = GsPkt_Alloc_3_00154A80(1);
         q.q = 0;
         q.w[0] = 0x50000000;
         q.w[1] = (u32)((u8 *)e + 0x20);
         *p = q;
-        D_00201F9C++;
+        gFxSbss_00201F9C++;
     }
-    D_00201F94 = e;
+    gFxSbss_00201F94 = e;
     return 1;
 }
 
 /* Fx_ResetSpriteCount_0_00164320 */
-#define D_00201F94 D_00201F94__as_Fx_ResetSpriteCount_0_00164320
-extern s32 D_00201F94__as_Fx_ResetSpriteCount_0_00164320;
+#define gFxSbss_00201F94 gFxSbss_00201F94__as_Fx_ResetSpriteCount_0_00164320
+extern s32 gFxSbss_00201F94__as_Fx_ResetSpriteCount_0_00164320;
 
 void Fx_ResetSpriteCount_0_00164320(void) {
-    D_00201F94 = 0;
+    gFxSbss_00201F94 = 0;
 }
-#undef D_00201F94
+#undef gFxSbss_00201F94
 
 /* Fx_FreeSpriteBuffer_0_00164330 */
 void Fx_FreeSpriteBuffer_0_00164330(s32 arg0, s32 arg1) {
-    Tex_Release_1_00177570(D_00201FA0, (s16 *) arg1);
-    D_00201FA0 = NULL;
+    Tex_Release_1_00177570(gFxSbss_00201FA0, (s16 *) arg1);
+    gFxSbss_00201FA0 = NULL;
 }
 
 /* Fx_BeginFrame_0_00164350 */
-#define D_003174F0 D_003174F0__as_Fx_BeginFrame_0_00164350
-extern s32 D_003174F0__as_Fx_BeginFrame_0_00164350[];
-#define D_00201F94 D_00201F94__as_Fx_BeginFrame_0_00164350
-extern s32 D_00201F94__as_Fx_BeginFrame_0_00164350;
-#define D_00201FA0 D_00201FA0__as_Fx_BeginFrame_0_00164350
-extern T *D_00201FA0__as_Fx_BeginFrame_0_00164350;
+#define gVibrationBss_003174F0 gVibrationBss_003174F0__as_Fx_BeginFrame_0_00164350
+extern s32 gVibrationBss_003174F0__as_Fx_BeginFrame_0_00164350[];
+#define gFxSbss_00201F94 gFxSbss_00201F94__as_Fx_BeginFrame_0_00164350
+extern s32 gFxSbss_00201F94__as_Fx_BeginFrame_0_00164350;
+#define gFxSbss_00201FA0 gFxSbss_00201FA0__as_Fx_BeginFrame_0_00164350
+extern T *gFxSbss_00201FA0__as_Fx_BeginFrame_0_00164350;
 
 void Fx_BeginFrame_0_00164350(void)
 {
-    D_003174F0[D_00201F2C] = 0;
-    D_00201F94 = 0;
-    D_00201F9C = 0;
-    D_00201FA0 = Tex_Resident_0_001777C0(4, 0, 0);
-    D_00201F98 = D_00201FA0->v;
+    gVibrationBss_003174F0[gSfxAllSbss_00201F2C] = 0;
+    gFxSbss_00201F94 = 0;
+    gFxSbss_00201F9C = 0;
+    gFxSbss_00201FA0 = Tex_Resident_0_001777C0(4, 0, 0);
+    gFxSbss_00201F98 = gFxSbss_00201FA0->v;
 }
-#undef D_003174F0
-#undef D_00201F94
-#undef D_00201FA0
+#undef gVibrationBss_003174F0
+#undef gFxSbss_00201F94
+#undef gFxSbss_00201FA0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): gFxSbss_00201F94, gFxSbss_00201FA0 */
+Entry *gFxSbss_00201F94;
+void *gFxSbss_00201FA0;
+#endif

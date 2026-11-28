@@ -160,7 +160,7 @@ def check_relocs(rels, data: bytes, off: int, size: int, rom: bytes, ra: int) ->
         implied.setdefault(name, set()).add(a & 0xFFFFFFFF)
     bad = 0
     for name, addrs in sorted(implied.items()):
-        m = re.fullmatch(r"(?:D|func)_([0-9A-F]{8})", name)
+        m = re.fullmatch(r"(?:D|func|g[A-Z][A-Za-z0-9]*)_([0-9A-F]{8})", name)
         if len(addrs) > 1 or (m and int(m.group(1), 16) not in addrs):
             want = f", the name says {int(m.group(1), 16):#x}" if m else ""
             print(f"  relocations disagree: {name} at {', '.join(hex(x) for x in sorted(addrs))}{want}")

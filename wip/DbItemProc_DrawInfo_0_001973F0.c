@@ -7,13 +7,13 @@ typedef struct { u8 pad[4]; s32 x4; u8 pad8[8]; u8 x10[0x10]; u8 x20[0x10]; } Q;
 typedef struct { u8 p0[0x54]; Q *x54; u8 p58[4]; Q *x5C; } G;
 typedef struct { u8 pad[4]; u16 x4; u8 pad6[0x1A]; u16 x20; u8 pad22[0x1A]; u8 x3C; u8 pad3D[0x53]; } E;
 typedef struct { u8 pad[0x14]; f32 x14; f32 x18; u8 pad1C[0x10]; f32 x2C; f32 x30; u8 pad34[8]; u32 x3C; } H;
-extern S D_001F2F60[] __attribute__((aligned(16)));
-extern s8 D_001FD368[];
-extern s8 D_001FD370[];
-extern s8 D_001FD378[];
-extern s8 D_001FD380[];
-extern s32 D_00202190;
-extern H D_004A13F0;
+extern S gDbItemProcDrawInfoData_001F2F60[] __attribute__((aligned(16)));
+extern s8 gDbItemProcDrawInfoRodata_001FD368[];
+extern s8 gDbItemProcDrawInfoRodata_001FD370[];
+extern s8 gDbItemProcDrawInfoRodata_001FD378[];
+extern s8 gStr31f_001FD380[];
+extern s32 gDatabookItemResetSbss_00202190;
+extern H gDbItemProcDrawInfoBss_004A13F0;
 void Ui_DrawSprite_2_00181680(s32, void *, void *, void *, S *, s32);
 G *MenuLayout_GetSub_1_00189020(s32);
 void sprintf(s8 *, s8 *, ...);
@@ -28,7 +28,7 @@ static inline f32 u2f(u32 x) { return x; }
 
 void DbItemProc_DrawInfo_0_001973F0(s8 *o, s32 sel, u32 id, s32 n) {
     s32 k = (s16)n;
-    S t __attribute__((aligned(16))) = D_001F2F60[0];
+    S t __attribute__((aligned(16))) = gDbItemProcDrawInfoData_001F2F60[0];
     s8 buf[0x100] = {0};
     Col col;
     Q *q;
@@ -55,7 +55,7 @@ void DbItemProc_DrawInfo_0_001973F0(s8 *o, s32 sel, u32 id, s32 n) {
     }
     if (id == 0x1F5) {
         col.w = 0x80808080;
-        sprintf(buf, D_001FD368, D_00202190);
+        sprintf(buf, gDbItemProcDrawInfoRodata_001FD368, gDatabookItemResetSbss_00202190);
         Text_Draw_2_001875C0(*(f32 *)(o + 0x38), *(f32 *)(o + 0x3C), 0.9f, buf, 2, col.w);
     }
     switch (id) {
@@ -80,12 +80,12 @@ void DbItemProc_DrawInfo_0_001973F0(s8 *o, s32 sel, u32 id, s32 n) {
     case 0:
         switch (id) {
         case 0x2711:
-            D_004A13F0.x2C = *(f32 *)(o + 0x38);
-            D_004A13F0.x30 = *(f32 *)(o + 0x3C);
-            D_004A13F0.x14 = 1.25f;
-            D_004A13F0.x18 = 1.25f;
-            D_004A13F0.x3C = 0x80FFFFFF;
-            Ui_DrawWindow_0_00183650(&D_004A13F0);
+            gDbItemProcDrawInfoBss_004A13F0.x2C = *(f32 *)(o + 0x38);
+            gDbItemProcDrawInfoBss_004A13F0.x30 = *(f32 *)(o + 0x3C);
+            gDbItemProcDrawInfoBss_004A13F0.x14 = 1.25f;
+            gDbItemProcDrawInfoBss_004A13F0.x18 = 1.25f;
+            gDbItemProcDrawInfoBss_004A13F0.x3C = 0x80FFFFFF;
+            Ui_DrawWindow_0_00183650(&gDbItemProcDrawInfoBss_004A13F0);
             break;
         }
         break;
@@ -95,18 +95,18 @@ void DbItemProc_DrawInfo_0_001973F0(s8 *o, s32 sel, u32 id, s32 n) {
             if (n > 0) {
                 e = Item_GetTable_1_001AFC90() + n;
                 if (Item_GetCategory_0_001AFBD0((s16)k) == 0) {
-                    strcpy(buf, D_001FD370);
+                    strcpy(buf, gDbItemProcDrawInfoRodata_001FD370);
                 } else if (Item_GetCategory_0_001AFBD0((s16)k) == 1) {
                     r = Item_GetTable_1_001AFC90() + (s16)k;
-                    sprintf(buf, D_001FD378, r->x3C);
+                    sprintf(buf, gDbItemProcDrawInfoRodata_001FD378, r->x3C);
                     switch (r->x20) {
                     case 5:
                     case 6:
-                        strcpy(buf, D_001FD370);
+                        strcpy(buf, gDbItemProcDrawInfoRodata_001FD370);
                         break;
                     }
                 } else {
-                    sprintf(buf, D_001FD378, e->x3C);
+                    sprintf(buf, gDbItemProcDrawInfoRodata_001FD378, e->x3C);
                 }
                 col.w = 0x80808080;
                 Text_Draw_2_001875C0(*(f32 *)(o + 0x38) - 20.0f, *(f32 *)(o + 0x3C) - 4.0f, 0.9f, buf, 0, col.w);
@@ -122,11 +122,11 @@ void DbItemProc_DrawInfo_0_001973F0(s8 *o, s32 sel, u32 id, s32 n) {
             if (n > 0) {
                 e = Item_GetTable_1_001AFC90() + n;
                 col.w = 0x80808080;
-                sprintf(buf, D_001FD380, fptodp(u2f(e->x4) / 10.0f));
+                sprintf(buf, gStr31f_001FD380, fptodp(u2f(e->x4) / 10.0f));
                 Text_Draw_2_001875C0(*(f32 *)(o + 0x38) - 20.0f, *(f32 *)(o + 0x3C) - 4.0f, 0.9f, buf, 2, col.w);
             } else {
                 col.w = 0x80808080;
-                strcpy(buf, D_001FD370);
+                strcpy(buf, gDbItemProcDrawInfoRodata_001FD370);
                 Text_Draw_2_001875C0(*(f32 *)(o + 0x38) - 20.0f, *(f32 *)(o + 0x3C) - 4.0f, 0.9f, buf, 2, col.w);
             }
             break;

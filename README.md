@@ -30,8 +30,40 @@ ln -s "/path/to/Shadow Tower Abyss (Japan).iso" baserom/sta_jp.iso
 2. `tools/extract_elf.py` writes `baserom/jp/SLPS_252.17` and
    `baserom/jp/sta.rom` (the ELF's load segment) and checks both SHA-1s.
 3. `tools/split.py` runs splat and writes `asm/`.
-4. `tools/gen_ninja.py` and `ninja` assemble, compile and link with ld 2.10,
-   then check the ROM SHA-1.
+4. `tools/gen_ninja.py` and `ninja` assemble, compile and link with ld 2.10;
+   a `--matching` build then checks the ROM SHA-1.
+
+### Matching and NONMATCHING builds
+
+`./build.sh` makes a **NONMATCHING** build by default: every C compile gets
+`-DNONMATCHING`, and each function that has best-effort C builds from it in
+place of its retail asm. The image, `build/sta.elf`, is not retail's (the
+code differs, so everything after it moves), but each such function was
+checked to do what the retail code does. `./build.sh --matching` (or
+`tools/gen_ninja.py --matching`) builds the asm instead and checks the ROM
+SHA-1. The progress report (`ninja progress`) measures the matching build in
+either mode: a NONMATCHING build also compiles each C unit without
+`-DNONMATCHING` into `build/matching/` for objdiff.
+
+A function with best-effort C looks like
+
+```c
+#ifdef NONMATCHING
+/* best-effort C: foo.c */
+#else
+INCLUDE_ASM(Foo_0_00123450);
+#endif
+```
+
+and its C sits in a file of its own under `#ifdef NONMATCHING` (empty in a
+matching build), so it keeps the declarations it was written with. The
+matching attempts stay in `wip/`.
+
+Data follows the same split: where an object cannot move into the unit that
+uses it for the matching build, the owner defines a twin of it under
+`#ifdef NONMATCHING` and its data unit keeps the retail definition under
+`#ifndef NONMATCHING`; `tools/check_data_twins.py` (part of every build)
+checks the two agree. See "Data owners" in `docs/ROADMAP.md`.
 
 Host requirements: 64-bit Linux with 32-bit glibc (the ee-gcc tools are i386
 binaries), a host gcc with `-m32` support, flex, bison, curl, git and Python 3.
@@ -84,6 +116,17 @@ Names live in `config/game_func_names.txt` (address, name, certainty); after
 editing it, run `tools/apply_names.py` and rebuild. `tools/name_dossier.py
 START END` prints each function's strings, callees and C to help with naming.
 
+## Data names
+
+Game data keeps splat's `D_<ADDR>` until what it is is settled; then it is
+named `g<Name>_<ADDR>` (no certainty digit, so it never reads as a
+function), for example `gMcState_004B63B8`. An object whose owner is known
+but not its purpose is named after the owner unit and its section
+(`gGsPacketBss_002F1194`); rename it once its purpose is settled. `config/game_data_names.txt`
+lists the names and `tools/apply_data_names.py` applies them to the tree
+(sources, config, both copies of a data twin); rerun the split afterwards
+(`rm -rf asm; ./build.sh --matching`) so `asm/` has them too.
+
 ## Adding library units
 
 Put the source under `src/sce/<lib>/` and run `tools/carve.py --check`: it
@@ -91,7 +134,7 @@ compiles every unit, places it in the retail ELF (`tools/lib_layout.py`) and
 stops on anything that does not match as a whole. `tools/carve.py` then
 rewrites the splat subsegments in `config/sta.jp.yaml`,
 `config/link_order.jp.txt` and `config/symbol_addrs.carve.txt`; delete `asm/`
-and run `./build.sh` to re-split and check the ROM.
+and run `./build.sh --matching` to re-split and check the ROM.
 
 ## Toolchain
 

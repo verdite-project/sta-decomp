@@ -14,7 +14,7 @@ typedef struct { Vec p; Vec d; } Cap;
 typedef struct { Vec p; f32 pad[3]; f32 r; } Obj_Coll_SweepCapsules_0_00151900;
 typedef struct { Obj_Coll_SweepCapsules_0_00151900 *a; Obj_Coll_SweepCapsules_0_00151900 *b; } Pair_Coll_SweepCapsules_0_00151900;
 typedef struct { u8 pad[0x28]; s32 x28; } Tgt_Coll_SweepCapsules_0_00151900;
-extern s32 D_00201F24;
+extern s32 gCollSweepSegmentsInitSbss_00201F24;
 void Coll_ClosestPointA_0_00150020(Vec *o, Vec *p, Vec *q);
 void Coll_ClosestPointB_0_00150160(Vec *o, Vec *a, Vec *b);
 void Seg_Init_1_001502A0(R *r, f32 *from, f32 *to, f32 w);
@@ -218,7 +218,7 @@ s32 Coll_SweepRecursive_0_00150730(Out *o, Pair_Coll_SweepRecursive_0_00150730 *
     sceVu0Normalize(&m2.d, &m2.d);
     m1.d.w = p1->a->d.w;
     m2.d.w = p2->a->d.w;
-    D_00201F24++;
+    gCollSweepSegmentsInitSbss_00201F24++;
     Seg_ClosestPoints_3_00151B20(&r, &m1, &m2);
     if (r.hit) {
         *state = 2;

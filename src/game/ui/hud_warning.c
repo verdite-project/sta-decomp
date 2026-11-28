@@ -22,9 +22,14 @@ typedef struct {
     u8 pad424[0x2C];
     s32 x450;
 } P;
-extern s32 D_002022E0;
-extern B2 D_00201E28;
-extern u64 D_002F1420[];
+extern s32 gHudWarningSbss_002022E0;
+#ifndef NONMATCHING
+extern B2 gHudWarningSdata_00201E28;
+#else
+/* data twins (src/game/data/sdata.c): gHudWarningSdata_00201E28 */
+static B2 gHudWarningSdata_00201E28 = { 0x40, 0x60 };
+#endif
+extern u64 gGsPacketBss_002F1420[];
 extern Flags8 D_00222A54[];
 void Hud_DrawWarning_0_001BC7A0(u32 a0, s32 a1, s32 a2);
 f32 sinf(f32);
@@ -36,9 +41,9 @@ s32 PlayerData_GetStatusTimer_0_001CE200(s32);
 /* Hud_DrawWarning_0_001BC7A0 */
 static inline f32 u2f(u32 x) { return x; }
 static inline s8 *getp(void) {
-    if (D_002022E4 == 0) return 0;
-    if (D_002022E4->unk518 == 0) return 0;
-    return D_002022E4->unk518 + 0x180;
+    if (gPlayerSbss_002022E4 == 0) return 0;
+    if (gPlayerSbss_002022E4->unk518 == 0) return 0;
+    return gPlayerSbss_002022E4->unk518 + 0x180;
 }
 
 void Hud_DrawWarning_0_001BC7A0(u32 a0, s32 a1, s32 a2) {
@@ -52,7 +57,7 @@ void Hud_DrawWarning_0_001BC7A0(u32 a0, s32 a1, s32 a2) {
     u8 hi;
     s32 per;
 
-    if (D_002022E4 == 0) p = 0; else if (D_002022E4->unk518 == 0) p = 0; else p = D_002022E4->unk518 + 0x180;
+    if (gPlayerSbss_002022E4 == 0) p = 0; else if (gPlayerSbss_002022E4->unk518 == 0) p = 0; else p = gPlayerSbss_002022E4->unk518 + 0x180;
     if (p == 0) return;
     if (a1 <= 0 || a1 > 2) return;
     switch (a0) {
@@ -85,8 +90,8 @@ void Hud_DrawWarning_0_001BC7A0(u32 a0, s32 a1, s32 a2) {
     GsPkt_BeginAD_3_001545D0();
     GsPkt_SetReg_3_001543E0(0x42, 0x44);
     GsPkt_Flush_1_001544C0();
-    Hud_DrawQuad_1_001BC610(-320, -224.0f + D_002022E0, 320, 224.0f - D_002022E0, a << 24 | b << 16 | g << 8 | r, 1, 0);
-    Hud_DrawQuad_1_001BC610(-320, -224.0f + D_002022E0, 320, 224.0f - D_002022E0, (u8)amp << 24 | b << 16 | g << 8 | r, 1, *(s32 *)(p + 0x3B4));
+    Hud_DrawQuad_1_001BC610(-320, -224.0f + gHudWarningSbss_002022E0, 320, 224.0f - gHudWarningSbss_002022E0, a << 24 | b << 16 | g << 8 | r, 1, 0);
+    Hud_DrawQuad_1_001BC610(-320, -224.0f + gHudWarningSbss_002022E0, 320, 224.0f - gHudWarningSbss_002022E0, (u8)amp << 24 | b << 16 | g << 8 | r, 1, *(s32 *)(p + 0x3B4));
 }
 
 /* Hud_DrawOverlay_0_001BCB60 */
@@ -95,9 +100,9 @@ void GsPkt_SetReg_3_001543E0__as_Hud_DrawOverlay_0_001BCB60(s32, s64);
 #define Hud_DrawWarning_0_001BC7A0 Hud_DrawWarning_0_001BC7A0__as_Hud_DrawOverlay_0_001BCB60
 void Hud_DrawWarning_0_001BC7A0__as_Hud_DrawOverlay_0_001BCB60(s8, s8, u16);
 static inline P *cur(void) {
-    if (D_002022E4 == 0) return 0;
-    if (D_002022E4->unk518 == 0) return 0;
-    return (P *)(D_002022E4->unk518 + 0x180);
+    if (gPlayerSbss_002022E4 == 0) return 0;
+    if (gPlayerSbss_002022E4->unk518 == 0) return 0;
+    return (P *)(gPlayerSbss_002022E4->unk518 + 0x180);
 }
 
 void Hud_DrawOverlay_0_001BCB60(void) {
@@ -112,10 +117,10 @@ void Hud_DrawOverlay_0_001BCB60(void) {
     p = cur();
     if (p == 0) return;
     GsPkt_BeginAD_3_001545D0();
-    GsPkt_SetReg_3_001543E0(0x40, D_002F1420[0]);
-    GsPkt_SetReg_3_001543E0(0x41, D_002F1420[0]);
+    GsPkt_SetReg_3_001543E0(0x40, gGsPacketBss_002F1420[0]);
+    GsPkt_SetReg_3_001543E0(0x41, gGsPacketBss_002F1420[0]);
     GsPkt_Flush_1_001544C0();
-    D_002022E0 = (Option_GetByte2_0_001A94A0() == 2) ? 0x2C : 0;
+    gHudWarningSbss_002022E0 = (Option_GetByte2_0_001A94A0() == 2) ? 0x2C : 0;
     Hud_DrawCompass_0_001BBCC0();
     if (p->x3A2.m == 1) {
         q = cur();
@@ -146,18 +151,24 @@ void Hud_DrawOverlay_0_001BCB60(void) {
         GsPkt_BeginAD_3_001545D0();
         GsPkt_SetReg_3_001543E0(0x42, 0x48);
         GsPkt_Flush_1_001544C0();
-        Hud_DrawQuad_1_001BC610(-0x140, -224.0f + (f32)D_002022E0, 0x140, 224.0f - (f32)D_002022E0, (k << 24) | 0x80, 1, 0);
+        Hud_DrawQuad_1_001BC610(-0x140, -224.0f + (f32)gHudWarningSbss_002022E0, 0x140, 224.0f - (f32)gHudWarningSbss_002022E0, (k << 24) | 0x80, 1, 0);
     }
     i = PlayerData_GetStatusTimer_0_001CE200(2);
     if (i != 0) {
-        t = D_00201E28;
+        t = gHudWarningSdata_00201E28;
         c = t.c[i - 1] << 24;
         GsPkt_BeginAD_3_001545D0();
         GsPkt_SetReg_3_001543E0(0x42, 0x44);
         GsPkt_Flush_1_001544C0();
-        Hud_DrawQuad_1_001BC610(-0x140, -224.0f + (f32)D_002022E0, 0x140, 224.0f - (f32)D_002022E0, c, 1, 0);
+        Hud_DrawQuad_1_001BC610(-0x140, -224.0f + (f32)gHudWarningSbss_002022E0, 0x140, 224.0f - (f32)gHudWarningSbss_002022E0, c, 1, 0);
     }
     Hud_DrawWarning_0_001BC7A0(p->x420, p->x421, p->x422);
 }
 #undef GsPkt_SetReg_3_001543E0
 #undef Hud_DrawWarning_0_001BC7A0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): gHudWarningSbss_002022E0 */
+s32 gHudWarningSbss_002022E0;
+#endif

@@ -39,12 +39,12 @@ typedef struct { u8 pad[0x30]; f32 v[4]; u8 pad2[0x188-0x40]; u8 flags; u8 pad3[
 typedef struct { u8 m[0x100]; u8 m2[0x14]; u8 f0 : 1; u8 f1:1; u8 f2:1; u8 f3:1;u8 f4:1;u8 f5:1;u8 f6:1;u8 f7:1; u8 pad[0x120-0x115]; } B_Sfx_OffsetAll_1_00167850;
 typedef struct { f32 x, y, z; u8 pad[0x30-12]; } C;
 typedef struct { C c[2]; } CC;
-extern char D_003407E0[];
-extern s8 D_001F2160[];
-extern f32 D_001F2170[];
-extern B_Sfx_OffsetAll_1_00167850 *D_00201FC0;
-extern CC *D_00201FD0;
-extern u8 D_003406D0[];
+extern char gSfxSystemBss_003407E0[];
+extern s8 gMatrixFromData_001F2160[];
+extern f32 gMatrixFromData_001F2170[];
+extern B_Sfx_OffsetAll_1_00167850 *gSfxSystemSbss_00201FC0;
+extern CC *gSfxAllSbss_00201FD0;
+extern u8 gSfxBss_003406D0[];
 s32 Sfx_Release_1_00167030(char *p);
 void Sfx_Free_1_001670E0(O_Sfx_Free_1_001670E0 *o);
 void Sfx_RequestStop_1_00167240(Obj_Sfx_RequestStop_1_00167240 *o);
@@ -88,7 +88,7 @@ void Sfx_Free_1_001670E0__as_Sfx_Release_1_00167030(Obj_Sfx_Release_1_00167030 *
 s32 Sfx_Release_1_00167030(char *p)
 {
     Obj_Sfx_Release_1_00167030 *o = (Obj_Sfx_Release_1_00167030 *)p;
-    if (p < D_003407E0 || p > D_0042C910)
+    if (p < gSfxSystemBss_003407E0 || p > D_0042C910)
         return 0;
     Sfx_Free_1_001670E0(o);
     o->a = 1;
@@ -178,7 +178,7 @@ s32 Sfx_GetState_0_001672B0(Obj_Sfx_GetState_0_001672B0 *o, Q_Sfx_GetState_0_001
 
 inline s32 has(void) {
     s32 r = 0;
-    if (D_002022E4 != NULL && D_002022E4->unk518 != NULL) {
+    if (gPlayerSbss_002022E4 != NULL && gPlayerSbss_002022E4->unk518 != NULL) {
         r = 1;
     }
     return r;
@@ -204,15 +204,15 @@ void Sfx_AimMatrix_0_00167310(void *m0, f32 mx, f32 my) {
 
     if (m0 != NULL) {
         m = m0;
-        Vec_GetYawPitchBetween_1_00146310(m + 12, m + 8, has() ? D_002022E4->unk518 + 0x1C0 : D_001F2160, &a, &b);
+        Vec_GetYawPitchBetween_1_00146310(m + 12, m + 8, has() ? gPlayerSbss_002022E4->unk518 + 0x1C0 : gMatrixFromData_001F2160, &a, &b);
         x = a;
         x = fabsf(x) < mx ? x : mx * (f32)(x < 0.0f ? -1 : 1);
         y = b;
         y = fabsf(y) < my ? y : my * (f32)(y < 0.0f ? -1 : 1);
-        sceVu0RotMatrixX(r, D_001F2170, WRAP(y));
+        sceVu0RotMatrixX(r, gMatrixFromData_001F2170, WRAP(y));
         sceVu0RotMatrixY(r, r, WRAP(x));
         sceVu0CopyMatrix(t, m);
-        sceVu0CopyVector(t[3], (f32 *)D_001F2160);
+        sceVu0CopyVector(t[3], (f32 *)gMatrixFromData_001F2160);
         sceVu0MulMatrix(t, t, r);
         sceVu0CopyVector(m, t[0]);
         sceVu0CopyVector(m + 4, t[1]);
@@ -221,12 +221,12 @@ void Sfx_AimMatrix_0_00167310(void *m0, f32 mx, f32 my) {
 }
 
 /* Sfx_ReleaseOwned_0_00167580 */
-#define D_003407E0 D_003407E0__as_Sfx_ReleaseOwned_0_00167580
-extern E D_003407E0__as_Sfx_ReleaseOwned_0_00167580[];
+#define gSfxSystemBss_003407E0 gSfxSystemBss_003407E0__as_Sfx_ReleaseOwned_0_00167580
+extern E gSfxSystemBss_003407E0__as_Sfx_ReleaseOwned_0_00167580[];
 void Sfx_ReleaseOwned_0_00167580(void) {
     s32 id = ActorList_FromHandle_1_001A5970();
     s32 i = 0;
-    E *e = D_003407E0;
+    E *e = gSfxSystemBss_003407E0;
     do {
         if (e->x170 == id) {
             e->x170 = 0;
@@ -235,7 +235,7 @@ void Sfx_ReleaseOwned_0_00167580(void) {
         e++;
     } while (i < 0x100);
 }
-#undef D_003407E0
+#undef gSfxSystemBss_003407E0
 
 /* Sfx_GetOwner_1_001675D0 */
 s32 Sfx_GetOwner_1_001675D0(void *arg0) {
@@ -344,30 +344,36 @@ void Sfx_SetTransform_1_001677C0(s8 *arg0) {
 /* Sfx_OffsetAll_1_00167850 */
 #define sceVu0CopyVector sceVu0CopyVector__as_Sfx_OffsetAll_1_00167850
 void sceVu0CopyVector__as_Sfx_OffsetAll_1_00167850(void *, f32 *);
-#define D_003407E0 D_003407E0__as_Sfx_OffsetAll_1_00167850
-extern A D_003407E0__as_Sfx_OffsetAll_1_00167850[];
+#define gSfxSystemBss_003407E0 gSfxSystemBss_003407E0__as_Sfx_OffsetAll_1_00167850
+extern A gSfxSystemBss_003407E0__as_Sfx_OffsetAll_1_00167850[];
 
 void Sfx_OffsetAll_1_00167850(f32 *arg0) {
     s32 i;
     A *a;
 
-    a = D_003407E0;
+    a = gSfxSystemBss_003407E0;
     for (i = 0; i < 0x100; i++, a++) {
         if (a->flags & 1) {
             sceVu0AddVector(a->v, a->v, arg0);
             a->v[3] = 1.0f;
         }
     }
-    sceVu0CopyVector(D_003406D0, arg0);
-    for (i = 0; i < D_00201FAC; i++) {
-        if (D_00201FC0[i].f0 && !D_00201FC0[i].f5) {
-            sceVu0AddVector(&D_00201FC0[i], &D_00201FC0[i], arg0);
-            sceVu0AddVector(D_00201FC0[i].m2, D_00201FC0[i].m2, arg0);
-            D_00201FD0[i].c[D_00201F2C].x += arg0[0];
-            D_00201FD0[i].c[D_00201F2C].y += arg0[1];
-            D_00201FD0[i].c[D_00201F2C].z += arg0[2];
+    sceVu0CopyVector(gSfxBss_003406D0, arg0);
+    for (i = 0; i < gSfxSystemSbss_00201FAC; i++) {
+        if (gSfxSystemSbss_00201FC0[i].f0 && !gSfxSystemSbss_00201FC0[i].f5) {
+            sceVu0AddVector(&gSfxSystemSbss_00201FC0[i], &gSfxSystemSbss_00201FC0[i], arg0);
+            sceVu0AddVector(gSfxSystemSbss_00201FC0[i].m2, gSfxSystemSbss_00201FC0[i].m2, arg0);
+            gSfxAllSbss_00201FD0[i].c[gSfxAllSbss_00201F2C].x += arg0[0];
+            gSfxAllSbss_00201FD0[i].c[gSfxAllSbss_00201F2C].y += arg0[1];
+            gSfxAllSbss_00201FD0[i].c[gSfxAllSbss_00201F2C].z += arg0[2];
         }
     }
 }
 #undef sceVu0CopyVector
-#undef D_003407E0
+#undef gSfxSystemBss_003407E0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/vibration_bss_0033F540.c): gSfxBss_003406D0 */
+u8 gSfxBss_003406D0[0x10];
+#endif

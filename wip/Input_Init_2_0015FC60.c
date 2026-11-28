@@ -20,12 +20,12 @@ void Pad_UpdateAll_3_001D7350(void);
 void Pad_PortOpen_3_001D72F8(u32, s32, s32);
 void Pad_ClearRepeat_3_001D7C80(u32, s32, s32);
 void Pad_SetRepeat_3_001D7C08(s32, s32, u16, u16, u16);
-extern S D_00317230[];
+extern S gMenuBss_00317230[];
 
-static inline S *get(s32 i) { return &D_00317230[i]; }
+static inline S *get(s32 i) { return &gMenuBss_00317230[i]; }
 void Input_Init_2_0015FC60(void) {
     u32 i;
-    memset(D_00317230, 0, 0xB0);
+    memset(gMenuBss_00317230, 0, 0xB0);
     Pad_Init_3_001D7290(0);
     Pad_UpdateAll_3_001D7350();
     for (i = 0; i < 2; i++) {

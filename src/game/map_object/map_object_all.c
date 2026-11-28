@@ -76,8 +76,8 @@ typedef struct {
     u8 pad184[0x10];
     P *x194;
 } O_MapObj_Create_0_001BB8A0;
-extern O_MapObj_UpdateAll_0_001BAB70 *D_002022D4;
-extern C_MapObj_SpawnContainedItem_0_001BB760 **D_00201E80[2];
+extern O_MapObj_UpdateAll_0_001BAB70 *gMapObjectAllSbss_002022D4;
+extern C_MapObj_SpawnContainedItem_0_001BB760 **gMapSbss_00201E80[2];
 void MapObj_UpdateAll_0_001BAB70(O_MapObj_UpdateAll_0_001BAB70 *o, f32 dt);
 void MapObj_InitAnim_1_001BB320(s8 *p, u32 i);
 void MapObj_SpawnContainedItem_0_001BB760(C_MapObj_SpawnContainedItem_0_001BB760 *c, s32 f, s32 id, void *m, s32 lift);
@@ -243,7 +243,7 @@ void MapObj_UpdateAll_0_001BAB70(O_MapObj_UpdateAll_0_001BAB70 *o, f32 dt) {
             b->f51.c--;
         }
         if (flag) {
-            D_002022D4 = o;
+            gMapObjectAllSbss_002022D4 = o;
             Mdl_RunMotionEvents_0_001717A0(hh, hh->x8, hh->xC, hh->x10, Trap_Attack_0_001BAA10);
         }
         sk = Mdl_GetFrameData_0_001715B0(h);
@@ -362,7 +362,7 @@ void MapObj_InitAnim_1_001BB320(s8 *p, u32 i) {
         break;
     }
     if (((BF8 *)(e + 0x50))->b2) {
-        Mdl_AnimateSel_0_00171B30(s, *(u16 *)(s + 8), *(f32 *)(s + 0xC), !(D_00201F2C != 0));
+        Mdl_AnimateSel_0_00171B30(s, *(u16 *)(s + 8), *(f32 *)(s + 0xC), !(gSfxAllSbss_00201F2C != 0));
         Mdl_ResetBones_0_00171610(m);
     }
     ((BF51 *)(e + 0x51))->v = 2;
@@ -371,8 +371,8 @@ void MapObj_InitAnim_1_001BB320(s8 *p, u32 i) {
 #undef MapObj_SpawnContainedItem_0_001BB760
 
 /* MapObj_SpawnContainedItem_0_001BB760 */
-#define CC (((C_MapObj_SpawnContainedItem_0_001BB760 ***)&D_00201E80)[2])
-#define DD (((C_MapObj_SpawnContainedItem_0_001BB760 ***)&D_00201E80)[3])
+#define CC (((C_MapObj_SpawnContainedItem_0_001BB760 ***)&gMapSbss_00201E80)[2])
+#define DD (((C_MapObj_SpawnContainedItem_0_001BB760 ***)&gMapSbss_00201E80)[3])
 
 void MapObj_SpawnContainedItem_0_001BB760(C_MapObj_SpawnContainedItem_0_001BB760 *c, s32 f, s32 id, void *m, s32 lift) {
     s32 k;
@@ -387,7 +387,7 @@ void MapObj_SpawnContainedItem_0_001BB760(C_MapObj_SpawnContainedItem_0_001BB760
     if (!Inventory_CountItem_0_001CC0C0(id, 0)) return;
     Map_DecodeTransform_0_001B59E0(m, &a, &b, &d);
     if (lift) a.y -= 20.0f;
-    ItemObj_SpawnFromMap_0_001AEE80(D_00201E80[k + 2], id, &a, &b, f);
+    ItemObj_SpawnFromMap_0_001AEE80(gMapSbss_00201E80[k + 2], id, &a, &b, f);
 }
 #undef CC
 #undef DD
@@ -444,14 +444,14 @@ void MapObj_Create_0_001BB8A0(s32 a0, O_MapObj_Create_0_001BB8A0 *o, s32 a2) {
         e->x40 = Mdl_CreateInstance_0_00174230(a0, o->x194[id].x0, -1, -1);
         (*e->x40)->x24.f.b2 = 0;
         for (k = 0; k < 2; k++) {
-            D_00201F2C = k;
+            gSfxAllSbss_00201F2C = k;
             Mdl_UpdateBoneMatricesCur_0_00171540(*e->x40, e);
         }
         if (t->x12.f.b3 && o->x170[t->x6].x0 < o->x80) {
             e->x44 = Mdl_CreateInstance_0_00174230(a0, o->x194[o->x170[t->x6].x0].x0, -1, -1);
             (*e->x44)->x24.f.b2 = 0;
             for (k = 0; k < 2; k++) {
-                D_00201F2C = k;
+                gSfxAllSbss_00201F2C = k;
                 Mdl_UpdateBoneMatricesCur_0_00171540(*e->x44, e);
             }
         }
@@ -459,3 +459,9 @@ void MapObj_Create_0_001BB8A0(s32 a0, O_MapObj_Create_0_001BB8A0 *o, s32 a2) {
 }
 #undef Map_DecodeTransform_0_001B59E0
 #undef Mdl_UpdateBoneMatricesCur_0_00171540
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): gMapObjectAllSbss_002022D4 */
+O_MapObj_UpdateAll_0_001BAB70 *gMapObjectAllSbss_002022D4;
+#endif

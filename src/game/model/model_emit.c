@@ -49,14 +49,19 @@ typedef struct { u8 pad[0x10]; s32 x10; u8 pad14[0x18]; s32 x2C; u8 pad30[0xC]; 
 typedef Bits8 BF_Mdl_BindTexture_0_0016F440;
 extern Flags8 D_00222A50[];
 extern Flags8 D_00222A51[];
-extern u8 D_001F2110[];
-extern Q_Mdl_EmitMeshVu1_1_0016E760 D_0042DDC0[][2];
-extern Q_Mdl_EmitMeshVu1_1_0016E760 D_0042D8C0[][2];
-extern u32 D_00201F4C;
-extern u32 D_00202008;
-extern u8 D_00201CBC[4];
+extern u8 gMatrixFromData_001F2110[];
+extern Q_Mdl_EmitMeshVu1_1_0016E760 gModelEmitBss_0042DDC0[][2];
+extern Q_Mdl_EmitMeshVu1_1_0016E760 gModelEmitBss_0042D8C0[][2];
+extern u32 gModelEmitSbss_00201F4C;
+extern u32 gModelEmitSbss_00202008;
+#ifndef NONMATCHING
+extern u8 gModelEmitSdata_00201CBC[4];
+#else
+/* data twins (src/game/data/sdata.c): gModelEmitSdata_00201CBC */
+static u8 gModelEmitSdata_00201CBC[0x4] = { 0, 0x10, 0x20, 0x40 };
+#endif
 extern A2_Mdl_BindTexture_0_0016F440 D_00222790[];
-extern s8 D_001FB8F8[];
+extern s8 gTextureFindRodata_001FB8F8[];
 void Mdl_EmitStrip_1_0016DED0(A0_Mdl_EmitStrip_1_0016DED0 *a0, A1_Mdl_EmitStrip_1_0016DED0 *a1, A2_Mdl_EmitStrip_1_0016DED0 *a2, P4 a3);
 void Mdl_EmitMeshVu1_1_0016E760(H_Mdl_EmitMeshVu1_1_0016E760 *h, E2 *arr, u8 *verts, u32 n, M_Mdl_EmitMeshVu1_1_0016E760 *mtx, s32 mode, s32 off, u8 *tex, s32 a8, s32 a9, F_Mdl_EmitMeshVu1_1_0016E760 f);
 void Mdl_EmitMeshVu1B_1_0016EB70(P *pp, s8 *a1, Vec *fp, u32 n, M_Mdl_EmitMeshVu1B_1_0016EB70 *mt, s32 mode, s32 off, F4 f);
@@ -133,7 +138,7 @@ void Mdl_EmitStrip_1_0016DED0(A0_Mdl_EmitStrip_1_0016DED0 *a0, A1_Mdl_EmitStrip_
     r.w[3] = n | (D_00222A51[0].f.b3 ? 0 : 4) | (D_00222A50[0].f.b1 ? 8 : 0);
     ((u128 *)p)[0] = q.q;
     ((u128 *)p)[1] = r.q;
-    sceVu0CopyVector(a2->e[a0->idx].m, D_001F2110);
+    sceVu0CopyVector(a2->e[a0->idx].m, gMatrixFromData_001F2110);
     q.q = 0;
     q.w[0] = 0x30000001;
     q.w[1] = (u32)a2->e[a0->idx].m + a2->base;
@@ -141,7 +146,7 @@ void Mdl_EmitStrip_1_0016DED0(A0_Mdl_EmitStrip_1_0016DED0 *a0, A1_Mdl_EmitStrip_
     ((u128 *)p)[2] = q.q;
     q.q = 0;
     q.w[0] = 0x10000000;
-    q.w[3] = D_00201F54 | 0x15000000;
+    q.w[3] = gMdlEmitStripDSbss_00201F54 | 0x15000000;
     ((u128 *)p)[3] = q.q;
     GsPkt_Commit_1_00154A70();
 }
@@ -194,12 +199,12 @@ void Mdl_EmitMeshVu1_1_0016E760(H_Mdl_EmitMeshVu1_1_0016E760 *h, E2 *arr, u8 *ve
             p = GsPkt_Alloc_3_00154A80(4);
             q.q = 0;
             q.w[0] = 0x30000002;
-            q.w[1] = (u32)&D_0042DDC0[(e->x2 << 5) | (f.b0 << 4) | (f.b1 << 3) | (f.b4 << 2) | (f.b2 << 1) | f.b6];
+            q.w[1] = (u32)&gModelEmitBss_0042DDC0[(e->x2 << 5) | (f.b0 << 4) | (f.b1 << 3) | (f.b4 << 2) | (f.b2 << 1) | f.b6];
             q.w[3] = 0x6C028000;
             p[0].q = q.q;
             q.q = 0;
             q.w[0] = 0x30000002;
-            q.w[1] = (u32)&D_0042D8C0[e->x2];
+            q.w[1] = (u32)&gModelEmitBss_0042D8C0[e->x2];
             q.w[3] = 0x6C0200A6;
             p[1].q = q.q;
             q.q = 0;
@@ -209,14 +214,14 @@ void Mdl_EmitMeshVu1_1_0016E760(H_Mdl_EmitMeshVu1_1_0016E760 *h, E2 *arr, u8 *ve
             q.q = 0;
             q.w[0] = 0x10000000;
             q.w[3] = 0x10000000;
-            q.w[2] = D_00201F50 | 0x15000000;
+            q.w[2] = gModelEmitSbss_00201F50 | 0x15000000;
             p[3].q = q.q;
             GsPkt_Commit_1_00154A70();
         } else {
             p = GsPkt_Alloc_3_00154A80(3);
             q.q = 0;
             q.w[0] = 0x30000002;
-            q.w[1] = (u32)&D_0042DDC0[(e->x2 << 5) | (f.b0 << 4) | (f.b1 << 3) | (f.b4 << 2) | (f.b2 << 1) | f.b6];
+            q.w[1] = (u32)&gModelEmitBss_0042DDC0[(e->x2 << 5) | (f.b0 << 4) | (f.b1 << 3) | (f.b4 << 2) | (f.b2 << 1) | f.b6];
             q.w[3] = 0x6C028000;
             p[0].q = q.q;
             q.q = 0;
@@ -227,10 +232,10 @@ void Mdl_EmitMeshVu1_1_0016E760(H_Mdl_EmitMeshVu1_1_0016E760 *h, E2 *arr, u8 *ve
             q.w[0] = 0x10000000;
             if (m < 2) {
                 q.w[3] = 0x10000000;
-                q.w[2] = D_00202008 | 0x15000000;
+                q.w[2] = gModelEmitSbss_00202008 | 0x15000000;
             } else {
                 q.w[3] = 0x10000000;
-                q.w[2] = D_00201F4C | 0x15000000;
+                q.w[2] = gModelEmitSbss_00201F4C | 0x15000000;
             }
             p[2].q = q.q;
             GsPkt_Commit_1_00154A70();
@@ -243,16 +248,16 @@ void Mdl_EmitMeshVu1_1_0016E760(H_Mdl_EmitMeshVu1_1_0016E760 *h, E2 *arr, u8 *ve
 #undef Mdl_BindTexture_0_0016F440
 
 /* Mdl_EmitMeshVu1B_1_0016EB70 */
-#define D_00201F4C D_00201F4C__as_Mdl_EmitMeshVu1B_1_0016EB70
-extern s32 D_00201F4C__as_Mdl_EmitMeshVu1B_1_0016EB70;
-#define D_00201F50 D_00201F50__as_Mdl_EmitMeshVu1B_1_0016EB70
-extern s32 D_00201F50__as_Mdl_EmitMeshVu1B_1_0016EB70;
-#define D_00202008 D_00202008__as_Mdl_EmitMeshVu1B_1_0016EB70
-extern s32 D_00202008__as_Mdl_EmitMeshVu1B_1_0016EB70;
-#define D_0042D8C0 D_0042D8C0__as_Mdl_EmitMeshVu1B_1_0016EB70
-extern T_Mdl_EmitMeshVu1B_1_0016EB70 D_0042D8C0__as_Mdl_EmitMeshVu1B_1_0016EB70[][2];
-#define D_0042DDC0 D_0042DDC0__as_Mdl_EmitMeshVu1B_1_0016EB70
-extern T_Mdl_EmitMeshVu1B_1_0016EB70 D_0042DDC0__as_Mdl_EmitMeshVu1B_1_0016EB70[][2];
+#define gModelEmitSbss_00201F4C gModelEmitSbss_00201F4C__as_Mdl_EmitMeshVu1B_1_0016EB70
+extern s32 gModelEmitSbss_00201F4C__as_Mdl_EmitMeshVu1B_1_0016EB70;
+#define gModelEmitSbss_00201F50 gModelEmitSbss_00201F50__as_Mdl_EmitMeshVu1B_1_0016EB70
+extern s32 gModelEmitSbss_00201F50__as_Mdl_EmitMeshVu1B_1_0016EB70;
+#define gModelEmitSbss_00202008 gModelEmitSbss_00202008__as_Mdl_EmitMeshVu1B_1_0016EB70
+extern s32 gModelEmitSbss_00202008__as_Mdl_EmitMeshVu1B_1_0016EB70;
+#define gModelEmitBss_0042D8C0 gModelEmitBss_0042D8C0__as_Mdl_EmitMeshVu1B_1_0016EB70
+extern T_Mdl_EmitMeshVu1B_1_0016EB70 gModelEmitBss_0042D8C0__as_Mdl_EmitMeshVu1B_1_0016EB70[][2];
+#define gModelEmitBss_0042DDC0 gModelEmitBss_0042DDC0__as_Mdl_EmitMeshVu1B_1_0016EB70
+extern T_Mdl_EmitMeshVu1B_1_0016EB70 gModelEmitBss_0042DDC0__as_Mdl_EmitMeshVu1B_1_0016EB70[][2];
 #define sceVu0CopyVector sceVu0CopyVector__as_Mdl_EmitMeshVu1B_1_0016EB70
 void sceVu0CopyVector__as_Mdl_EmitMeshVu1B_1_0016EB70(Vec *, Vec *);
 #define sceVu0ApplyMatrix sceVu0ApplyMatrix__as_Mdl_EmitMeshVu1B_1_0016EB70
@@ -296,12 +301,12 @@ void Mdl_EmitMeshVu1B_1_0016EB70(P *pp, s8 *a1, Vec *fp, u32 n, M_Mdl_EmitMeshVu
             q = GsPkt_Alloc_3_00154A80(4);
             tag.q = 0;
             tag.w[0] = 0x30000002;
-            tag.w[1] = (u32)D_0042DDC0[(e->x2 << 5) | (f.f.f.b0 << 4) | (f.f.f.b1 << 3) | (f.f.f.b4 << 2) | (f.f.f.b2 << 1) | f.f.f.b6];
+            tag.w[1] = (u32)gModelEmitBss_0042DDC0[(e->x2 << 5) | (f.f.f.b0 << 4) | (f.f.f.b1 << 3) | (f.f.f.b4 << 2) | (f.f.f.b2 << 1) | f.f.f.b6];
             tag.w[3] = 0x6C028000;
             q[0].q = tag.q;
             tag.q = 0;
             tag.w[0] = 0x30000002;
-            tag.w[1] = (u32)D_0042D8C0[e->x2];
+            tag.w[1] = (u32)gModelEmitBss_0042D8C0[e->x2];
             tag.w[3] = 0x6C0200A6;
             q[1].q = tag.q;
             tag.q = 0;
@@ -311,7 +316,7 @@ void Mdl_EmitMeshVu1B_1_0016EB70(P *pp, s8 *a1, Vec *fp, u32 n, M_Mdl_EmitMeshVu
             tag.q = 0;
             tag.w[0] = 0x10000000;
             tag.w[3] = 0x10000000;
-            tag.w[2] = D_00201F50 | 0x15000000;
+            tag.w[2] = gModelEmitSbss_00201F50 | 0x15000000;
             q[3].q = tag.q;
             GsPkt_Commit_1_00154A70();
         } else {
@@ -319,7 +324,7 @@ void Mdl_EmitMeshVu1B_1_0016EB70(P *pp, s8 *a1, Vec *fp, u32 n, M_Mdl_EmitMeshVu
             q = GsPkt_Alloc_3_00154A80(3);
             tag.q = 0;
             tag.w[0] = 0x30000002;
-            tag.w[1] = (u32)D_0042DDC0[(e->x2 << 5) | (f.f.f.b0 << 4) | (f.f.f.b1 << 3) | (f.f.f.b4 << 2) | (f.f.f.b2 << 1) | f.f.f.b6];
+            tag.w[1] = (u32)gModelEmitBss_0042DDC0[(e->x2 << 5) | (f.f.f.b0 << 4) | (f.f.f.b1 << 3) | (f.f.f.b4 << 2) | (f.f.f.b2 << 1) | f.f.f.b6];
             tag.w[3] = 0x6C028000;
             q[0].q = tag.q;
             tag.q = 0;
@@ -330,10 +335,10 @@ void Mdl_EmitMeshVu1B_1_0016EB70(P *pp, s8 *a1, Vec *fp, u32 n, M_Mdl_EmitMeshVu
             tag.w[0] = 0x10000000;
             if (cur < 2) {
                 tag.w[3] = 0x10000000;
-                tag.w[2] = D_00202008 | 0x15000000;
+                tag.w[2] = gModelEmitSbss_00202008 | 0x15000000;
             } else {
                 tag.w[3] = 0x10000000;
-                tag.w[2] = D_00201F4C | 0x15000000;
+                tag.w[2] = gModelEmitSbss_00201F4C | 0x15000000;
             }
             q[2].q = tag.q;
             GsPkt_Commit_1_00154A70();
@@ -343,17 +348,17 @@ void Mdl_EmitMeshVu1B_1_0016EB70(P *pp, s8 *a1, Vec *fp, u32 n, M_Mdl_EmitMeshVu
 #undef sceVu0CopyVector
 #undef sceVu0ApplyMatrix
 #undef GsPkt_Alloc_3_00154A80
-#undef D_00201F4C
-#undef D_00201F50
-#undef D_00202008
-#undef D_0042D8C0
-#undef D_0042DDC0
+#undef gModelEmitSbss_00201F4C
+#undef gModelEmitSbss_00201F50
+#undef gModelEmitSbss_00202008
+#undef gModelEmitBss_0042D8C0
+#undef gModelEmitBss_0042DDC0
 
 /* Mdl_EmitPolys_1_0016EF70 */
-#define D_00202008 D_00202008__as_Mdl_EmitPolys_1_0016EF70
-extern s32 D_00202008__as_Mdl_EmitPolys_1_0016EF70;
-#define D_0042DDC0 D_0042DDC0__as_Mdl_EmitPolys_1_0016EF70
-extern T_Mdl_EmitPolys_1_0016EF70 D_0042DDC0__as_Mdl_EmitPolys_1_0016EF70[];
+#define gModelEmitSbss_00202008 gModelEmitSbss_00202008__as_Mdl_EmitPolys_1_0016EF70
+extern s32 gModelEmitSbss_00202008__as_Mdl_EmitPolys_1_0016EF70;
+#define gModelEmitBss_0042DDC0 gModelEmitBss_0042DDC0__as_Mdl_EmitPolys_1_0016EF70
+extern T_Mdl_EmitPolys_1_0016EF70 gModelEmitBss_0042DDC0__as_Mdl_EmitPolys_1_0016EF70[];
 #define GsPkt_Alloc_3_00154A80 GsPkt_Alloc_3_00154A80__as_Mdl_EmitPolys_1_0016EF70
 Q_Mdl_EmitPolys_1_0016EF70 *GsPkt_Alloc_3_00154A80__as_Mdl_EmitPolys_1_0016EF70(s32);
 
@@ -371,9 +376,9 @@ void Mdl_EmitPolys_1_0016EF70(Obj_Mdl_EmitPolys_1_0016EF70 *a0, E16 *a1, u8 *a2,
             ad = a2 + e->x4 * 16;
             q.q = 0;
             q.w[0] = 0x30000002;
-            q.w[1] = (u32)&D_0042DDC0[e->x2 << 5 | f.b0 << 4 | f.b1 << 3 | f.b4 << 2 | f.b2 << 1 | f.b6];
+            q.w[1] = (u32)&gModelEmitBss_0042DDC0[e->x2 << 5 | f.b0 << 4 | f.b1 << 3 | f.b4 << 2 | f.b2 << 1 | f.b6];
             if (i != 0) {
-                q.w[2] = D_00202008 | 0x15000000;
+                q.w[2] = gModelEmitSbss_00202008 | 0x15000000;
             }
             q.w[3] = 0x6C028000;
             p[0].q = q.q;
@@ -386,7 +391,7 @@ void Mdl_EmitPolys_1_0016EF70(Obj_Mdl_EmitPolys_1_0016EF70 *a0, E16 *a1, u8 *a2,
                 q.q = 0;
                 q.w[0] = 0x10000000;
                 q.w[3] = 0x10000000;
-                q.w[2] = D_00202008 | 0x15000000;
+                q.w[2] = gModelEmitSbss_00202008 | 0x15000000;
                 p[0].q = q.q;
                 p++;
             }
@@ -398,7 +403,7 @@ void Mdl_EmitPolys_1_0016EF70(Obj_Mdl_EmitPolys_1_0016EF70 *a0, E16 *a1, u8 *a2,
         ad = a2 + e->x4 * 16;
         q.q = 0;
         q.w[0] = 0x30000002;
-        q.w[1] = (u32)&D_0042DDC0[e->x2 << 5 | f.b0 << 4 | f.b1 << 3 | f.b4 << 2 | f.b2 << 1 | f.b6];
+        q.w[1] = (u32)&gModelEmitBss_0042DDC0[e->x2 << 5 | f.b0 << 4 | f.b1 << 3 | f.b4 << 2 | f.b2 << 1 | f.b6];
         q.w[3] = 0x6C028000;
         p[0].q = q.q;
         q.q = 0;
@@ -408,21 +413,21 @@ void Mdl_EmitPolys_1_0016EF70(Obj_Mdl_EmitPolys_1_0016EF70 *a0, E16 *a1, u8 *a2,
         q.q = 0;
         q.w[0] = 0x10000000;
         q.w[3] = 0x10000000;
-        q.w[2] = D_00202008 | 0x15000000;
+        q.w[2] = gModelEmitSbss_00202008 | 0x15000000;
         p[2].q = q.q;
         GsPkt_Commit_1_00154A70();
     }
 }
 #undef GsPkt_Alloc_3_00154A80
-#undef D_00202008
-#undef D_0042DDC0
+#undef gModelEmitSbss_00202008
+#undef gModelEmitBss_0042DDC0
 
 /* Mdl_SetBlendMode_1_0016F280 */
 void Mdl_SetBlendMode_1_0016F280(Arg a) {
     switch ((a.b5 ? 2 : 0) | (a.b6 ? 1 : 0)) {
     case 0:
         GsPkt_BeginAD_3_001545D0();
-        GsPkt_SetReg_3_001543E0(0x47, ((u64)D_00201CBC[a.c1] << 4) | 0x5000D);
+        GsPkt_SetReg_3_001543E0(0x47, ((u64)gModelEmitSdata_00201CBC[a.c1] << 4) | 0x5000D);
         GsPkt_SetReg_3_001543E0(0x49, 0);
         GsPkt_EndAD_3_00154420();
         break;
@@ -434,7 +439,7 @@ void Mdl_SetBlendMode_1_0016F280(Arg a) {
         break;
     case 2:
         GsPkt_BeginAD_3_001545D0();
-        GsPkt_SetReg_3_001543E0(0x47, ((u64)D_00201CBC[a.c1] << 4) | 0x3000D);
+        GsPkt_SetReg_3_001543E0(0x47, ((u64)gModelEmitSdata_00201CBC[a.c1] << 4) | 0x3000D);
         GsPkt_SetReg_3_001543E0(0x49, 0);
         GsPkt_EndAD_3_00154420();
         break;
@@ -541,7 +546,7 @@ void Mdl_BindTexture_0_0016F440(A0_Mdl_BindTexture_0_0016F440 *a0, A1_Mdl_BindTe
         if (!f->c0) {
             if (a2->x30 != (u64)-1) {
                 n.d = a2->x30;
-                if (n.w[0] == (D_001FB8F8[0] | (D_001FB8F8[1] << 8) | (D_001FB8F8[2] << 16) | (D_001FB8F8[3] << 24))) {
+                if (n.w[0] == (gTextureFindRodata_001FB8F8[0] | (gTextureFindRodata_001FB8F8[1] << 8) | (gTextureFindRodata_001FB8F8[2] << 16) | (gTextureFindRodata_001FB8F8[3] << 24))) {
                     p.x = 0.000244140625f * a2->x;
                     p.y = 0.000244140625f * a2->y;
                     p.z = 0.000244140625f * a2->z;
@@ -550,7 +555,7 @@ void Mdl_BindTexture_0_0016F440(A0_Mdl_BindTexture_0_0016F440 *a0, A1_Mdl_BindTe
                     m.b[2] = n.b[5] - '0';
                     m.b[1] = n.b[6] - '0';
                     m.b[0] = n.b[7] - '0';
-                    if (Fx_DrawSprites_0_00163FF0(m.w, D_00201FF0, &p)) {
+                    if (Fx_DrawSprites_0_00163FF0(m.w, gModelLayerSbss_00201FF0, &p)) {
                         f->b5 = 1;
                     }
                 }
@@ -568,3 +573,16 @@ void Mdl_BindTexture_0_0016F440(A0_Mdl_BindTexture_0_0016F440 *a0, A1_Mdl_BindTe
 #undef GsPkt_SetReg_3_001543E0
 #undef D_00222A50
 #undef D_00222A51
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): gModelEmitSbss_00201F4C, gModelEmitSbss_00201F50, gModelEmitSbss_00202008 */
+u32 gModelEmitSbss_00201F4C;
+u32 gModelEmitSbss_00201F50;
+u32 gModelEmitSbss_00202008;
+/* data twins (src/game/data/texture_bss.c): gModelEmitBss_0042D8C0, gModelEmitBss_0042DDC0 */
+Q_Mdl_EmitMeshVu1_1_0016E760 gModelEmitBss_0042D8C0[0x500 / sizeof(Q_Mdl_EmitMeshVu1_1_0016E760[2])][2];
+Q_Mdl_EmitMeshVu1_1_0016E760 gModelEmitBss_0042DDC0[0xa000 / sizeof(Q_Mdl_EmitMeshVu1_1_0016E760[2])][2];
+#endif
+
+

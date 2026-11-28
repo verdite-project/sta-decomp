@@ -14,10 +14,10 @@ typedef struct { u16 a, b, c, d; } S_Stats_CalcMaxMp_0_001D1110;
 typedef struct { u8 pad[4]; u16 x4; u8 pad6[0x8A]; } E_Stats_CalcWeight_0_001D1170;
 typedef struct { u8 pad[2]; u8 x2; u8 pad3; } C;
 typedef struct { u8 pad[0xA0]; C c[1024]; } S_Stats_CalcWeight_0_001D1170;
-extern E_Stats_CalcAttack_0_001CF510 D_004B5DD0[2];
-extern E2 D_004B6130;
-extern E_Stats_CalcDefense_0_001D0000 D_004B5E60;
-extern E_Stats_CalcBase_0_001D08E0 D_004B5EF0[7];
+extern E_Stats_CalcAttack_0_001CF510 gStatsBss_004B5DD0[2];
+extern E2 gStatsBss_004B6130;
+extern E_Stats_CalcDefense_0_001D0000 gStatsBss_004B5E60;
+extern E_Stats_CalcBase_0_001D08E0 gStatsBss_004B5EF0[7];
 void Stats_CalcAttack_0_001CF510(R *a0, s32 *a1, s32 a2, s16 *a3, u8 *t0, s32 sel, s32 k);
 void Stats_CalcDefense_0_001D0000(u16 *a0, s32 *a1, s32 a2, s16 *a3, u8 *t0, u32 f);
 void Stats_AddWeighted_1_001D0610(A *a, B *b);
@@ -54,28 +54,28 @@ void Stats_CalcAttack_0_001CF510(R *a0, s32 *a1, s32 a2, s16 *a3, u8 *t0, s32 se
     s32 t;
     memset(a0, 0, 0x10);
     memset(a1, 0, 0x20);
-    Item_GetStatBlock_0_001D1240(&D_004B5DD0[0], a3[0], t0[0]);
-    Item_GetStatBlock_0_001D1240(&D_004B5DD0[1], a3[1], t0[4]);
-    Item_GetStatBlock_0_001D1240(&D_004B6130, a3[6], t0[0x18]);
-    a0->f = D_004B5DD0[sel].f[k];
-    addv(a0, &D_004B5DD0[sel], 1.0f);
-    a1[0] += D_004B5DD0[sel].b[0];
-    a1[1] += D_004B5DD0[sel].b[1];
-    a1[2] += D_004B5DD0[sel].b[2];
-    a1[3] += D_004B5DD0[sel].b[4];
-    a1[4] += D_004B5DD0[sel].b[3];
-    a1[5] += D_004B5DD0[sel].b[5];
-    if (!isType_Stats_CalcAttack_0_001CF510(D_004B5DD0[sel].type)) {
+    Item_GetStatBlock_0_001D1240(&gStatsBss_004B5DD0[0], a3[0], t0[0]);
+    Item_GetStatBlock_0_001D1240(&gStatsBss_004B5DD0[1], a3[1], t0[4]);
+    Item_GetStatBlock_0_001D1240(&gStatsBss_004B6130, a3[6], t0[0x18]);
+    a0->f = gStatsBss_004B5DD0[sel].f[k];
+    addv(a0, &gStatsBss_004B5DD0[sel], 1.0f);
+    a1[0] += gStatsBss_004B5DD0[sel].b[0];
+    a1[1] += gStatsBss_004B5DD0[sel].b[1];
+    a1[2] += gStatsBss_004B5DD0[sel].b[2];
+    a1[3] += gStatsBss_004B5DD0[sel].b[4];
+    a1[4] += gStatsBss_004B5DD0[sel].b[3];
+    a1[5] += gStatsBss_004B5DD0[sel].b[5];
+    if (!isType_Stats_CalcAttack_0_001CF510(gStatsBss_004B5DD0[sel].type)) {
         sel = !sel;
-        addv(a0, &D_004B5DD0[sel], 0.1f);
+        addv(a0, &gStatsBss_004B5DD0[sel], 0.1f);
     }
     if (a3[6] != -1) {
-        t = D_004B6130.v[0]; a0->v[0] += t;
-        t = D_004B6130.v[1]; a0->v[1] += t;
-        t = D_004B6130.v[2]; a0->v[2] += t;
-        t = D_004B6130.v[3]; a0->v[3] += t;
-        t = D_004B6130.v[4]; a0->v[4] += t;
-        t = D_004B6130.v[5]; a0->v[5] += t;
+        t = gStatsBss_004B6130.v[0]; a0->v[0] += t;
+        t = gStatsBss_004B6130.v[1]; a0->v[1] += t;
+        t = gStatsBss_004B6130.v[2]; a0->v[2] += t;
+        t = gStatsBss_004B6130.v[3]; a0->v[3] += t;
+        t = gStatsBss_004B6130.v[4]; a0->v[4] += t;
+        t = gStatsBss_004B6130.v[5]; a0->v[5] += t;
     }
     Stats_AddWeighted_1_001D0610(a0, a2);
     if ((s16)a1[0] < 0) a1[0] = 0;
@@ -96,8 +96,8 @@ void Stats_CalcAttack_0_001CF510(R *a0, s32 *a1, s32 a2, s16 *a3, u8 *t0, s32 se
 /* Stats_CalcDefense_0_001D0000 */
 #define Stats_AddWeighted_1_001D0610 Stats_AddWeighted_1_001D0610__as_Stats_CalcDefense_0_001D0000
 void Stats_AddWeighted_1_001D0610__as_Stats_CalcDefense_0_001D0000(u16 *, s32);
-#define D_004B5DD0 D_004B5DD0__as_Stats_CalcDefense_0_001D0000
-extern E_Stats_CalcDefense_0_001D0000 D_004B5DD0__as_Stats_CalcDefense_0_001D0000;
+#define gStatsBss_004B5DD0 gStatsBss_004B5DD0__as_Stats_CalcDefense_0_001D0000
+extern E_Stats_CalcDefense_0_001D0000 gStatsBss_004B5DD0__as_Stats_CalcDefense_0_001D0000;
 static inline s32 isType_Stats_CalcDefense_0_001D0000(u16 t) {
     switch (t) {
     case 2: case 4: case 6: case 9: case 0xB: case 0xC: case 0xD: case 0xF: case 0x10: case 0x11: case 0x12: case 0x13:
@@ -112,69 +112,69 @@ void Stats_CalcDefense_0_001D0000(u16 *a0, s32 *a1, s32 a2, s16 *a3, u8 *t0, u32
     s32 t;
 
     memset(a0, 0, 0x10);
-    Item_GetStatBlock_0_001D1240(&D_004B5DD0, a3[0], t0[0]);
-    Item_GetStatBlock_0_001D1240(&D_004B5E60, a3[1], t0[4]);
-    Item_GetStatBlock_0_001D1240(&D_004B6130, a3[6], t0[0x18]);
+    Item_GetStatBlock_0_001D1240(&gStatsBss_004B5DD0, a3[0], t0[0]);
+    Item_GetStatBlock_0_001D1240(&gStatsBss_004B5E60, a3[1], t0[4]);
+    Item_GetStatBlock_0_001D1240(&gStatsBss_004B6130, a3[6], t0[0x18]);
     f1 = f & 1;
     if (f1) {
-        t = D_004B5DD0.v[0]; a0[0] += t;
-        t = D_004B5DD0.v[1]; a0[1] += t;
-        t = D_004B5DD0.v[2]; a0[2] += t;
-        t = D_004B5DD0.v[3]; a0[3] += t;
-        t = D_004B5DD0.v[4]; a0[4] += t;
-        t = D_004B5DD0.v[5]; a0[5] += t;
+        t = gStatsBss_004B5DD0.v[0]; a0[0] += t;
+        t = gStatsBss_004B5DD0.v[1]; a0[1] += t;
+        t = gStatsBss_004B5DD0.v[2]; a0[2] += t;
+        t = gStatsBss_004B5DD0.v[3]; a0[3] += t;
+        t = gStatsBss_004B5DD0.v[4]; a0[4] += t;
+        t = gStatsBss_004B5DD0.v[5]; a0[5] += t;
     }
     f2 = f & 2;
     if (f2) {
-        t = D_004B5E60.v[0]; a0[0] += t;
-        t = D_004B5E60.v[1]; a0[1] += t;
-        t = D_004B5E60.v[2]; a0[2] += t;
-        t = D_004B5E60.v[3]; a0[3] += t;
-        t = D_004B5E60.v[4]; a0[4] += t;
-        t = D_004B5E60.v[5]; a0[5] += t;
+        t = gStatsBss_004B5E60.v[0]; a0[0] += t;
+        t = gStatsBss_004B5E60.v[1]; a0[1] += t;
+        t = gStatsBss_004B5E60.v[2]; a0[2] += t;
+        t = gStatsBss_004B5E60.v[3]; a0[3] += t;
+        t = gStatsBss_004B5E60.v[4]; a0[4] += t;
+        t = gStatsBss_004B5E60.v[5]; a0[5] += t;
     }
-    if (isType_Stats_CalcDefense_0_001D0000(D_004B5DD0.type)) {
-        a0[0] = D_004B5DD0.v[0];
-        a0[1] = D_004B5DD0.v[1];
-        a0[2] = D_004B5DD0.v[2];
-        a0[3] = D_004B5DD0.v[3];
-        a0[4] = D_004B5DD0.v[4];
-        a0[5] = D_004B5DD0.v[5];
+    if (isType_Stats_CalcDefense_0_001D0000(gStatsBss_004B5DD0.type)) {
+        a0[0] = gStatsBss_004B5DD0.v[0];
+        a0[1] = gStatsBss_004B5DD0.v[1];
+        a0[2] = gStatsBss_004B5DD0.v[2];
+        a0[3] = gStatsBss_004B5DD0.v[3];
+        a0[4] = gStatsBss_004B5DD0.v[4];
+        a0[5] = gStatsBss_004B5DD0.v[5];
     }
     if (a3[6] != -1) {
-        t = D_004B6130.v[0]; a0[0] += t;
-        t = D_004B6130.v[1]; a0[1] += t;
-        t = D_004B6130.v[2]; a0[2] += t;
-        t = D_004B6130.v[3]; a0[3] += t;
-        t = D_004B6130.v[4]; a0[4] += t;
-        t = D_004B6130.v[5]; a0[5] += t;
+        t = gStatsBss_004B6130.v[0]; a0[0] += t;
+        t = gStatsBss_004B6130.v[1]; a0[1] += t;
+        t = gStatsBss_004B6130.v[2]; a0[2] += t;
+        t = gStatsBss_004B6130.v[3]; a0[3] += t;
+        t = gStatsBss_004B6130.v[4]; a0[4] += t;
+        t = gStatsBss_004B6130.v[5]; a0[5] += t;
     }
     Stats_AddWeighted_1_001D0610(a0, a2);
     if (a1 != NULL) {
         memset(a1, 0, 0x20);
         if (f1) {
-            a1[0] += D_004B5DD0.b[0];
-            a1[1] += D_004B5DD0.b[1];
-            a1[2] += D_004B5DD0.b[2];
-            a1[3] += D_004B5DD0.b[4];
-            a1[4] += D_004B5DD0.b[3];
-            a1[5] += D_004B5DD0.b[5];
+            a1[0] += gStatsBss_004B5DD0.b[0];
+            a1[1] += gStatsBss_004B5DD0.b[1];
+            a1[2] += gStatsBss_004B5DD0.b[2];
+            a1[3] += gStatsBss_004B5DD0.b[4];
+            a1[4] += gStatsBss_004B5DD0.b[3];
+            a1[5] += gStatsBss_004B5DD0.b[5];
         }
         if (f2) {
-            a1[0] += D_004B5E60.b[0];
-            a1[1] += D_004B5E60.b[1];
-            a1[2] += D_004B5E60.b[2];
-            a1[3] += D_004B5E60.b[4];
-            a1[4] += D_004B5E60.b[3];
-            a1[5] += D_004B5E60.b[5];
+            a1[0] += gStatsBss_004B5E60.b[0];
+            a1[1] += gStatsBss_004B5E60.b[1];
+            a1[2] += gStatsBss_004B5E60.b[2];
+            a1[3] += gStatsBss_004B5E60.b[4];
+            a1[4] += gStatsBss_004B5E60.b[3];
+            a1[5] += gStatsBss_004B5E60.b[5];
         }
-        if (isType_Stats_CalcDefense_0_001D0000(D_004B5DD0.type)) {
-            a1[0] = D_004B5DD0.b[0];
-            a1[1] = D_004B5DD0.b[1];
-            a1[2] = D_004B5DD0.b[2];
-            a1[3] = D_004B5DD0.b[4];
-            a1[4] = D_004B5DD0.b[3];
-            a1[5] = D_004B5DD0.b[5];
+        if (isType_Stats_CalcDefense_0_001D0000(gStatsBss_004B5DD0.type)) {
+            a1[0] = gStatsBss_004B5DD0.b[0];
+            a1[1] = gStatsBss_004B5DD0.b[1];
+            a1[2] = gStatsBss_004B5DD0.b[2];
+            a1[3] = gStatsBss_004B5DD0.b[4];
+            a1[4] = gStatsBss_004B5DD0.b[3];
+            a1[5] = gStatsBss_004B5DD0.b[5];
         }
         if ((s16)a1[0] < 0) a1[0] = 0;
         if ((s16)a1[0] > 100) a1[0] = 100;
@@ -191,7 +191,7 @@ void Stats_CalcDefense_0_001D0000(u16 *a0, s32 *a1, s32 a2, s16 *a3, u8 *t0, u32
     }
 }
 #undef Stats_AddWeighted_1_001D0610
-#undef D_004B5DD0
+#undef gStatsBss_004B5DD0
 
 /* Stats_AddWeighted_1_001D0610 */
 void Stats_AddWeighted_1_001D0610(A *a, B *b) {
@@ -216,12 +216,12 @@ void Stats_AddWeighted_1_001D0610(A *a, B *b) {
 }
 
 /* Stats_CalcBase_0_001D08E0 */
-#define D_004B5DD0 D_004B5DD0__as_Stats_CalcBase_0_001D08E0
-extern u8 D_004B5DD0__as_Stats_CalcBase_0_001D08E0[];
+#define gStatsBss_004B5DD0 gStatsBss_004B5DD0__as_Stats_CalcBase_0_001D08E0
+extern u8 gStatsBss_004B5DD0__as_Stats_CalcBase_0_001D08E0[];
 #define Item_GetStatBlock_0_001D1240 Item_GetStatBlock_0_001D1240__as_Stats_CalcBase_0_001D08E0
 void Item_GetStatBlock_0_001D1240__as_Stats_CalcBase_0_001D08E0(E_Stats_CalcBase_0_001D08E0 *, s16, u8);
-#define SH(i) out[i] = base[i] + (D_004B5EF0[0].h[i] + D_004B5EF0[1].h[i] + D_004B5EF0[2].h[i] + D_004B5EF0[3].h[i] + D_004B5EF0[4].h[i] + D_004B5EF0[5].h[i] + D_004B5EF0[6].h[i])
-#define SB(i, k) st[i] = D_004B5EF0[0].b[k] + D_004B5EF0[1].b[k] + D_004B5EF0[2].b[k] + D_004B5EF0[3].b[k] + D_004B5EF0[4].b[k] + D_004B5EF0[5].b[k] + D_004B5EF0[6].b[k]
+#define SH(i) out[i] = base[i] + (gStatsBss_004B5EF0[0].h[i] + gStatsBss_004B5EF0[1].h[i] + gStatsBss_004B5EF0[2].h[i] + gStatsBss_004B5EF0[3].h[i] + gStatsBss_004B5EF0[4].h[i] + gStatsBss_004B5EF0[5].h[i] + gStatsBss_004B5EF0[6].h[i])
+#define SB(i, k) st[i] = gStatsBss_004B5EF0[0].b[k] + gStatsBss_004B5EF0[1].b[k] + gStatsBss_004B5EF0[2].b[k] + gStatsBss_004B5EF0[3].b[k] + gStatsBss_004B5EF0[4].b[k] + gStatsBss_004B5EF0[5].b[k] + gStatsBss_004B5EF0[6].b[k]
 #define CH(i) if (out[i] < 0) out[i] = 0; if (out[i] > 999) out[i] = 999
 #define CB(i) if (*(s16 *)&st[i] < 0) st[i] = 0; if (*(s16 *)&st[i] > 100) st[i] = 100
 
@@ -231,7 +231,7 @@ void Stats_CalcBase_0_001D08E0(s16 *out, s32 *st, s16 *a, B4 *b) {
 
     base = (u16 *)(PlayerData_Get_2_001C9BA0() + 0x20);
     memset(out, 0, 0x10);
-    for (i = 2; i < 9; i++) { Item_GetStatBlock_0_001D1240(&((E_Stats_CalcBase_0_001D08E0 *)D_004B5DD0)[i], a[i], b[i].v); }
+    for (i = 2; i < 9; i++) { Item_GetStatBlock_0_001D1240(&((E_Stats_CalcBase_0_001D08E0 *)gStatsBss_004B5DD0)[i], a[i], b[i].v); }
     SH(0); SH(1); SH(2); SH(3); SH(4); SH(5); SH(6); SH(7);
     CH(0); CH(1); CH(2); CH(3); CH(4); CH(5); CH(6); CH(7);
     if (st != 0) {
@@ -241,7 +241,7 @@ void Stats_CalcBase_0_001D08E0(s16 *out, s32 *st, s16 *a, B4 *b) {
     }
 }
 #undef Item_GetStatBlock_0_001D1240
-#undef D_004B5DD0
+#undef gStatsBss_004B5DD0
 
 /* Stats_CalcMaxHp_0_001D10B0 */
 u16 Stats_CalcMaxHp_0_001D10B0(S_Stats_CalcMaxHp_0_001D10B0 *s)
@@ -283,3 +283,11 @@ s32 Stats_CalcWeight_0_001D1170(void) {
     return sum;
 }
 #undef PlayerData_Get_2_001C9BA0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/pad_get_connected_bss_004B5DD0.c): gStatsBss_004B5DD0__grp: gStatsBss_004B5DD0@0x0, gStatsBss_004B5DF0@0x20, gStatsBss_004B5DFC@0x2c, gStatsBss_004B5E00@0x30, gStatsBss_004B5E04@0x34, gStatsBss_004B5E08@0x38, gStatsBss_004B5E60@0x90, gStatsBss_004B5E8C@0xbc, gStatsBss_004B5E90@0xc0, gStatsBss_004B5E94@0xc4, gStatsBss_004B5E98@0xc8 */
+unsigned char gStatsBss_004B5DD0__grp[0x120] __attribute__((aligned(16)));
+/* data group (src/game/data/pad_get_connected_bss_004B5DD0.c): gStatsBss_004B5EF0__grp: gStatsBss_004B5EF0@0x0, gStatsBss_004B5F18@0x28, gStatsBss_004B5F1C@0x2c, gStatsBss_004B5F20@0x30, gStatsBss_004B5F24@0x34, gStatsBss_004B5F28@0x38, gStatsBss_004B5FA8@0xb8, gStatsBss_004B5FAC@0xbc, gStatsBss_004B5FB0@0xc0, gStatsBss_004B5FB4@0xc4, gStatsBss_004B5FB8@0xc8, gStatsBss_004B6038@0x148, gStatsBss_004B603C@0x14c, gStatsBss_004B6040@0x150, gStatsBss_004B6044@0x154, gStatsBss_004B6048@0x158, gStatsBss_004B60C8@0x1d8, gStatsBss_004B60CC@0x1dc, gStatsBss_004B60D0@0x1e0, gStatsBss_004B60D4@0x1e4, gStatsBss_004B60D8@0x1e8, gStatsBss_004B6130@0x240, gStatsBss_004B6158@0x268, gStatsBss_004B615C@0x26c, gStatsBss_004B6160@0x270, gStatsBss_004B6164@0x274, gStatsBss_004B6168@0x278, gStatsBss_004B617C@0x28c, gStatsBss_004B6180@0x290, gStatsBss_004B61E8@0x2f8, gStatsBss_004B61EC@0x2fc, gStatsBss_004B61F0@0x300, gStatsBss_004B61F4@0x304, gStatsBss_004B61F8@0x308, gStatsBss_004B6278@0x388, gStatsBss_004B627C@0x38c, gStatsBss_004B6280@0x390, gStatsBss_004B6284@0x394, gStatsBss_004B6288@0x398 */
+unsigned char gStatsBss_004B5EF0__grp[0x490] __attribute__((aligned(16)));
+#endif

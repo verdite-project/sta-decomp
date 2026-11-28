@@ -9,8 +9,8 @@ typedef struct { u8 pad[0xB0]; s32 off; u8 pad2[0xC]; E arr[1]; } Base;
 typedef struct { u8 pad[5]; u8 i5; u8 pad2[8]; u8 e; } Obj;
 extern B8 D_00222A50[];
 extern B8 D_00222A51[];
-extern u32 D_00201F54;
-extern f32 D_001F2110[];
+extern u32 gMdlEmitStripDSbss_00201F54;
+extern f32 gMatrixFromData_001F2110[];
 Q *GsPkt_Alloc_3_00154A80(s32);
 void GsPkt_Commit_1_00154A70(void);
 void sceVu0CopyVector(f32 *, f32 *);
@@ -58,7 +58,7 @@ void Mdl_EmitStripD_0_0016DC70(void *a0, s32 a1, void *b, s32 idx0, C c0) {
     p[0].q = q.q;
     p[1].q = q2.q;
     e = (s8 *)bb->arr[idx].v;
-    sceVu0CopyVector((f32 *)e, D_001F2110);
+    sceVu0CopyVector((f32 *)e, gMatrixFromData_001F2110);
     q.q = 0;
     q.w[0] = 0x30000001;
     q.w[1] = (s32)e + bb->off;
@@ -66,7 +66,7 @@ void Mdl_EmitStripD_0_0016DC70(void *a0, s32 a1, void *b, s32 idx0, C c0) {
     p[2].q = q.q;
     q.q = 0;
     q.w[0] = 0x10000000;
-    q.w[3] = D_00201F54 | 0x15000000;
+    q.w[3] = gMdlEmitStripDSbss_00201F54 | 0x15000000;
     p[3].q = q.q;
     GsPkt_Commit_1_00154A70();
 }

@@ -5,13 +5,15 @@
 /* used by: angle_b, cos_table, item_object, map, map_se_load, map_se_stream,
    task_all, task_run, text_001A4990.s */
 
-u8 D_002F0F5C[0x4];
-u8 D_002F0F58[0x4];
-u8 D_002F0F54[0x4];
-u8 D_002F0F50[0x4];
-u8 D_002F0F4C[0x4];
-u8 D_002F0F48[0x4];
-u8 D_002F0F44[0x4];
-s32 D_002F0F40[0x1];
-u8 D_00270F40[0x80000];
-f32 D_00270560[0x278];
+#ifndef NONMATCHING /* the NONMATCHING build defines these in their owners */
+u8 gTaskRunBss_002F0F5C[0x4];
+u8 gTaskRunBss_002F0F58[0x4];
+u8 gTaskRunBss_002F0F54[0x4];
+u8 gTaskRunBss_002F0F50[0x4];
+u8 gTaskRunBss_002F0F4C[0x4];
+u8 gTaskRunBss_002F0F48[0x4];
+u8 gTaskRunBss_002F0F44[0x4];
+s32 gTaskRunBss_002F0F40[0x1];
+u8 gLoadBuf_00270F40[0x80000];
+f32 gAngleBBss_00270560[0x278];
+#endif

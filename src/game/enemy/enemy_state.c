@@ -197,8 +197,8 @@ void Enemy_Kill_1_0013EF80(Actor *a, s32 d) {
 /* Enemy_GetBoneMatrix_0_0013F030 */
 s8 *Enemy_GetBoneMatrix_0_0013F030(A_Enemy_GetBoneMatrix_0_0013F030 *a, u8 i) {
     O *o = *a->x518->pp;
-    u8 *cur = (u8 *)((s32)o->data + D_00201F2C * (o->n * 0x140 + 0x200));
-    u8 *oth = (u8 *)((s32)o->data + !D_00201F2C * (o->n * 0x140 + 0x200));
+    u8 *cur = (u8 *)((s32)o->data + gSfxAllSbss_00201F2C * (o->n * 0x140 + 0x200));
+    u8 *oth = (u8 *)((s32)o->data + !gSfxAllSbss_00201F2C * (o->n * 0x140 + 0x200));
     return (s8 *)(oth + (a->x4B4[i]->k * 0x140 + cur)[0x331] * 0x140 + 0xF0);
 }
 
@@ -309,8 +309,8 @@ void Enemy_BreakPart_0_0013F210(A_Enemy_BreakPart_0_0013F210 *a, u8 idx, s32 fla
         }
     } else {
         h = (Hdr *)*a->x518->xB0;
-        b0 = (u8 *)((s32)h + 0x40) + D_00201F2C * (h->h6 * 0x140 + 0x200);
-        b1 = (u8 *)((s32)h + 0x40) + !D_00201F2C * (h->h6 * 0x140 + 0x200);
+        b0 = (u8 *)((s32)h + 0x40) + gSfxAllSbss_00201F2C * (h->h6 * 0x140 + 0x200);
+        b1 = (u8 *)((s32)h + 0x40) + !gSfxAllSbss_00201F2C * (h->h6 * 0x140 + 0x200);
         Hud_AddMarker_0_001BC320(b1 + (b0 + (*pp)->x2A * 0x140)[0x331] * 0x140 + 0xF0, a->x609);
         if (p->x2D.f.b2) {
             Enemy_ScatterPart_0_001A8700(a, k);

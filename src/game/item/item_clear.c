@@ -1,8 +1,8 @@
 #include "common.h"
 typedef struct { char b[8]; } E;
 typedef struct { char pad[0x5C00]; E e[0x400]; } S;
-extern S *D_00201DC0;
-static inline E *get(s16 i) { if (0 > i || i >= 0x400) return NULL; return &D_00201DC0->e[i]; }
+extern S *gPlayerData_00201DC0;
+static inline E *get(s16 i) { if (0 > i || i >= 0x400) return NULL; return &gPlayerData_00201DC0->e[i]; }
 void Item_ClearNewFlag_0_001A9510(s16 i) {
     u8 *e = (u8 *)get(i);
     if (e != NULL && e[2] != 0) {

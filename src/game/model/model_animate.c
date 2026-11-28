@@ -31,7 +31,7 @@ void Mtx_Lerp_2_0015EB20(E_Mdl_BlendMotion_0_00171980 *, E_Mdl_BlendMotion_0_001
 
 /* Mdl_GetFrameData_0_001715B0 */
 E_Mdl_GetFrameData_0_001715B0 *Mdl_GetFrameData_0_001715B0(O_Mdl_GetFrameData_0_001715B0 *o) {
-    s32 k = D_00201F2C; Hd *h; E_Mdl_GetFrameData_0_001715B0 *e; if (o == NULL || (h = o->h) == NULL) return NULL;
+    s32 k = gSfxAllSbss_00201F2C; Hd *h; E_Mdl_GetFrameData_0_001715B0 *e; if (o == NULL || (h = o->h) == NULL) return NULL;
     e = (E_Mdl_GetFrameData_0_001715B0 *)((s32)h + 0x40 + k * (h->n * 0x140 + 0x200)); e->off = o->p - (u8 *)h; return e;
 }
 
@@ -53,8 +53,8 @@ void Mdl_ResetBones_0_00171610(H_Mdl_ResetBones_0_00171610 *h) {
     s8 *b;
     s8 *a;
 
-    a = get(h, D_00201F2C);
-    b = get(h, !D_00201F2C);
+    a = get(h, gSfxAllSbss_00201F2C);
+    b = get(h, !gSfxAllSbss_00201F2C);
     if (a == NULL || b == NULL) {
         return;
     }
@@ -131,10 +131,10 @@ void Mdl_BlendMotion_0_00171980(O_Mdl_BlendMotion_0_00171980 *obj, u16 a1, s32 s
     s32 i;
 
     if (g == 1.0f) {
-        Mdl_Animate_2_00171BB0((void *)((s32)obj->data + D_00201F2C * (obj->n * 0x140 + 0x200)), obj, start, count, a1, f);
+        Mdl_Animate_2_00171BB0((void *)((s32)obj->data + gSfxAllSbss_00201F2C * (obj->n * 0x140 + 0x200)), obj, start, count, a1, f);
         return;
     }
-    src = (E_Mdl_BlendMotion_0_00171980 *)((s32)obj->data + D_00201F2C * (obj->n * 0x140 + 0x200));
+    src = (E_Mdl_BlendMotion_0_00171980 *)((s32)obj->data + gSfxAllSbss_00201F2C * (obj->n * 0x140 + 0x200));
     memcpy(buf, src, obj->n * 0x140 + 0x200);
     Mdl_Animate_2_00171BB0(buf, obj, start, count, a1, f);
     for (i = start; i < start + count; i++) {
@@ -146,7 +146,7 @@ void Mdl_BlendMotion_0_00171980(O_Mdl_BlendMotion_0_00171980 *obj, u16 a1, s32 s
 #define Mdl_Animate_2_00171BB0 Mdl_Animate_2_00171BB0__as_Mdl_AnimateCur_0_00171AF0
 void Mdl_Animate_2_00171BB0__as_Mdl_AnimateCur_0_00171AF0(void *, A0 *, u8, u8, s32);
 void Mdl_AnimateCur_0_00171AF0(A0 *a, s32 b, s32 c, s32 d) {
-    Mdl_Animate_2_00171BB0((u8 *)((s32)a + 0x40) + D_00201F2C * (a->x6 * 0x140 + 0x200), a, c, d, b);
+    Mdl_Animate_2_00171BB0((u8 *)((s32)a + 0x40) + gSfxAllSbss_00201F2C * (a->x6 * 0x140 + 0x200), a, c, d, b);
 }
 #undef Mdl_Animate_2_00171BB0
 
@@ -162,6 +162,6 @@ void Mdl_AnimateSel_0_00171B30(O_Mdl_AnimateSel_0_00171B30 *obj, u16 a1, s32 sel
 #define Mdl_Animate_2_00171BB0 Mdl_Animate_2_00171BB0__as_Mdl_AnimateWrap_0_00171B70
 void Mdl_Animate_2_00171BB0__as_Mdl_AnimateWrap_0_00171B70(s32, H_Mdl_AnimateWrap_0_00171B70 *, u8, u8, s32, f32);
 void Mdl_AnimateWrap_0_00171B70(H_Mdl_AnimateWrap_0_00171B70 *h, s32 a, f32 f) {
-    Mdl_Animate_2_00171BB0((s32)((u8 *)((s32)h + 0x40) + D_00201F2C * (h->h6 * 0x140 + 0x200)), h, h->b4, h->h6, a, f);
+    Mdl_Animate_2_00171BB0((s32)((u8 *)((s32)h + 0x40) + gSfxAllSbss_00201F2C * (h->h6 * 0x140 + 0x200)), h, h->b4, h->h6, a, f);
 }
 #undef Mdl_Animate_2_00171BB0

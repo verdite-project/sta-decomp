@@ -14,12 +14,12 @@ typedef struct {
     Vec x90;
 } O;
 typedef struct { Vec v0; Vec a[4]; Vec b[4]; Vec c; } D30;
-extern Mtx D_001F2170;
-extern Vec D_001F2060[];
-extern Vec D_001F2080[];
-extern Vec D_001F20C0[];
-extern Vec D_001F2110[];
-extern D30 D_0030D0E0;
+extern Mtx gMatrixFromData_001F2170;
+extern Vec gFogData_001F2060[];
+extern Vec gPlayerData_001F2080[];
+extern Vec gPlayerData_001F20C0[];
+extern Vec gMatrixFromData_001F2110[];
+extern D30 gGlowInitBss_0030D0E0;
 void Fog_BuildPlanes_0_0015CD30(O *o, Vec *a, Vec *b, Vec *c, Vec *d, Vec *pa, Vec *pb, Vec *pc, Vec *q0, Vec *q1, Vec *q2);
 void sceVu0RotMatrixZ(f32, Mtx *, Mtx *);
 void sceVu0RotMatrixY(f32, Mtx *, Mtx *);
@@ -35,28 +35,28 @@ void Fog_BuildPlanes_0_0015CD30(O *o, Vec *a, Vec *b, Vec *c, Vec *d, Vec *pa, V
     Mtx m3;
     Mtx m4;
 
-    sceVu0RotMatrixZ(WRAP(DEG(a->y)), &m1, &D_001F2170);
+    sceVu0RotMatrixZ(WRAP(DEG(a->y)), &m1, &gMatrixFromData_001F2170);
     sceVu0RotMatrixY(WRAP(DEG(a->x)), &m1, &m1);
     o->x10.x = m1.m[0].x;
     o->x10.y = m1.m[0].y;
     o->x10.z = m1.m[0].z;
     o->x10.w = a->w;
     sceVu0CopyVector(&o->x50, pa);
-    sceVu0RotMatrixZ(WRAP(DEG(b->y)), &m2, &D_001F2170);
+    sceVu0RotMatrixZ(WRAP(DEG(b->y)), &m2, &gMatrixFromData_001F2170);
     sceVu0RotMatrixY(WRAP(DEG(b->x)), &m2, &m2);
     o->x20.x = m2.m[0].x;
     o->x20.y = m2.m[0].y;
     o->x20.z = m2.m[0].z;
     o->x20.w = b->w;
     sceVu0CopyVector(&o->x60, pb);
-    sceVu0RotMatrixZ(WRAP(DEG(c->y)), &m3, &D_001F2170);
+    sceVu0RotMatrixZ(WRAP(DEG(c->y)), &m3, &gMatrixFromData_001F2170);
     sceVu0RotMatrixY(WRAP(DEG(c->x)), &m3, &m3);
     o->x30.x = m3.m[0].x;
     o->x30.y = m3.m[0].y;
     o->x30.z = m3.m[0].z;
     o->x30.w = c->w;
     sceVu0CopyVector(&o->x70, pc);
-    sceVu0RotMatrixZ(WRAP(DEG(d->y)), &m4, &D_001F2170);
+    sceVu0RotMatrixZ(WRAP(DEG(d->y)), &m4, &gMatrixFromData_001F2170);
     sceVu0RotMatrixY(WRAP(DEG(d->x)), &m4, &m4);
     o->x40.x = m4.m[0].x;
     o->x40.y = m4.m[0].y;
@@ -76,23 +76,29 @@ void Fog_UpdatePlanes_0_0015D300(void) {
     s32 i;
 
     for (i = 0; i < 4; i++) {
-        sceVu0RotMatrixZ(WRAP(DEG(D_001F2080[i].y)), &m, &D_001F2170);
-        sceVu0RotMatrixY(WRAP(DEG(D_001F2080[i].x)), &m, &m);
-        D_0030D0E0.a[i].x = m.m[0].x;
-        D_0030D0E0.a[i].y = m.m[0].y;
-        D_0030D0E0.a[i].z = m.m[0].z;
-        D_0030D0E0.a[i].w = D_001F2080[i].w;
-        D_0030D0E0.b[i].x = D_001F20C0[i].x;
-        D_0030D0E0.b[i].y = D_001F20C0[i].y;
-        D_0030D0E0.b[i].z = D_001F20C0[i].z;
+        sceVu0RotMatrixZ(WRAP(DEG(gPlayerData_001F2080[i].y)), &m, &gMatrixFromData_001F2170);
+        sceVu0RotMatrixY(WRAP(DEG(gPlayerData_001F2080[i].x)), &m, &m);
+        gGlowInitBss_0030D0E0.a[i].x = m.m[0].x;
+        gGlowInitBss_0030D0E0.a[i].y = m.m[0].y;
+        gGlowInitBss_0030D0E0.a[i].z = m.m[0].z;
+        gGlowInitBss_0030D0E0.a[i].w = gPlayerData_001F2080[i].w;
+        gGlowInitBss_0030D0E0.b[i].x = gPlayerData_001F20C0[i].x;
+        gGlowInitBss_0030D0E0.b[i].y = gPlayerData_001F20C0[i].y;
+        gGlowInitBss_0030D0E0.b[i].z = gPlayerData_001F20C0[i].z;
     }
-    D_001F2110[0].x = D_001F2060[0].x;
-    D_001F2110[0].y = D_001F2060[0].y;
-    D_001F2110[0].z = D_001F2060[0].z;
-    D_001F2110[0].w = D_001F2060[0].w;
-    D_0030D0E0.v0.x = D_001F2070[0].x;
-    D_0030D0E0.v0.y = D_001F2070[0].y;
-    D_0030D0E0.v0.z = D_001F2070[0].z;
-    D_0030D0E0.v0.w = D_001F2070[0].w;
-    sceVu0CopyVector(&D_0030D0E0.c, D_001F2100);
+    gMatrixFromData_001F2110[0].x = gFogData_001F2060[0].x;
+    gMatrixFromData_001F2110[0].y = gFogData_001F2060[0].y;
+    gMatrixFromData_001F2110[0].z = gFogData_001F2060[0].z;
+    gMatrixFromData_001F2110[0].w = gFogData_001F2060[0].w;
+    gGlowInitBss_0030D0E0.v0.x = gPlayerData_001F2070[0].x;
+    gGlowInitBss_0030D0E0.v0.y = gPlayerData_001F2070[0].y;
+    gGlowInitBss_0030D0E0.v0.z = gPlayerData_001F2070[0].z;
+    gGlowInitBss_0030D0E0.v0.w = gPlayerData_001F2070[0].w;
+    sceVu0CopyVector(&gGlowInitBss_0030D0E0.c, gMatrixFromData_001F2100);
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/screen_fx_flash_data_001F2060.c): gFogData_001F2060__grp: gFogData_001F2060@0x0, gFogData_001F2064@0x4, gFogData_001F2068@0x8, gFogData_001F206C@0xc */
+unsigned int gFogData_001F2060__grp[0x4] __attribute__((aligned(16))) = { 0x3f800000, 0x0, 0x0, 0x0 };
+#endif

@@ -2,5 +2,5 @@
 #include "game/data.h"
 
 s32 Mc_GetState_1_001D70A8(void) {
-    return (*D_004B6450);
+    return (*gMcSetErrorStatusBss_004B6450);
 }

@@ -8,11 +8,22 @@ typedef struct { s32 state; s32 buttons; u8 next; u8 pad[5]; u8 pad_e; } Menu;
 typedef struct { u8 pad[0x10]; s32 count; u8 pad2[0x14]; f32 base; } Info;
 typedef struct { u8 r, g, b, a; } Col;
 typedef struct { s32 x0; u32 x4; u8 b8; char p9[5]; u8 bE; } Obj;
-extern s32 D_00202204;
 extern s32 D_004A32CC[];
-extern u8 D_001FD610[];
-extern u8 D_001FD648[];
-extern char D_001FD650[];
+#ifndef NONMATCHING
+extern s32 gPauseMenuEntrySbss_00202204;
+extern u8 gPauseMenuEntryRodata_001FD610[];
+extern u8 gPauseMenuEntryRodata_001FD648[];
+extern char gPauseMenuEntryRodata_001FD650[];
+#else
+/* data twins (src/game/data/sbss.c): gPauseMenuEntrySbss_00202204 */
+static s32 gPauseMenuEntrySbss_00202204;
+/* data twins (src/game/data/pause_menu_entry_rodata.c): gPauseMenuEntryRodata_001FD610 */
+static u8 gPauseMenuEntryRodata_001FD610[0x5] = "ITEM\000";
+/* data twins (src/game/data/pause_menu_entry_rodata2.c): gPauseMenuEntryRodata_001FD648 */
+static u8 gPauseMenuEntryRodata_001FD648[0x7] = "OPTION\000";
+/* data twins (src/game/data/pause_menu_entry_rodata2.c): gPauseMenuEntryRodata_001FD650 */
+static char gPauseMenuEntryRodata_001FD650[0x10] __attribute__((aligned(8))) = { -0x7e, 0x6f, -0x7e, 0x60, -0x7e, 0x74, -0x7e, 0x72, -0x7e, 0x64, 0, 0, 0, 0, 0, 0 };
+#endif
 void PauseMenu_Update_0_0019E400(Menu *m);
 s32 PauseMenu_GetEntry_0_0019E780(s32 i);
 void Pause_HandleEvent_0_0019E810(Obj *o);
@@ -31,11 +42,11 @@ void PauseMenu_Update_0_0019E400(Menu *m) {
     Info *info;
     s32 i;
     s32 n;
-    s32 sel = D_004A32C8[0];
+    s32 sel = gPauseMenuEntryBss_004A32C8[0];
 
     if (m->buttons & 0x2000) {
         Snd_PlaySe_3_00131600(0x69, m->pad_e);
-        switch (D_004A32C8[0]) {
+        switch (gPauseMenuEntryBss_004A32C8[0]) {
         case 0:
             m->next = 0x15;
             break;
@@ -57,18 +68,18 @@ void PauseMenu_Update_0_0019E400(Menu *m) {
             break;
         }
         D_004A32CC[0] = 0;
-        if (D_00202208 == 0) {
+        if (gPauseMenuEntrySbss_00202208 == 0) {
             UiAnim_Get_1_0017F840(0, &info);
             n = info->count;
             for (i = 0; i < n; i++) {
                 D_004A32B0[i] = info->base - (f32)i;
             }
         }
-        D_00202208 = 1;
+        gPauseMenuEntrySbss_00202208 = 1;
         m->buttons = 0;
         m->state = 0x1A;
         UiAnim_SetVisible_1_0017F7C0(0, 0, 0);
-        D_00202204 = 0;
+        gPauseMenuEntrySbss_00202204 = 0;
         return;
     }
     if (m->buttons & 0x4000) {
@@ -76,24 +87,24 @@ void PauseMenu_Update_0_0019E400(Menu *m) {
         m->buttons = 0;
         m->state = 0x1A;
         UiAnim_SetVisible_1_0017F7C0(0, 0, 0);
-        D_00202204 = 0;
-        D_00202208 = 3;
+        gPauseMenuEntrySbss_00202204 = 0;
+        gPauseMenuEntrySbss_00202208 = 3;
         Snd_PlaySe_3_00131600(0x65, m->pad_e);
         SndEmit_SetEnabled_0_0012F6E0(1);
         SndCh_ResumePaused_1_0012C260();
         return;
     }
     if (m->buttons & 0x10) {
-        sel = D_004A32C8[0] - 1;
+        sel = gPauseMenuEntryBss_004A32C8[0] - 1;
     } else if (m->buttons & 0x40) {
-        sel = D_004A32C8[0] + 1;
+        sel = gPauseMenuEntryBss_004A32C8[0] + 1;
     }
-    if (UiAnim_SetTarget_1_0017F470(0, 0, D_004A32C8[0]) != 0) {
-        if (D_004A32C8[0] != sel) {
+    if (UiAnim_SetTarget_1_0017F470(0, 0, gPauseMenuEntryBss_004A32C8[0]) != 0) {
+        if (gPauseMenuEntryBss_004A32C8[0] != sel) {
             Snd_PlaySe_3_00131600(0x66, m->pad_e);
         }
-        D_00202208 = 0;
-        D_004A32C8[0] = (sel + 5) % 5;
+        gPauseMenuEntrySbss_00202208 = 0;
+        gPauseMenuEntryBss_004A32C8[0] = (sel + 5) % 5;
     }
 }
 
@@ -102,7 +113,7 @@ void PauseMenu_Update_0_0019E400(Menu *m) {
 const u8 D_001FD618[0x10] __attribute__((aligned(8))) = "EQUIPMENT\000\000\000\000\000\000\000";
 const u8 D_001FD628[0x10] __attribute__((aligned(8))) = "DATABOOK\000\000\000\000\000\000\000\000";
 const u8 D_001FD638[0xa] = "LOAD GAME\000";
-s32 D_001F3140[0x8] = { (s32)D_001FD610, (s32)D_001FD618, (s32)D_001FD628, (s32)D_001FD638, (s32)D_001FD648 };
+s32 D_001F3140[0x8] = { (s32)gPauseMenuEntryRodata_001FD610, (s32)D_001FD618, (s32)D_001FD628, (s32)D_001FD638, (s32)gPauseMenuEntryRodata_001FD648 };
 s32 PauseMenu_GetEntry_0_0019E780(s32 i)
 {
     if (i < 0 || i > 5)
@@ -116,7 +127,7 @@ void Pause_DrawText_2_0019E7C0(void)
 {
     Col c;
     *(u32 *)&c = 0x80808080;
-    Text_Draw_2_001875C0(D_001FD650, 1, c, 320.0f, 200.0f, 1.0f);
+    Text_Draw_2_001875C0(gPauseMenuEntryRodata_001FD650, 1, c, 320.0f, 200.0f, 1.0f);
 }
 
 /* Pause_HandleEvent_0_0019E810 */
@@ -132,3 +143,11 @@ void Pause_HandleEvent_0_0019E810(Obj *o)
         PlayTime_Resume_1_001DF960();
     }
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): gPauseMenuEntrySbss_00202208 */
+s32 gPauseMenuEntrySbss_00202208;
+/* data twins (src/game/data/shop_bss.c): gPauseMenuEntryBss_004A32C8 */
+s32 gPauseMenuEntryBss_004A32C8[0x6] __attribute__((aligned(8)));
+#endif

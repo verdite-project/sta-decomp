@@ -7,7 +7,7 @@ typedef struct { u8 p:7; u8 v:1; } BF7;
 typedef struct { u8 p:2; u8 v:1; } BF2;
 typedef struct { u8 p:2; u8 v:2; } BF2_2;
 typedef struct { u8 pad[8]; u16 h8; } Key;
-extern u8 *D_002022D4;
+extern u8 *gMapObjectAllSbss_002022D4;
 void Trap_UpdateIdle_1_001BA680(s8 *p, u32 i, f32 dt);
 void Trap_SetState_0_001BA850(s8 *p, u32 i, f32 dt);
 void Trap_Attack_0_001BAA10(s32 a0, s32 a1, s32 a2, Key *a3, s32 t0, s32 t1);
@@ -110,7 +110,7 @@ void Trap_Attack_0_001BAA10(s32 a0, s32 a1, s32 a2, Key *a3, s32 t0, s32 t1) {
             Attack_PlaySe_0_001D1E80(a0, a2, a3, t0, t1);
             break;
         case 1:
-            Attack_SpawnSfx_0_001D1F20(a0, D_002022D4 + 0xB4, a1, a2, a3, t0, t1);
+            Attack_SpawnSfx_0_001D1F20(a0, gMapObjectAllSbss_002022D4 + 0xB4, a1, a2, a3, t0, t1);
             break;
         }
     }

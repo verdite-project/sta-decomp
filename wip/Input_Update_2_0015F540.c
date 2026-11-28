@@ -9,7 +9,7 @@ typedef struct {
     u8 pad55[3];
 } P;
 typedef struct { u8 pad0[2]; u16 x2; u8 x4; u8 x5; u8 x6; u8 x7; u8 x8[12]; u8 pad14[0xC]; u16 x20; u16 x22; } Q;
-extern P D_00317230[];
+extern P gMenuBss_00317230[];
 void memset(void *, s32, s32);
 s32 Pad_GetButtons_1_001D7AF0(u32, s32);
 s32 Pad_GetConnected_1_001D7E90(u32, s32);
@@ -51,7 +51,7 @@ void Input_Update_2_0015F540(u32 n) {
     u32 i;
     s32 r;
 
-    p = &D_00317230[n];
+    p = &gMenuBss_00317230[n];
     if (p->x54 > 0) {
         clr(p);
         p->x54--;

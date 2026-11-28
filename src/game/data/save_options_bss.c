@@ -4,4 +4,6 @@
    (CodeWarrior writes uninitialised objects in reverse order). */
 /* used by: no code by name (reached through other data) */
 
-u8 D_004A48A0[0xe0];
+#ifndef NONMATCHING /* the NONMATCHING build defines these in their owners */
+u8 gOptionModeBss_004A48A0[0xe0];
+#endif

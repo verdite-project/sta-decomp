@@ -18,9 +18,9 @@ typedef struct {
 typedef struct { u8 p0[0x24]; Flags8_6x2 x24; } Oth;
 typedef struct { u8 pad[0x134]; f32 x134; } M;
 extern Flags8 D_00222A50[];
-extern s32 D_00201F48;
-extern s32 D_00201F4C;
-extern s32 D_00202008;
+extern s32 gModelDrawSbss_00201F48;
+extern s32 gModelEmitSbss_00201F4C;
+extern s32 gModelEmitSbss_00202008;
 void sceVu0CopyVector(Vec *, void *);
 void sceVu0ApplyMatrix(Vec *, M *, Vec *);
 s32 Gfx_SphereInFrustum_1_00153FA0(Vec *);
@@ -74,10 +74,10 @@ void Mdl_DrawMeshes_1_0016C7E0(Obj *o, Oth *oth, u8 *ctx, F f) {
     m = 2;
     if (oth->x24.f.b6) return;
     t = f;
-    D_00202008 = D_00201F4C;
+    gModelEmitSbss_00202008 = gModelEmitSbss_00201F4C;
     if (!D_00222A50[0].f.b1) {
         if ((t.k | t.c3 | t.c4) == 0 && o->x3C.f.b6) {
-            D_00202008 = D_00201F48;
+            gModelEmitSbss_00202008 = gModelDrawSbss_00201F48;
         }
     }
     if (!oth->x24.f.b1) return;

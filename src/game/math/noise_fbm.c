@@ -1,11 +1,24 @@
 #include "m2c.h"
 #include "game/data.h"
 #include "game/math.h"
-extern s32 D_00201C94;
-extern f32 D_00201C8C;
-extern f32 D_00201C90;
-extern f32 D_003141F0[][2];
-extern f32 D_00315200[][3];
+#ifndef NONMATCHING
+extern s32 gNoiseFbmSdata_00201C94;
+extern f32 gNoiseFbmSdata_00201C8C;
+extern f32 gNoiseFbmSdata_00201C90;
+extern f32 gNoiseFbmBss_003141F0[][2];
+extern f32 gNoiseFbmBss_00315200[][3];
+#else
+/* data twins (src/game/data/sdata.c): gNoiseFbmSdata_00201C94 */
+static s32 gNoiseFbmSdata_00201C94 = 1;
+/* data twins (src/game/data/sdata.c): gNoiseFbmSdata_00201C8C */
+static f32 gNoiseFbmSdata_00201C8C = -1000.0f;
+/* data twins (src/game/data/sdata.c): gNoiseFbmSdata_00201C90 */
+static f32 gNoiseFbmSdata_00201C90 = 1.0f;
+/* data twins (src/game/data/vibration_bss.c): gNoiseFbmBss_003141F0 */
+static f32 gNoiseFbmBss_003141F0[0x1010 / sizeof(f32[2])][2];
+/* data twins (src/game/data/vibration_bss.c): gNoiseFbmBss_00315200 */
+static f32 gNoiseFbmBss_00315200[0x1820 / sizeof(f32[3])][3];
+#endif
 void Noise_Init_2_0015F250(void);
 f32 powf(f32, f32);
 void srand(s32);
@@ -24,17 +37,17 @@ f32 Noise_Fbm_1_0015F040(f32 x, f32 p, f32 lac, f32 oct) {
     s32 j;
     f32 *q;
 
-    if (D_00201C94 != 0 || p != D_00201C8C) {
-        D_00201C90 = 0.0f;
+    if (gNoiseFbmSdata_00201C94 != 0 || p != gNoiseFbmSdata_00201C8C) {
+        gNoiseFbmSdata_00201C90 = 0.0f;
         freq = 1.0f;
-        D_00201C8C = p;
+        gNoiseFbmSdata_00201C8C = p;
         for (i = 0; i <= oct; i++) {
             D_003139B0[i] = powf(freq, -p);
-            D_00201C90 += D_003139B0[i];
+            gNoiseFbmSdata_00201C90 += D_003139B0[i];
             freq *= lac;
         }
-        D_00201C94 = 0;
-        D_00201C90 = 1.0f / powf(D_00201C90, 0.83f);
+        gNoiseFbmSdata_00201C94 = 0;
+        gNoiseFbmSdata_00201C90 = 1.0f / powf(gNoiseFbmSdata_00201C90, 0.83f);
     }
     sum = 0.0f;
     for (i = 0; i < oct; i++) {
@@ -43,14 +56,14 @@ f32 Noise_Fbm_1_0015F040(f32 x, f32 p, f32 lac, f32 oct) {
         s32 k = (s32)v;
         u8 a = k;
         f32 f = v - (f32)k;
-        f32 g0 = f * D_003139E0[D_00316A20[a]];
-        f32 d = (f - 1.0f) * D_003139E0[D_00316A20[(u8)(a + 1)]] - g0;
+        f32 g0 = f * gNoiseFbmBss_003139E0[gNoiseFbmBss_00316A20[a]];
+        f32 d = (f - 1.0f) * gNoiseFbmBss_003139E0[gNoiseFbmBss_00316A20[(u8)(a + 1)]] - g0;
         f32 s = (3.0f - 2.0f * f) * (f * f);
         f32 r = g0 + s * d;
         sum += wt * r;
         x *= lac;
     }
-    sum *= D_00201C90;
+    sum *= gNoiseFbmSdata_00201C90;
     return sum;
 }
 
@@ -60,31 +73,38 @@ void Noise_Init_2_0015F250(void) {
     f32 s;
     srand(0);
     for (i = 0; i < 256; i++) {
-        D_00316A20[i] = i;
-        D_003139E0[i] = (f32)((rand() % 512) - 256) / 256.0f;
+        gNoiseFbmBss_00316A20[i] = i;
+        gNoiseFbmBss_003139E0[i] = (f32)((rand() % 512) - 256) / 256.0f;
         for (j = 0; j < 2; j++)
-            D_003141F0[i][j] = (f32)((rand() % 512) - 256) / 256.0f;
-        s = 1.0f / sqrtf(D_003141F0[i][0] * D_003141F0[i][0] + D_003141F0[i][1] * D_003141F0[i][1]);
-        D_003141F0[i][0] = D_003141F0[i][0] * s;
-        D_003141F0[i][1] = D_003141F0[i][1] * s;
+            gNoiseFbmBss_003141F0[i][j] = (f32)((rand() % 512) - 256) / 256.0f;
+        s = 1.0f / sqrtf(gNoiseFbmBss_003141F0[i][0] * gNoiseFbmBss_003141F0[i][0] + gNoiseFbmBss_003141F0[i][1] * gNoiseFbmBss_003141F0[i][1]);
+        gNoiseFbmBss_003141F0[i][0] = gNoiseFbmBss_003141F0[i][0] * s;
+        gNoiseFbmBss_003141F0[i][1] = gNoiseFbmBss_003141F0[i][1] * s;
         for (j = 0; j < 3; j++)
-            D_00315200[i][j] = (f32)((rand() % 512) - 256) / 256.0f;
-        s = 1.0f / sqrtf(D_00315200[i][0] * D_00315200[i][0] + D_00315200[i][1] * D_00315200[i][1] + D_00315200[i][2] * D_00315200[i][2]);
-        D_00315200[i][0] = D_00315200[i][0] * s;
-        D_00315200[i][1] = D_00315200[i][1] * s;
-        D_00315200[i][2] = D_00315200[i][2] * s;
+            gNoiseFbmBss_00315200[i][j] = (f32)((rand() % 512) - 256) / 256.0f;
+        s = 1.0f / sqrtf(gNoiseFbmBss_00315200[i][0] * gNoiseFbmBss_00315200[i][0] + gNoiseFbmBss_00315200[i][1] * gNoiseFbmBss_00315200[i][1] + gNoiseFbmBss_00315200[i][2] * gNoiseFbmBss_00315200[i][2]);
+        gNoiseFbmBss_00315200[i][0] = gNoiseFbmBss_00315200[i][0] * s;
+        gNoiseFbmBss_00315200[i][1] = gNoiseFbmBss_00315200[i][1] * s;
+        gNoiseFbmBss_00315200[i][2] = gNoiseFbmBss_00315200[i][2] * s;
     }
     while (--i) {
-        k = D_00316A20[i];
-        D_00316A20[i] = D_00316A20[j = rand() % 256];
-        D_00316A20[j] = k;
+        k = gNoiseFbmBss_00316A20[i];
+        gNoiseFbmBss_00316A20[i] = gNoiseFbmBss_00316A20[j = rand() % 256];
+        gNoiseFbmBss_00316A20[j] = k;
     }
     for (i = 0; i < 258; i++) {
-        D_00316A20[256 + i] = D_00316A20[i];
-        D_003139E0[256 + i] = D_003139E0[i];
+        gNoiseFbmBss_00316A20[256 + i] = gNoiseFbmBss_00316A20[i];
+        gNoiseFbmBss_003139E0[256 + i] = gNoiseFbmBss_003139E0[i];
         for (j = 0; j < 2; j++)
-            D_003141F0[256 + i][1 - j] = D_003141F0[i][1 - j];
+            gNoiseFbmBss_003141F0[256 + i][1 - j] = gNoiseFbmBss_003141F0[i][1 - j];
         for (j = 0; j < 3; j++)
-            D_00315200[256 + i][2 - j] = D_00315200[i][2 - j];
+            gNoiseFbmBss_00315200[256 + i][2 - j] = gNoiseFbmBss_00315200[i][2 - j];
     }
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/vibration_bss.c): gNoiseFbmBss_003139E0, gNoiseFbmBss_00316A20 */
+f32 gNoiseFbmBss_003139E0[0x204];
+s32 gNoiseFbmBss_00316A20[0x204];
+#endif

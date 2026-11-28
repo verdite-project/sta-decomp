@@ -5,9 +5,9 @@ typedef struct {
     s32 f;
     char rest[0x154];
 } E;
-extern E D_004B6A00[];
+extern E gSoundDriverCallBss_004B6A00[];
 
 s32 Pad_GetButtons_1_001D7AF0(s32 i, s32 j)
 {
-    return D_004B6A00[i * 4 + j].f;
+    return gSoundDriverCallBss_004B6A00[i * 4 + j].f;
 }

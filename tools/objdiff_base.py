@@ -115,6 +115,44 @@ def section_relative(path: Path) -> None:
     path.write_bytes(data)
 
 
+def widen(path: Path, target: Path) -> None:
+    """A data symbol the target's label makes bigger than the C object (the
+    label runs over the zero fill to the next object's alignment) gets the
+    target's size, when what it takes in is zero and holds no other symbol."""
+    sizes = {}
+    with open(target, "rb") as f:
+        elf = ELFFile(f)
+        for s in elf.get_section_by_name(".symtab").iter_symbols():
+            if isinstance(s["st_shndx"], int) and s.name and s["st_info"]["type"] not in ("STT_SECTION", "STT_FILE"):
+                sec = elf.get_section(s["st_shndx"]).name
+                if sec in DATA:
+                    sizes[(sec, s["st_value"], s.name)] = s["st_size"]
+    data = bytearray(path.read_bytes())
+    with open(path, "rb") as f:
+        elf = ELFFile(f)
+        symtab = elf.get_section_by_name(".symtab")
+        syms = list(symtab.iter_symbols())
+        starts = {}
+        for s in syms:
+            if isinstance(s["st_shndx"], int) and s.name:
+                starts.setdefault(s["st_shndx"], set()).add(s["st_value"])
+        for i, s in enumerate(syms):
+            if not isinstance(s["st_shndx"], int) or not s.name:
+                continue
+            sec = elf.get_section(s["st_shndx"])
+            want = sizes.get((sec.name, s["st_value"], s.name))
+            have = s["st_size"]
+            if not want or want <= have or s["st_value"] + want > sec["sh_size"]:
+                continue
+            lo, hi = s["st_value"] + have, s["st_value"] + want
+            if any(lo <= a < hi for a in starts.get(s["st_shndx"], ())):
+                continue
+            if sec["sh_type"] != "SHT_NOBITS" and any(sec.data()[lo:hi]):
+                continue
+            struct.pack_into("<I", data, symtab["sh_offset"] + i * symtab["sh_entsize"] + 8, want)   # st_size
+    path.write_bytes(data)
+
+
 def unsplit_needed(path: Path) -> bool:
     with open(path, "rb") as f:
         return any(s.name.startswith(".text.ia") for s in ELFFile(f).iter_sections())
@@ -173,6 +211,7 @@ def main() -> None:
     if names:
         rename(out, names)
     section_relative(out)
+    widen(out, target)
 
 
 if __name__ == "__main__":

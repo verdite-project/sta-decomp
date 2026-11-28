@@ -85,88 +85,155 @@ typedef struct {
 } O_Menu_DrawStatRing_0_00186440;
 typedef struct { u8 pad0[0x54]; R_MenuProc_DrawGauge_0_00185030 *x54; u8 pad58[4]; R_MenuProc_DrawGauge_0_00185030 *x5C; } G;
 typedef struct { s16 lo; s16 hi; } P;
-extern S_Ui_DrawGauge_0_00182EF0 D_001F2770[] __attribute__((aligned(16)));
-extern f32 D_002020A4;
-extern f32 D_002020A0;
+extern S_Ui_DrawGauge_0_00182EF0 gUiGaugeData_001F2770[] __attribute__((aligned(16)));
 extern u8 D_0048D141[];
 extern u8 D_0048D142[];
 extern u8 D_0048D143[];
-extern s8 D_0048D170[];
-extern u8 D_001FC9C0[];
-extern u8 D_001FC9D8[];
-extern O_Ui_LoadItemImageSmall_3_001833E0 *D_0048D110[];
-extern Col_Ui_DrawWindow_0_00183650 D_002020A8;
-extern s32 D_0048D0E0[];
+extern s8 gUiGaugeBss_0048D170[];
+extern O_Ui_LoadItemImageSmall_3_001833E0 *gUiGaugeBss_0048D110[];
+extern Col_Ui_DrawWindow_0_00183650 gUiGaugeSbss_002020A8;
+extern s32 gUiGaugeBss_0048D0E0[];
 extern s32 D_0048D0E4[];
-extern M2C_UNK D_001FC9F0[];
-extern M2C_UNK D_001FCA08[];
-extern s32 D_00201CDC;
-extern s32 D_00201CE0;
-extern s32 D_00201CE4;
-extern s32 D_00201CE8;
-extern s8 *D_002020AC;
-extern s32 D_0048D0F0[];
-extern s32 D_0048D0F4[];
-extern s32 D_0048D0F8[];
-extern s32 D_0048D0FC[];
-extern s32 D_0048D100[];
-extern s32 D_0048D104[];
-extern s32 D_0048D108[];
-extern s32 D_0048D10C[];
-extern M2C_UNK D_001FCA10[];
-extern M2C_UNK D_001FCA20[];
-extern s8 D_001FCA30[];
-extern s8 D_001FCA48[];
-extern M2C_UNK D_001FCA60[];
-extern M2C_UNK D_001FCA78[];
-extern Ent D_0048D170__as_Ui_LoadItemImageSmall_3_001833E0[];
-extern s32 D_002020A8__as_Ui_LoadMapSheet_3_00183750;
+extern M2C_UNK gStrMapsheetMs04dTdc_001FC9F0[];
+extern M2C_UNK gStrMs04d_001FCA08[];
+extern s8 *gUiGaugeSbss_002020AC;
+extern s32 gUiGaugeBss_0048D0F0[];
+extern s32 gUiGaugeBss_0048D0F4[];
+extern s32 gUiGaugeBss_0048D0F8[];
+extern s32 gUiGaugeBss_0048D0FC[];
+extern s32 gUiGaugeBss_0048D100[];
+extern s32 gUiGaugeBss_0048D104[];
+extern s32 gUiGaugeBss_0048D108[];
+extern s32 gUiGaugeBss_0048D10C[];
+extern M2C_UNK gStrAreaM04dTdc_001FCA10[];
+extern M2C_UNK gStrM04d_001FCA20[];
+extern M2C_UNK gStrItemImg04dTdc_001FCA60[];
+extern M2C_UNK gStrImg04d_001FCA78[];
+extern Ent gUiGaugeBss_0048D170__as_Ui_LoadItemImageSmall_3_001833E0[];
+extern s32 gUiGaugeSbss_002020A8__as_Ui_LoadMapSheet_3_00183750;
 extern s8 *D_0048D0E4__as_Ui_LoadMapSheet_3_00183750[];
-extern s32 D_002020A8__as_Ui_LoadAreaImage_3_00183970;
+extern s32 gUiGaugeSbss_002020A8__as_Ui_LoadAreaImage_3_00183970;
 extern s8 *D_0048D0E4__as_Ui_LoadAreaImage_3_00183970[];
-extern Res *D_002020AC__as_Ui_LoadCharImage_3_00183B90;
-extern s32 D_002020A8__as_Ui_LoadCharImage_3_00183B90;
-extern f32 D_0048D0F0__as_Ui_LoadCharImage_3_00183B90[];
-extern f32 D_0048D0F4__as_Ui_LoadCharImage_3_00183B90[];
-extern f32 D_0048D0F8__as_Ui_LoadCharImage_3_00183B90[];
-extern f32 D_0048D0FC__as_Ui_LoadCharImage_3_00183B90[];
-extern f32 D_0048D100__as_Ui_LoadCharImage_3_00183B90[];
-extern f32 D_0048D104__as_Ui_LoadCharImage_3_00183B90[];
-extern f32 D_0048D108__as_Ui_LoadCharImage_3_00183B90[];
-extern f32 D_0048D10C__as_Ui_LoadCharImage_3_00183B90[];
-extern s32 D_002020A8__as_Ui_LoadItemImage_3_00183DC0;
+extern Res *gUiGaugeSbss_002020AC__as_Ui_LoadCharImage_3_00183B90;
+extern s32 gUiGaugeSbss_002020A8__as_Ui_LoadCharImage_3_00183B90;
+extern f32 gUiGaugeBss_0048D0F0__as_Ui_LoadCharImage_3_00183B90[];
+extern f32 gUiGaugeBss_0048D0F4__as_Ui_LoadCharImage_3_00183B90[];
+extern f32 gUiGaugeBss_0048D0F8__as_Ui_LoadCharImage_3_00183B90[];
+extern f32 gUiGaugeBss_0048D0FC__as_Ui_LoadCharImage_3_00183B90[];
+extern f32 gUiGaugeBss_0048D100__as_Ui_LoadCharImage_3_00183B90[];
+extern f32 gUiGaugeBss_0048D104__as_Ui_LoadCharImage_3_00183B90[];
+extern f32 gUiGaugeBss_0048D108__as_Ui_LoadCharImage_3_00183B90[];
+extern f32 gUiGaugeBss_0048D10C__as_Ui_LoadCharImage_3_00183B90[];
+extern s32 gUiGaugeSbss_002020A8__as_Ui_LoadItemImage_3_00183DC0;
 extern s8 *D_0048D0E4__as_Ui_LoadItemImage_3_00183DC0[];
-extern Res *D_002020AC__as_Ui_IsImageLoading_0_00183FF0;
-extern G_MenuProc_DrawScrolled_0_00184CF0 D_0048D060;
-extern S_Ui_DrawGauge_0_00182EF0 D_001F2700 __attribute__((aligned(16)));
-extern f32 D_00202084;
-extern f32 D_002020B0;
-extern f32 D_002020B4;
-extern f32 D_002020B8;
-extern f32 D_002020BC;
-extern V D_001F26F0[];
-extern S_Ui_DrawGauge_0_00182EF0 D_001F26D0 __attribute__((aligned(16)));
-extern char D_0048CE40[];
-extern s32 D_0020207C;
-extern s32 D_00202080;
-extern f32 D_00202088;
-extern f32 D_0020208C;
-extern f32 D_00202090;
-extern f32 D_00202094;
-extern f32 D_00202098;
-extern f32 D_0020209C;
-extern S_Ui_DrawGauge_0_00182EF0 D_001F2630 __attribute__((aligned(16)));
-extern S_Ui_DrawGauge_0_00182EF0 D_001F2650 __attribute__((aligned(16)));
-extern S_Ui_DrawGauge_0_00182EF0 D_001F2670 __attribute__((aligned(16)));
-extern s32 D_0048CF40[];
-extern s32 D_0048CFC0[];
-extern s32 D_0048CF80[];
-extern s32 D_0048D000[];
-extern s8 D_001FCA80[];
-extern s8 D_001FCA88[];
-extern s8 D_001FCB80[];
-extern s8 D_001FCB88[];
-extern s8 D_001FCB90[];
+extern Res *gUiGaugeSbss_002020AC__as_Ui_IsImageLoading_0_00183FF0;
+extern G_MenuProc_DrawScrolled_0_00184CF0 gUiGaugeBss_0048D060;
+extern char gUiGaugeBss_0048CE40[];
+extern s32 gUiGaugeBss_0048CF40[];
+extern s32 gUiGaugeBss_0048CFC0[];
+extern s32 gUiGaugeBss_0048CF80[];
+extern s32 gUiGaugeBss_0048D000[];
+extern s8 gUiGaugeRodata_001FCA80[];
+extern s8 gUiGaugeRodata_001FCA88[];
+#ifndef NONMATCHING
+extern f32 gUiGaugeSbss_002020A4;
+extern f32 gUiGaugeSbss_002020A0;
+extern u8 gUiGaugeRodata_001FC9C0[];
+extern u8 gUiGaugeRodata_001FC9D8[];
+extern s32 gUiGaugeSdata_00201CDC;
+extern s32 gUiGaugeSdata_00201CE0;
+extern s32 gUiGaugeSdata_00201CE4;
+extern s32 gUiGaugeSdata_00201CE8;
+extern s8 gUiGaugeRodata_001FCA30[];
+extern s8 gUiGaugeRodata_001FCA48[];
+extern S_Ui_DrawGauge_0_00182EF0 gUiGaugeData_001F2700 __attribute__((aligned(16)));
+extern f32 gUiGaugeSbss_00202084;
+extern f32 gUiGaugeSbss_002020B0;
+extern f32 gUiGaugeSbss_002020B4;
+extern f32 gUiGaugeSbss_002020B8;
+extern f32 gUiGaugeSbss_002020BC;
+extern V gUiGaugeData_001F26F0[];
+extern S_Ui_DrawGauge_0_00182EF0 gUiGaugeData_001F26D0 __attribute__((aligned(16)));
+extern s32 gUiGaugeSbss_0020207C;
+extern s32 gUiGaugeSbss_00202080;
+extern f32 gUiGaugeSbss_00202088;
+extern f32 gUiGaugeSbss_0020208C;
+extern f32 gUiGaugeSbss_00202090;
+extern f32 gUiGaugeSbss_00202094;
+extern f32 gUiGaugeSbss_00202098;
+extern f32 gUiGaugeSbss_0020209C;
+extern S_Ui_DrawGauge_0_00182EF0 gUiGaugeData_001F2630 __attribute__((aligned(16)));
+extern S_Ui_DrawGauge_0_00182EF0 gUiGaugeData_001F2650 __attribute__((aligned(16)));
+extern S_Ui_DrawGauge_0_00182EF0 gUiGaugeData_001F2670 __attribute__((aligned(16)));
+extern s8 gUiGaugeRodata_001FCB80[];
+extern s8 gUiGaugeRodata_001FCB88[];
+extern s8 gUiGaugeRodata_001FCB90[];
+#else
+/* data twins (src/game/data/sbss.c): gUiGaugeSbss_002020A4 */
+static f32 gUiGaugeSbss_002020A4;
+/* data twins (src/game/data/sbss.c): gUiGaugeSbss_002020A0 */
+static f32 gUiGaugeSbss_002020A0;
+/* data twins (src/game/data/ui_gauge_rodata.c): gUiGaugeRodata_001FC9C0 */
+static u8 gUiGaugeRodata_001FC9C0[0x18] = "item/imgs%04d.tdc\000\000\000\000\000\000\000";
+/* data twins (src/game/data/ui_gauge_rodata.c): gUiGaugeRodata_001FC9D8 */
+static u8 gUiGaugeRodata_001FC9D8[0x18] __attribute__((aligned(8))) = "imgs%04d\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
+/* data twins (src/game/data/sdata.c): gUiGaugeSdata_00201CDC */
+static s32 gUiGaugeSdata_00201CDC = -1;
+/* data twins (src/game/data/sdata.c): gUiGaugeSdata_00201CE0 */
+static s32 gUiGaugeSdata_00201CE0 = -1;
+/* data twins (src/game/data/sdata.c): gUiGaugeSdata_00201CE4 */
+static s32 gUiGaugeSdata_00201CE4 = -1;
+/* data twins (src/game/data/sdata.c): gUiGaugeSdata_00201CE8 */
+static s32 gUiGaugeSdata_00201CE8 = -1;
+/* data twins (src/game/data/ui_gauge_rodata.c): gUiGaugeRodata_001FCA30 */
+static s8 gUiGaugeRodata_001FCA30[0x18] = "chrimg/cimg%04d.tdc\000\000\000\000\000";
+/* data twins (src/game/data/ui_gauge_rodata.c): gUiGaugeRodata_001FCA48 */
+static s8 gUiGaugeRodata_001FCA48[0x18] __attribute__((aligned(8))) = "cimg%04d\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
+/* data twins (src/game/data/ui_global_data_001F2630.c): gUiGaugeData_001F2700 */
+static S_Ui_DrawGauge_0_00182EF0 gUiGaugeData_001F2700 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+/* data twins (src/game/data/sbss.c): gUiGaugeSbss_00202084 */
+static f32 gUiGaugeSbss_00202084;
+/* data twins (src/game/data/sbss.c): gUiGaugeSbss_002020B0 */
+static f32 gUiGaugeSbss_002020B0;
+/* data twins (src/game/data/sbss.c): gUiGaugeSbss_002020B4 */
+static f32 gUiGaugeSbss_002020B4;
+/* data twins (src/game/data/sbss.c): gUiGaugeSbss_002020B8 */
+static f32 gUiGaugeSbss_002020B8;
+/* data twins (src/game/data/sbss.c): gUiGaugeSbss_002020BC */
+static f32 gUiGaugeSbss_002020BC;
+/* data twins (src/game/data/ui_global_data_001F2630.c): gUiGaugeData_001F26F0 */
+static V gUiGaugeData_001F26F0[0x1] = { { .f = { 615.0f, 275.0f, 619.0f, 399.0f } } };
+/* data twins (src/game/data/ui_global_data_001F2630.c): gUiGaugeData_001F26D0 */
+static S_Ui_DrawGauge_0_00182EF0 gUiGaugeData_001F26D0 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+/* data twins (src/game/data/sbss.c): gUiGaugeSbss_0020207C */
+static s32 gUiGaugeSbss_0020207C;
+/* data twins (src/game/data/sbss.c): gUiGaugeSbss_00202080 */
+static s32 gUiGaugeSbss_00202080;
+/* data twins (src/game/data/sbss.c): gUiGaugeSbss_00202088 */
+static f32 gUiGaugeSbss_00202088;
+/* data twins (src/game/data/sbss.c): gUiGaugeSbss_0020208C */
+static f32 gUiGaugeSbss_0020208C;
+/* data twins (src/game/data/sbss.c): gUiGaugeSbss_00202090 */
+static f32 gUiGaugeSbss_00202090;
+/* data twins (src/game/data/sbss.c): gUiGaugeSbss_00202094 */
+static f32 gUiGaugeSbss_00202094;
+/* data twins (src/game/data/sbss.c): gUiGaugeSbss_00202098 */
+static f32 gUiGaugeSbss_00202098;
+/* data twins (src/game/data/sbss.c): gUiGaugeSbss_0020209C */
+static f32 gUiGaugeSbss_0020209C;
+/* data twins (src/game/data/ui_global_data_001F2630.c): gUiGaugeData_001F2630 */
+static S_Ui_DrawGauge_0_00182EF0 gUiGaugeData_001F2630 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+/* data twins (src/game/data/ui_global_data_001F2630.c): gUiGaugeData_001F2650 */
+static S_Ui_DrawGauge_0_00182EF0 gUiGaugeData_001F2650 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+/* data twins (src/game/data/ui_global_data_001F2630.c): gUiGaugeData_001F2670 */
+static S_Ui_DrawGauge_0_00182EF0 gUiGaugeData_001F2670 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+/* data twins (src/game/data/ui_gauge_rodata2.c): gUiGaugeRodata_001FCB80 */
+static s8 gUiGaugeRodata_001FCB80[0x8] __attribute__((aligned(16))) = "%d\000\000\000\000\000\000";
+/* data twins (src/game/data/ui_gauge_rodata2.c): gUiGaugeRodata_001FCB88 */
+static s8 gUiGaugeRodata_001FCB88[0x8] = "+%d\000\000\000\000\000";
+/* data twins (src/game/data/ui_gauge_rodata2.c): gUiGaugeRodata_001FCB90 */
+static s8 gUiGaugeRodata_001FCB90[0x10] = " \000\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
+#endif
 void Ui_DrawCursorB_0_00183090(f32 *arg0, s32 arg1, s32 arg2, s32 arg3);
 void Ui_DrawElemAt_0_001832D0(s8 *arg0, s32 arg1, s32 arg2);
 void Ui_LoadItemImageSmall_3_001833E0(s32 arg0, s32 arg1);
@@ -240,7 +307,11 @@ s32 Menu_CalcStatBar_0_001866B0__as_Menu_DrawStatRing_0_00186440(s32, s32, s32, 
 G* MenuLayout_GetSub_1_00189020__as_MenuProc_DrawStatValue_0_00186990(s32);
 
 /* text_00182C10 */
+#ifdef NONMATCHING
+/* best-effort C: ui_draw_elem.c */
+#else
 INCLUDE_ASM(Ui_DrawElem_1_00182C10);
+#endif
 
 /* Ui_DrawGauge_0_00182EF0 */
 
@@ -250,17 +321,17 @@ void Ui_DrawGauge_0_00182EF0(s32 x0, s32 y0, s32 x1, s32 y1, f32 u0, f32 u1, f32
     Col_Ui_DrawGauge_0_00182EF0 col;
     s8 *o;
 
-    t = D_001F2770[0];
+    t = gUiGaugeData_001F2770[0];
     o = *(s8 **)(MenuLayout_GetSub_1_00189020(0) + 0x84);
     col.r = 0x80;
     col.g = 0x80;
     col.b = 0x80;
-    D_002020A4 += 0.1f;
+    gUiGaugeSbss_002020A4 += 0.1f;
     col.a = alpha / 2.0f;
-    t.x = (f32)x0 + 6.0f * sinf(D_002020A4);
+    t.x = (f32)x0 + 6.0f * sinf(gUiGaugeSbss_002020A4);
     t.y = (f32)y0;
     Ui_DrawSprite_2_00181680(*(s32 *)(o + 4), o + 0x10, o + 0x20, &col, &t, 0);
-    t.x = (f32)x1 - 6.0f * sinf(D_002020A4);
+    t.x = (f32)x1 - 6.0f * sinf(gUiGaugeSbss_002020A4);
     t.y = (f32)y1;
     Ui_DrawSprite_2_00181680(*(s32 *)(o + 4), o + 0x10, o + 0x20, &col, &t, 1);
 }
@@ -282,7 +353,7 @@ void Ui_DrawCursorB_0_00183090(f32 *arg0, s32 arg1, s32 arg2, s32 arg3) {
         d = arg0[3] - arg0[1];
         h = 1.0f / (f32)(arg2 - (arg1 - 1)); h *= d;
         if (arg1 == arg2) {
-            D_002020A0 = 0.0f;
+            gUiGaugeSbss_002020A0 = 0.0f;
         } else {
             step = h;
             if (h < 10.0f) {
@@ -290,24 +361,24 @@ void Ui_DrawCursorB_0_00183090(f32 *arg0, s32 arg1, s32 arg2, s32 arg3) {
                 step = (d - 10.0f) / (f32)(arg2 - arg1);
             }
             if (arg2 < arg3 + arg1) {
-                D_002020A0 = step * (f32)(arg2 - arg1);
+                gUiGaugeSbss_002020A0 = step * (f32)(arg2 - arg1);
             } else {
                 if (arg3 < 0) arg3 = 0;
-                D_002020A0 = (f32)arg3 * step;
+                gUiGaugeSbss_002020A0 = (f32)arg3 * step;
             }
         }
         b[0] = arg0[0];
-        b[1] = D_002020A0 + arg0[1];
+        b[1] = gUiGaugeSbss_002020A0 + arg0[1];
         b[2] = arg0[2];
-        b[3] = 4.0f + (D_002020A0 + arg0[1]);
+        b[3] = 4.0f + (gUiGaugeSbss_002020A0 + arg0[1]);
         c[0] = arg0[0];
-        c[1] = 4.0f + (D_002020A0 + arg0[1]);
+        c[1] = 4.0f + (gUiGaugeSbss_002020A0 + arg0[1]);
         c[2] = arg0[2];
-        c[3] = h + (D_002020A0 + arg0[1]);
+        c[3] = h + (gUiGaugeSbss_002020A0 + arg0[1]);
         a[0] = arg0[0];
-        a[1] = h + (D_002020A0 + arg0[1]);
+        a[1] = h + (gUiGaugeSbss_002020A0 + arg0[1]);
         a[2] = arg0[2];
-        a[3] = h + (4.0f + (D_002020A0 + arg0[1]));
+        a[3] = h + (4.0f + (gUiGaugeSbss_002020A0 + arg0[1]));
         Menu_DrawBackground_0_00187B20(0);
         n = M2C_FIELD(s0->p, s32 *, 4);
         Ui_DrawSpriteRotated_1_00182080(0.0f, n, b, s0->p + 0x20, &col, 0);
@@ -326,7 +397,7 @@ void Ui_DrawElemAt_0_001832D0(s8 *arg0, s32 arg1, s32 arg2)
   s8 *t1;
   u8 *a3;
   u8 *a1;
-  t1 = D_0048D170 + (arg1 * 0x30);
+  t1 = gUiGaugeBss_0048D170 + (arg1 * 0x30);
   *((s32 *) t1) = arg2;
   s.a = 1;
   a3 = D_0048D140 + (arg1 * 4);
@@ -358,11 +429,11 @@ void Ui_DrawElemAt_0_001832D0(s8 *arg0, s32 arg1, s32 arg2)
 
 /* Ui_LoadItemImageSmall_3_001833E0 */
 s32 D_001F2740[0xc] = { -0x1 };
-static inline O_Ui_LoadItemImageSmall_3_001833E0 **getp(s32 i) { return &D_0048D110[i]; }
+static inline O_Ui_LoadItemImageSmall_3_001833E0 **getp(s32 i) { return &gUiGaugeBss_0048D110[i]; }
 
 void Ui_LoadItemImageSmall_3_001833E0(s32 arg0, s32 arg1) {
     Ent *e; O_Ui_LoadItemImageSmall_3_001833E0 *o; s32 x; s32 *cur; O_Ui_LoadItemImageSmall_3_001833E0 **pp;
-    e = &D_0048D170__as_Ui_LoadItemImageSmall_3_001833E0[arg1];
+    e = &gUiGaugeBss_0048D170__as_Ui_LoadItemImageSmall_3_001833E0[arg1];
     if (arg0 <= 0) {
         pp = getp(arg1);
         if (*pp != NULL && (*pp)->b2) {
@@ -389,7 +460,7 @@ void Ui_LoadItemImageSmall_3_001833E0(s32 arg0, s32 arg1) {
         }
         {
             Buf_Ui_LoadItemImageSmall_3_001833E0 s = {0};
-            sprintf(&s, D_001FC9C0, *cur);
+            sprintf(&s, gUiGaugeRodata_001FC9C0, *cur);
             *pp = ImageLoader_Request_1_001E1570(&s, arg1);
         }
         e->f[0] = 4.0f;
@@ -405,10 +476,10 @@ void Ui_LoadItemImageSmall_3_001833E0(s32 arg0, s32 arg1) {
     o = *pp;
     if (o != NULL && !o->b1 && !o->b2 && o->b0) {
         u8 buf2[16];
-        sprintf(buf2, D_001FC9D8, *cur);
+        sprintf(buf2, gUiGaugeRodata_001FC9D8, *cur);
         if ((x = (*pp)->first) != 0) {
             e->p = Tex_Find_1_00177AF0(Tex_HashName_2_00177F80(buf2), x);
-            (*(O_Ui_LoadItemImageSmall_3_001833E0 **)((s8 *)D_0048D110 + arg1 * 4))->b2 = 1;
+            (*(O_Ui_LoadItemImageSmall_3_001833E0 **)((s8 *)gUiGaugeBss_0048D110 + arg1 * 4))->b2 = 1;
         }
     }
 }
@@ -418,26 +489,26 @@ void Ui_LoadItemImageSmall_3_001833E0(s32 arg0, s32 arg1) {
 void Ui_DrawWindow_0_00183650(s8 *arg0) {
     Buf_Ui_DrawWindow_0_00183650 s __attribute__((aligned(16))) = {0};
     if (D_0048D0E4[0] != 0) {
-        if (D_002020A8.a > 0xD0) {
-            D_002020A8.a = 0xFF;
+        if (gUiGaugeSbss_002020A8.a > 0xD0) {
+            gUiGaugeSbss_002020A8.a = 0xFF;
         } else {
-            D_002020A8.a += 0x20;
+            gUiGaugeSbss_002020A8.a += 0x20;
         }
         s.a = 1;
-        s.b = D_0048D0E0;
+        s.b = gUiGaugeBss_0048D0E0;
         *(s32 *)(arg0 + 0x34) = 0x3F800000;
         *(s32 *)(arg0 + 0x38) = 0x3F800000;
-        D_002020A8.r = 0xFF;
-        D_002020A8.g = 0xFF;
-        D_002020A8.b = 0xFF;
-        arg0[0x3C] = D_002020A8.r;
-        arg0[0x3D] = D_002020A8.g;
-        arg0[0x3E] = D_002020A8.b;
-        arg0[0x3F] = (D_002020A8.a * (u8)arg0[0x3F]) / 128;
+        gUiGaugeSbss_002020A8.r = 0xFF;
+        gUiGaugeSbss_002020A8.g = 0xFF;
+        gUiGaugeSbss_002020A8.b = 0xFF;
+        arg0[0x3C] = gUiGaugeSbss_002020A8.r;
+        arg0[0x3D] = gUiGaugeSbss_002020A8.g;
+        arg0[0x3E] = gUiGaugeSbss_002020A8.b;
+        arg0[0x3F] = (gUiGaugeSbss_002020A8.a * (u8)arg0[0x3F]) / 128;
         Ui_DrawElem_1_00182C10__as_Ui_DrawWindow_0_00183650(arg0, &s);
         return;
     }
-    *(u32 *)&D_002020A8 = 0;
+    *(u32 *)&gUiGaugeSbss_002020A8 = 0;
 }
 
 /* Ui_LoadMapSheet_3_00183750 */
@@ -447,50 +518,50 @@ void Ui_LoadMapSheet_3_00183750(s32 arg0) {
     u8 temp_a0;
 
     if (arg0 <= 0) {
-        if ((D_002020AC != NULL) && (((u64) ((s64) M2C_FIELD(D_002020AC, u8 *, 8) << 0x3D) >> 0x3F) != 0) && (D_0048D0E4__as_Ui_LoadMapSheet_3_00183750[0] != NULL)) {
+        if ((gUiGaugeSbss_002020AC != NULL) && (((u64) ((s64) M2C_FIELD(gUiGaugeSbss_002020AC, u8 *, 8) << 0x3D) >> 0x3F) != 0) && (D_0048D0E4__as_Ui_LoadMapSheet_3_00183750[0] != NULL)) {
             Tex_Release_1_00177570(D_0048D0E4__as_Ui_LoadMapSheet_3_00183750[0]);
             D_0048D0E4__as_Ui_LoadMapSheet_3_00183750[0] = NULL;
-            D_00201CE8 = -1;
+            gUiGaugeSdata_00201CE8 = -1;
         }
         return;
     }
-    if (D_00201CE8 != arg0) {
-        if (D_002020AC != NULL && (((u64) ((s64) M2C_FIELD(D_002020AC, u8 *, 8) << 0x3E) >> 0x3F) != 0)) {
+    if (gUiGaugeSdata_00201CE8 != arg0) {
+        if (gUiGaugeSbss_002020AC != NULL && (((u64) ((s64) M2C_FIELD(gUiGaugeSbss_002020AC, u8 *, 8) << 0x3E) >> 0x3F) != 0)) {
             return;
         }
-        if ((D_002020AC != NULL) && (((u64) ((s64) M2C_FIELD(D_002020AC, u8 *, 8) << 0x3D) >> 0x3F) != 0) && (D_0048D0E4__as_Ui_LoadMapSheet_3_00183750[0] != NULL)) {
+        if ((gUiGaugeSbss_002020AC != NULL) && (((u64) ((s64) M2C_FIELD(gUiGaugeSbss_002020AC, u8 *, 8) << 0x3D) >> 0x3F) != 0) && (D_0048D0E4__as_Ui_LoadMapSheet_3_00183750[0] != NULL)) {
             Tex_Release_1_00177570(D_0048D0E4__as_Ui_LoadMapSheet_3_00183750[0]);
             D_0048D0E4__as_Ui_LoadMapSheet_3_00183750[0] = NULL;
         }
-        D_00201CE8 = arg0;
-        D_00201CE0 = -1;
-        D_00201CDC = -1;
-        D_00201CE4 = -1;
+        gUiGaugeSdata_00201CE8 = arg0;
+        gUiGaugeSdata_00201CE0 = -1;
+        gUiGaugeSdata_00201CDC = -1;
+        gUiGaugeSdata_00201CE4 = -1;
         {
             Buf_Ui_LoadMapSheet_3_00183750 s = {0};
-        sprintf__as_Ui_LoadMapSheet_3_00183750(s.b, D_001FC9F0, D_00201CE8);
-            D_002020AC = ImageLoader_Request_1_001E1570__as_Ui_LoadMapSheet_3_00183750(s.b, 0xA);
-            D_0048D0F0[0] = 0;
-            D_0048D0F4[0] = 0;
-            D_002020A8__as_Ui_LoadMapSheet_3_00183750 = 0;
-            D_0048D0F8[0] = 0x43800000;
-            D_0048D0FC[0] = 0x43800000;
-            D_0048D100[0] = 0;
-            D_0048D104[0] = 0;
-            D_0048D108[0] = 0x43800000;
-            D_0048D10C[0] = 0x43800000;
+        sprintf__as_Ui_LoadMapSheet_3_00183750(s.b, gStrMapsheetMs04dTdc_001FC9F0, gUiGaugeSdata_00201CE8);
+            gUiGaugeSbss_002020AC = ImageLoader_Request_1_001E1570__as_Ui_LoadMapSheet_3_00183750(s.b, 0xA);
+            gUiGaugeBss_0048D0F0[0] = 0;
+            gUiGaugeBss_0048D0F4[0] = 0;
+            gUiGaugeSbss_002020A8__as_Ui_LoadMapSheet_3_00183750 = 0;
+            gUiGaugeBss_0048D0F8[0] = 0x43800000;
+            gUiGaugeBss_0048D0FC[0] = 0x43800000;
+            gUiGaugeBss_0048D100[0] = 0;
+            gUiGaugeBss_0048D104[0] = 0;
+            gUiGaugeBss_0048D108[0] = 0x43800000;
+            gUiGaugeBss_0048D10C[0] = 0x43800000;
         }
     }
     {
         u8 name[16];
-    if (D_002020AC != NULL) {
-            temp_a0 = M2C_FIELD(D_002020AC, u8 *, 8);
+    if (gUiGaugeSbss_002020AC != NULL) {
+            temp_a0 = M2C_FIELD(gUiGaugeSbss_002020AC, u8 *, 8);
             if ((((u64) ((s64) temp_a0 << 0x3E) >> 0x3F) == 0) && (((u64) ((s64) temp_a0 << 0x3D) >> 0x3F) == 0) && (temp_a0 & 1)) {
-                sprintf__as_Ui_LoadMapSheet_3_00183750(name, D_001FCA08, D_00201CE8);
-                temp_s0 = M2C_FIELD(D_002020AC, s32 *, 0);
+                sprintf__as_Ui_LoadMapSheet_3_00183750(name, gStrMs04d_001FCA08, gUiGaugeSdata_00201CE8);
+                temp_s0 = M2C_FIELD(gUiGaugeSbss_002020AC, s32 *, 0);
                 if (temp_s0 != 0) {
                     D_0048D0E4__as_Ui_LoadMapSheet_3_00183750[0] = (s8 *)Tex_Find_1_00177AF0__as_Ui_LoadMapSheet_3_00183750(Tex_HashName_2_00177F80__as_Ui_LoadMapSheet_3_00183750(name), temp_s0);
-                    ((BF_Ui_DrawGauge_0_00182EF0 *)(D_002020AC + 8))->c = 1;
+                    ((BF_Ui_DrawGauge_0_00182EF0 *)(gUiGaugeSbss_002020AC + 8))->c = 1;
                 }
             }
         }
@@ -504,50 +575,50 @@ void Ui_LoadAreaImage_3_00183970(s32 arg0) {
     u8 temp_a0;
 
     if (arg0 <= 0) {
-        if ((D_002020AC != NULL) && (((u64) ((s64) M2C_FIELD(D_002020AC, u8 *, 8) << 0x3D) >> 0x3F) != 0) && (D_0048D0E4__as_Ui_LoadAreaImage_3_00183970[0] != NULL)) {
+        if ((gUiGaugeSbss_002020AC != NULL) && (((u64) ((s64) M2C_FIELD(gUiGaugeSbss_002020AC, u8 *, 8) << 0x3D) >> 0x3F) != 0) && (D_0048D0E4__as_Ui_LoadAreaImage_3_00183970[0] != NULL)) {
             Tex_Release_1_00177570(D_0048D0E4__as_Ui_LoadAreaImage_3_00183970[0]);
             D_0048D0E4__as_Ui_LoadAreaImage_3_00183970[0] = NULL;
-            D_00201CE4 = -1;
+            gUiGaugeSdata_00201CE4 = -1;
         }
         return;
     }
-    if (D_00201CE4 != arg0) {
-        if (D_002020AC != NULL && (((u64) ((s64) M2C_FIELD(D_002020AC, u8 *, 8) << 0x3E) >> 0x3F) != 0)) {
+    if (gUiGaugeSdata_00201CE4 != arg0) {
+        if (gUiGaugeSbss_002020AC != NULL && (((u64) ((s64) M2C_FIELD(gUiGaugeSbss_002020AC, u8 *, 8) << 0x3E) >> 0x3F) != 0)) {
             return;
         }
-        if ((D_002020AC != NULL) && (((u64) ((s64) M2C_FIELD(D_002020AC, u8 *, 8) << 0x3D) >> 0x3F) != 0) && (D_0048D0E4__as_Ui_LoadAreaImage_3_00183970[0] != NULL)) {
+        if ((gUiGaugeSbss_002020AC != NULL) && (((u64) ((s64) M2C_FIELD(gUiGaugeSbss_002020AC, u8 *, 8) << 0x3D) >> 0x3F) != 0) && (D_0048D0E4__as_Ui_LoadAreaImage_3_00183970[0] != NULL)) {
             Tex_Release_1_00177570(D_0048D0E4__as_Ui_LoadAreaImage_3_00183970[0]);
             D_0048D0E4__as_Ui_LoadAreaImage_3_00183970[0] = NULL;
         }
-        D_00201CE4 = arg0;
-        D_00201CE0 = -1;
-        D_00201CDC = -1;
-        D_00201CE8 = -1;
+        gUiGaugeSdata_00201CE4 = arg0;
+        gUiGaugeSdata_00201CE0 = -1;
+        gUiGaugeSdata_00201CDC = -1;
+        gUiGaugeSdata_00201CE8 = -1;
         {
             Buf_Ui_LoadMapSheet_3_00183750 s = {0};
-        sprintf__as_Ui_LoadAreaImage_3_00183970(s.b, D_001FCA10, D_00201CE4);
-            D_002020AC = ImageLoader_Request_1_001E1570__as_Ui_LoadAreaImage_3_00183970(s.b, 0xA);
-            D_0048D0F0[0] = 0;
-            D_0048D0F4[0] = 0;
-            D_002020A8__as_Ui_LoadAreaImage_3_00183970 = 0;
-            D_0048D0F8[0] = 0x43000000;
-            D_0048D0FC[0] = 0x43000000;
-            D_0048D100[0] = 0;
-            D_0048D104[0] = 0;
-            D_0048D108[0] = 0x43000000;
-            D_0048D10C[0] = 0x43000000;
+        sprintf__as_Ui_LoadAreaImage_3_00183970(s.b, gStrAreaM04dTdc_001FCA10, gUiGaugeSdata_00201CE4);
+            gUiGaugeSbss_002020AC = ImageLoader_Request_1_001E1570__as_Ui_LoadAreaImage_3_00183970(s.b, 0xA);
+            gUiGaugeBss_0048D0F0[0] = 0;
+            gUiGaugeBss_0048D0F4[0] = 0;
+            gUiGaugeSbss_002020A8__as_Ui_LoadAreaImage_3_00183970 = 0;
+            gUiGaugeBss_0048D0F8[0] = 0x43000000;
+            gUiGaugeBss_0048D0FC[0] = 0x43000000;
+            gUiGaugeBss_0048D100[0] = 0;
+            gUiGaugeBss_0048D104[0] = 0;
+            gUiGaugeBss_0048D108[0] = 0x43000000;
+            gUiGaugeBss_0048D10C[0] = 0x43000000;
         }
     }
     {
         u8 name[16];
-    if (D_002020AC != NULL) {
-            temp_a0 = M2C_FIELD(D_002020AC, u8 *, 8);
+    if (gUiGaugeSbss_002020AC != NULL) {
+            temp_a0 = M2C_FIELD(gUiGaugeSbss_002020AC, u8 *, 8);
             if ((((u64) ((s64) temp_a0 << 0x3E) >> 0x3F) == 0) && (((u64) ((s64) temp_a0 << 0x3D) >> 0x3F) == 0) && (temp_a0 & 1)) {
-                sprintf__as_Ui_LoadAreaImage_3_00183970(name, D_001FCA20, D_00201CE4);
-                temp_s0 = M2C_FIELD(D_002020AC, s32 *, 0);
+                sprintf__as_Ui_LoadAreaImage_3_00183970(name, gStrM04d_001FCA20, gUiGaugeSdata_00201CE4);
+                temp_s0 = M2C_FIELD(gUiGaugeSbss_002020AC, s32 *, 0);
                 if (temp_s0 != 0) {
                     D_0048D0E4__as_Ui_LoadAreaImage_3_00183970[0] = (s8 *)Tex_Find_1_00177AF0__as_Ui_LoadAreaImage_3_00183970(Tex_HashName_2_00177F80__as_Ui_LoadAreaImage_3_00183970(name), temp_s0);
-                    ((BF_Ui_DrawGauge_0_00182EF0 *)(D_002020AC + 8))->c = 1;
+                    ((BF_Ui_DrawGauge_0_00182EF0 *)(gUiGaugeSbss_002020AC + 8))->c = 1;
                 }
             }
         }
@@ -561,45 +632,45 @@ void Ui_LoadCharImage_3_00183B90(s32 id) {
 
     s32 r;
     if (id == -1 || id == 0) {
-        if (D_002020AC__as_Ui_LoadCharImage_3_00183B90 && D_002020AC__as_Ui_LoadCharImage_3_00183B90->f8.f.b2 && D_0048D0E4[0]) {
+        if (gUiGaugeSbss_002020AC__as_Ui_LoadCharImage_3_00183B90 && gUiGaugeSbss_002020AC__as_Ui_LoadCharImage_3_00183B90->f8.f.b2 && D_0048D0E4[0]) {
             Tex_Release_1_00177570__as_Ui_LoadCharImage_3_00183B90(D_0048D0E4[0]);
             D_0048D0E4[0] = 0;
-            D_00201CE0 = -1;
+            gUiGaugeSdata_00201CE0 = -1;
         }
         return;
     }
-    if (D_00201CE0 != id) {
-        if (D_002020AC__as_Ui_LoadCharImage_3_00183B90 && D_002020AC__as_Ui_LoadCharImage_3_00183B90->f8.f.b1) return;
-        if (D_002020AC__as_Ui_LoadCharImage_3_00183B90 && D_002020AC__as_Ui_LoadCharImage_3_00183B90->f8.f.b2 && D_0048D0E4[0]) {
+    if (gUiGaugeSdata_00201CE0 != id) {
+        if (gUiGaugeSbss_002020AC__as_Ui_LoadCharImage_3_00183B90 && gUiGaugeSbss_002020AC__as_Ui_LoadCharImage_3_00183B90->f8.f.b1) return;
+        if (gUiGaugeSbss_002020AC__as_Ui_LoadCharImage_3_00183B90 && gUiGaugeSbss_002020AC__as_Ui_LoadCharImage_3_00183B90->f8.f.b2 && D_0048D0E4[0]) {
             Tex_Release_1_00177570__as_Ui_LoadCharImage_3_00183B90(D_0048D0E4[0]);
             D_0048D0E4[0] = 0;
         }
-        D_00201CE0 = id;
-        D_00201CE4 = -1;
-        D_00201CDC = -1;
-        D_00201CE8 = -1;
+        gUiGaugeSdata_00201CE0 = id;
+        gUiGaugeSdata_00201CE4 = -1;
+        gUiGaugeSdata_00201CDC = -1;
+        gUiGaugeSdata_00201CE8 = -1;
         {
         s8 buf[0x100] = {0};
-        sprintf(buf, D_001FCA30, D_00201CE0);
-        D_002020AC__as_Ui_LoadCharImage_3_00183B90 = ImageLoader_Request_1_001E1570__as_Ui_LoadCharImage_3_00183B90(buf, 10);
-        D_0048D0F0__as_Ui_LoadCharImage_3_00183B90[0] = 0.0f;
-        D_0048D0F4__as_Ui_LoadCharImage_3_00183B90[0] = 0.0f;
-        D_002020A8__as_Ui_LoadCharImage_3_00183B90 = 0;
-        D_0048D0F8__as_Ui_LoadCharImage_3_00183B90[0] = 128.0f;
-        D_0048D0FC__as_Ui_LoadCharImage_3_00183B90[0] = 128.0f;
-        D_0048D100__as_Ui_LoadCharImage_3_00183B90[0] = 0.0f;
-        D_0048D104__as_Ui_LoadCharImage_3_00183B90[0] = 0.0f;
-        D_0048D108__as_Ui_LoadCharImage_3_00183B90[0] = 128.0f;
-        D_0048D10C__as_Ui_LoadCharImage_3_00183B90[0] = 128.0f;
+        sprintf(buf, gUiGaugeRodata_001FCA30, gUiGaugeSdata_00201CE0);
+        gUiGaugeSbss_002020AC__as_Ui_LoadCharImage_3_00183B90 = ImageLoader_Request_1_001E1570__as_Ui_LoadCharImage_3_00183B90(buf, 10);
+        gUiGaugeBss_0048D0F0__as_Ui_LoadCharImage_3_00183B90[0] = 0.0f;
+        gUiGaugeBss_0048D0F4__as_Ui_LoadCharImage_3_00183B90[0] = 0.0f;
+        gUiGaugeSbss_002020A8__as_Ui_LoadCharImage_3_00183B90 = 0;
+        gUiGaugeBss_0048D0F8__as_Ui_LoadCharImage_3_00183B90[0] = 128.0f;
+        gUiGaugeBss_0048D0FC__as_Ui_LoadCharImage_3_00183B90[0] = 128.0f;
+        gUiGaugeBss_0048D100__as_Ui_LoadCharImage_3_00183B90[0] = 0.0f;
+        gUiGaugeBss_0048D104__as_Ui_LoadCharImage_3_00183B90[0] = 0.0f;
+        gUiGaugeBss_0048D108__as_Ui_LoadCharImage_3_00183B90[0] = 128.0f;
+        gUiGaugeBss_0048D10C__as_Ui_LoadCharImage_3_00183B90[0] = 128.0f;
         }
     }
-    if (D_002020AC__as_Ui_LoadCharImage_3_00183B90 && !D_002020AC__as_Ui_LoadCharImage_3_00183B90->f8.f.b1 && !D_002020AC__as_Ui_LoadCharImage_3_00183B90->f8.f.b2 && D_002020AC__as_Ui_LoadCharImage_3_00183B90->f8.f.b0) {
+    if (gUiGaugeSbss_002020AC__as_Ui_LoadCharImage_3_00183B90 && !gUiGaugeSbss_002020AC__as_Ui_LoadCharImage_3_00183B90->f8.f.b1 && !gUiGaugeSbss_002020AC__as_Ui_LoadCharImage_3_00183B90->f8.f.b2 && gUiGaugeSbss_002020AC__as_Ui_LoadCharImage_3_00183B90->f8.f.b0) {
         s8 name[16];
-        sprintf(name, D_001FCA48, D_00201CE0);
-        r = D_002020AC__as_Ui_LoadCharImage_3_00183B90->x0;
+        sprintf(name, gUiGaugeRodata_001FCA48, gUiGaugeSdata_00201CE0);
+        r = gUiGaugeSbss_002020AC__as_Ui_LoadCharImage_3_00183B90->x0;
         if (r) {
             D_0048D0E4[0] = Tex_Find_1_00177AF0__as_Ui_LoadCharImage_3_00183B90(Tex_HashName_2_00177F80(name), r);
-            D_002020AC__as_Ui_LoadCharImage_3_00183B90->f8.f.b2 = 1;
+            gUiGaugeSbss_002020AC__as_Ui_LoadCharImage_3_00183B90->f8.f.b2 = 1;
         }
     }
 }
@@ -611,50 +682,50 @@ void Ui_LoadItemImage_3_00183DC0(s32 arg0) {
     u8 temp_a0;
 
     if (arg0 == -1 || arg0 == 0) {
-        if ((D_002020AC != NULL) && (((u64) ((s64) M2C_FIELD(D_002020AC, u8 *, 8) << 0x3D) >> 0x3F) != 0) && (D_0048D0E4__as_Ui_LoadItemImage_3_00183DC0[0] != NULL)) {
+        if ((gUiGaugeSbss_002020AC != NULL) && (((u64) ((s64) M2C_FIELD(gUiGaugeSbss_002020AC, u8 *, 8) << 0x3D) >> 0x3F) != 0) && (D_0048D0E4__as_Ui_LoadItemImage_3_00183DC0[0] != NULL)) {
             Tex_Release_1_00177570(D_0048D0E4__as_Ui_LoadItemImage_3_00183DC0[0]);
             D_0048D0E4__as_Ui_LoadItemImage_3_00183DC0[0] = NULL;
-            D_00201CDC = -1;
+            gUiGaugeSdata_00201CDC = -1;
         }
         return;
     }
-    if (D_00201CDC != arg0) {
-        if (D_002020AC != NULL && (((u64) ((s64) M2C_FIELD(D_002020AC, u8 *, 8) << 0x3E) >> 0x3F) != 0)) {
+    if (gUiGaugeSdata_00201CDC != arg0) {
+        if (gUiGaugeSbss_002020AC != NULL && (((u64) ((s64) M2C_FIELD(gUiGaugeSbss_002020AC, u8 *, 8) << 0x3E) >> 0x3F) != 0)) {
             return;
         }
-        if ((D_002020AC != NULL) && (((u64) ((s64) M2C_FIELD(D_002020AC, u8 *, 8) << 0x3D) >> 0x3F) != 0) && (D_0048D0E4__as_Ui_LoadItemImage_3_00183DC0[0] != NULL)) {
+        if ((gUiGaugeSbss_002020AC != NULL) && (((u64) ((s64) M2C_FIELD(gUiGaugeSbss_002020AC, u8 *, 8) << 0x3D) >> 0x3F) != 0) && (D_0048D0E4__as_Ui_LoadItemImage_3_00183DC0[0] != NULL)) {
             Tex_Release_1_00177570(D_0048D0E4__as_Ui_LoadItemImage_3_00183DC0[0]);
             D_0048D0E4__as_Ui_LoadItemImage_3_00183DC0[0] = NULL;
         }
-        D_00201CDC = arg0;
-        D_00201CE4 = -1;
-        D_00201CE0 = -1;
-        D_00201CE8 = -1;
+        gUiGaugeSdata_00201CDC = arg0;
+        gUiGaugeSdata_00201CE4 = -1;
+        gUiGaugeSdata_00201CE0 = -1;
+        gUiGaugeSdata_00201CE8 = -1;
         {
             Buf_Ui_LoadMapSheet_3_00183750 s = {0};
-        sprintf__as_Ui_LoadItemImage_3_00183DC0(s.b, D_001FCA60, D_00201CDC);
-            D_002020AC = ImageLoader_Request_1_001E1570__as_Ui_LoadItemImage_3_00183DC0(s.b, 0xA);
-            D_0048D0F0[0] = 0;
-            D_0048D0F4[0] = 0;
-            D_002020A8__as_Ui_LoadItemImage_3_00183DC0 = 0;
-            D_0048D0F8[0] = 0x43000000;
-            D_0048D0FC[0] = 0x43000000;
-            D_0048D100[0] = 0;
-            D_0048D104[0] = 0;
-            D_0048D108[0] = 0x43000000;
-            D_0048D10C[0] = 0x43000000;
+        sprintf__as_Ui_LoadItemImage_3_00183DC0(s.b, gStrItemImg04dTdc_001FCA60, gUiGaugeSdata_00201CDC);
+            gUiGaugeSbss_002020AC = ImageLoader_Request_1_001E1570__as_Ui_LoadItemImage_3_00183DC0(s.b, 0xA);
+            gUiGaugeBss_0048D0F0[0] = 0;
+            gUiGaugeBss_0048D0F4[0] = 0;
+            gUiGaugeSbss_002020A8__as_Ui_LoadItemImage_3_00183DC0 = 0;
+            gUiGaugeBss_0048D0F8[0] = 0x43000000;
+            gUiGaugeBss_0048D0FC[0] = 0x43000000;
+            gUiGaugeBss_0048D100[0] = 0;
+            gUiGaugeBss_0048D104[0] = 0;
+            gUiGaugeBss_0048D108[0] = 0x43000000;
+            gUiGaugeBss_0048D10C[0] = 0x43000000;
         }
     }
     {
         u8 name[16];
-    if (D_002020AC != NULL) {
-            temp_a0 = M2C_FIELD(D_002020AC, u8 *, 8);
+    if (gUiGaugeSbss_002020AC != NULL) {
+            temp_a0 = M2C_FIELD(gUiGaugeSbss_002020AC, u8 *, 8);
             if ((((u64) ((s64) temp_a0 << 0x3E) >> 0x3F) == 0) && (((u64) ((s64) temp_a0 << 0x3D) >> 0x3F) == 0) && (temp_a0 & 1)) {
-                sprintf__as_Ui_LoadItemImage_3_00183DC0(name, D_001FCA78, D_00201CDC);
-                temp_s0 = M2C_FIELD(D_002020AC, s32 *, 0);
+                sprintf__as_Ui_LoadItemImage_3_00183DC0(name, gStrImg04d_001FCA78, gUiGaugeSdata_00201CDC);
+                temp_s0 = M2C_FIELD(gUiGaugeSbss_002020AC, s32 *, 0);
                 if (temp_s0 != 0) {
                     D_0048D0E4__as_Ui_LoadItemImage_3_00183DC0[0] = (s8 *)Tex_Find_1_00177AF0__as_Ui_LoadItemImage_3_00183DC0(Tex_HashName_2_00177F80__as_Ui_LoadItemImage_3_00183DC0(name), temp_s0);
-                    ((BF_Ui_DrawGauge_0_00182EF0 *)(D_002020AC + 8))->c = 1;
+                    ((BF_Ui_DrawGauge_0_00182EF0 *)(gUiGaugeSbss_002020AC + 8))->c = 1;
                 }
             }
         }
@@ -663,13 +734,13 @@ void Ui_LoadItemImage_3_00183DC0(s32 arg0) {
 
 /* Ui_IsImageLoading_0_00183FF0 */
 s32 Ui_IsImageLoading_0_00183FF0(void) {
-    if (D_002020AC__as_Ui_IsImageLoading_0_00183FF0 == NULL) return 0;
+    if (gUiGaugeSbss_002020AC__as_Ui_IsImageLoading_0_00183FF0 == NULL) return 0;
     goto test;
 one:
     return 1;
 test:
-    if (D_002020AC__as_Ui_IsImageLoading_0_00183FF0->f8.f.b1) goto one;
-    D_00201CDC = -1; D_00201CE0 = -1; D_00201CE4 = -1; D_00201CE8 = -1;
+    if (gUiGaugeSbss_002020AC__as_Ui_IsImageLoading_0_00183FF0->f8.f.b1) goto one;
+    gUiGaugeSdata_00201CDC = -1; gUiGaugeSdata_00201CE0 = -1; gUiGaugeSdata_00201CE4 = -1; gUiGaugeSdata_00201CE8 = -1;
     return 0;
 }
 
@@ -714,7 +785,11 @@ void Menu_DrawRingA_0_00184040(s32 a0, f32 ang) {
 }
 
 /* text_00184280 */
+#ifdef NONMATCHING
+/* best-effort C: menu_proc_draw_item_stats.c */
+#else
 INCLUDE_ASM(MenuProc_DrawItemStats_0_00184280);
+#endif
 
 /* Item_GetDurability_0_001848A0 */
 #define D_001FCB08 D_001FCB08__as_Item_GetDurability_0_001848A0
@@ -779,20 +854,20 @@ void Menu_DrawRingB_0_00184960(s32 a0, f32 ang) {
     GsPkt_SetReg_3_001543E0(0x42, 0x48);
     GsPkt_Flush_1_001544C0();
     MenuLayout_GetSub_1_00189020(0);
-    v = D_0020208C;
-    D_00202088 += v;
-    D_0020208C = v - (v - (v - 1.0f) / 10.0f);
-    D_00202090 = Approachf_3_00187770(D_00202090, D_002020BC, 10.0f);
-    D_00202094 = Approachf_3_00187770(D_00202094, D_002020B8, 10.0f);
-    if (!(fabsf(D_002020BC - D_00202090) <= 5.0f)) {
-        D_0020208C = 0.0f;
+    v = gUiGaugeSbss_0020208C;
+    gUiGaugeSbss_00202088 += v;
+    gUiGaugeSbss_0020208C = v - (v - (v - 1.0f) / 10.0f);
+    gUiGaugeSbss_00202090 = Approachf_3_00187770(gUiGaugeSbss_00202090, gUiGaugeSbss_002020BC, 10.0f);
+    gUiGaugeSbss_00202094 = Approachf_3_00187770(gUiGaugeSbss_00202094, gUiGaugeSbss_002020B8, 10.0f);
+    if (!(fabsf(gUiGaugeSbss_002020BC - gUiGaugeSbss_00202090) <= 5.0f)) {
+        gUiGaugeSbss_0020208C = 0.0f;
     }
-    cosf(D_00202088);
-    sinf(D_00202088);
-    D_00202098 = Approachf_3_00187770(D_00202098, D_002020B4, 10.0f);
-    D_0020209C = Approachf_3_00187770(D_0020209C, D_002020B0, 10.0f);
-    cosf(3.14f + D_00202088);
-    sinf(3.14f + D_00202088);
+    cosf(gUiGaugeSbss_00202088);
+    sinf(gUiGaugeSbss_00202088);
+    gUiGaugeSbss_00202098 = Approachf_3_00187770(gUiGaugeSbss_00202098, gUiGaugeSbss_002020B4, 10.0f);
+    gUiGaugeSbss_0020209C = Approachf_3_00187770(gUiGaugeSbss_0020209C, gUiGaugeSbss_002020B0, 10.0f);
+    cosf(3.14f + gUiGaugeSbss_00202088);
+    sinf(3.14f + gUiGaugeSbss_00202088);
     Ui_BeginSprites_1_00181420();
     GsPkt_BeginAD_3_001545D0();
     GsPkt_SetReg_3_001543E0(0x42, 0x44);
@@ -802,20 +877,20 @@ void Menu_DrawRingB_0_00184960(s32 a0, f32 ang) {
 /* MenuProc_DrawScrolled_0_00184CF0 */
 void MenuProc_DrawScrolled_0_00184CF0(s8 *a0, s32 a1, u32 n) {
     if (n >= 500) {
-        D_0048D060.x2C = *(f32 *)(a0 + 0x38);
-        D_0048D060.x30 = *(f32 *)(a0 + 0x3C);
-        D_0048D060.x14 = 1.0f;
-        D_0048D060.x18 = 1.0f;
-        D_0048D060.x3C = 0x80FFFFFF;
+        gUiGaugeBss_0048D060.x2C = *(f32 *)(a0 + 0x38);
+        gUiGaugeBss_0048D060.x30 = *(f32 *)(a0 + 0x3C);
+        gUiGaugeBss_0048D060.x14 = 1.0f;
+        gUiGaugeBss_0048D060.x18 = 1.0f;
+        gUiGaugeBss_0048D060.x3C = 0x80FFFFFF;
         switch (n - 500) {
         case 0: case 1: case 2: case 3: case 4: case 5: break;
         case 6: case 7: case 8: case 9:
-            D_0048D060.x2C = 3.0f + *(f32 *)(a0 + 0x38);
-            D_0048D060.x30 = 3.0f + *(f32 *)(a0 + 0x3C);
+            gUiGaugeBss_0048D060.x2C = 3.0f + *(f32 *)(a0 + 0x38);
+            gUiGaugeBss_0048D060.x30 = 3.0f + *(f32 *)(a0 + 0x3C);
             break;
         }
-        if (n > 1000) Ui_DrawElemAt_0_001832D0(&D_0048D060, n - 1500, 1);
-        else Ui_DrawElemAt_0_001832D0(&D_0048D060, n - 500, 0);
+        if (n > 1000) Ui_DrawElemAt_0_001832D0(&gUiGaugeBss_0048D060, n - 1500, 1);
+        else Ui_DrawElemAt_0_001832D0(&gUiGaugeBss_0048D060, n - 500, 0);
     }
 }
 
@@ -866,7 +941,7 @@ static inline void glow(O_Item_GetDurability_0_001848A0 *o, R_MenuProc_DrawGauge
     buf->y = o->x3C;
     buf->m[3] = 1.0f;
     buf->m[0] = 1.0f;
-    k = 96.0f + fabsf(128.0f * sinf(0.05f * D_002020D4));
+    k = 96.0f + fabsf(128.0f * sinf(0.05f * gHudDrawSbss_002020D4));
     o->x2C = o->x2C * k / 128;
     o->x2D = o->x2D * k / 128;
     o->x2E = o->x2E * k / 128;
@@ -878,8 +953,8 @@ void MenuProc_DrawGauge_0_00185030(O_Item_GetDurability_0_001848A0 *o, s32 a1, u
     R_MenuProc_DrawGauge_0_00185030 *r;
     s32 n;
 
-    buf = D_001F2700;
-    D_00202084 += 0.01f;
+    buf = gUiGaugeData_001F2700;
+    gUiGaugeSbss_00202084 += 0.01f;
     if (mode < 2000) {
         buf.x = o->x30;
         buf.y = o->x34;
@@ -891,17 +966,17 @@ void MenuProc_DrawGauge_0_00185030(O_Item_GetDurability_0_001848A0 *o, s32 a1, u
         Ui_DrawSprite_2_00181680(o->x28, o, o->x10, &o->x2C, &buf, mode);
     }
     if (a3 == mode - 1500) {
-        D_002020B4 = o->x38;
-        D_002020B0 = o->x3C;
+        gUiGaugeSbss_002020B4 = o->x38;
+        gUiGaugeSbss_002020B0 = o->x3C;
         r = MenuLayout_GetSub_1_00189020__as_MenuProc_DrawGauge_0_00185030(0)->x7C;
         glow(o, r, &buf, mode);
     }
     if (a3 == mode - 500) {
-        D_002020BC = o->x38;
-        D_002020B8 = o->x3C;
+        gUiGaugeSbss_002020BC = o->x38;
+        gUiGaugeSbss_002020B8 = o->x3C;
         if (a3 != 4) {
-            D_002020B4 = o->x38;
-            D_002020B0 = o->x3C;
+            gUiGaugeSbss_002020B4 = o->x38;
+            gUiGaugeSbss_002020B0 = o->x3C;
         }
         n = 0;
         switch (a3) {
@@ -911,10 +986,10 @@ void MenuProc_DrawGauge_0_00185030(O_Item_GetDurability_0_001848A0 *o, s32 a1, u
         case 3:
         case 4:
         case 5:
-            D_002020BC -= 4.0f;
-            D_002020B8 -= 4.0f;
-            D_002020B4 -= 4.0f;
-            D_002020B0 -= 4.0f;
+            gUiGaugeSbss_002020BC -= 4.0f;
+            gUiGaugeSbss_002020B8 -= 4.0f;
+            gUiGaugeSbss_002020B4 -= 4.0f;
+            gUiGaugeSbss_002020B0 -= 4.0f;
             break;
         case 6:
         case 7:
@@ -945,7 +1020,7 @@ void Menu_DrawFrame_0_00185390(s32 a0, s32 a1, s32 a2, f32 f) {
         el.x2C -= 40.0f * f;
         Ui_DrawElem_1_00182C10(&el, base + list->e[i].idx * 8);
     }
-    v = D_001F26F0[0];
+    v = gUiGaugeData_001F26F0[0];
     v.f[0] -= 40.0f * f;
     v.f[2] -= 40.0f * f;
     Ui_DrawCursorB_0_00183090(&v, a0, a1, a2);
@@ -1020,7 +1095,7 @@ void MenuProc_DrawHpMp_1_00185740(O_Item_GetDurability_0_001848A0 *o, s32 a1, u3
     s32 v;
     if (mode < 200) {
         S_Ui_DrawGauge_0_00182EF0 buf __attribute__((aligned(16)));
-        buf = D_001F26D0;
+        buf = gUiGaugeData_001F26D0;
         buf.x = o->x30;
         buf.y = o->x34;
         Ui_DrawSprite_2_00181680(o->x28, o, o->x10, &o->x2C, &buf, mode);
@@ -1029,50 +1104,50 @@ void MenuProc_DrawHpMp_1_00185740(O_Item_GetDurability_0_001848A0 *o, s32 a1, u3
     switch (mode) {
     case 200:
         *(u32 *)&c8 = 0x80808080;
-        sprintf(D_0048CE40, D_001FCB08, a3[2], a3[0]);
+        sprintf(gUiGaugeBss_0048CE40, D_001FCB08, a3[2], a3[0]);
         *(f32 *)((s32)o + 0x38) += 4.0f;
-        draw_Item_GetDurability_0_001848A0(D_0048CE40, o->x38, o->x3C, &c8);
+        draw_Item_GetDurability_0_001848A0(gUiGaugeBss_0048CE40, o->x38, o->x3C, &c8);
         break;
     case 201:
         *(u32 *)&c9 = 0x80808080;
-        sprintf(D_0048CE40, D_001FCB18, a3[3], a3[1]);
-        draw_Item_GetDurability_0_001848A0(D_0048CE40, o->x38, o->x3C, &c9);
+        sprintf(gUiGaugeBss_0048CE40, D_001FCB18, a3[3], a3[1]);
+        draw_Item_GetDurability_0_001848A0(gUiGaugeBss_0048CE40, o->x38, o->x3C, &c9);
         break;
     case 202:
-        v = D_0020207C;
+        v = gUiGaugeSbss_0020207C;
         if (v == 0) break;
         if (v < 0) {
             *(u32 *)&ca = 0x80404080;
-            sprintf(D_0048CE40, D_001FCB28, v);
+            sprintf(gUiGaugeBss_0048CE40, D_001FCB28, v);
         } else {
             *(u32 *)&ca = 0x80804040;
-            sprintf(D_0048CE40, D_001FCB30, v);
+            sprintf(gUiGaugeBss_0048CE40, D_001FCB30, v);
         }
         x = o->x38 + 10.0f;
         y = o->x3C;
-        draw_Item_GetDurability_0_001848A0(D_0048CE40, x, y, &ca);
+        draw_Item_GetDurability_0_001848A0(gUiGaugeBss_0048CE40, x, y, &ca);
         break;
     case 203:
-        v = D_00202080;
+        v = gUiGaugeSbss_00202080;
         if (v == 0) break;
         if (v < 0) {
             *(u32 *)&cb = 0x80404080;
-            sprintf(D_0048CE40, D_001FCB28, v);
+            sprintf(gUiGaugeBss_0048CE40, D_001FCB28, v);
         } else {
             *(u32 *)&cb = 0x80804040;
-            sprintf(D_0048CE40, D_001FCB30, v);
+            sprintf(gUiGaugeBss_0048CE40, D_001FCB30, v);
         }
         x = o->x38 + 10.0f;
         y = o->x3C;
-        draw_Item_GetDurability_0_001848A0(D_0048CE40, x, y, &cb);
+        draw_Item_GetDurability_0_001848A0(gUiGaugeBss_0048CE40, x, y, &cb);
         break;
     }
 }
 
 /* Menu_SetOffset_0_00185B30 */
 void Menu_SetOffset_0_00185B30(s32 arg0, s32 arg1) {
-    D_0020207C = arg0;
-    D_00202080 = arg1;
+    gUiGaugeSbss_0020207C = arg0;
+    gUiGaugeSbss_00202080 = arg1;
 }
 
 /* Menu_DrawRingE_0_00185B40 */
@@ -1127,7 +1202,11 @@ void Menu_DrawRingE_0_00185B40(s32 a0, f32 f) {
 #undef D_001FCB30
 
 /* text_00185D70 */
+#ifdef NONMATCHING
+/* best-effort C: menu_proc_draw_weight.c */
+#else
 INCLUDE_ASM(MenuProc_DrawWeight_0_00185D70);
+#endif
 
 /* rodata_001FCB08 */
 /* rodata_001FCB08: the game's data at 0x001FCB08..., one object per label. */
@@ -1263,13 +1342,13 @@ void MenuProc_DrawStatValue_0_00186990(O_Menu_DrawStatRing_0_00186440 *o, s32 id
     s32 idx;
     s32 *cnt;
 
-    buf = D_001F2630;
+    buf = gUiGaugeData_001F2630;
     lo = (s16)(p & 0xFFFF);
     hi = (s16)((p >> 16) & 0xFFFF);
     idx = id - 0xBB9;
     if (mode < 100) {
         S_Ui_DrawGauge_0_00182EF0 b2 __attribute__((aligned(16)));
-        b2 = D_001F2650;
+        b2 = gUiGaugeData_001F2650;
         b2.x = o->x30;
         b2.y = o->x34;
         Ui_DrawSprite_2_00181680(o->x28, o, o->x10, o->x2C, &b2, mode);
@@ -1279,7 +1358,7 @@ void MenuProc_DrawStatValue_0_00186990(O_Menu_DrawStatRing_0_00186440 *o, s32 id
     case 100: {
         S_Ui_DrawGauge_0_00182EF0 b3 __attribute__((aligned(16)));
         R_MenuProc_DrawGauge_0_00185030 *r;
-        b3 = D_001F2670;
+        b3 = gUiGaugeData_001F2670;
         r = &MenuLayout_GetSub_1_00189020__as_MenuProc_DrawStatValue_0_00186990(0)->x54[id - 0xBB9];
         col.w = (0x30808080);
         b3.x = o->x38;
@@ -1300,45 +1379,45 @@ void MenuProc_DrawStatValue_0_00186990(O_Menu_DrawStatRing_0_00186440 *o, s32 id
     }
     case 102: {
         s32 v = (s16)lo;
-        if (v != D_0048CF40[idx]) {
-            D_0048CFC0[idx] = 0;
-            D_0048CF40[idx] = v;
+        if (v != gUiGaugeBss_0048CF40[idx]) {
+            gUiGaugeBss_0048CFC0[idx] = 0;
+            gUiGaugeBss_0048CF40[idx] = v;
         }
-        if (D_0048CFC0[idx] < 0x80) {
-            D_0048CFC0[idx] += 0x10;
+        if (gUiGaugeBss_0048CFC0[idx] < 0x80) {
+            gUiGaugeBss_0048CFC0[idx] += 0x10;
         }
         col.w = 0x80808080;
-        col.c.a = D_0048CFC0[idx];
+        col.c.a = gUiGaugeBss_0048CFC0[idx];
         if (v >= 0) {
-            sprintf(D_0048CE40, D_001FCA80, v);
+            sprintf(gUiGaugeBss_0048CE40, gUiGaugeRodata_001FCA80, v);
         } else {
-            sprintf(D_0048CE40, D_001FCA88, v);
+            sprintf(gUiGaugeBss_0048CE40, gUiGaugeRodata_001FCA88, v);
         }
-        draw_Menu_DrawStatRing_0_00186440(o->x38, o->x3C, D_0048CE40, col, 0.9f);
+        draw_Menu_DrawStatRing_0_00186440(o->x38, o->x3C, gUiGaugeBss_0048CE40, col, 0.9f);
         break;
     }
     case 103: {
         s32 v = (s16)hi;
-        if (v != D_0048CF80[idx]) {
-            D_0048D000[idx] = 0;
-            D_0048CF80[idx] = v;
+        if (v != gUiGaugeBss_0048CF80[idx]) {
+            gUiGaugeBss_0048D000[idx] = 0;
+            gUiGaugeBss_0048CF80[idx] = v;
         }
-        cnt = &D_0048D000[idx];
+        cnt = &gUiGaugeBss_0048D000[idx];
         if (*cnt < 0x80) {
             *cnt += 0x10;
         }
         if (v < 0) {
             col.w = 0x80404080;
-            sprintf(D_0048CE40, D_001FCB80, v);
+            sprintf(gUiGaugeBss_0048CE40, gUiGaugeRodata_001FCB80, v);
         } else if (v > 0) {
             col.w = 0x80804040;
-            sprintf(D_0048CE40, D_001FCB88, v);
+            sprintf(gUiGaugeBss_0048CE40, gUiGaugeRodata_001FCB88, v);
         } else {
             col.w = 0x80808080;
-            sprintf(D_0048CE40, D_001FCB90, v);
+            sprintf(gUiGaugeBss_0048CE40, gUiGaugeRodata_001FCB90, v);
         }
         col.c.a = *cnt;
-        draw_Menu_DrawStatRing_0_00186440(o->x38, o->x3C, D_0048CE40, col, 0.8f);
+        draw_Menu_DrawStatRing_0_00186440(o->x38, o->x3C, gUiGaugeBss_0048CE40, col, 0.8f);
         break;
     }
     }
@@ -1347,3 +1426,31 @@ void MenuProc_DrawStatValue_0_00186990(O_Menu_DrawStatRing_0_00186440 *o, s32 id
 #undef MenuLayout_GetSub_1_00189020
 #undef Ui_DrawList_1_001829B0
 #undef Text_Render_2_00188010
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/ui_gauge_rodata.c): gUiGaugeRodata_001FCA80, gUiGaugeRodata_001FCA88 */
+s8 gUiGaugeRodata_001FCA80[0x8] = { 0x25, 0x33, 0x64, 0, 0, 0, 0, 0 };
+s8 gUiGaugeRodata_001FCA88[0x8] = { 0x2d, 0x2d, 0x2d, 0, 0, 0, 0, 0 };
+/* data twins (src/game/data/sbss.c): gUiGaugeSbss_002020A8, gUiGaugeSbss_002020AC */
+Col_Ui_DrawWindow_0_00183650 gUiGaugeSbss_002020A8;
+s8 *gUiGaugeSbss_002020AC;
+/* data twins (src/game/data/ui_gauge_bss.c): gUiGaugeBss_0048D170 */
+s8 gUiGaugeBss_0048D170[0x1e0];
+/* data group (src/game/data/menu_draw_wrap_data.c): D_001F2770__grp: gUiGaugeData_001F2770@0x0 */
+f32 D_001F2770__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+/* data group (src/game/data/ui_gauge_rodata.c): gStrImg04d_001FCA78__grp: gStrImg04d_001FCA78@0x0 */
+char gStrImg04d_001FCA78__grp[0x8] __attribute__((aligned(8))) = "img%04d\000";
+/* data group (src/game/data/ui_gauge_rodata.c): gStrItemImg04dTdc_001FCA60__grp: gStrItemImg04dTdc_001FCA60@0x0 */
+char gStrItemImg04dTdc_001FCA60__grp[0x18] __attribute__((aligned(16))) = "item/img%04d.tdc\000\000\000\000\000\000\000\000";
+/* data group (src/game/data/ui_gauge_rodata.c): gStrM04d_001FCA20__grp: gStrM04d_001FCA20@0x0 */
+char gStrM04d_001FCA20__grp[0x10] __attribute__((aligned(16))) = "m%04d\000\000\000\000\000\000\000\000\000\000\000";
+/* data group (src/game/data/ui_gauge_rodata.c): gStrMapsheetMs04dTdc_001FC9F0__grp: gStrMapsheetMs04dTdc_001FC9F0@0x0 */
+char gStrMapsheetMs04dTdc_001FC9F0__grp[0x18] __attribute__((aligned(16))) = "mapsheet/ms%04d.tdc\000\000\000\000\000";
+/* data group (src/game/data/ui_gauge_rodata.c): gStrAreaM04dTdc_001FCA10__grp: gStrAreaM04dTdc_001FCA10@0x0 */
+char gStrAreaM04dTdc_001FCA10__grp[0xf] __attribute__((aligned(16))) = "area/m%04d.tdc\000";
+/* data group (src/game/data/ui_gauge_rodata.c): gStrMs04d_001FCA08__grp: gStrMs04d_001FCA08@0x0 */
+char gStrMs04d_001FCA08__grp[0x7] __attribute__((aligned(8))) = "ms%04d\000";
+/* data group (src/game/data/ui_anim_bss.c): gUiGaugeBss_00486990__grp: gUiGaugeBss_00486990@0x0, gUiGaugeBss_0048699C@0xc, gUiGaugeBss_004869A0@0x10, gUiGaugeBss_004869B0@0x20, gUiGaugeBss_004869B4@0x24, gUiGaugeBss_004869D0@0x40, gUiGaugeBss_004870B0@0x720, gUiGaugeBss_004880B0@0x1720, gUiGaugeBss_004880B4@0x1724, gUiGaugeBss_004884B0@0x1b20, gUiGaugeBss_0048C4B0@0x5b20, gUiGaugeBss_0048CE40@0x64b0, gUiGaugeBss_0048CF40@0x65b0, gUiGaugeBss_0048CF80@0x65f0, gUiGaugeBss_0048CFC0@0x6630, gUiGaugeBss_0048D000@0x6670, gUiGaugeBss_0048D040@0x66b0, gUiGaugeBss_0048D060@0x66d0, gUiGaugeBss_0048D074@0x66e4, gUiGaugeBss_0048D08C@0x66fc, gUiGaugeBss_0048D090@0x6700, gUiGaugeBss_0048D09C@0x670c, gUiGaugeBss_0048D0A0@0x6710, gUiGaugeBss_0048D0B4@0x6724, gUiGaugeBss_0048D0CC@0x673c, gUiGaugeBss_0048D0D0@0x6740, gUiGaugeBss_0048D0DC@0x674c, gUiGaugeBss_0048D0E0@0x6750, gUiGaugeBss_0048D0F0@0x6760, gUiGaugeBss_0048D0F4@0x6764, gUiGaugeBss_0048D0F8@0x6768, gUiGaugeBss_0048D0FC@0x676c, gUiGaugeBss_0048D100@0x6770, gUiGaugeBss_0048D104@0x6774, gUiGaugeBss_0048D108@0x6778, gUiGaugeBss_0048D10C@0x677c, gUiGaugeBss_0048D110@0x6780 */
+unsigned char gUiGaugeBss_00486990__grp[0x67b0] __attribute__((aligned(16)));
+#endif

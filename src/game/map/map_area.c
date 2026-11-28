@@ -113,18 +113,18 @@ typedef struct {
     s32 r[24];
     E_Map_ResetArea_1_001B4F20 *e;
 } S_Map_ResetArea_1_001B4F20;
-extern Mtx D_001F2170;
-extern O_Map_DrawArea_0_001B37F0 **D_002022BC;
-extern s32 D_002022B8;
-extern Big D_0030D0E0;
-extern O_Map_UpdateEnemySpawns_0_001B43A0 **D_00201E88[2];
-extern s32 D_00201E80;
-extern s32 D_002022C0;
-extern f32 D_004B4BD0[];
-extern O_Map_UpdateSfxVisibility_0_001B41C0 **D_002022BC__as_Map_UpdateSfxVisibility_0_001B41C0;
-extern s32 D_001F2170__as_Map_UpdateBones_0_001B4AF0[];
-extern s32 D_001F2170__as_Map_UpdateArea_0_001B4B50[];
-extern f32 D_003139A0__as_Map_RecenterWorld_1_001B4CB0[];
+extern Mtx gMatrixFromData_001F2170;
+extern O_Map_DrawArea_0_001B37F0 **gPlayerSbss_002022BC;
+extern s32 gSoundSbss_002022B8;
+extern Big gGlowInitBss_0030D0E0;
+extern O_Map_UpdateEnemySpawns_0_001B43A0 **gMapSbss_00201E88[2];
+extern s32 gMapSbss_00201E80;
+extern s32 gGfxBuildViewMatricesSbss_002022C0;
+extern f32 gGfxBuildViewMatricesBss_004B4BD0[];
+extern O_Map_UpdateSfxVisibility_0_001B41C0 **gPlayerSbss_002022BC__as_Map_UpdateSfxVisibility_0_001B41C0;
+extern s32 gMatrixFromData_001F2170__as_Map_UpdateBones_0_001B4AF0[];
+extern s32 gMatrixFromData_001F2170__as_Map_UpdateArea_0_001B4B50[];
+extern f32 gZeroVec_003139A0__as_Map_RecenterWorld_1_001B4CB0[];
 s32 MapColl_SphereCastAll_0_001B34B0(s8 *o, s8 *out, s32 p2, u8 f1, u8 f2);
 void Map_GetNodeTransform_0_001B3710(H_Map_GetNodeTransform_0_001B3710 *h, B *base, s32 i, Vec *v, Mtx *m);
 void Map_DrawArea_0_001B37F0(O_Map_DrawArea_0_001B37F0 *o, s32 (*cb)(s32 **, Key));
@@ -250,16 +250,16 @@ void Map_GetNodeTransform_0_001B3710(H_Map_GetNodeTransform_0_001B3710 *h, B *ba
     p = *h->p;
     b = el->b;
     if (b == 0xFF) {
-        sceVu0CopyVector(v, &D_003139A0);
-        sceVu0CopyMatrix(m, &D_001F2170);
+        sceVu0CopyVector(v, &gZeroVec_003139A0);
+        sceVu0CopyMatrix(m, &gMatrixFromData_001F2170);
     } else {
         e = (s32)p + t[b].off;
         if (*(u8 *)(e + 0xF) & 1) {
             sceVu0CopyVector(v, (void *)(e + 0x10));
             sceVu0CopyMatrix(m, el);
         } else {
-            sceVu0CopyVector(v, &D_003139A0);
-            sceVu0CopyMatrix(m, &D_001F2170);
+            sceVu0CopyVector(v, &gZeroVec_003139A0);
+            sceVu0CopyMatrix(m, &gMatrixFromData_001F2170);
         }
     }
 }
@@ -352,7 +352,7 @@ void Map_DrawArea_0_001B37F0(O_Map_DrawArea_0_001B37F0 *o, s32 (*cb)(s32 **, Key
     if (o->x8E != -2) id = o->x8E;
     k = id;
     if (k != -1) m1 = tb[k];
-    if (D_002022BC != 0 && (a = *D_002022BC) != 0 && a != o) {
+    if (gPlayerSbss_002022BC != 0 && (a = *gPlayerSbss_002022BC) != 0 && a != o) {
         j = a->x8C;
         if (a->x8E != -2) j = a->x8E;
         if (j != -1) m2 = a->x154[j + 0x20];
@@ -370,7 +370,7 @@ void Map_DrawArea_0_001B37F0(O_Map_DrawArea_0_001B37F0 *o, s32 (*cb)(s32 **, Key
         e->f28.f.b4 = 0;
         if (k == -1) {
             if (!key.f.b.f.b5) continue;
-            if (e->x24 != 0 && D_002022B8 != e->x24) continue;
+            if (e->x24 != 0 && gSoundSbss_002022B8 != e->x24) continue;
             bit = 1 << e->x20;
             if (!(m2 & bit)) continue;
         } else {
@@ -400,7 +400,7 @@ void Map_DrawArea_0_001B37F0(O_Map_DrawArea_0_001B37F0 *o, s32 (*cb)(s32 **, Key
         s4 = e->x21;
         Map_GetNodeTransform_0_001B3710__as_Map_DrawArea_0_001B37F0(c0, (s8 *)s1, i + 1, &A, B);
         sceVu0CopyVector__as_Map_DrawArea_0_001B37F0(&C, &D);
-        sceVu0CopyVector__as_Map_DrawArea_0_001B37F0(&D, &D_003139A0);
+        sceVu0CopyVector__as_Map_DrawArea_0_001B37F0(&D, &gZeroVec_003139A0);
         {
             f32 w;
             D.w = 1.0f;
@@ -411,7 +411,7 @@ void Map_DrawArea_0_001B37F0(O_Map_DrawArea_0_001B37F0 *o, s32 (*cb)(s32 **, Key
         }
         sceVu0CopyVector__as_Map_DrawArea_0_001B37F0(&D, &C);
         if ((s8)s4 == -1) {
-            Mdl_DrawLitWrap_0_0016B960((s8 *)s1, &D_0030D0E0, &A, B, 0xC, 0);
+            Mdl_DrawLitWrap_0_0016B960((s8 *)s1, &gGlowInitBss_0030D0E0, &A, B, 0xC, 0);
         } else {
             Mdl_DrawLitWrap_0_0016B960((s8 *)s1, &o->x188[(s8)s4], &A, B, 0xC, 0);
         }
@@ -473,7 +473,7 @@ void Map_UpdateFog_0_001B4100(A_Map_UpdateFog_0_001B4100 *a) {
     s32 i;
     for (i = 0; i < a->n74; i++) {
         V8 *q = &a->x144[i];
-        Fog_BuildPlanes_0_0015CD30(&a->x188[i], &q->v[0], &q->v[2], &D_003139A0, &D_003139A0, &q->v[1], &q->v[3], &D_003139A0, &D_003139A0, &q->v[5], &q->v[4]);
+        Fog_BuildPlanes_0_0015CD30(&a->x188[i], &q->v[0], &q->v[2], &gZeroVec_003139A0, &gZeroVec_003139A0, &q->v[1], &q->v[3], &gZeroVec_003139A0, &gZeroVec_003139A0, &q->v[5], &q->v[4]);
     }
 }
 
@@ -504,7 +504,7 @@ void Map_UpdateSfxVisibility_0_001B41C0(O_Map_UpdateSfxVisibility_0_001B41C0 *o)
         if (idx != -1) {
             m1 = t[idx];
         }
-        if (D_002022BC__as_Map_UpdateSfxVisibility_0_001B41C0 != NULL && (p = *D_002022BC__as_Map_UpdateSfxVisibility_0_001B41C0) != NULL && p != o && p->i8C != -1) {
+        if (gPlayerSbss_002022BC__as_Map_UpdateSfxVisibility_0_001B41C0 != NULL && (p = *gPlayerSbss_002022BC__as_Map_UpdateSfxVisibility_0_001B41C0) != NULL && p != o && p->i8C != -1) {
             m2 = p->tbl[p->i8C + 0x20];
         }
         i = 0;
@@ -580,8 +580,8 @@ void Map_UpdateEnemySpawns_0_001B43A0(O_Map_UpdateEnemySpawns_0_001B43A0 *o) {
     u32 *w2;
 
     idx = -1;
-    if (D_00201E88[0] && *D_00201E88[0] == o) idx = 0;
-    if (D_00201E88[1] && *D_00201E88[1] == o) idx = 1;
+    if (gMapSbss_00201E88[0] && *gMapSbss_00201E88[0] == o) idx = 0;
+    if (gMapSbss_00201E88[1] && *gMapSbss_00201E88[1] == o) idx = 1;
     for (i = 0; i < o->x70; i++) {
         e = &o->x13C[i];
         s = &o->x17C[i];
@@ -593,7 +593,7 @@ void Map_UpdateEnemySpawns_0_001B43A0(O_Map_UpdateEnemySpawns_0_001B43A0 *o) {
             if (!(*w & mask) && inr(e, o, &e->x1E)) {
                 s->x4 = Frame_IncCounter_1_0015C9E0();
                 s->x0 = EnemyData_Alloc_0_001A7D90(e->x18);
-                Enemy_SetPartModel_0_001A6FF0(*s->x0, D_00201E88[idx], i);
+                Enemy_SetPartModel_0_001A6FF0(*s->x0, gMapSbss_00201E88[idx], i);
                 *w |= mask;
             }
         }
@@ -647,14 +647,14 @@ void Map_UpdateEnemySpawns_0_001B43A0(O_Map_UpdateEnemySpawns_0_001B43A0 *o) {
 /* Map_UpdateBones_0_001B4AF0 */
 void Map_UpdateBones_0_001B4AF0(S_Map_UpdateBones_0_001B4AF0 *a) {
     if (a == NULL || a->x178 == NULL) return;
-    Mdl_UpdateBoneMatricesCur_0_00171540(*a->x178->obj, D_001F2170__as_Map_UpdateBones_0_001B4AF0);
+    Mdl_UpdateBoneMatricesCur_0_00171540(*a->x178->obj, gMatrixFromData_001F2170__as_Map_UpdateBones_0_001B4AF0);
     MapObj_ResetBones_0_001BAAA0(a);
 }
 
 /* Map_UpdateArea_0_001B4B50 */
 void Map_UpdateArea_0_001B4B50(u8 *arg0, f32 f) {
     s32 *t;
-    Mdl_UpdateBoneMatricesCur_0_00171540__as_Map_UpdateArea_0_001B4B50(***(s32 ***)(arg0 + 0x178), D_001F2170__as_Map_UpdateArea_0_001B4B50);
+    Mdl_UpdateBoneMatricesCur_0_00171540__as_Map_UpdateArea_0_001B4B50(***(s32 ***)(arg0 + 0x178), gMatrixFromData_001F2170__as_Map_UpdateArea_0_001B4B50);
     MapObj_UpdateAll_0_001BAB70(arg0, f);
     Map_UpdateEnemySpawns_0_001B43A0__as_Map_UpdateArea_0_001B4B50(arg0);
     Map_UpdateSfxVisibility_0_001B41C0__as_Map_UpdateArea_0_001B4B50(arg0);
@@ -697,12 +697,12 @@ void Map_RecenterWorld_1_001B4CB0(void) {
     O_Map_RecenterWorld_1_001B4CB0 **pp;
     O_Map_RecenterWorld_1_001B4CB0 *o;
 
-    side = !(&D_00201E80)[1];
-    if (D_002022C0 != 0) {
-        sceVu0CopyVector__as_Map_RecenterWorld_1_001B4CB0(v, D_004B4BD0);
-        o = *((O_Map_RecenterWorld_1_001B4CB0 ***)(&D_00201E80 + 2))[side];
-        if (diff_Map_RecenterWorld_1_001B4CB0(o->pos, D_003139A0__as_Map_RecenterWorld_1_001B4CB0) != 0.0f) {
-            sceVu0CopyVector__as_Map_RecenterWorld_1_001B4CB0(o->pos, D_003139A0__as_Map_RecenterWorld_1_001B4CB0);
+    side = !(&gMapSbss_00201E80)[1];
+    if (gGfxBuildViewMatricesSbss_002022C0 != 0) {
+        sceVu0CopyVector__as_Map_RecenterWorld_1_001B4CB0(v, gGfxBuildViewMatricesBss_004B4BD0);
+        o = *((O_Map_RecenterWorld_1_001B4CB0 ***)(&gMapSbss_00201E80 + 2))[side];
+        if (diff_Map_RecenterWorld_1_001B4CB0(o->pos, gZeroVec_003139A0__as_Map_RecenterWorld_1_001B4CB0) != 0.0f) {
+            sceVu0CopyVector__as_Map_RecenterWorld_1_001B4CB0(o->pos, gZeroVec_003139A0__as_Map_RecenterWorld_1_001B4CB0);
             o->x1C = 0;
             o->x20 = 2;
             if (o->x1D8 & 1) {
@@ -710,7 +710,7 @@ void Map_RecenterWorld_1_001B4CB0(void) {
             }
         }
         sceVu0ScaleVector(-1.0f, v, v);
-        pp = ((O_Map_RecenterWorld_1_001B4CB0 ***)(&D_00201E80 + 2))[!side];
+        pp = ((O_Map_RecenterWorld_1_001B4CB0 ***)(&gMapSbss_00201E80 + 2))[!side];
         if (pp != 0) {
             o = *pp;
             if (diff_Map_RecenterWorld_1_001B4CB0(o->pos, v) != 0.0f) {
@@ -730,7 +730,7 @@ void Map_RecenterWorld_1_001B4CB0(void) {
         PointLight_OffsetAll_0_0015C620(v);
         Glow_OffsetAll_0_0015D5A0(v);
         SndEmit_OffsetPositions_1_0012F7E0(v);
-        D_002022C0 = -1;
+        gGfxBuildViewMatricesSbss_002022C0 = -1;
     }
 }
 

@@ -1,10 +1,10 @@
-/* NEAR 16 of 103 (was 60): only t1/t2 swapped for the two gp loads D_00201E88/D_00201E8C (TB[2]/TB[3]); tried separate externs, struct extern, isActive helper, decl perms (120), b38, local copies, arg order. */
+/* NEAR 16 of 103 (was 60): only t1/t2 swapped for the two gp loads gMapSbss_00201E88/gMapSbss_00201E8C (TB[2]/TB[3]); tried separate externs, struct extern, isActive helper, decl perms (120), b38, local copies, arg order. */
 #include "m2c.h"
 typedef struct { u8 pad[0x1A]; u16 x1A; u8 pad2[0x2C - 0x1C]; } Ent;
 typedef struct { s32 id; u8 pad[0x74]; u16 x78; u8 pad2[0x150 - 0x7A]; Ent *x150; u8 pad3[0x190 - 0x154]; s32 *x190; u8 pad4[0x1D8 - 0x194]; u8 x1D8; } O;
-extern s32 D_00201E80;
+extern s32 gMapSbss_00201E80;
 void Sfx_SetMatrixOrAim_0_00167740(s32, s32);
-#define TB ((O ***)&D_00201E80)
+#define TB ((O ***)&gMapSbss_00201E80)
 static inline O *get(s32 arg0) {
     s32 var_v1;
     s32 var_v1_2;

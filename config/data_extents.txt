@@ -1,0 +1,42 @@
+# How far the code reaches from a data object whose address it casts
+# (tools/data_owners.py: such an object is a "root", and without an entry
+# here the NONMATCHING build keeps it and everything after it in its run
+# where the data unit has it). One line per root: NAME EXTENT, the bytes
+# from NAME the code can touch through the cast, or `self` for the object
+# alone. Read off the code; the comment says where.
+gMapSbss_00201E80 0x10   # four object-list pointers: [2], [3] (map_object_sfx.c, chest.c [k + 2], k < 2)
+gGsPacketBss_002F1120 0x10   # one-qword DMA packet, tag 0x30000001 (gs_packet.c)
+gGsPacketBss_002F1130 0x10   # one-qword DMA packet, tag 0x30000001 (gs_packet.c)
+gGsPacketBss_002F1140 0x20   # two-qword DMA packet, tag 0x30000002 (gs_packet.c)
+gTitleSdata_00201DA0 0x8    # a two-entry label list, n = 2 (title.c)
+gStatsBss_004B5DD0 self   # E_Stats_CalcAttack_0_001CF510[2], typed (stats.c)
+gLightBss_0030A2D0 self   # two 0x20 halves, [gSfxAllSbss_00201F2C * 32] and +0x10, gSfxAllSbss_00201F2C 0 or 1 (light.c)
+gTextureBss_00438A70 self   # cleared whole by Dma_SprClear(.., 0x6610) (texture.c)
+gGlowFxSlots_004BAC50 0x400  # 16 entries of 0x40, every loop i < 16 (glow_fx.c)
+gSoundEmitterBss_002F16C0 0x40   # a matrix: sceVu0ApplyMatrix / sceVu0InversMatrix (sound_emitter.c)
+gSeDmaBss_004BAA60 0x10   # one sceSifDmaData, sceSifSetDma(.., 1) (se.c, se_dma.c)
+gFogData_001F2060 0x10   # a Vec, only [0] (fog.c)
+gTextureBss_0043F080 self   # cleared whole by Dma_SprClear(.., 0x40000) (texture.c)
+gOptionRodata_001FCF20 self   # a string in option.c's label table (ends at its NUL)
+gSfxAllRodata_001FB8F0 0x4    # a FourCC read [0]..[3] (sfx_all.c)
+gPlayerData_001F2070 0x10   # a Vec: [0] (fog.c), sceVu0InterVector (player.c)
+gTaskCallbackBss_004BAC20 0x10   # one V4, [0] (task_callback.c, task_find.c)
+gStatsBss_004B5EF0 0x3F0  # 7 stat blocks of 0x90, [0]..[6] (stats.c)
+gOptionRodata_001FCF30 self   # a string in option.c's label table
+gLightBss_0030A3A0 0x10   # a Vec: [0], sceVu0ScaleVector / CopyVector (light.c)
+gItemMenuProcDrawInfoBss_004A3150 self   # the 0x100 sprintf buffer (item_menu_proc_draw_info.c)
+gMcDirBuf_004B68C0 0x40   # one sceMcTblGetDir entry, sceMcGetDir(.., 1, ..) (mc_step_*.c)
+gPlayerBss_004B4CD0 0x10   # a Vec, sceVu0InterVector (player.c)
+gWeatherState_002F19B0 0x710  # memset(&.., 0, 0x710) (screen_fx_update.c)
+gDatabookItemResetBss_004A1450 self   # s32 table, indexed in range (databook_item_reset.c)
+gCreditsLoadBss_004BC2F0 self   # the credits state, its fields (credits_*.c)
+gLoadBuf_00270F40 self   # the 0x80000 stream buffer (map_se_load.c)
+gPlayerData_001F2080 0x40   # 4 Vecs, i < 4 (fog.c)
+gVramBlocks_0047F0C0 0x1000 # 0x100 VRAM blocks of 0x10, memset(.., 0x1000) (vram_init.c)
+gEnemyDataTbl_004A43B0 0x1B8  # 11 entries of 0x28, i < 11 (enemy_mgr_*.c)
+gPointLightBss_0030C48C 0x8    # one C, [0] only (point_light.c)
+gOptionRodata_001FCF40 self   # a string in option.c's label table
+gPlayerData_001F20C0 0x40   # 4 Vecs, the i < 4 loop with gPlayerData_001F2080 (fog.c)
+gTextureHashBss_004800C0 0x3000 # memset(.., 0, 0x3000), 0x100 entries of 0x30 (vram_init.c)
+gLightBss_0030A3B0 0x10   # a Vec, [0] and sceVu0CopyVector (light.c)
+gShopMenuData_001F3A50 0x18   # one S, t = [0] (shop_menu.c)

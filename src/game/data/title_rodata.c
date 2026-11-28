@@ -4,6 +4,8 @@
 /* used by: title */
 #pragma explicit_zero_data on
 
-const char D_001FD870[0x1d] = "cdrom0:\\TARGET\\OPENING.PSS;1\000";
-const s8 D_001FD890[0x1d] = "\\TARGET\\STA_TI.ADX\000\000\000\000\000\000\000\000\000\000\000";
+#ifndef NONMATCHING /* the NONMATCHING build defines these in their owners */
+const char gStrCdrom0TargetOpeningPss1_001FD870[0x1d] = "cdrom0:\\TARGET\\OPENING.PSS;1\000";
+const s8 gTitleRodata_001FD890[0x1d] = "\\TARGET\\STA_TI.ADX\000\000\000\000\000\000\000\000\000\000\000";
 const u8 pad_001FD8AD[0x3] __attribute__((aligned(1))) = { 0, 0, 0 };
+#endif

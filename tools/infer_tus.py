@@ -107,7 +107,7 @@ def rodata_ties(sz, alias, limit):
     compiler pools them per unit and the linker never merges units', so its
     users are one unit. As steps (lo, hi, ".rodata", object, users)."""
     rom = ROM.read_bytes()
-    names = [n for n, (a, s) in sz.items() if n.startswith("D_") and RODATA[0] <= a < RODATA[1] and s]
+    names = [n for n, (a, s) in sz.items() if re.match(r"(?:D|g[A-Z][A-Za-z0-9]*)_[0-9A-F]{8}$", n) and RODATA[0] <= a < RODATA[1] and s]
     us = with_definers(M.users(set(names), alias))
     out = []
     for n in names:
@@ -167,7 +167,7 @@ def candidates(limit, spans=None):
     limit = limit_
     sz = M.sizes()
     alias = M.aliases()
-    names = [n for n, (a, s) in sz.items() if n.startswith(("D_", "jtbl_"))
+    names = [n for n, (a, s) in sz.items() if re.match(r"(?:D|jtbl|g[A-Z][A-Za-z0-9]*)_[0-9A-F]{8}$", n)
              and any(lo <= a < hi for lo, hi in SECTIONS.values())]
     us = with_definers(M.users(set(names), alias))
     units = text_units()

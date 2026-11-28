@@ -8,12 +8,12 @@ typedef struct {
 typedef struct { f32 x0, x4, x8, xC; u16 x10; u16 x12; u16 x14; u16 x16; } R;
 typedef struct { u64 tbp:14; u64 tbw:6; u64 psm:6; u64 tw:4; u64 th:4; u64 rest:30; } TEX;
 typedef struct { TEX *n; f32 f[4]; s16 h[4]; Col col; } E;
-extern s32 D_002020C0;
-extern s32 D_002020C8;
-extern f32 D_00201CEC;
-extern E D_0048DB60[];
-extern TEX *D_0048D350[];
-extern u16 D_0048D360[];
+extern s32 gMenuDrawSbss_002020C0;
+extern s32 gFontLoadSbss_002020C8;
+extern f32 gTextRenderSdata_00201CEC;
+extern E gMenuDrawBss_0048DB60[];
+extern TEX *gFontLoadBss_0048D350[];
+extern u16 gTextRenderBss_0048D360[];
 void Sjis_ToWide_2_001E5C60(u16 *, s32, u16 *, u16);
 f32 Text_MeasureWidth_2_001889E0(u16 *, s16, f32, f32);
 R *Font_FindGlyph_2_00188910(s32, u16);
@@ -44,8 +44,8 @@ s32 Text_Render_2_00188010(T *t, Col col) {
     if (t->x28 == 0) return 0;
     switch (t->x12) {
     case 0:
-        Sjis_ToWide_2_001E5C60(D_0048D360, 0x800, t->x28, t->x10);
-        s = D_0048D360;
+        Sjis_ToWide_2_001E5C60(gTextRenderBss_0048D360, 0x800, t->x28, t->x10);
+        s = gTextRenderBss_0048D360;
         break;
     case 1:
         s = t->x28;
@@ -91,22 +91,22 @@ s32 Text_Render_2_00188010(T *t, Col col) {
         }
         if (cc != 0) {
             n++;
-            r = Font_FindGlyph_2_00188910(D_002020C8, c);
-            if (r == 0) r = Font_FindGlyph_2_00188910(D_002020C8, 0xFF1F);
+            r = Font_FindGlyph_2_00188910(gFontLoadSbss_002020C8, c);
+            if (r == 0) r = Font_FindGlyph_2_00188910(gFontLoadSbss_002020C8, 0xFF1F);
             if (r != 0) {
                 Vec v = {0};
                 f32 tw, th, u0, v0, du, dv;
                 v.x = t->x0 + x;
                 v.y = t->x4 + y;
-                v.z = t->x0 + x + (D_00201CEC / 22.0f) * (t->x24 * mu(r->x12, t->x20));
-                v.w = t->x4 + y + D_00201CEC * t->x20;
-                g = D_0048D350[r->x16];
+                v.z = t->x0 + x + (gTextRenderSdata_00201CEC / 22.0f) * (t->x24 * mu(r->x12, t->x20));
+                v.w = t->x4 + y + gTextRenderSdata_00201CEC * t->x20;
+                g = gFontLoadBss_0048D350[r->x16];
                 u0 = r->x0;
                 du = r->x8 - u0;
                 v0 = r->x4;
                 dv = r->xC - v0;
                 th = 1 << g->th;
-                e = &D_0048DB60[D_002020C0];
+                e = &gMenuDrawBss_0048DB60[gMenuDrawSbss_002020C0];
                 tw = 1 << g->tw;
                 e->n = g;
                 e->f[0] = v.x;
@@ -118,11 +118,11 @@ s32 Text_Render_2_00188010(T *t, Col col) {
                 e->h[2] = tw * du - 0.5f;
                 e->h[3] = th * dv - 0.5f;
                 e->col.w = col.w;
-                D_002020C0++;
+                gMenuDrawSbss_002020C0++;
                 if (t->x8.b4) {
                     x += (f32)t->xC;
                 } else {
-                    x += (f32)(t->xC + 2) + (D_00201CEC / 22.0f) * (t->x24 * mu(r->x14, t->x20));
+                    x += (f32)(t->xC + 2) + (gTextRenderSdata_00201CEC / 22.0f) * (t->x24 * mu(r->x14, t->x20));
                 }
             }
             col.c.a = a;

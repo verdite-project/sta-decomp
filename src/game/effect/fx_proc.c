@@ -355,28 +355,35 @@ typedef struct {
 typedef struct { s16 v; } S;
 typedef struct { void (*a)(s32); void (*b)(s32); void (*c)(s32); } E;
 typedef struct { char pad[0xA8]; s32 a8; char pac[4]; f32 v[4]; } Obj_FxProc_NopA_2_0014DA00;
-extern s32 D_00201E80;
-extern f32 D_001F2160[];
-extern Mtx D_001F2170;
-extern f32 D_001F2160__as_FxProc_SplashDamage_0_0014A5F0[];
-extern s8 D_001F2160__as_FxProc_DropToGround_0_00149D20[];
-extern void *D_002022E4__as_FxProc_StopLight_0_0014A860_;
-extern f32 D_001FB738[];
-extern Mtx D_001F2170__as_FxProc_HomingProjectile_0_0014B1B0;
-extern void *D_002022E4__as_FxProc_InitHoming_0_0014B9E0;
-extern s32 **D_002022BC;
-extern f32 D_001F2160__as_FxProc_PullTowardEnemy_0_0014BA10[];
-extern s8 D_001F2160__as_FxProc_SeekNearestEnemy_0_0014AB80____[];
-extern M_FxProc_AimAlongGround_0_0014AF10 D_001F2170__as_FxProc_SeekNearestEnemy_0_0014AB80____;
-extern void *D_002022E4__as_FxProc_SpawnTimed_0_0014BE70;
-extern s8 D_001F2160__as_FxProc_ScaleByDistance_0_0014C6F0[];
-extern s8 D_001F2150[];
-extern s8 D_001F2160__as_FxProc_RandomJitter_0_0014C890__[];
-extern s32 D_001F2170__as_FxProc_RandomJitter_0_0014C890__[];
-extern s32 D_002022E4__as_FxProc_InitTowardEnemy_0_0014D410;
-extern s8 D_001F2160__as_FxProc_MoveToward_0_0014D310_[];
-extern u16 D_001F1E60[];
-extern E D_001F1EA0[];
+extern s32 gMapSbss_00201E80;
+extern f32 gMatrixFromData_001F2160[];
+extern Mtx gMatrixFromData_001F2170;
+extern f32 gMatrixFromData_001F2160__as_FxProc_SplashDamage_0_0014A5F0[];
+extern s8 gMatrixFromData_001F2160__as_FxProc_DropToGround_0_00149D20[];
+extern void *gPlayerSbss_002022E4__as_FxProc_StopLight_0_0014A860_;
+extern Mtx gMatrixFromData_001F2170__as_FxProc_HomingProjectile_0_0014B1B0;
+extern void *gPlayerSbss_002022E4__as_FxProc_InitHoming_0_0014B9E0;
+extern s32 **gPlayerSbss_002022BC;
+extern f32 gMatrixFromData_001F2160__as_FxProc_PullTowardEnemy_0_0014BA10[];
+extern s8 gMatrixFromData_001F2160__as_FxProc_SeekNearestEnemy_0_0014AB80____[];
+extern M_FxProc_AimAlongGround_0_0014AF10 gMatrixFromData_001F2170__as_FxProc_SeekNearestEnemy_0_0014AB80____;
+extern void *gPlayerSbss_002022E4__as_FxProc_SpawnTimed_0_0014BE70;
+extern s8 gMatrixFromData_001F2160__as_FxProc_ScaleByDistance_0_0014C6F0[];
+extern s8 gMatrixFromData_001F2150[];
+extern s8 gMatrixFromData_001F2160__as_FxProc_RandomJitter_0_0014C890__[];
+extern s32 gMatrixFromData_001F2170__as_FxProc_RandomJitter_0_0014C890__[];
+extern s32 gPlayerSbss_002022E4__as_FxProc_InitTowardEnemy_0_0014D410;
+extern s8 gMatrixFromData_001F2160__as_FxProc_MoveToward_0_0014D310_[];
+#ifndef NONMATCHING
+extern f32 gFxProcRodata_001FB738[];
+extern u16 gFxProcData_001F1E60[];
+#else
+/* data twins (src/game/data/fx_proc_rodata.c): gFxProcRodata_001FB738 */
+static f32 gFxProcRodata_001FB738[0x2] = { 100000.0f, 0.0f };
+/* data twins (src/game/data/fx_proc_data.c): gFxProcData_001F1E60 */
+static u16 gFxProcData_001F1E60[0x20] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 0, 0, 0, 0 };
+#endif
+extern E gFxProcData_001F1EA0[];
 void FxProc_InitChase_0_001493E0(O_FxProc_InitChase_0_001493E0 *o);
 void FxProc_FireAtTarget_0_001494A0(O_FxProc_FireAtTarget_0_001494A0 *o);
 void FxProc_AreaDamage_0_00149810(O_FxProc_InitChase_0_001493E0_ *o, f32 dt);
@@ -616,7 +623,7 @@ void FxProc_InitChase_0_001493E0(O_FxProc_InitChase_0_001493E0 *o) {
     u16 *e;
     o->xA8 = 0;
     o->x88 = 600.0f;
-    sceVu0CopyVector(&o->v, &D_003139A0);
+    sceVu0CopyVector(&o->v, &gZeroVec_003139A0);
     it = 0;
     do {
         e = ActorList_Next_2_001A5460(&it);
@@ -728,7 +735,7 @@ void FxProc_AreaDamage_0_00149810(O_FxProc_InitChase_0_001493E0_ *o, f32 dt) {
     if (!first) return;
     {
         if (o->x64 == 2.0f) {
-            for (i = 0, pp = (Ent ***)(&D_00201E80 + 2); i < 2; i++, pp++) {
+            for (i = 0, pp = (Ent ***)(&gMapSbss_00201E80 + 2); i < 2; i++, pp++) {
                 if (*pp != 0 && ((e = **pp)->x1D8 & 1)) {
                     for (j = 0; j < e->x6E; j++) {
                         el = &e->x180[j];
@@ -758,7 +765,7 @@ void FxProc_AreaDamage_0_00149810(O_FxProc_InitChase_0_001493E0_ *o, f32 dt) {
                     }
                     if (id == 0xFFFF) goto next;
                 }
-                if (Vec_Distance_3_00146940__as_FxProc_InitChase_0_001493E0__(a ? (void *)(*(s32 *)(a + 0x518) + 0x90) : D_001F2160, &pos) < o->x60) {
+                if (Vec_Distance_3_00146940__as_FxProc_InitChase_0_001493E0__(a ? (void *)(*(s32 *)(a + 0x518) + 0x90) : gMatrixFromData_001F2160, &pos) < o->x60) {
                     if (o->x90->b1) {
                         e = (Ent *)((s8 *)o->x90 + 0xE80);
                     } else {
@@ -875,7 +882,7 @@ void FxProc_RandomBounce_0_00149EB0(O_FxProc_RandomBounce_0_00149EB0 *o) {
     ry = (o->x54 != ry) ? 0.01745f * o->x54 : ry;
     ry = jit(ry);
     o->xB0 = 0;
-    sceVu0RotMatrixY__as_FxProc_InitChase_0_001493E0__(WRAP(ry), &m, &D_001F2170);
+    sceVu0RotMatrixY__as_FxProc_InitChase_0_001493E0__(WRAP(ry), &m, &gMatrixFromData_001F2170);
     sceVu0RotMatrixX(WRAP(rx), &m, &m);
     Mtx_RotateToward_0_00146140(o->xC0, o->v.x, o->v.z);
     sceVu0MulMatrix(o->xC0, o->xC0, &m);
@@ -901,7 +908,7 @@ void FxProc_RandomBounce_0_00149EB0(O_FxProc_RandomBounce_0_00149EB0 *o) {
 #define WRAP(x) ((((3.1415927f + (x)) - 6.2831855f * (s32)(0.15915494f * (3.1415927f + (x)))) + ((3.1415927f + (x)) < 0.0f ? 6.2831855f : 0.0f)) - 3.1415927f)
 static inline f32 DEG(f32 a) { return a ? 0.01745f * a : 0.0f; }
 inline s32 has_FxProc_InitChase_0_001493E0__(void) {
-    return D_002022E4 != NULL && D_002022E4->unk518 != NULL;
+    return gPlayerSbss_002022E4 != NULL && gPlayerSbss_002022E4->unk518 != NULL;
 }
 
 void FxProc_ScatterAround_0_0014A210(O_FxProc_DropToGround_0_00149D20_ *o) {
@@ -927,23 +934,23 @@ void FxProc_ScatterAround_0_0014A210(O_FxProc_DropToGround_0_00149D20_ *o) {
     d.w = 0.0f;
     sceVu0AddVector__as_FxProc_InitChase_0_001493E0__(o, o, &d);
     b = o->x90;
-    sceVu0SubVector__as_FxProc_InitChase_0_001493E0__(&t, has_FxProc_InitChase_0_001493E0__() ? D_002022E4->unk518 + 0x1C0 : D_001F2160__as_FxProc_DropToGround_0_00149D20, b + 0x30);
+    sceVu0SubVector__as_FxProc_InitChase_0_001493E0__(&t, has_FxProc_InitChase_0_001493E0__() ? gPlayerSbss_002022E4->unk518 + 0x1C0 : gMatrixFromData_001F2160__as_FxProc_DropToGround_0_00149D20, b + 0x30);
     sceVu0AddVector__as_FxProc_InitChase_0_001493E0__(o, o, &t);
     o->p.w = 1.0f;
     o->p.y += h;
-    Actor_GetDirNormalized_0_00146570__as_FxProc_InitChase_0_001493E0__(D_002022E4, &w);
+    Actor_GetDirNormalized_0_00146570__as_FxProc_InitChase_0_001493E0__(gPlayerSbss_002022E4, &w);
     o->p.x += w.x * o->x68;
     o->p.z += w.z * o->x68;
     if (ang < 0.0f) {
-        Actor_GetYawPitch_1_00145F40(D_002022E4, &ang, NULL);
-        sceVu0RotMatrixY__as_FxProc_ScatterAround_0_0014A210(&o->xC0, &D_001F2170, WRAP(ang));
+        Actor_GetYawPitch_1_00145F40(gPlayerSbss_002022E4, &ang, NULL);
+        sceVu0RotMatrixY__as_FxProc_ScatterAround_0_0014A210(&o->xC0, &gMatrixFromData_001F2170, WRAP(ang));
     } else {
-        sceVu0RotMatrixY__as_FxProc_ScatterAround_0_0014A210(&o->xC0, &D_001F2170, WRAP(DEG(ang)));
+        sceVu0RotMatrixY__as_FxProc_ScatterAround_0_0014A210(&o->xC0, &gMatrixFromData_001F2170, WRAP(DEG(ang)));
     }
 }
 
 /* FxProc_SplashDamage_0_0014A5F0 */
-#define POS(p) ((p) ? (f32 *)(*(s32 *)((p) + 0x518) + 0x90) : D_001F2160__as_FxProc_SplashDamage_0_0014A5F0)
+#define POS(p) ((p) ? (f32 *)(*(s32 *)((p) + 0x518) + 0x90) : gMatrixFromData_001F2160__as_FxProc_SplashDamage_0_0014A5F0)
 
 void FxProc_SplashDamage_0_0014A5F0(s8 *a0) {
     f32 *q;
@@ -1065,10 +1072,10 @@ void FxProc_FollowPlayer_0_0014AAF0(Obj_FxProc_StopLight_0_0014A860 *o)
     k = o->f64;
     if (k == 1) {
         f32 *src;
-        if (D_002022E4__as_FxProc_StopLight_0_0014A860_)
+        if (gPlayerSbss_002022E4__as_FxProc_StopLight_0_0014A860_)
             src = Player_GetPosition_1_00145730(k);
         else
-            src = D_001F2160;
+            src = gMatrixFromData_001F2160;
         sceVu0CopyVector__as_FxProc_FollowPlayer_0_0014AAF0((f32 *)o, src);
     }
 }
@@ -1106,7 +1113,7 @@ void FxProc_SeekNearestEnemy_0_0014AB80(O_FxProc_SeekNearestEnemy_0_0014AB80 *o)
         }
         a = Proj_FindNearestEnemy_0_00147450(1000.0f, pos);
     } else {
-        a = D_002022E4;
+        a = gPlayerSbss_002022E4;
     }
     if (a == NULL) {
         o->x88 = (f32)(u32)(o->b1 = 0);
@@ -1114,9 +1121,9 @@ void FxProc_SeekNearestEnemy_0_0014AB80(O_FxProc_SeekNearestEnemy_0_0014AB80 *o)
         return;
     }
     if (*(u16 *)a != 0) {
-        sceVu0CopyVector(o, a != NULL ? a->unk518 + 0x90 : D_001F2160__as_FxProc_SeekNearestEnemy_0_0014AB80____);
+        sceVu0CopyVector(o, a != NULL ? a->unk518 + 0x90 : gMatrixFromData_001F2160__as_FxProc_SeekNearestEnemy_0_0014AB80____);
     } else {
-        sceVu0CopyVector(o, D_002022E4 != NULL ? Player_GetPosition_1_00145730__as_FxProc_SeekNearestEnemy_0_0014AB80____() : D_001F2160__as_FxProc_SeekNearestEnemy_0_0014AB80____);
+        sceVu0CopyVector(o, gPlayerSbss_002022E4 != NULL ? Player_GetPosition_1_00145730__as_FxProc_SeekNearestEnemy_0_0014AB80____() : gMatrixFromData_001F2160__as_FxProc_SeekNearestEnemy_0_0014AB80____);
     }
     if (f != 0) {
         t = (f32)(u32)*(u16 *)(a->unk4B0 + 4) * o->x60;
@@ -1143,7 +1150,7 @@ void FxProc_RandomRingPos_0_0014AD90(f32 *a0) {
 /* FxProc_AimAlongGround_0_0014AF10 */
 #define WRAP(x) ((((3.1415927f + (x)) - 6.2831855f * (s32)(0.15915494f * (3.1415927f + (x)))) + ((3.1415927f + (x)) < 0.0f ? 6.2831855f : 0.0f)) - 3.1415927f)
 inline s32 has_FxProc_SeekNearestEnemy_0_0014AB80_(void) {
-    return D_002022E4 != NULL && D_002022E4->unk518 != NULL;
+    return gPlayerSbss_002022E4 != NULL && gPlayerSbss_002022E4->unk518 != NULL;
 }
 
 void FxProc_AimAlongGround_0_0014AF10(O_FxProc_AimAlongGround_0_0014AF10 *o) {
@@ -1159,12 +1166,12 @@ void FxProc_AimAlongGround_0_0014AF10(O_FxProc_AimAlongGround_0_0014AF10 *o) {
     v[1] = o->y;
     v[2] = o->z;
     v[3] = 1.0f;
-    Actor_GetYawPitch_1_00145F40__as_FxProc_SeekNearestEnemy_0_0014AB80____((s32)D_002022E4, &ang, NULL);
-    sceVu0RotMatrixY__as_FxProc_SeekNearestEnemy_0_0014AB80_(WRAP(ang), &m, &D_001F2170__as_FxProc_SeekNearestEnemy_0_0014AB80____);
+    Actor_GetYawPitch_1_00145F40__as_FxProc_SeekNearestEnemy_0_0014AB80____((s32)gPlayerSbss_002022E4, &ang, NULL);
+    sceVu0RotMatrixY__as_FxProc_SeekNearestEnemy_0_0014AB80_(WRAP(ang), &m, &gMatrixFromData_001F2170__as_FxProc_SeekNearestEnemy_0_0014AB80____);
     sceVu0ApplyMatrix__as_FxProc_SeekNearestEnemy_0_0014AB80____(v, &m, v);
-    sceVu0AddVector__as_FxProc_AimAlongGround_0_0014AF10(v, v, has_FxProc_SeekNearestEnemy_0_0014AB80_() ? D_002022E4->unk518 + 0x1C0 : D_001F2160__as_FxProc_SeekNearestEnemy_0_0014AB80____);
+    sceVu0AddVector__as_FxProc_AimAlongGround_0_0014AF10(v, v, has_FxProc_SeekNearestEnemy_0_0014AB80_() ? gPlayerSbss_002022E4->unk518 + 0x1C0 : gMatrixFromData_001F2160__as_FxProc_SeekNearestEnemy_0_0014AB80____);
     v[3] = 1.0f;
-    sceVu0CopyMatrix__as_FxProc_SeekNearestEnemy_0_0014AB80_(a, has_FxProc_SeekNearestEnemy_0_0014AB80_() ? D_002022E4->unk518 + 0x1C0 : D_001F2160__as_FxProc_SeekNearestEnemy_0_0014AB80____);
+    sceVu0CopyMatrix__as_FxProc_SeekNearestEnemy_0_0014AB80_(a, has_FxProc_SeekNearestEnemy_0_0014AB80_() ? gPlayerSbss_002022E4->unk518 + 0x1C0 : gMatrixFromData_001F2160__as_FxProc_SeekNearestEnemy_0_0014AB80____);
     sceVu0CopyVector__as_FxProc_AimAlongGround_0_0014AF10(b, v);
     a[1] = a[1];
     if (Map_LineTest_1_001470F0__as_FxProc_SeekNearestEnemy_0_0014AB80____(a, b, 1, 0x22, 1, res) != 0) {
@@ -1172,7 +1179,7 @@ void FxProc_AimAlongGround_0_0014AF10(O_FxProc_AimAlongGround_0_0014AF10 *o) {
         o->t->b2 = 0;
     }
     sceVu0CopyVector__as_FxProc_AimAlongGround_0_0014AF10(o, v);
-    Actor_GetDirNormalized_0_00146570__as_FxProc_SeekNearestEnemy_0_0014AB80____(D_002022E4, w);
+    Actor_GetDirNormalized_0_00146570__as_FxProc_SeekNearestEnemy_0_0014AB80____(gPlayerSbss_002022E4, w);
     Mtx_RotateToward_0_00146140__as_FxProc_SeekNearestEnemy_0_0014AB80____((s32)o + 0xC0, w[0], w[2]);
 }
 
@@ -1196,11 +1203,11 @@ static inline void spawn(s32 id, Vec *p) {
     if (q) Sfx_SetPosition_1_00167710__as_FxProc_SeekNearestEnemy_0_0014AB80____(q, p);
 }
 #define WRAP(x) ((((3.1415927f + (x)) - 6.2831855f * (s32)(0.15915494f * (3.1415927f + (x)))) + ((3.1415927f + (x)) < 0.0f ? 6.2831855f : 0.0f)) - 3.1415927f)
-#define BASE() ((D_002022E4 != NULL && D_002022E4->unk518 != NULL) ? D_002022E4->unk518 + 0x1C0 : D_001F2160__as_FxProc_SeekNearestEnemy_0_0014AB80____)
+#define BASE() ((gPlayerSbss_002022E4 != NULL && gPlayerSbss_002022E4->unk518 != NULL) ? gPlayerSbss_002022E4->unk518 + 0x1C0 : gMatrixFromData_001F2160__as_FxProc_SeekNearestEnemy_0_0014AB80____)
 static inline s8 *base(void) {
     s32 ok = 0;
-    if (D_002022E4 && D_002022E4->unk518) ok = 1;
-    return ok ? D_002022E4->unk518 + 0x1C0 : D_001F2160__as_FxProc_SeekNearestEnemy_0_0014AB80____;
+    if (gPlayerSbss_002022E4 && gPlayerSbss_002022E4->unk518) ok = 1;
+    return ok ? gPlayerSbss_002022E4->unk518 + 0x1C0 : gMatrixFromData_001F2160__as_FxProc_SeekNearestEnemy_0_0014AB80____;
 }
 
 void FxProc_HomingProjectile_0_0014B1B0(O_FxProc_SeekNearestEnemy_0_0014AB80_ *o, f32 kk) {
@@ -1236,15 +1243,15 @@ void FxProc_HomingProjectile_0_0014B1B0(O_FxProc_SeekNearestEnemy_0_0014AB80_ *o
     s8 *q;
     s8 *pos;
 
-    Actor_GetDir_1_001465C0(D_002022E4, &v80);
-    r = Proj_FindEnemyInCone_0_00146EF0(D_001FB738[0], base(), 1.5707964f, &v80, 1.5707964f, 1);
+    Actor_GetDir_1_001465C0(gPlayerSbss_002022E4, &v80);
+    r = Proj_FindEnemyInCone_0_00146EF0(gFxProcRodata_001FB738[0], base(), 1.5707964f, &v80, 1.5707964f, 1);
     if (r) {
-        Actor_GetDir_1_001465C0(D_002022E4, &v70);
-        Vec_GetYawPitchBetween_1_00146310(base(), &v70, r ? r->unk518 + 0x90 : D_001F2160__as_FxProc_SeekNearestEnemy_0_0014AB80____, &ang190, NULL);
+        Actor_GetDir_1_001465C0(gPlayerSbss_002022E4, &v70);
+        Vec_GetYawPitchBetween_1_00146310(base(), &v70, r ? r->unk518 + 0x90 : gMatrixFromData_001F2160__as_FxProc_SeekNearestEnemy_0_0014AB80____, &ang190, NULL);
     } else {
         ang190 = 0.0f;
     }
-    Actor_GetYawPitch_1_00145F40__as_FxProc_HomingProjectile_0_0014B1B0(D_002022E4, &a18C, 0);
+    Actor_GetYawPitch_1_00145F40__as_FxProc_HomingProjectile_0_0014B1B0(gPlayerSbss_002022E4, &a18C, 0);
     ang = ang190 + a18C;
     ang190 = ang;
     if (3.1415927f < fabsf(ang - o->xB4)) {
@@ -1271,7 +1278,7 @@ void FxProc_HomingProjectile_0_0014B1B0(O_FxProc_SeekNearestEnemy_0_0014AB80_ *o
     o->pos.y += o->v50.y;
     o->xB0 += t * k;
     t = atan2f(o->xB0, 190.0f);
-    sceVu0RotMatrixX__as_FxProc_SeekNearestEnemy_0_0014AB80____(&m, &D_001F2170__as_FxProc_HomingProjectile_0_0014B1B0, WRAP(t));
+    sceVu0RotMatrixX__as_FxProc_SeekNearestEnemy_0_0014AB80____(&m, &gMatrixFromData_001F2170__as_FxProc_HomingProjectile_0_0014B1B0, WRAP(t));
     sceVu0RotMatrixY__as_FxProc_HomingProjectile_0_0014B1B0(WRAP(ang), &m, &m);
     sceVu0CopyMatrix__as_FxProc_HomingProjectile_0_0014B1B0(o->xC0, &m);
     sceVu0ScaleVector__as_FxProc_SeekNearestEnemy_0_0014AB80__(&vB0, o->xD0, 10000.0f);
@@ -1319,7 +1326,7 @@ found:
         id = (u32)o->x6C;
         Proj_SpawnAttack_0_00146A70__as_FxProc_SeekNearestEnemy_0_0014AB80____(o->x90, n, cc, 0x2B);
         if (id) {
-            spawn(id, (Vec *)(n ? n->unk518 + 0x90 : D_001F2160__as_FxProc_SeekNearestEnemy_0_0014AB80____));
+            spawn(id, (Vec *)(n ? n->unk518 + 0x90 : gMatrixFromData_001F2160__as_FxProc_SeekNearestEnemy_0_0014AB80____));
         }
         o->x88 = u2f_FxProc_SeekNearestEnemy_0_0014AB80(o->f114.b1 = 0);
         return;
@@ -1351,11 +1358,11 @@ void FxProc_InitHoming_0_0014B9E0(Obj_FxProc_SeekNearestEnemy_0_0014AB80 *o)
     o->b0 = o->v64;
     o->b8 = 100000.0f;
     o->a8 = 0;
-    Actor_GetYawPitch_1_00145F40__as_FxProc_InitHoming_0_0014B9E0(D_002022E4__as_FxProc_InitHoming_0_0014B9E0, &o->b4, 0);
+    Actor_GetYawPitch_1_00145F40__as_FxProc_InitHoming_0_0014B9E0(gPlayerSbss_002022E4__as_FxProc_InitHoming_0_0014B9E0, &o->b4, 0);
 }
 
 /* FxProc_PullTowardEnemy_0_0014BA10 */
-#define POS(p) ((p) ? (f32 *)(*(s32 *)((p) + 0x518) + 0x90) : D_001F2160__as_FxProc_PullTowardEnemy_0_0014BA10)
+#define POS(p) ((p) ? (f32 *)(*(s32 *)((p) + 0x518) + 0x90) : gMatrixFromData_001F2160__as_FxProc_PullTowardEnemy_0_0014BA10)
 static inline s8 *find_FxProc_InitChase_0_001493E0(u16 id) {
     s32 it;
     s8 *p;
@@ -1366,7 +1373,7 @@ static inline s8 *find_FxProc_InitChase_0_001493E0(u16 id) {
     return NULL;
 }
 static inline s32 ok(void) {
-    return D_002022BC != NULL && *D_002022BC != NULL;
+    return gPlayerSbss_002022BC != NULL && *gPlayerSbss_002022BC != NULL;
 }
 
 void FxProc_PullTowardEnemy_0_0014BA10(Obj_FxProc_PullTowardEnemy_0_0014BA10 *a0) {
@@ -1390,7 +1397,7 @@ void FxProc_PullTowardEnemy_0_0014BA10(Obj_FxProc_PullTowardEnemy_0_0014BA10 *a0
         sceVu0AddVector__as_FxProc_PullTowardEnemy_0_0014BA10(c, POS(p), a0->v50);
         c[3] = 1.0f;
         if (Vec_Distance_3_00146940__as_FxProc_PullTowardEnemy_0_0014BA10(a0, c) < x68) {
-            EnemyScr_Event2015_1_00141510(p, ok() ? **D_002022BC : 0, 3, 0);
+            EnemyScr_Event2015_1_00141510(p, ok() ? **gPlayerSbss_002022BC : 0, 3, 0);
             a0->x88 = (f32)(u32)(a0->x114.b1 = 0);
         }
         bc = a0->xBC;
@@ -1505,10 +1512,10 @@ void FxProc_AttachRotated_0_0014C060(Obj_FxProc_SpawnTimed_0_0014BE70 *o)
     v[1] = o->y;
     v[2] = o->z;
     v[3] = 1.0f;
-    Actor_BuildRotMatrix_0_00146600(D_002022E4__as_FxProc_SpawnTimed_0_0014BE70, m);
+    Actor_BuildRotMatrix_0_00146600(gPlayerSbss_002022E4__as_FxProc_SpawnTimed_0_0014BE70, m);
     sceVu0ApplyMatrix__as_FxProc_SpawnTimed_0_0014BE70__((f32 *)o, m, v);
     sceVu0CopyMatrix__as_FxProc_SpawnTimed_0_0014BE70__(o->m, m);
-    sceVu0CopyVector__as_FxProc_SpawnTimed_0_0014BE70(o->v, D_001F2160);
+    sceVu0CopyVector__as_FxProc_SpawnTimed_0_0014BE70(o->v, gMatrixFromData_001F2160);
 }
 
 /* FxProc_AttachRotatedB_0_0014C0E0 */
@@ -1520,10 +1527,10 @@ void FxProc_AttachRotatedB_0_0014C0E0(Obj_FxProc_SpawnTimed_0_0014BE70 *o)
     v[1] = o->y;
     v[2] = o->z;
     v[3] = 1.0f;
-    Actor_BuildRotMatrix_0_00146600(D_002022E4__as_FxProc_SpawnTimed_0_0014BE70, m);
+    Actor_BuildRotMatrix_0_00146600(gPlayerSbss_002022E4__as_FxProc_SpawnTimed_0_0014BE70, m);
     sceVu0ApplyMatrix__as_FxProc_SpawnTimed_0_0014BE70__((f32 *)o, m, v);
     sceVu0CopyMatrix__as_FxProc_SpawnTimed_0_0014BE70__(o->m, m);
-    sceVu0CopyVector__as_FxProc_SpawnTimed_0_0014BE70(o->v, D_001F2160);
+    sceVu0CopyVector__as_FxProc_SpawnTimed_0_0014BE70(o->v, gMatrixFromData_001F2160);
 }
 
 /* FxProc_RandomWander_0_0014C160 */
@@ -1566,14 +1573,14 @@ void FxProc_RandomWander_0_0014C160(O_FxProc_RandomWander_0_0014C160 *o) {
     if (rx == o->x60) return;
     rx = (o->x60 != rx) ? 0.01745f * o->x60 : rx;
     a = 0.5f * rx;
-    sceVu0RotMatrixZ(&m, &D_001F2170, WRAP(a * (0.000015259022f * (f32)(u32)Rand_Next_3_0015ED20())));
+    sceVu0RotMatrixZ(&m, &gMatrixFromData_001F2170, WRAP(a * (0.000015259022f * (f32)(u32)Rand_Next_3_0015ED20())));
     sceVu0RotMatrixY__as_FxProc_SpawnTimed_0_0014BE70__(&m, &m, WRAP(6.2831855f * (0.000015259022f * (f32)(u32)Rand_Next_3_0015ED20())));
     sceVu0CopyMatrix__as_FxProc_RandomWander_0_0014C160(o->xC0, &m);
 }
 
 /* FxProc_ScaleByDistance_0_0014C6F0 */
 inline s32 has_FxProc_InitChase_0_001493E0(void) {
-    return D_002022E4 != NULL && D_002022E4->unk518 != NULL;
+    return gPlayerSbss_002022E4 != NULL && gPlayerSbss_002022E4->unk518 != NULL;
 }
 
 void FxProc_ScaleByDistance_0_0014C6F0(O_FxProc_SpawnTimed_0_0014BE70_ *o) {
@@ -1593,7 +1600,7 @@ void FxProc_ScaleByDistance_0_0014C6F0(O_FxProc_SpawnTimed_0_0014BE70_ *o) {
     } else {
         sceVu0CopyVector(pos, o);
     }
-    t = Vec_Distance_3_00146940__as_FxProc_SpawnTimed_0_0014BE70__(pos, has_FxProc_InitChase_0_001493E0() ? D_002022E4->unk518 + 0x1C0 : D_001F2160__as_FxProc_ScaleByDistance_0_0014C6F0);
+    t = Vec_Distance_3_00146940__as_FxProc_SpawnTimed_0_0014BE70__(pos, has_FxProc_InitChase_0_001493E0() ? gPlayerSbss_002022E4->unk518 + 0x1C0 : gMatrixFromData_001F2160__as_FxProc_ScaleByDistance_0_0014C6F0);
     if (c < t) {
         a = a;
     } else if (t < d) {
@@ -1685,21 +1692,21 @@ void FxProc_AimAtEnemyCone_0_0014CAC0(Obj_FxProc_RandomJitter_0_0014C890 *a) {
     if (a->x64 != deg) {
         deg = 0.01745f * a->x64;
     }
-    Actor_GetDirNormalized_0_00146570__as_FxProc_SpawnTimed_0_0014BE70__(D_002022E4, &f);
+    Actor_GetDirNormalized_0_00146570__as_FxProc_SpawnTimed_0_0014BE70__(gPlayerSbss_002022E4, &f);
     ok = 0;
-    if (D_002022E4 && D_002022E4->unk518) {
+    if (gPlayerSbss_002022E4 && gPlayerSbss_002022E4->unk518) {
         ok = 1;
     }
-    base = ok ? D_002022E4->unk518 + 0x1C0 : D_001F2160__as_FxProc_RandomJitter_0_0014C890__;
+    base = ok ? gPlayerSbss_002022E4->unk518 + 0x1C0 : gMatrixFromData_001F2160__as_FxProc_RandomJitter_0_0014C890__;
     r = Proj_FindEnemyInCone_0_00146EF0(x, base, 3.1415927f, &f, deg, 0);
     if (r) {
-        sceVu0CopyVector(&p, r ? r->unk518 + 0x90 : D_001F2160__as_FxProc_RandomJitter_0_0014C890__);
+        sceVu0CopyVector(&p, r ? r->unk518 + 0x90 : gMatrixFromData_001F2160__as_FxProc_RandomJitter_0_0014C890__);
     } else {
         sceVu0CopyVector(&e, &a->v50);
         e.w = 1.0f;
-        Actor_GetYawPitch_1_00145F40__as_FxProc_SpawnTimed_0_0014BE70__(D_002022E4, &ang, 0);
+        Actor_GetYawPitch_1_00145F40__as_FxProc_SpawnTimed_0_0014BE70__(gPlayerSbss_002022E4, &ang, 0);
         Player_GetPos_1_001C9410(&d);
-        sceVu0RotMatrixY__as_FxProc_RandomJitter_0_0014C890__((3.1415927f + ang) - 6.2831855f * (f32)(s32)((3.1415927f + ang) * 0.15915494f) + ((3.1415927f + ang) < 0.0f ? 6.2831855f : 0.0f) - 3.1415927f, &m, D_001F2170__as_FxProc_RandomJitter_0_0014C890__);
+        sceVu0RotMatrixY__as_FxProc_RandomJitter_0_0014C890__((3.1415927f + ang) - 6.2831855f * (f32)(s32)((3.1415927f + ang) * 0.15915494f) + ((3.1415927f + ang) < 0.0f ? 6.2831855f : 0.0f) - 3.1415927f, &m, gMatrixFromData_001F2170__as_FxProc_RandomJitter_0_0014C890__);
         sceVu0ApplyMatrix__as_FxProc_AimAtEnemyCone_0_0014CAC0(&e, &m, &e);
         sceVu0AddVector__as_FxProc_RandomJitter_0_0014C890_(&e, &e, &d);
         sceVu0CopyVector(&p, &e);
@@ -1714,7 +1721,7 @@ void FxProc_AimAtEnemyCone_0_0014CAC0(Obj_FxProc_RandomJitter_0_0014C890 *a) {
     if (Map_LineTest_1_001470F0__as_FxProc_RandomJitter_0_0014C890__(&lo, &hi, 1, 4, 1, &p)) {
         sceVu0CopyVector(a, &p);
         a->pos.y -= 5.0f;
-        Actor_BuildRotMatrix_0_00146600__as_FxProc_RandomJitter_0_0014C890__(D_002022E4, &s);
+        Actor_BuildRotMatrix_0_00146600__as_FxProc_RandomJitter_0_0014C890__(gPlayerSbss_002022E4, &s);
         Mtx_RotateToward_0_00146140(a->xC0, s.x20, s.x28);
         return;
     }
@@ -1800,28 +1807,28 @@ void FxProc_AimAtBestTarget_0_0014D020(Obj_FxProc_AimAtBestTarget_0_0014D020 *a)
     x = a->x60;
     deg = (a->x64 != deg) ? 0.01745f * a->x64 : deg;
     dy = a->x68;
-    base = D_002022E4 ? D_002022E4->unk518 + 0x20 : D_001F2150;
+    base = gPlayerSbss_002022E4 ? gPlayerSbss_002022E4->unk518 + 0x20 : gMatrixFromData_001F2150;
     r = Proj_FindBestTarget_0_001472A0(a, x, deg, base, 0.0f, 0);
     if (r) {
-        sceVu0CopyVector(&p, r ? r->unk518 + 0x90 : D_001F2160__as_FxProc_RandomJitter_0_0014C890__);
+        sceVu0CopyVector(&p, r ? r->unk518 + 0x90 : gMatrixFromData_001F2160__as_FxProc_RandomJitter_0_0014C890__);
     } else {
         sceVu0CopyVector(&e, &a->v50);
         e.w = 1.0f;
-        Actor_GetYawPitch_1_00145F40__as_FxProc_SpawnTimed_0_0014BE70__(D_002022E4, &ang, 0);
-        sceVu0RotMatrixY__as_FxProc_RandomJitter_0_0014C890__((3.1415927f + ang) - (f32)(s32)((3.1415927f + ang) * 0.15915494f) * 6.2831855f + ((3.1415927f + ang) < 0.0f ? 6.2831855f : 0.0f) - 3.1415927f, &m, D_001F2170__as_FxProc_RandomJitter_0_0014C890__);
+        Actor_GetYawPitch_1_00145F40__as_FxProc_SpawnTimed_0_0014BE70__(gPlayerSbss_002022E4, &ang, 0);
+        sceVu0RotMatrixY__as_FxProc_RandomJitter_0_0014C890__((3.1415927f + ang) - (f32)(s32)((3.1415927f + ang) * 0.15915494f) * 6.2831855f + ((3.1415927f + ang) < 0.0f ? 6.2831855f : 0.0f) - 3.1415927f, &m, gMatrixFromData_001F2170__as_FxProc_RandomJitter_0_0014C890__);
         sceVu0ApplyMatrix__as_FxProc_AimAtBestTarget_0_0014D020(&e, &m, &e);
         ok = 0;
-        if (D_002022E4 && D_002022E4->unk518) {
+        if (gPlayerSbss_002022E4 && gPlayerSbss_002022E4->unk518) {
             ok = 1;
         }
-        sceVu0AddVector__as_FxProc_SpawnTimed_0_0014BE70__(&e, &e, ok ? D_002022E4->unk518 + 0x1C0 : D_001F2160__as_FxProc_RandomJitter_0_0014C890__);
+        sceVu0AddVector__as_FxProc_SpawnTimed_0_0014BE70__(&e, &e, ok ? gPlayerSbss_002022E4->unk518 + 0x1C0 : gMatrixFromData_001F2160__as_FxProc_RandomJitter_0_0014C890__);
         sceVu0CopyVector(&p, &e);
     }
     ok2 = 0;
-    if (D_002022E4 && D_002022E4->unk518) {
+    if (gPlayerSbss_002022E4 && gPlayerSbss_002022E4->unk518) {
         ok2 = 1;
     }
-    sceVu0CopyMatrix__as_FxProc_RandomJitter_0_0014C890__(&lo, ok2 ? D_002022E4->unk518 + 0x1C0 : D_001F2160__as_FxProc_RandomJitter_0_0014C890__);
+    sceVu0CopyMatrix__as_FxProc_RandomJitter_0_0014C890__(&lo, ok2 ? gPlayerSbss_002022E4->unk518 + 0x1C0 : gMatrixFromData_001F2160__as_FxProc_RandomJitter_0_0014C890__);
     sceVu0CopyVector(&hi, &p);
     hi.y += dy;
     if (Map_LineTest_1_001470F0__as_FxProc_RandomJitter_0_0014C890__(&lo, &hi, 1, 0x22, 0, &hit)) {
@@ -1829,7 +1836,7 @@ void FxProc_AimAtBestTarget_0_0014D020(Obj_FxProc_AimAtBestTarget_0_0014D020 *a)
         a->p90->f188.b2 = 0;
     }
     sceVu0CopyVector(a, &hi);
-    Actor_BuildRotMatrix_0_00146600__as_FxProc_RandomJitter_0_0014C890__(D_002022E4, &s);
+    Actor_BuildRotMatrix_0_00146600__as_FxProc_RandomJitter_0_0014C890__(gPlayerSbss_002022E4, &s);
     Mtx_RotateToward_0_00146140__as_FxProc_AimAtBestTarget_0_0014D020(&q, s.x20, s.x28);
     sceVu0CopyMatrix__as_FxProc_RandomJitter_0_0014C890__(&a->xC0, &q);
 }
@@ -1840,7 +1847,7 @@ void FxProc_AimAtBestTarget_0_0014D020(Obj_FxProc_AimAtBestTarget_0_0014D020 *a)
 /* FxProc_MoveToward_0_0014D310_ */
 /* FxProc_MoveToward_0_0014D310 */
 inline s32 has_FxProc_MoveToward_0_0014D310(void) {
-    return D_002022E4 != NULL && D_002022E4->unk518 != NULL;
+    return gPlayerSbss_002022E4 != NULL && gPlayerSbss_002022E4->unk518 != NULL;
 }
 
 void FxProc_MoveToward_0_0014D310(O_FxProc_MoveToward_0_0014D310 *o) {
@@ -1852,7 +1859,7 @@ void FxProc_MoveToward_0_0014D310(O_FxProc_MoveToward_0_0014D310 *o) {
 
     d = o->x60;
     r = o->xBC;
-    sceVu0SubVector__as_FxProc_MoveToward_0_0014D310(&t, has_FxProc_MoveToward_0_0014D310() ? D_002022E4->unk518 + 0x1C0 : D_001F2160__as_FxProc_MoveToward_0_0014D310_, o);
+    sceVu0SubVector__as_FxProc_MoveToward_0_0014D310(&t, has_FxProc_MoveToward_0_0014D310() ? gPlayerSbss_002022E4->unk518 + 0x1C0 : gMatrixFromData_001F2160__as_FxProc_MoveToward_0_0014D310_, o);
     len = sqrtf(sceVu0InnerProduct__as_FxProc_MoveToward_0_0014D310_(&o->v10, &o->v10));
     sceVu0Normalize__as_FxProc_MoveToward_0_0014D310_(&u, &t);
     sceVu0ScaleVector__as_FxProc_MoveToward_0_0014D310_(&u, &u, -1.0f * r);
@@ -1867,7 +1874,7 @@ void FxProc_InitTowardEnemy_0_0014D410(O_FxProc_InitTowardEnemy_0_0014D410 *arg0
     Vec sp30;
     Vec sp20;
     f32 d;
-    sceVu0CopyVector__as_FxProc_MoveToward_0_0014D310_(&sp20, Enemy_Ptr6F0_1_0013FFA0__as_FxProc_MoveToward_0_0014D310_(D_002022E4__as_FxProc_InitTowardEnemy_0_0014D410));
+    sceVu0CopyVector__as_FxProc_MoveToward_0_0014D310_(&sp20, Enemy_Ptr6F0_1_0013FFA0__as_FxProc_MoveToward_0_0014D310_(gPlayerSbss_002022E4__as_FxProc_InitTowardEnemy_0_0014D410));
     sceVu0SubVector__as_FxProc_InitTowardEnemy_0_0014D410(&sp30, &sp20, &arg0->v);
     d = sqrtf(sp30.x * sp30.x + sp30.z * sp30.z);
     d = (0.05f - d) / 0.1f; d *= 0.001f; arg0->xBC = d;
@@ -1912,7 +1919,7 @@ void FxProc_SeekEnemyInCone_0_0014D4A0(O_FxProc_MoveToward_0_0014D310_ *o) {
     }
     if (p == NULL || (p != NULL && Enemy_IsBusy_0_0013EE40(p) != 0)) {
         Fx_GetWorldMatrix_1_00163C80__as_FxProc_MoveToward_0_0014D310_(o, &m);
-        p = Proj_FindEnemyInCone_0_00146EF0__as_FxProc_MoveToward_0_0014D310_(D_001FB738[0], &m.b, 1.5707964f, &m.a, 1.5707964f, 1);
+        p = Proj_FindEnemyInCone_0_00146EF0__as_FxProc_MoveToward_0_0014D310_(gFxProcRodata_001FB738[0], &m.b, 1.5707964f, &m.a, 1.5707964f, 1);
         if (p != NULL) {
             s = o->xB0.w;
             id = Enemy_GetCurrentParamIdx_0_0013E110__as_FxProc_MoveToward_0_0014D310_(p);
@@ -1965,7 +1972,7 @@ void FxProc_InitSeekCone_0_0014D700(O_FxProc_InitSeekCone_0_0014D700 *o) {
     sceVu0CopyVector__as_FxProc_InitSeekCone_0_0014D700(&b0, &o->x90->b);
     b0.w = 1.0f;
     sceVu0CopyVector__as_FxProc_InitSeekCone_0_0014D700(&a0, &o->x90->a);
-    p = Proj_FindEnemyInCone_0_00146EF0__as_FxProc_MoveToward_0_0014D310_(D_001FB738[0], &b0, 1.5707964f, &a0, 1.5707964f, 1);
+    p = Proj_FindEnemyInCone_0_00146EF0__as_FxProc_MoveToward_0_0014D310_(gFxProcRodata_001FB738[0], &b0, 1.5707964f, &a0, 1.5707964f, 1);
     if (p != NULL) {
         sceVu0CopyVector__as_FxProc_InitSeekCone_0_0014D700(&v80, Enemy_Ptr6F0_1_0013FFA0__as_FxProc_InitSeekCone_0_0014D700(p));
         sceVu0SubVector__as_FxProc_InitSeekCone_0_0014D700(&v90, &v80, o);
@@ -1974,7 +1981,7 @@ void FxProc_InitSeekCone_0_0014D700(O_FxProc_InitSeekCone_0_0014D700 *o) {
         id = Enemy_GetCurrentParamIdx_0_0013E110__as_FxProc_MoveToward_0_0014D310_(p);
     } else {
         o->x50.w = 1.0f;
-        Actor_BuildRotMatrix_0_00146600__as_FxProc_MoveToward_0_0014D310_(D_002022E4, &m);
+        Actor_BuildRotMatrix_0_00146600__as_FxProc_MoveToward_0_0014D310_(gPlayerSbss_002022E4, &m);
         sceVu0ApplyMatrix__as_FxProc_MoveToward_0_0014D310_(&o->xB0, &m, &o->x50);
         t = 0.0f;
         id = 0;
@@ -1991,7 +1998,7 @@ void FxProc_InitSeekCone_0_0014D700(O_FxProc_InitSeekCone_0_0014D700 *o) {
 /* FxTable_GetEntry_0_0014D8A0 */
 void FxTable_GetEntry_0_0014D8A0(S *a0, u16 i) {
     S t;
-    t.v = D_001F1E60[i];
+    t.v = gFxProcData_001F1E60[i];
     *a0 = t;
 }
 
@@ -2000,7 +2007,7 @@ s32 FxTable_CallA_0_0014D8E0(u16 i, s32 v)
 {
     if (i >= 29)
         return 0;
-    D_001F1EA0[i].c(v);
+    gFxProcData_001F1EA0[i].c(v);
     return 1;
 }
 
@@ -2009,7 +2016,7 @@ s32 FxTable_CallB_0_0014D940(u16 i, s32 v)
 {
     if (i >= 29)
         return 0;
-    D_001F1EA0[i].b(v);
+    gFxProcData_001F1EA0[i].b(v);
     return 1;
 }
 
@@ -2018,13 +2025,13 @@ s32 FxTable_CallC_0_0014D9A0(u16 i, s32 v)
 {
     if (i >= 29)
         return 0;
-    D_001F1EA0[i].a(v);
+    gFxProcData_001F1EA0[i].a(v);
     return 1;
 }
 
 /* FxProc_NopA_2_0014DA00 */
-#define D_003139A0 D_003139A0__as_FxProc_NopA_2_0014DA00
-extern f32 D_003139A0__as_FxProc_NopA_2_0014DA00[4];
+#define gZeroVec_003139A0 gZeroVec_003139A0__as_FxProc_NopA_2_0014DA00
+extern f32 gZeroVec_003139A0__as_FxProc_NopA_2_0014DA00[4];
 #define sceVu0CopyVector sceVu0CopyVector__as_FxProc_NopA_2_0014DA00
 void sceVu0CopyVector__as_FxProc_NopA_2_0014DA00(f32 *v0, f32 *v1);
 
@@ -2046,8 +2053,24 @@ void FxProc_NopC_2_0014DA20(void) {
 /* FxProc_InitAtOrigin_0_0014DA30 */
 void FxProc_InitAtOrigin_0_0014DA30(Obj_FxProc_NopA_2_0014DA00 *o)
 {
-    sceVu0CopyVector(o->v, D_003139A0);
+    sceVu0CopyVector(o->v, gZeroVec_003139A0);
     o->a8 = 0;
 }
 #undef sceVu0CopyVector
-#undef D_003139A0
+#undef gZeroVec_003139A0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+void FxProc_ChaseEnemy_0_00148D00(void);
+void FxProc_FollowEnemy_0_001489B0(void);
+void FxProc_OrientToVelocity_0_00148120(void);
+void FxProc_RandomSpin_0_001484D0(void);
+void FxProc_SpawnRandomChild_0_00148B30(void);
+void Proj_AttachToBoneB_0_001475F0(void);
+void Proj_AttachToBone_0_00147510(void);
+void Proj_ReleaseEffect_0_001476D0(void);
+void Proj_UpdateHoming_0_00147710(void);
+void Proj_Update_0_00147E90(void);
+/* data group (src/game/data/fx_proc_data.c): gFxProcData_001F1EA0__grp: gFxProcData_001F1EA0@0x0, gFxProcData_001F1EA4@0x4, gFxProcData_001F1EA8@0x8 */
+int gFxProcData_001F1EA0__grp[0x58] __attribute__((aligned(16))) = { (int)FxProc_InitAtOrigin_0_0014DA30, (int)FxProc_NopC_2_0014DA20, (int)FxProc_NopA_2_0014DA00, (int)FxProc_InitAtOrigin_0_0014DA30, (int)FxProc_NopB_2_0014DA10, (int)FxProc_NopA_2_0014DA00, (int)FxProc_InitSeekCone_0_0014D700, (int)FxProc_SeekEnemyInCone_0_0014D4A0, (int)FxProc_NopA_2_0014DA00, (int)FxProc_InitTowardEnemy_0_0014D410, (int)FxProc_MoveToward_0_0014D310, (int)FxProc_NopA_2_0014DA00, (int)FxProc_AimAtBestTarget_0_0014D020, (int)FxProc_NopC_2_0014DA20, (int)FxProc_NopA_2_0014DA00, (int)FxProc_SlideOnSurface_0_0014CEC0, (int)FxProc_StopAtWall_0_0014CDC0, (int)FxProc_NopA_2_0014DA00, (int)FxProc_AimAtEnemyCone_0_0014CAC0, (int)FxProc_NopC_2_0014DA20, (int)FxProc_NopA_2_0014DA00, (int)FxProc_RandomJitter_0_0014C890, (int)FxProc_NopC_2_0014DA20, (int)FxProc_NopA_2_0014DA00, (int)FxProc_SetDone_0_0014C870, (int)FxProc_ScaleByDistance_0_0014C6F0, (int)FxProc_NopA_2_0014DA00, (int)FxProc_RandomWander_0_0014C160, (int)FxProc_NopC_2_0014DA20, (int)FxProc_NopA_2_0014DA00, (int)FxProc_AttachRotatedB_0_0014C0E0, (int)FxProc_AttachRotated_0_0014C060, (int)FxProc_NopA_2_0014DA00, (int)FxProc_SnapToGround_0_0014BF60, (int)FxProc_SpawnTimed_0_0014BE70, (int)FxProc_NopA_2_0014DA00, (int)FxProc_TrackEnemyBone_0_0014BC90, (int)FxProc_PullTowardEnemy_0_0014BA10, (int)FxProc_NopA_2_0014DA00, (int)FxProc_InitHoming_0_0014B9E0, (int)FxProc_HomingProjectile_0_0014B1B0, (int)FxProc_ReleaseChild_0_0014B170, (int)FxProc_AimAlongGround_0_0014AF10, (int)FxProc_NopC_2_0014DA20, (int)FxProc_NopA_2_0014DA00, (int)FxProc_RandomRingPos_0_0014AD90, (int)FxProc_NopC_2_0014DA20, (int)FxProc_NopA_2_0014DA00, (int)FxProc_SeekNearestEnemy_0_0014AB80, (int)FxProc_FollowPlayer_0_0014AAF0, (int)FxProc_NopA_2_0014DA00, (int)FxProc_InitLight_0_0014A9C0, (int)FxProc_UpdateLight_0_0014A8A0, (int)FxProc_StopLight_0_0014A860, (int)FxProc_InitAtOrigin_0_0014DA30, (int)FxProc_SplashDamage_0_0014A5F0, (int)FxProc_NopA_2_0014DA00, (int)FxProc_ScatterAround_0_0014A210, (int)FxProc_NopC_2_0014DA20, (int)FxProc_NopA_2_0014DA00, (int)FxProc_RandomBounce_0_00149EB0, (int)FxProc_DropToGround_0_00149D20, (int)FxProc_NopA_2_0014DA00, (int)FxProc_InitAreaDamage_0_00149CC0, (int)FxProc_AreaDamageWrap_0_00149CB0, (int)FxProc_NopA_2_0014DA00, (int)FxProc_InitAtOrigin_0_0014DA30, (int)FxProc_FireAtTarget_0_001494A0, (int)FxProc_NopA_2_0014DA00, (int)FxProc_InitChase_0_001493E0, (int)FxProc_ChaseEnemy_0_00148D00, (int)FxProc_NopA_2_0014DA00, (int)FxProc_InitAtOrigin_0_0014DA30, (int)FxProc_SpawnRandomChild_0_00148B30, (int)FxProc_NopA_2_0014DA00, (int)FxProc_FollowEnemy_0_001489B0, (int)FxProc_NopC_2_0014DA20, (int)FxProc_NopA_2_0014DA00, (int)FxProc_RandomSpin_0_001484D0, (int)FxProc_OrientToVelocity_0_00148120, (int)FxProc_NopA_2_0014DA00, (int)Proj_Update_0_00147E90, (int)Proj_UpdateHoming_0_00147710, (int)Proj_ReleaseEffect_0_001476D0, (int)Proj_AttachToBoneB_0_001475F0, (int)Proj_AttachToBone_0_00147510, (int)FxProc_NopA_2_0014DA00, 0 };
+#endif

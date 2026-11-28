@@ -11,8 +11,13 @@ typedef struct { f32 x, y; } V2;
 typedef struct { u32 idx; s32 f4; u8 pad8[0x24]; f32 x; f32 y; u8 pad34[0xC]; } Ent;
 typedef struct { u32 n; Ent *p; } L;
 typedef struct { u8 pad[0x24]; L *l; } O;
-extern f32 D_00201D34;
-extern s32 D_00202188;
+#ifndef NONMATCHING
+extern f32 gDatabookCharDrawSdata_00201D34;
+#else
+/* data twins (src/game/data/sdata.c): gDatabookCharDrawSdata_00201D34 */
+static f32 gDatabookCharDrawSdata_00201D34 = -2.99f;
+#endif
+extern s32 gDbCharProcDrawInfoSbss_00202188;
 void DbChar_Draw_0_00195E30(u8 *arg0);
 void DbChar_DrawStats_1_00195F70(f32 f);
 void DbChar_DrawRing_0_00196070(s32 arg, f32 ang);
@@ -38,17 +43,17 @@ void DbChar_Draw_0_00195E30(u8 *arg0) {
     s32 h;
     s32 id;
 
-    id = D_004A11A0[D_004A13E0[0]];
+    id = gDatabookCharUpdateWrapBss_004A11A0[gDatabookCharUpdateWrapBss_004A13E0[0]];
     Menu_SetFlags_0_0018A310(0xE);
     if (arg0[8] == 0x1A) {
-        D_00201D34 = Approachf_3_00187770(D_00201D34, -0.02f, 3.5f);
+        gDatabookCharDrawSdata_00201D34 = Approachf_3_00187770(gDatabookCharDrawSdata_00201D34, -0.02f, 3.5f);
     } else {
-        D_00201D34 = Approachf_3_00187770(D_00201D34, -2.99f, 3.5f);
+        gDatabookCharDrawSdata_00201D34 = Approachf_3_00187770(gDatabookCharDrawSdata_00201D34, -2.99f, 3.5f);
     }
     UiAnim_UpdateAll_1_0017F5C0();
-    if (!(D_00201D34 <= -2.99f)) {
-        DbChar_DrawRing_0_00196070(id, D_00201D34);
-        DbChar_DrawStats_1_00195F70(D_00201D34);
+    if (!(gDatabookCharDrawSdata_00201D34 <= -2.99f)) {
+        DbChar_DrawRing_0_00196070(id, gDatabookCharDrawSdata_00201D34);
+        DbChar_DrawStats_1_00195F70(gDatabookCharDrawSdata_00201D34);
     }
     h = DbChar_FindEntry_0_00195900(id);
     c.w = 0x80FFFFFF;
@@ -65,19 +70,19 @@ void DbChar_DrawStats_1_00195F70(f32 f) {
     H d;
     R *r;
     s32 id;
-    id = D_004A11A0[D_004A13E0[0]];
+    id = gDatabookCharUpdateWrapBss_004A11A0[gDatabookCharUpdateWrapBss_004A13E0[0]];
     r = DbChar_Find_0_00195770(id);
     DbChar_CalcStatBars_0_00196D10(&a, &b, &c, &d, r);
     if (Bestiary_IsSeen_2_001A9EC0(id)) {
         Menu_DrawStatRing_0_00186440(f, &a, &b, &c, &d);
-        D_00202188 = r->x4;
+        gDbCharProcDrawInfoSbss_00202188 = r->x4;
     } else {
         memset(&a, -1, 0x10);
         memset(&b, -1, 0x10);
         Menu_DrawStatRing_0_00186440(f, &a, &b, 0, 0);
-        D_00202188 = 0;
+        gDbCharProcDrawInfoSbss_00202188 = 0;
     }
-    Menu_DrawFrame_0_00185390(f, 1, D_0020218C, D_004A13E0[0]);
+    Menu_DrawFrame_0_00185390(f, 1, gDatabookCharUpdateWrapSbss_0020218C, gDatabookCharUpdateWrapBss_004A13E0[0]);
 }
 
 /* DbChar_DrawRing_0_00196070 */

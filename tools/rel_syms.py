@@ -34,7 +34,8 @@ IMAGE = (0x00100000, 0x004BE180)
 NUMBERS = {"_stack_size", "_heap_size"}
 # what config/sta.jp.ld.in itself defines
 SCRIPT = {"_gp", "_end", "_fbss"}
-SOURCES = ["config/linker_syms.txt", "config/data_aliases.txt",
+GROUPS = "config/data_groups.txt"      # NONMATCHING data groups (tools/split_data.py)
+SOURCES = [GROUPS, "config/linker_syms.txt", "config/data_aliases.txt",
            "config/undefined_syms_auto.txt", "config/undefined_funcs_auto.txt"]
 ALIAS = re.compile(r"^(\w+?)__as_\w+$")
 ASSIGN = re.compile(r"^\s*(\w+)\s*=\s*(0x[0-9A-Fa-f]+|\d+)\s*;", re.M)
@@ -83,11 +84,20 @@ def symbols(objs):
 
 def main() -> None:
     have, want = symbols(sys.argv[2:])
+    grouped = set()
     want |= {"_gp", "_end", "_fbss", "_stack", "_stack_size", "_heap_size"}
     # a merged unit's part that declared a name its own way refers to it as
     # NAME__as_<part> (tools/merge_tu.py): the same address
     aliases = sorted(n for n in want if ALIAS.match(n))
     want |= {ALIAS.match(n).group(1) for n in aliases}
+    # a data group's members (config/data_groups.txt) are owners too where
+    # their blob is linked: ld gets them as assignments
+    g = ROOT / GROUPS
+    if g.exists():
+        for e in re.finditer(r"^\s*(\w+)\s*=\s*(\w+)", g.read_text(), re.M):
+            if e.group(1) not in have and e.group(2) in have:
+                have.add(e.group(1))
+                grouped.add(e.group(1))
     table = [t for t in owners() if t[2] in have]
     starts = [t[0] for t in table]
 
@@ -113,7 +123,10 @@ def main() -> None:
             line = m.group(0)
             a = ASSIGN.match(line)
             if not a:
-                if re.match(r"\s*\w+\s*=", line):
+                e = re.match(r"\s*(\w+)\s*=\s*(\w+)", line)
+                if e and src == GROUPS and (e.group(1) not in grouped):
+                    continue        # a data group's member: only where its blob is linked
+                if e:
                     lines.append(line)      # already an expression
                 continue
             name, addr = a.group(1), int(a.group(2), 0)

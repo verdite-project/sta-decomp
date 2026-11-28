@@ -15,7 +15,7 @@ s32 Mc_StepFindFile_5_001D67A8(void);
 s32 Mc_Update_4_001D6D00(void) {
     s32 r = -1;
     s32 s;
-    switch (D_004B63B8.cmd) {
+    switch (gMcState_004B63B8.cmd) {
     case 3: r = Mc_StepCheck_4_001D3E30(); break;
     case 4: r = Mc_StepGetDir_4_001D3FE8(); break;
     case 5: r = Mc_StepWriteChecked_3_001D4170(); break;
@@ -31,16 +31,16 @@ s32 Mc_Update_4_001D6D00(void) {
     case 1:
     case 2: r = -1; break;
     }    if (r < 0) {
-        r = -D_004B63B8.cmd;
-        D_004B63B8.step = 0;
-        D_004B63B8.cmd = 0;
+        r = -gMcState_004B63B8.cmd;
+        gMcState_004B63B8.step = 0;
+        gMcState_004B63B8.cmd = 0;
         s = -100;
         if (r != 0) s = r;
         return s;
     }    if (r > 0) {
-        D_004B63B8.cmd = 0;
-        D_004B63B8.step = 0;
+        gMcState_004B63B8.cmd = 0;
+        gMcState_004B63B8.step = 0;
         return 0;
     }
-    return D_004B63B8.cmd;
+    return gMcState_004B63B8.cmd;
 }

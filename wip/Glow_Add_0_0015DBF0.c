@@ -1,5 +1,5 @@
 /* NEAR Glow_Add_0_0015DBF0: 19 of 104 words differ (was 28). Same length.
- * Fixed: list push written as a struct { u16 n; u16 l[0x40]; } array at D_0030D588 (l = D_0030D58A),
+ * Fixed: list push written as a struct { u16 n; u16 l[0x40]; } array at gGlowInitBss_0030D588 (l = D_0030D58A),
  * which fixes which base address is built first.
  * Still differs: the list base ends in v1 (retail v0), so the bitfield temp is v0 instead of v1,
  * and sll a0,a0,1 / ddiu -0xFD are scheduled differently around div.s. Tried: perm of the 6
@@ -15,13 +15,13 @@ typedef struct {
 } Obj;
 void sceVu0CopyVector(f32 *, f32 *);
 void memset(void *, s32, s32);
-extern s32 D_0030D184[];
+extern s32 gGlowInitBss_0030D184[];
 extern s32 D_0030D188[];
 typedef struct { u16 n; u16 l[0x40]; } LL;
-extern LL D_0030D588[];
-#define L_ D_0030D588
+extern LL gGlowInitBss_0030D588[];
+#define L_ gGlowInitBss_0030D588
 extern u16 D_0030D58A[];
-extern Obj D_0030D9A0[];
+extern Obj gTextColourBss_0030D9A0[];
 
 s32 Glow_Add_0_0015DBF0(s32 kind, f32 *a, f32 *b, f32 r, f32 h) {
     f32 v80[4];
@@ -34,8 +34,8 @@ s32 Glow_Add_0_0015DBF0(s32 kind, f32 *a, f32 *b, f32 r, f32 h) {
     s32 off;
     s32 n;
 
-    idx = D_0030D188[--D_0030D184[0]];
-    o = &D_0030D9A0[idx];
+    idx = D_0030D188[--gGlowInitBss_0030D184[0]];
+    o = &gTextColourBss_0030D9A0[idx];
     memset(o, 0, 0x60);
     sceVu0CopyVector(v80, a);
     sceVu0CopyVector(v70, b);

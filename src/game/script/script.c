@@ -21,9 +21,9 @@ typedef struct { s32 type; Val v; } Var;
 typedef struct { u8 pad[0xC]; u16 c; u16 e; } Hdr_Script_StoreLocal_0_00165260;
 typedef struct { s32 type; union { s32 i; u32 u; f32 f; } v; } Out;
 typedef struct { u8 pad[0xC]; u16 xC; u16 xE; } Hdr_Script_LoadStack_0_001655C0;
-extern s32 D_00201FA4;
-extern void *D_00201FA8;
-extern s8 * D_001F1C50[];
+extern s32 gScriptEventSbss_00201FA4;
+extern void *gEnemyScriptSbss_00201FA8;
+extern s8 * gScriptData_001F1C50[];
 void ScrCmd_NopE_2_00164F00(void);
 #pragma explicit_zero_data on
 s8 *D_001F2300[0x10] = { (s8 *)ScrCmd_NopE_2_00164F00, (s8 *)ScrCmd_NopE_2_00164F00, (s8 *)ScrCmd_NopE_2_00164F00, (s8 *)ScrCmd_NopE_2_00164F00, (s8 *)ScrCmd_NopE_2_00164F00, (s8 *)ScrCmd_NopE_2_00164F00, (s8 *)ScrCmd_NopE_2_00164F00, (s8 *)ScrCmd_NopE_2_00164F00, (s8 *)ScrCmd_NopE_2_00164F00, (s8 *)ScrCmd_NopE_2_00164F00, (s8 *)ScrCmd_NopE_2_00164F00, (s8 *)ScrCmd_NopE_2_00164F00, (s8 *)ScrCmd_NopE_2_00164F00, (s8 *)ScrCmd_NopE_2_00164F00, (s8 *)ScrCmd_NopE_2_00164F00, (s8 *)ScrCmd_NopE_2_00164F00 };
@@ -121,7 +121,7 @@ void Script_SetArgU16_1_001650F0(u8 *o, u8 i, u8 j, u16 v)
 int Script_ResolveOperand_1_00165150__as_Script_GetArgPtr_2_00165130();
 
 void Script_GetArgPtr_2_00165130(s32 arg0, s32 arg1) {
-    Script_ResolveOperand_1_00165150(D_00201FA4, D_00201FA8, arg0 + ((arg1 & 0xFF) * 8) + 4);
+    Script_ResolveOperand_1_00165150(gScriptEventSbss_00201FA4, gEnemyScriptSbss_00201FA8, arg0 + ((arg1 & 0xFF) * 8) + 4);
 }
 #undef Script_ResolveOperand_1_00165150
 
@@ -129,7 +129,7 @@ void Script_GetArgPtr_2_00165130(s32 arg0, s32 arg1) {
 static inline s8 *get(u8 i, s32 v) {
     s8 *r = NULL;
     if (i < 0x40) {
-        if (i >= 0x20) r = (s8 *)(D_001F2300[i] + v); else if (i >= 0x10) r = (s8 *)(D_001F1C50[i] + v); else r = (s8 *)(D_0033F500[i] + v);
+        if (i >= 0x20) r = (s8 *)(D_001F2300[i] + v); else if (i >= 0x10) r = (s8 *)(gScriptData_001F1C50[i] + v); else r = (s8 *)(D_0033F500[i] + v);
     }
     return r;
 }
@@ -190,12 +190,12 @@ void Script_StoreGlobal_0_00165340(s32 a0, u8 *a1, s32 a2, s32 a3) {
 /* Script_LoadLocal_1_00165400 */
 #define D_001F2300 D_001F2300__as_Script_LoadLocal_1_00165400
 extern u8 *D_001F2300__as_Script_LoadLocal_1_00165400[];
-#define D_001F1C50 D_001F1C50__as_Script_LoadLocal_1_00165400
-extern u8 *D_001F1C50__as_Script_LoadLocal_1_00165400[];
+#define gScriptData_001F1C50 gScriptData_001F1C50__as_Script_LoadLocal_1_00165400
+extern u8 *gScriptData_001F1C50__as_Script_LoadLocal_1_00165400[];
 #define D_0033F500 D_0033F500__as_Script_LoadLocal_1_00165400
 extern u8 *D_0033F500__as_Script_LoadLocal_1_00165400[];
-#define D_00201FA4 D_00201FA4__as_Script_LoadLocal_1_00165400
-extern u8 *D_00201FA4__as_Script_LoadLocal_1_00165400;
+#define gScriptEventSbss_00201FA4 gScriptEventSbss_00201FA4__as_Script_LoadLocal_1_00165400
+extern u8 *gScriptEventSbss_00201FA4__as_Script_LoadLocal_1_00165400;
 #define Script_ResetSlot_1_00164F10 Script_ResetSlot_1_00164F10__as_Script_LoadLocal_1_00165400
 void Script_ResetSlot_1_00164F10__as_Script_LoadLocal_1_00165400(void *);
 
@@ -210,7 +210,7 @@ void Script_LoadLocal_1_00165400(u8 *a0, s32 a1, s32 a2) {
     k = (a1 & 0xFFFF00) >> 8;
     t = a1 & 0xFF;
     if (t >= 0x40) {
-        p = D_00201FA4;
+        p = gScriptEventSbss_00201FA4;
         if (p != 0) {
             i = 0;
             if (i < *(u32 *)(p + 4)) {
@@ -227,7 +227,7 @@ void Script_LoadLocal_1_00165400(u8 *a0, s32 a1, s32 a2) {
     } else if (t >= 0x20) {
         dst = D_001F2300[t] + a2;
     } else if (t >= 0x10) {
-        dst = D_001F1C50[t] + a2;
+        dst = gScriptData_001F1C50[t] + a2;
     } else {
         dst = D_0033F500[t] + a2;
     }
@@ -243,9 +243,9 @@ void Script_LoadLocal_1_00165400(u8 *a0, s32 a1, s32 a2) {
 }
 #undef Script_ResetSlot_1_00164F10
 #undef D_001F2300
-#undef D_001F1C50
+#undef gScriptData_001F1C50
 #undef D_0033F500
-#undef D_00201FA4
+#undef gScriptEventSbss_00201FA4
 
 /* Script_LoadStack_0_001655C0 */
 void Script_LoadStack_0_001655C0(void *a0, Out *out, Hdr_Script_LoadStack_0_001655C0 *h, s32 key, s32 off) {
@@ -292,12 +292,12 @@ void Script_LoadGlobal_0_001656B0(u8 *a0, Out *out, s32 key, s32 off) {
 /* Script_LoadLocalB_1_00165770 */
 #define D_001F2300 D_001F2300__as_Script_LoadLocalB_1_00165770
 extern u8 *D_001F2300__as_Script_LoadLocalB_1_00165770[];
-#define D_001F1C50 D_001F1C50__as_Script_LoadLocalB_1_00165770
-extern u8 *D_001F1C50__as_Script_LoadLocalB_1_00165770[];
+#define gScriptData_001F1C50 gScriptData_001F1C50__as_Script_LoadLocalB_1_00165770
+extern u8 *gScriptData_001F1C50__as_Script_LoadLocalB_1_00165770[];
 #define D_0033F500 D_0033F500__as_Script_LoadLocalB_1_00165770
 extern u8 *D_0033F500__as_Script_LoadLocalB_1_00165770[];
-#define D_00201FA4 D_00201FA4__as_Script_LoadLocalB_1_00165770
-extern u8 *D_00201FA4__as_Script_LoadLocalB_1_00165770;
+#define gScriptEventSbss_00201FA4 gScriptEventSbss_00201FA4__as_Script_LoadLocalB_1_00165770
+extern u8 *gScriptEventSbss_00201FA4__as_Script_LoadLocalB_1_00165770;
 #define Script_ResetSlot_1_00164F10 Script_ResetSlot_1_00164F10__as_Script_LoadLocalB_1_00165770
 void Script_ResetSlot_1_00164F10__as_Script_LoadLocalB_1_00165770(void *);
 
@@ -312,7 +312,7 @@ void Script_LoadLocalB_1_00165770(u8 *a0, s32 a1, s32 a2) {
     k = (a1 & 0xFFFF00) >> 8;
     t = a1 & 0xFF;
     if (t >= 0x40) {
-        p = D_00201FA4;
+        p = gScriptEventSbss_00201FA4;
         if (p != 0) {
             i = 0;
             if (i < *(u32 *)(p + 4)) {
@@ -329,7 +329,7 @@ void Script_LoadLocalB_1_00165770(u8 *a0, s32 a1, s32 a2) {
     } else if (t >= 0x20) {
         src = D_001F2300[t] + a2;
     } else if (t >= 0x10) {
-        src = D_001F1C50[t] + a2;
+        src = gScriptData_001F1C50[t] + a2;
     } else {
         src = D_0033F500[t] + a2;
     }
@@ -346,9 +346,9 @@ void Script_LoadLocalB_1_00165770(u8 *a0, s32 a1, s32 a2) {
 }
 #undef Script_ResetSlot_1_00164F10
 #undef D_001F2300
-#undef D_001F1C50
+#undef gScriptData_001F1C50
 #undef D_0033F500
-#undef D_00201FA4
+#undef gScriptEventSbss_00201FA4
 
 /* Script_FetchOperand_2_00165940 */
 #define Script_LoadLocalB_1_00165770 Script_LoadLocalB_1_00165770__as_Script_FetchOperand_2_00165940
@@ -392,3 +392,9 @@ void Script_FetchOperand_2_00165940(void *a0, void *a1, u32 *a2, u32 *a3) {
 #undef Script_LoadLocalB_1_00165770
 #undef Script_LoadStack_0_001655C0
 #undef Script_LoadGlobal_0_001656B0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data group (src/game/data/game_main_data.c): D_001F1C50__grp: gScriptData_001F1C50@0x0 */
+u16 D_001F1C50__grp[0x8] __attribute__((aligned(16))) = { 0x1f4, 0x1f5, 0x1f6, 0x1f4, 0x1f5, 0x1f6, 0, 0 };
+#endif

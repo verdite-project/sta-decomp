@@ -14,7 +14,7 @@ typedef struct { u8 p0[0xC]; f32 r; u8 p10[0xC]; f32 w; } Ray;
 typedef struct { u8 pad[0xE]; s16 hE; Vec v10; Vec v20; } S1;
 typedef struct { Vec v0; Vec v10; s32 x20; s32 x24; s32 x28; S1 *x2C; u8 pad30[0xC]; s32 x3C; } H_Coll_TestCellTriangles_1_00152700;
 typedef struct { f32 v[3]; } F3 __attribute__((aligned(8)));
-extern s32 D_00201E94;
+extern s32 gGameMainSbss_00201E94;
 void Coll_QueryMapCells_0_001520E0(Vec *o, A0 *a, Ray *ray, u8 mask, s32 mode, s32 *pcnt, s32 x6, s32 x7, Ctx *ctx, s32 skip);
 s32 Coll_TestCellTriangles_1_00152700(H_Coll_TestCellTriangles_1_00152700 *h, s32 **pp, Vec *s3, s32 a3, s32 *cnt, s32 max, H_Coll_TestCellTriangles_1_00152700 **cur, Vec *out, Vec *out1, Vec *tri,
                   s32 x24, s32 x28, S1 *s1, Mtx *m, f32 *best, s32 idx, s32 flag, s32 x3C);
@@ -77,7 +77,7 @@ void Coll_QueryMapCells_0_001520E0(Vec *o, A0 *a, Ray *ray, u8 mask, s32 mode, s
     for (k = 0; k < 8; k++) {
         if (!((1 << k) & mask)) continue;
         for (j = skip != 0; j < a->x6; j++) {
-            s = (u8 *)((s32)a + 0x40) + D_00201F2C * (a->x6 * 0x140 + 0x200);
+            s = (u8 *)((s32)a + 0x40) + gSfxAllSbss_00201F2C * (a->x6 * 0x140 + 0x200);
             if (ctx) {
                 sl = &ctx->sel[j];
                 if (!sl->f.b0) continue;
@@ -208,7 +208,7 @@ s32 Coll_TestCellTriangles_1_00152700(H_Coll_TestCellTriangles_1_00152700 *h, s3
         h->x28 = x28;
         h->x2C = s1;
         h->x3C = x3C;
-        s1->hE = D_00201E94 - 1;
+        s1->hE = gGameMainSbss_00201E94 - 1;
         if (a3 < -1 && *cur && *cnt < max) {
             (*cnt)++;
             (*cur)->x20 = **pp;
@@ -246,7 +246,7 @@ s32 Coll_TestCellTriangles_1_00152700(H_Coll_TestCellTriangles_1_00152700 *h, s3
     h->x28 = x28;
     h->x2C = s1;
     h->x3C = x3C;
-    s1->hE = D_00201E94 - 1;
+    s1->hE = gGameMainSbss_00201E94 - 1;
     if (a3 < -1 && *cur && *cnt < max) {
         (*cnt)++;
         sceVu0CopyVector(&(*cur)->v0, out);
@@ -314,7 +314,7 @@ s32 Coll_TestTriangle_1_00152D90(Vec *out, Vec *s3, Vec *tri, S1 *s1, Mtx *m, s3
         out->w = tA;
         sceVu0CopyVector(&out[1], &D);
         out[1].w = tB;
-        s1->hE = D_00201E94 - 1;
+        s1->hE = gGameMainSbss_00201E94 - 1;
         return 1;
     }
     d = D_001F2020;
@@ -340,7 +340,7 @@ s32 Coll_TestTriangle_1_00152D90(Vec *out, Vec *s3, Vec *tri, S1 *s1, Mtx *m, s3
     if (best < 0.0f) best = 0.0f;
     sceVu0Normalize(&out[1], &out[1]);
     out[1].w = best;
-    s1->hE = D_00201E94 - 1;
+    s1->hE = gGameMainSbss_00201E94 - 1;
     return 1;
 }
 #undef sceVu0CopyVector

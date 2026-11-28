@@ -1,7 +1,7 @@
 #include "common.h"
 #include "game/ee.h"
 typedef struct { s32 a[4][4]; s32 b[4][4]; s32 i; s32 j; } T;
-#define G D_004B63B8
+#define G gMcState_004B63B8
 s32 Mc_GetInfoStatus_2_001D3CE0(s32 n) {
     T *t = &G;
     s32 i = t->i;

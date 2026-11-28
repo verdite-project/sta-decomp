@@ -114,142 +114,309 @@ typedef struct { W x0; W x8; W x10; W x18; } Arg_EnemyCmd_SpawnItem_0_001454E0;
 typedef struct { u8 b[12]; f32 v; } T_EnemyCmd_ShakeCamera_0_001455B0;
 typedef struct { char pad[8]; f32 f; } Obj_EnemyCmd_ShakeCamera_0_001455B0;
 typedef struct { char pad[0x154]; void *p; } S_EnemyCmd_ResetVectors_1_00145610;
-extern s32 D_001FAD20[];
-extern s32 D_001FAD40[];
-extern s32 D_001FAD60[];
-extern s32 D_001FAD80[];
-extern s32 D_001FADA0[];
-extern s32 D_001FADC0[];
-extern s32 D_001FADE0[];
-extern s32 D_001FAE00[];
-extern s32 D_001FAE20[];
-extern s32 D_001FAE40[];
-extern s32 D_001FAE60[];
-extern s32 D_001FAE80[];
-extern s32 D_001FAEA0[];
-extern s32 D_001FAEC0[];
-extern s32 D_001FAEE0[];
-extern s32 D_001FAF00[];
-extern s32 D_001FAF20[];
-extern s32 D_001FAF40[];
-extern s32 D_001FAF60[];
-extern s32 D_001FAF80[];
-extern s32 D_001FAFA0[];
-extern s32 D_001FAFC0[];
-extern s32 D_001FAFE0[];
-extern s32 D_001FB000[];
-extern s32 D_001FB020[];
-extern s32 D_001FB040[];
-extern s32 D_001FB060[];
-extern s32 D_001FB080[];
-extern s32 D_001FB0A0[];
-extern s32 D_001FB0C0[];
-extern s32 D_001FB0E0[];
-extern s32 D_001FB100[];
-extern s32 D_001FB120[];
-extern s32 D_001FB140[];
-extern s32 D_001FB160[];
-extern s32 D_001FB180[];
-extern s32 D_001FB1A0[];
-extern s32 D_001FB1C0[];
-extern s32 D_001FB1E0[];
-extern s32 D_001FB200[];
-extern s32 D_001FB220[];
-extern s32 D_001FB240[];
-extern s32 D_001FB260[];
-extern s32 D_001FB280[];
-extern s32 D_001FB2A0[];
-extern s32 D_001FB2C0[];
-extern s32 D_001FB2E0[];
-extern s32 D_001FB300[];
-extern s32 D_001FB320[];
-extern s32 D_001FB340[];
-extern s32 D_001FB360[];
-extern s32 D_001FB380[];
-extern s32 D_001FB3A0[];
-extern s32 D_001FB3C0[];
-extern s32 D_001FB3E0[];
-extern s32 D_001FB400[];
-extern s32 D_001FB420[];
-extern s32 D_001FB440[];
-extern s32 D_001FB460[];
-extern s32 D_001FB480[];
-extern s32 D_001FB4A0[];
-extern s32 D_001FB4C0[];
-extern s32 D_001FB4E0[];
-extern s32 D_001FB500[];
-extern s32 D_001FB520[];
-extern s32 D_001FB540[];
-extern s32 D_001FB560[];
-extern s32 D_001FB580[];
-extern s32 D_001FB5A0[];
-extern s32 D_001FB5C0[];
-extern s32 D_001FB5E0[];
-extern s32 D_001FB600[];
-extern s32 D_001FB620[];
-extern s32 D_001FB640[];
-extern s32 D_001FB660[];
-extern s32 D_001FB680[];
-extern s32 D_001FB6A0[];
-extern s32 D_001FB6C0[];
-extern s32 D_001FB6E0[];
-extern s32 D_001FB700[];
-extern s32 D_001FB720[];
-extern void *D_00201FA8;
-extern s32 D_00201E80;
-extern P_EnemyCmd_PlaySe_1_001453A0 D_00201C50;
-extern S_EnemyCmd_Set5B4b6_1_00143920 *D_00201FA8__as_EnemyCmd_Set5B4b6_1_00143920;
-extern S_EnemyCmd_Set5B4b5_1_00143930 *D_00201FA8__as_EnemyCmd_Set5B4b5_1_00143930;
-extern s8 *D_00201FA8__as_EnemyCmd_GetRelativePos_0_00143960;
-extern S_EnemyCmd_Get608_1_00143B20 *D_00201FA8__as_EnemyCmd_Get608_1_00143B20;
-extern S_EnemyCmd_Set5A1b5_1_00143BB0 *D_00201FA8__as_EnemyCmd_Set5A1b5_1_00143BB0;
-extern S_EnemyCmd_Set5B4b4_1_00143BC0 *D_00201FA8__as_EnemyCmd_Set5B4b4_1_00143BC0;
-extern S_EnemyCmd_StartTimer_0_00143BD0 *D_00201FA8__as_EnemyCmd_StartTimer_0_00143BD0;
-extern S_EnemyCmd_GetMotionFrame_1_00143C30 *D_00201FA8__as_EnemyCmd_GetMotionFrame_1_00143C30;
-extern S_EnemyCmd_ResolveHit_0_00143C70 *D_00201FA8__as_EnemyCmd_ResolveHit_0_00143C70;
-extern S_EnemyCmd_GetVec660_0_00143D60 *D_00201FA8__as_EnemyCmd_GetVec660_0_00143D60;
-extern S_EnemyCmd_UpdatePartStat_1_00143DF0 *D_00201FA8__as_EnemyCmd_UpdatePartStat_1_00143DF0;
-extern S_EnemyCmd_InitPart_1_00143E10 *D_00201FA8__as_EnemyCmd_InitPart_1_00143E10;
-extern s8 *D_00201FA8__as_EnemyCmd_GetTargetPos_0_001441B0;
-extern S_EnemyCmd_BroadcastMotion_1_001442F0 *D_00201FA8__as_EnemyCmd_BroadcastMotion_1_001442F0;
-extern S_EnemyCmd_Kill_1_00144360 *D_00201FA8__as_EnemyCmd_Kill_1_00144360;
-extern S_EnemyCmd_SetHiddenFlags_0_00144370 *D_00201FA8__as_EnemyCmd_SetHiddenFlags_0_00144370;
-extern S_EnemyCmd_Set5B2b6w2_1_001443E0 *D_00201FA8__as_EnemyCmd_Set5B2b6w2_1_001443E0;
-extern S_EnemyCmd_Set5B2b2_1_001443F0 *D_00201FA8__as_EnemyCmd_Set5B2b2_1_001443F0;
-extern S_EnemyCmd_Set5B2b1_1_00144400 *D_00201FA8__as_EnemyCmd_Set5B2b1_1_00144400;
-extern S_EnemyCmd_Set5B0b2_1_00144410 *D_00201FA8__as_EnemyCmd_Set5B0b2_1_00144410;
-extern S_EnemyCmd_ClampHpFromFlag_1_00144420 *D_00201FA8__as_EnemyCmd_ClampHpFromFlag_1_00144420;
-extern S_EnemyCmd_StoreHpToFlag_1_00144490 *D_00201FA8__as_EnemyCmd_StoreHpToFlag_1_00144490;
-extern s8 *D_00201FA8__as_EnemyCmd_FindSpawnPoint_0_001444F0;
-extern S_EnemyCmd_GetPosition_2_00144970 *D_00201FA8__as_EnemyCmd_GetPosition_2_00144970;
-extern s8 *D_00201FA8__as_EnemyCmd_SpawnEffect_0_00144A00;
-extern char *D_00201FA8__as_EnemyCmd_SpawnEffectB_0_00144BE0;
-extern S_EnemyCmd_Set5B2b0_1_00144D70 *D_00201FA8__as_EnemyCmd_Set5B2b0_1_00144D70;
-extern S_EnemyCmd_BroadcastFrame_1_00144D80 *D_00201FA8__as_EnemyCmd_BroadcastFrame_1_00144D80;
-extern S_EnemyCmd_Set5B1b7_1_00144DF0 *D_00201FA8__as_EnemyCmd_Set5B1b7_1_00144DF0;
-extern S_EnemyCmd_Set5B1b6_1_00144E00 *D_00201FA8__as_EnemyCmd_Set5B1b6_1_00144E00;
-extern S_EnemyCmd_BreakPart_1_00144E10 *D_00201FA8__as_EnemyCmd_BreakPart_1_00144E10;
-extern S_EnemyCmd_Set5B0b0_1_00144E30 *D_00201FA8__as_EnemyCmd_Set5B0b0_1_00144E30;
-extern S_EnemyCmd_HealPercent_1_00144E40 *D_00201FA8__as_EnemyCmd_HealPercent_1_00144E40;
-extern Ctx *D_00201FA8__as_EnemyCmd_Set5B1b2Notify_0_00144F00;
-extern S_EnemyCmd_GetParamIdx_1_00144F60 *D_00201FA8__as_EnemyCmd_GetParamIdx_1_00144F60;
-extern S_EnemyCmd_Set5B1b1_1_00144FA0 *D_00201FA8__as_EnemyCmd_Set5B1b1_1_00144FA0;
-extern S_EnemyCmd_UpdateParamFlags_1_00144FB0 *D_00201FA8__as_EnemyCmd_UpdateParamFlags_1_00144FB0;
-extern S_EnemyCmd_RegisterKill_0_00144FC0 *D_00201FA8__as_EnemyCmd_RegisterKill_0_00144FC0;
-extern S_EnemyCmd_RegisterSeen_0_00145010 *D_00201FA8__as_EnemyCmd_RegisterSeen_0_00145010;
-extern S_EnemyCmd_Set5B1b0_1_00145060 *D_00201FA8__as_EnemyCmd_Set5B1b0_1_00145060;
-extern S_EnemyCmd_SetDead_1_001450D0 *D_00201FA8__as_EnemyCmd_SetDead_1_001450D0;
-extern S_EnemyCmd_Set5B0b7_1_001450E0 *D_00201FA8__as_EnemyCmd_Set5B0b7_1_001450E0;
-extern S_EnemyCmd_GetType_1_00145140 *D_00201FA8__as_EnemyCmd_GetType_1_00145140;
-extern S_EnemyCmd_Set5B0b1_1_00145180 *D_00201FA8__as_EnemyCmd_Set5B0b1_1_00145180;
-extern S_EnemyCmd_AddHp_2_00145190 *D_00201FA8__as_EnemyCmd_AddHp_2_00145190;
-extern S_EnemyCmd_Get5B0b0_1_001451A0 *D_00201FA8__as_EnemyCmd_Get5B0b0_1_001451A0;
-extern S_EnemyCmd_AddPartValue_0_001451E0 *D_00201FA8__as_EnemyCmd_AddPartValue_0_001451E0;
-extern S_EnemyCmd_GetHpPercent_2_00145250 *D_00201FA8__as_EnemyCmd_GetHpPercent_2_00145250;
-extern S_EnemyCmd_SetMode_1_00145290 *D_00201FA8__as_EnemyCmd_SetMode_1_00145290;
-extern S_EnemyCmd_PlaySe_1_001453A0 *D_00201FA8__as_EnemyCmd_PlaySe_1_001453A0;
-extern s8 *D_00201FA8__as_EnemyCmd_GetModelPos_0_00145410;
-extern S_EnemyCmd_ResetVectors_1_00145610 *D_00201FA8__as_EnemyCmd_ResetVectors_1_00145610;
+extern void *gEnemyScriptSbss_00201FA8;
+extern s32 gMapSbss_00201E80;
+#ifndef NONMATCHING
+extern s32 gStrScrChrtestBin_001FAD20[];
+extern s32 gStrScrChr0021Bin_001FAD40[];
+extern s32 gStrScrChr0022Bin_001FAD60[];
+extern s32 gStrScrChr0023Bin_001FAD80[];
+extern s32 gStrScrChr0024Bin_001FADA0[];
+extern s32 gStrScrChr0025Bin_001FADC0[];
+extern s32 gStrScrChr0026Bin_001FADE0[];
+extern s32 gStrScrChr0027Bin_001FAE00[];
+extern s32 gStrScrChr0028Bin_001FAE20[];
+extern s32 gStrScrChr0029Bin_001FAE40[];
+extern s32 gStrScrChr0030Bin_001FAE60[];
+extern s32 gStrScrChr0031Bin_001FAE80[];
+extern s32 gStrScrChr0032Bin_001FAEA0[];
+extern s32 gStrScrChr0033Bin_001FAEC0[];
+extern s32 gStrScrChr0034Bin_001FAEE0[];
+extern s32 gStrScrChr0035Bin_001FAF00[];
+extern s32 gStrScrChr0036Bin_001FAF20[];
+extern s32 gStrScrChr0037Bin_001FAF40[];
+extern s32 gStrScrChr0038Bin_001FAF60[];
+extern s32 gStrScrChr0039Bin_001FAF80[];
+extern s32 gStrScrChr0040Bin_001FAFA0[];
+extern s32 gStrScrChr0041Bin_001FAFC0[];
+extern s32 gStrScrChr0042Bin_001FAFE0[];
+extern s32 gStrScrChr0043Bin_001FB000[];
+extern s32 gStrScrChr0044Bin_001FB020[];
+extern s32 gStrScrChr0045Bin_001FB040[];
+extern s32 gStrScrChr0046Bin_001FB060[];
+extern s32 gStrScrChr0047Bin_001FB080[];
+extern s32 gStrScrChr0048Bin_001FB0A0[];
+extern s32 gStrScrChr0049Bin_001FB0C0[];
+extern s32 gStrScrChr0050Bin_001FB0E0[];
+extern s32 gStrScrChr0051Bin_001FB100[];
+extern s32 gStrScrChr0052Bin_001FB120[];
+extern s32 gStrScrChr0053Bin_001FB140[];
+extern s32 gStrScrChr0054Bin_001FB160[];
+extern s32 gStrScrChr0055Bin_001FB180[];
+extern s32 gStrScrChr0056Bin_001FB1A0[];
+extern s32 gStrScrChr0057Bin_001FB1C0[];
+extern s32 gStrScrChr0058Bin_001FB1E0[];
+extern s32 gStrScrChr0059Bin_001FB200[];
+extern s32 gStrScrChr0060Bin_001FB220[];
+extern s32 gStrScrChr0061Bin_001FB240[];
+extern s32 gStrScrChr0062Bin_001FB260[];
+extern s32 gStrScrChr0063Bin_001FB280[];
+extern s32 gStrScrChr0064Bin_001FB2A0[];
+extern s32 gStrScrChr0065Bin_001FB2C0[];
+extern s32 gStrScrChr0066Bin_001FB2E0[];
+extern s32 gStrScrChr0067Bin_001FB300[];
+extern s32 gStrScrChr0068Bin_001FB320[];
+extern s32 gStrScrChr0069Bin_001FB340[];
+extern s32 gStrScrChr0070Bin_001FB360[];
+extern s32 gStrScrChr0071Bin_001FB380[];
+extern s32 gStrScrChr0072Bin_001FB3A0[];
+extern s32 gStrScrChr0073Bin_001FB3C0[];
+extern s32 gStrScrChr0081Bin_001FB3E0[];
+extern s32 gStrScrChr0082Bin_001FB400[];
+extern s32 gStrScrChr0083Bin_001FB420[];
+extern s32 gStrScrChr0091Bin_001FB440[];
+extern s32 gStrScrChr0092Bin_001FB460[];
+extern s32 gStrScrChr0094Bin_001FB480[];
+extern s32 gStrScrChr0095Bin_001FB4A0[];
+extern s32 gStrScrChr0098Bin_001FB4C0[];
+extern s32 gStrScrChr0101Bin_001FB4E0[];
+extern s32 gStrScrChr0102Bin_001FB500[];
+extern s32 gStrScrChr0103Bin_001FB520[];
+extern s32 gStrScrChr0104Bin_001FB540[];
+extern s32 gStrScrChr0105Bin_001FB560[];
+extern s32 gStrScrChr0107Bin_001FB580[];
+extern s32 gStrScrChr0108Bin_001FB5A0[];
+extern s32 gStrScrChr0109Bin_001FB5C0[];
+extern s32 gStrScrChr0110Bin_001FB5E0[];
+extern s32 gStrScrChr0118Bin_001FB600[];
+extern s32 gStrScrChr0119Bin_001FB620[];
+extern s32 gStrScrChr0120Bin_001FB640[];
+extern s32 gStrScrChr0122Bin_001FB660[];
+extern s32 gStrScrChr0123Bin_001FB680[];
+extern s32 gStrScrChr0124Bin_001FB6A0[];
+extern s32 gStrScrChr0125Bin_001FB6C0[];
+extern s32 gStrScrChr0126Bin_001FB6E0[];
+extern s32 gStrScrChr0127Bin_001FB700[];
+extern s32 gEnemyScriptRodata_001FB720[];
+extern P_EnemyCmd_PlaySe_1_001453A0 gEnemyScriptSdata_00201C50;
+#else
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChrtestBin_001FAD20 */
+static s32 gStrScrChrtestBin_001FAD20[0x8] = { 0x2f726373, 0x74726863, 0x5f747365, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0021Bin_001FAD40 */
+static s32 gStrScrChr0021Bin_001FAD40[0x8] = { 0x2f726373, 0x30726863, 0x5f313230, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0022Bin_001FAD60 */
+static s32 gStrScrChr0022Bin_001FAD60[0x8] = { 0x2f726373, 0x30726863, 0x5f323230, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0023Bin_001FAD80 */
+static s32 gStrScrChr0023Bin_001FAD80[0x8] = { 0x2f726373, 0x30726863, 0x5f333230, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0024Bin_001FADA0 */
+static s32 gStrScrChr0024Bin_001FADA0[0x8] = { 0x2f726373, 0x30726863, 0x5f343230, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0025Bin_001FADC0 */
+static s32 gStrScrChr0025Bin_001FADC0[0x8] = { 0x2f726373, 0x30726863, 0x5f353230, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0026Bin_001FADE0 */
+static s32 gStrScrChr0026Bin_001FADE0[0x8] = { 0x2f726373, 0x30726863, 0x5f363230, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0027Bin_001FAE00 */
+static s32 gStrScrChr0027Bin_001FAE00[0x8] = { 0x2f726373, 0x30726863, 0x5f373230, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0028Bin_001FAE20 */
+static s32 gStrScrChr0028Bin_001FAE20[0x8] = { 0x2f726373, 0x30726863, 0x5f383230, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0029Bin_001FAE40 */
+static s32 gStrScrChr0029Bin_001FAE40[0x8] = { 0x2f726373, 0x30726863, 0x5f393230, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0030Bin_001FAE60 */
+static s32 gStrScrChr0030Bin_001FAE60[0x8] = { 0x2f726373, 0x30726863, 0x5f303330, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0031Bin_001FAE80 */
+static s32 gStrScrChr0031Bin_001FAE80[0x8] = { 0x2f726373, 0x30726863, 0x5f313330, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0032Bin_001FAEA0 */
+static s32 gStrScrChr0032Bin_001FAEA0[0x8] = { 0x2f726373, 0x30726863, 0x5f323330, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0033Bin_001FAEC0 */
+static s32 gStrScrChr0033Bin_001FAEC0[0x8] = { 0x2f726373, 0x30726863, 0x5f333330, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0034Bin_001FAEE0 */
+static s32 gStrScrChr0034Bin_001FAEE0[0x8] = { 0x2f726373, 0x30726863, 0x5f343330, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0035Bin_001FAF00 */
+static s32 gStrScrChr0035Bin_001FAF00[0x8] = { 0x2f726373, 0x30726863, 0x5f353330, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0036Bin_001FAF20 */
+static s32 gStrScrChr0036Bin_001FAF20[0x8] = { 0x2f726373, 0x30726863, 0x5f363330, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0037Bin_001FAF40 */
+static s32 gStrScrChr0037Bin_001FAF40[0x8] = { 0x2f726373, 0x30726863, 0x5f373330, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0038Bin_001FAF60 */
+static s32 gStrScrChr0038Bin_001FAF60[0x8] = { 0x2f726373, 0x30726863, 0x5f383330, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0039Bin_001FAF80 */
+static s32 gStrScrChr0039Bin_001FAF80[0x8] = { 0x2f726373, 0x30726863, 0x5f393330, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0040Bin_001FAFA0 */
+static s32 gStrScrChr0040Bin_001FAFA0[0x8] = { 0x2f726373, 0x30726863, 0x5f303430, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0041Bin_001FAFC0 */
+static s32 gStrScrChr0041Bin_001FAFC0[0x8] = { 0x2f726373, 0x30726863, 0x5f313430, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0042Bin_001FAFE0 */
+static s32 gStrScrChr0042Bin_001FAFE0[0x8] = { 0x2f726373, 0x30726863, 0x5f323430, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0043Bin_001FB000 */
+static s32 gStrScrChr0043Bin_001FB000[0x8] = { 0x2f726373, 0x30726863, 0x5f333430, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0044Bin_001FB020 */
+static s32 gStrScrChr0044Bin_001FB020[0x8] = { 0x2f726373, 0x30726863, 0x5f343430, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0045Bin_001FB040 */
+static s32 gStrScrChr0045Bin_001FB040[0x8] = { 0x2f726373, 0x30726863, 0x5f353430, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0046Bin_001FB060 */
+static s32 gStrScrChr0046Bin_001FB060[0x8] = { 0x2f726373, 0x30726863, 0x5f363430, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0047Bin_001FB080 */
+static s32 gStrScrChr0047Bin_001FB080[0x8] = { 0x2f726373, 0x30726863, 0x5f373430, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0048Bin_001FB0A0 */
+static s32 gStrScrChr0048Bin_001FB0A0[0x8] = { 0x2f726373, 0x30726863, 0x5f383430, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0049Bin_001FB0C0 */
+static s32 gStrScrChr0049Bin_001FB0C0[0x8] = { 0x2f726373, 0x30726863, 0x5f393430, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0050Bin_001FB0E0 */
+static s32 gStrScrChr0050Bin_001FB0E0[0x8] = { 0x2f726373, 0x30726863, 0x5f303530, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0051Bin_001FB100 */
+static s32 gStrScrChr0051Bin_001FB100[0x8] = { 0x2f726373, 0x30726863, 0x5f313530, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0052Bin_001FB120 */
+static s32 gStrScrChr0052Bin_001FB120[0x8] = { 0x2f726373, 0x30726863, 0x5f323530, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0053Bin_001FB140 */
+static s32 gStrScrChr0053Bin_001FB140[0x8] = { 0x2f726373, 0x30726863, 0x5f333530, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0054Bin_001FB160 */
+static s32 gStrScrChr0054Bin_001FB160[0x8] = { 0x2f726373, 0x30726863, 0x5f343530, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0055Bin_001FB180 */
+static s32 gStrScrChr0055Bin_001FB180[0x8] = { 0x2f726373, 0x30726863, 0x5f353530, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0056Bin_001FB1A0 */
+static s32 gStrScrChr0056Bin_001FB1A0[0x8] = { 0x2f726373, 0x30726863, 0x5f363530, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0057Bin_001FB1C0 */
+static s32 gStrScrChr0057Bin_001FB1C0[0x8] = { 0x2f726373, 0x30726863, 0x5f373530, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0058Bin_001FB1E0 */
+static s32 gStrScrChr0058Bin_001FB1E0[0x8] = { 0x2f726373, 0x30726863, 0x5f383530, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0059Bin_001FB200 */
+static s32 gStrScrChr0059Bin_001FB200[0x8] = { 0x2f726373, 0x30726863, 0x5f393530, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0060Bin_001FB220 */
+static s32 gStrScrChr0060Bin_001FB220[0x8] = { 0x2f726373, 0x30726863, 0x5f303630, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0061Bin_001FB240 */
+static s32 gStrScrChr0061Bin_001FB240[0x8] = { 0x2f726373, 0x30726863, 0x5f313630, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0062Bin_001FB260 */
+static s32 gStrScrChr0062Bin_001FB260[0x8] = { 0x2f726373, 0x30726863, 0x5f323630, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0063Bin_001FB280 */
+static s32 gStrScrChr0063Bin_001FB280[0x8] = { 0x2f726373, 0x30726863, 0x5f333630, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0064Bin_001FB2A0 */
+static s32 gStrScrChr0064Bin_001FB2A0[0x8] = { 0x2f726373, 0x30726863, 0x5f343630, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0065Bin_001FB2C0 */
+static s32 gStrScrChr0065Bin_001FB2C0[0x8] = { 0x2f726373, 0x30726863, 0x5f353630, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0066Bin_001FB2E0 */
+static s32 gStrScrChr0066Bin_001FB2E0[0x8] = { 0x2f726373, 0x30726863, 0x5f363630, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0067Bin_001FB300 */
+static s32 gStrScrChr0067Bin_001FB300[0x8] = { 0x2f726373, 0x30726863, 0x5f373630, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0068Bin_001FB320 */
+static s32 gStrScrChr0068Bin_001FB320[0x8] = { 0x2f726373, 0x30726863, 0x5f383630, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0069Bin_001FB340 */
+static s32 gStrScrChr0069Bin_001FB340[0x8] = { 0x2f726373, 0x30726863, 0x5f393630, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0070Bin_001FB360 */
+static s32 gStrScrChr0070Bin_001FB360[0x8] = { 0x2f726373, 0x30726863, 0x5f303730, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0071Bin_001FB380 */
+static s32 gStrScrChr0071Bin_001FB380[0x8] = { 0x2f726373, 0x30726863, 0x5f313730, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0072Bin_001FB3A0 */
+static s32 gStrScrChr0072Bin_001FB3A0[0x8] = { 0x2f726373, 0x30726863, 0x5f323730, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0073Bin_001FB3C0 */
+static s32 gStrScrChr0073Bin_001FB3C0[0x8] = { 0x2f726373, 0x30726863, 0x5f333730, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0081Bin_001FB3E0 */
+static s32 gStrScrChr0081Bin_001FB3E0[0x8] = { 0x2f726373, 0x30726863, 0x5f313830, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0082Bin_001FB400 */
+static s32 gStrScrChr0082Bin_001FB400[0x8] = { 0x2f726373, 0x30726863, 0x5f323830, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0083Bin_001FB420 */
+static s32 gStrScrChr0083Bin_001FB420[0x8] = { 0x2f726373, 0x30726863, 0x5f333830, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0091Bin_001FB440 */
+static s32 gStrScrChr0091Bin_001FB440[0x8] = { 0x2f726373, 0x30726863, 0x5f313930, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0092Bin_001FB460 */
+static s32 gStrScrChr0092Bin_001FB460[0x8] = { 0x2f726373, 0x30726863, 0x5f323930, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0094Bin_001FB480 */
+static s32 gStrScrChr0094Bin_001FB480[0x8] = { 0x2f726373, 0x30726863, 0x5f343930, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0095Bin_001FB4A0 */
+static s32 gStrScrChr0095Bin_001FB4A0[0x8] = { 0x2f726373, 0x30726863, 0x5f353930, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0098Bin_001FB4C0 */
+static s32 gStrScrChr0098Bin_001FB4C0[0x8] = { 0x2f726373, 0x30726863, 0x5f383930, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0101Bin_001FB4E0 */
+static s32 gStrScrChr0101Bin_001FB4E0[0x8] = { 0x2f726373, 0x30726863, 0x5f313031, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0102Bin_001FB500 */
+static s32 gStrScrChr0102Bin_001FB500[0x8] = { 0x2f726373, 0x30726863, 0x5f323031, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0103Bin_001FB520 */
+static s32 gStrScrChr0103Bin_001FB520[0x8] = { 0x2f726373, 0x30726863, 0x5f333031, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0104Bin_001FB540 */
+static s32 gStrScrChr0104Bin_001FB540[0x8] = { 0x2f726373, 0x30726863, 0x5f343031, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0105Bin_001FB560 */
+static s32 gStrScrChr0105Bin_001FB560[0x8] = { 0x2f726373, 0x30726863, 0x5f353031, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0107Bin_001FB580 */
+static s32 gStrScrChr0107Bin_001FB580[0x8] = { 0x2f726373, 0x30726863, 0x5f373031, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0108Bin_001FB5A0 */
+static s32 gStrScrChr0108Bin_001FB5A0[0x8] = { 0x2f726373, 0x30726863, 0x5f383031, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0109Bin_001FB5C0 */
+static s32 gStrScrChr0109Bin_001FB5C0[0x8] = { 0x2f726373, 0x30726863, 0x5f393031, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0110Bin_001FB5E0 */
+static s32 gStrScrChr0110Bin_001FB5E0[0x8] = { 0x2f726373, 0x30726863, 0x5f303131, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0118Bin_001FB600 */
+static s32 gStrScrChr0118Bin_001FB600[0x8] = { 0x2f726373, 0x30726863, 0x5f383131, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0119Bin_001FB620 */
+static s32 gStrScrChr0119Bin_001FB620[0x8] = { 0x2f726373, 0x30726863, 0x5f393131, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0120Bin_001FB640 */
+static s32 gStrScrChr0120Bin_001FB640[0x8] = { 0x2f726373, 0x30726863, 0x5f303231, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0122Bin_001FB660 */
+static s32 gStrScrChr0122Bin_001FB660[0x8] = { 0x2f726373, 0x30726863, 0x5f323231, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0123Bin_001FB680 */
+static s32 gStrScrChr0123Bin_001FB680[0x8] = { 0x2f726373, 0x30726863, 0x5f333231, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0124Bin_001FB6A0 */
+static s32 gStrScrChr0124Bin_001FB6A0[0x8] = { 0x2f726373, 0x30726863, 0x5f343231, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0125Bin_001FB6C0 */
+static s32 gStrScrChr0125Bin_001FB6C0[0x8] = { 0x2f726373, 0x30726863, 0x5f353231, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0126Bin_001FB6E0 */
+static s32 gStrScrChr0126Bin_001FB6E0[0x8] = { 0x2f726373, 0x30726863, 0x5f363231, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gStrScrChr0127Bin_001FB700 */
+static s32 gStrScrChr0127Bin_001FB700[0x8] = { 0x2f726373, 0x30726863, 0x5f373231, 0x6e69622e, 0, 0, 0, 0 };
+/* data twins (src/game/data/fx_proc_rodata.c): gEnemyScriptRodata_001FB720 */
+static s32 gEnemyScriptRodata_001FB720[0x6] = { 0x2f726373, 0x30726863, 0x5f303032, 0x6e69622e, 0, 0 };
+/* data twins (src/game/data/sdata.c): gEnemyScriptSdata_00201C50 */
+static P_EnemyCmd_PlaySe_1_001453A0 gEnemyScriptSdata_00201C50 = { 5000.0f, 0.0f };
+#endif
+extern S_EnemyCmd_Set5B4b6_1_00143920 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B4b6_1_00143920;
+extern S_EnemyCmd_Set5B4b5_1_00143930 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B4b5_1_00143930;
+extern s8 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_GetRelativePos_0_00143960;
+extern S_EnemyCmd_Get608_1_00143B20 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_Get608_1_00143B20;
+extern S_EnemyCmd_Set5A1b5_1_00143BB0 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5A1b5_1_00143BB0;
+extern S_EnemyCmd_Set5B4b4_1_00143BC0 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B4b4_1_00143BC0;
+extern S_EnemyCmd_StartTimer_0_00143BD0 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_StartTimer_0_00143BD0;
+extern S_EnemyCmd_GetMotionFrame_1_00143C30 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_GetMotionFrame_1_00143C30;
+extern S_EnemyCmd_ResolveHit_0_00143C70 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_ResolveHit_0_00143C70;
+extern S_EnemyCmd_GetVec660_0_00143D60 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_GetVec660_0_00143D60;
+extern S_EnemyCmd_UpdatePartStat_1_00143DF0 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_UpdatePartStat_1_00143DF0;
+extern S_EnemyCmd_InitPart_1_00143E10 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_InitPart_1_00143E10;
+extern s8 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_GetTargetPos_0_001441B0;
+extern S_EnemyCmd_BroadcastMotion_1_001442F0 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_BroadcastMotion_1_001442F0;
+extern S_EnemyCmd_Kill_1_00144360 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_Kill_1_00144360;
+extern S_EnemyCmd_SetHiddenFlags_0_00144370 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_SetHiddenFlags_0_00144370;
+extern S_EnemyCmd_Set5B2b6w2_1_001443E0 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B2b6w2_1_001443E0;
+extern S_EnemyCmd_Set5B2b2_1_001443F0 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B2b2_1_001443F0;
+extern S_EnemyCmd_Set5B2b1_1_00144400 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B2b1_1_00144400;
+extern S_EnemyCmd_Set5B0b2_1_00144410 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B0b2_1_00144410;
+extern S_EnemyCmd_ClampHpFromFlag_1_00144420 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_ClampHpFromFlag_1_00144420;
+extern S_EnemyCmd_StoreHpToFlag_1_00144490 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_StoreHpToFlag_1_00144490;
+extern s8 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_FindSpawnPoint_0_001444F0;
+extern S_EnemyCmd_GetPosition_2_00144970 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_GetPosition_2_00144970;
+extern s8 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_SpawnEffect_0_00144A00;
+extern char *gEnemyScriptSbss_00201FA8__as_EnemyCmd_SpawnEffectB_0_00144BE0;
+extern S_EnemyCmd_Set5B2b0_1_00144D70 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B2b0_1_00144D70;
+extern S_EnemyCmd_BroadcastFrame_1_00144D80 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_BroadcastFrame_1_00144D80;
+extern S_EnemyCmd_Set5B1b7_1_00144DF0 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B1b7_1_00144DF0;
+extern S_EnemyCmd_Set5B1b6_1_00144E00 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B1b6_1_00144E00;
+extern S_EnemyCmd_BreakPart_1_00144E10 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_BreakPart_1_00144E10;
+extern S_EnemyCmd_Set5B0b0_1_00144E30 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B0b0_1_00144E30;
+extern S_EnemyCmd_HealPercent_1_00144E40 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_HealPercent_1_00144E40;
+extern Ctx *gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B1b2Notify_0_00144F00;
+extern S_EnemyCmd_GetParamIdx_1_00144F60 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_GetParamIdx_1_00144F60;
+extern S_EnemyCmd_Set5B1b1_1_00144FA0 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B1b1_1_00144FA0;
+extern S_EnemyCmd_UpdateParamFlags_1_00144FB0 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_UpdateParamFlags_1_00144FB0;
+extern S_EnemyCmd_RegisterKill_0_00144FC0 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_RegisterKill_0_00144FC0;
+extern S_EnemyCmd_RegisterSeen_0_00145010 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_RegisterSeen_0_00145010;
+extern S_EnemyCmd_Set5B1b0_1_00145060 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B1b0_1_00145060;
+extern S_EnemyCmd_SetDead_1_001450D0 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_SetDead_1_001450D0;
+extern S_EnemyCmd_Set5B0b7_1_001450E0 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B0b7_1_001450E0;
+extern S_EnemyCmd_GetType_1_00145140 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_GetType_1_00145140;
+extern S_EnemyCmd_Set5B0b1_1_00145180 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B0b1_1_00145180;
+extern S_EnemyCmd_AddHp_2_00145190 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_AddHp_2_00145190;
+extern S_EnemyCmd_Get5B0b0_1_001451A0 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_Get5B0b0_1_001451A0;
+extern S_EnemyCmd_AddPartValue_0_001451E0 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_AddPartValue_0_001451E0;
+extern S_EnemyCmd_GetHpPercent_2_00145250 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_GetHpPercent_2_00145250;
+extern S_EnemyCmd_SetMode_1_00145290 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_SetMode_1_00145290;
+extern S_EnemyCmd_PlaySe_1_001453A0 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_PlaySe_1_001453A0;
+extern s8 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_GetModelPos_0_00145410;
+extern S_EnemyCmd_ResetVectors_1_00145610 *gEnemyScriptSbss_00201FA8__as_EnemyCmd_ResetVectors_1_00145610;
 void Enemy_GetScreenSize_0_0013FEB0(O_Enemy_GetScreenSize_0_0013FEB0 *o, f32 *a1, f32 *a2);
 s32 Enemy_Ptr700_1_0013FF90(s32 arg0);
 s32 Enemy_Ptr6F0_1_0013FFA0(s32 arg0);
@@ -1294,256 +1461,256 @@ void EnemyScr_EventInit_1_001428C0(Obj_EnemyScr_EventInit_1_001428C0 *o)
 void EnemyScr_GetScriptPath_3_00142930(s32 arg0, void *arg1) {
     s32 temp_16;
 
-    sprintf(arg1, D_001FAD20);
+    sprintf(arg1, gStrScrChrtestBin_001FAD20);
     temp_16 = arg0 & 0xFF;
     if (temp_16 == 0x15) {
-        sprintf(arg1, D_001FAD40);
+        sprintf(arg1, gStrScrChr0021Bin_001FAD40);
     }
     if (temp_16 == 0x16) {
-        sprintf(arg1, D_001FAD60);
+        sprintf(arg1, gStrScrChr0022Bin_001FAD60);
     }
     if (temp_16 == 0x17) {
-        sprintf(arg1, D_001FAD80);
+        sprintf(arg1, gStrScrChr0023Bin_001FAD80);
     }
     if (temp_16 == 0x18) {
-        sprintf(arg1, D_001FADA0);
+        sprintf(arg1, gStrScrChr0024Bin_001FADA0);
     }
     if (temp_16 == 0x19) {
-        sprintf(arg1, D_001FADC0);
+        sprintf(arg1, gStrScrChr0025Bin_001FADC0);
     }
     if (temp_16 == 0x1A) {
-        sprintf(arg1, D_001FADE0);
+        sprintf(arg1, gStrScrChr0026Bin_001FADE0);
     }
     if (temp_16 == 0x1B) {
-        sprintf(arg1, D_001FAE00);
+        sprintf(arg1, gStrScrChr0027Bin_001FAE00);
     }
     if (temp_16 == 0x1C) {
-        sprintf(arg1, D_001FAE20);
+        sprintf(arg1, gStrScrChr0028Bin_001FAE20);
     }
     if (temp_16 == 0x1D) {
-        sprintf(arg1, D_001FAE40);
+        sprintf(arg1, gStrScrChr0029Bin_001FAE40);
     }
     if (temp_16 == 0x1E) {
-        sprintf(arg1, D_001FAE60);
+        sprintf(arg1, gStrScrChr0030Bin_001FAE60);
     }
     if (temp_16 == 0x1F) {
-        sprintf(arg1, D_001FAE80);
+        sprintf(arg1, gStrScrChr0031Bin_001FAE80);
     }
     if (temp_16 == 0x20) {
-        sprintf(arg1, D_001FAEA0);
+        sprintf(arg1, gStrScrChr0032Bin_001FAEA0);
     }
     if (temp_16 == 0x21) {
-        sprintf(arg1, D_001FAEC0);
+        sprintf(arg1, gStrScrChr0033Bin_001FAEC0);
     }
     if (temp_16 == 0x22) {
-        sprintf(arg1, D_001FAEE0);
+        sprintf(arg1, gStrScrChr0034Bin_001FAEE0);
     }
     if (temp_16 == 0x23) {
-        sprintf(arg1, D_001FAF00);
+        sprintf(arg1, gStrScrChr0035Bin_001FAF00);
     }
     if (temp_16 == 0x24) {
-        sprintf(arg1, D_001FAF20);
+        sprintf(arg1, gStrScrChr0036Bin_001FAF20);
     }
     if (temp_16 == 0x25) {
-        sprintf(arg1, D_001FAF40);
+        sprintf(arg1, gStrScrChr0037Bin_001FAF40);
     }
     if (temp_16 == 0x26) {
-        sprintf(arg1, D_001FAF60);
+        sprintf(arg1, gStrScrChr0038Bin_001FAF60);
     }
     if (temp_16 == 0x27) {
-        sprintf(arg1, D_001FAF80);
+        sprintf(arg1, gStrScrChr0039Bin_001FAF80);
     }
     if (temp_16 == 0x28) {
-        sprintf(arg1, D_001FAFA0);
+        sprintf(arg1, gStrScrChr0040Bin_001FAFA0);
     }
     if (temp_16 == 0x29) {
-        sprintf(arg1, D_001FAFC0);
+        sprintf(arg1, gStrScrChr0041Bin_001FAFC0);
     }
     if (temp_16 == 0x2A) {
-        sprintf(arg1, D_001FAFE0);
+        sprintf(arg1, gStrScrChr0042Bin_001FAFE0);
     }
     if (temp_16 == 0x2B) {
-        sprintf(arg1, D_001FB000);
+        sprintf(arg1, gStrScrChr0043Bin_001FB000);
     }
     if (temp_16 == 0x2C) {
-        sprintf(arg1, D_001FB020);
+        sprintf(arg1, gStrScrChr0044Bin_001FB020);
     }
     if (temp_16 == 0x2D) {
-        sprintf(arg1, D_001FB040);
+        sprintf(arg1, gStrScrChr0045Bin_001FB040);
     }
     if (temp_16 == 0x2E) {
-        sprintf(arg1, D_001FB060);
+        sprintf(arg1, gStrScrChr0046Bin_001FB060);
     }
     if (temp_16 == 0x2F) {
-        sprintf(arg1, D_001FB080);
+        sprintf(arg1, gStrScrChr0047Bin_001FB080);
     }
     if (temp_16 == 0x30) {
-        sprintf(arg1, D_001FB0A0);
+        sprintf(arg1, gStrScrChr0048Bin_001FB0A0);
     }
     if (temp_16 == 0x31) {
-        sprintf(arg1, D_001FB0C0);
+        sprintf(arg1, gStrScrChr0049Bin_001FB0C0);
     }
     if (temp_16 == 0x32) {
-        sprintf(arg1, D_001FB0E0);
+        sprintf(arg1, gStrScrChr0050Bin_001FB0E0);
     }
     if (temp_16 == 0x33) {
-        sprintf(arg1, D_001FB100);
+        sprintf(arg1, gStrScrChr0051Bin_001FB100);
     }
     if (temp_16 == 0x34) {
-        sprintf(arg1, D_001FB120);
+        sprintf(arg1, gStrScrChr0052Bin_001FB120);
     }
     if (temp_16 == 0x35) {
-        sprintf(arg1, D_001FB140);
+        sprintf(arg1, gStrScrChr0053Bin_001FB140);
     }
     if (temp_16 == 0x36) {
-        sprintf(arg1, D_001FB160);
+        sprintf(arg1, gStrScrChr0054Bin_001FB160);
     }
     if (temp_16 == 0x37) {
-        sprintf(arg1, D_001FB180);
+        sprintf(arg1, gStrScrChr0055Bin_001FB180);
     }
     if (temp_16 == 0x38) {
-        sprintf(arg1, D_001FB1A0);
+        sprintf(arg1, gStrScrChr0056Bin_001FB1A0);
     }
     if (temp_16 == 0x39) {
-        sprintf(arg1, D_001FB1C0);
+        sprintf(arg1, gStrScrChr0057Bin_001FB1C0);
     }
     if (temp_16 == 0x3A) {
-        sprintf(arg1, D_001FB1E0);
+        sprintf(arg1, gStrScrChr0058Bin_001FB1E0);
     }
     if (temp_16 == 0x3B) {
-        sprintf(arg1, D_001FB200);
+        sprintf(arg1, gStrScrChr0059Bin_001FB200);
     }
     if (temp_16 == 0x3C) {
-        sprintf(arg1, D_001FB220);
+        sprintf(arg1, gStrScrChr0060Bin_001FB220);
     }
     if (temp_16 == 0x3D) {
-        sprintf(arg1, D_001FB240);
+        sprintf(arg1, gStrScrChr0061Bin_001FB240);
     }
     if (temp_16 == 0x3E) {
-        sprintf(arg1, D_001FB260);
+        sprintf(arg1, gStrScrChr0062Bin_001FB260);
     }
     if (temp_16 == 0x3F) {
-        sprintf(arg1, D_001FB280);
+        sprintf(arg1, gStrScrChr0063Bin_001FB280);
     }
     if (temp_16 == 0x40) {
-        sprintf(arg1, D_001FB2A0);
+        sprintf(arg1, gStrScrChr0064Bin_001FB2A0);
     }
     if (temp_16 == 0x41) {
-        sprintf(arg1, D_001FB2C0);
+        sprintf(arg1, gStrScrChr0065Bin_001FB2C0);
     }
     if (temp_16 == 0x42) {
-        sprintf(arg1, D_001FB2E0);
+        sprintf(arg1, gStrScrChr0066Bin_001FB2E0);
     }
     if (temp_16 == 0x43) {
-        sprintf(arg1, D_001FB300);
+        sprintf(arg1, gStrScrChr0067Bin_001FB300);
     }
     if (temp_16 == 0x44) {
-        sprintf(arg1, D_001FB320);
+        sprintf(arg1, gStrScrChr0068Bin_001FB320);
     }
     if (temp_16 == 0x45) {
-        sprintf(arg1, D_001FB340);
+        sprintf(arg1, gStrScrChr0069Bin_001FB340);
     }
     if (temp_16 == 0x46) {
-        sprintf(arg1, D_001FB360);
+        sprintf(arg1, gStrScrChr0070Bin_001FB360);
     }
     if (temp_16 == 0x47) {
-        sprintf(arg1, D_001FB380);
+        sprintf(arg1, gStrScrChr0071Bin_001FB380);
     }
     if (temp_16 == 0x48) {
-        sprintf(arg1, D_001FB3A0);
+        sprintf(arg1, gStrScrChr0072Bin_001FB3A0);
     }
     if (temp_16 == 0x49) {
-        sprintf(arg1, D_001FB3C0);
+        sprintf(arg1, gStrScrChr0073Bin_001FB3C0);
     }
     if (temp_16 == 0x51) {
-        sprintf(arg1, D_001FB3E0);
+        sprintf(arg1, gStrScrChr0081Bin_001FB3E0);
     }
     if (temp_16 == 0x52) {
-        sprintf(arg1, D_001FB400);
+        sprintf(arg1, gStrScrChr0082Bin_001FB400);
     }
     if (temp_16 == 0x53) {
-        sprintf(arg1, D_001FB420);
+        sprintf(arg1, gStrScrChr0083Bin_001FB420);
     }
     if (temp_16 == 0x5B) {
-        sprintf(arg1, D_001FB440);
+        sprintf(arg1, gStrScrChr0091Bin_001FB440);
     }
     if (temp_16 == 0x5C) {
-        sprintf(arg1, D_001FB460);
+        sprintf(arg1, gStrScrChr0092Bin_001FB460);
     }
     if (temp_16 == 0x5E) {
-        sprintf(arg1, D_001FB480);
+        sprintf(arg1, gStrScrChr0094Bin_001FB480);
     }
     if (temp_16 == 0x5F) {
-        sprintf(arg1, D_001FB4A0);
+        sprintf(arg1, gStrScrChr0095Bin_001FB4A0);
     }
     if (temp_16 == 0x62) {
-        sprintf(arg1, D_001FB4C0);
+        sprintf(arg1, gStrScrChr0098Bin_001FB4C0);
     }
     if (temp_16 == 0x65) {
-        sprintf(arg1, D_001FB4E0);
+        sprintf(arg1, gStrScrChr0101Bin_001FB4E0);
     }
     if (temp_16 == 0x66) {
-        sprintf(arg1, D_001FB500);
+        sprintf(arg1, gStrScrChr0102Bin_001FB500);
     }
     if (temp_16 == 0x67) {
-        sprintf(arg1, D_001FB520);
+        sprintf(arg1, gStrScrChr0103Bin_001FB520);
     }
     if (temp_16 == 0x68) {
-        sprintf(arg1, D_001FB540);
+        sprintf(arg1, gStrScrChr0104Bin_001FB540);
     }
     if (temp_16 == 0x69) {
-        sprintf(arg1, D_001FB560);
+        sprintf(arg1, gStrScrChr0105Bin_001FB560);
     }
     if (temp_16 == 0x6B) {
-        sprintf(arg1, D_001FB580);
+        sprintf(arg1, gStrScrChr0107Bin_001FB580);
     }
     if (temp_16 == 0x6C) {
-        sprintf(arg1, D_001FB5A0);
+        sprintf(arg1, gStrScrChr0108Bin_001FB5A0);
     }
     if (temp_16 == 0x6D) {
-        sprintf(arg1, D_001FB5C0);
+        sprintf(arg1, gStrScrChr0109Bin_001FB5C0);
     }
     if (temp_16 == 0x6E) {
-        sprintf(arg1, D_001FB5E0);
+        sprintf(arg1, gStrScrChr0110Bin_001FB5E0);
     }
     if (temp_16 == 0x76) {
-        sprintf(arg1, D_001FB600);
+        sprintf(arg1, gStrScrChr0118Bin_001FB600);
     }
     if (temp_16 == 0x77) {
-        sprintf(arg1, D_001FB620);
+        sprintf(arg1, gStrScrChr0119Bin_001FB620);
     }
     if (temp_16 == 0x78) {
-        sprintf(arg1, D_001FB640);
+        sprintf(arg1, gStrScrChr0120Bin_001FB640);
     }
     if (temp_16 == 0x7A) {
-        sprintf(arg1, D_001FB660);
+        sprintf(arg1, gStrScrChr0122Bin_001FB660);
     }
     if (temp_16 == 0x7B) {
-        sprintf(arg1, D_001FB680);
+        sprintf(arg1, gStrScrChr0123Bin_001FB680);
     }
     if (temp_16 == 0x7C) {
-        sprintf(arg1, D_001FB6A0);
+        sprintf(arg1, gStrScrChr0124Bin_001FB6A0);
     }
     if (temp_16 == 0x7D) {
-        sprintf(arg1, D_001FB6C0);
+        sprintf(arg1, gStrScrChr0125Bin_001FB6C0);
     }
     if (temp_16 == 0x7E) {
-        sprintf(arg1, D_001FB6E0);
+        sprintf(arg1, gStrScrChr0126Bin_001FB6E0);
     }
     if (temp_16 == 0x7F) {
-        sprintf(arg1, D_001FB700);
+        sprintf(arg1, gStrScrChr0127Bin_001FB700);
     }
     if (temp_16 == 0xBE) {
-        sprintf(arg1, D_001FB720);
+        sprintf(arg1, gEnemyScriptRodata_001FB720);
     }
     if (temp_16 == 0xBF) {
-        sprintf(arg1, D_001FB720);
+        sprintf(arg1, gEnemyScriptRodata_001FB720);
     }
     if (temp_16 == 0xC0) {
-        sprintf(arg1, D_001FB720);
+        sprintf(arg1, gEnemyScriptRodata_001FB720);
     }
     if (temp_16 == 0xC1) {
-        sprintf(arg1, D_001FB720);
+        sprintf(arg1, gEnemyScriptRodata_001FB720);
     }
     if (arg1 != NULL) {
         M2C_FIELD(arg1, s8 *, 0xB) = 0x42;
@@ -1795,7 +1962,7 @@ void EnemyCmd_Nop_1_00143890(void) {
 
 /* EnemyCmd_Set5B5b7_1_001438A0 */
 void EnemyCmd_Set5B5b7_1_001438A0(void) {
-    Enemy_Set5B5b7_1_0013E950(M2C_FIELD(D_00201FA8, void **, 0x154), 1);
+    Enemy_Set5B5b7_1_0013E950(M2C_FIELD(gEnemyScriptSbss_00201FA8, void **, 0x154), 1);
 }
 
 /* EnemyCmd_GetFlag_0_001438B0 */
@@ -1815,23 +1982,23 @@ void EnemyCmd_GetGlobal_0_001438F0(s32 a)
 }
 
 /* EnemyCmd_Set5B4b6_1_00143920 */
-void EnemyCmd_Set5B4b6_1_00143920(u8 *arg0) { Enemy_Set5B4b6_1_0013E490(D_00201FA8__as_EnemyCmd_Set5B4b6_1_00143920->p, arg0[8]); }
+void EnemyCmd_Set5B4b6_1_00143920(u8 *arg0) { Enemy_Set5B4b6_1_0013E490(gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B4b6_1_00143920->p, arg0[8]); }
 
 /* EnemyCmd_Set5B4b5_1_00143930 */
 
 void EnemyCmd_Set5B4b5_1_00143930(u8 *arg0)
 {
-    Enemy_Set5B4b5_1_0013E4B0(D_00201FA8__as_EnemyCmd_Set5B4b5_1_00143930->p, arg0[8]);
+    Enemy_Set5B4b5_1_0013E4B0(gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B4b5_1_00143930->p, arg0[8]);
 }
 
 /* EnemyCmd_Set5B8_1_00143940 */
 void EnemyCmd_Set5B8_1_00143940(void *arg0) {
-    Enemy_Set5B8_1_0013E480(M2C_FIELD(D_00201FA8, s32 *, 0x154), M2C_FIELD(arg0, f32 *, 8));
+    Enemy_Set5B8_1_0013E480(M2C_FIELD(gEnemyScriptSbss_00201FA8, s32 *, 0x154), M2C_FIELD(arg0, f32 *, 8));
 }
 
 /* EnemyCmd_Set60B_1_00143950 */
 void EnemyCmd_Set60B_1_00143950(void *arg0) {
-    Enemy_Set60B_1_0013E250(M2C_FIELD(D_00201FA8, s32 *, 0x154), M2C_FIELD(arg0, u8 *, 8));
+    Enemy_Set60B_1_0013E250(M2C_FIELD(gEnemyScriptSbss_00201FA8, s32 *, 0x154), M2C_FIELD(arg0, u8 *, 8));
 }
 
 /* EnemyCmd_GetRelativePos_0_00143960 */
@@ -1843,7 +2010,7 @@ void EnemyCmd_GetRelativePos_0_00143960(Arg_EnemyCmd_GetRelativePos_0_00143960 *
     s8 *g;
     u8 type;
 
-    g = D_00201FA8__as_EnemyCmd_GetRelativePos_0_00143960;
+    g = gEnemyScriptSbss_00201FA8__as_EnemyCmd_GetRelativePos_0_00143960;
     type = arg0->type;
     o = *(s8 **)(g + 0x154);
     d.x = arg0->a;
@@ -1876,7 +2043,7 @@ void EnemyCmd_GetRelativePos_0_00143960(Arg_EnemyCmd_GetRelativePos_0_00143960 *
 
 void EnemyCmd_Get608_1_00143B20(s32 a)
 {
-    void *p = D_00201FA8__as_EnemyCmd_Get608_1_00143B20->p;
+    void *p = gEnemyScriptSbss_00201FA8__as_EnemyCmd_Get608_1_00143B20->p;
     s8 *q = Script_GetArgPtr_2_00165130__as_EnemyCmd_Get608_1_00143B20(a, 0);
     *q = Enemy_Get608_1_0013E290(p);
 }
@@ -1891,21 +2058,21 @@ void EnemyCmd_GetPlayerValue_0_00143B60(s32 a)
 
 /* EnemyCmd_SelectMotion_1_00143B90 */
 void EnemyCmd_SelectMotion_1_00143B90(void *arg0) {
-    Enemy_SelectMotion_0_0013C420(M2C_FIELD(D_00201FA8, void **, 0x154), (s32) M2C_FIELD(arg0, u8 *, 8), (s64) M2C_FIELD(arg0, s16 *, 0x10), 2);
+    Enemy_SelectMotion_0_0013C420(M2C_FIELD(gEnemyScriptSbss_00201FA8, void **, 0x154), (s32) M2C_FIELD(arg0, u8 *, 8), (s64) M2C_FIELD(arg0, s16 *, 0x10), 2);
 }
 
 /* EnemyCmd_Set5A1b5_1_00143BB0 */
 
 void EnemyCmd_Set5A1b5_1_00143BB0(u8 *arg0)
 {
-    Enemy_Set5A1b5_1_0013EE90(D_00201FA8__as_EnemyCmd_Set5A1b5_1_00143BB0->p, arg0[8]);
+    Enemy_Set5A1b5_1_0013EE90(gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5A1b5_1_00143BB0->p, arg0[8]);
 }
 
 /* EnemyCmd_Set5B4b4_1_00143BC0 */
 
 void EnemyCmd_Set5B4b4_1_00143BC0(u8 *arg0)
 {
-    Enemy_Set5B4b4_1_0013E5F0(D_00201FA8__as_EnemyCmd_Set5B4b4_1_00143BC0->p, arg0[8]);
+    Enemy_Set5B4b4_1_0013E5F0(gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B4b4_1_00143BC0->p, arg0[8]);
 }
 
 /* EnemyCmd_StartTimer_0_00143BD0 */
@@ -1913,7 +2080,7 @@ void EnemyCmd_Set5B4b4_1_00143BC0(u8 *arg0)
 void EnemyCmd_StartTimer_0_00143BD0(Obj_EnemyCmd_StartTimer_0_00143BD0 *o)
 {
     f32 f = o->f;
-    void *p = D_00201FA8__as_EnemyCmd_StartTimer_0_00143BD0->p;
+    void *p = gEnemyScriptSbss_00201FA8__as_EnemyCmd_StartTimer_0_00143BD0->p;
     Enemy_Set5B4b3_1_0013E620(p, 1);
     Enemy_Set5C8_1_0013E450(p, f);
     Enemy_Set5C0_1_0013E470(p, 0.0f);
@@ -1923,7 +2090,7 @@ void EnemyCmd_StartTimer_0_00143BD0(Obj_EnemyCmd_StartTimer_0_00143BD0 *o)
 
 void EnemyCmd_GetMotionFrame_1_00143C30(s32 a)
 {
-    void *p = D_00201FA8__as_EnemyCmd_GetMotionFrame_1_00143C30->p;
+    void *p = gEnemyScriptSbss_00201FA8__as_EnemyCmd_GetMotionFrame_1_00143C30->p;
     s8 *q = Script_GetArgPtr_2_00165130__as_EnemyCmd_GetMotionFrame_1_00143C30(a, 0);
     *q = Enemy_GetMotionFrame_0_0013ECA0(p);
 }
@@ -1932,7 +2099,7 @@ void EnemyCmd_GetMotionFrame_1_00143C30(s32 a)
 
 void EnemyCmd_ResolveHit_0_00143C70(u8 *o)
 {
-    s32 h = D_00201FA8__as_EnemyCmd_ResolveHit_0_00143C70->p;
+    s32 h = gEnemyScriptSbss_00201FA8__as_EnemyCmd_ResolveHit_0_00143C70->p;
     u8 m = o[8];
     void *p = Script_GetArgPtr_2_00165130__as_EnemyCmd_ResolveHit_0_00143C70(o, 1);
     void *q = Script_GetArgPtr_2_00165130__as_EnemyCmd_ResolveHit_0_00143C70(o, 2);
@@ -1942,14 +2109,14 @@ void EnemyCmd_ResolveHit_0_00143C70(u8 *o)
 
 /* EnemyCmd_SetPartValue_1_00143D10 */
 void EnemyCmd_SetPartValue_1_00143D10(void *arg0) {
-    Enemy_SetPartValue_1_0013E3F0(M2C_FIELD(D_00201FA8, s32 *, 0x154), (s32) M2C_FIELD(arg0, u8 *, 8), (M2C_FIELD(arg0, u8 *, 0x10) | ((M2C_FIELD(arg0, u8 *, 0x18) * 8) | ((M2C_FIELD(arg0, u8 *, 0x20) << 6) | ((M2C_FIELD(arg0, u8 *, 0x30) << 0xA) | (M2C_FIELD(arg0, u8 *, 0x28) << 9))))) & 0xFFFF);
+    Enemy_SetPartValue_1_0013E3F0(M2C_FIELD(gEnemyScriptSbss_00201FA8, s32 *, 0x154), (s32) M2C_FIELD(arg0, u8 *, 8), (M2C_FIELD(arg0, u8 *, 0x10) | ((M2C_FIELD(arg0, u8 *, 0x18) * 8) | ((M2C_FIELD(arg0, u8 *, 0x20) << 6) | ((M2C_FIELD(arg0, u8 *, 0x30) << 0xA) | (M2C_FIELD(arg0, u8 *, 0x28) << 9))))) & 0xFFFF);
 }
 
 /* EnemyCmd_GetVec660_0_00143D60 */
 
 void EnemyCmd_GetVec660_0_00143D60(void *o)
 {
-    void *q = D_00201FA8__as_EnemyCmd_GetVec660_0_00143D60->p;
+    void *q = gEnemyScriptSbss_00201FA8__as_EnemyCmd_GetVec660_0_00143D60->p;
     f32 *x = Script_GetArgPtr_2_00165130__as_EnemyCmd_GetVec660_0_00143D60(o, 0);
     f32 *y = Script_GetArgPtr_2_00165130__as_EnemyCmd_GetVec660_0_00143D60(o, 1);
     f32 *z = Script_GetArgPtr_2_00165130__as_EnemyCmd_GetVec660_0_00143D60(o, 2);
@@ -1964,19 +2131,19 @@ void EnemyCmd_GetVec660_0_00143D60(void *o)
 
 void EnemyCmd_UpdatePartStat_1_00143DF0(u8 *arg0)
 {
-    Enemy_UpdatePartStat_0_0013F0C0(D_00201FA8__as_EnemyCmd_UpdatePartStat_1_00143DF0->p, arg0[8]);
+    Enemy_UpdatePartStat_0_0013F0C0(gEnemyScriptSbss_00201FA8__as_EnemyCmd_UpdatePartStat_1_00143DF0->p, arg0[8]);
 }
 
 /* EnemyCmd_LoadPart_1_00143E00 */
 void EnemyCmd_LoadPart_1_00143E00(void *arg0) {
-    Enemy_LoadPartWrap_0_0013F0B0(M2C_FIELD(D_00201FA8, s32 *, 0x154), M2C_FIELD(arg0, u8 *, 8));
+    Enemy_LoadPartWrap_0_0013F0B0(M2C_FIELD(gEnemyScriptSbss_00201FA8, s32 *, 0x154), M2C_FIELD(arg0, u8 *, 8));
 }
 
 /* EnemyCmd_InitPart_1_00143E10 */
 
 void EnemyCmd_InitPart_1_00143E10(u8 *arg0)
 {
-    Enemy_InitPart_1_0013F1B0(D_00201FA8__as_EnemyCmd_InitPart_1_00143E10->p, arg0[8]);
+    Enemy_InitPart_1_0013F1B0(gEnemyScriptSbss_00201FA8__as_EnemyCmd_InitPart_1_00143E10->p, arg0[8]);
 }
 
 /* EnemyCmd_FindTargetInCone_0_00143E20 */
@@ -2017,11 +2184,11 @@ void EnemyCmd_FindTargetInCone_0_00143E20(s8 *a0, s32 a1, u8 a2, s32 a3, s32 t0,
                 sceVu0CopyVector__as_EnemyCmd_FindTargetInCone_0_00143E20(&b.e, &p);
                 b.e.w = 1.0f;
                 memset(&r, 0, 0x40);
-                if (((s32 **)&D_00201E80)[2] != NULL) {
-                    Enemy_RaycastMapC_0_0013D430(*((s32 **)&D_00201E80)[2], &r, &b, 6, 3);
+                if (((s32 **)&gMapSbss_00201E80)[2] != NULL) {
+                    Enemy_RaycastMapC_0_0013D430(*((s32 **)&gMapSbss_00201E80)[2], &r, &b, 6, 3);
                 }
-                if (r.hit == 0 && ((s32 **)&D_00201E80)[3] != NULL) {
-                    Enemy_RaycastMapC_0_0013D430(*((s32 **)&D_00201E80)[3], &r, &b, 6, 3);
+                if (r.hit == 0 && ((s32 **)&gMapSbss_00201E80)[3] != NULL) {
+                    Enemy_RaycastMapC_0_0013D430(*((s32 **)&gMapSbss_00201E80)[3], &r, &b, 6, 3);
                 }
                 if (r.hit != 0) {
                     sceVu0SubVector(&p, &r, &b);
@@ -2062,7 +2229,7 @@ void EnemyCmd_GetTargetPos_0_001441B0(s8 *arg0) {
     x = M2C_FIELD(arg0, s16 *, 0x18);
     y = M2C_FIELD(arg0, s16 *, 0x20);
     z = M2C_FIELD(arg0, s16 *, 0x28);
-    obj = M2C_FIELD(D_00201FA8__as_EnemyCmd_GetTargetPos_0_001441B0, s8 **, 0x154);
+    obj = M2C_FIELD(gEnemyScriptSbss_00201FA8__as_EnemyCmd_GetTargetPos_0_001441B0, s8 **, 0x154);
     f = M2C_FIELD(arg0, f32 *, 0x30);
     if (type == 0) {
         EnemyCmd_FindTargetInCone_0_00143E20__as_EnemyCmd_GetTargetPos_0_001441B0(obj, type, b, x, y, z, f);
@@ -2086,7 +2253,7 @@ void EnemyCmd_BroadcastMotion_1_001442F0(u8 *o)
 {
     u8 a = o[8];
     u8 b = o[0x10];
-    void *p = D_00201FA8__as_EnemyCmd_BroadcastMotion_1_001442F0->p;
+    void *p = gEnemyScriptSbss_00201FA8__as_EnemyCmd_BroadcastMotion_1_001442F0->p;
     u8 x = Enemy_GetTargetHandle_0_0013EDE0__as_EnemyCmd_BroadcastMotion_1_001442F0(p);
     EnemyScr_BroadcastMotionEvent_0_00140F90(x, a, (u8)Enemy_GetMotionId_0_0013ED20(p), b);
 }
@@ -2095,14 +2262,14 @@ void EnemyCmd_BroadcastMotion_1_001442F0(u8 *o)
 
 void EnemyCmd_Kill_1_00144360(u8 *arg0)
 {
-    Enemy_Kill_1_0013EF80(D_00201FA8__as_EnemyCmd_Kill_1_00144360->p, arg0[8]);
+    Enemy_Kill_1_0013EF80(gEnemyScriptSbss_00201FA8__as_EnemyCmd_Kill_1_00144360->p, arg0[8]);
 }
 
 /* EnemyCmd_SetHiddenFlags_0_00144370 */
 
 void EnemyCmd_SetHiddenFlags_0_00144370(u8 *o)
 {
-    void *p = D_00201FA8__as_EnemyCmd_SetHiddenFlags_0_00144370->p;
+    void *p = gEnemyScriptSbss_00201FA8__as_EnemyCmd_SetHiddenFlags_0_00144370->p;
     u8 a = o[8];
     u8 b = o[0x10];
     if (a)
@@ -2120,33 +2287,33 @@ void EnemyCmd_ReturnToTitle_1_001443D0(void) {
 
 void EnemyCmd_Set5B2b6w2_1_001443E0(u8 *arg0)
 {
-    Enemy_Set5B2b6w2_1_0013E730(D_00201FA8__as_EnemyCmd_Set5B2b6w2_1_001443E0->p, arg0[8]);
+    Enemy_Set5B2b6w2_1_0013E730(gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B2b6w2_1_001443E0->p, arg0[8]);
 }
 
 /* EnemyCmd_Set5B2b2_1_001443F0 */
 
 void EnemyCmd_Set5B2b2_1_001443F0(u8 *arg0)
 {
-    Enemy_Set5B2b2_1_0013E840(D_00201FA8__as_EnemyCmd_Set5B2b2_1_001443F0->p, arg0[8]);
+    Enemy_Set5B2b2_1_0013E840(gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B2b2_1_001443F0->p, arg0[8]);
 }
 
 /* EnemyCmd_Set5B2b1_1_00144400 */
 
 void EnemyCmd_Set5B2b1_1_00144400(u8 *arg0)
 {
-    Enemy_Set5B2b1_1_0013E860(D_00201FA8__as_EnemyCmd_Set5B2b1_1_00144400->p, arg0[8]);
+    Enemy_Set5B2b1_1_0013E860(gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B2b1_1_00144400->p, arg0[8]);
 }
 
 /* EnemyCmd_Set5B0b2_1_00144410 */
 
 void EnemyCmd_Set5B0b2_1_00144410(u8 *arg0)
 {
-    Enemy_Set5B0b2_1_0013EBF0(D_00201FA8__as_EnemyCmd_Set5B0b2_1_00144410->p, arg0[8]);
+    Enemy_Set5B0b2_1_0013EBF0(gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B0b2_1_00144410->p, arg0[8]);
 }
 
 /* EnemyCmd_ClampHpFromFlag_1_00144420 */
 void EnemyCmd_ClampHpFromFlag_1_00144420(u8 *o) {
-    void *p = D_00201FA8__as_EnemyCmd_ClampHpFromFlag_1_00144420->p;
+    void *p = gEnemyScriptSbss_00201FA8__as_EnemyCmd_ClampHpFromFlag_1_00144420->p;
     u16 a = GameFlag_GetHalf_0_0013D560(o[8], o[0x10]);
     u16 b = Enemy_GetHp_2_0013F750(p);
     if (a < b && a > 0) {
@@ -2160,12 +2327,12 @@ void EnemyCmd_StoreHpToFlag_1_00144490(u8 *o)
 {
     u8 a = o[8];
     u8 b = o[0x10];
-    GameFlag_GetWordWrap_0_0013D540(a, b, Enemy_GetHp_2_0013F750__as_EnemyCmd_StoreHpToFlag_1_00144490(D_00201FA8__as_EnemyCmd_StoreHpToFlag_1_00144490->p));
+    GameFlag_GetWordWrap_0_0013D540(a, b, Enemy_GetHp_2_0013F750__as_EnemyCmd_StoreHpToFlag_1_00144490(gEnemyScriptSbss_00201FA8__as_EnemyCmd_StoreHpToFlag_1_00144490->p));
 }
 
 /* EnemyCmd_Set5B1b4_1_001444E0 */
 void EnemyCmd_Set5B1b4_1_001444E0(void) {
-    Enemy_Set5B1b4IfUnlocked_0_0013E980(M2C_FIELD(D_00201FA8, void **, 0x154), 1);
+    Enemy_Set5B1b4IfUnlocked_0_0013E980(M2C_FIELD(gEnemyScriptSbss_00201FA8, void **, 0x154), 1);
 }
 
 /* EnemyCmd_FindSpawnPoint_0_001444F0 */
@@ -2194,7 +2361,7 @@ void EnemyCmd_FindSpawnPoint_0_001444F0(Msg *m) {
     mask = m->x8;
     f21 = m->x20;
     id = m->x10;
-    o = *(O_EnemyCmd_Nop_1_00143890 **)(D_00201FA8__as_EnemyCmd_FindSpawnPoint_0_001444F0 + 0x154);
+    o = *(O_EnemyCmd_Nop_1_00143890 **)(gEnemyScriptSbss_00201FA8__as_EnemyCmd_FindSpawnPoint_0_001444F0 + 0x154);
     res = Script_GetArgPtr_2_00165130__as_EnemyCmd_FindSpawnPoint_0_001444F0(m, 4);
     e = Enemy_GetParamPtr10_1_0013E070(o);
     best = 0xFFFF;
@@ -2267,21 +2434,21 @@ void EnemyCmd_FindSpawnPoint_0_001444F0(Msg *m) {
     sceVu0CopyVector__as_EnemyCmd_FindSpawnPoint_0_001444F0(&B, Player_GetBody_1_00145770());
     B.w = 1.0f;
     memset(&buf, 0, 0x40);
-    if ((&D_00201E80)[2]) Enemy_RaycastMapB_0_0013D320(*(s32 *)(&D_00201E80)[2], &buf, &A_EnemyCmd_Nop_1_00143890, 6, 7);
-    if (buf.x24 == 0 && (&D_00201E80)[3]) Enemy_RaycastMapB_0_0013D320(*(s32 *)(&D_00201E80)[3], &buf, &A_EnemyCmd_Nop_1_00143890, 6, 7);
+    if ((&gMapSbss_00201E80)[2]) Enemy_RaycastMapB_0_0013D320(*(s32 *)(&gMapSbss_00201E80)[2], &buf, &A_EnemyCmd_Nop_1_00143890, 6, 7);
+    if (buf.x24 == 0 && (&gMapSbss_00201E80)[3]) Enemy_RaycastMapB_0_0013D320(*(s32 *)(&gMapSbss_00201E80)[3], &buf, &A_EnemyCmd_Nop_1_00143890, 6, 7);
     if (buf.x24) *res = 0xFF;
 }
 
 /* EnemyCmd_Set5B2b4_1_00144960 */
 void EnemyCmd_Set5B2b4_1_00144960(void) {
-    Enemy_Set5B2b4_1_0013E790(M2C_FIELD(D_00201FA8, void **, 0x154), 1);
+    Enemy_Set5B2b4_1_0013E790(M2C_FIELD(gEnemyScriptSbss_00201FA8, void **, 0x154), 1);
 }
 
 /* EnemyCmd_GetPosition_2_00144970 */
 
 void EnemyCmd_GetPosition_2_00144970(void *o)
 {
-    void *q = D_00201FA8__as_EnemyCmd_GetPosition_2_00144970->p;
+    void *q = gEnemyScriptSbss_00201FA8__as_EnemyCmd_GetPosition_2_00144970->p;
     f32 *x = Script_GetArgPtr_2_00165130__as_EnemyCmd_GetPosition_2_00144970(o, 0);
     f32 *y = Script_GetArgPtr_2_00165130__as_EnemyCmd_GetPosition_2_00144970(o, 1);
     f32 *z = Script_GetArgPtr_2_00165130__as_EnemyCmd_GetPosition_2_00144970(o, 2);
@@ -2298,7 +2465,7 @@ void EnemyCmd_SpawnEffect_0_00144A00(s8 *a0) {
     Vec A_EnemyCmd_Nop_1_00143890;
     Vec B;
     Vec C_EnemyCmd_Nop_1_00143890;
-    s8 *o = *(s8 **)(D_00201FA8__as_EnemyCmd_SpawnEffect_0_00144A00 + 0x154);
+    s8 *o = *(s8 **)(gEnemyScriptSbss_00201FA8__as_EnemyCmd_SpawnEffect_0_00144A00 + 0x154);
     u16 id = *(u16 *)(a0 + 8);
     s32 k = *(u8 *)(a0 + 0x10);
     s8 *res = Script_GetArgPtr_2_00165130__as_EnemyCmd_SpawnEffect_0_00144A00(a0, 2);
@@ -2343,7 +2510,7 @@ void EnemyCmd_StopEffect_0_00144B80(u16 *a0) {
 /* EnemyCmd_SpawnEffectB_0_00144BE0 */
 
 void EnemyCmd_SpawnEffectB_0_00144BE0(Arg_EnemyCmd_SpawnEffectB_0_00144BE0 *a0) {
-    char *pl = *(char **)(D_00201FA8__as_EnemyCmd_SpawnEffectB_0_00144BE0 + 0x154);
+    char *pl = *(char **)(gEnemyScriptSbss_00201FA8__as_EnemyCmd_SpawnEffectB_0_00144BE0 + 0x154);
     u16 n = a0->x8;
     u8 *out = Script_GetArgPtr_2_00165130__as_EnemyCmd_SpawnEffectB_0_00144BE0(a0, 1);
     f32 f22 = a0->x18;
@@ -2374,19 +2541,19 @@ void EnemyCmd_SpawnEffectB_0_00144BE0(Arg_EnemyCmd_SpawnEffectB_0_00144BE0 *a0) 
 
 /* EnemyCmd_ResetState_1_00144D50 */
 void EnemyCmd_ResetState_1_00144D50(void) {
-    Enemy_SetStateResetTimer_1_0013E7E0(M2C_FIELD(D_00201FA8, void **, 0x154), 1);
+    Enemy_SetStateResetTimer_1_0013E7E0(M2C_FIELD(gEnemyScriptSbss_00201FA8, void **, 0x154), 1);
 }
 
 /* EnemyCmd_Set5B3b3_1_00144D60 */
 void EnemyCmd_Set5B3b3_1_00144D60(void) {
-    Enemy_Set5B3b3_1_0013E7C0(M2C_FIELD(D_00201FA8, void **, 0x154), 1);
+    Enemy_Set5B3b3_1_0013E7C0(M2C_FIELD(gEnemyScriptSbss_00201FA8, void **, 0x154), 1);
 }
 
 /* EnemyCmd_Set5B2b0_1_00144D70 */
 
 void EnemyCmd_Set5B2b0_1_00144D70(u8 *arg0)
 {
-    Enemy_Set5B2b0_1_0013E890(D_00201FA8__as_EnemyCmd_Set5B2b0_1_00144D70->p, arg0[8]);
+    Enemy_Set5B2b0_1_0013E890(gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B2b0_1_00144D70->p, arg0[8]);
 }
 
 /* EnemyCmd_BroadcastFrame_1_00144D80 */
@@ -2395,7 +2562,7 @@ void EnemyCmd_BroadcastFrame_1_00144D80(u8 *o)
 {
     u8 a = o[8];
     u8 b = o[0x10];
-    void *p = D_00201FA8__as_EnemyCmd_BroadcastFrame_1_00144D80->p;
+    void *p = gEnemyScriptSbss_00201FA8__as_EnemyCmd_BroadcastFrame_1_00144D80->p;
     u8 x = Enemy_GetTargetHandle_0_0013EDE0__as_EnemyCmd_BroadcastFrame_1_00144D80(p);
     EnemyScr_BroadcastFrameEvent_0_001410C0(x, a, (u8)Enemy_GetMotionId_0_0013ED20(p), b);
 }
@@ -2404,28 +2571,28 @@ void EnemyCmd_BroadcastFrame_1_00144D80(u8 *o)
 
 void EnemyCmd_Set5B1b7_1_00144DF0(u8 *arg0)
 {
-    Enemy_Set5B1b7_1_0013E8C0(D_00201FA8__as_EnemyCmd_Set5B1b7_1_00144DF0->p, arg0[8]);
+    Enemy_Set5B1b7_1_0013E8C0(gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B1b7_1_00144DF0->p, arg0[8]);
 }
 
 /* EnemyCmd_Set5B1b6_1_00144E00 */
 
 void EnemyCmd_Set5B1b6_1_00144E00(u8 *arg0)
 {
-    Enemy_Set5B1b6_1_0013E8F0(D_00201FA8__as_EnemyCmd_Set5B1b6_1_00144E00->p, arg0[8]);
+    Enemy_Set5B1b6_1_0013E8F0(gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B1b6_1_00144E00->p, arg0[8]);
 }
 
 /* EnemyCmd_BreakPart_1_00144E10 */
 
 void EnemyCmd_BreakPart_1_00144E10(u8 *arg0)
 {
-    Enemy_BreakPart_0_0013F210(D_00201FA8__as_EnemyCmd_BreakPart_1_00144E10->p, arg0[8], 1);
+    Enemy_BreakPart_0_0013F210(gEnemyScriptSbss_00201FA8__as_EnemyCmd_BreakPart_1_00144E10->p, arg0[8], 1);
 }
 
 /* EnemyCmd_Set5B0b0_1_00144E30 */
 
 void EnemyCmd_Set5B0b0_1_00144E30(u8 *arg0)
 {
-    Enemy_Set5B0b0_1_0013EC30(D_00201FA8__as_EnemyCmd_Set5B0b0_1_00144E30->p, arg0[8]);
+    Enemy_Set5B0b0_1_0013EC30(gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B0b0_1_00144E30->p, arg0[8]);
 }
 
 /* EnemyCmd_HealPercent_1_00144E40 */
@@ -2434,7 +2601,7 @@ void EnemyCmd_HealPercent_1_00144E40(u8 *o) {
     u8 pct;
     u16 hp;
     pct = o[8];
-    p = D_00201FA8__as_EnemyCmd_HealPercent_1_00144E40->p;
+    p = gEnemyScriptSbss_00201FA8__as_EnemyCmd_HealPercent_1_00144E40->p;
     hp = Enemy_GetMaxHp_2_0013F700(p);
     Enemy_AddHp_2_0013F710__as_EnemyCmd_HealPercent_1_00144E40(p, -hp);
     if (pct > 100) pct = 100;
@@ -2443,19 +2610,19 @@ void EnemyCmd_HealPercent_1_00144E40(u8 *o) {
 
 /* EnemyCmd_Set5B1b5_1_00144EE0 */
 void EnemyCmd_Set5B1b5_1_00144EE0(void) {
-    Enemy_Set5B1b5_1_0013E920(M2C_FIELD(D_00201FA8, void **, 0x154), 1);
+    Enemy_Set5B1b5_1_0013E920(M2C_FIELD(gEnemyScriptSbss_00201FA8, void **, 0x154), 1);
 }
 
 /* EnemyCmd_Set5B1b3_1_00144EF0 */
 void EnemyCmd_Set5B1b3_1_00144EF0(void) {
-    Enemy_Set5B1b3IfUnlocked_1_0013E9D0(M2C_FIELD(D_00201FA8, void **, 0x154), 1);
+    Enemy_Set5B1b3IfUnlocked_1_0013E9D0(M2C_FIELD(gEnemyScriptSbss_00201FA8, void **, 0x154), 1);
 }
 
 /* EnemyCmd_Set5B1b2Notify_0_00144F00 */
 
 void EnemyCmd_Set5B1b2Notify_0_00144F00(unsigned char *a)
 {
-    void *p = D_00201FA8__as_EnemyCmd_Set5B1b2Notify_0_00144F00->p;
+    void *p = gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B1b2Notify_0_00144F00->p;
     int v = a[8];
     if (!(unsigned char)Enemy_Get5B1b2_1_0013EA40(p) && v)
         Msg_Close_1_0018B0C0();
@@ -2466,7 +2633,7 @@ void EnemyCmd_Set5B1b2Notify_0_00144F00(unsigned char *a)
 
 void EnemyCmd_GetParamIdx_1_00144F60(s32 a)
 {
-    void *p = D_00201FA8__as_EnemyCmd_GetParamIdx_1_00144F60->p;
+    void *p = gEnemyScriptSbss_00201FA8__as_EnemyCmd_GetParamIdx_1_00144F60->p;
     s16 *q = Script_GetArgPtr_2_00165130__as_EnemyCmd_GetParamIdx_1_00144F60(a, 0);
     *q = Enemy_GetCurrentParamIdx_0_0013E110(p);
 }
@@ -2475,21 +2642,21 @@ void EnemyCmd_GetParamIdx_1_00144F60(s32 a)
 
 void EnemyCmd_Set5B1b1_1_00144FA0(u8 *arg0)
 {
-    Enemy_Set5B1b1_1_0013EA50(D_00201FA8__as_EnemyCmd_Set5B1b1_1_00144FA0->p, arg0[8]);
+    Enemy_Set5B1b1_1_0013EA50(gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B1b1_1_00144FA0->p, arg0[8]);
 }
 
 /* EnemyCmd_UpdateParamFlags_1_00144FB0 */
 
 void EnemyCmd_UpdateParamFlags_1_00144FB0(u8 *arg0)
 {
-    Enemy_UpdateParamFlags_0_0013F760(D_00201FA8__as_EnemyCmd_UpdateParamFlags_1_00144FB0->p, arg0[8]);
+    Enemy_UpdateParamFlags_0_0013F760(gEnemyScriptSbss_00201FA8__as_EnemyCmd_UpdateParamFlags_1_00144FB0->p, arg0[8]);
 }
 
 /* EnemyCmd_RegisterKill_0_00144FC0 */
 
 void EnemyCmd_RegisterKill_0_00144FC0(void)
 {
-    s16 i = Ent_GetTypeByte_1_0013E220__as_EnemyCmd_RegisterKill_0_00144FC0(D_00201FA8__as_EnemyCmd_RegisterKill_0_00144FC0->p);
+    s16 i = Ent_GetTypeByte_1_0013E220__as_EnemyCmd_RegisterKill_0_00144FC0(gEnemyScriptSbss_00201FA8__as_EnemyCmd_RegisterKill_0_00144FC0->p);
     Bestiary_SetKilled_1_001A9FA0(i);
     Bestiary_IsSeen_2_001A9EC0(i);
     Bestiary_SetSeen_1_001A9F10(i);
@@ -2499,7 +2666,7 @@ void EnemyCmd_RegisterKill_0_00144FC0(void)
 
 void EnemyCmd_RegisterSeen_0_00145010(void)
 {
-    s16 i = Ent_GetTypeByte_1_0013E220__as_EnemyCmd_RegisterSeen_0_00145010(D_00201FA8__as_EnemyCmd_RegisterSeen_0_00145010->p);
+    s16 i = Ent_GetTypeByte_1_0013E220__as_EnemyCmd_RegisterSeen_0_00145010(gEnemyScriptSbss_00201FA8__as_EnemyCmd_RegisterSeen_0_00145010->p);
     Bestiary_IsKilled_1_001A9F60(i);
     Bestiary_SetKilled_1_001A9FA0(i);
 }
@@ -2508,7 +2675,7 @@ void EnemyCmd_RegisterSeen_0_00145010(void)
 
 void EnemyCmd_Set5B1b0_1_00145060(u8 *arg0)
 {
-    Enemy_Set5B1b0_1_0013EB10(D_00201FA8__as_EnemyCmd_Set5B1b0_1_00145060->p, arg0[8]);
+    Enemy_Set5B1b0_1_0013EB10(gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B1b0_1_00145060->p, arg0[8]);
 }
 
 /* EnemyCmd_SetGameFlag_2_00145070 */
@@ -2531,20 +2698,20 @@ void EnemyCmd_TestGameFlag_2_00145080(u8 *o)
 
 void EnemyCmd_SetDead_1_001450D0(u8 *arg0)
 {
-    Enemy_SetDeadFlag_0_0013EEB0(D_00201FA8__as_EnemyCmd_SetDead_1_001450D0->p, arg0[8]);
+    Enemy_SetDeadFlag_0_0013EEB0(gEnemyScriptSbss_00201FA8__as_EnemyCmd_SetDead_1_001450D0->p, arg0[8]);
 }
 
 /* EnemyCmd_Set5B0b7_1_001450E0 */
 
 void EnemyCmd_Set5B0b7_1_001450E0(u8 *arg0)
 {
-    Enemy_Set5B0b7_1_0013EB40(D_00201FA8__as_EnemyCmd_Set5B0b7_1_001450E0->p, arg0[8]);
+    Enemy_Set5B0b7_1_0013EB40(gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B0b7_1_001450E0->p, arg0[8]);
 }
 
 /* EnemyCmd_KillNow_1_001450F0 */
 
 void EnemyCmd_KillNow_1_001450F0(void) {
-    Enemy_Kill_1_0013EF80__as_EnemyCmd_KillNow_1_001450F0(M2C_FIELD(D_00201FA8, void **, 0x154), 0xFF);
+    Enemy_Kill_1_0013EF80__as_EnemyCmd_KillNow_1_001450F0(M2C_FIELD(gEnemyScriptSbss_00201FA8, void **, 0x154), 0xFF);
 }
 
 /* EnemyCmd_Random_2_00145100 */
@@ -2559,7 +2726,7 @@ void EnemyCmd_Random_2_00145100(u8 *a)
 
 void EnemyCmd_GetType_1_00145140(s32 a)
 {
-    void *p = D_00201FA8__as_EnemyCmd_GetType_1_00145140->p;
+    void *p = gEnemyScriptSbss_00201FA8__as_EnemyCmd_GetType_1_00145140->p;
     s8 *q = Script_GetArgPtr_2_00165130__as_EnemyCmd_GetType_1_00145140(a, 0);
     *q = Ent_GetTypeByte_1_0013E220__as_EnemyCmd_GetType_1_00145140(p);
 }
@@ -2568,21 +2735,21 @@ void EnemyCmd_GetType_1_00145140(s32 a)
 
 void EnemyCmd_Set5B0b1_1_00145180(u8 *arg0)
 {
-    Enemy_Set5B0b1_1_0013EC10(D_00201FA8__as_EnemyCmd_Set5B0b1_1_00145180->p, arg0[8]);
+    Enemy_Set5B0b1_1_0013EC10(gEnemyScriptSbss_00201FA8__as_EnemyCmd_Set5B0b1_1_00145180->p, arg0[8]);
 }
 
 /* EnemyCmd_AddHp_2_00145190 */
 
 void EnemyCmd_AddHp_2_00145190(u8 *arg0)
 {
-    Enemy_AddHp_2_0013F710__as_EnemyCmd_AddHp_2_00145190(D_00201FA8__as_EnemyCmd_AddHp_2_00145190->p, arg0[8]);
+    Enemy_AddHp_2_0013F710__as_EnemyCmd_AddHp_2_00145190(gEnemyScriptSbss_00201FA8__as_EnemyCmd_AddHp_2_00145190->p, arg0[8]);
 }
 
 /* EnemyCmd_Get5B0b0_1_001451A0 */
 
 void EnemyCmd_Get5B0b0_1_001451A0(s32 a)
 {
-    void *p = D_00201FA8__as_EnemyCmd_Get5B0b0_1_001451A0->p;
+    void *p = gEnemyScriptSbss_00201FA8__as_EnemyCmd_Get5B0b0_1_001451A0->p;
     s8 *q = Script_GetArgPtr_2_00165130__as_EnemyCmd_Get5B0b0_1_001451A0(a, 0);
     *q = Enemy_Get5B0m1_1_0013EC50(p);
 }
@@ -2594,7 +2761,7 @@ void EnemyCmd_AddPartValue_0_001451E0(u8 *arg0) {
     s32 d;
     u8 b;
     u8 c;
-    p = D_00201FA8__as_EnemyCmd_AddPartValue_0_001451E0->p;
+    p = gEnemyScriptSbss_00201FA8__as_EnemyCmd_AddPartValue_0_001451E0->p;
     a = arg0[0x10];
     d = arg0[8];
     b = arg0[0x18];
@@ -2612,7 +2779,7 @@ void EnemyCmd_AddPartValue_0_001451E0(u8 *arg0) {
 
 void EnemyCmd_GetHpPercent_2_00145250(s32 a)
 {
-    void *p = D_00201FA8__as_EnemyCmd_GetHpPercent_2_00145250->p;
+    void *p = gEnemyScriptSbss_00201FA8__as_EnemyCmd_GetHpPercent_2_00145250->p;
     s8 *q = Script_GetArgPtr_2_00165130__as_EnemyCmd_GetHpPercent_2_00145250(a, 0);
     *q = Enemy_GetHpPercent_2_0013F620(p);
 }
@@ -2621,17 +2788,17 @@ void EnemyCmd_GetHpPercent_2_00145250(s32 a)
 
 void EnemyCmd_SetMode_1_00145290(u8 *arg0)
 {
-    Enemy_SetMode_0_0013EBA0(D_00201FA8__as_EnemyCmd_SetMode_1_00145290->p, arg0[8]);
+    Enemy_SetMode_0_0013EBA0(gEnemyScriptSbss_00201FA8__as_EnemyCmd_SetMode_1_00145290->p, arg0[8]);
 }
 
 /* EnemyCmd_SelectMotionB_1_001452A0 */
 void EnemyCmd_SelectMotionB_1_001452A0(void *arg0) {
-    Enemy_SelectMotion_0_0013C420(M2C_FIELD(D_00201FA8, void **, 0x154), (s32) M2C_FIELD(arg0, u8 *, 8), (s64) M2C_FIELD(arg0, s16 *, 0x10), 1);
+    Enemy_SelectMotion_0_0013C420(M2C_FIELD(gEnemyScriptSbss_00201FA8, void **, 0x154), (s32) M2C_FIELD(arg0, u8 *, 8), (s64) M2C_FIELD(arg0, s16 *, 0x10), 1);
 }
 
 /* EnemyCmd_Set609_1_001452C0 */
 void EnemyCmd_Set609_1_001452C0(void *arg0) {
-    M2C_FIELD(M2C_FIELD(D_00201FA8, void **, 0x154), s8 *, 0x609) = (s8) M2C_FIELD(arg0, s8 *, 8);
+    M2C_FIELD(M2C_FIELD(gEnemyScriptSbss_00201FA8, void **, 0x154), s8 *, 0x609) = (s8) M2C_FIELD(arg0, s8 *, 8);
 }
 
 /* EnemyCmd_SetMapObjFlag_0_001452E0 */
@@ -2654,11 +2821,11 @@ void EnemyCmd_PlaySe_1_001453A0(A_EnemyCmd_Nop_1_00143890 *a) {
     f32 v[4];
     P_EnemyCmd_PlaySe_1_001453A0 p;
     s32 k;
-    s = D_00201FA8__as_EnemyCmd_PlaySe_1_001453A0;
+    s = gEnemyScriptSbss_00201FA8__as_EnemyCmd_PlaySe_1_001453A0;
     k = s->x154;
     h = a->x8;
     b = a->x10;
-    p = D_00201C50;
+    p = gEnemyScriptSdata_00201C50;
     sceVu0CopyVector__as_EnemyCmd_PlaySe_1_001453A0(v, Enemy_Ptr6F0_1_0013FFA0(k, s));
     SndCh_GetPosition_1_00131180(Snd_PlaySeAt_2_001315A0(h, b, v), &p);
 }
@@ -2669,7 +2836,7 @@ void EnemyCmd_GetModelPos_0_00145410(s32 a0) {
     s32 o;
     f32 *x, *y, *z;
     Vec *s;
-    o = *(s32 *)(D_00201FA8__as_EnemyCmd_GetModelPos_0_00145410 + 0x154);
+    o = *(s32 *)(gEnemyScriptSbss_00201FA8__as_EnemyCmd_GetModelPos_0_00145410 + 0x154);
     x = Script_GetArgPtr_2_00165130__as_EnemyCmd_GetModelPos_0_00145410(a0, 0);
     y = Script_GetArgPtr_2_00165130__as_EnemyCmd_GetModelPos_0_00145410(a0, 1);
     z = Script_GetArgPtr_2_00165130__as_EnemyCmd_GetModelPos_0_00145410(a0, 2);
@@ -2710,7 +2877,7 @@ void EnemyCmd_ShakeCamera_0_001455B0(Obj_EnemyCmd_ShakeCamera_0_001455B0 *o)
 
 void EnemyCmd_ResetVectors_1_00145610(u8 *arg0)
 {
-    Enemy_ResetVectors_0_0013D1F0(D_00201FA8__as_EnemyCmd_ResetVectors_1_00145610->p, arg0[8]);
+    Enemy_ResetVectors_0_0013D1F0(gEnemyScriptSbss_00201FA8__as_EnemyCmd_ResetVectors_1_00145610->p, arg0[8]);
 }
 #undef Enemy_Ptr700_1_0013FF90
 #undef Enemy_Ptr6E0_1_0013FFB0
@@ -2730,3 +2897,9 @@ void EnemyCmd_ResetVectors_1_00145610(u8 *arg0)
 #undef Enemy_CopyRotation_2_00140440
 #undef EnemyScr_BroadcastFrameEvent_0_001410C0
 #undef Enemy_Ptr6F0_1_0013FFA0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): gEnemyScriptSbss_00201FA8 */
+void *gEnemyScriptSbss_00201FA8;
+#endif

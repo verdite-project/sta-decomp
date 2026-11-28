@@ -33,10 +33,10 @@ typedef struct { u8 x0; B8 f; u8 pad[2]; f32 x4; f32 x8; f32 xC; f32 x10; } Mod;
 typedef struct { f32 x, y, z; s32 w; } Out;
 typedef struct { f32 t; f32 v; } Key_Fx_EvalCurve_1_00163700;
 typedef struct { f32 x0; u16 x4; u8 x6; u8 x7; } Hdr_Fx_EvalCurve_1_00163700;
-extern O *D_00201FC0;
-extern N *D_00201FD4;
-extern u16 D_00201FD8;
-extern u32 D_00201E94;
+extern O *gSfxSystemSbss_00201FC0;
+extern N *gSfxSystemSbss_00201FD4;
+extern u16 gSfxSystemSbss_00201FD8;
+extern u32 gGameMainSbss_00201E94;
 void Fx_EvalTrackB_1_00162CE0(s8 *a0, Src *a1, f32 f);
 s32 Fx_SpawnBurst_1_00162F30(s32 p0, s32 n, s32 p2, A *a, s32 p4, H *h, s32 p6);
 void Fx_EvalCurveVec_1_001631E0(Out *out, Hdr_Fx_EvalCurveVec_1_001631E0 *h, Mod *mods, s32 *keys, s32 loop, f32 t, f32 len);
@@ -100,9 +100,9 @@ s32 Fx_SpawnBurst_1_00162F30(s32 p0, s32 n, s32 p2, A *a, s32 p4, H *h, s32 p6) 
     u16 nx;
     if (n == 0) return 0;
     if (a->f44 == 0.0f && 0 < h->xA) return 0;
-    if (D_00201FD8 < n) {
-        rest = n - D_00201FD8;
-        n = D_00201FD8;
+    if (gSfxSystemSbss_00201FD8 < n) {
+        rest = n - gSfxSystemSbss_00201FD8;
+        n = gSfxSystemSbss_00201FD8;
     }
     if (Sfx_GetFreeSlots_1_0016B230() < n) {
         rest += n - Sfx_GetFreeSlots_1_0016B230();
@@ -110,19 +110,19 @@ s32 Fx_SpawnBurst_1_00162F30(s32 p0, s32 n, s32 p2, A *a, s32 p4, H *h, s32 p6) 
     }
     k = h->x8;
     while (k != 0xFFFF) {
-        if (D_00201FC0[k].b2) {
+        if (gSfxSystemSbss_00201FC0[k].b2) {
             o = (u16)k * sizeof(N);
-            nx = ((N *)((u8 *)D_00201FD4 + o))->sib;
+            nx = ((N *)((u8 *)gSfxSystemSbss_00201FD4 + o))->sib;
             if (prev != 0xFFFF) {
-                D_00201FD4[prev].sib = nx;
+                gSfxSystemSbss_00201FD4[prev].sib = nx;
             } else {
                 h->x8 = nx;
             }
-            ((N *)((u8 *)D_00201FD4 + o))->sib = 0xFFFF;
+            ((N *)((u8 *)gSfxSystemSbss_00201FD4 + o))->sib = 0xFFFF;
             k = nx;
         } else {
             prev = k;
-            k = D_00201FD4[k].sib;
+            k = gSfxSystemSbss_00201FD4[k].sib;
         }
     }
     while (m != 0) {
@@ -138,7 +138,7 @@ s32 Fx_SpawnBurst_1_00162F30(s32 p0, s32 n, s32 p2, A *a, s32 p4, H *h, s32 p6) 
         }
         h->x8 = id;
         h->xA++;
-        D_00201FC0[id].b0 = 1;
+        gSfxSystemSbss_00201FC0[id].b0 = 1;
         m--;
     }
     return rest;
@@ -217,7 +217,7 @@ void Fx_EvalCurveVec_1_001631E0(Out *out, Hdr_Fx_EvalCurveVec_1_001631E0 *h, Mod
             p.idx[1] = b + 1;
             p.idx[2] = b + 2;
             if (m->f.b2) {
-                Noise_Eval_1_0015ED80(&p, 3, res, t + 0.033333335f * u2f_Fx_EvalCurveVec_1_001631E0(D_00201E94), 0.0f, 1000000.0f);
+                Noise_Eval_1_0015ED80(&p, 3, res, t + 0.033333335f * u2f_Fx_EvalCurveVec_1_001631E0(gGameMainSbss_00201E94), 0.0f, 1000000.0f);
             } else {
                 Noise_Eval_1_0015ED80(&p, 3, res, t, 0.0f, 1000000.0f);
             }
@@ -237,7 +237,7 @@ void Fx_EvalCurveVec_1_001631E0(Out *out, Hdr_Fx_EvalCurveVec_1_001631E0 *h, Mod
         } else {
             p.idx[0] = b;
             if (m->f.b2) {
-                Noise_Eval_1_0015ED80(&p, 1, res, t + 0.033333335f * u2f_Fx_EvalCurveVec_1_001631E0(D_00201E94), 0.0f, 1000000.0f);
+                Noise_Eval_1_0015ED80(&p, 1, res, t + 0.033333335f * u2f_Fx_EvalCurveVec_1_001631E0(gGameMainSbss_00201E94), 0.0f, 1000000.0f);
             } else {
                 Noise_Eval_1_0015ED80(&p, 1, res, t, 0.0f, 1000000.0f);
             }
@@ -337,7 +337,7 @@ void Fx_EvalCurve_1_00163700(f32 *out, Hdr_Fx_EvalCurve_1_00163700 *h, Mod *mods
         p.f1C = m->xC;
         p.base = m->x10;
         if (m->f.b2) {
-            Noise_Eval_1_0015ED80(&p, 1, &res, t + 0.033333335f * u2f_Fx_EvalCurve_1_00163700(D_00201E94), 0.0f, 1000000.0f);
+            Noise_Eval_1_0015ED80(&p, 1, &res, t + 0.033333335f * u2f_Fx_EvalCurve_1_00163700(gGameMainSbss_00201E94), 0.0f, 1000000.0f);
         } else {
             Noise_Eval_1_0015ED80(&p, 1, &res, t, 0.0f, 1000000.0f);
         }

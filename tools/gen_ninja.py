@@ -4,6 +4,21 @@
 Every path in the build is relative to the repository root (ninja runs
 there): the checkout may live under a directory with spaces in its name.
 
+NONMATCHING (the default; `--matching` turns it off): every C compile gets
+-DNONMATCHING, so a function written as
+
+    #ifdef NONMATCHING
+    ...best-effort C...
+    #else
+    INCLUDE_ASM(name);
+    #endif
+
+builds from its C and its asm chunk leaves the link. That image is not
+retail's, so its default target is build/sta.elf; `--matching` builds the
+asm and checks the ROM SHA-1. objdiff and the progress report measure the
+matching build in either mode (match_obj: a NONMATCHING build compiles each
+C unit a second time, without -DNONMATCHING, into build/matching/).
+
 Each C unit also gets a target object, build/target/src/<path>.o, assembled
 from splat's per-function files and data files (asm/matchings, asm/data), so
 objdiff can compare it with the compiled base object.
@@ -164,6 +179,57 @@ def target_src(out: str) -> str:
     return "src/" + out[len("build/target/src/"):-len(".s")] + ".c"
 
 
+def base_sizes(src: str) -> dict:
+    """{name: size} of the data objects the matching build's object of src
+    defines (build/matching/ in a NONMATCHING build), or {} if there is none."""
+    from elftools.elf.elffile import ELFFile
+    nm = (ROOT / "build.ninja").exists() and "# NONMATCHING: on" in (ROOT / "build.ninja").read_text()
+    o = ROOT / (f"build/matching/{src}.o" if nm else obj_for(src))
+    if not o.exists():
+        return {}
+    out = {}
+    with open(o, "rb") as f:
+        e = ELFFile(f)
+        for sym in e.get_section_by_name(".symtab").iter_symbols():
+            if isinstance(sym["st_shndx"], int) and sym.name and sym["st_info"]["type"] == "STT_OBJECT":
+                out[sym.name] = sym["st_size"]
+    return out
+
+
+def trim_last_labels(text: str, sizes: dict) -> str:
+    """The last label of each data section, cut at the size the C object has
+    when what is past it is zero words: splat's label runs over the fill to
+    the next unit's alignment, which the C object (a struct with no tail
+    padding) leaves to the link; objdiff matches a section only whole."""
+    out = text.splitlines(keepends=True)
+    secs = [i for i, l in enumerate(out) if l.startswith(".section")] + [len(out)]
+    for a, b in zip(secs, secs[1:]):
+        labs = [i for i in range(a, b) if out[i].startswith("dlabel ")]
+        if not labs:
+            continue
+        k = labs[-1]
+        name = out[k].split()[1]
+        want = sizes.get(name)
+        if want is None:
+            continue
+        end = next((i for i in range(k, b) if out[i].startswith("enddlabel")), b)
+        items = [i for i in range(k + 1, end) if re.search(r"\.(word|short|byte) ", out[i])]
+        width = lambda l: 4 if ".word " in l else 2 if ".short " in l else 1
+        total = sum(width(out[i]) for i in items)
+        drop = []
+        for i in reversed(items):
+            if total <= want or not re.search(r"\.word 0x0+\s*$", out[i]):
+                break
+            if total - 4 < want:
+                break
+            total -= 4
+            drop.append(i)
+        if total == want:
+            for i in drop:
+                out[i] = ""
+    return "".join(out)
+
+
 def target_text(src: str) -> str:
     """One assembly file for a C unit: its functions in address order, then its data."""
     funcs, datas = c_parts(src)
@@ -196,6 +262,8 @@ def target_text(src: str) -> str:
             body = trailing_fill(raw if src.startswith("src/sce/") else jtbl_fill(raw))
         body = body.splitlines(keepends=True)
         text += "".join(l for l in body if l.strip() != '.include "macro.inc"')
+    if mwcc and not src.startswith("src/game/data/"):
+        text = trim_last_labels(text, base_sizes(src))
     for a, b in TARGET_FIXUPS.get(src, []):
         assert a in text, f"{src}: no {a!r} to fix"
         text = text.replace(a, b)
@@ -295,10 +363,20 @@ def is_mwcc(src: str) -> bool:
     return src.startswith("src/game/") and not src.startswith("src/game/ee/")
 
 
+def match_obj(src: str) -> str:
+    """A unit's object as the matching build compiles it: the build's own in
+    a matching build; a C unit's second compile, without -DNONMATCHING, in
+    build/matching/ in a NONMATCHING one (objdiff and the progress report
+    always measure the matching build)."""
+    if NONMATCHING and src.startswith("src/") and src.endswith(".c"):
+        return f"build/matching/{src}.o"
+    return obj_for(src)
+
+
 def objdiff_base(src: str) -> str:
     """The object objdiff diffs for a C unit (tools/objdiff_base.py for
     CodeWarrior units: data sections merged and paired by name)."""
-    return f"build/objdiff/{stem(src)}.o" if is_mwcc(src) else obj_for(src)
+    return f"build/objdiff/{stem(src)}.o" if is_mwcc(src) else match_obj(src)
 
 
 def objdiff_config(srcs: list[str]) -> dict:
@@ -334,6 +412,33 @@ def objdiff_config(srcs: list[str]) -> dict:
 
 
 USES_ASM = re.compile(r"^\s*INCLUDE_ASM\(\s*(\w+)\s*\)\s*;", re.M)
+NONMATCHING = True     # main() sets it from --matching
+
+
+def asm_markers(text: str) -> tuple[list[str], list[str]]:
+    """The INCLUDE_ASM names a source compiles to, in order, and those it
+    drops: a marker in the #else of `#ifdef NONMATCHING` (or the body of
+    `#ifndef NONMATCHING`) is dropped in a NONMATCHING build, whose C
+    stands in for it."""
+    used, dropped, stack = [], [], []      # stack: is this branch dropped?
+    for line in text.splitlines():
+        d = re.match(r"\s*#\s*(ifdef|ifndef|if|else|elif|endif)\b\s*(\w*)", line)
+        if d:
+            kw, arg = d.groups()
+            if kw in ("ifdef", "ifndef", "if"):
+                nm = arg == "NONMATCHING" and kw != "if"
+                # (is a NONMATCHING branch, branch dropped)
+                stack.append((nm, nm and NONMATCHING == (kw == "ifndef")))
+            elif kw in ("else", "elif") and stack:
+                nm, dr = stack[-1]
+                stack[-1] = (nm, nm and not dr)
+            elif kw == "endif" and stack:
+                stack.pop()
+            continue
+        m = USES_ASM.match(line)
+        if m:
+            (dropped if any(dr for _, dr in stack) else used).append(m.group(1))
+    return used, dropped
 
 
 def include_asm_units(srcs: list[str]) -> dict[str, list[str]]:
@@ -349,7 +454,7 @@ def include_asm_units(srcs: list[str]) -> dict[str, list[str]]:
     out = {}
     for s in srcs:
         if s.startswith("src/game/") and s.endswith(".c") and (ROOT / s).exists():
-            names = USES_ASM.findall((ROOT / s).read_text())
+            names = asm_markers((ROOT / s).read_text())[0]
             if names:
                 missing = [n for n in names if n not in first_label]
                 if missing:
@@ -373,7 +478,42 @@ def include_asm_text(srcs: list[str], objs: list[str]) -> list[str]:
     return out
 
 
+def data_twin_sources() -> tuple[list[str], list[str]]:
+    """The game units with NONMATCHING data twins and the data units whose
+    definitions they twin (tools/split_data.py)."""
+    owners, units = [], []
+    for p in sorted((ROOT / "src/game").rglob("*.c")):
+        t = p.read_text()
+        rel = str(p.relative_to(ROOT))
+        if rel.startswith("src/game/data/"):
+            if "#ifndef NONMATCHING /* the NONMATCHING build defines these in" in t:
+                units.append(rel)
+        elif "/* data twins (" in t or "/* data group (" in t:
+            owners.append(rel)
+    return owners, units
+
+
+def replaced_chunks(srcs: list[str]) -> set[str]:
+    """The asm chunks a NONMATCHING build leaves out: their C stands in."""
+    first_label = {}
+    for s in srcs:
+        if s.startswith("asm/") and s.endswith(".s") and (ROOT / s).exists():
+            m = re.search(r"^\s*glabel (\w+)", (ROOT / s).read_text(), re.M)
+            if m:
+                first_label[m.group(1)] = s
+    out = set()
+    for s in srcs:
+        if s.startswith("src/game/") and s.endswith(".c") and (ROOT / s).exists():
+            for n in asm_markers((ROOT / s).read_text())[1]:
+                if n not in first_label:
+                    raise SystemExit(f"{s}: INCLUDE_ASM of no asm chunk's first label: {n}")
+                out.add(first_label[n])
+    return out
+
+
 def main() -> None:
+    global NONMATCHING
+    NONMATCHING = "--matching" not in sys.argv[1:]
     if sys.argv[1:2] == ["--target"]:
         # the target_src rule (restat): rewrites one target source, and only on
         # a content change
@@ -381,6 +521,12 @@ def main() -> None:
         write_if_changed(ROOT / out, target_text(target_src(out)))
         return
     srcs = link_order()
+    # NONMATCHING: a chunk whose function is C leaves the link (the objdiff
+    # units, written below from the whole link order, stay as they are)
+    all_srcs = srcs
+    if NONMATCHING:
+        gone = replaced_chunks(srcs)
+        srcs = [s for s in srcs if s not in gone]
     objs = [obj_for(s) for s in srcs]
     build = ROOT / "build"
     build.mkdir(exist_ok=True)
@@ -406,15 +552,16 @@ def main() -> None:
 
     c_units = [s for s in srcs if s.startswith("src/") and s.endswith(".c")]
     # one objdiff unit per link-order entry
-    (ROOT / "objdiff.json").write_text(json.dumps(objdiff_config(srcs), indent=2) + "\n")
+    (ROOT / "objdiff.json").write_text(json.dumps(objdiff_config(all_srcs), indent=2) + "\n")
 
     n = []
     n.append("# Generated by tools/gen_ninja.py; do not edit.\n")
     n.append("rule as\n"
              f"  command = tools/period_env.sh {EE_AS} -EL -mcpu=5900 -mabi=eabi -G 8 -Iinclude -o $out $in\n"
              "  description = AS $in\n")
+    n.append(f"# NONMATCHING: {'on' if NONMATCHING else 'off (--matching)'}\n")
     n.append("rule cc\n"
-             "  command = tools/compile_c.sh $in $out\n"
+             f"  command = {'CDEFS=-DNONMATCHING ' if NONMATCHING else ''}tools/compile_c.sh $in $out\n"
              "  description = CC $in\n")
     n.append("rule ld\n"
              f"  command = {LD} -T build/sta.ld -Map build/sta.map -o $out $in $syms\n"
@@ -444,20 +591,22 @@ def main() -> None:
         t = f"build/target/{stem(s)}.s"
         funcs, datas = c_parts(s)
         deps = " ".join(["tools/gen_ninja.py"] + [str(p.relative_to(ROOT)) for p in funcs + datas])
-        n.append(f"build {t}: target_src | {deps}")
+        # (the matching object: a data label's last zero words are the C
+        # object's only up to its size, trim_last_labels)
+        n.append(f"build {t}: target_src | {deps} {match_obj(s)}")
         n.append(f"build build/target/{stem(s)}.o: as {t} | include/macro.inc")
     n.append("rule objdiff_base\n"
              "  command = .venv/bin/python tools/objdiff_base.py $in $out\n"
              "  description = OBJDIFF $out\n")
     for s in c_units:
         if is_mwcc(s):
-            n.append(f"build {objdiff_base(s)}: objdiff_base {obj_for(s)} build/target/{stem(s)}.o"
+            n.append(f"build {objdiff_base(s)}: objdiff_base {match_obj(s)} build/target/{stem(s)}.o"
                      " | tools/objdiff_base.py")
     # splat's lists of addresses referenced but not defined yet, given to ld
     # as implicit linker scripts
     # (tools/rel_syms.py writes them relative to the objects they lie in, so
     # they follow when the image shifts)
-    syms = "config/linker_syms.txt config/data_aliases.txt config/undefined_syms_auto.txt config/undefined_funcs_auto.txt"
+    syms = "config/data_groups.txt config/linker_syms.txt config/data_aliases.txt config/undefined_syms_auto.txt config/undefined_funcs_auto.txt"
     n.append("rule rel_syms\n"
              "  command = .venv/bin/python tools/rel_syms.py $out $objs\n"
              "  description = SYMS $out")
@@ -480,17 +629,46 @@ def main() -> None:
              " | tools/shift_check.py")
     n.append("build build/sta.rom: rom build/sta.elf")
     n.append("build build/sta.ok: check build/sta.rom")
+    # NONMATCHING data twins (tools/split_data.py): the side of each pair the
+    # current build does not compile goes to build/twins/, and
+    # tools/check_data_twins.py compares the two (part of the default)
+    owners, units = data_twin_sources()
+    other = units if NONMATCHING else owners
+    n.append("rule cc_other\n"
+             f"  command = {'' if NONMATCHING else 'CDEFS=-DNONMATCHING '}tools/compile_c.sh $in $out\n"
+             "  description = CC (other build) $in\n")
+    twin_objs = []
+    for s in other:
+        o = f"build/twins/{s}.o"
+        twin_objs.append(o)
+        n.append(f"build {o}: cc_other {s} | tools/compile_c.sh tools/mwfix.py config/game_cflags.txt " + hdrs)
+    mine = [obj_for(s) for s in (owners if NONMATCHING else units)]
+    n.append("rule check_twins\n"
+             "  command = .venv/bin/python tools/check_data_twins.py --stamp $out\n"
+             "  description = CHECK data twins\n")
+    n.append(f"build build/twins.ok: check_twins {' '.join(twin_objs + mine)} | tools/check_data_twins.py")
+    n.append("build nonmatching: phony build/sta.elf")
     n.append("rule regen\n"
-             "  command = .venv/bin/python tools/gen_ninja.py\n"
+             f"  command = .venv/bin/python tools/gen_ninja.py{'' if NONMATCHING else ' --matching'}\n"
              "  generator = 1\n"
              "  description = REGEN build.ninja\n")
     # a unit with INCLUDE_ASM markers lays out the .text (a marker added to
     # another unit: tools/merge_tu.py reruns this)
     regen_in = ["tools/gen_ninja.py", f"config/link_order.{VER}.txt",
-                f"config/sta.{VER}.ld.in"] + sorted(include_asm_units(srcs))
+                f"config/sta.{VER}.ld.in"] + sorted(include_asm_units(srcs)) \
+        + sum(data_twin_sources(), [])
     n.append(f"build build.ninja build/sta.ld objdiff.json: regen | {' '.join(regen_in)}")
     # objdiff's progress report over every object of the link
-    all_objs = objs + [f"build/target/{stem(s)}.o" for s in c_units] \
+    # (the matching build's objects, whatever this build is: match_obj)
+    if NONMATCHING:
+        n.append("rule cc_matching\n"
+                 "  command = tools/compile_c.sh $in $out\n"
+                 "  description = CC (matching) $in\n")
+        for s in all_srcs:
+            if s.startswith("src/") and s.endswith(".c"):
+                n.append(f"build {match_obj(s)}: cc_matching {s} | tools/compile_c.sh tools/mwfix.py "
+                         f"config/game_cflags.txt " + hdrs)
+    all_objs = [match_obj(s) for s in all_srcs] + [f"build/target/{stem(s)}.o" for s in c_units] \
         + [objdiff_base(s) for s in c_units if is_mwcc(s)]
     n.append("rule report\n"
              f"  command = {OBJDIFF} report generate -o $out\n"
@@ -503,9 +681,10 @@ def main() -> None:
              "  description = PROGRESS\n"
              "  pool = console\n")
     n.append("build progress: progress build/report.json | tools/progress.py")
-    n.append("default build/sta.ok")
+    n.append(f"default {'build/sta.elf' if NONMATCHING else 'build/sta.ok'} build/twins.ok")
     (ROOT / "build.ninja").write_text("\n".join(n) + "\n")
-    print(f"build.ninja: {len(srcs)} units, {len(c_units)} target objects")
+    mode = f"NONMATCHING ({len(all_srcs) - len(srcs)} asm chunks replaced by C)" if NONMATCHING else "matching"
+    print(f"build.ninja: {len(srcs)} units, {len(c_units)} target objects, {mode}")
 
 
 if __name__ == "__main__":

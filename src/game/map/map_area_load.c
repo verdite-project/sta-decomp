@@ -47,13 +47,20 @@ typedef struct { Vec p; f32 x10; f32 x14; f32 x18; u8 x1C; u8 x1D; u8 x1E; u8 x1
 typedef struct { u8 p[0x10]; Vec x10; u8 p20[0x5E]; u16 n; u8 p80[0xEC]; E_Map_SetupPointLights_0_001B7190 *e; } O;
 typedef struct { char p[0x10]; f32 a[4]; f32 b[4]; f32 f; } T;
 extern s32 D_002022C4;
-extern Mtx D_001F2170;
+extern Mtx gMatrixFromData_001F2170;
 #pragma explicit_zero_data on
 const char D_001FDA80[0x20] = { 0x6d, 0x61, 0x70, 0x2f, 0x6d, 0x25, 0x34, 0x2e, 0x30, 0x34, 0x64, 0x6d, 0x2e, 0x73, 0x74, 0x6d, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-extern s32 D_002022B4;
-extern f32 D_001F3850[4];
-extern f32 D_001F3860[4];
-extern f32 D_001F3870[];
+#ifndef NONMATCHING
+extern s32 gMapAreaLoadSbss_002022B4;
+extern f32 gMapAreaLoadData_001F3850[4];
+#else
+/* data twins (src/game/data/sbss.c): gMapAreaLoadSbss_002022B4 */
+static s32 gMapAreaLoadSbss_002022B4;
+/* data twins (src/game/data/player_data.c): gMapAreaLoadData_001F3850 */
+static f32 gMapAreaLoadData_001F3850[0x4] = { 0.0f, 0.0f, 0.0f, 100.0f };
+#endif
+extern f32 gPlayerData_001F3860[4];
+extern f32 gPlayerData_001F3870[];
 void Map_OnAreaLoaded_0_001B6800(S *a, s32 a1);
 void Map_OnAreaLoadedWrap_1_001B6FB0(s32 *arg0);
 void Map_LoadTextures_0_001B6FC0(u8 **arg0);
@@ -122,16 +129,16 @@ void Map_OnAreaLoaded_0_001B6800(S *a, s32 a1) {
     a->x8 = Pool_Alloc_3_001288C0(D_002022C4, sz);
     memset((void *)*a->x8, 0, sz);
     Map_ResetArea_1_001B4F20(a);
-    saved = D_00201F2C;
-    a->x178[0].obj = Mdl_CreateInstance_0_00174230(D_002022D0, a->p4, -1, a->n6C);
+    saved = gSfxAllSbss_00201F2C;
+    a->x178[0].obj = Mdl_CreateInstance_0_00174230(gMapAreaLoadSbss_002022D0, a->p4, -1, a->n6C);
     sceVu0CopyVector((u8 *)*a->x178[0].obj + 0x30, &a->x10);
     (*a->x178[0].obj)->f24.f.b2 = 0;
     j = 0;
     do {
-        D_00201F2C = j;
+        gSfxAllSbss_00201F2C = j;
         m = Mdl_GetFrameData_0_001715B0(a->x178[0].obj);
-        sceVu0CopyMatrix(m + 0x140, &D_001F2170);
-        sceVu0CopyMatrix(m + 0xC0, &D_001F2170);
+        sceVu0CopyMatrix(m + 0x140, &gMatrixFromData_001F2170);
+        sceVu0CopyMatrix(m + 0xC0, &gMatrixFromData_001F2170);
         m[0x1F0] = 0xFF;
         *(s32 *)m = ((O4 *)*a->p4)->x3C & 7;
         *(s32 *)(m + 4) = 0;
@@ -161,7 +168,7 @@ void Map_OnAreaLoaded_0_001B6800(S *a, s32 a1) {
             if (a->x134[i].x1A == -1) m[i * 0x140 + 0x332] = 0xFF; else m[i * 0x140 + 0x332] = a->x134[i].x1A;
             m[i * 0x140 + 0x331] = 0;
         }
-        Mdl_UpdateBoneMatricesCur_0_00171540(*a->x178[0].obj, &D_001F2170);
+        Mdl_UpdateBoneMatricesCur_0_00171540(*a->x178[0].obj, &gMatrixFromData_001F2170);
         j++;
     } while (j < 2);
     for (k = 0; k < a->n6C; k++) {
@@ -170,7 +177,7 @@ void Map_OnAreaLoaded_0_001B6800(S *a, s32 a1) {
         p->f.f.b1 = 0;
     }
     Map_InitObjects_0_001B6130(a);
-    MapObj_Create_0_001BB8A0(D_002022D0, a, r);
+    MapObj_Create_0_001BB8A0(gMapAreaLoadSbss_002022D0, a, r);
     Map_SpawnItems_0_001B5FB0(a, a1);
     Map_SpawnSfx_0_001B5CA0(a);
     sceVu0CopyVector(v, &a->x10);
@@ -184,14 +191,14 @@ void Map_OnAreaLoaded_0_001B6800(S *a, s32 a1) {
     }
     for (i = 0; i < a->n74; i++) {
         V8 *q = &a->x144[i];
-        Fog_BuildPlanes_0_0015CD30(&a->x188[i], &q->v[0], &q->v[2], &D_003139A0, &D_003139A0, &q->v[1], &q->v[3], &D_003139A0, &D_003139A0, &q->v[5], &q->v[4]);
+        Fog_BuildPlanes_0_0015CD30(&a->x188[i], &q->v[0], &q->v[2], &gZeroVec_003139A0, &gZeroVec_003139A0, &q->v[1], &q->v[3], &gZeroVec_003139A0, &gZeroVec_003139A0, &q->v[5], &q->v[4]);
     }
     if (a->x64) {
         a->xC = Pool_Alloc_3_001288C0(D_002022C4, 0x963C);
         Script_InitContext_1_00166F90(a->xC, a->x24, a->x64, 0x3F);
         Script_SendEvent_2_00166F80(*a->xC, 0x7FFF, 0);
     }
-    D_00201F2C = saved;
+    gSfxAllSbss_00201F2C = saved;
     a->f1D8.f.b0 = 1;
     a->x8C = 0;
     a->x8E = -2;
@@ -208,10 +215,10 @@ void Map_OnAreaLoadedWrap_1_001B6FB0(s32 *arg0) {
 /* Map_LoadTextures_0_001B6FC0 */
 #define sceVu0CopyVector sceVu0CopyVector__as_Map_LoadTextures_0_001B6FC0
 void sceVu0CopyVector__as_Map_LoadTextures_0_001B6FC0(u8 *, s32 *);
-#define D_002022D0 D_002022D0__as_Map_LoadTextures_0_001B6FC0
-extern s32 *D_002022D0__as_Map_LoadTextures_0_001B6FC0;
-#define D_003139A0 D_003139A0__as_Map_LoadTextures_0_001B6FC0
-extern s32 D_003139A0__as_Map_LoadTextures_0_001B6FC0[];
+#define gMapAreaLoadSbss_002022D0 gMapAreaLoadSbss_002022D0__as_Map_LoadTextures_0_001B6FC0
+extern s32 *gMapAreaLoadSbss_002022D0__as_Map_LoadTextures_0_001B6FC0;
+#define gZeroVec_003139A0 gZeroVec_003139A0__as_Map_LoadTextures_0_001B6FC0
+extern s32 gZeroVec_003139A0__as_Map_LoadTextures_0_001B6FC0[];
 
 void Map_LoadTextures_0_001B6FC0(u8 **arg0) {
     u8 *temp_3;
@@ -220,9 +227,9 @@ void Map_LoadTextures_0_001B6FC0(u8 **arg0) {
     s32 **temp_4;
 
     temp_17 = (u8 *) (*arg0);
-    temp_2 = (u8 **) (Tex_LoadArchive_0_0016F950(D_002022D0, M2C_FIELD(temp_17, u8 ***, 0x24)));
+    temp_2 = (u8 **) (Tex_LoadArchive_0_0016F950(gMapAreaLoadSbss_002022D0, M2C_FIELD(temp_17, u8 ***, 0x24)));
     M2C_FIELD(temp_17, u8 ***, 4) = temp_2;
-    sceVu0CopyVector(temp_17 + 0x10, D_003139A0);
+    sceVu0CopyVector(temp_17 + 0x10, gZeroVec_003139A0);
     temp_3 = (u8 *) (*temp_2);
     if (((BF_3C_4_1 *)temp_3)->f != 0) {
         temp_4 = (s32 **) (M2C_FIELD(temp_3, s32 ***, 0x10));
@@ -233,8 +240,8 @@ void Map_LoadTextures_0_001B6FC0(u8 **arg0) {
     Mdl_RegisterTexAnims_0_00170F40(temp_2);
 }
 #undef sceVu0CopyVector
-#undef D_002022D0
-#undef D_003139A0
+#undef gMapAreaLoadSbss_002022D0
+#undef gZeroVec_003139A0
 
 /* Map_GetFile_2_001B7050 */
 #define Pool_Alloc_3_001288C0 Pool_Alloc_3_001288C0__as_Map_GetFile_2_001B7050
@@ -272,7 +279,7 @@ s32 **Map_AllocAreaBuf_1_001B70E0(s32 n) {
     s32 **r;
     s32 *p;
     ld(n, &size);
-    D_002022B4 = n;
+    gMapAreaLoadSbss_002022B4 = n;
     r = Pool_Alloc_3_001288C0(D_002022C4, 0x1E0);
     p = *r;
     memset(p, 0, 0x1E0);
@@ -320,8 +327,38 @@ void sceVu0CopyVector__as_Map_SetupAmbient_0_001B7290(f32 *v0, f32 *v1);
 void Map_SetupAmbient_0_001B7290(void)
 {
     T *t = LightGroup_Get_0_0015B900(-1);
-    sceVu0CopyVector(D_001F3860, t->b);
-    sceVu0ScaleVector(D_001F3850, t->a, 255.0f);
-    D_001F3870[0] = t->f;
+    sceVu0CopyVector(gPlayerData_001F3860, t->b);
+    sceVu0ScaleVector(gMapAreaLoadData_001F3850, t->a, 255.0f);
+    gPlayerData_001F3870[0] = t->f;
 }
 #undef sceVu0CopyVector
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): gMapAreaLoadSbss_002022D0 */
+s32 gMapAreaLoadSbss_002022D0;
+/* data group (src/game/data/map_area_load_rodata.c): D_001FDA60__grp: gMapAreaLoadRodata_001FDA60@0x0 */
+unsigned char D_001FDA60__grp[0x1] __attribute__((aligned(16))) = { 0x53 };
+/* data group (src/game/data/map_area_load_rodata.c): D_001FDA61__grp: gMapAreaLoadRodata_001FDA61@0x0 */
+unsigned char D_001FDA61__grp[0x1] __attribute__((aligned(1))) = { 0x54 };
+/* data group (src/game/data/map_area_load_rodata.c): D_001FDA62__grp: gMapAreaLoadRodata_001FDA62@0x0 */
+unsigned char D_001FDA62__grp[0x6] __attribute__((aligned(2))) = { 0x4d, 0x49, 0, 0, 0, 0 };
+/* data group (src/game/data/map_area_load_rodata.c): D_001FDA68__grp: gMapAreaLoadRodata_001FDA68@0x0 */
+unsigned char D_001FDA68__grp[0x1] __attribute__((aligned(8))) = { 0x53 };
+/* data group (src/game/data/map_area_load_rodata.c): D_001FDA69__grp: gMapAreaLoadRodata_001FDA69@0x0 */
+unsigned char D_001FDA69__grp[0x1] __attribute__((aligned(1))) = { 0x54 };
+/* data group (src/game/data/map_area_load_rodata.c): D_001FDA6A__grp: gMapAreaLoadRodata_001FDA6A@0x0 */
+unsigned char D_001FDA6A__grp[0x1] __attribute__((aligned(2))) = { 0x45 };
+/* data group (src/game/data/map_area_load_rodata.c): D_001FDA6B__grp: gMapAreaLoadRodata_001FDA6B@0x0 */
+unsigned char D_001FDA6B__grp[0x5] __attribute__((aligned(1))) = { 0x4d, 0, 0, 0, 0 };
+/* data group (src/game/data/map_area_load_rodata.c): D_001FDA70__grp: gMapAreaLoadRodata_001FDA70@0x0 */
+unsigned char D_001FDA70__grp[0x1] __attribute__((aligned(16))) = { 0x53 };
+/* data group (src/game/data/map_area_load_rodata.c): D_001FDA71__grp: gMapAreaLoadRodata_001FDA71@0x0 */
+unsigned char D_001FDA71__grp[0x1] __attribute__((aligned(1))) = { 0x54 };
+/* data group (src/game/data/map_area_load_rodata.c): D_001FDA72__grp: gMapAreaLoadRodata_001FDA72@0x0 */
+unsigned char D_001FDA72__grp[0x1] __attribute__((aligned(2))) = { 0x4f };
+/* data group (src/game/data/map_area_load_rodata.c): D_001FDA73__grp: gMapAreaLoadRodata_001FDA73@0x0 */
+unsigned char D_001FDA73__grp[0xd] __attribute__((aligned(1))) = { 0x49, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+/* data group (src/game/data/map_area_load_rodata.c): D_001FDA5C__grp: gMapAreaLoadRodata_001FDA5C@0x0 */
+int D_001FDA5C__grp[0x1] __attribute__((aligned(4))) = { 0 };
+#endif

@@ -60,9 +60,9 @@ typedef struct { u8 pad[0x24]; Flags8_6x2 f24; } P_Mdl_DrawMeshesD_1_0016D830;
 typedef struct { u8 pad[0x130]; u8 x130; u8 p1[3]; f32 f134; u8 pad2[8]; } E;
 typedef struct { u8 pad[0xA]; u16 hA; u8 pad2[3]; u8 xF; Vec v10; } Q;
 extern BF D_00222A50[];
-extern s32 D_00202008;
-extern s32 D_00201F4C;
-extern s32 D_00201F48;
+extern s32 gModelEmitSbss_00202008;
+extern s32 gModelEmitSbss_00201F4C;
+extern s32 gModelDrawSbss_00201F48;
 void Mdl_DrawMeshesB_1_0016CD80(O_Mdl_DrawMeshesB_1_0016CD80 *o, S1 *s1, K *k2, Arg a);
 void Mdl_DrawMeshesC_1_0016D380(Obj *o, Oth *b, s8 *c, s32 n, P_Mdl_DrawMeshesC_1_0016D380 p, s32 flag);
 void Mdl_DrawMeshesD_1_0016D830(O_Mdl_DrawMeshesD_1_0016D830 *o, P_Mdl_DrawMeshesD_1_0016D830 *p, s8 *a2, s32 idx, U u);
@@ -121,9 +121,9 @@ void Mdl_DrawMeshesB_1_0016CD80(O_Mdl_DrawMeshesB_1_0016CD80 *o, S1 *s1, K *k2, 
     fl.f.c0 = a.c5;
     if (s1->g6 == 0) {
         b.a = a;
-        D_00202008 = D_00201F4C;
+        gModelEmitSbss_00202008 = gModelEmitSbss_00201F4C;
         if (!D_00222A50[0].b1 && !(b.b.x7 | b.b.x11 | b.b.x12) && o->g6) {
-            D_00202008 = D_00201F48;
+            gModelEmitSbss_00202008 = gModelDrawSbss_00201F48;
         }
         if (!s1->g1) return;
         if (o->x16 == 0 && !s1->h0) {
@@ -244,9 +244,9 @@ void Mdl_DrawMeshesC_1_0016D380(Obj *o, Oth *b, s8 *c, s32 n, P_Mdl_DrawMeshesC_
     l.w = 0; l.f.b0 = 1; l.f.b1 = 0; l.f.b2 = 0; l.f.b3 = 0; l.f.b4 = 1; l.f.b5 = 0; l.f.b6 = D_00222A50[0].f.b4; idx = flag; l.f.b7 = idx;
     if (b->x24.h.hi) return;
     q = p;
-    D_00202008 = D_00201F4C;
+    gModelEmitSbss_00202008 = gModelEmitSbss_00201F4C;
     if (!D_00222A50[0].f.b1 && !(q.f.b | q.f.c | q.f.d) && o->x3C.f.b6) {
-        D_00202008 = D_00201F48;
+        gModelEmitSbss_00202008 = gModelDrawSbss_00201F48;
     }
     if (!b->x24.f.f.b1) return;
     if (flag) {
@@ -360,9 +360,9 @@ void Mdl_DrawMeshesD_1_0016D830(O_Mdl_DrawMeshesD_1_0016D830 *o, P_Mdl_DrawMeshe
     k = 2;
     if (p->f24.f.b6 != 0) return;
     u2 = u;
-    D_00202008 = D_00201F4C;
+    gModelEmitSbss_00202008 = gModelEmitSbss_00201F4C;
     if (!D_00222A50[0].f.b1) {
-        if ((u2.s.f | u2.s.g | u2.s.h) == 0 && o->f3C.f.b6) D_00202008 = D_00201F48;
+        if ((u2.s.f | u2.s.g | u2.s.h) == 0 && o->f3C.f.b6) gModelEmitSbss_00202008 = gModelDrawSbss_00201F48;
     }
     if (!p->f24.f.b1) return;
     j = m[idx].x130;
@@ -409,3 +409,9 @@ void Mdl_DrawMeshesD_1_0016D830(O_Mdl_DrawMeshesD_1_0016D830 *o, P_Mdl_DrawMeshe
 #undef Mdl_EmitMeshVu1B_1_0016EB70
 #undef Mdl_EmitMeshVu1_1_0016E760
 #undef D_00222A50
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): gModelDrawSbss_00201F48 */
+s32 gModelDrawSbss_00201F48;
+#endif

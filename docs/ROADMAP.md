@@ -222,6 +222,90 @@ scorers of 100+ tokens.
 - Per function: m2c for a first draft → decomp.me (a "PS2 mwccps2" preset)
   or objdiff → drop into `src/`.
 
+## Data owners
+
+Every data object should be defined by the code unit that uses it. The
+matching build needs each data-only unit (`src/game/data/`) whole at its
+retail address, so an object moves there for both builds only when
+`tools/move_data.py` can place the owner's section where retail has it
+(d95e8d6 moved 23; the 28 candidates left either fold into the owner's code
+or do not fit its declared type). For the rest the NONMATCHING build gets
+the object from its owner instead:
+
+- `tools/data_owners.py --report` (after `./build.sh`, the NONMATCHING
+  objects): every object of the data units, its users in the NONMATCHING
+  link, and a class.
+- `tools/split_data.py --apply`: the owner gets a twin under `#ifdef
+  NONMATCHING` (written in the owner's declared type, `static` when nothing
+  else names it), the data unit's definition goes under `#ifndef
+  NONMATCHING`. The matching build compiles what it did before.
+- `tools/check_data_twins.py` (ninja, part of the default target in both
+  modes; `build/twins/` holds the other build's side): each twin has the
+  data unit's bytes, size and relocations.
+- **Groups**: a pinned table whose extent is known (a root with an entry in
+  `config/data_extents.txt` or a typed extent, or an object code reaches
+  past at a fixed offset) moves whole: the owner defines one blob
+  `<ROOT>__grp` with the retail bytes under `#ifdef NONMATCHING` and a
+  `/* data group (UNIT): BLOB: NAME@OFF, ... */` line, and
+  `config/data_groups.txt` (written by `split_data.py`) gives ld each member
+  as `NAME = BLOB + OFF` (`tools/rel_syms.py` writes those lines only where
+  the blob is linked, so the matching build has none). The checker compares
+  each member's slice of the blob. Small-data (`.sbss`/`.sdata`) groups
+  stay: one blob would leave the gp range. An object the twin writer cannot
+  write in the owner's type (a qword union, a type clash, no `extern`) moves
+  as a one-object group the same way: no C type has to fit. A root whose
+  reach is unknown groups the rest of its gap-free run (moved whole, what
+  follows it still follows it). A group whose members change (a new
+  extent, a new root) goes back and is made again (`split_data.py --apply`,
+  then the inventory and `--apply` once more).
+- **Pinned** objects stay where the data unit has them in both builds: the
+  code can reach past them into their neighbours, so the neighbours must not
+  move. That is an object whose address is cast (to an integer or another
+  pointer type) and everything after it in its gap-free run, unless
+  `config/data_extents.txt` says how far the code reaches from it (read off
+  the code); a "view" (smaller than the element its users declare) and its
+  run after it the same way; and an object a `%hi/%lo` or gp-relative
+  access reaches past the end of.
+
+<!-- data-owners:start -->
+| objects (2026-11-28) | bss | data | rodata | sbss | sdata | all |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| in its owner in both builds | 0 | 8 | 0 | 0 | 0 | 8 |
+| NONMATCHING twin or group in its owner | 800 | 172 | 390 | 324 | 124 | 1810 |
+| total | 800 | 180 | 390 | 324 | 124 | 1818 |
+<!-- data-owners:end -->
+
+Every object has an owner in the NONMATCHING build. One nothing in C names
+goes to the C that stands in for the asm that used it, else to its owned
+neighbour, else to the unit its data unit was carved for (its `used by`
+note), else to the C unit before its data unit in link order. Beyond that:
+
+1. **Extents** (`config/data_extents.txt`) make groups smaller: a root of
+   unknown reach takes the rest of its run with it, so the run moves as
+   one blob; read how far the code goes and add a line to split it.
+2. **Real moves**: rerun `tools/move_data.py` as units match; an object it
+   moves loses both copies. 8 objects moved for both builds (with union
+   and padded-struct initialisers, and qword typedefs as unions with a
+   `u32 w[]` view, which keep their owners' code byte for byte); every
+   other candidate either folds into its owner's code or would leave link
+   order. After a move: take back the unit's twins and groups first
+   (split_data.unsplit / ungroup), add the owner's and the remainders'
+   subsegments to `config/sta.jp.yaml` and the remainders to the link
+   order (a data unit's head may move up to stay before its owner), then
+   `rm -rf asm; ./build.sh --matching` and rerun the NONMATCHING steps.
+3. **Names**: `config/game_data_names.txt` + `tools/apply_data_names.py`
+   (README, "Data names"); 1808 are named: 135 for what they are (the 123
+   ASCII strings after their text, the header-typed objects, the tables
+   whose users settle them) and 1673 after their owner unit and section
+   (`gGsPacketBss_002F1194`); the other 10 keep splat's `jtbl_`/`pad_`
+   names. Replace an owner name with a real one as its purpose shows.
+
+`tools/split_data.py --apply` also takes back the twin of any object a
+later inventory pins (a new root, a new extent), so rerun it after changing
+`config/data_extents.txt` or the code: `./build.sh`, `tools/data_owners.py
+--json build/data_owners.json`, `tools/split_data.py --apply`, `./build.sh`,
+`ninja shift`, `./build.sh --matching`.
+
 ## Shiftable build
 
 The goal is that the image can move: a function that grows, a table that
@@ -238,7 +322,7 @@ true now:
   and `data_aliases.txt` as `OWNER + offset`. It drops what an object
   defines or nothing uses, and keeps sizes, out-of-image addresses and the
   load address absolute. Biased bases are written by hand in
-  `linker_syms.txt` (`D_001FE918 = D_001FE994 - 0x7C`).
+  `linker_syms.txt` (`D_001FE918 = gGfxUploadRodata_001FE994 - 0x7C`).
 - **Data is C.** Pointers in `src/game/data/` are relocated `(s32)SYM`
   initialisers, jump tables of asm functions are function + offset, and
   folded `.bss` fields are aliases of their object. Each data-only unit is

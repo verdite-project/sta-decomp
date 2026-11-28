@@ -1,5 +1,5 @@
-/* 0xD0-byte scene objects kept in three pools: D_004AE370 (2x64, type 0), D_004AC970 (2x16, type 1)
- * and D_004AC630 (4, type 2); ItemObj_ClearTables_1_001AFA20 clears and initialises them. Fields are named by offset
+/* 0xD0-byte scene objects kept in three pools: gItemObjectBss_004AE370 (2x64, type 0), gItemObjectBss_004AC970 (2x16, type 1)
+ * and gItemObjectSpawnBss_004AC630 (4, type 2); ItemObj_ClearTables_1_001AFA20 clears and initialises them. Fields are named by offset
  * until known. Merged from the local copies in src/game_001A*.c; some files read xAE as u16. */
 #ifndef OBJ3D_H
 #define OBJ3D_H
@@ -17,7 +17,7 @@ typedef struct Obj3D {
     s32 x88;
     s32 **x8C;      /* **x8C is an owner id (ItemObj_OffsetAll_0_001AC0F0) */
     u8 pad90[0xC];
-    s16 x9C;        /* bone/entry index into D_002022B0; -1 = slot free */
+    s16 x9C;        /* bone/entry index into gItemObjectSbss_002022B0; -1 = slot free */
     s16 x9E;        /* pool type set by ItemObj_ClearTables_1_001AFA20 */
     u8 padA0[4];
     s8 xA4;
@@ -34,8 +34,8 @@ typedef struct Obj3D {
     u8 padB8[0x18];
 } Obj3D;
 
-extern Obj3D D_004AC630[4];
-extern Obj3D D_004AC970[2][16];
-extern Obj3D D_004AE370[2][64];
+extern Obj3D gItemObjectSpawnBss_004AC630[4];
+extern Obj3D gItemObjectBss_004AC970[2][16];
+extern Obj3D gItemObjectBss_004AE370[2][64];
 
 #endif

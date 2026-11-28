@@ -13,6 +13,13 @@
  * and tools/gen_ninja.py links unit(.text), chunk(.text), unit(.text.ia1),
  * ... The unit's data stays one object, so its data order is the retail
  * one; the asm function stays its own objdiff unit, unmatched. */
+#ifdef __MWERKS__
 #define INCLUDE_ASM(name) void __include_asm_##name(void) {}
+#else
+/* ee-gcc puts a unit's functions in one .text that cannot be split, so
+ * there a marker must be the whole unit (tools/gen_ninja.py links the chunk
+ * after its empty .text) and emits nothing. */
+#define INCLUDE_ASM(name) extern int __include_asm_##name
+#endif
 
 #endif

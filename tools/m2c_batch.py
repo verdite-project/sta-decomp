@@ -84,7 +84,7 @@ def clean(c, body=""):
     c = re.sub(r"^(Warning: .*)$", r"/* \1 */", c, flags=re.M)
     # CodeWarrior (and gcc -G 8) address an object of 8 bytes or less through
     # $gp; one reached with %hi/%lo is bigger, so declare it as an array
-    for sym in sorted(set(re.findall(r"%hi\((D_[0-9A-F]{8})\)", body))):
+    for sym in sorted(set(re.findall(r"%hi\(((?:D|g[A-Z][A-Za-z0-9]*)_[0-9A-F]{8})\)", body))):
         d = re.search(r"^extern ([^;\n]*?)\b%s;" % sym, c, re.M)
         if not d or "[" in d.group(0):
             continue
@@ -303,7 +303,7 @@ PERM_TYPES = ["s32", "u8", "s16", "u16", "s8", "s64", "u32", "f32"]
 
 def permute(name, addr, size, limit=400):
     """Near-miss: try every type for the parameters of the function and of
-    the prototypes it declares (most frequent types in docs/m2c-diffs first),
+    the prototypes it declares (most frequent types first),
     keeping the first combination that matches."""
     import itertools
     c = OUT / f"{name}.c"

@@ -68,8 +68,8 @@ typedef struct {
 } O_Proj_Update_0_00147E90;
 typedef struct { u8 b0:1; u8 b1:1; u8 b2:1; u8 b3:1; u8 b4:1; u8 b5:1; u8 b6:1; } F;
 typedef union { u128 q[4]; f32 f[16]; } T;
-extern Vec D_001F2160;
-extern MtxF D_001F2170;
+extern Vec gMatrixFromData_001F2160;
+extern MtxF gMatrixFromData_001F2170;
 s8* Proj_FindBestTarget_0_001472A0(Vec *a0, Vec *a1, f32 best_, f32 ang, f32 k_);
 s8* Proj_FindNearestEnemy_0_00147450(void *pos, f32 d);
 void Proj_AttachToBone_0_00147510(O_Proj_AttachToBone_0_00147510 *o);
@@ -105,7 +105,7 @@ void Sfx_SetTransform_1_001677C0(s8 *, void *);
 void Sfx_SetPosition_1_00167710(s8 *, Vec *);
 
 /* Proj_FindBestTarget_0_001472A0 */
-static inline Vec *pos(s8 *o) { return o ? (Vec *)(*(s8 **)(o + 0x518) + 0x90) : &D_001F2160; }
+static inline Vec *pos(s8 *o) { return o ? (Vec *)(*(s8 **)(o + 0x518) + 0x90) : &gMatrixFromData_001F2160; }
 
 s8 *Proj_FindBestTarget_0_001472A0(Vec *a0, Vec *a1, f32 best_, f32 ang, f32 k_) {
     s32 it;
@@ -157,7 +157,7 @@ s8 *Proj_FindNearestEnemy_0_00147450(void *pos, f32 d) {
     r = NULL;
     while (e != NULL) {
         if (*(u16 *)e != 0 && Enemy_IsBusy_0_0013EE40(e) == 0) {
-            t = Vec_Distance_3_00146940(e ? (void *)(*(s8 **)(e + 0x518) + 0x90) : (void *)&D_001F2160, pos);
+            t = Vec_Distance_3_00146940(e ? (void *)(*(s8 **)(e + 0x518) + 0x90) : (void *)&gMatrixFromData_001F2160, pos);
             if (t < d) { d = t; r = e; }
         }
         e = ActorList_Next_2_001A5460(&it);
@@ -179,7 +179,7 @@ void Proj_AttachToBone_0_00147510(O_Proj_AttachToBone_0_00147510 *o) {
         sceVu0CopyVector(&v, (u8 *)o->x90 + o->x94 * 128 + 0x2C0);
         v.w = 1.0f;
         sceVu0ApplyMatrix(o, &o->xC0, &v);
-        sceVu0CopyVector(o->xC0.m[3], &D_001F2160);
+        sceVu0CopyVector(o->xC0.m[3], &gMatrixFromData_001F2160);
     }
 }
 #undef Actor_GetBoneWorldMatrix_0_001464A0
@@ -197,7 +197,7 @@ void Proj_AttachToBoneB_0_001475F0(s8 *o) {
         sceVu0CopyVector(&v, *(s8 **)(o + 0x90) + *(u16 *)(o + 0x94) * 0x80 + 0x2C0);
         v.w = 1.0f;
         sceVu0ApplyMatrix(o, o + 0xC0, &v);
-        sceVu0CopyVector(o + 0xF0, &D_001F2160);
+        sceVu0CopyVector(o + 0xF0, &gMatrixFromData_001F2160);
     }
 }
 
@@ -262,13 +262,13 @@ void Proj_UpdateHoming_0_00147710(O_Proj_UpdateHoming_0_00147710 *o, f32 dt) {
     }
     Mtx_FromTransform_0_00145FB0((Vec *)&o->xC0, Actor_GetBone_0_001468F0(cur_Proj_UpdateHoming_0_00147710(o), (u32)o->x54));
     sceVu0CopyVector(o, &o->xC0.m[3]);
-    sceVu0CopyVector(&o->xC0.m[3], &D_001F2160);
+    sceVu0CopyVector(&o->xC0.m[3], &gMatrixFromData_001F2160);
     sceVu0ApplyMatrix(&v110, &o->xC0, (u8 *)o->x90 + o->x94 * 128 + 0x2C0);
     sceVu0AddVector(&o->p, &o->p, &v110);
     o->p.w = 1.0f;
     c = 0;
-    if (D_002022E4 != 0 && D_002022E4->unk518 != 0) c = 1;
-    Vec_GetYawPitchBetween_1_00146310(o, (Vec *)&o->xC0.m[2], c ? (void *)(D_002022E4->unk518 + 0x1C0) : (void *)&D_001F2160, &ang, 0);
+    if (gPlayerSbss_002022E4 != 0 && gPlayerSbss_002022E4->unk518 != 0) c = 1;
+    Vec_GetYawPitchBetween_1_00146310(o, (Vec *)&o->xC0.m[2], c ? (void *)(gPlayerSbss_002022E4->unk518 + 0x1C0) : (void *)&gMatrixFromData_001F2160, &ang, 0);
     at = atan2f(o->xC0.m[2][0], o->xC0.m[2][2]);
     ang += at;
     if (3.1415927f < fabsf(ang - o->xB4)) {
@@ -284,7 +284,7 @@ void Proj_UpdateHoming_0_00147710(O_Proj_UpdateHoming_0_00147710 *o, f32 dt) {
     o->xB4 = ang = ang + o->xB4;
     o->xB0 += o->x60 * dt;
     f = atan2f(o->xB0, 190.0f);
-    sceVu0RotMatrixX(&m, &D_001F2170, WRAP(f));
+    sceVu0RotMatrixX(&m, &gMatrixFromData_001F2170, WRAP(f));
     sceVu0RotMatrixY(&m, &m, WRAP(ang));
     sceVu0CopyMatrix(&o->xC0, &m);
     sceVu0ScaleVector(&vB0, &o->xC0.m[1], 10000.0f);
@@ -293,7 +293,7 @@ void Proj_UpdateHoming_0_00147710(O_Proj_UpdateHoming_0_00147710 *o, f32 dt) {
     else f = -1.0f;
     sceVu0ScaleVector(&vA0, &o->xC0.m[1], f);
     sceVu0AddVector(&vA0, &vA0, &o->p);
-    s0 = D_002022E4;
+    s0 = gPlayerSbss_002022E4;
     if (Proj_FindTarget_0_00146C70(o, &vA0, s0, &idx, 0, o->x58)) {
         Proj_SpawnAttack_0_00146A70(o->x90, s0, idx, 0x2B);
         o->x88 = o->f114.b1 = 0;
@@ -302,9 +302,9 @@ void Proj_UpdateHoming_0_00147710(O_Proj_UpdateHoming_0_00147710 *o, f32 dt) {
             e = Sfx_Spawn_2_00169B50(id, 0, 1, 0);
             if (e != 0) {
             s3 = (s8 *)s0->unk51C + idx * 0x170;
-            sceVu0CopyMatrix(&m60, &D_001F2170);
+            sceVu0CopyMatrix(&m60, &gMatrixFromData_001F2170);
             sceVu0CopyVector(m60.m[3], s3 + 0xA0);
-            Sfx_SetTransform_1_001677C0(e, s0 ? (void *)(s0->unk518 + 0x60) : (void *)&D_001F2170);
+            Sfx_SetTransform_1_001677C0(e, s0 ? (void *)(s0->unk518 + 0x60) : (void *)&gMatrixFromData_001F2170);
             }
         }
     }

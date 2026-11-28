@@ -11,7 +11,6 @@ if .venv/bin/python tools/dupes.py 2>&1 | grep "^MATCH"; then
   rm -rf /home/fatalis/code/sta/asm
   ./build.sh 2>&1 | tail -1 | grep -q "OK (matches retail)" || { echo BUILD FAILED; exit 1; }
 fi
-.venv/bin/python tools/m2c_diffs.py 2>/dev/null || true
 before=$(git show HEAD:docs/progress/summary.json | python3 -c 'import json,sys; d=json.load(sys.stdin); print([c for c in d["categories"] if c["id"]=="game"][0]["measures"]["matched_functions"])' 2>/dev/null || echo '?')
 G=$(ninja progress 2>&1 | grep '^game' | awk '{print $6}')
 .venv/bin/python tools/progress.py --write >/dev/null

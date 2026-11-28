@@ -12,7 +12,7 @@ s32 sceMcSync(s32, s32 *, s32 *);
 
 s32 Mc_StepGetDir_4_001D3FE8(void)
 {
-    T *t = &D_004B63B8;
+    T *t = &gMcState_004B63B8;
     s32 r;
     s32 port = t->port;
     s32 slot = t->slot;
@@ -53,8 +53,8 @@ s32 Mc_StepGetDir_4_001D3FE8(void)
         break;
     default:
         if (sceMcSync(1, 0, &r) != 0) {
-            D_004B63B8.err = 100;
-            D_004B63B8.cmd = 0;
+            gMcState_004B63B8.err = 100;
+            gMcState_004B63B8.cmd = 0;
             return -1;
         }
         break;

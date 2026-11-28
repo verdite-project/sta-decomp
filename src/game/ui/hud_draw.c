@@ -26,26 +26,47 @@ typedef struct { s32 k0; s32 k4; u8 t8; u8 pad[7]; } K;
 typedef struct { u8 pad[0x20]; u16 x20; u8 pad22[0x6E]; } E_Hud_UpdateShortcuts_0_0019BFF0;
 typedef struct { u8 pad0[0xA]; u16 type; u8 pad1[0x30]; u8 max; u8 pad2[0x53]; } Rec;
 typedef struct { u8 pad[8]; s8 st; u8 pad2[7]; } Out;
-extern s32 D_002021C0;
-extern s32 D_002021CC;
-extern s32 D_002021D8;
-extern s32 D_002021DC;
-extern s32 D_002021C4;
-extern s32 D_002021C8;
-extern struct { unsigned char f : 1; char pad[15]; } D_001F306C, D_001F307C;
-extern E_Hud_ClearTimers_0_0019A840 D_004A28E0[64];
-extern E_Hud_ClearTimers_0_0019A840 D_004A2CE0[64];
-extern s8 D_001FD408[];
-extern s8 D_001FD410[];
-extern s8 D_001FD418[];
-extern s8 D_001FD420[];
-extern f32 D_001F3060[];
-extern f32 D_001F3070[];
-extern s32 D_00201D60;
-extern s32 D_00201D64;
-extern f32 D_002021D0;
-extern K D_004A30E0[];
-extern s16 D_001FD3F8[];
+extern s32 gHudDrawSbss_002021C4;
+extern s32 gHudDrawSbss_002021C8;
+extern struct { unsigned char f : 1; char pad[15]; } gHudDrawData_001F306C, gHudDrawData_001F307C;
+extern E_Hud_ClearTimers_0_0019A840 gHudDrawBss_004A28E0[64];
+extern E_Hud_ClearTimers_0_0019A840 gHudDrawBss_004A2CE0[64];
+extern s8 gHudDrawRodata_001FD408[];
+extern s8 gHudDrawRodata_001FD410[];
+extern f32 gHudDrawData_001F3060[];
+extern f32 gHudDrawData_001F3070[];
+#ifndef NONMATCHING
+extern s32 gHudDrawSbss_002021C0;
+extern s32 gHudDrawSbss_002021CC;
+extern s32 gHudDrawSbss_002021D8;
+extern s32 gHudDrawSbss_002021DC;
+extern s8 gHudDrawRodata_001FD418[];
+extern s8 gHudDrawRodata_001FD420[];
+extern s32 gHudDrawSdata_00201D60;
+extern s32 gHudDrawSdata_00201D64;
+extern f32 gHudDrawSbss_002021D0;
+#else
+/* data twins (src/game/data/sbss.c): gHudDrawSbss_002021C0 */
+static s32 gHudDrawSbss_002021C0;
+/* data twins (src/game/data/sbss.c): gHudDrawSbss_002021CC */
+static s32 gHudDrawSbss_002021CC;
+/* data twins (src/game/data/sbss.c): gHudDrawSbss_002021D8 */
+static s32 gHudDrawSbss_002021D8;
+/* data twins (src/game/data/sbss.c): gHudDrawSbss_002021DC */
+static s32 gHudDrawSbss_002021DC;
+/* data twins (src/game/data/databook_item_reset_rodata.c): gHudDrawRodata_001FD418 */
+static s8 gHudDrawRodata_001FD418[0x8] = { 0x25, 0x64, 0, 0, 0, 0, 0, 0 };
+/* data twins (src/game/data/databook_item_reset_rodata.c): gHudDrawRodata_001FD420 */
+static s8 gHudDrawRodata_001FD420[0xd] = "MP\000\000\000\000\000\000\000\000\000\000\000";
+/* data twins (src/game/data/sdata.c): gHudDrawSdata_00201D60 */
+static s32 gHudDrawSdata_00201D60 = -1;
+/* data twins (src/game/data/sdata.c): gHudDrawSdata_00201D64 */
+static s32 gHudDrawSdata_00201D64 = -1;
+/* data twins (src/game/data/sbss.c): gHudDrawSbss_002021D0 */
+static f32 gHudDrawSbss_002021D0;
+#endif
+extern K gItemMenuProcDrawInfoBss_004A30E0[];
+extern s16 gHudDrawRodata_001FD3F8[];
 void Hud_Reset_0_0019A7E0(void);
 void Hud_DrawStatus_1_0019A920(L *l, T_Hud_DrawStatus_1_0019A920 *t);
 void Hud_HandleInput_0_0019B590(P_Hud_HandleInput_0_0019B590 *p);
@@ -72,10 +93,10 @@ u8* Equip_GetSlotEntry_0_001CCD30(s32);
 /* Hud_IsHidden_0_0019A790 */
 s32 Hud_IsHidden_0_0019A790(void)
 {
-    s32 r = D_002021C0;
+    s32 r = gHudDrawSbss_002021C0;
     if (r)
-        D_002021CC = 0;
-    if (D_002021CC)
+        gHudDrawSbss_002021CC = 0;
+    if (gHudDrawSbss_002021CC)
         return Menu_GetMode_1_0018A320() == 0x12;
     return r;
 }
@@ -83,13 +104,13 @@ s32 Hud_IsHidden_0_0019A790(void)
 /* Hud_Reset_0_0019A7E0 */
 void Hud_Reset_0_0019A7E0(void)
 {
-    D_002021D8 = -1;
-    D_002021DC = -1;
-    D_002021CC = 1;
-    D_002021C4 = 0;
-    D_002021C8 = 0;
-    D_001F306C.f = 1;
-    D_001F307C.f = 1;
+    gHudDrawSbss_002021D8 = -1;
+    gHudDrawSbss_002021DC = -1;
+    gHudDrawSbss_002021CC = 1;
+    gHudDrawSbss_002021C4 = 0;
+    gHudDrawSbss_002021C8 = 0;
+    gHudDrawData_001F306C.f = 1;
+    gHudDrawData_001F307C.f = 1;
 }
 
 /* Hud_ClearTimers_0_0019A840 */
@@ -97,8 +118,8 @@ void Hud_ClearTimers_0_0019A840(void)
 {
     s32 i;
     for (i = 63; i >= 0; i--) {
-        D_004A2CE0[i].v = 0;
-        D_004A28E0[i].v = 0;
+        gHudDrawBss_004A2CE0[i].v = 0;
+        gHudDrawBss_004A28E0[i].v = 0;
     }
 }
 
@@ -119,14 +140,14 @@ void Hud_DrawMain_0_0019A8B0(void)
 #undef Hud_DrawStatus_1_0019A920
 
 /* Hud_DrawStatus_1_0019A920 */
-#define D_004A2CE0 D_004A2CE0__as_Hud_DrawStatus_1_0019A920
-extern F D_004A2CE0__as_Hud_DrawStatus_1_0019A920[];
-#define D_004A28E0 D_004A28E0__as_Hud_DrawStatus_1_0019A920
-extern F D_004A28E0__as_Hud_DrawStatus_1_0019A920[];
-#define D_002021C4 D_002021C4__as_Hud_DrawStatus_1_0019A920
-extern f32 D_002021C4__as_Hud_DrawStatus_1_0019A920;
-#define D_002021C8 D_002021C8__as_Hud_DrawStatus_1_0019A920
-extern f32 D_002021C8__as_Hud_DrawStatus_1_0019A920;
+#define gHudDrawBss_004A2CE0 gHudDrawBss_004A2CE0__as_Hud_DrawStatus_1_0019A920
+extern F gHudDrawBss_004A2CE0__as_Hud_DrawStatus_1_0019A920[];
+#define gHudDrawBss_004A28E0 gHudDrawBss_004A28E0__as_Hud_DrawStatus_1_0019A920
+extern F gHudDrawBss_004A28E0__as_Hud_DrawStatus_1_0019A920[];
+#define gHudDrawSbss_002021C4 gHudDrawSbss_002021C4__as_Hud_DrawStatus_1_0019A920
+extern f32 gHudDrawSbss_002021C4__as_Hud_DrawStatus_1_0019A920;
+#define gHudDrawSbss_002021C8 gHudDrawSbss_002021C8__as_Hud_DrawStatus_1_0019A920
+extern f32 gHudDrawSbss_002021C8__as_Hud_DrawStatus_1_0019A920;
 #define Hud_DrawShortcuts_0_0019BBE0 Hud_DrawShortcuts_0_0019BBE0__as_Hud_DrawStatus_1_0019A920
 void Hud_DrawShortcuts_0_0019BBE0__as_Hud_DrawStatus_1_0019A920(E_Hud_DrawStatus_1_0019A920 *, T_Hud_DrawStatus_1_0019A920 *, s32);
 #define O o
@@ -147,7 +168,7 @@ void Hud_DrawStatus_1_0019A920(L *l, T_Hud_DrawStatus_1_0019A920 *t) {
     fp = PlayerData_Get_2_001C9BA0();
     Hud_UpdateGauges_0_0019B8D0();
     if (Player_Exists_3_001C9BF0()) {
-        s = (S *)(D_002022E4->unk518 + 0x180);
+        s = (S *)(gPlayerSbss_002022E4->unk518 + 0x180);
     } else {
         return;
     }
@@ -168,9 +189,9 @@ void Hud_DrawStatus_1_0019A920(L *l, T_Hud_DrawStatus_1_0019A920 *t) {
                 l->e[i].x2C = 28 + j * 13;
                 l->e[i].x30 = 16 + (j % 2) * 2;
                 l->e[i].x3C.w = 0x80FFFFFF;
-                D_004A2CE0[j].x8 += 16.0f;
-                if (D_004A2CE0[j].x8 > 128.0f) D_004A2CE0[j].x8 = 128.0f;
-                l->e[i].x3C.c.a = (s32)D_004A2CE0[j].x8;
+                gHudDrawBss_004A2CE0[j].x8 += 16.0f;
+                if (gHudDrawBss_004A2CE0[j].x8 > 128.0f) gHudDrawBss_004A2CE0[j].x8 = 128.0f;
+                l->e[i].x3C.c.a = (s32)gHudDrawBss_004A2CE0[j].x8;
                 Ui_DrawElem_1_00182C10(&l->e[i], &t[j % 3 + 5]);
             }
             for (; j < s->x394; j++) {
@@ -179,9 +200,9 @@ void Hud_DrawStatus_1_0019A920(L *l, T_Hud_DrawStatus_1_0019A920 *t) {
                 l->e[i].x2C = 28 + j * 13;
                 l->e[i].x30 = 16 + (j % 2) * 2;
                 l->e[i].x3C.w = 0x80FFFFFF;
-                D_004A2CE0[j].x8 -= 16.0f;
-                if (D_004A2CE0[j].x8 < 0.0f) D_004A2CE0[j].x8 = 0.0f;
-                l->e[i].x3C.c.a = (s32)D_004A2CE0[j].x8;
+                gHudDrawBss_004A2CE0[j].x8 -= 16.0f;
+                if (gHudDrawBss_004A2CE0[j].x8 < 0.0f) gHudDrawBss_004A2CE0[j].x8 = 0.0f;
+                l->e[i].x3C.c.a = (s32)gHudDrawBss_004A2CE0[j].x8;
                 Ui_DrawElem_1_00182C10(&l->e[i], &t[j % 3 + 5]);
             }
         }
@@ -200,9 +221,9 @@ void Hud_DrawStatus_1_0019A920(L *l, T_Hud_DrawStatus_1_0019A920 *t) {
                 l->e[i].x2C = 28 + j * 13;
                 l->e[i].x30 = 69 - (j % 2) * 2;
                 l->e[i].x3C.w = 0x80FFFFFF;
-                D_004A28E0[j].x8 += 16.0f;
-                if (D_004A28E0[j].x8 > 128.0f) D_004A28E0[j].x8 = 128.0f;
-                l->e[i].x3C.c.a = (s32)D_004A28E0[j].x8;
+                gHudDrawBss_004A28E0[j].x8 += 16.0f;
+                if (gHudDrawBss_004A28E0[j].x8 > 128.0f) gHudDrawBss_004A28E0[j].x8 = 128.0f;
+                l->e[i].x3C.c.a = (s32)gHudDrawBss_004A28E0[j].x8;
                 Ui_DrawElem_1_00182C10(&l->e[i], &t[j % 3 + 11]);
             }
             for (; j < s->x395; j++) {
@@ -211,52 +232,52 @@ void Hud_DrawStatus_1_0019A920(L *l, T_Hud_DrawStatus_1_0019A920 *t) {
                 l->e[i].x2C = 28 + j * 13;
                 l->e[i].x30 = 69 - (j % 2) * 2;
                 l->e[i].x3C.w = 0x80FFFFFF;
-                D_004A28E0[j].x8 -= 16.0f;
-                if (D_004A28E0[j].x8 < 0.0f) D_004A28E0[j].x8 = 0.0f;
-                l->e[i].x3C.c.a = (s32)D_004A28E0[j].x8;
+                gHudDrawBss_004A28E0[j].x8 -= 16.0f;
+                if (gHudDrawBss_004A28E0[j].x8 < 0.0f) gHudDrawBss_004A28E0[j].x8 = 0.0f;
+                l->e[i].x3C.c.a = (s32)gHudDrawBss_004A28E0[j].x8;
                 Ui_DrawElem_1_00182C10(&l->e[i], &t[j % 3 + 11]);
             }
         }
         if (id == 3000) {
             l->e[i].x2C = 33.0f;
             col = l->e[i].x3C;
-            col.c.a = (s32)D_001F3060[0];
-            Text_Draw_2_001875C0(O + l->e[i].x2C, D_001FD408, O + l->e[i].x30, 1.0f, 0, col.w);
+            col.c.a = (s32)gHudDrawData_001F3060[0];
+            Text_Draw_2_001875C0(O + l->e[i].x2C, gHudDrawRodata_001FD408, O + l->e[i].x30, 1.0f, 0, col.w);
         }
         if (id == 3010) {
-            sprintf(buf1, D_001FD410, D_002021D8);
+            sprintf(buf1, gHudDrawRodata_001FD410, gHudDrawSbss_002021D8);
             col = l->e[i].x3C;
-            col.c.a = (s32)D_001F3060[0];
+            col.c.a = (s32)gHudDrawData_001F3060[0];
             Text_DrawCentered_1_00187680(O + (l->e[i].x2C - 120.0f), buf1, O + l->e[i].x30, 1.0f, 0, 16, col.w);
-            sprintf(buf1, D_001FD418, fp[0]);
+            sprintf(buf1, gHudDrawRodata_001FD418, fp[0]);
             Text_DrawCentered_1_00187680(O + (l->e[i].x2C - 36.0f), buf1, O + l->e[i].x30, 1.0f, 0, 16, col.w);
         }
         if (id == 4000) {
             l->e[i].x2C = 28.0f;
             col = l->e[i].x3C;
-            col.c.a = (s32)D_001F3070[0];
-            Text_Draw_2_001875C0(l->e[i].x2C, D_001FD420, l->e[i].x30, 1.0f, 0, col.w);
+            col.c.a = (s32)gHudDrawData_001F3070[0];
+            Text_Draw_2_001875C0(l->e[i].x2C, gHudDrawRodata_001FD420, l->e[i].x30, 1.0f, 0, col.w);
         }
         if (id == 4010) {
-            sprintf(buf2, D_001FD410, D_002021DC);
+            sprintf(buf2, gHudDrawRodata_001FD410, gHudDrawSbss_002021DC);
             col = l->e[i].x3C;
-            col.c.a = (s32)D_001F3070[0];
+            col.c.a = (s32)gHudDrawData_001F3070[0];
             Text_DrawCentered_1_00187680(l->e[i].x2C - 120.0f, buf2, l->e[i].x30, 1.0f, 0, 16, col.w);
-            sprintf(buf2, D_001FD418, fp[1]);
+            sprintf(buf2, gHudDrawRodata_001FD418, fp[1]);
             Text_DrawCentered_1_00187680(l->e[i].x2C - 36.0f, buf2, l->e[i].x30, 1.0f, 0, 16, col.w);
         }
         if (id == 1010) {
-            D_002021C4 = Approachf_3_00187770(D_002021C4, (f32)fp[2] / (f32)fp[0], 4.0f);
+            gHudDrawSbss_002021C4 = Approachf_3_00187770(gHudDrawSbss_002021C4, (f32)fp[2] / (f32)fp[0], 4.0f);
             l->e[i].x3C.w = 0x80A0A0A0;
-            l->e[i].x34 = D_002021C4;
-            t[l->e[i].x0].p->x28 = 170.0f * D_002021C4;
+            l->e[i].x34 = gHudDrawSbss_002021C4;
+            t[l->e[i].x0].p->x28 = 170.0f * gHudDrawSbss_002021C4;
             Ui_DrawElem_1_00182C10(&l->e[i], &t[l->e[i].x0]);
         }
         if (id == 2010) {
-            D_002021C8 = Approachf_3_00187770(D_002021C8, (f32)fp[3] / (f32)fp[1], 4.0f);
+            gHudDrawSbss_002021C8 = Approachf_3_00187770(gHudDrawSbss_002021C8, (f32)fp[3] / (f32)fp[1], 4.0f);
             l->e[i].x3C.w = 0x80A0A0A0;
-            l->e[i].x34 = D_002021C8;
-            t[l->e[i].x0].p->x28 = 170.0f * D_002021C8;
+            l->e[i].x34 = gHudDrawSbss_002021C8;
+            t[l->e[i].x0].p->x28 = 170.0f * gHudDrawSbss_002021C8;
             Ui_DrawElem_1_00182C10(&l->e[i], &t[l->e[i].x0]);
         }
         if (id == 1000) {
@@ -274,10 +295,10 @@ void Hud_DrawStatus_1_0019A920(L *l, T_Hud_DrawStatus_1_0019A920 *t) {
     }
 }
 #undef Hud_DrawShortcuts_0_0019BBE0
-#undef D_004A2CE0
-#undef D_004A28E0
-#undef D_002021C4
-#undef D_002021C8
+#undef gHudDrawBss_004A2CE0
+#undef gHudDrawBss_004A28E0
+#undef gHudDrawSbss_002021C4
+#undef gHudDrawSbss_002021C8
 #undef O
 
 /* Hud_Update_1_0019B560 */
@@ -306,12 +327,12 @@ void Hud_HandleInput_0_0019B590(P_Hud_HandleInput_0_0019B590 *p) {
     }
     if (p->state == 0) {
         Ui_SetScrollSpeed_0_00180F50(90.0f);
-        D_002021D8 = *(s16 *)(b + 4);
-        D_002021DC = *(s16 *)(b + 6);
+        gHudDrawSbss_002021D8 = *(s16 *)(b + 4);
+        gHudDrawSbss_002021DC = *(s16 *)(b + 6);
     }
-    D_002021C0 = 0;
+    gHudDrawSbss_002021C0 = 0;
     if (p->state == 0x16) {
-        D_002021C0 = 1;
+        gHudDrawSbss_002021C0 = 1;
         if (p->xF) {
             SndEmit_StopAllA_1_0012F640();
             SndEmit_SetEnabled_0_0012F6E0(0);
@@ -322,7 +343,7 @@ void Hud_HandleInput_0_0019B590(P_Hud_HandleInput_0_0019B590 *p) {
         case 0x1F:
             p->x8 = p->xF;
             p->xF = 0;
-            D_002021C0 = 0;
+            gHudDrawSbss_002021C0 = 0;
             p->x4 = 0;
             p->state = 0x1F;
             Snd_PlaySe_3_00131600(0x2BD, p->xE);
@@ -330,14 +351,14 @@ void Hud_HandleInput_0_0019B590(P_Hud_HandleInput_0_0019B590 *p) {
         case 0x28:
             p->x8 = p->xF;
             p->xF = 0;
-            D_002021C0 = 0;
+            gHudDrawSbss_002021C0 = 0;
             p->x4 = 0;
             p->state = 0x1F;
             break;
         case 0xA:
             p->x8 = p->xF;
             p->xF = 0;
-            D_002021C0 = 0;
+            gHudDrawSbss_002021C0 = 0;
             LoadMenu_SetFromTitle_0_00193850(0);
             MenuStack_Push_1_00189ED0(0x12);
             p->x4 = 0;
@@ -347,16 +368,16 @@ void Hud_HandleInput_0_0019B590(P_Hud_HandleInput_0_0019B590 *p) {
         case 0x14:
             p->x8 = p->xF;
             p->xF = 0;
-            D_002021C0 = 0;
+            gHudDrawSbss_002021C0 = 0;
             p->x4 = 0;
             p->state = 0x1F;
             Snd_PlaySe_3_00131600(0x64, p->xE);
             break;
         case 0x80:
             p->xF = 0;
-            D_002021C0 = 0;
+            gHudDrawSbss_002021C0 = 0;
             p->x9 = 0;
-            D_004A3320[0] = 5;
+            gShopDrawBss_004A3320[0] = 5;
             p->x8 = 0x22;
             MenuStack_Push_1_00189ED0(0x12);
             p->x4 = 0;
@@ -365,9 +386,9 @@ void Hud_HandleInput_0_0019B590(P_Hud_HandleInput_0_0019B590 *p) {
             break;
         case 0x81:
             p->xF = 0;
-            D_002021C0 = 0;
+            gHudDrawSbss_002021C0 = 0;
             p->x9 = 0;
-            D_004A3320[0] = 6;
+            gShopDrawBss_004A3320[0] = 6;
             p->x8 = 0x22;
             MenuStack_Push_1_00189ED0(0x12);
             p->x4 = 0;
@@ -376,7 +397,7 @@ void Hud_HandleInput_0_0019B590(P_Hud_HandleInput_0_0019B590 *p) {
             break;
         case 0x29:
             p->xF = 0;
-            D_002021C0 = 0;
+            gHudDrawSbss_002021C0 = 0;
             p->x9 = 0;
             p->x8 = 0x29;
             MenuStack_Push_1_00189ED0(1);
@@ -385,7 +406,7 @@ void Hud_HandleInput_0_0019B590(P_Hud_HandleInput_0_0019B590 *p) {
             break;
         case 0x13:
             p->xF = 0;
-            D_002021C0 = 0;
+            gHudDrawSbss_002021C0 = 0;
             p->x9 = 0;
             p->x8 = 0x13;
             p->x4 = 0;
@@ -393,7 +414,7 @@ void Hud_HandleInput_0_0019B590(P_Hud_HandleInput_0_0019B590 *p) {
             break;
         case 0x11:
             p->xF = 0;
-            D_002021C0 = 0;
+            gHudDrawSbss_002021C0 = 0;
             p->x9 = 0;
             p->x8 = 0x11;
             p->x4 = 0;
@@ -401,7 +422,7 @@ void Hud_HandleInput_0_0019B590(P_Hud_HandleInput_0_0019B590 *p) {
             break;
         case 0x25:
             p->xF = 0;
-            D_002021C0 = 0;
+            gHudDrawSbss_002021C0 = 0;
             p->x9 = 0;
             p->x8 = 0x25;
             p->x4 = 0;
@@ -409,7 +430,7 @@ void Hud_HandleInput_0_0019B590(P_Hud_HandleInput_0_0019B590 *p) {
             break;
         case 0x24:
             p->xF = 0;
-            D_002021C0 = 0;
+            gHudDrawSbss_002021C0 = 0;
             p->x9 = 0;
             p->x8 = 0x24;
             p->x4 = 0;
@@ -421,10 +442,10 @@ void Hud_HandleInput_0_0019B590(P_Hud_HandleInput_0_0019B590 *p) {
 #undef PlayerData_Get_2_001C9BA0
 
 /* Hud_UpdateGauges_0_0019B8D0 */
-#define D_001F3060 D_001F3060__as_Hud_UpdateGauges_0_0019B8D0
-extern T_Hud_UpdateGauges_0_0019B8D0 D_001F3060__as_Hud_UpdateGauges_0_0019B8D0;
-#define D_001F3070 D_001F3070__as_Hud_UpdateGauges_0_0019B8D0
-extern T_Hud_UpdateGauges_0_0019B8D0 D_001F3070__as_Hud_UpdateGauges_0_0019B8D0;
+#define gHudDrawData_001F3060 gHudDrawData_001F3060__as_Hud_UpdateGauges_0_0019B8D0
+extern T_Hud_UpdateGauges_0_0019B8D0 gHudDrawData_001F3060__as_Hud_UpdateGauges_0_0019B8D0;
+#define gHudDrawData_001F3070 gHudDrawData_001F3070__as_Hud_UpdateGauges_0_0019B8D0
+extern T_Hud_UpdateGauges_0_0019B8D0 gHudDrawData_001F3070__as_Hud_UpdateGauges_0_0019B8D0;
 #define PlayerData_Get_2_001C9BA0 PlayerData_Get_2_001C9BA0__as_Hud_UpdateGauges_0_0019B8D0
 G *PlayerData_Get_2_001C9BA0__as_Hud_UpdateGauges_0_0019B8D0(void);
 static inline void upd(T_Hud_UpdateGauges_0_0019B8D0 *t, s32 *last, s16 *src) {
@@ -457,12 +478,12 @@ static inline void upd(T_Hud_UpdateGauges_0_0019B8D0 *t, s32 *last, s16 *src) {
 
 void Hud_UpdateGauges_0_0019B8D0(void) {
     G *g = PlayerData_Get_2_001C9BA0();
-    upd(&D_001F3060, &D_002021D8, &g->x4);
-    upd(&D_001F3070, &D_002021DC, &g->x6);
+    upd(&gHudDrawData_001F3060, &gHudDrawSbss_002021D8, &g->x4);
+    upd(&gHudDrawData_001F3070, &gHudDrawSbss_002021DC, &g->x6);
 }
 #undef PlayerData_Get_2_001C9BA0
-#undef D_001F3060
-#undef D_001F3070
+#undef gHudDrawData_001F3060
+#undef gHudDrawData_001F3070
 
 /* Hud_DrawShortcuts_0_0019BBE0 */
 #define PlayerData_Get_2_001C9BA0 PlayerData_Get_2_001C9BA0__as_Hud_DrawShortcuts_0_0019BBE0
@@ -490,13 +511,13 @@ void Hud_DrawShortcuts_0_0019BBE0(Buf *src, s32 a1, s32 key) {
     Buf buf;
 
     p = PlayerData_Get_2_001C9BA0();
-    if (D_00201D64 != (p->x94 & 1) || D_00201D60 != (s16)Equip_GetSlotItem_1_001CCD90(0)) {
-        D_00201D64 = p->x94 & 1;
-        D_00201D60 = (s16)Equip_GetSlotItem_1_001CCD90(0);
-        D_002021D0 = 150.0f;
+    if (gHudDrawSdata_00201D64 != (p->x94 & 1) || gHudDrawSdata_00201D60 != (s16)Equip_GetSlotItem_1_001CCD90(0)) {
+        gHudDrawSdata_00201D64 = p->x94 & 1;
+        gHudDrawSdata_00201D60 = (s16)Equip_GetSlotItem_1_001CCD90(0);
+        gHudDrawSbss_002021D0 = 150.0f;
     }
     i = 0;
-    k = D_004A30E0;
+    k = gItemMenuProcDrawInfoBss_004A30E0;
     do {
         if (key == k->k0 || key == k->k4) {
             buf = *src;
@@ -504,7 +525,7 @@ void Hud_DrawShortcuts_0_0019BBE0(Buf *src, s32 a1, s32 key) {
                 buf.col.c.a = buf.col.c.a * 48 / 128;
             } else if (k->t8 == 1) {
                 buf.col.w = 0x80101080;
-                Color_Pulse_1_00187960(D_002020D4, &buf.col);
+                Color_Pulse_1_00187960(gHudDrawSbss_002020D4, &buf.col);
             }
             idx = (s16)Equip_GetSlotItem_1_001CCD90(0);
             e = &Item_GetTable_1_001AFC90()[idx];
@@ -513,17 +534,17 @@ void Hud_DrawShortcuts_0_0019BBE0(Buf *src, s32 a1, s32 key) {
                 break;
             case 1:
                 if (i == 6 && !(p->x94 & 1)) {
-                    Color_Double_0_001878A0(D_002020D4, &buf.col);
-                    if (!(D_002021D0 <= 0.0f)) D_002021D0 -= 1.0f;
+                    Color_Double_0_001878A0(gHudDrawSbss_002020D4, &buf.col);
+                    if (!(gHudDrawSbss_002021D0 <= 0.0f)) gHudDrawSbss_002021D0 -= 1.0f;
                 }
                 if (i == 5 && (p->x94 & 1) == 1) {
-                    if (!(D_002021D0 <= 0.0f)) D_002021D0 -= 1.0f;
+                    if (!(gHudDrawSbss_002021D0 <= 0.0f)) gHudDrawSbss_002021D0 -= 1.0f;
                 }
                 break;
             case 2:
                 if (i == 6 || i == 5) {
-                    Color_Double_0_001878A0(D_002020D4, &buf.col);
-                    if (!(D_002021D0 <= 0.0f)) D_002021D0 -= 1.0f;
+                    Color_Double_0_001878A0(gHudDrawSbss_002020D4, &buf.col);
+                    if (!(gHudDrawSbss_002021D0 <= 0.0f)) gHudDrawSbss_002021D0 -= 1.0f;
                 }
                 break;
             }
@@ -532,8 +553,8 @@ void Hud_DrawShortcuts_0_0019BBE0(Buf *src, s32 a1, s32 key) {
             switch (kind(idx, e)) {
             case 1:
                 if (i == 5 && (p->x94 & 1) == 1) {
-                    Color_Double_0_001878A0(D_002020D4, &buf.col);
-                    if (!(D_002021D0 <= 0.0f)) D_002021D0 -= 1.0f;
+                    Color_Double_0_001878A0(gHudDrawSbss_002020D4, &buf.col);
+                    if (!(gHudDrawSbss_002021D0 <= 0.0f)) gHudDrawSbss_002021D0 -= 1.0f;
                 }
                 break;
             }
@@ -553,18 +574,18 @@ E_Hud_UpdateShortcuts_0_0019BFF0 *Item_GetTable_1_001AFC90__as_Hud_UpdateShortcu
 static inline void sub5(E_Hud_UpdateShortcuts_0_0019BFF0 *e1) {
     switch (e1->x20) {
     case 5:
-        D_004A30E0[4].k4 = 0x2717;
+        gItemMenuProcDrawInfoBss_004A30E0[4].k4 = 0x2717;
         break;
     case 6:
-        D_004A30E0[4].k4 = 0x2727;
+        gItemMenuProcDrawInfoBss_004A30E0[4].k4 = 0x2727;
         break;
     case 7: case 8: case 10: case 14:
         break;
     case 9:
-        D_004A30E0[4].k4 = 0x2713;
+        gItemMenuProcDrawInfoBss_004A30E0[4].k4 = 0x2713;
         break;
     case 11: case 12: case 13: case 15: case 16: case 17: case 18: case 19:
-        D_004A30E0[4].k4 = -1;
+        gItemMenuProcDrawInfoBss_004A30E0[4].k4 = -1;
         break;
     }
 }
@@ -577,155 +598,155 @@ void Hud_UpdateShortcuts_0_0019BFF0(void) {
     s32 i0;
     E_Hud_UpdateShortcuts_0_0019BFF0 *e1;
 
-    D_004A30E0[0].k0 = 0x2715;
-    D_004A30E0[1].k0 = 0x2716;
-    D_004A30E0[2].k0 = 0x272D;
-    i0 = (s16)Equip_GetSlotItem_1_001CCD90(D_001FD3F8[5]);
-    c0 = Equip_GetSlotEntry_0_001CCD30(D_001FD3F8[5]);
+    gItemMenuProcDrawInfoBss_004A30E0[0].k0 = 0x2715;
+    gItemMenuProcDrawInfoBss_004A30E0[1].k0 = 0x2716;
+    gItemMenuProcDrawInfoBss_004A30E0[2].k0 = 0x272D;
+    i0 = (s16)Equip_GetSlotItem_1_001CCD90(gHudDrawRodata_001FD3F8[5]);
+    c0 = Equip_GetSlotEntry_0_001CCD30(gHudDrawRodata_001FD3F8[5]);
     if (i0 != -1) {
         e0 = &Item_GetTable_1_001AFC90()[i0];
     } else {
         e0 = 0;
     }
-    i1 = (s16)Equip_GetSlotItem_1_001CCD90(D_001FD3F8[6]);
-    c1 = Equip_GetSlotEntry_0_001CCD30(D_001FD3F8[6]);
+    i1 = (s16)Equip_GetSlotItem_1_001CCD90(gHudDrawRodata_001FD3F8[6]);
+    c1 = Equip_GetSlotEntry_0_001CCD30(gHudDrawRodata_001FD3F8[6]);
     if (i1 != -1) {
         e1 = &Item_GetTable_1_001AFC90()[i1];
     } else {
         e1 = 0;
     }
     if (c0 == 0 && c1 == 0) {
-        D_004A30E0[6].k0 = -1;
-        D_004A30E0[5].k0 = -1;
-        D_004A30E0[6].k4 = -1;
-        D_004A30E0[5].k4 = -1;
-        D_004A30E0[4].k0 = 0x271B;
-        D_004A30E0[4].k4 = 0x271F;
-        D_004A30E0[3].k0 = 0x2711;
+        gItemMenuProcDrawInfoBss_004A30E0[6].k0 = -1;
+        gItemMenuProcDrawInfoBss_004A30E0[5].k0 = -1;
+        gItemMenuProcDrawInfoBss_004A30E0[6].k4 = -1;
+        gItemMenuProcDrawInfoBss_004A30E0[5].k4 = -1;
+        gItemMenuProcDrawInfoBss_004A30E0[4].k0 = 0x271B;
+        gItemMenuProcDrawInfoBss_004A30E0[4].k4 = 0x271F;
+        gItemMenuProcDrawInfoBss_004A30E0[3].k0 = 0x2711;
         return;
     }
-    D_004A30E0[3].k0 = 0x2714;
+    gItemMenuProcDrawInfoBss_004A30E0[3].k0 = 0x2714;
     if (e1 != 0 && e1->x20 == 10) {
-        D_004A30E0[3].k0 = 0x2711;
+        gItemMenuProcDrawInfoBss_004A30E0[3].k0 = 0x2711;
     }
-    D_004A30E0[4].k0 = 0x271B;
+    gItemMenuProcDrawInfoBss_004A30E0[4].k0 = 0x271B;
     if (e1 != 0) {
         switch (e1->x20) {
         case 7: case 8: case 9: case 10: case 14:
-            D_004A30E0[4].k0 = 0x2721;
+            gItemMenuProcDrawInfoBss_004A30E0[4].k0 = 0x2721;
             break;
         case 1: case 2: case 3: case 4: case 5: case 6:
-            D_004A30E0[4].k0 = 0x272F;
+            gItemMenuProcDrawInfoBss_004A30E0[4].k0 = 0x272F;
             break;
         case 11: case 12: case 13: case 16: case 17: case 18: case 19:
-            D_004A30E0[4].k0 = 0x2725;
+            gItemMenuProcDrawInfoBss_004A30E0[4].k0 = 0x2725;
             break;
         case 15:
-            D_004A30E0[4].k0 = 0x2730;
+            gItemMenuProcDrawInfoBss_004A30E0[4].k0 = 0x2730;
             break;
         default:
-            D_004A30E0[4].k0 = 0x271B;
+            gItemMenuProcDrawInfoBss_004A30E0[4].k0 = 0x271B;
             break;
         }
     }
-    D_004A30E0[4].k4 = 0x271F;
+    gItemMenuProcDrawInfoBss_004A30E0[4].k4 = 0x271F;
     if (e0 != 0) {
         switch (e0->x20) {
         case 1:
             if (e1 != 0) {
                 if (e1->x20 == 1) {
-                    D_004A30E0[4].k4 = 0x2726;
+                    gItemMenuProcDrawInfoBss_004A30E0[4].k4 = 0x2726;
                 } else {
-                    D_004A30E0[4].k4 = 0x2717;
+                    gItemMenuProcDrawInfoBss_004A30E0[4].k4 = 0x2717;
                 }
             } else {
-                D_004A30E0[4].k4 = 0x2717;
+                gItemMenuProcDrawInfoBss_004A30E0[4].k4 = 0x2717;
             }
             break;
         case 14: case 7: case 8: case 10:
-            D_004A30E0[4].k4 = 0x2726;
+            gItemMenuProcDrawInfoBss_004A30E0[4].k4 = 0x2726;
             break;
         case 3: case 5:
-            D_004A30E0[4].k4 = 0x2717;
+            gItemMenuProcDrawInfoBss_004A30E0[4].k4 = 0x2717;
             break;
         case 2: case 4:
-            D_004A30E0[4].k4 = 0x272B;
+            gItemMenuProcDrawInfoBss_004A30E0[4].k4 = 0x272B;
             break;
         default:
-            D_004A30E0[4].k4 = 0x271F;
+            gItemMenuProcDrawInfoBss_004A30E0[4].k4 = 0x271F;
             if (e1 != 0) {
                 sub5(e1);
             }
             break;
         }
     }
-    D_004A30E0[6].k0 = -1;
-    D_004A30E0[6].k4 = -1;
+    gItemMenuProcDrawInfoBss_004A30E0[6].k0 = -1;
+    gItemMenuProcDrawInfoBss_004A30E0[6].k4 = -1;
     if (e1 != 0) {
         switch (e1->x20) {
         case 0:
             break;
         case 7: case 8: case 10: case 14:
-            D_004A30E0[6].k0 = 0x2723;
+            gItemMenuProcDrawInfoBss_004A30E0[6].k0 = 0x2723;
             break;
         case 9:
-            D_004A30E0[6].k0 = 0x2710;
+            gItemMenuProcDrawInfoBss_004A30E0[6].k0 = 0x2710;
             break;
         case 1:
-            D_004A30E0[6].k0 = 0x271A;
+            gItemMenuProcDrawInfoBss_004A30E0[6].k0 = 0x271A;
             break;
         case 2:
-            D_004A30E0[6].k0 = 0x271D;
+            gItemMenuProcDrawInfoBss_004A30E0[6].k0 = 0x271D;
             break;
         case 3:
-            D_004A30E0[6].k0 = 0x2724;
+            gItemMenuProcDrawInfoBss_004A30E0[6].k0 = 0x2724;
             break;
         case 4:
-            D_004A30E0[6].k0 = 0x271E;
+            gItemMenuProcDrawInfoBss_004A30E0[6].k0 = 0x271E;
             break;
         case 5:
-            D_004A30E0[6].k0 = 0x2718;
+            gItemMenuProcDrawInfoBss_004A30E0[6].k0 = 0x2718;
             break;
         case 6:
-            D_004A30E0[6].k0 = 0x2722;
+            gItemMenuProcDrawInfoBss_004A30E0[6].k0 = 0x2722;
             break;
         case 19:
-            D_004A30E0[6].k0 = 0x2712;
+            gItemMenuProcDrawInfoBss_004A30E0[6].k0 = 0x2712;
             break;
         case 11: case 12: case 13: case 16: case 17:
-            D_004A30E0[6].k0 = 0x271C;
+            gItemMenuProcDrawInfoBss_004A30E0[6].k0 = 0x271C;
             break;
         case 15:
-            D_004A30E0[6].k0 = 0x2734;
-            D_004A30E0[6].k4 = 0x2735;
+            gItemMenuProcDrawInfoBss_004A30E0[6].k0 = 0x2734;
+            gItemMenuProcDrawInfoBss_004A30E0[6].k4 = 0x2735;
             break;
         case 18:
-            D_004A30E0[6].k0 = 0x2731;
-            D_004A30E0[6].k4 = 0x2732;
+            gItemMenuProcDrawInfoBss_004A30E0[6].k0 = 0x2731;
+            gItemMenuProcDrawInfoBss_004A30E0[6].k4 = 0x2732;
             break;
         }
     }
-    D_004A30E0[5].k0 = -1;
-    D_004A30E0[5].k4 = -1;
+    gItemMenuProcDrawInfoBss_004A30E0[5].k0 = -1;
+    gItemMenuProcDrawInfoBss_004A30E0[5].k4 = -1;
     if (e0 != 0) {
         switch (e0->x20) {
         case 14: case 7: case 8: case 10:
-            D_004A30E0[5].k0 = 0x272C;
+            gItemMenuProcDrawInfoBss_004A30E0[5].k0 = 0x272C;
             break;
         case 1:
-            D_004A30E0[5].k0 = 0x2729;
-            if (D_004A30E0[6].k0 == 0x271A) {
-                D_004A30E0[5].k0 = 0x272E;
+            gItemMenuProcDrawInfoBss_004A30E0[5].k0 = 0x2729;
+            if (gItemMenuProcDrawInfoBss_004A30E0[6].k0 == 0x271A) {
+                gItemMenuProcDrawInfoBss_004A30E0[5].k0 = 0x272E;
             }
             break;
         case 3:
-            D_004A30E0[5].k0 = 0x2728;
+            gItemMenuProcDrawInfoBss_004A30E0[5].k0 = 0x2728;
             break;
         case 5:
-            D_004A30E0[5].k0 = 0x2719;
+            gItemMenuProcDrawInfoBss_004A30E0[5].k0 = 0x2719;
             break;
         case 18:
-            D_004A30E0[5].k0 = 0x2733;
+            gItemMenuProcDrawInfoBss_004A30E0[5].k0 = 0x2733;
             break;
         }
     }
@@ -735,8 +756,8 @@ void Hud_UpdateShortcuts_0_0019BFF0(void) {
 /* Hud_UpdateWeaponSlots_0_0019C560 */
 #define Item_GetTable_1_001AFC90 Item_GetTable_1_001AFC90__as_Hud_UpdateWeaponSlots_0_0019C560
 Rec *Item_GetTable_1_001AFC90__as_Hud_UpdateWeaponSlots_0_0019C560(void);
-#define D_004A30E0 D_004A30E0__as_Hud_UpdateWeaponSlots_0_0019C560
-extern Out D_004A30E0__as_Hud_UpdateWeaponSlots_0_0019C560[];
+#define gItemMenuProcDrawInfoBss_004A30E0 gItemMenuProcDrawInfoBss_004A30E0__as_Hud_UpdateWeaponSlots_0_0019C560
+extern Out gItemMenuProcDrawInfoBss_004A30E0__as_Hud_UpdateWeaponSlots_0_0019C560[];
 
 void Hud_UpdateWeaponSlots_0_0019C560(void) {
     s32 i;
@@ -750,8 +771,8 @@ void Hud_UpdateWeaponSlots_0_0019C560(void) {
 
     i = 0;
     max = 0;
-    id = D_001FD3F8;
-    o = D_004A30E0;
+    id = gHudDrawRodata_001FD3F8;
+    o = gItemMenuProcDrawInfoBss_004A30E0;
     do {
         idx = (s16)Equip_GetSlotItem_1_001CCD90(*id);
         cur = Equip_GetSlotEntry_0_001CCD30(*id);
@@ -780,4 +801,35 @@ void Hud_UpdateWeaponSlots_0_0019C560(void) {
     } while (i < 7);
 }
 #undef Item_GetTable_1_001AFC90
-#undef D_004A30E0
+#undef gItemMenuProcDrawInfoBss_004A30E0
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): gHudDrawSbss_002020D4, gHudDrawSbss_002021C4, gHudDrawSbss_002021C8 */
+f32 gHudDrawSbss_002020D4;
+s32 gHudDrawSbss_002021C4;
+s32 gHudDrawSbss_002021C8;
+/* data group (src/game/data/databook_item_reset_data.c): D_001F306C__grp: gHudDrawData_001F306C@0x0 */
+s32 D_001F306C__grp[0x1] __attribute__((aligned(4))) = { 0 };
+/* data group (src/game/data/databook_item_reset_data.c): D_001F307C__grp: gHudDrawData_001F307C@0x0 */
+s32 D_001F307C__grp[0x1] __attribute__((aligned(4))) = { 0 };
+/* data group (src/game/data/item_menu_draw_bss.c): D_004A28E0__grp: gHudDrawBss_004A28E0@0x0 */
+u8 D_004A28E0__grp[0x3f0] __attribute__((aligned(16)));
+/* data group (src/game/data/item_menu_draw_bss.c): D_004A2CE0__grp: gHudDrawBss_004A2CE0@0x0 */
+u8 D_004A2CE0__grp[0x3f0] __attribute__((aligned(16)));
+/* data twins (src/game/data/databook_item_reset_data.c): gHudDrawData_001F3060, gHudDrawData_001F3070 */
+f32 gHudDrawData_001F3060[0x1] = { 0.0f };
+f32 gHudDrawData_001F3070[0x1] = { 0.0f };
+/* data group (src/game/data/databook_item_reset_rodata.c): gHudDrawRodata_001FD3F8__grp: gHudDrawRodata_001FD3F8@0x0, gHudDrawRodata_001FD402@0xa, gHudDrawRodata_001FD404@0xc, gHudDrawRodata_001FD408@0x10, gHudDrawRodata_001FD410@0x18 */
+char gHudDrawRodata_001FD3F8__grp[0x20] __attribute__((aligned(8))) = "\002\000\003\000\006\000\005\000\004\000\001\000\000\000\000\000HP\000\000\000\000\000\000%4d/\000\000\000\000";
+/* data group (src/game/data/databook_item_reset_data.c): D_001F3064__grp: gHudDrawData_001F3064@0x0 */
+unsigned int D_001F3064__grp[0x2] __attribute__((aligned(4))) = { 0x41200000, 0x0 };
+/* data group (src/game/data/databook_item_reset_data.c): D_001F3074__grp: gHudDrawData_001F3074@0x0 */
+unsigned int D_001F3074__grp[0x2] __attribute__((aligned(4))) = { 0x41200000, 0x0 };
+/* data group (src/game/data/item_menu_draw_bss.c): D_004A2CD0__grp: gHudDrawBss_004A2CD0@0x0 */
+unsigned char D_004A2CD0__grp[0x10] __attribute__((aligned(16)));
+/* data group (src/game/data/item_menu_draw_bss.c): D_004A30D0__grp: gHudDrawBss_004A30D0@0x0 */
+unsigned char D_004A30D0__grp[0x10] __attribute__((aligned(16)));
+/* data group (src/game/data/databook_item_reset_rodata.c): pad_001FD42D__grp: pad_001FD42D@0x0 */
+unsigned char pad_001FD42D__grp[0x3] __attribute__((aligned(1))) = { 0, 0, 0 };
+#endif

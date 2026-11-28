@@ -7,12 +7,19 @@ typedef struct { f32 v[9]; } M;
 typedef union { u32 w; struct { u8 r, g, b, a; } c; } Col;
 typedef struct { f32 m[4]; f32 x; f32 y; } S;
 typedef struct { s32 x0; s32 x4; u8 pad8[8]; f32 x10; f32 x14; f32 x18; s32 x1C; } P;
-extern s32 D_004A0F90[];
+extern s32 gMenuProcBss_004A0F90[];
 extern void (*D_004A0F9C[])(s8 *);
-extern void (*D_004A0F98[])(s32);
-extern s8 D_001FCCF0[];
-extern s8 D_001FCCF8[];
-extern M D_004A0F90__as_MenuProc_Run_1_0018B320;
+extern void (*gMenuProcBss_004A0F98[])(s32);
+#ifndef NONMATCHING
+extern s8 gMenuProcRodata_001FCCF0[];
+extern s8 gMenuProcRodata_001FCCF8[];
+#else
+/* data twins (src/game/data/ui_gauge_rodata2.c): gMenuProcRodata_001FCCF0 */
+static s8 gMenuProcRodata_001FCCF0[0x8] = { -0x7f, -0x65, -0x7f, 0x46, 0, 0, 0, 0 };
+/* data twins (src/game/data/ui_gauge_rodata2.c): gMenuProcRodata_001FCCF8 */
+static s8 gMenuProcRodata_001FCCF8[0x8] = { -0x7f, 0x7e, -0x7f, 0x46, 0, 0, 0, 0 };
+#endif
+extern M gMenuProcBss_004A0F90__as_MenuProc_Run_1_0018B320;
 void MenuProc_Set_1_0018B150(void *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, f32 fparg0);
 void MenuProc_DrawList_0_0018B180(s8 *arg0);
 void MenuProc_CheckReady_0_0018B2E0(s32 a);
@@ -71,7 +78,7 @@ void MenuProc_DrawList_0_0018B180(s8 *arg0) {
     }
     i = 0;
     if (i < l->n) {
-        d = D_004A0F90;
+        d = gMenuProcBss_004A0F90;
         off = 0;
         do {
             e = (s32 *)((s8 *)l->list + off);
@@ -88,8 +95,8 @@ void MenuProc_DrawList_0_0018B180(s8 *arg0) {
 /* MenuProc_CheckReady_0_0018B2E0 */
 void MenuProc_CheckReady_0_0018B2E0(s32 a)
 {
-    if (D_004A0F98[0] && D_004A0FAC[0] > 0x74)
-        D_004A0F98[0](a);
+    if (gMenuProcBss_004A0F98[0] && D_004A0FAC[0] > 0x74)
+        gMenuProcBss_004A0F98[0](a);
 }
 
 /* MenuProc_Run_1_0018B320 */
@@ -97,7 +104,7 @@ void MenuProc_CheckReady_0_0018B2E0(s32 a)
 void MenuProc_Run_1_0018B320(M *m)
 {
     if (m)
-        D_004A0F90__as_MenuProc_Run_1_0018B320 = *m;
+        gMenuProcBss_004A0F90__as_MenuProc_Run_1_0018B320 = *m;
 }
 
 /* MenuProc_DrawConfirm_0_0018B380 */
@@ -125,13 +132,13 @@ void MenuProc_DrawConfirm_0_0018B380(s8 *a0, s32 a1, u32 a2, P *a3) {
     if (a3->x1C < 64) return;
     switch (a2) {
     case 500:
-        sprintf(buf, D_001FCCF0);
+        sprintf(buf, gMenuProcRodata_001FCCF0);
         s = Msg_GetText_2_00195B10(a3->x0);
         if (s != 0) cat(buf, s);
         Text_Draw_2_001875C0(*(f32 *)(a0 + 0x38) + a3->x14, *(f32 *)(a0 + 0x3C) + a3->x18, a3->x10, s, 1, col);
         break;
     case 501:
-        sprintf(buf, D_001FCCF0);
+        sprintf(buf, gMenuProcRodata_001FCCF0);
         if (a3->x4 == 1) {
             cat(buf, Msg_GetText_2_00195B10(100));
             Text_Draw_2_001875C0(*(f32 *)(a0 + 0x38), *(f32 *)(a0 + 0x3C), 0.9166667f, buf, 1, col);
@@ -141,7 +148,7 @@ void MenuProc_DrawConfirm_0_0018B380(s8 *a0, s32 a1, u32 a2, P *a3) {
         }
         break;
     case 502:
-        sprintf(buf, D_001FCCF8);
+        sprintf(buf, gMenuProcRodata_001FCCF8);
         if (a3->x4 == 1) {
             cat(buf, Msg_GetText_2_00195B10(0x65));
             Text_Draw_2_001875C0(*(f32 *)(a0 + 0x38), *(f32 *)(a0 + 0x3C), 0.9166667f, buf, 1, col);
@@ -156,7 +163,7 @@ void MenuProc_DrawConfirm_0_0018B380(s8 *a0, s32 a1, u32 a2, P *a3) {
         break;
     case 503:
         if (a3->x4 == 2) {
-            sprintf(buf, D_001FCCF0);
+            sprintf(buf, gMenuProcRodata_001FCCF0);
             cat(buf, Msg_GetText_2_00195B10(0x67));
             Text_Draw_2_001875C0(*(f32 *)(a0 + 0x38), *(f32 *)(a0 + 0x3C), 0.9166667f, buf, 1, col);
         }
@@ -168,11 +175,21 @@ void MenuProc_DrawConfirm_0_0018B380(s8 *a0, s32 a1, u32 a2, P *a3) {
 /* Menu_GetCursor_1_0018B820 */
 s32 Menu_GetCursor_1_0018B820(s32 i)
 {
-    return D_00202120[i];
+    return gMenuProcSbss_00202120[i];
 }
 
 /* Menu_SetCursor_1_0018B840 */
 void Menu_SetCursor_1_0018B840(s32 i, s32 v)
 {
-    D_00202120[i] = v;
+    gMenuProcSbss_00202120[i] = v;
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): gMenuProcSbss_00202120 */
+s32 gMenuProcSbss_00202120[2];
+/* data twins (src/game/data/option_bss.c): gMenuProcBss_004A0F90 */
+s32 gMenuProcBss_004A0F90[0x2] __attribute__((aligned(4)));
+/* data group (src/game/data/option_bss.c): D_004A0F98__grp: gMenuProcBss_004A0F98@0x0 */
+u8 D_004A0F98__grp[0x28] __attribute__((aligned(8)));
+#endif

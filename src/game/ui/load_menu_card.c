@@ -44,40 +44,40 @@ void LoadMenu_LoadB_0_001945B0(s8 *arg0) {
 
     idx = SaveSys_GetPort_1_001E8290();
     st = SaveSys_IsCardReady_0_001E6110();
-    LoadMenu_UpdateCardFlags_1_00194D90(0, D_004A1198);
-    LoadMenu_UpdateCardFlags_1_00194D90(1, D_004A119C);
+    LoadMenu_UpdateCardFlags_1_00194D90(0, gLoadMenuBss_004A1198);
+    LoadMenu_UpdateCardFlags_1_00194D90(1, gLoadMenuBss_004A119C);
     if (st == 1) {
-        MenuProc_Set_1_0018B150(1.0f, D_004A1150, 0x79, 2, LoadMenu_RetryB_0_00194D20, 0);
-        MenuProc_Run_1_0018B320(D_004A1150);
+        MenuProc_Set_1_0018B150(1.0f, gLoadMenuBss_004A1150, 0x79, 2, LoadMenu_RetryB_0_00194D20, 0);
+        MenuProc_Run_1_0018B320(gLoadMenuBss_004A1150);
         arg0[0xA] = 1;
         arg0[0xB] = 1;
-        D_004A1184[0] = 0;
-        D_004A1188[0] = 0;
+        gLoadMenuBss_004A1184[0] = 0;
+        gLoadMenuBss_004A1188[0] = 0;
         done = 1;
     } else {
         done = 0;
     }
     if (done) return;
-    switch (D_004A1188[0]) {
+    switch (gLoadMenuBss_004A1188[0]) {
     case 0:
         if (SaveSys_StartRead_0_001E5F30(0, 0) == 0) {
             Save_BuildOptions_1_001AB0A0(&D_004A0900[idx]);
             memset(Save_GetSlotInfo_0_00188FF0(0), 0, 8);
-            D_004A1188[0]++;
+            gLoadMenuBss_004A1188[0]++;
         }
         break;
     case 1:
         SaveSys_GetResult_0_001E6080(&r);
         if (r == 0) {
-            D_004A1188[0]++;
+            gLoadMenuBss_004A1188[0]++;
         }
         if (r == 1) {
-            MenuProc_Set_1_0018B150(1.0f, D_004A1150, 0x79, 2, LoadMenu_RetryB_0_00194D20, 0);
-            MenuProc_Run_1_0018B320(D_004A1150);
+            MenuProc_Set_1_0018B150(1.0f, gLoadMenuBss_004A1150, 0x79, 2, LoadMenu_RetryB_0_00194D20, 0);
+            MenuProc_Run_1_0018B320(gLoadMenuBss_004A1150);
             arg0[0xA] = 1;
             arg0[0xB] = 1;
-            D_004A1184[0] = 0;
-            D_004A1188[0] = 0;
+            gLoadMenuBss_004A1184[0] = 0;
+            gLoadMenuBss_004A1188[0] = 0;
         }
         break;
     case 2:
@@ -85,21 +85,21 @@ void LoadMenu_LoadB_0_001945B0(s8 *arg0) {
         if (!((buf.v[0] != 0) | (buf.v[1] != 0) | (buf.v[2] != 0) | (buf.v[3] != 0) | (buf.v[4] != 0) | (buf.v[5] != 0) |
               (buf.v[6] != 0) | (buf.v[7] != 0) | (buf.v[8] != 0) | (buf.v[9] != 0) | (buf.v[10] != 0)) &&
             SaveSys_GetCurSlotState_0_001E6060() < 0x6F) {
-            MenuProc_Set_1_0018B150(0.9f, D_004A1150, idx + 0x85, 2, LoadMenu_CheckCardB_0_00194C20, 0);
+            MenuProc_Set_1_0018B150(0.9f, gLoadMenuBss_004A1150, idx + 0x85, 2, LoadMenu_CheckCardB_0_00194C20, 0);
             D_004A1168[0] = -20.0f;
-            MenuProc_Run_1_0018B320(D_004A1150);
-            D_004A1184[0] = 0;
-            D_004A1188[0] = 0;
+            MenuProc_Run_1_0018B320(gLoadMenuBss_004A1150);
+            gLoadMenuBss_004A1184[0] = 0;
+            gLoadMenuBss_004A1188[0] = 0;
         } else if (buf.v[3] == 1) {
             if (SaveSys_StartWrite_0_001E6170(-1, &D_004A0900[idx], 0xF0) != -1) {
-                D_004A1188[0]++;
+                gLoadMenuBss_004A1188[0]++;
             } else {
-                D_004A1188[0] = 0;
+                gLoadMenuBss_004A1188[0] = 0;
             }
         } else {
-            D_004A1184[0] = 0;
-            D_004A1188[0] = 0;
-            D_004A118C[0] = 128.0f;
+            gLoadMenuBss_004A1184[0] = 0;
+            gLoadMenuBss_004A1188[0] = 0;
+            gLoadMenuBss_004A118C[0] = 128.0f;
             MenuStack_Push_1_00189ED0(10);
             arg0[8] = 12;
             *(s32 *)(arg0 + 4) = 0;
@@ -113,28 +113,28 @@ void LoadMenu_LoadB_0_001945B0(s8 *arg0) {
             SaveSys_GetResult_0_001E6080(&r);
         } while (r == 2);
         if (r == 0) {
-            D_004A1188[0]++;
+            gLoadMenuBss_004A1188[0]++;
         }
         if (r == 1) {
-            MenuProc_Set_1_0018B150(1.0f, D_004A1150, 0x79, 2, LoadMenu_RetryB_0_00194D20, 0);
-            MenuProc_Run_1_0018B320(D_004A1150);
+            MenuProc_Set_1_0018B150(1.0f, gLoadMenuBss_004A1150, 0x79, 2, LoadMenu_RetryB_0_00194D20, 0);
+            MenuProc_Run_1_0018B320(gLoadMenuBss_004A1150);
             arg0[0xA] = 1;
             arg0[0xB] = 1;
-            D_004A1184[0] = 0;
-            D_004A1188[0] = 0;
+            gLoadMenuBss_004A1184[0] = 0;
+            gLoadMenuBss_004A1188[0] = 0;
         }
         break;
     case 4:
         SaveSys_GetSlotCount_0_001E5E80(&buf);
         if (buf.v[11] == 1) {
             if (SaveSys_StartWrite_0_001E6170(7, Save_GetSlotInfo_0_00188FF0(0), 8) != -1) {
-                D_004A1188[0]++;
+                gLoadMenuBss_004A1188[0]++;
             } else {
-                D_004A1188[0] = 0;
+                gLoadMenuBss_004A1188[0] = 0;
             }
         } else {
-            D_004A1188[0]++;
-            D_004A1188[0]++;
+            gLoadMenuBss_004A1188[0]++;
+            gLoadMenuBss_004A1188[0]++;
         }
         break;
     case 5:
@@ -143,21 +143,21 @@ void LoadMenu_LoadB_0_001945B0(s8 *arg0) {
             SaveSys_GetResult_0_001E6080(&r);
         } while (r == 2);
         if (r == 0) {
-            D_004A1188[0]++;
+            gLoadMenuBss_004A1188[0]++;
         }
         if (r == 1) {
-            MenuProc_Set_1_0018B150(1.0f, D_004A1150, 0x79, 2, LoadMenu_RetryB_0_00194D20, 0);
-            MenuProc_Run_1_0018B320(D_004A1150);
+            MenuProc_Set_1_0018B150(1.0f, gLoadMenuBss_004A1150, 0x79, 2, LoadMenu_RetryB_0_00194D20, 0);
+            MenuProc_Run_1_0018B320(gLoadMenuBss_004A1150);
             arg0[0xA] = 1;
             arg0[0xB] = 1;
-            D_004A1184[0] = 0;
-            D_004A1188[0] = 0;
+            gLoadMenuBss_004A1184[0] = 0;
+            gLoadMenuBss_004A1188[0] = 0;
         }
         break;
     case 6:
-        D_004A1188[0]++;
-        D_004A118C[0] = 128.0f;
-        D_004A1184[0] = 0;
+        gLoadMenuBss_004A1188[0]++;
+        gLoadMenuBss_004A118C[0] = 128.0f;
+        gLoadMenuBss_004A1184[0] = 0;
         MenuStack_Push_1_00189ED0(10);
         arg0[8] = 12;
         *(s32 *)(arg0 + 4) = 0;
@@ -166,7 +166,7 @@ void LoadMenu_LoadB_0_001945B0(s8 *arg0) {
         break;
     case 7:
         if (*(s32 *)arg0 == 0x1E) {
-            D_004A1188[0] = 0;
+            gLoadMenuBss_004A1188[0] = 0;
         }
         break;
     }
@@ -182,7 +182,7 @@ void LoadMenu_BackB_0_00194B90(A *a) {
         a->x8 = MenuStack_Pop_1_00189EA0(f);
         a->x4 = 0;
         a->x0 = 0x1A;
-        D_004A118C[0] = 128.0f;
+        gLoadMenuBss_004A118C[0] = 128.0f;
         a->xA = 2;
         Snd_PlaySe_3_00131600(0x69, a->xE);
     } else if (f & 0x4000) {
@@ -202,19 +202,19 @@ void LoadMenu_RetryB_0_00194D20__as_LoadMenu_CheckCardB_0_00194C20();
 void LoadMenu_CheckCardB_0_00194C20(Obj *o) {
     s32 st;
     s32 r;
-    LoadMenu_UpdateCardFlags_1_00194D90(0, D_004A1198);
-    LoadMenu_UpdateCardFlags_1_00194D90(1, D_004A119C);
+    LoadMenu_UpdateCardFlags_1_00194D90(0, gLoadMenuBss_004A1198);
+    LoadMenu_UpdateCardFlags_1_00194D90(1, gLoadMenuBss_004A119C);
     st = SaveSys_IsCardReady_0_001E6110();
-    LoadMenu_UpdateCardFlags_1_00194D90(0, D_004A1198);
-    LoadMenu_UpdateCardFlags_1_00194D90(1, D_004A119C);
+    LoadMenu_UpdateCardFlags_1_00194D90(0, gLoadMenuBss_004A1198);
+    LoadMenu_UpdateCardFlags_1_00194D90(1, gLoadMenuBss_004A119C);
     if (st == 1) {
-        MenuProc_Set_1_0018B150(1.0f, D_004A1150, 0x79, 2, LoadMenu_RetryB_0_00194D20, 0);
-        MenuProc_Run_1_0018B320(D_004A1150);
+        MenuProc_Set_1_0018B150(1.0f, gLoadMenuBss_004A1150, 0x79, 2, LoadMenu_RetryB_0_00194D20, 0);
+        MenuProc_Run_1_0018B320(gLoadMenuBss_004A1150);
         r = 1;
         o->xA = 1;
         o->xB = 1;
-        D_004A1184[0] = 0;
-        D_004A1188[0] = 0;
+        gLoadMenuBss_004A1184[0] = 0;
+        gLoadMenuBss_004A1188[0] = 0;
     } else {
         r = 0;
     }
@@ -233,8 +233,8 @@ int LoadMenu_UpdateCardFlags_1_00194D90__as_LoadMenu_RetryB_0_00194D20();
 int Snd_PlaySe_3_00131600__as_LoadMenu_RetryB_0_00194D20();
 
 void LoadMenu_RetryB_0_00194D20(void *arg0) {
-    LoadMenu_UpdateCardFlags_1_00194D90(NULL, (s32) D_004A1198);
-    LoadMenu_UpdateCardFlags_1_00194D90((u8 *)1, (s32) D_004A119C);
+    LoadMenu_UpdateCardFlags_1_00194D90(NULL, (s32) gLoadMenuBss_004A1198);
+    LoadMenu_UpdateCardFlags_1_00194D90((u8 *)1, (s32) gLoadMenuBss_004A119C);
     if (M2C_FIELD(arg0, s32 *, 4) & 0x2000) {
         M2C_FIELD(arg0, s8 *, 0xA) = 2;
         Snd_PlaySe_3_00131600(0x67, (s32) M2C_FIELD(arg0, u8 *, 0xE));

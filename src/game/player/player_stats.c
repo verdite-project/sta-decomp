@@ -56,7 +56,7 @@ typedef struct {
     u8 x4A0[0x20];
 } Q;
 typedef struct { u8 pad[4]; u16 x4; u8 pad6[0x1A]; u16 x20; u8 pad22[0x6E]; } E_Player_CalcAttack_1_001CEBF0;
-extern u32 D_00201E94;
+extern u32 gGameMainSbss_00201E94;
 extern u8 D_00222A54[];
 s32 Player_GetStat_2_001CD450(s32 a0, u8 *out, s32 a2, s32 a3);
 s32 Player_GetLevelInfo_0_001CD980(u8 *out, s8 *lv);
@@ -177,13 +177,13 @@ void Player_UpdateRegen_1_001CD6C0(void) {
     u8 c;
     S9BA0 *p;
 
-    if (Player_GetStat_2_001CD450(8, &c, 0, 0) && c && D_00201E94 % c == 0) {
+    if (Player_GetStat_2_001CD450(8, &c, 0, 0) && c && gGameMainSbss_00201E94 % c == 0) {
         Player_AddExp_0_001CEAA0(1);
     }
-    if (Player_GetStat_2_001CD450(9, &c, 0, 0) && c && D_00201E94 % c == 0) {
+    if (Player_GetStat_2_001CD450(9, &c, 0, 0) && c && gGameMainSbss_00201E94 % c == 0) {
         Player_AddExp_0_001CEAA0(-1);
     }
-    if (Player_GetStat_2_001CD450(0xB, &c, 0, 0) && c && D_00201E94 % c == 0) {
+    if (Player_GetStat_2_001CD450(0xB, &c, 0, 0) && c && gGameMainSbss_00201E94 % c == 0) {
         p = PlayerData_Get_2_001C9BA0();
         p->x6++;
         if (p->x6 < 0) {
@@ -193,7 +193,7 @@ void Player_UpdateRegen_1_001CD6C0(void) {
             p->x6 = p->x2;
         }
     }
-    if (Player_GetStat_2_001CD450(0xC, &c, 0, 0) && c && D_00201E94 % c == 0) {
+    if (Player_GetStat_2_001CD450(0xC, &c, 0, 0) && c && gGameMainSbss_00201E94 % c == 0) {
         p = PlayerData_Get_2_001C9BA0();
         p->x6--;
         if (p->x6 < 0) {
@@ -326,7 +326,7 @@ void Player_UpdateMp_1_001CDF80(void) {
     r = Player_GetBodyState_1_001C9B60();
     n = 0;
     d = 0;
-    if (D_00201E94 % 30 == 0 && r != NULL) {
+    if (gGameMainSbss_00201E94 % 30 == 0 && r != NULL) {
         switch (lvlA()) {
         case 1:
             n = 3;

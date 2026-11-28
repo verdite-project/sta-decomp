@@ -26,8 +26,8 @@ typedef struct {
 } Big_Save_BuildGame_1_001AAAE0;
 typedef SaveRec Rec_Save_BuildOptions_1_001AB0A0;
 typedef struct { Rec_Save_BuildOptions_1_001AB0A0 r0; u8 x20[0x10]; Rec_Save_BuildOptions_1_001AB0A0 r1; u8 pad[0x80]; Rec_Save_BuildOptions_1_001AB0A0 r2; } Big_Save_BuildOptions_1_001AB0A0;
-extern PlayerData *D_00201DC0;
-extern Rec_Save_InitNewGame_1_001AA760 *D_00201DC4;
+extern PlayerData *gPlayerData_00201DC0;
+extern Rec_Save_InitNewGame_1_001AA760 *gSaveByteSdata_00201DC4;
 u8 Save_GetByte2E_0_001AA740(void);
 void Save_InitNewGame_1_001AA760(void);
 void Save_BuildGame_1_001AAAE0(Big_Save_BuildGame_1_001AAAE0 *b);
@@ -37,23 +37,23 @@ void memset(void *, s32, s32);
 
 /* Save_GetByte2E_0_001AA740 */
 u8 Save_GetByte2E_0_001AA740(void) {
-    return D_00201DC0->x2E;
+    return gPlayerData_00201DC0->x2E;
 }
 
 /* Save_GetByte2F_0_001AA750 */
 u8 Save_GetByte2F_0_001AA750(void) {
-    return D_00201DC0->x2F;
+    return gPlayerData_00201DC0->x2F;
 }
 
 /* Save_InitNewGame_1_001AA760 */
-#define D_00201DC0 D_00201DC0__as_Save_InitNewGame_1_001AA760
-extern W *D_00201DC0__as_Save_InitNewGame_1_001AA760;
+#define gPlayerData_00201DC0 gPlayerData_00201DC0__as_Save_InitNewGame_1_001AA760
+extern W *gPlayerData_00201DC0__as_Save_InitNewGame_1_001AA760;
 static inline Slot *slot(s16 id) {
     Slot *s;
     if (0 > id || id >= 0x400) {
         s = NULL;
     } else {
-        s = &D_00201DC0->slot[id];
+        s = &gPlayerData_00201DC0->slot[id];
     }
     return s;
 }
@@ -63,15 +63,15 @@ void Save_InitNewGame_1_001AA760(void) {
     s32 i;
     sv = PlayerData_Get_2_001C9BA0();
     for (i = 0; i < 0x2A; i++) {
-        memset(D_00201DC4[i].x0, 0, 0x20);
-        memset(D_00201DC4[i].x20, 0, 0x20);
-        memset(D_00201DC4[i].x40, 0, 8);
-        memset(D_00201DC4[i].x60, 0, 0x120);
-        memset(D_00201DC4[i].x180, 0, 0x40);
+        memset(gSaveByteSdata_00201DC4[i].x0, 0, 0x20);
+        memset(gSaveByteSdata_00201DC4[i].x20, 0, 0x20);
+        memset(gSaveByteSdata_00201DC4[i].x40, 0, 8);
+        memset(gSaveByteSdata_00201DC4[i].x60, 0, 0x120);
+        memset(gSaveByteSdata_00201DC4[i].x180, 0, 0x40);
     }
-    memset(&D_00201DC4[0x2A], 0, 0x20);
-    D_00201DC0->x2E = 1;
-    D_00201DC0->x2F = 10;
+    memset(&gSaveByteSdata_00201DC4[0x2A], 0, 0x20);
+    gPlayerData_00201DC0->x2E = 1;
+    gPlayerData_00201DC0->x2F = 10;
     for (i = 0x1F; i <= 0x31; i++) {
         memset(&sv->xA0[i], 0, 4);
         memset(slot(i), 0, 8);
@@ -124,7 +124,7 @@ void Save_InitNewGame_1_001AA760(void) {
     sv->xE = 1;
     sv->xF = 10;
 }
-#undef D_00201DC0
+#undef gPlayerData_00201DC0
 
 /* Save_BuildGame_1_001AAAE0 */
 #define FCC(s) ((s)[0] | ((s)[1] << 8) | ((s)[2] << 16) | ((s)[3] << 24))
@@ -199,12 +199,12 @@ void Save_BuildGame_1_001AAAE0(Big_Save_BuildGame_1_001AAAE0 *b) {
     Inventory_AddItem_1_001A95A0(0x3B7, 1);
     Inventory_AddItem_1_001A95A0(0x3C7, 1);
     Inventory_AddItem_1_001A95A0(0x3C9, 1);
-    init_Save_BuildGame_1_001AAAE0(&b->r0, D_001FD9A0, 0x10C0, 0x10B0, 0x10A0);
-    init_Save_BuildGame_1_001AAAE0(&b->r1, D_001FD9A8, 0x49E0, 0x49D0, 0x49C0);
-    init_Save_BuildGame_1_001AAAE0(&b->r2, D_001FD9B0, 0xA0, 0x90, 0x80);
-    init_Save_BuildGame_1_001AAAE0(&b->r3, D_001FD9B8, 0xA0, 0x90, 0x80);
-    init_Save_BuildGame_1_001AAAE0(&b->r4, D_001FD9C0, 0x2020, 0x2010, 0x2000);
-    init_Save_BuildGame_1_001AAAE0(&b->r5, D_001FD988, 0x20, 0x10, 0);
+    init_Save_BuildGame_1_001AAAE0(&b->r0, gSaveParseRodata_001FD9A0, 0x10C0, 0x10B0, 0x10A0);
+    init_Save_BuildGame_1_001AAAE0(&b->r1, gSaveParseRodata_001FD9A8, 0x49E0, 0x49D0, 0x49C0);
+    init_Save_BuildGame_1_001AAAE0(&b->r2, gSaveParseRodata_001FD9B0, 0xA0, 0x90, 0x80);
+    init_Save_BuildGame_1_001AAAE0(&b->r3, gSaveParseRodata_001FD9B8, 0xA0, 0x90, 0x80);
+    init_Save_BuildGame_1_001AAAE0(&b->r4, gSaveParseRodata_001FD9C0, 0x2020, 0x2010, 0x2000);
+    init_Save_BuildGame_1_001AAAE0(&b->r5, gSaveParseRodata_001FD988, 0x20, 0x10, 0);
 }
 
 /* Save_BuildOptions_1_001AB0A0 */
@@ -234,7 +234,16 @@ void Save_BuildOptions_1_001AB0A0(Big_Save_BuildOptions_1_001AB0A0 *b) {
     b->x20[7] = 0;
     b->x20[8] = 1;
     b->x20[9] = 1;
-    init_Save_BuildOptions_1_001AB0A0(&b->r0, D_001FD990, 0x30, 0x20, 0x10);
-    init_Save_BuildOptions_1_001AB0A0(&b->r1, D_001FD998, 0xA0, 0x90, 0x80);
-    init_Save_BuildOptions_1_001AB0A0(&b->r2, D_001FD988, 0x20, 0x10, 0);
+    init_Save_BuildOptions_1_001AB0A0(&b->r0, gSaveParseRodata_001FD990, 0x30, 0x20, 0x10);
+    init_Save_BuildOptions_1_001AB0A0(&b->r1, gSaveParseRodata_001FD998, 0xA0, 0x90, 0x80);
+    init_Save_BuildOptions_1_001AB0A0(&b->r2, gSaveParseRodata_001FD988, 0x20, 0x10, 0);
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+extern u8 gSaveByteBss_004A5A60[];
+/* data twins (src/game/data/sdata.c): gSaveByteSdata_00201DC4 */
+Rec_Save_InitNewGame_1_001AA760 *gSaveByteSdata_00201DC4 = (Rec_Save_InitNewGame_1_001AA760 *)gSaveByteBss_004A5A60;
+/* data twins (src/game/data/pad_get_connected_bss.c): gSaveByteBss_004A5A60 */
+u8 gSaveByteBss_004A5A60[0x49e0];
+#endif

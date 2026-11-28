@@ -4,4 +4,6 @@
 /* used by: save_menu */
 #pragma explicit_zero_data on
 
-const s8 D_001FCDC8[0x8] = "SLOT %d\000";
+#ifndef NONMATCHING /* the NONMATCHING build defines these in their owners */
+const s8 gSaveMenuRodata_001FCDC8[0x8] = "SLOT %d\000";
+#endif

@@ -1,9 +1,9 @@
 #include "m2c.h"
 typedef struct { volatile s32 v; s8 pad[0x24]; } E;
-extern E D_004A43B0[];
-extern E D_004A43B4[];
-extern E D_004A43C8[];
-extern E D_004A43D0[];
+extern E gEnemyDataTbl_004A43B0[];
+extern E gEnemyManagerBss_004A43B4[];
+extern E gEnemyManagerBss_004A43C8[];
+extern E gEnemyManagerBss_004A43D0[];
 typedef struct { s16 key; s8 pad2[0xA]; s32 xC; s8 pad[0x5A0 - 0x10]; u16 a0:1; u16 a1:1; u16 a2:1; u16 b:8; } B;
 
 void EnemyMgr_ReleaseData_0_001A51E0(B **arg0) {
@@ -12,20 +12,20 @@ void EnemyMgr_ReleaseData_0_001A51E0(B **arg0) {
     s32 i;
 
     for (i = 0; i < 11; i++) {
-        if (key == D_004A43B0[i].v) break;
+        if (key == gEnemyDataTbl_004A43B0[i].v) break;
     }
     if (i != 11) {
-        p->xC = D_004A43C8[i].v;
+        p->xC = gEnemyManagerBss_004A43C8[i].v;
         p->a1 = 1;
         p->b = i + 1;
         return;
     }
     for (i = 0; i < 11; i++) {
-        if (D_004A43B0[i].v == -1) break;
+        if (gEnemyDataTbl_004A43B0[i].v == -1) break;
     }
-    D_004A43B0[i].v = key;
-    D_004A43B4[i].v = 0;
-    D_004A43D0[i].v = 0;
+    gEnemyDataTbl_004A43B0[i].v = key;
+    gEnemyManagerBss_004A43B4[i].v = 0;
+    gEnemyManagerBss_004A43D0[i].v = 0;
     p->xC = 0;
     p->a1 = 1;
     p->b = i + 1;

@@ -1,7 +1,7 @@
 #include "common.h"
 #include "game/core.h"
 #include "game/data.h"
-extern s32 D_002F0F40[];
+extern s32 gTaskRunBss_002F0F40[];
 void Task_FlushWrap_0_0014DAC0(void);
 void Task_KillWrap_0_0014DAF0(s32 arg0);
 void Task_SetPriorityWrap_0_0014DB00(s32 arg0, s16 arg1, s32 arg2);
@@ -49,8 +49,16 @@ void Task_SetPriorityWrap_0_0014DB00(s32 arg0, s16 arg1, s32 arg2)
 /* Task_Register_0_0014DB10 */
 void Task_Register_0_0014DB10(s32 arg0) {
     if (arg0 != 0) {
-        D_002F0F40[D_00201F20] = arg0;
-        D_00201F20 += 1;
-        Task_SetCallback_1_001E0560(D_002F0F40, D_00201F20);
+        gTaskRunBss_002F0F40[gTaskRunSbss_00201F20] = arg0;
+        gTaskRunSbss_00201F20 += 1;
+        Task_SetCallback_1_001E0560(gTaskRunBss_002F0F40, gTaskRunSbss_00201F20);
     }
 }
+
+#ifdef NONMATCHING
+#pragma explicit_zero_data on
+/* data twins (src/game/data/sbss.c): gTaskRunSbss_00201F20 */
+s32 gTaskRunSbss_00201F20;
+/* data group (src/game/data/angle_b_bss.c): gTaskRunBss_002F0F40__grp: gTaskRunBss_002F0F40@0x0, gTaskRunBss_002F0F44@0x4, gTaskRunBss_002F0F48@0x8, gTaskRunBss_002F0F4C@0xc, gTaskRunBss_002F0F50@0x10, gTaskRunBss_002F0F54@0x14, gTaskRunBss_002F0F58@0x18, gTaskRunBss_002F0F5C@0x1c */
+unsigned char gTaskRunBss_002F0F40__grp[0x20] __attribute__((aligned(16)));
+#endif

@@ -4,8 +4,10 @@
 /* used by: item_menu_draw, text_0019CEF0.s */
 #pragma explicit_zero_data on
 
-const s8 D_001FD5B0[0x8] = "+%d\000\000\000\000\000";
-const s32 D_001FD5B8[0x2] = { 0x643325, 0 };
-const char D_001FD5C0[0x6] = "(+%d)\000";
-const char D_001FD5C8[0x6] = "%3.1f\000";
+#ifndef NONMATCHING /* the NONMATCHING build defines these in their owners */
+const s8 gItemMenuDrawRodata_001FD5B0[0x8] = "+%d\000\000\000\000\000";
+const s32 gItemMenuProcDrawInfoRodata_001FD5B8[0x2] = { 0x643325, 0 };
+const char gStrD_001FD5C0[0x6] = "(+%d)\000";
+const char gStr31f_001FD5C8[0x6] = "%3.1f\000";
+#endif
 static const u8 pad_001FD5CE[0x2] __attribute__((aligned(2))) = { 0 };

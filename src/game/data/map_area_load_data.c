@@ -4,5 +4,7 @@
 /* used by: item_object_spawn */
 #pragma explicit_zero_data on
 
-Vec D_001F3820 = { 1.0f, 1.0f, 1.0f, 1.0f };
-Vec D_001F3830 = { 1.0f, 1.0f, 1.0f, 1.0f };
+#ifndef NONMATCHING /* the NONMATCHING build defines these in their owners */
+Vec gItemObjectSpawnData_001F3820 = { 1.0f, 1.0f, 1.0f, 1.0f };
+Vec gItemObjectSpawnData_001F3830 = { 1.0f, 1.0f, 1.0f, 1.0f };
+#endif

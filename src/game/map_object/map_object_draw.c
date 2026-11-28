@@ -36,7 +36,7 @@ typedef struct {
     u8 pad184[4];
     Big *x188;
 } O;
-extern Big D_0030D0E0;
+extern Big gGlowInitBss_0030D0E0;
 void MapObj_DrawAll_0_001B8A60(O *o, s32 (*cb)(s32 **, Key), u32 m1, u32 m0, s16 sel);
 s32 MapObj_IsSame_0_001B8F30(void *arg0, void *arg1);
 void Sfx_SetFlag_0_00167640(void *, s32);
@@ -123,7 +123,7 @@ void MapObj_DrawAll_0_001B8A60(O *o, s32 (*cb)(s32 **, Key), u32 m1, u32 m0, s16
         k = a->x21;
         if (b->idx != 0xFF) k = (s8)b->idx;
         if ((s8)k == -1) {
-            src = &D_0030D0E0;
+            src = &gGlowInitBss_0030D0E0;
         } else {
             src = &o->x188[(s8)k];
         }

@@ -27,7 +27,12 @@ void Actor_UpdateTransform_0_0013B4F0(Actor *, f32, s32);
 void Actor_UpdateCollision_0_0013B220(Actor *, f32, s32);
 void Mdl_ResetBones_0_00171610(s32);
 void sceVu0CopyVector(s32, s8 *);
-extern u8 D_00201F14;
+#ifndef NONMATCHING
+extern u8 gActorsSbss_00201F14;
+#else
+/* data twins (src/game/data/sbss.c): gActorsSbss_00201F14 */
+static u8 gActorsSbss_00201F14;
+#endif
 
 void Actors_UpdateAll_1_0013BBC0(f32 dt) {
     s32 it1;
@@ -95,7 +100,7 @@ void Actors_UpdateAll_1_0013BBC0(f32 dt) {
                 Enemy_UpdateTimers_0_0013D8A0(o, dt);
                 Enemy_UpdateFade_0_0013D760(o, dt);
                 Enemy_UpdateLerp_0_0013DA90(o, dt);
-                if (D_00201F14 == cnt % 8) {
+                if (gActorsSbss_00201F14 == cnt % 8) {
                     Enemy_Set5B4b2_1_0013E640(o, 1);
                 } else {
                     Enemy_Set5B4b2_1_0013E640(o, 0);
@@ -106,9 +111,9 @@ void Actors_UpdateAll_1_0013BBC0(f32 dt) {
             o = ActorList_Next_2_001A5460(&it3);
             if (sel != NULL) break;
         }
-        D_00201F14++;
-        if (D_00201F14 >= 8) {
-            D_00201F14 = 0;
+        gActorsSbss_00201F14++;
+        if (gActorsSbss_00201F14 >= 8) {
+            gActorsSbss_00201F14 = 0;
         }
     }
     if (flag || Player_IsActionLocked_0_001C9AE0()) {

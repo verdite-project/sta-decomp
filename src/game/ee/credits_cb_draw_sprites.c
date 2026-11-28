@@ -4,13 +4,13 @@ typedef struct { u8 pad[0x2C]; s8 x2C; } O;
 typedef struct { u8 p0[4]; O *x4; u8 p8[0x10]; u16 *x18; s32 x1C; f32 x20; f32 x24; u8 p28[8]; u8 x30[4]; u8 x34; u8 p35[0xB]; B8 x40[8]; } T;
 typedef struct { f32 x0; u8 p4[0xC]; u32 x10; u8 p14[0x5C]; } Buf;
 typedef struct { f32 x0; u8 p4[0x6C]; f32 x70; f32 x74; } G;
-extern G D_004BC2F0;
+extern G gCreditsLoadBss_004BC2F0;
 s32 Credits_EvalAnim_1_001E4900(u32, O *, Buf *);
 
 void CreditsCb_DrawSprites_0_001E4318(T *p) {
     Buf buf;
     s32 i;
-    if (Credits_EvalAnim_1_001E4900(D_004BC2F0.x0, p->x4, &buf) == 0) {
+    if (Credits_EvalAnim_1_001E4900(gCreditsLoadBss_004BC2F0.x0, p->x4, &buf) == 0) {
         p->x1C = 1;
         return;
     }
@@ -18,8 +18,8 @@ void CreditsCb_DrawSprites_0_001E4318(T *p) {
     if (p->x4->x2C != 0) {
         *(B8 *)&p->x20 = *(B8 *)&buf;
     } else {
-        p->x20 = (*p->x18 == 10) ? buf.x0 : D_004BC2F0.x70;
-        p->x24 = D_004BC2F0.x74;
+        p->x20 = (*p->x18 == 10) ? buf.x0 : gCreditsLoadBss_004BC2F0.x70;
+        p->x24 = gCreditsLoadBss_004BC2F0.x74;
     }
     if (!(p->x34 & 1)) {
         p->x34 |= 1;
