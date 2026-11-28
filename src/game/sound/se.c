@@ -103,6 +103,12 @@ void Se_QueueCommand_1_001DBDB0__as_Se_SetVoiceParams_0_001DA620(s32, s32, s32, 
 /* Se_SendVoiceParams_0_001DA1D0_ */
 /* .bss from 0x004BA300, defined from the top down (CodeWarrior writes
    uninitialised objects in reverse order) */
+#ifdef NONMATCHING
+/* Se_UpdateStatus and Se_ParseVoiceMap address the 8 by 32 voice map
+ * at offset 0x420 from D_004BA500. */
+/* data twins (src/game/data/save_system_start_bss.c): gSeBss_004BA920 */
+s8 gSeBss_004BA920[8][32];
+#endif
 M_Se_SetPortVolume_0_001DA720 D_004BA900;
 M_Se_SetPortVolume_0_001DA720 D_004BA880[0x4];
 G D_004BA780[0x40];
@@ -574,7 +580,6 @@ s32 Se_PollTransferB_0_001DB4D0(void) {
 s32 gSeSbss_0020232C;
 /* data twins (src/game/data/bgm_bss_004BA0E0.c): gSeBss_004BA2E0 */
 s32 gSeBss_004BA2E0[0x1];
-/* data twins (src/game/data/save_system_start_bss.c): gSeBss_004BA920, gSeBss_004BAA28 */
-s8 gSeBss_004BA920[0x100 / sizeof(s8[32])][32];
+/* data twins (src/game/data/save_system_start_bss.c): gSeBss_004BAA28 */
 u32 gSeBss_004BAA28[0x1];
 #endif
