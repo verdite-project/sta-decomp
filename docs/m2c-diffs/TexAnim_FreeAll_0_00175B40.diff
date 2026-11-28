@@ -2,13 +2,13 @@
 +++ matched
 @@ -1,18 +1,16 @@
  #include "common.h"
--extern s32 D_00437DC0[];
+-extern s32 gTextureAnimBss_00437DC0[];
 -void TexAnim_FreeAll_0_00175B40(s32 arg0, s32 arg1) {
 -    s32 *var_16;
 -    s32 var_18;
 -    void *temp_17;
 -    var_18 = 0;
--    var_16 = D_00437DC0;
+-    var_16 = gTextureAnimBss_00437DC0;
 -    do {
 -        temp_17 = var_16 + 8;
 -        if (M2C_FIELD(var_16, s32 *, 8) != -1) {
@@ -16,13 +16,13 @@
 -            M2C_FIELD(temp_17, void **, 0x28) = NULL;
 +typedef struct { s32 id; char p[0x24]; s32 h; } Sub;
 +typedef struct { char pad[8]; Sub s; char rest[0x310 - 8 - sizeof(Sub)]; } E;
-+extern E D_00437DC0[4];
++extern E gTextureAnimBss_00437DC0[4];
 +void Tex_Release_1_00177570(s32 h);
 +void TexAnim_FreeAll_0_00175B40(void)
 +{
 +    s32 i;
 +    for (i = 0; i < 4; i++) {
-+        Sub *s = &D_00437DC0[i].s;
++        Sub *s = &gTextureAnimBss_00437DC0[i].s;
 +        if (s->id != -1) {
 +            Tex_Release_1_00177570(s->h);
 +            s->h = 0;

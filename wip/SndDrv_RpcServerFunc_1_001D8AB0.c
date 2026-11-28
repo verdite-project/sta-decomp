@@ -1,18 +1,18 @@
 /* round 2 near-miss: ~2 insns: missing addu a1,v1,$zero before the unrolled copy, plus a nop */
 #include "common.h"
-extern s32 D_004B7740[];
+extern s32 gSoundDriverCallBss_004B7740[];
 typedef s8 *(*Fn)(u32, s32, s32, s32 *);
-extern Fn D_004B7EB0[];
+extern Fn gSoundDriverCallBss_004B7EB0[];
 static inline void cpy(void *d, void *s, s32 n) { s32 i; for (i = 0; i < n; i++) ((s8 *)d)[i] = ((s8 *)s)[i]; }
 s8 *SndDrv_RpcServerFunc_1_001D8AB0(u32 a, s32 b, s32 c) {
     u32 k = (a & 0xF0000000) >> 28;
     s32 n;
     s8 *src;
-    D_004B7740[0] = 0;
-    if (k != 0 && D_004B7EB0[k] != NULL) {
+    gSoundDriverCallBss_004B7740[0] = 0;
+    if (k != 0 && gSoundDriverCallBss_004B7EB0[k] != NULL) {
         n = 0;
-        src = D_004B7EB0[k](a & 0x0FFFFFFF, b, c, &n);
-        { s8 *dst = (s8 *)D_004B7740; cpy(dst, src, n); }
+        src = gSoundDriverCallBss_004B7EB0[k](a & 0x0FFFFFFF, b, c, &n);
+        { s8 *dst = (s8 *)gSoundDriverCallBss_004B7740; cpy(dst, src, n); }
     }
-    return (s8 *)D_004B7740;
+    return (s8 *)gSoundDriverCallBss_004B7740;
 }

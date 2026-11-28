@@ -8,13 +8,13 @@
 -void sceSifRegisterRpc(s32 *, s32, s32 *(*)(s64), s32 *, s32, s32, s32 *); /* extern */
 -void sceSifRpcLoop(s32 *);                   /* extern */
 -void sceSifSetRpcQueue(s32 *, s32);          /* extern */
--extern s32 D_004B7840[];
--extern s32 D_004B7C40[];
--extern s32 D_004B7C90[];
+-extern s32 gSoundDriverCallBss_004B7840[];
+-extern s32 gSoundDriverCallBss_004B7C40[];
+-extern s32 gSoundDriverCallBss_004B7C90[];
 -void SndDrv_RpcServerThread_1_001D8BE0(void) {
-+extern char D_004B7840[];
-+extern char D_004B7C40[];
-+extern char D_004B7C90[];
++extern char gSoundDriverCallBss_004B7840[];
++extern char gSoundDriverCallBss_004B7C40[];
++extern char gSoundDriverCallBss_004B7C90[];
 +void *SndDrv_RpcServerFunc_1_001D8AB0(s32 fno, void *data, s32 size);
 +void sceSifInitRpc(u32 mode);
 +s32 GetThreadId(void);
@@ -24,7 +24,7 @@
 +void SndDrv_RpcServerThread_1_001D8BE0(void)
 +{
      sceSifInitRpc(0);
-     sceSifSetRpcQueue(D_004B7C90, GetThreadId());
--    sceSifRegisterRpc(D_004B7C40, 0x102A, SndDrv_RpcServerFunc_1_001D8AB0, D_004B7840, 0, 0, D_004B7C90);
-+    sceSifRegisterRpc(D_004B7C40, 0x102A, SndDrv_RpcServerFunc_1_001D8AB0, D_004B7840, NULL, NULL, D_004B7C90);
-     sceSifRpcLoop(D_004B7C90);
+     sceSifSetRpcQueue(gSoundDriverCallBss_004B7C90, GetThreadId());
+-    sceSifRegisterRpc(gSoundDriverCallBss_004B7C40, 0x102A, SndDrv_RpcServerFunc_1_001D8AB0, gSoundDriverCallBss_004B7840, 0, 0, gSoundDriverCallBss_004B7C90);
++    sceSifRegisterRpc(gSoundDriverCallBss_004B7C40, 0x102A, SndDrv_RpcServerFunc_1_001D8AB0, gSoundDriverCallBss_004B7840, NULL, NULL, gSoundDriverCallBss_004B7C90);
+     sceSifRpcLoop(gSoundDriverCallBss_004B7C90);

@@ -23,7 +23,7 @@ typedef struct { u8 pad[0xC]; Flags8 c; Flags8 d; } S;
 typedef struct { u8 pad[4]; u8 b4, b5, b6; } E_Attack_GetParams_0_001D2C60;
 typedef struct { u8 pad[0x210]; E_Attack_GetParams_0_001D2C60 *x210[1]; } B;
 typedef struct { u8 pad[0x90]; B *x90; u16 x94; } A_Attack_GetParams_0_001D2C60;
-extern Vec D_001F2140;
+extern Vec gMatrixFromData_001F2140;
 s32 Attack_TraceProjectile_0_001D22E0(O_Attack_TraceProjectile_0_001D22E0 *o);
 s32 Attack_TestActor_0_001D2890(O_Attack_TestActor_0_001D2890 *o, A_Attack_TestActor_0_001D2890 *a, Ray *ray, Res *out);
 u64 Attack_GetFlagB2_0_001D2A20(void *arg0);
@@ -152,7 +152,7 @@ s32 Attack_TraceProjectile_0_001D22E0(O_Attack_TraceProjectile_0_001D22E0 *o) {
         sceVu0CopyVector(&seg.p, &v160);
         seg.p.y -= u2f(a->x4B0->xE);
         seg.p.w = u2f(a->x4B0->xA);
-        sceVu0CopyVector(&seg.d, &D_001F2140);
+        sceVu0CopyVector(&seg.d, &gMatrixFromData_001F2140);
         seg.d.w = u2f(a->x4B0->xE);
         Seg_ClosestPoints_3_00151B20(&res, &ray, &seg);
         if (res.s.hit) {

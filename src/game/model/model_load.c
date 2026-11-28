@@ -95,64 +95,64 @@ typedef struct {
     u8 x40[1];
 } H_Mdl_UpdateBoneMatrices_0_00171270;
 #ifndef NONMATCHING
-extern volatile s32 D_0042D880[];
+extern volatile s32 gModelLoadBss_0042D880[];
 #else
-/* data twins (src/game/data/texture_bss.c): D_0042D880 */
-static volatile s32 D_0042D880[0x1];
+/* data twins (src/game/data/texture_bss.c): gModelLoadBss_0042D880 */
+static volatile s32 gModelLoadBss_0042D880[0x1];
 #endif
 #ifndef NONMATCHING
-extern volatile s32 D_0042D884[];
+extern volatile s32 gModelLoadBss_0042D884[];
 #else
-/* data twins (src/game/data/texture_bss.c): D_0042D884 */
-static volatile s32 D_0042D884[0x1];
+/* data twins (src/game/data/texture_bss.c): gModelLoadBss_0042D884 */
+static volatile s32 gModelLoadBss_0042D884[0x1];
 #endif
 #ifndef NONMATCHING
-extern volatile s32 D_0042D888[];
+extern volatile s32 gModelLoadBss_0042D888[];
 #else
-/* data twins (src/game/data/texture_bss.c): D_0042D888 */
-static volatile s32 D_0042D888[0x1];
+/* data twins (src/game/data/texture_bss.c): gModelLoadBss_0042D888 */
+static volatile s32 gModelLoadBss_0042D888[0x1];
 #endif
 #ifndef NONMATCHING
-extern volatile s32 D_0042D88C[];
+extern volatile s32 gModelLoadBss_0042D88C[];
 #else
-/* data twins (src/game/data/texture_bss.c): D_0042D88C */
-static volatile s32 D_0042D88C[0x1];
+/* data twins (src/game/data/texture_bss.c): gModelLoadBss_0042D88C */
+static volatile s32 gModelLoadBss_0042D88C[0x1];
 #endif
 #ifndef NONMATCHING
-extern volatile s32 D_0042D890[];
+extern volatile s32 gModelLoadBss_0042D890[];
 #else
-/* data twins (src/game/data/texture_bss.c): D_0042D890 */
-static volatile s32 D_0042D890[0x1];
+/* data twins (src/game/data/texture_bss.c): gModelLoadBss_0042D890 */
+static volatile s32 gModelLoadBss_0042D890[0x1];
 #endif
 #ifndef NONMATCHING
-extern volatile s32 D_0042D894[];
+extern volatile s32 gModelLoadBss_0042D894[];
 #else
-/* data twins (src/game/data/texture_bss.c): D_0042D894 */
-static volatile s32 D_0042D894[0x1];
+/* data twins (src/game/data/texture_bss.c): gModelLoadBss_0042D894 */
+static volatile s32 gModelLoadBss_0042D894[0x1];
 #endif
 #ifndef NONMATCHING
-extern volatile s32 D_0042D898[];
+extern volatile s32 gModelLoadBss_0042D898[];
 #else
-/* data twins (src/game/data/texture_bss.c): D_0042D898 */
-static volatile s32 D_0042D898[0x1];
+/* data twins (src/game/data/texture_bss.c): gModelLoadBss_0042D898 */
+static volatile s32 gModelLoadBss_0042D898[0x1];
 #endif
-extern E16 * volatile D_0042D89C[];
-extern E8 * volatile D_0042D8A0[];
-extern s32 * volatile D_0042D8A4[];
-extern E50 * volatile D_0042D8A8[];
-extern s32 * volatile D_0042D8AC[];
-extern E8 * volatile D_0042D8B0[];
+extern E16 * volatile gModelLoadBss_0042D89C[];
+extern E8 * volatile gModelLoadBss_0042D8A0[];
+extern s32 * volatile gModelLoadBss_0042D8A4[];
+extern E50 * volatile gModelLoadBss_0042D8A8[];
+extern s32 * volatile gModelLoadBss_0042D8AC[];
+extern E8 * volatile gModelLoadBss_0042D8B0[];
 #ifndef NONMATCHING
-extern volatile s32 D_0042D8B4[];
+extern volatile s32 gModelLoadBss_0042D8B4[];
 #else
-/* data twins (src/game/data/texture_bss.c): D_0042D8B4 */
-static volatile s32 D_0042D8B4[0x1];
+/* data twins (src/game/data/texture_bss.c): gModelLoadBss_0042D8B4 */
+static volatile s32 gModelLoadBss_0042D8B4[0x1];
 #endif
 #ifndef NONMATCHING
-extern volatile s32 D_0042D8B8[];
+extern volatile s32 gModelLoadBss_0042D8B8[];
 #else
-/* data twins (src/game/data/texture_bss.c): D_0042D8B8 */
-static volatile s32 D_0042D8B8[0x2];
+/* data twins (src/game/data/texture_bss.c): gModelLoadBss_0042D8B8 */
+static volatile s32 gModelLoadBss_0042D8B8[0x2];
 #endif
 Blk* Mdl_LoadChunk_0_00170000(s32 *a0, s32 a1, Hdr_Mdl_LoadChunk_0_00170000 *hdr);
 void Mdl_Free_0_00170250(s32 *a0, H_Mdl_Free_0_00170250 **a1);
@@ -264,22 +264,22 @@ s32 Mdl_Relocate_1_00170380(Ch *c, Obj_Mdl_Relocate_1_00170380 *o) {
         h = &c->h;
         sub = (Ch *)((u8 *)c + c->off);
         sceVu0CopyVector(&o->v, (Vec *)(DATA(h) + 0x10));
-        D_0042D8B4[0] = *o->x10;
-        D_0042D89C[0] = (E16 *)((s32)o + 0x40);
-        D_0042D880[0] = 0;
-        D_0042D884[0] = 0;
-        D_0042D888[0] = 0;
-        D_0042D88C[0] = 0;
-        D_0042D890[0] = 0;
-        D_0042D894[0] = 0;
-        D_0042D898[0] = 0;
-        D_0042D8A0[0] = (E8 *)(D_0042D89C[0] + o->x14);
-        D_0042D8A4[0] = (s32 *)(D_0042D8A0[0] + o->x16);
-        D_0042D8A8[0] = (E50 *)(D_0042D8A4[0] + o->x18);
-        D_0042D8AC[0] = (s32 *)(D_0042D8A8[0] + o->x1C);
-        d = (u8 *)(D_0042D8AC[0] + o->x1E);
-        D_0042D8B8[0] = 0;
-        D_0042D8B0[0] = (E8 *)d;
+        gModelLoadBss_0042D8B4[0] = *o->x10;
+        gModelLoadBss_0042D89C[0] = (E16 *)((s32)o + 0x40);
+        gModelLoadBss_0042D880[0] = 0;
+        gModelLoadBss_0042D884[0] = 0;
+        gModelLoadBss_0042D888[0] = 0;
+        gModelLoadBss_0042D88C[0] = 0;
+        gModelLoadBss_0042D890[0] = 0;
+        gModelLoadBss_0042D894[0] = 0;
+        gModelLoadBss_0042D898[0] = 0;
+        gModelLoadBss_0042D8A0[0] = (E8 *)(gModelLoadBss_0042D89C[0] + o->x14);
+        gModelLoadBss_0042D8A4[0] = (s32 *)(gModelLoadBss_0042D8A0[0] + o->x16);
+        gModelLoadBss_0042D8A8[0] = (E50 *)(gModelLoadBss_0042D8A4[0] + o->x18);
+        gModelLoadBss_0042D8AC[0] = (s32 *)(gModelLoadBss_0042D8A8[0] + o->x1C);
+        d = (u8 *)(gModelLoadBss_0042D8AC[0] + o->x1E);
+        gModelLoadBss_0042D8B8[0] = 0;
+        gModelLoadBss_0042D8B0[0] = (E8 *)d;
         for (i = 0; i < c->xE; i++) {
             Mdl_Relocate_1_00170380(sub, o);
             sub = (Ch *)((u8 *)sub + sub->x4);
@@ -287,29 +287,29 @@ s32 Mdl_Relocate_1_00170380(Ch *c, Obj_Mdl_Relocate_1_00170380 *o) {
         break;
     case 0x4C54414D:
         h = &c->h;
-        o->x24 = (s32)DATA(h) - D_0042D8B4[0];
+        o->x24 = (s32)DATA(h) - gModelLoadBss_0042D8B4[0];
         break;
     case 0x4C444F4D:
         sub = (Ch *)((u8 *)c + c->off);
-        D_0042D8B8[0] = 1;
+        gModelLoadBss_0042D8B8[0] = 1;
         for (i = 0; i < c->xE; i++) {
             Mdl_Relocate_1_00170380(sub, o);
             sub = (Ch *)((u8 *)sub + sub->x4);
         }
-        D_0042D8B8[0] = 0;
+        gModelLoadBss_0042D8B8[0] = 0;
         break;
     case 0x58524D57:
         h = &c->h;
         d = DATA(h);
-        if (D_0042D8B8[0]) {
-            (&D_0042D89C[0][D_0042D880[0]])->x8 = (s32)d - D_0042D8B4[0];
+        if (gModelLoadBss_0042D8B8[0]) {
+            (&gModelLoadBss_0042D89C[0][gModelLoadBss_0042D880[0]])->x8 = (s32)d - gModelLoadBss_0042D8B4[0];
         }
         break;
     case 0x58524D4C:
         h = &c->h;
         d = DATA(h);
-        if (D_0042D8B8[0]) {
-            (&D_0042D89C[0][D_0042D880[0]])->xC = (s32)d - D_0042D8B4[0];
+        if (gModelLoadBss_0042D8B8[0]) {
+            (&gModelLoadBss_0042D89C[0][gModelLoadBss_0042D880[0]])->xC = (s32)d - gModelLoadBss_0042D8B4[0];
         }
         break;
     case 0x4D4F4547:
@@ -317,9 +317,9 @@ s32 Mdl_Relocate_1_00170380(Ch *c, Obj_Mdl_Relocate_1_00170380 *o) {
         h2 = (H_Mdl_Relocate_1_00170380 *)((u8 *)h + h->a);
         d = DATA(h);
         d2 = DATA(h2);
-        (*(E16 **)D_0042D89C)[D_0042D880[0]].x0 = (s32)d - D_0042D8B4[0];
-        (&D_0042D89C[0][D_0042D880[0]])->x4 = (s32)d2 - D_0042D8B4[0];
-        D_0042D880[0]++;
+        (*(E16 **)gModelLoadBss_0042D89C)[gModelLoadBss_0042D880[0]].x0 = (s32)d - gModelLoadBss_0042D8B4[0];
+        (&gModelLoadBss_0042D89C[0][gModelLoadBss_0042D880[0]])->x4 = (s32)d2 - gModelLoadBss_0042D8B4[0];
+        gModelLoadBss_0042D880[0]++;
         break;
     case 0x4D494E41:
         sub = (Ch *)((u8 *)c + c->off);
@@ -331,22 +331,22 @@ s32 Mdl_Relocate_1_00170380(Ch *c, Obj_Mdl_Relocate_1_00170380 *o) {
     case 0x51455341:
         h = &c->h;
         sub = (Ch *)((u8 *)c + c->off);
-        (*(E8 **)D_0042D8A0)[D_0042D884[0]].x0 = (s32)DATA(h) - D_0042D8B4[0];
-        (&D_0042D8A0[0][D_0042D884[0]])->x4 = D_0042D888[0];
+        (*(E8 **)gModelLoadBss_0042D8A0)[gModelLoadBss_0042D884[0]].x0 = (s32)DATA(h) - gModelLoadBss_0042D8B4[0];
+        (&gModelLoadBss_0042D8A0[0][gModelLoadBss_0042D884[0]])->x4 = gModelLoadBss_0042D888[0];
         for (i = 0; i < c->xE; i++) {
             Mdl_Relocate_1_00170380(sub, o);
             sub = (Ch *)((u8 *)sub + sub->x4);
         }
-        D_0042D884[0]++;
+        gModelLoadBss_0042D884[0]++;
         break;
     case 0x5F4B5254:
         h = &c->h;
-        (*(s32 **)D_0042D8A4)[D_0042D888[0]] = (s32)DATA(h) - D_0042D8B4[0];
-        D_0042D888[0]++;
+        (*(s32 **)gModelLoadBss_0042D8A4)[gModelLoadBss_0042D888[0]] = (s32)DATA(h) - gModelLoadBss_0042D8B4[0];
+        gModelLoadBss_0042D888[0]++;
         break;
     case 0x4C425441:
         h = &c->h;
-        o->x28 = (s32)DATA(h) - D_0042D8B4[0];
+        o->x28 = (s32)DATA(h) - gModelLoadBss_0042D8B4[0];
         break;
     case 0x494D5453:
     case 0x49435453:
@@ -367,10 +367,10 @@ s32 Mdl_Relocate_1_00170380(Ch *c, Obj_Mdl_Relocate_1_00170380 *o) {
         break;
     case 0x6154584D:
         h = &c->h;
-        (*(E8 **)D_0042D8B0)[D_0042D898[0]].x0 = (s32)DATA(h) - D_0042D8B4[0];
-        (&D_0042D8B0[0][D_0042D898[0]])->x4 = (u32)c->h.c8 >> 16;
-        (&D_0042D8B0[0][D_0042D898[0]])->x6 = c->h.c8 & 0xFFF;
-        D_0042D898[0]++;
+        (*(E8 **)gModelLoadBss_0042D8B0)[gModelLoadBss_0042D898[0]].x0 = (s32)DATA(h) - gModelLoadBss_0042D8B4[0];
+        (&gModelLoadBss_0042D8B0[0][gModelLoadBss_0042D898[0]])->x4 = (u32)c->h.c8 >> 16;
+        (&gModelLoadBss_0042D8B0[0][gModelLoadBss_0042D898[0]])->x6 = c->h.c8 & 0xFFF;
+        gModelLoadBss_0042D898[0]++;
         break;
     case 0x43494454:
         o->x3C.f.b4 = 1;
@@ -387,33 +387,33 @@ s32 Mdl_Relocate_1_00170380(Ch *c, Obj_Mdl_Relocate_1_00170380 *o) {
         d = DATA(h);
         h2 = (H_Mdl_Relocate_1_00170380 *)((u8 *)h + h->a);
         d2 = DATA(h2);
-        (*(E50 **)D_0042D8A8)[D_0042D88C[0]].x0 = (s32)d - D_0042D8B4[0];
-        (&D_0042D8A8[0][D_0042D88C[0]])->x4 = (s32)d2 - D_0042D8B4[0];
+        (*(E50 **)gModelLoadBss_0042D8A8)[gModelLoadBss_0042D88C[0]].x0 = (s32)d - gModelLoadBss_0042D8B4[0];
+        (&gModelLoadBss_0042D8A8[0][gModelLoadBss_0042D88C[0]])->x4 = (s32)d2 - gModelLoadBss_0042D8B4[0];
         p = (u16 *)d;
         for (k = 0; k < 8; k++) {
             if (*p == 0) {
-                (*(E50 **)D_0042D8A8)[D_0042D88C[0]].x10[k] = 0;
+                (*(E50 **)gModelLoadBss_0042D8A8)[gModelLoadBss_0042D88C[0]].x10[k] = 0;
             } else {
-                (*(E50 **)D_0042D8A8)[D_0042D88C[0]].x10[k] = (s32)(d + 0xA0) - D_0042D8B4[0] + p[8] * 32;
+                (*(E50 **)gModelLoadBss_0042D8A8)[gModelLoadBss_0042D88C[0]].x10[k] = (s32)(d + 0xA0) - gModelLoadBss_0042D8B4[0] + p[8] * 32;
             }
             p++;
         }
-        D_0042D88C[0]++;
+        gModelLoadBss_0042D88C[0]++;
         break;
     case 0x58424248:
         h = &c->h;
         d = DATA(h);
-        (&D_0042D8A8[0][D_0042D890[0]])->x8 = (s32)d - D_0042D8B4[0];
+        (&gModelLoadBss_0042D8A8[0][gModelLoadBss_0042D890[0]])->x8 = (s32)d - gModelLoadBss_0042D8B4[0];
         q = (u16 *)d;
         for (j = 0; j < 8; j++) {
             if (*q == 0) {
-                (*(E50 **)D_0042D8A8)[D_0042D890[0]].x30[j] = 0;
+                (*(E50 **)gModelLoadBss_0042D8A8)[gModelLoadBss_0042D890[0]].x30[j] = 0;
             } else {
-                (*(E50 **)D_0042D8A8)[D_0042D890[0]].x30[j] = (s32)(d + 0x120) - D_0042D8B4[0] + q[8] * 32;
+                (*(E50 **)gModelLoadBss_0042D8A8)[gModelLoadBss_0042D890[0]].x30[j] = (s32)(d + 0x120) - gModelLoadBss_0042D8B4[0] + q[8] * 32;
             }
             q++;
         }
-        D_0042D890[0]++;
+        gModelLoadBss_0042D890[0]++;
         break;
     case 0x4547414B:
     case 0x4D47414B:
@@ -425,8 +425,8 @@ s32 Mdl_Relocate_1_00170380(Ch *c, Obj_Mdl_Relocate_1_00170380 *o) {
         break;
     case 0x4747414B:
         h = &c->h;
-        (*(s32 **)D_0042D8AC)[D_0042D894[0]] = (s32)DATA(h) - D_0042D8B4[0];
-        D_0042D894[0]++;
+        (*(s32 **)gModelLoadBss_0042D8AC)[gModelLoadBss_0042D894[0]] = (s32)DATA(h) - gModelLoadBss_0042D8B4[0];
+        gModelLoadBss_0042D894[0]++;
         break;
     }
     return 1;
@@ -488,10 +488,10 @@ void Mdl_SetBoneRotation_0_001710D0(Obj_Mdl_SetBoneRotation_0_001710D0 *obj, s16
     v = -1.0f * (obj->x1C + b);
     if (v < 0.0f) {
         p = obj->data;
-        Mdl_Animate_2_00171BB0(p + D_00201F2C * (obj->n * 0x140 + 0x200), obj, obj->x4, obj->n, obj->x8, obj->xC);
+        Mdl_Animate_2_00171BB0(p + gSfxAllSbss_00201F2C * (obj->n * 0x140 + 0x200), obj, obj->x4, obj->n, obj->x8, obj->xC);
         stride = obj->n * 0x140 + 0x200;
         q = p + stride;
-        r = p + D_00201F2C * stride;
+        r = p + gSfxAllSbss_00201F2C * stride;
         for (i = 0; i < obj->n + 1; i++) {
             sceVu0CopyMatrix(p + 0x180, r + 0x140);
             sceVu0CopyMatrix(q + 0x180, r + 0x140);
@@ -568,42 +568,42 @@ void Mdl_UpdateBoneMatrices_0_00171270(H_Mdl_UpdateBoneMatrices_0_00171270 *h, M
 int Mdl_UpdateBoneMatrices_0_00171270__as_Mdl_UpdateBoneMatricesCur_0_00171540();
 
 void Mdl_UpdateBoneMatricesCur_0_00171540(s32 arg0, s32 arg1) {
-    Mdl_UpdateBoneMatrices_0_00171270((void *) arg0, arg1, D_00201F2C);
+    Mdl_UpdateBoneMatrices_0_00171270((void *) arg0, arg1, gSfxAllSbss_00201F2C);
 }
 #undef Mdl_UpdateBoneMatrices_0_00171270
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/texture_bss.c): D_0042D89C__grp: D_0042D89C@0x0 */
+/* data group (src/game/data/texture_bss.c): D_0042D89C__grp: gModelLoadBss_0042D89C@0x0 */
 u8 D_0042D89C__grp[0x4] __attribute__((aligned(4)));
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/texture_bss.c): D_0042D8A0__grp: D_0042D8A0@0x0 */
+/* data group (src/game/data/texture_bss.c): D_0042D8A0__grp: gModelLoadBss_0042D8A0@0x0 */
 u8 D_0042D8A0__grp[0x4] __attribute__((aligned(16)));
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/texture_bss.c): D_0042D8A4__grp: D_0042D8A4@0x0 */
+/* data group (src/game/data/texture_bss.c): D_0042D8A4__grp: gModelLoadBss_0042D8A4@0x0 */
 u8 D_0042D8A4__grp[0x4] __attribute__((aligned(4)));
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/texture_bss.c): D_0042D8A8__grp: D_0042D8A8@0x0 */
+/* data group (src/game/data/texture_bss.c): D_0042D8A8__grp: gModelLoadBss_0042D8A8@0x0 */
 u8 D_0042D8A8__grp[0x4] __attribute__((aligned(8)));
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/texture_bss.c): D_0042D8AC__grp: D_0042D8AC@0x0 */
+/* data group (src/game/data/texture_bss.c): D_0042D8AC__grp: gModelLoadBss_0042D8AC@0x0 */
 u8 D_0042D8AC__grp[0x4] __attribute__((aligned(4)));
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/texture_bss.c): D_0042D8B0__grp: D_0042D8B0@0x0 */
+/* data group (src/game/data/texture_bss.c): D_0042D8B0__grp: gModelLoadBss_0042D8B0@0x0 */
 u8 D_0042D8B0__grp[0x4] __attribute__((aligned(16)));
 #endif

@@ -2,7 +2,7 @@
 #include "game/data.h"
 #include "game/sound.h"
 typedef struct { f32 v[8]; } M;
-extern s32 D_004BAA28[];
+extern s32 gSeBss_004BAA28[];
 extern s32 D_004BA044[];
 /* .bss, from the top down (CodeWarrior writes it in reverse) */
 u8 D_004BA040[0xa0];
@@ -14,21 +14,21 @@ void Se_ParseVoiceMap_0_001DBD20(s32);
 #define SndDrv_CallWithData_1_001D8350 SndDrv_CallWithData_1_001D8350__as_Se_FlushQueue_0_001D9E30
 s32 SndDrv_CallWithData_1_001D8350__as_Se_FlushQueue_0_001D9E30(s32 a, s32 b, s32 c, s32 d, s32 e, u8 *m);
 void Se_FlushQueue_0_001D9E30(void) {
-    s32 n = D_00202328 - D_004BA0E0;
+    s32 n = gSeFlushSbss_00202328 - gSeFlushBss_004BA0E0;
     if (n > 1) {
-        SndDrv_CallWithData_1_001D8350(4, 1, n, D_00201E3C, 0x1100, D_004BA0E0);
+        SndDrv_CallWithData_1_001D8350(4, 1, n, gSeFlushSdata_00201E3C, 0x1100, gSeFlushBss_004BA0E0);
         Se_ParseVoiceMap_0_001DBD20(SndDrv_GetRecvBuffer_1_001D8340());
     }
-    D_004BA0E0[0] = 0;
-    D_00202328 = D_004BA0E0 + 1;
-    D_00201E3C = 1;
+    gSeFlushBss_004BA0E0[0] = 0;
+    gSeFlushSbss_00202328 = gSeFlushBss_004BA0E0 + 1;
+    gSeFlushSdata_00201E3C = 1;
 }
 #undef SndDrv_CallWithData_1_001D8350
 
 /* Se_SetMode_0_001D9EA0 */
 void Se_SetMode_0_001D9EA0(s32 arg0) {
-    (*D_004BAA28) = arg0;
-    (*D_004BAA24) = arg0;
+    (*gSeBss_004BAA28) = arg0;
+    (*gSeDmaBss_004BAA24) = arg0;
 }
 
 /* Se_SetMasterVolume_0_001D9EC0 */
@@ -59,10 +59,10 @@ s32 Se_ReadStatus_0_001D9F10(void) {
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/sdata.c): D_00201E3C */
-s32 D_00201E3C = 1;
-/* data twins (src/game/data/sbss.c): D_00202328 */
-u8 *D_00202328;
-/* data twins (src/game/data/bgm_bss_004BA0E0.c): D_004BA0E0 */
-u8 D_004BA0E0[0x200];
+/* data twins (src/game/data/sdata.c): gSeFlushSdata_00201E3C */
+s32 gSeFlushSdata_00201E3C = 1;
+/* data twins (src/game/data/sbss.c): gSeFlushSbss_00202328 */
+u8 *gSeFlushSbss_00202328;
+/* data twins (src/game/data/bgm_bss_004BA0E0.c): gSeFlushBss_004BA0E0 */
+u8 gSeFlushBss_004BA0E0[0x200];
 #endif

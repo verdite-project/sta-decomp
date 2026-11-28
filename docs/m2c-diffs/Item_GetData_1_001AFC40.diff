@@ -2,21 +2,21 @@
 +++ matched
 @@ -1,12 +1,9 @@
  #include "common.h"
--extern s32 D_002022B0;
+-extern s32 gItemObjectSbss_002022B0;
 -s32 Item_GetData_1_001AFC40(s64 arg0) {
 -    s64 temp_4;
--    if (D_002022B0 != 0) {
+-    if (gItemObjectSbss_002022B0 != 0) {
 -        temp_4 = (s64) (arg0 << 0x30) >> 0x30;
 -        if ((temp_4 > 0) && (temp_4 < 0x400)) {
--            return D_002022B0 + (temp_4 * 0x90);
+-            return gItemObjectSbss_002022B0 + (temp_4 * 0x90);
 -        }
 -    }
 -    return 0;
 +typedef struct { char b[0x90]; } E;
-+extern E *D_002022B0;
++extern E *gItemObjectSbss_002022B0;
 +E *Item_GetData_1_001AFC40(s16 i)
 +{
-+    if (D_002022B0 && i > 0 && i <= 0x3FF)
-+        return &D_002022B0[i];
++    if (gItemObjectSbss_002022B0 && i > 0 && i <= 0x3FF)
++        return &gItemObjectSbss_002022B0[i];
 +    return NULL;
  }

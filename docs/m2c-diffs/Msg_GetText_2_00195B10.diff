@@ -2,22 +2,22 @@
 +++ matched
 @@ -1,28 +1,17 @@
  #include "common.h"
--extern void **D_00202180;
+-extern void **gDatabookSbss_00202180;
 -void *Msg_GetText_2_00195B10(s32 arg0) {
 -    u32 temp_3;
 -    u32 var_7;
 -    void *temp_5;
 -    void *var_6;
--    temp_5 = *D_00202180;
+-    temp_5 = *gDatabookSbss_00202180;
 -    if (temp_5 == NULL) {
 +typedef struct { s32 id; s32 off; } E;
 +typedef struct { char p0[4]; u32 n; char p8[8]; E e[1]; } T;
-+extern T **D_00202180;
++extern T **gDatabookSbss_00202180;
 +void *Msg_GetText_2_00195B10(s32 id)
 +{
 +    u32 i;
 +    E *e;
-+    T *t = *D_00202180;
++    T *t = *gDatabookSbss_00202180;
 +    if (!t)
          return NULL;
 +    e = t->e;

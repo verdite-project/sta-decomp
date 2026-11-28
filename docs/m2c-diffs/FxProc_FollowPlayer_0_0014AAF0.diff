@@ -4,8 +4,8 @@
  #include "common.h"
 -s32 *Player_GetPosition_1_00145730(s32);                        /* extern */
 -void sceVu0CopyVector(u8 *, s32 *);          /* extern */
--extern s32 D_001F2160[];
--extern s32 D_002022E4;
+-extern s32 gMatrixFromData_001F2160[];
+-extern s32 gPlayerSbss_002022E4;
 -void FxProc_FollowPlayer_0_0014AAF0(u8 *arg0) {
 -    s32 *var_2;
 -    f32 temp_f0;
@@ -17,8 +17,8 @@
 -        M2C_FIELD(arg0, f32 *, 0x70) = temp_f0;
 -        M2C_FIELD(arg0, s32 *, 0x7C) = 0x3F800000;
 +typedef struct { char pad[0x60]; f32 f60; f32 f64; char p68[8]; f32 v[4]; char p80[0x30]; f32 fb0; } Obj;
-+extern void *D_002022E4;
-+extern f32 D_001F2160[4];
++extern void *gPlayerSbss_002022E4;
++extern f32 gMatrixFromData_001F2160[4];
 +f32 *Player_GetPosition_1_00145730(s32 k);
 +void sceVu0CopyVector(f32 *v0, f32 *v1);
 +void FxProc_FollowPlayer_0_0014AAF0(Obj *o)
@@ -33,18 +33,18 @@
      }
 -    temp_f0_2 = M2C_FIELD(arg0, s32 *, 0x64);
 -    if (temp_f0_2 == 1) {
--        if (D_002022E4 != 0) {
+-        if (gPlayerSbss_002022E4 != 0) {
 -            var_2 = (s32 *) (Player_GetPosition_1_00145730(temp_f0_2));
 -        } else {
--            var_2 = (s32 *) (D_001F2160);
+-            var_2 = (s32 *) (gMatrixFromData_001F2160);
 -        }
 -        sceVu0CopyVector(arg0, var_2);
 +    k = o->f64;
 +    if (k == 1) {
 +        f32 *src;
-+        if (D_002022E4)
++        if (gPlayerSbss_002022E4)
 +            src = Player_GetPosition_1_00145730(k);
 +        else
-+            src = D_001F2160;
++            src = gMatrixFromData_001F2160;
 +        sceVu0CopyVector((f32 *)o, src);
      }

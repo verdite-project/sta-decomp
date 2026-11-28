@@ -2,15 +2,15 @@
 +++ matched
 @@ -1,8 +1,7 @@
  #include "common.h"
--extern s32 D_0020201C;
--extern s32 D_00202020;
--extern s32 D_00202024;
+-extern s32 gTimerInitSbss_0020201C;
+-extern s32 gTimerTicksSbss_00202020;
+-extern s32 gTimerInitSbss_00202024;
 -void Timer_Update_3_00178760(void) {
--    D_0020201C += *(s32 *)0x10000000 + (D_00202020 * 0x1388);
+-    gTimerInitSbss_0020201C += *(s32 *)0x10000000 + (gTimerTicksSbss_00202020 * 0x1388);
 -    *(s32 *)0x10000000 = 0;
-+extern volatile s32 D_00202020, D_0020201C, D_00202024;
++extern volatile s32 gTimerTicksSbss_00202020, gTimerInitSbss_0020201C, gTimerInitSbss_00202024;
 +void Timer_Update_3_00178760(void)
 +{
-+    D_0020201C += *(volatile s32 *)0x10000000 + D_00202020 * 5000;
++    gTimerInitSbss_0020201C += *(volatile s32 *)0x10000000 + gTimerTicksSbss_00202020 * 5000;
 +    *(volatile s32 *)0x10000000 = 0;
-     D_00202020 = 0;
+     gTimerTicksSbss_00202020 = 0;

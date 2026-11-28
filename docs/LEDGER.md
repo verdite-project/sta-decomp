@@ -116,7 +116,7 @@ Game functions are matched smallest first.
   `if (out of range) return 0; return v;` (Item_GetMotionId_0_001CC390, Inventory_GetEntry_1_001CC3F0).
 - **A global pointer reloaded before every store is `T *volatile`**
   (Snd_PlaySeAt_2_001315A0).
-- **The player-record getter** (D_002022E4 -> +0x518 -> +0x180, NULL at
+- **The player-record getter** (gPlayerSbss_002022E4 -> +0x518 -> +0x180, NULL at
   each step) is inlined everywhere: write it as m2c's nested if/else into a
   local, then `if (t == NULL) return 0; return t->...;` (Player_GetPosB_0_001C9490,
   Player_GetHpS16_0_001C99C0, Player_IsCrouching_0_001C9A20, Player_IsMoving_0_001C9A80).
@@ -154,7 +154,7 @@ Game functions are matched smallest first.
   19, 18, ... 2 (ItemType_GetCategory_0_001D1CB0) or 2, 1, 0 (Option_MapKeyTypeA_0_001905E0 family) comes from
   cases written ascending.
 - **`D_X + 0x8` in a gp-relative splat operand is a separate small global**
-  (D_00201E88, Map_FreeAll_1_001B5940); declaring one struct makes CodeWarrior
+  (gMapSbss_00201E88, Map_FreeAll_1_001B5940); declaring one struct makes CodeWarrior
   address it with lui/%lo.
 - **`fptodp` ... `dptofp` around a call is double arithmetic**: CodeWarrior
   does doubles in software (dpmul at 0x120040): `x = -1.0 * (s * s);`
@@ -187,7 +187,7 @@ Game functions are matched smallest first.
   following hardware-register stores, so they came out in retail's
   registers (Gs_DrawSpriteDirect_0_001E52D0, found by the permuter).
 - **ee-gcc: `*(&G.f)` instead of a pointer local.** `u8 **pd = &G.data;
-  *pd + b` was the near-miss; `*(&D_004BC2F0.data) + b` matched
+  *pd + b` was the near-miss; `*(&gCreditsLoadBss_004BC2F0.data) + b` matched
   (Credits_Load_1_001E3B48, found by the permuter).
 
 ## Aborted

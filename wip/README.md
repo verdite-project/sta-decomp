@@ -84,7 +84,7 @@ register and scheduling differences.
 | Attack_Ricochet_0_001D31E0 | 48 words; innermost `h + n4*20` operand order, pointer table regs |
 | Actor_CollideCapsules_0_00137870 | far; orig spills outer counter i and count na, keeps inner k in s3 |
 | Mdl_ClipFrustum_0_0016BD00 | far; right size, float temp allocation off throughout |
-| MenuProc_DrawWeight_0_00185D70 | 2 words; temp reg of the 24-byte `buf = D_001F26B0` lq/sq copy (a2 vs a0) |
+| MenuProc_DrawWeight_0_00185D70 | 2 words; temp reg of the 24-byte `buf = gMenuProcDrawWeightData_001F26B0` lq/sq copy (a2 vs a0) |
 | FxProc_ChaseEnemy_0_00148D00 | angle-wrap `PI + a` sum shared (orig recomputes), bitfield `++` reuses reg |
 | Coll_RayVsModel_1_0014FA30 | one extra spill slot, frame 16 bytes bigger |
 | Map_FindChunk_0_001B6190 | uses string literals "STMI"/"STEM"/"STOI" (>8 bytes padded); batch.py can't link literals |
@@ -146,7 +146,7 @@ register and scheduling differences.
 | SndDrv_RpcServerFunc_1_001D8AB0 | round 2 near-miss: ~2 insns: missing addu a1,v1,$zero before the unrolled copy, plus a nop |
 | Mc_StepWriteChecked_3_001D4170 | round 3 near-miss: ee-gcc memcard save machine, 2 words short; cases 1/2/5/19 differ |
 | ShopProc_DrawItemStats_0_001DE2D0 | round 3 near-miss: 6 words: lw a2 (Col stack arg) vs lwc1 f12 order before Text_Draw_2_001875C0, 3 sites |
-| Se_TransferBank_0_001DB020 | round 3 near-miss: 5 words: register swap in case 0's D_004BAA28 update |
+| Se_TransferBank_0_001DB020 | round 3 near-miss: 5 words: register swap in case 0's gSeBss_004BAA28 update |
 | Mc_StepReadChecked_3_001D4A78 | round 3 near-miss: ee-gcc, ~24 lines after alignment: case 1 fail path, case 14 scheduling |
 | Pad_UpdateAll_3_001D7350 | round 3 near-miss: ee-gcc, 23 words short: retail keeps empty switch cases [2,3] and 0x100 in the tree |
 | ShopProc_DrawItemInfo_0_001DDA20 | round 3 near-miss: 3 words: 1 handwritten addi at the switch range check (asm-only), 2 lwc1/lw order |

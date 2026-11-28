@@ -5,10 +5,10 @@
 typedef struct { s32 next; s32 len; s32 f8; s32 dsz; } Ent;
 typedef struct { s8 *src; s8 *dst; s32 len; s32 z; } Req;
 #ifndef NONMATCHING
-extern u8 D_001FB770[];
+extern u8 gIopRodata_001FB770[];
 #else
-/* data twins (src/game/data/fx_proc_rodata.c): D_001FB770 */
-static u8 D_001FB770[0x1d] = "cdrom0:\\IOPRP250.IMG;1\000\000\000\000\000\000\000";
+/* data twins (src/game/data/fx_proc_rodata.c): gIopRodata_001FB770 */
+static u8 gIopRodata_001FB770[0x1d] = "cdrom0:\\IOPRP250.IMG;1\000\000\000\000\000\000\000";
 #endif
 extern u8 _end[];
 void Iop_LoadModulesFromArc_2_0015C9F0(s32 a0);
@@ -81,7 +81,7 @@ void Iop_Reboot_3_0015CB50(void) {
     s32 *p;
     sceSifInitRpc(0);
     Cd_Init_2_0015B040(0x200, 1);
-    while (!(sceSifRebootIop(D_001FB770) != 0) != 0) {}
+    while (!(sceSifRebootIop(gIopRodata_001FB770) != 0) != 0) {}
     while (!(sceSifSyncIop() != 0) != 0) {}
     sceSifInitRpc(0);
     sceSifInitIopHeap();
@@ -93,5 +93,5 @@ void Iop_Reboot_3_0015CB50(void) {
     if (p != 0) {
         free(p);
     }
-    D_00201F90 = n;
+    gGameMainSbss_00201F90 = n;
 }

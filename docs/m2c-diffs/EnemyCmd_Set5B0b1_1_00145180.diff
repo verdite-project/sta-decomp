@@ -2,13 +2,13 @@
 +++ matched
 @@ -1,5 +1,8 @@
  #include "common.h"
--extern void *D_00201FA8;
+-extern void *gEnemyScriptSbss_00201FA8;
 -void EnemyCmd_Set5B0b1_1_00145180(void *arg0) {
--    Enemy_Set5B0b1_1_0013EC10(M2C_FIELD(D_00201FA8, void **, 0x154), (s32) M2C_FIELD(arg0, u8 *, 8));
+-    Enemy_Set5B0b1_1_0013EC10(M2C_FIELD(gEnemyScriptSbss_00201FA8, void **, 0x154), (s32) M2C_FIELD(arg0, u8 *, 8));
 +typedef struct { char pad[0x154]; void *p; } S;
-+extern S *D_00201FA8;
++extern S *gEnemyScriptSbss_00201FA8;
 +void Enemy_Set5B0b1_1_0013EC10(void *arg0, u8 arg1);
 +void EnemyCmd_Set5B0b1_1_00145180(u8 *arg0)
 +{
-+    Enemy_Set5B0b1_1_0013EC10(D_00201FA8->p, arg0[8]);
++    Enemy_Set5B0b1_1_0013EC10(gEnemyScriptSbss_00201FA8->p, arg0[8]);
  }

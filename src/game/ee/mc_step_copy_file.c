@@ -3,28 +3,28 @@
 #include "game/ee.h"
 typedef struct { u8 p[0x10]; u32 x10; } DE;
 #ifndef NONMATCHING
-extern s32 D_004B63A4[];
+extern s32 gMcStepCopyFileBss_004B63A4[];
 #else
-/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): D_004B63A4 */
-static s32 D_004B63A4[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): gMcStepCopyFileBss_004B63A4 */
+static s32 gMcStepCopyFileBss_004B63A4[0x1];
 #endif
 #ifndef NONMATCHING
-extern s32 D_004B63A8[];
+extern s32 gMcStepCopyFileBss_004B63A8[];
 #else
-/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): D_004B63A8 */
-static s32 D_004B63A8[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): gMcStepCopyFileBss_004B63A8 */
+static s32 gMcStepCopyFileBss_004B63A8[0x1];
 #endif
 #ifndef NONMATCHING
-extern s32 D_004B63AC[];
+extern s32 gMcStepCopyFileBss_004B63AC[];
 #else
-/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): D_004B63AC */
-static s32 D_004B63AC[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): gMcStepCopyFileBss_004B63AC */
+static s32 gMcStepCopyFileBss_004B63AC[0x1];
 #endif
 #ifndef NONMATCHING
-extern s32 D_004B63B0[];
+extern s32 gMcStepCopyFileBss_004B63B0[];
 #else
-/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): D_004B63B0 */
-static s32 D_004B63B0[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): gMcStepCopyFileBss_004B63B0 */
+static s32 gMcStepCopyFileBss_004B63B0[0x1];
 #endif
 extern DE gMcDirBuf_004B68C0[];
 s32 Mc_StepGetInfo_3_001D3BF0(s32, s32, s32 *, s32 *, s32 *, s32);
@@ -52,9 +52,9 @@ s32 Mc_StepCopyFile_4_001D58C0(void) {
     s32 k;
     switch (step) {
     case 0:
-        D_004B6474[0] = 0;
-        D_004B63AC[0] = 0;
-        D_004B63B0[0] = 0;
+        gMcStepReadCheckedBss_004B6474[0] = 0;
+        gMcStepCopyFileBss_004B63AC[0] = 0;
+        gMcStepCopyFileBss_004B63B0[0] = 0;
         gMcState_004B63B8.step++;
         gMcState_004B63B8.retry = 0;
         break;
@@ -96,7 +96,7 @@ s32 Mc_StepCopyFile_4_001D58C0(void) {
                 if (r == -2) {
                     gMcState_004B63B8.err = 3;
                 } else if (r == -4) {
-                    D_004B68D0[0] = 0;
+                    gMcStepWriteCheckedBss_004B68D0[0] = 0;
                     gMcState_004B63B8.step++;
                     break;
                 } else {
@@ -108,7 +108,7 @@ s32 Mc_StepCopyFile_4_001D58C0(void) {
             gMcState_004B63B8.step--;
             break;
         }
-        if (r == 0) D_004B68D0[0] = 0;
+        if (r == 0) gMcStepWriteCheckedBss_004B68D0[0] = 0;
         gMcState_004B63B8.step++;
         break;
     case 5:
@@ -120,20 +120,20 @@ s32 Mc_StepCopyFile_4_001D58C0(void) {
         }
         strcpy(buf, gMcState_004B63B8.xA4);
         fd = sceOpen(buf, 1);
-        D_004B63A4[0] = fd;
+        gMcStepCopyFileBss_004B63A4[0] = fd;
         if (fd < 0) {
             gMcState_004B63B8.cmd = 0;
             gMcState_004B63B8.err = 0x3D;
             return fd;
         }
         if (gMcState_004B63B8.xAC != 0) {
-            D_004B63AC[0] = gMcState_004B63B8.xAC;
+            gMcStepCopyFileBss_004B63AC[0] = gMcState_004B63B8.xAC;
         } else {
-            D_004B63AC[0] = sceLseek(fd, 0, 2);
-            sceLseek(D_004B63A4[0], 0, 0);
+            gMcStepCopyFileBss_004B63AC[0] = sceLseek(fd, 0, 2);
+            sceLseek(gMcStepCopyFileBss_004B63A4[0], 0, 0);
         }
         k = gMcDirBuf_004B68C0[0].x10 != 0 ? 0 : 2;
-        if (n - k < (D_004B63AC[0] + 0x3FF) / 1024) {
+        if (n - k < (gMcStepCopyFileBss_004B63AC[0] + 0x3FF) / 1024) {
             gMcState_004B63B8.err = 0x3D;
             gMcState_004B63B8.cmd = 0;
             return -0x65;
@@ -142,7 +142,7 @@ s32 Mc_StepCopyFile_4_001D58C0(void) {
         gMcState_004B63B8.retry = 0;
         break;
     case 8:
-        if (sceMcOpen(i, j, gMcState_004B63B8.name, D_004B68D0[0] == 0 ? 0x203 : 3) != 0) {
+        if (sceMcOpen(i, j, gMcState_004B63B8.name, gMcStepWriteCheckedBss_004B68D0[0] == 0 ? 0x203 : 3) != 0) {
             if (gMcState_004B63B8.retry == 2) {
                 gMcState_004B63B8.cmd = 0;
                 gMcState_004B63B8.err = 0x3D;
@@ -167,11 +167,11 @@ s32 Mc_StepCopyFile_4_001D58C0(void) {
             gMcState_004B63B8.step--;
             break;
         }
-        D_004B6474[0] = r;
+        gMcStepReadCheckedBss_004B6474[0] = r;
         gMcState_004B63B8.step++;
         break;
     case 10:
-        if ((D_004B63A8[0] = sceRead(D_004B63A4[0], D_004B6478, 0x400)) <= 0) {
+        if ((gMcStepCopyFileBss_004B63A8[0] = sceRead(gMcStepCopyFileBss_004B63A4[0], D_004B6478, 0x400)) <= 0) {
             gMcState_004B63B8.step = 13;
             break;
         }
@@ -179,7 +179,7 @@ s32 Mc_StepCopyFile_4_001D58C0(void) {
         gMcState_004B63B8.step++;
         break;
     case 11:
-        w = sceMcWrite(D_004B6474[0], D_004B6478, D_004B63A8[0]);
+        w = sceMcWrite(gMcStepReadCheckedBss_004B6474[0], D_004B6478, gMcStepCopyFileBss_004B63A8[0]);
         if (w != 0) {
             if (gMcState_004B63B8.retry == 2) {
                 gMcState_004B63B8.x90 = -1;
@@ -204,19 +204,19 @@ s32 Mc_StepCopyFile_4_001D58C0(void) {
             break;
         }
         gMcState_004B63B8.retry = 0;
-        D_004B63B0[0] += D_004B63A8[0];
-        if (D_004B63B0[0] < D_004B63AC[0]) {
+        gMcStepCopyFileBss_004B63B0[0] += gMcStepCopyFileBss_004B63A8[0];
+        if (gMcStepCopyFileBss_004B63B0[0] < gMcStepCopyFileBss_004B63AC[0]) {
             gMcState_004B63B8.step -= 2;
             break;
         }
         gMcState_004B63B8.step++;
         break;
     case 13:
-        sceClose(D_004B63A4[0]);
+        sceClose(gMcStepCopyFileBss_004B63A4[0]);
         gMcState_004B63B8.step++;
         break;
     case 14:
-        w = sceMcClose(D_004B6474[0]);
+        w = sceMcClose(gMcStepReadCheckedBss_004B6474[0]);
         if (w != 0) {
             if (gMcState_004B63B8.retry == 2) {
                 gMcState_004B63B8.x90 = -1;
@@ -244,8 +244,8 @@ s32 Mc_StepCopyFile_4_001D58C0(void) {
         gMcState_004B63B8.cmd = 0;
         return 1;
     case 100:
-        if (D_004B63A4[0] != 0) sceClose(D_004B63A4[0]);
-        if (D_004B6474[0] < 0) {
+        if (gMcStepCopyFileBss_004B63A4[0] != 0) sceClose(gMcStepCopyFileBss_004B63A4[0]);
+        if (gMcStepReadCheckedBss_004B6474[0] < 0) {
             gMcState_004B63B8.err = 0x3D;
             gMcState_004B63B8.cmd = 0;
             return -999;
@@ -253,7 +253,7 @@ s32 Mc_StepCopyFile_4_001D58C0(void) {
         gMcState_004B63B8.retry = 0;
         break;
     case 101:
-        if (sceMcClose(D_004B6474[0]) != 0) {
+        if (sceMcClose(gMcStepReadCheckedBss_004B6474[0]) != 0) {
             if (gMcState_004B63B8.retry == 2) {
                 gMcState_004B63B8.cmd = 0;
                 gMcState_004B63B8.err = 0x3D;

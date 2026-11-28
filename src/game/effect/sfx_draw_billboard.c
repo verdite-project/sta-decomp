@@ -22,12 +22,12 @@ typedef struct { f32 x, y, z; u8 pad[0x2B - 12]; u8 a; u8 pad2[4]; } C;
 typedef struct { C c[2]; } CC;
 typedef struct { u16 prev; u16 next; u16 x4; } L;
 typedef struct { u8 pad[0x20]; f32 x20; f32 x24; f32 x28; f32 x2C; } R;
-extern s32 D_00201F2C;
-extern s32 D_00201F40;
-extern B *D_00201FC0;
-extern CC *D_00201FD0;
-extern L *D_00201FD4;
-extern f32 D_001F2160[];
+extern s32 gSfxAllSbss_00201F2C;
+extern s32 gSfxDrawBillboardSbss_00201F40;
+extern B *gSfxSystemSbss_00201FC0;
+extern CC *gSfxAllSbss_00201FD0;
+extern L *gSfxSystemSbss_00201FD4;
+extern f32 gMatrixFromData_001F2160[];
 extern Q *GsPkt_Alloc_3_00154A80(s32);
 extern void GsPkt_SetReg_3_001543E0(s32, u64);
 extern void GsPkt_EndAD_3_00154420(void);
@@ -98,14 +98,14 @@ void Sfx_DrawBillboard_0_00168480(E *e, Sub *sub, M *m, S *s) {
     GsPkt_SetReg_3_001543E0(0x42, (u64)ca | ((u64)b << 2) | ((u64)cc << 4) | ((u64)d << 6) | ((u64)fix << 32));
     GsPkt_SetReg_3_001543E0(0x49, th);
     GsPkt_Flush_1_001544C0();
-    for (idx = sub->x8; idx != 0xFFFF; idx = D_00201FD4[idx].x4) {
-        bp = &D_00201FC0[idx];
-        cp = &D_00201FD0[idx];
+    for (idx = sub->x8; idx != 0xFFFF; idx = gSfxSystemSbss_00201FD4[idx].x4) {
+        bp = &gSfxSystemSbss_00201FC0[idx];
+        cp = &gSfxAllSbss_00201FD0[idx];
         if (!m->a0) {
-            pa = &cp->c[D_00201F2C].a;
-            t.x = cp->c[D_00201F2C].x;
-            t.y = cp->c[D_00201F2C].y;
-            t.z = cp->c[D_00201F2C].z;
+            pa = &cp->c[gSfxAllSbss_00201F2C].a;
+            t.x = cp->c[gSfxAllSbss_00201F2C].x;
+            t.y = cp->c[gSfxAllSbss_00201F2C].y;
+            t.z = cp->c[gSfxAllSbss_00201F2C].z;
             t.w = 1.0f;
             r = Map_GetDefaultLight_0_001B72F0();
             lo = r->x20;
@@ -113,11 +113,11 @@ void Sfx_DrawBillboard_0_00168480(E *e, Sub *sub, M *m, S *s) {
             a0 = r->x28;
             a1 = r->x2C;
             ok = 0;
-            if (D_002022E4 && D_002022E4->unk518) ok = 1;
+            if (gPlayerSbss_002022E4 && gPlayerSbss_002022E4->unk518) ok = 1;
             if (ok) {
-                ap = D_002022E4->unk518 + 0x1C0;
+                ap = gPlayerSbss_002022E4->unk518 + 0x1C0;
             } else {
-                ap = D_001F2160;
+                ap = gMatrixFromData_001F2160;
             }
             f = (Vec_Distance_3_00146940(ap, &t) - lo) / (hi - lo);
             if (1.0f < f) f = 1.0f;
@@ -132,8 +132,8 @@ void Sfx_DrawBillboard_0_00168480(E *e, Sub *sub, M *m, S *s) {
             *pa = mu(*pa, g);
         }
         fl = m->g7;
-        ofs = D_00201F40;
-        c = &cp->c[D_00201F2C];
+        ofs = gSfxDrawBillboardSbss_00201F40;
+        c = &cp->c[gSfxAllSbss_00201F2C];
         {
             Q *q = GsPkt_Alloc_3_00154A80(6);
             tag.q = 0;
@@ -176,6 +176,6 @@ INCLUDE_ASM(Sfx_DrawBillboard_0_00168480);
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/sbss.c): D_00201F40 */
-s32 D_00201F40;
+/* data twins (src/game/data/sbss.c): gSfxDrawBillboardSbss_00201F40 */
+s32 gSfxDrawBillboardSbss_00201F40;
 #endif

@@ -35,10 +35,10 @@ typedef struct { u8 pad[6]; u16 m6; u8 pad8[0x38]; u8 m40[1]; } Mdl;
 typedef struct { u8 pad[0xB0]; Mdl **pB0; } Sub_Enemy_HidePart_1_001A8B10;
 typedef struct { u8 pad[0x2A]; u8 m2A; } Src;
 typedef struct { u8 pad[0x4B4]; Src *m4B4[0x19]; Sub_Enemy_HidePart_1_001A8B10 *m518; } A_Enemy_HidePart_1_001A8B10;
-extern Vec D_001F2130;
-extern Vec D_001F2140;
-extern Vec D_001F2150;
-extern Vec D_001F2160;
+extern Vec gMatrixFromData_001F2130;
+extern Vec gMatrixFromData_001F2140;
+extern Vec gMatrixFromData_001F2150;
+extern Vec gMatrixFromData_001F2160;
 void Enemy_ResetPartAnim_1_001A8670(A_Enemy_ResetPartAnim_1_001A8670 *a, u8 i);
 void Enemy_ScatterPart_0_001A8700(Act *a, u8 idx);
 void Enemy_HidePart_1_001A8B10(A_Enemy_HidePart_1_001A8B10 *a, u8 id);
@@ -93,8 +93,8 @@ void Enemy_ScatterPart_0_001A8700(Act *a, u8 idx) {
     k = a->x4B4[idx]->x2A;
     h = **(Hdr ***)(a->x518 + 0xB0);
     sz = h->h6 * 0x140 + 0x200;
-    na = (u8 *)((s32)h + 0x40) + D_00201F2C * sz;
-    nb = (u8 *)((s32)h + 0x40) + !D_00201F2C * sz;
+    na = (u8 *)((s32)h + 0x40) + gSfxAllSbss_00201F2C * sz;
+    nb = (u8 *)((s32)h + 0x40) + !gSfxAllSbss_00201F2C * sz;
     off = (k + 1) * 0x140;
     f = (F *)(na + off + 0x1F8);
     if (!f->b6) {
@@ -118,9 +118,9 @@ void Enemy_ScatterPart_0_001A8700(Act *a, u8 idx) {
     sceVu0Normalize(&e->xE0, &m.m[0]);
     sceVu0Normalize(&e->xF0, m1);
     sceVu0Normalize(&e->x100, m2);
-    sceVu0CopyVector(&e->x110, &D_001F2160);
+    sceVu0CopyVector(&e->x110, &gMatrixFromData_001F2160);
     sceVu0CopyVector(&e->x120, &gZeroVec_003139A0);
-    sceVu0CopyVector(&e->x130, &D_001F2160);
+    sceVu0CopyVector(&e->x130, &gMatrixFromData_001F2160);
     sceVu0CopyMatrix((Mtx *)((s32)na + off + 0x100), &m);
     sceVu0CopyMatrix((Mtx *)(b + 0x100), &m);
     sceVu0CopyVector(&c, (Vec *)(na + *p * 0x140 + 0xE0));
@@ -128,15 +128,15 @@ void Enemy_ScatterPart_0_001A8700(Act *a, u8 idx) {
     sceVu0ScaleVector(&c, &c, 250.0f);
     c.y += -350.0f;
     sceVu0CopyVector(&e->xD0, &c);
-    sceVu0ScaleVector(&r, &D_001F2130, 0.0625f * (f32)(rand() % 256 - 128));
-    sceVu0ScaleVector(&t1, &D_001F2140, 0.0078125f * (f32)(rand() % 256 - 128));
+    sceVu0ScaleVector(&r, &gMatrixFromData_001F2130, 0.0625f * (f32)(rand() % 256 - 128));
+    sceVu0ScaleVector(&t1, &gMatrixFromData_001F2140, 0.0078125f * (f32)(rand() % 256 - 128));
     sceVu0AddVector(&r, &t1, &r);
-    sceVu0ScaleVector(&t2, &D_001F2150, 0.0078125f * (f32)(rand() % 256 - 128));
+    sceVu0ScaleVector(&t2, &gMatrixFromData_001F2150, 0.0078125f * (f32)(rand() % 256 - 128));
     sceVu0AddVector(&r, &t2, &r);
     sceVu0Normalize(&r, &r);
     Quat_FromAxisAngle_2_0015E500(&e->x130, &r, 0.09424778f);
-    sceVu0ScaleVector(&e->x120, &D_001F2150, 50.0f);
-    sceVu0ScaleVector(&t3, &D_001F2140, -30.0f);
+    sceVu0ScaleVector(&e->x120, &gMatrixFromData_001F2150, 50.0f);
+    sceVu0ScaleVector(&t3, &gMatrixFromData_001F2140, -30.0f);
     sceVu0AddVector(&e->x120, &t3, &e->x120);
     }
 }

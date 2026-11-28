@@ -50,10 +50,10 @@ typedef struct { u16 a, b, c, n; u8 pad[0x38]; s8 data[1]; } Hd;
 typedef struct { u8 pad[0xC]; u8 a:6; u8 en:1; u8 b:1; } Fl;
 typedef struct { u8 pad[0x124]; s32 h[8]; } Obj;
 typedef struct { u8 pad[0x18]; Obj *objs; s8 *ents; } O;
-extern Mtx D_001F2170;
-extern T D_004A4570;
-extern u8 *D_00202284;
-extern s32 D_00202284__as_EnemyType_LoadTable_0_001A83A0;
+extern Mtx gMatrixFromData_001F2170;
+extern T gEnemyListBss_004A4570;
+extern u8 *gEnemyModelSbss_00202284;
+extern s32 gEnemyModelSbss_00202284__as_EnemyType_LoadTable_0_001A83A0;
 void Enemy_UpdateModelMatrix_0_001A7E60(A *a);
 void ActorList_Init_1_001A82B0(s32 arg0, s32 arg1);
 void* EnemyType_Get_0_001A8360(s32 i);
@@ -103,7 +103,7 @@ void Enemy_UpdateModelMatrix_0_001A7E60(A *a) {
     *r = WRAPV(p->x10->rot.z, *r);
     sceVu0CopyVector(&p->x10->v10, &p->x10->v0);
     sceVu0CopyVector(&p->x10->v30, &p->x10->rot);
-    sceVu0CopyMatrix(&p->x18->m, &D_001F2170);
+    sceVu0CopyMatrix(&p->x18->m, &gMatrixFromData_001F2170);
     p->x0 = (f32)(u32)a->x4B0->x244 * p->x18->s50 / 4096.0f;
     p->x4 = (f32)(u32)a->x4B0->x246 * p->x18->s54 / 4096.0f;
     p->x8 = (f32)(u32)a->x4B0->x248 * p->x18->s58 / 4096.0f;
@@ -123,7 +123,7 @@ void Enemy_UpdateModelMatrix_0_001A7E60(A *a) {
 
 /* ActorList_Init_1_001A82B0 */
 void ActorList_Init_1_001A82B0(s32 arg0, s32 arg1) {
-    u16 i; D_00202278 = arg0; D_00202280 = arg1; memset(&D_004A4570, 0, 0x30C); for (i = 0; i < 0x81; i++) D_004A4570.a[i] = i; D_004A4570.n = 0x81;
+    u16 i; gEnemyListSbss_00202278 = arg0; gEnemyListSbss_00202280 = arg1; memset(&gEnemyListBss_004A4570, 0, 0x30C); for (i = 0; i < 0x81; i++) gEnemyListBss_004A4570.a[i] = i; gEnemyListBss_004A4570.n = 0x81;
 }
 
 /* EnemyType_Get_0_001A8360 */
@@ -132,7 +132,7 @@ void sceVu0CopyMatrix__as_EnemyType_Get_0_001A8360(void *, s8 *);
 
 /* EnemyType_Get_0_001A8360 */
 /* EnemyType_Get_0_001A8360 */
-void *EnemyType_Get_0_001A8360(s32 i) { if (i < 0 || i > 0xFF) return NULL; if (!D_00202284) return NULL; return (u8 *)(i * 64) + (s32)D_00202284 + 16; }
+void *EnemyType_Get_0_001A8360(s32 i) { if (i < 0 || i > 0xFF) return NULL; if (!gEnemyModelSbss_00202284) return NULL; return (u8 *)(i * 64) + (s32)gEnemyModelSbss_00202284 + 16; }
 
 /* EnemyType_LoadTable_0_001A83A0 */
 
@@ -141,7 +141,7 @@ s32 EnemyType_LoadTable_0_001A83A0(void *p)
     s32 b;
     s32 *a;
     Arc_LoadFile_2_00159DD0(0x3F114AF, p, &a, &b);
-    D_00202284__as_EnemyType_LoadTable_0_001A83A0 = *a;
+    gEnemyModelSbss_00202284__as_EnemyType_LoadTable_0_001A83A0 = *a;
     return 0;
 }
 
@@ -165,7 +165,7 @@ void Enemy_UpdateSfxTransform_0_001A83E0(s8 *arg0) {
             i = 0;
             off = 0;
             off4 = 0;
-            v = (s8 *)((s32)h->data + D_00201F2C * (h->n * 0x140 + 0x200));
+            v = (s8 *)((s32)h->data + gSfxAllSbss_00201F2C * (h->n * 0x140 + 0x200));
             do {
                 s8 *t = o->ents + off;
                 e = t + 0x2B0;
@@ -186,6 +186,6 @@ void Enemy_UpdateSfxTransform_0_001A83E0(s8 *arg0) {
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/sbss.c): D_00202284 */
-u8 *D_00202284;
+/* data twins (src/game/data/sbss.c): gEnemyModelSbss_00202284 */
+u8 *gEnemyModelSbss_00202284;
 #endif

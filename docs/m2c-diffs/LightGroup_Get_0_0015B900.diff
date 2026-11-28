@@ -2,35 +2,35 @@
 +++ matched
 @@ -1,21 +1,15 @@
  #include "common.h"
--extern s32 D_0030A2D0[];
--extern s32 D_0030A310[];
--extern s32 D_0030A390[];
+-extern s32 gLightBss_0030A2D0[];
+-extern s32 gLightBss_0030A310[];
+-extern s32 gLightBss_0030A390[];
 -s32 *LightGroup_Get_0_0015B900(s32 arg0) {
 -    s32 *var_2_2;
 -    s32 var_2;
 -    if (arg0 < 0) {
 -        if (arg0 == -1) {
--            var_2_2 = (s32 *) (D_0030A310);
+-            var_2_2 = (s32 *) (gLightBss_0030A310);
 -        } else {
--            var_2_2 = (s32 *) (D_0030A390);
+-            var_2_2 = (s32 *) (gLightBss_0030A390);
 -        }
 -        return (s32 *) (var_2_2);
 +typedef struct { u8 b[0x40]; } E;
 +typedef struct { char pad[0x100]; E e[0x3C]; } B;
-+extern B D_0030A2D0[];
-+extern char D_0030A310[];
-+extern char D_0030A390[];
++extern B gLightBss_0030A2D0[];
++extern char gLightBss_0030A310[];
++extern char gLightBss_0030A390[];
 +void *LightGroup_Get_0_0015B900(s32 i)
 +{
 +    if (i < 0) {
 +        if (i == -1)
-+            return D_0030A310;
-+        return D_0030A390;
++            return gLightBss_0030A310;
++        return gLightBss_0030A390;
      }
 -    var_2 = arg0 >> 6;
 -    if (arg0 < 0) {
 -        var_2 = (s32) (arg0 + 0x3F) >> 6;
 -    }
--    return (s32 *) (((arg0 % 64) << 6) + (D_0030A2D0 + (var_2 << 0xC)) + 0x100);
-+    return &D_0030A2D0[i / 64].e[i % 64];
+-    return (s32 *) (((arg0 % 64) << 6) + (gLightBss_0030A2D0 + (var_2 << 0xC)) + 0x100);
++    return &gLightBss_0030A2D0[i / 64].e[i % 64];
  }

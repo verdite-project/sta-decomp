@@ -1,12 +1,12 @@
 --- m2c
 +++ matched
 @@ -3,5 +3,6 @@
- extern s32 D_00497B60[];
+ extern s32 gMenuBss_00497B60[];
 -void MenuStack_Push_1_00189ED0(s32 arg0) {
--    *(D_00497B60 + (D_002020E0 * 4)) = arg0;
--    D_002020E0 += 1;
+-    *(gMenuBss_00497B60 + (gMenuSbss_002020E0 * 4)) = arg0;
+-    gMenuSbss_002020E0 += 1;
 +void MenuStack_Push_1_00189ED0(s32 v)
 +{
-+    D_00497B60[D_002020E0] = v;
-+    D_002020E0++;
++    gMenuBss_00497B60[gMenuSbss_002020E0] = v;
++    gMenuSbss_002020E0++;
  }

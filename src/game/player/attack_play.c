@@ -36,7 +36,7 @@ void Attack_PlaySe_0_001D1E80(Mdl *m, u8 id, S *s, f32 *tbl) {
     f32 *p;
     s8 *base;
     p = tbl + s->xE + s->xC;
-    base = (s8 *)(D_00201F2C * (m->m6 * 0x140 + 0x200) + (s32)m->m40);
+    base = (s8 *)(gSfxAllSbss_00201F2C * (m->m6 * 0x140 + 0x200) + (s32)m->m40);
     sceVu0CopyVector(&v, base + (id + 1) * 0x140 + 0xF0);
     Snd_PlaySeAt_2_001315A0(s->xA, (s32)*p, &v);
 }
@@ -57,7 +57,7 @@ s8 *Attack_SpawnSfx_0_001D1F20(A0 *a0, void *a1, s32 a2, u8 a3, E *e, s32 *tbl) 
     Src *src;
     s32 k;
 
-    s4 = (s8 *)((s32)a0 + 0x40) + D_00201F2C * (a0->x6 * 0x140 + 0x200);
+    s4 = (s8 *)((s32)a0 + 0x40) + gSfxAllSbss_00201F2C * (a0->x6 * 0x140 + 0x200);
     base = &tbl[e->xE];
     s5 = (f32 *)&base[e->xC];
     id = base[0];

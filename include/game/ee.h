@@ -6,7 +6,7 @@
 
 /* gMcState_004B63B8, the memory-card driver state (src/game/ee/mc_*.c). Per-card
  * arrays are indexed [port * 4 + slot]; Mc_Start* fill the request fields and
- * set cmd, Mc_Step* advance step. Still defined inside D_004B63B4[] in
+ * set cmd, Mc_Step* advance step. Still defined inside gMcStepReadBss_004B63B4[] in
  * src/game/data/pad_get_connected_bss.c. */
 typedef struct {
     s32 type[8];    /* 0x00 */
@@ -89,7 +89,7 @@ typedef struct {
 
 extern McState gMcState_004B63B8;
 extern int D_004B6418[][4];
-extern s32 D_004B6474[];
+extern s32 gMcStepReadCheckedBss_004B6474[];
 extern u8 D_004B6478[];
 
 void Credits_SetSpeed_0_001E3DB8(u32);

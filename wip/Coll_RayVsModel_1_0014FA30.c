@@ -1,4 +1,4 @@
-// NEAR: 10 of 378 words differ (was 79). Only the head scheduling differs: retail loads g->x14, computes g+0x40, loads D_00201F2C and h, h+0x40, then reloads g (spilled) for x16/x18/x10; ours loads x16/x18 right after x14. Fixes so far: Z -> M1.m[3] (stack overlap), (s32)g->data/(s32)h->data hoists, split hd into 2 statements (fixes final addu order), decl perm of e/n/v/it/t, statement perm of cnt/bx/q4/it/q8.
+// NEAR: 10 of 378 words differ (was 79). Only the head scheduling differs: retail loads g->x14, computes g+0x40, loads gSfxAllSbss_00201F2C and h, h+0x40, then reloads g (spilled) for x16/x18/x10; ours loads x16/x18 right after x14. Fixes so far: Z -> M1.m[3] (stack overlap), (s32)g->data/(s32)h->data hoists, split hd into 2 statements (fixes final addu order), decl perm of e/n/v/it/t, statement perm of cnt/bx/q4/it/q8.
 
 #include "common.h"
 typedef struct { s32 off[4]; s32 x10[8]; s32 x30[8]; } Hdr;
@@ -14,7 +14,7 @@ typedef struct { u8 pad[0x178]; u8 *x178; } F;
 typedef struct { u8 p[4]; Flags8 f; u8 p5[3]; } FE;
 extern s16 D_00222A18[];
 extern s16 D_00222A16[];
-extern s32 D_00201F2C;
+extern s32 gSfxAllSbss_00201F2C;
 extern Vec gZeroVec_003139A0;
 void sceVu0CopyVector(Vec *, void *);
 void sceVu0CopyMatrix(Mtx *, void *);
@@ -58,7 +58,7 @@ s32 Coll_RayVsModel_1_0014FA30(Out *out, H *h, Vec *ray, u8 mask, F *flag, s32 f
     hd = (Hdr *)((s32)g->data + g->x14 * 16 + g->x16 * 8);
     hd = (Hdr *)((s32)hd + g->x18 * 4);
     b160 = *g->x10;
-    base190 = (u8 *)((s32)h->data + D_00201F2C * (h->x6 * 320 + 0x200));
+    base190 = (u8 *)((s32)h->data + gSfxAllSbss_00201F2C * (h->x6 * 320 + 0x200));
     if (g->x1C == 0) return 0;
     sceVu0CopyVector(&S0, ray);
     S0.w = 1.0f;

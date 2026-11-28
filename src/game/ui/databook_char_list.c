@@ -6,17 +6,17 @@
 #include "game/save.h"
 typedef union { u32 w; u8 b[4]; } Col;
 #ifndef NONMATCHING
-extern char D_001FD358[];
+extern char gDatabookCharListRodata_001FD358[];
 #else
-/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD358 */
-static char D_001FD358[0x10] __attribute__((aligned(8))) = { -0x7f, 0x48, -0x7f, 0x48, -0x7f, 0x48, -0x7f, 0x48, 0, 0, 0, 0, 0, 0, 0, 0 };
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookCharListRodata_001FD358 */
+static char gDatabookCharListRodata_001FD358[0x10] __attribute__((aligned(8))) = { -0x7f, 0x48, -0x7f, 0x48, -0x7f, 0x48, -0x7f, 0x48, 0, 0, 0, 0, 0, 0, 0, 0 };
 #endif
-extern s32 *D_00201D3C;
+extern s32 *gDatabookItemDrawSdata_00201D3C;
 #ifndef NONMATCHING
-extern f32 D_00201D40;
+extern f32 gDatabookCharListSdata_00201D40;
 #else
-/* data twins (src/game/data/sdata.c): D_00201D40 */
-static f32 D_00201D40 = -2.99f;
+/* data twins (src/game/data/sdata.c): gDatabookCharListSdata_00201D40 */
+static f32 gDatabookCharListSdata_00201D40 = -2.99f;
 #endif
 char* DbChar_GetListName_1_00196C50(s32 i);
 void DbCharProc_Pos_0_00196CB0(s32 arg0, void *arg1, void *arg2);
@@ -33,10 +33,10 @@ void Text_Draw_2_001875C0(s32, s32, u32, f32, f32, f32);
 char *DbChar_GetListName_1_00196C50(s32 i)
 {
     if (i < 0)
-        return D_001FD358;
+        return gDatabookCharListRodata_001FD358;
     if (Bestiary_IsSeen_2_001A9EC0(i))
         return DbChar_GetName_0_00195970(i);
-    return D_001FD358;
+    return gDatabookCharListRodata_001FD358;
 }
 
 /* DbCharProc_Pos_0_00196CB0 */
@@ -78,17 +78,17 @@ void DbItem_Draw_0_00196E20(u8 *arg0) {
 
     Menu_SetFlags_0_0018A310(0xE);
     if (arg0[8] == 0x1B) {
-        D_00201D40 = Approachf_3_00187770(D_00201D40, -0.02f, 3.5f);
+        gDatabookCharListSdata_00201D40 = Approachf_3_00187770(gDatabookCharListSdata_00201D40, -0.02f, 3.5f);
     } else {
-        D_00201D40 = Approachf_3_00187770(D_00201D40, -2.99f, 3.5f);
+        gDatabookCharListSdata_00201D40 = Approachf_3_00187770(gDatabookCharListSdata_00201D40, -2.99f, 3.5f);
     }
-    h = DbItem_FindA_1_0019D4A0(D_00201D3C[D_004A1430[0]]);
+    h = DbItem_FindA_1_0019D4A0(gDatabookItemDrawSdata_00201D3C[gDatabookItemDrawBss_004A1430[0]]);
     c.w = 0x80FFFFFF;
-    c.b[3] = D_004A1440[0];
+    c.b[3] = gDatabookItemDrawBss_004A1440[0];
     Text_Draw_2_001875C0(h, 2, c.w, 622.0f, 17.0f, 1.0f);
     UiAnim_UpdateAll_1_0017F5C0();
-    if (!(D_00201D40 <= -2.99f)) {
-        DbItem_DrawRing_0_00197130(D_00201D3C[D_004A1430[0]], D_00201D40);
-        DbItem_DrawStats_0_00196F90(D_00201D40);
+    if (!(gDatabookCharListSdata_00201D40 <= -2.99f)) {
+        DbItem_DrawRing_0_00197130(gDatabookItemDrawSdata_00201D3C[gDatabookItemDrawBss_004A1430[0]], gDatabookCharListSdata_00201D40);
+        DbItem_DrawStats_0_00196F90(gDatabookCharListSdata_00201D40);
     }
 }

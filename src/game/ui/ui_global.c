@@ -8,10 +8,10 @@ typedef struct { u32 n; Item *items; } List;
 typedef struct { Q a; V4 b; f32 c0; f32 c4; s32 c8; Col cc; f32 d0; f32 d4; f32 d8; f32 dc; } P;
 typedef struct { s32 x0; s32 x4; s32 x8; f32 xC; f32 x10; f32 x14; f32 x18; s32 x1C; s32 x20; s32 x24; s32 x28; f32 x2C; f32 x30; f32 x34; f32 x38; Col col; } O;
 #ifndef NONMATCHING
-extern s32 D_00202070;
+extern s32 gUiGlobalSbss_00202070;
 #else
-/* data twins (src/game/data/sbss.c): D_00202070 */
-static s32 D_00202070;
+/* data twins (src/game/data/sbss.c): gUiGlobalSbss_00202070 */
+static s32 gUiGlobalSbss_00202070;
 #endif
 void Ui_SetGlobalFlag_0_00182990(s32 arg0);
 void Ui_DrawElemWrap_1_001829A0(s32 arg0, s32 arg1);
@@ -19,7 +19,7 @@ void Ui_DrawList_1_001829B0(O *o, List *l, void (*fn)(P *, s32, s32, s32), s32 a
 
 /* Ui_SetGlobalFlag_0_00182990 */
 void Ui_SetGlobalFlag_0_00182990(s32 arg0) {
-    D_00202070 = arg0;
+    gUiGlobalSbss_00202070 = arg0;
 }
 
 /* Ui_DrawElemWrap_1_001829A0 */

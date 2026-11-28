@@ -5,19 +5,19 @@
 -void Enemy_Set5C8_1_0013E450(s32, f32);                    /* extern */
 -void Enemy_Set5C0_1_0013E470(s32, s32);                /* extern */
 -void Enemy_Set5B4b3_1_0013E620(s32, s32);                /* extern */
--extern void *D_00201FA8;
+-extern void *gEnemyScriptSbss_00201FA8;
 -/* Warning: Gap in callee-saved word stack region.
 - * Saved: [0x0, 0x10, 0x14, 0x18, 0x1c, 0x20, 0x24], gap at: 0x8. */
 -void EnemyCmd_StartTimer_0_00143BD0(void *arg0) {
 -    f32 temp_f20;
 -    s32 temp_16;
 -    temp_f20 = M2C_FIELD(arg0, f32 *, 8);
--    temp_16 = M2C_FIELD(D_00201FA8, s32 *, 0x154);
+-    temp_16 = M2C_FIELD(gEnemyScriptSbss_00201FA8, s32 *, 0x154);
 -    Enemy_Set5B4b3_1_0013E620(temp_16, 1);
 -    Enemy_Set5C8_1_0013E450(temp_16, temp_f20);
 -    Enemy_Set5C0_1_0013E470(temp_16, 0);
 +typedef struct { char pad[0x154]; void *p; } S;
-+extern S *D_00201FA8;
++extern S *gEnemyScriptSbss_00201FA8;
 +typedef struct { char pad[8]; f32 f; } Obj;
 +void Enemy_Set5B4b3_1_0013E620(void *p, s32 v);
 +void Enemy_Set5C8_1_0013E450(void *p, f32 f);
@@ -25,7 +25,7 @@
 +void EnemyCmd_StartTimer_0_00143BD0(Obj *o)
 +{
 +    f32 f = o->f;
-+    void *p = D_00201FA8->p;
++    void *p = gEnemyScriptSbss_00201FA8->p;
 +    Enemy_Set5B4b3_1_0013E620(p, 1);
 +    Enemy_Set5C8_1_0013E450(p, f);
 +    Enemy_Set5C0_1_0013E470(p, 0.0f);

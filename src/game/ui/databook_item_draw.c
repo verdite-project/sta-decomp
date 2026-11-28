@@ -11,47 +11,47 @@ typedef struct { u8 pad[0x20]; L *l; } O;
 typedef struct { u128 q[2]; } Q2;
 typedef UiArg Arg;
 typedef struct { s32 state; s32 btn; s8 x8; s8 pad[5]; u8 xE; } P;
-extern s32 *D_00201D3C;
+extern s32 *gDatabookItemDrawSdata_00201D3C;
 #ifdef NONMATCHING
-extern u8 D_00495B60[];
+extern u8 gEquipDrawBss_00495B60[];
 #endif
 #ifndef NONMATCHING
-extern f32 D_0020219C;
+extern f32 gDatabookItemDrawSbss_0020219C;
 #else
-/* data twins (src/game/data/sbss.c): D_0020219C */
-static f32 D_0020219C;
+/* data twins (src/game/data/sbss.c): gDatabookItemDrawSbss_0020219C */
+static f32 gDatabookItemDrawSbss_0020219C;
 #endif
 #ifndef NONMATCHING
-extern f32 D_002021A0;
+extern f32 gDatabookItemDrawSbss_002021A0;
 #else
-/* data twins (src/game/data/sbss.c): D_002021A0 */
-static f32 D_002021A0;
+/* data twins (src/game/data/sbss.c): gDatabookItemDrawSbss_002021A0 */
+static f32 gDatabookItemDrawSbss_002021A0;
 #endif
 #ifndef NONMATCHING
-extern s32 D_004A1434[];
+extern s32 gDatabookItemDrawBss_004A1434[];
 #else
-/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A1434 */
-static s32 D_004A1434[0x1];
+/* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemDrawBss_004A1434 */
+static s32 gDatabookItemDrawBss_004A1434[0x1];
 #endif
-extern Q2 D_001F2F40;
+extern Q2 gDatabookItemResetData_001F2F40;
 #ifndef NONMATCHING
-extern s32 D_004A1438[];
+extern s32 gDatabookItemDrawBss_004A1438[];
 #else
-/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A1438 */
-static s32 D_004A1438[0x1];
+/* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemDrawBss_004A1438 */
+static s32 gDatabookItemDrawBss_004A1438[0x1];
 #endif
 #ifndef NONMATCHING
-extern f32 D_004A143C[];
+extern f32 gDatabookItemDrawBss_004A143C[];
 #else
-/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A143C */
-static f32 D_004A143C[0x1];
+/* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemDrawBss_004A143C */
+static f32 gDatabookItemDrawBss_004A143C[0x1];
 #endif
 extern Flags8 D_004A1444[];
 #ifndef NONMATCHING
-extern s32 D_00202194;
+extern s32 gDatabookItemDrawSbss_00202194;
 #else
-/* data twins (src/game/data/sbss.c): D_00202194 */
-static s32 D_00202194;
+/* data twins (src/game/data/sbss.c): gDatabookItemDrawSbss_00202194 */
+static s32 gDatabookItemDrawSbss_00202194;
 #endif
 void DbItem_Open_0_001979C0(s32 arg0);
 void DbItem_Update_0_00197B80(P *p);
@@ -90,8 +90,8 @@ void DbItem_DrawStats_0_00196F90(f32 arg0) {
     s32 m;
     f32 t;
 
-    Equip_CalcStatBars_0_0019A370(a, b, c, d, D_00201D3C[D_004A1430[0]]);
-    id = D_00201D3C[D_004A1430[0]];
+    Equip_CalcStatBars_0_0019A370(a, b, c, d, gDatabookItemDrawSdata_00201D3C[gDatabookItemDrawBss_004A1430[0]]);
+    id = gDatabookItemDrawSdata_00201D3C[gDatabookItemDrawBss_004A1430[0]];
     if (id < 0) {
         ok = 0;
     } else {
@@ -104,18 +104,18 @@ void DbItem_DrawStats_0_00196F90(f32 arg0) {
         memset(b, -1, 0x10);
         Menu_DrawStatRing_0_00186440(arg0, a, b, NULL, NULL);
     }
-    if (D_004A1434[0] == 1) {
-        D_002021A0 = 10.0f;
+    if (gDatabookItemDrawBss_004A1434[0] == 1) {
+        gDatabookItemDrawSbss_002021A0 = 10.0f;
     }
-    if (!(D_002021A0 <= 0.0f)) {
-        D_002021A0 -= 1.0f;
-        D_0020219C = Approachf_3_00187770(D_0020219C, -2.99f, 3.5f);
+    if (!(gDatabookItemDrawSbss_002021A0 <= 0.0f)) {
+        gDatabookItemDrawSbss_002021A0 -= 1.0f;
+        gDatabookItemDrawSbss_0020219C = Approachf_3_00187770(gDatabookItemDrawSbss_0020219C, -2.99f, 3.5f);
     } else {
-        D_0020219C = Approachf_3_00187770(D_0020219C, -0.02f, 3.5f);
+        gDatabookItemDrawSbss_0020219C = Approachf_3_00187770(gDatabookItemDrawSbss_0020219C, -0.02f, 3.5f);
     }
-    Menu_DrawFrame_0_00185390(arg0 + D_0020219C, 1, D_00202198, D_004A1430[0]);
-    t = arg0 + D_0020219C;
-    m = D_00201D38;
+    Menu_DrawFrame_0_00185390(arg0 + gDatabookItemDrawSbss_0020219C, 1, gDatabookItemDrawSbss_00202198, gDatabookItemDrawBss_004A1430[0]);
+    t = arg0 + gDatabookItemDrawSbss_0020219C;
+    m = gDatabookItemDrawSdata_00201D38;
     Menu_DrawItemFrame_0_001DF470(t, m == 1 ? -1 : m);
 }
 
@@ -183,33 +183,33 @@ void DbItem_Open_0_001979C0(s32 arg0) {
     Q2 q;
     Arg a;
 
-    if (!(D_004A143C[0] <= 0.0f)) {
-        D_004A143C[0] -= 1.0f;
+    if (!(gDatabookItemDrawBss_004A143C[0] <= 0.0f)) {
+        gDatabookItemDrawBss_004A143C[0] -= 1.0f;
         D_004A1444[0].f.b1 = 0;
     } else {
-        switch (D_004A1434[0]) {
+        switch (gDatabookItemDrawBss_004A1434[0]) {
         case 1:
-            D_004A1430[0] = 0;
-            D_00201D38 = D_004A1438[0];
-            DbItem_LoadEntry_0_00197F90(D_00201D38);
-            q = D_001F2F40;
+            gDatabookItemDrawBss_004A1430[0] = 0;
+            gDatabookItemDrawSdata_00201D38 = gDatabookItemDrawBss_004A1438[0];
+            DbItem_LoadEntry_0_00197F90(gDatabookItemDrawSdata_00201D38);
+            q = gDatabookItemResetData_001F2F40;
             a.fn = DbItem_GetListName_1_00197F30;
             a.f = -3.0f;
             a.cb = DbItemProc_Pos_0_00198100;
             a.a = 0;
             a.b = 0;
-            a.p = (s32)D_00201D3C;
-            a.n = D_00202198;
-            UiAnim_SetColor_0_0017F890(D_00201D38, &q, &a);
-            UiAnim_SetVisible_1_0017F7C0(D_00201D38, 1, 1);
-            UiAnim_SetTarget_1_0017F470(D_004A1430[0], D_00201D38, 1);
+            a.p = (s32)gDatabookItemDrawSdata_00201D3C;
+            a.n = gDatabookItemDrawSbss_00202198;
+            UiAnim_SetColor_0_0017F890(gDatabookItemDrawSdata_00201D38, &q, &a);
+            UiAnim_SetVisible_1_0017F7C0(gDatabookItemDrawSdata_00201D38, 1, 1);
+            UiAnim_SetTarget_1_0017F470(gDatabookItemDrawBss_004A1430[0], gDatabookItemDrawSdata_00201D38, 1);
         }
-        D_004A1434[0] = 0;
-        D_004A1438[0] = 0;
+        gDatabookItemDrawBss_004A1434[0] = 0;
+        gDatabookItemDrawBss_004A1438[0] = 0;
         D_004A1444[0].f.b1 = 1;
-        D_004A1440[0] += 8.0f;
-        if (!(D_004A1440[0] <= 128.0f)) {
-            D_004A1440[0] = 128.0f;
+        gDatabookItemDrawBss_004A1440[0] += 8.0f;
+        if (!(gDatabookItemDrawBss_004A1440[0] <= 128.0f)) {
+            gDatabookItemDrawBss_004A1440[0] = 128.0f;
         }
     }
     if (D_004A1444[0].f.b1) {
@@ -225,20 +225,20 @@ void DbItem_Update_0_00197B80(P *p) {
 
     switch (p->state) {
     case 25:
-        D_00201D38 = 6;
-        D_004A1430[0] = 0;
-        D_00202194 = 0;
+        gDatabookItemDrawSdata_00201D38 = 6;
+        gDatabookItemDrawBss_004A1430[0] = 0;
+        gDatabookItemDrawSbss_00202194 = 0;
         DbItem_LoadEntry_0_00197F90(6);
         DbItem_ResetLayout_0_00197DD0();
         break;
     case 22:
-        sel = D_004A1430[0];
+        sel = gDatabookItemDrawBss_004A1430[0];
         if (p->btn & 0x4000) {
             Snd_PlaySe_3_00131600(0x69, p->xE);
             p->x8 = 0x18;
             p->btn = 0;
             p->state = 0x1A;
-            UiAnim_SetVisible_1_0017F7C0(D_00201D38, 0, 1);
+            UiAnim_SetVisible_1_0017F7C0(gDatabookItemDrawSdata_00201D38, 0, 1);
             return;
         }
         if (p->btn & 0x10) {
@@ -246,53 +246,53 @@ void DbItem_Update_0_00197B80(P *p) {
         } else if (p->btn & 0x40) {
             sel++;
         } else if (p->btn & 0x480) {
-            D_004A1430[0] = 0;
-            D_004A1434[0] = 1;
-            D_00202194--;
-            D_004A1438[0] = ItemSort_GetEntry_0_00195B80(7, &D_00202194);
-            *(s32 *)D_004A1440 = 0;
-            UiAnim_SetVisible_1_0017F7C0(D_00201D38, 0, 1);
+            gDatabookItemDrawBss_004A1430[0] = 0;
+            gDatabookItemDrawBss_004A1434[0] = 1;
+            gDatabookItemDrawSbss_00202194--;
+            gDatabookItemDrawBss_004A1438[0] = ItemSort_GetEntry_0_00195B80(7, &gDatabookItemDrawSbss_00202194);
+            *(s32 *)gDatabookItemDrawBss_004A1440 = 0;
+            UiAnim_SetVisible_1_0017F7C0(gDatabookItemDrawSdata_00201D38, 0, 1);
             Snd_PlaySe_3_00131600(0x66, p->xE);
             p->btn = 0;
         } else if (p->btn & 0x820) {
-            D_004A1430[0] = 0;
-            D_004A1434[0] = 1;
-            D_00202194++;
-            D_004A1438[0] = ItemSort_GetEntry_0_00195B80(7, &D_00202194);
-            *(s32 *)D_004A1440 = 0;
-            UiAnim_SetVisible_1_0017F7C0(D_00201D38, 0, 1);
+            gDatabookItemDrawBss_004A1430[0] = 0;
+            gDatabookItemDrawBss_004A1434[0] = 1;
+            gDatabookItemDrawSbss_00202194++;
+            gDatabookItemDrawBss_004A1438[0] = ItemSort_GetEntry_0_00195B80(7, &gDatabookItemDrawSbss_00202194);
+            *(s32 *)gDatabookItemDrawBss_004A1440 = 0;
+            UiAnim_SetVisible_1_0017F7C0(gDatabookItemDrawSdata_00201D38, 0, 1);
             Snd_PlaySe_3_00131600(0x66, p->xE);
             p->btn = 0;
         }
-        if (D_00202198 != 0) {
-            sel = (sel + D_00202198) % D_00202198;
+        if (gDatabookItemDrawSbss_00202198 != 0) {
+            sel = (sel + gDatabookItemDrawSbss_00202198) % gDatabookItemDrawSbss_00202198;
         }
-        if (UiAnim_SetTarget_1_0017F470(D_004A1430[0], D_00201D38, 0) != 0) {
-            if (D_004A1430[0] != sel) {
+        if (UiAnim_SetTarget_1_0017F470(gDatabookItemDrawBss_004A1430[0], gDatabookItemDrawSdata_00201D38, 0) != 0) {
+            if (gDatabookItemDrawBss_004A1430[0] != sel) {
                 Snd_PlaySe_3_00131600(0x66, p->xE);
             }
-            D_004A1430[0] = sel;
+            gDatabookItemDrawBss_004A1430[0] = sel;
         }
         p->btn = 0;
         break;
     }
-    Ui_LoadItemImage_3_00183DC0(D_00201D3C[D_004A1430[0]]);
+    Ui_LoadItemImage_3_00183DC0(gDatabookItemDrawSdata_00201D3C[gDatabookItemDrawBss_004A1430[0]]);
 }
 #undef DbItem_Update_0_00197B80
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-extern u8 D_00495B60[];
-/* data twins (src/game/data/sdata.c): D_00201D38, D_00201D3C */
-s32 D_00201D38 = 6;
-s32 *D_00201D3C = (s32 *)D_00495B60;
-/* data twins (src/game/data/sbss.c): D_00202198 */
-s32 D_00202198;
+extern u8 gEquipDrawBss_00495B60[];
+/* data twins (src/game/data/sdata.c): gDatabookItemDrawSdata_00201D38, gDatabookItemDrawSdata_00201D3C */
+s32 gDatabookItemDrawSdata_00201D38 = 6;
+s32 *gDatabookItemDrawSdata_00201D3C = (s32 *)gEquipDrawBss_00495B60;
+/* data twins (src/game/data/sbss.c): gDatabookItemDrawSbss_00202198 */
+s32 gDatabookItemDrawSbss_00202198;
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A1430, D_004A1440 */
-s32 D_004A1430[0x1];
-f32 D_004A1440[0x4];
+/* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemDrawBss_004A1430, gDatabookItemDrawBss_004A1440 */
+s32 gDatabookItemDrawBss_004A1430[0x1];
+f32 gDatabookItemDrawBss_004A1440[0x4];
 #endif

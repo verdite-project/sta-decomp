@@ -2,18 +2,18 @@
 +++ matched
 @@ -1,10 +1,9 @@
  #include "common.h"
--extern s32 D_001F1EA8[];
+-extern s32 gFxProcData_001F1EA8[];
 -s32 FxTable_CallA_0_0014D8E0(s32 arg0, s32 arg1) {
 -    s32 temp_6;
 -    temp_6 = arg0 & 0xFFFF;
 -    if (temp_6 >= 0x1D) {
 +typedef struct { void (*a)(s32); void (*b)(s32); void (*c)(s32); } E;
-+extern E D_001F1EA0[];
++extern E gFxProcData_001F1EA0[];
 +s32 FxTable_CallA_0_0014D8E0(u16 i, s32 v)
 +{
 +    if (i >= 29)
          return 0;
 -    }
--    *(D_001F1EA8 + (temp_6 * 0xC))(arg1, temp_6);
-+    D_001F1EA0[i].c(v);
+-    *(gFxProcData_001F1EA8 + (temp_6 * 0xC))(arg1, temp_6);
++    gFxProcData_001F1EA0[i].c(v);
      return 1;

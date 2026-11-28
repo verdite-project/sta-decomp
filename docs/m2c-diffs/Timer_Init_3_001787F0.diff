@@ -5,14 +5,14 @@
 -void Timer_IntrHandler_2_001787C0();
 -s32 func_0010B700(s32, void (*)(), s32);    /* extern */
 -void func_0010C568(s32);                     /* extern */
- extern s32 D_00201CC0;
--extern s32 D_0020201C;
--extern s32 D_00202020;
--extern s32 D_00202024;
+ extern s32 gTimerInitSdata_00201CC0;
+-extern s32 gTimerInitSbss_0020201C;
+-extern s32 gTimerTicksSbss_00202020;
+-extern s32 gTimerInitSbss_00202024;
 -void Timer_Init_3_001787F0(void) {
 -    *(s32 *)0x10000010 = 0x1C1;
 -    *(s32 *)0x10000020 = 0x1388;
-+extern volatile s32 D_00202020, D_0020201C, D_00202024;
++extern volatile s32 gTimerTicksSbss_00202020, gTimerInitSbss_0020201C, gTimerInitSbss_00202024;
 +void Timer_IntrHandler_2_001787C0(void);
 +s32 func_0010B700(s32 cause, void (*f)(void), s32 next);
 +void func_0010C568(s32 cause);
@@ -20,10 +20,10 @@
 +{
 +    *(volatile s32 *)0x10000010 = 0x1C1;
 +    *(volatile s32 *)0x10000020 = 5000;
-     D_00201CC0 = func_0010B700(9, Timer_IntrHandler_2_001787C0, -1);
+     gTimerInitSdata_00201CC0 = func_0010B700(9, Timer_IntrHandler_2_001787C0, -1);
      func_0010C568(9);
--    D_0020201C += *(s32 *)0x10000000 + (D_00202020 * 0x1388);
+-    gTimerInitSbss_0020201C += *(s32 *)0x10000000 + (gTimerTicksSbss_00202020 * 0x1388);
 -    *(s32 *)0x10000000 = 0;
-+    D_0020201C += *(volatile s32 *)0x10000000 + D_00202020 * 5000;
++    gTimerInitSbss_0020201C += *(volatile s32 *)0x10000000 + gTimerTicksSbss_00202020 * 5000;
 +    *(volatile s32 *)0x10000000 = 0;
-     D_00202020 = 0;
+     gTimerTicksSbss_00202020 = 0;

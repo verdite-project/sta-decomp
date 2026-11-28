@@ -19,7 +19,7 @@ extern f32 D_00222850[];
 extern s8 D_00222A11[];
 extern f32 D_00222A40[];
 extern Flags8 D_00222A52[];
-extern s32 D_00222B84[];
+extern s32 gSoundBankLoadBss_00222B84[];
 
 void Cd_Init_2_0015B040(s32, s32);
 void Dma_SprClear_1_00178C00(s32, u32);

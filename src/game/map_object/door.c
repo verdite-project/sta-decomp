@@ -8,8 +8,8 @@ typedef struct { u8 pad[0x18]; u16 x18; u16 v; u8 pad1C[8]; u8 p24:6; u8 k24:2; 
 typedef struct { u8 pad[0x52]; u8 a0:5; u8 b5:1; u8 b6:1; u8 b7:1; u8 c0:1; u8 c1:1; u8 c2:6; u8 pad2[0x2C]; } E80_Door_UpdateLocked_0_001B90F0;
 typedef struct { u8 pad[4]; u16 x4; u8 pad6[0x3A]; } E40;
 typedef struct { s32 id; u8 pad[0x6A]; u16 n; u8 pad2[0xC8]; E30_Door_UpdateLocked_0_001B90F0 *e30; u8 pad3[0x34]; E40 *e40; u8 pad4[0xC]; E80_Door_UpdateLocked_0_001B90F0 *e80; } Obj_Door_UpdateLocked_0_001B90F0;
-extern s32 D_00201E80;
-extern s8 D_00202030;
+extern s32 gMapSbss_00201E80;
+extern s8 gDoorSbss_00202030;
 s32 Door_CheckOpen_0_001B8F70(s16 arg0);
 void memset(void *, s32, s32);
 s32 Event_CheckTrigger_0_00179F80(Msg *);
@@ -34,7 +34,7 @@ s32 Door_CheckOpen_0_001B8F70(s16 arg0) {
     s32 id;
     Obj_Door_CheckOpen_0_001B8F70 ***pp;
 
-    pp = (Obj_Door_CheckOpen_0_001B8F70 ***)&D_00201E80 + 2;
+    pp = (Obj_Door_CheckOpen_0_001B8F70 ***)&gMapSbss_00201E80 + 2;
     ret = 0;
     j = 0;
     do {
@@ -49,7 +49,7 @@ s32 Door_CheckOpen_0_001B8F70(s16 arg0) {
                         if (m == 0) {
                             r = 0;
                         } else {
-                            D_00202030 = arg0;
+                            gDoorSbss_00202030 = arg0;
                             memset(&msg, 0, 0x30);
                             msg.type = 3;
                             msg.a = m;
@@ -85,7 +85,7 @@ s32 Door_UpdateLocked_0_001B90F0(void) {
     s32 m;
     s32 id;
 
-    pp = (Obj_Door_UpdateLocked_0_001B90F0 ***)&D_00201E80 + 2;
+    pp = (Obj_Door_UpdateLocked_0_001B90F0 ***)&gMapSbss_00201E80 + 2;
     j = 0;
     do {
         if (*pp != NULL) {
@@ -129,6 +129,6 @@ s32 Door_UpdateLocked_0_001B90F0(void) {
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/sbss.c): D_00202030 */
-s8 D_00202030;
+/* data twins (src/game/data/sbss.c): gDoorSbss_00202030 */
+s8 gDoorSbss_00202030;
 #endif

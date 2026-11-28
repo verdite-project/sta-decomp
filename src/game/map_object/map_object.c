@@ -147,7 +147,7 @@ void Map_SetupLights_0_001B7380(O_Map_SetupLights_0_001B7380 *o, s32 idx) {
 /* Map_SetPools_0_001B7470 */
 void Map_SetPools_0_001B7470(s32 arg0, s32 arg1) {
     D_002022C4 = arg0;
-    D_002022D0 = arg1;
+    gMapAreaLoadSbss_002022D0 = arg1;
 }
 #undef sceVu0CopyVector
 

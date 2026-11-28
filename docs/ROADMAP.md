@@ -288,9 +288,11 @@ their data units. Beyond that:
    into their owner's code, 2 would leave link order, 13 are 128-bit qword
    unions no C initialiser writes; it also tries struct initialisers).
 3. **Names**: `config/game_data_names.txt` + `tools/apply_data_names.py`
-   (README, "Data names"); 135 are named (the 123 ASCII strings after their
-   text, the header-typed objects, the tables whose users settle them).
-   Name more as their owners show what they are.
+   (README, "Data names"); 1744 are named: 135 for what they are (the 123
+   ASCII strings after their text, the header-typed objects, the tables
+   whose users settle them) and 1609 after their owner unit and section
+   (`gGsPacketBss_002F1194`). Replace an owner name with a real one as its
+   purpose shows; the 75 with no owner keep `D_<ADDR>`.
 
 `tools/split_data.py --apply` also takes back the twin of any object a
 later inventory pins (a new root, a new extent), so rerun it after changing
@@ -314,7 +316,7 @@ true now:
   and `data_aliases.txt` as `OWNER + offset`. It drops what an object
   defines or nothing uses, and keeps sizes, out-of-image addresses and the
   load address absolute. Biased bases are written by hand in
-  `linker_syms.txt` (`D_001FE918 = D_001FE994 - 0x7C`).
+  `linker_syms.txt` (`D_001FE918 = gGfxUploadRodata_001FE994 - 0x7C`).
 - **Data is C.** Pointers in `src/game/data/` are relocated `(s32)SYM`
   initialisers, jump tables of asm functions are function + offset, and
   folded `.bss` fields are aliases of their object. Each data-only unit is

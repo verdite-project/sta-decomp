@@ -2,27 +2,27 @@
 +++ matched
 @@ -1,23 +1,24 @@
  #include "common.h"
--extern void *D_002022E4;
+-extern void *gPlayerSbss_002022E4;
 -void Camera_SetParams_0_001C8F30(f32 fparg0, f32 fparg1, f32 fparg2, f32 fparg3) {
 -    s32 temp_3;
 -    void *var_3;
 +typedef struct { char pad[0x518]; u8 *p; } S;
-+extern S *D_002022E4;
++extern S *gPlayerSbss_002022E4;
 +typedef struct { char pad[0x430]; s32 a; s32 b; f32 v[4]; } T;
 +void Camera_SetParams_0_001C8F30(f32 x, f32 y, f32 z, f32 w)
 +{
 +    T *t;
-     if (D_002022E4 == NULL) {
+     if (gPlayerSbss_002022E4 == NULL) {
 -        var_3 = NULL;
 +        t = NULL;
      } else {
--        temp_3 = M2C_FIELD(D_002022E4, s32 *, 0x518);
+-        temp_3 = M2C_FIELD(gPlayerSbss_002022E4, s32 *, 0x518);
 -        if (temp_3 == 0) {
 -            var_3 = NULL;
 -        } else {
 -            var_3 = temp_3 + 0x180;
 -        }
-+        u8 *p = D_002022E4->p;
++        u8 *p = gPlayerSbss_002022E4->p;
 +        if (p == NULL)
 +            t = NULL;
 +        else

@@ -16,27 +16,27 @@ typedef struct {
 } T;
 extern T gMcState_004B63B8;
 #ifndef NONMATCHING
-extern u32 D_004B6380[];
+extern u32 gMcStepWriteCheckedBss_004B6380[];
 #else
-/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): D_004B6380 */
-static u32 D_004B6380[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): gMcStepWriteCheckedBss_004B6380 */
+static u32 gMcStepWriteCheckedBss_004B6380[0x1];
 #endif
 #ifndef NONMATCHING
-extern u32 D_004B6384[];
+extern u32 gMcStepWriteCheckedBss_004B6384[];
 #else
-/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): D_004B6384 */
-static u32 D_004B6384[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): gMcStepWriteCheckedBss_004B6384 */
+static u32 gMcStepWriteCheckedBss_004B6384[0x1];
 #endif
 #ifndef NONMATCHING
-extern s32 D_004B6388[];
+extern s32 gMcStepWriteCheckedBss_004B6388[];
 #else
-/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): D_004B6388 */
-static s32 D_004B6388[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): gMcStepWriteCheckedBss_004B6388 */
+static s32 gMcStepWriteCheckedBss_004B6388[0x1];
 #endif
-extern s32 D_004B6474[];
+extern s32 gMcStepReadCheckedBss_004B6474[];
 extern u8 D_004B6478[];
 extern volatile s32 gMcDirBuf_004B68C0[];
-extern s32 D_004B68D0[];
+extern s32 gMcStepWriteCheckedBss_004B68D0[];
 s32 Mc_StepGetInfo_3_001D3BF0(s32, s32, s32 *, s32 *, s32 *, s32);
 s32 Mc_GetInfoStatus_2_001D3CE0(s32);
 void Mc_SetErrorStatus_4_001D3DA8(s32);
@@ -72,11 +72,11 @@ s32 Mc_StepWriteChecked_3_001D4170(void)
 
     switch (t->state) {
     case 0:
-        D_004B6474[0] = 0;
-        D_004B6384[0] = 0;
+        gMcStepReadCheckedBss_004B6474[0] = 0;
+        gMcStepWriteCheckedBss_004B6384[0] = 0;
         t->state++;
         t->retry = 0;
-        D_004B6388[0] = 0;
+        gMcStepWriteCheckedBss_004B6388[0] = 0;
         break;
     case 1:
         t->x90 = Mc_StepGetInfo_3_001D3BF0(port, slot, &t->type[port * 4 + slot], &t->free[port * 4 + slot], &t->format[port * 4 + slot], t->x90);
@@ -115,7 +115,7 @@ s32 Mc_StepWriteChecked_3_001D4170(void)
             if (t->retry == 2) {
                 if (r == -2) t->err = 3;
                 else if (r == -4) {
-                    D_004B68D0[0] = 0;
+                    gMcStepWriteCheckedBss_004B68D0[0] = 0;
                     t->state++;
                     break;
                 } else t->err = 100;
@@ -125,7 +125,7 @@ s32 Mc_StepWriteChecked_3_001D4170(void)
             t->state--;
             break;
         }
-        if (r == 0) D_004B68D0[0] = 0;
+        if (r == 0) gMcStepWriteCheckedBss_004B68D0[0] = 0;
         t->state++;
         break;
     case 5:
@@ -134,12 +134,12 @@ s32 Mc_StepWriteChecked_3_001D4170(void)
         fr = ((u32)(sz + 0x3FF) >> 10) + t->free[port * 4 + slot];
         if (sz == 0 && fr < 3) goto fail5;
         d -= 0x3FB;
-        D_004B6380[0] = ((volatile T *)t)->size + 6;
-        if (d > 0) D_004B6380[0] += (d + 0x3FE) / 0x3FF;
-        D_004B6380[0] = (D_004B6380[0] + 0x1F) & ~0x1F;
+        gMcStepWriteCheckedBss_004B6380[0] = ((volatile T *)t)->size + 6;
+        if (d > 0) gMcStepWriteCheckedBss_004B6380[0] += (d + 0x3FE) / 0x3FF;
+        gMcStepWriteCheckedBss_004B6380[0] = (gMcStepWriteCheckedBss_004B6380[0] + 0x1F) & ~0x1F;
         k = 2;
         if (gMcDirBuf_004B68C0[4] != 0) k = 0;
-        if (fr - k < (s32)((D_004B6380[0] + 0x3FF) >> 10)) {
+        if (fr - k < (s32)((gMcStepWriteCheckedBss_004B6380[0] + 0x3FF) >> 10)) {
         fail5:
             t->x88 = 0;
             t->err = 0x1F;
@@ -151,7 +151,7 @@ s32 Mc_StepWriteChecked_3_001D4170(void)
         t->retry = 0;
         t->state++;
     case 10:
-        if (sceMcOpen(port, slot, t->name, D_004B68D0[0] == 0 ? 0x203 : 3) != 0) {
+        if (sceMcOpen(port, slot, t->name, gMcStepWriteCheckedBss_004B68D0[0] == 0 ? 0x203 : 3) != 0) {
             if (t->retry == 2) {
                 t->x88 = 0;
                 t->err = 0x3D;
@@ -175,12 +175,12 @@ s32 Mc_StepWriteChecked_3_001D4170(void)
             t->state--;
             break;
         }
-        D_004B6474[0] = r;
+        gMcStepReadCheckedBss_004B6474[0] = r;
         t->retry = 0;
         t->state++;
         break;
     case 12:
-        e = sceMcSeek(D_004B6474[0], D_004B6380[0] - 0x20, 0);
+        e = sceMcSeek(gMcStepReadCheckedBss_004B6474[0], gMcStepWriteCheckedBss_004B6380[0] - 0x20, 0);
         if (e != 0) {
             if (t->retry == 2) {
                 t->err = 0x3D;
@@ -211,7 +211,7 @@ s32 Mc_StepWriteChecked_3_001D4170(void)
         memset(D_004B6478, 0, 0x20);
         t->state++;
     case 15:
-        e = sceMcWrite(D_004B6474[0], D_004B6478, 0x20);
+        e = sceMcWrite(gMcStepReadCheckedBss_004B6474[0], D_004B6478, 0x20);
         if (e != 0) {
             if (t->retry == 2) {
                 t->err = 0x3D;
@@ -239,7 +239,7 @@ s32 Mc_StepWriteChecked_3_001D4170(void)
         t->state++;
         break;
     case 17:
-        e = sceMcSeek(D_004B6474[0], 0, 0);
+        e = sceMcSeek(gMcStepReadCheckedBss_004B6474[0], 0, 0);
         if (e != 0) {
             if (t->retry == 2) {
                 t->err = 0x3D;
@@ -266,10 +266,10 @@ s32 Mc_StepWriteChecked_3_001D4170(void)
         t->state++;
         break;
     case 19:
-        if ((u32)t->size >= D_004B6384[0]) {
+        if ((u32)t->size >= gMcStepWriteCheckedBss_004B6384[0]) {
             memset(D_004B6478, 0, 0x420);
-            n = t->size - D_004B6384[0];
-            if (D_004B6384[0] == 0) {
+            n = t->size - gMcStepWriteCheckedBss_004B6384[0];
+            if (gMcStepWriteCheckedBss_004B6384[0] == 0) {
                 *(u32 *)D_004B6478 = t->size;
                 if (n > 0x3FA) n = 0x3FB;
                 off = 4;
@@ -281,22 +281,22 @@ s32 Mc_StepWriteChecked_3_001D4170(void)
             sum = 0;
             if (n != 0) {
                 p = &D_004B6478[off];
-                memcpy(p, gMcState_004B63B8.data + D_004B6384[0], n);
+                memcpy(p, gMcState_004B63B8.data + gMcStepWriteCheckedBss_004B6384[0], n);
                 if (n > 0) { q = p; i = n; do { sum += ~*q; q++; i--; } while (i != 0); }
                 D_004B6478[pos++] = sum;
             }
-            if (D_004B6384[0] == 0) {
+            if (gMcStepWriteCheckedBss_004B6384[0] == 0) {
                 if (n < 0x3FB) {
                     D_004B6478[pos++] = 1;
-                    D_004B6384[0] = 1;
+                    gMcStepWriteCheckedBss_004B6384[0] = 1;
                 }
             } else if (n < 0x3FF) {
                 D_004B6478[pos++] = 1;
-                D_004B6384[0]++;
+                gMcStepWriteCheckedBss_004B6384[0]++;
             }
-            D_004B6384[0] += n;
+            gMcStepWriteCheckedBss_004B6384[0] += n;
             if (pos & 0x1F) pos = (pos & ~0x1F) + 0x20;
-            D_004B6388[0] = pos;
+            gMcStepWriteCheckedBss_004B6388[0] = pos;
             t->retry = 0;
             t->state++;
         } else {
@@ -304,7 +304,7 @@ s32 Mc_StepWriteChecked_3_001D4170(void)
         }
         break;
     case 20:
-        e = sceMcWrite(D_004B6474[0], D_004B6478, D_004B6388[0]);
+        e = sceMcWrite(gMcStepReadCheckedBss_004B6474[0], D_004B6478, gMcStepWriteCheckedBss_004B6388[0]);
         if (e != 0) {
             if (t->retry == 2) {
                 t->err = 0x3D;
@@ -332,7 +332,7 @@ s32 Mc_StepWriteChecked_3_001D4170(void)
         t->retry = 0;
         break;
     case 22:
-        e = sceMcClose(D_004B6474[0]);
+        e = sceMcClose(gMcStepReadCheckedBss_004B6474[0]);
         if (e != 0) {
             if (t->retry == 2) {
                 t->err = 0x3D;
@@ -360,12 +360,12 @@ s32 Mc_StepWriteChecked_3_001D4170(void)
         return 1;
     case 100:
         if (sceMcSync(1, 0, &r) == 0) break;
-        if (D_004B6474[0] < 0) goto fail;
+        if (gMcStepReadCheckedBss_004B6474[0] < 0) goto fail;
         t->retry = 0;
         t->state++;
         break;
     case 101:
-        if (sceMcClose(D_004B6474[0]) != 0) {
+        if (sceMcClose(gMcStepReadCheckedBss_004B6474[0]) != 0) {
             if (t->retry == 2) {
                 t->x88 = 0;
                 t->err = 0x3D;
@@ -393,6 +393,6 @@ INCLUDE_ASM(Mc_StepWriteChecked_3_001D4170);
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/pad_get_connected_bss_004B5DD0.c): gMcDirBuf_004B68C0__grp: gMcDirBuf_004B68C0@0x0, D_004B68D0@0x10 */
+/* data group (src/game/data/pad_get_connected_bss_004B5DD0.c): gMcDirBuf_004B68C0__grp: gMcDirBuf_004B68C0@0x0, gMcStepWriteCheckedBss_004B68D0@0x10 */
 u8 gMcDirBuf_004B68C0__grp[0x40] __attribute__((aligned(16)));
 #endif

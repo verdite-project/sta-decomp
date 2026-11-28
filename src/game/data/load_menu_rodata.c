@@ -5,5 +5,5 @@
 #pragma explicit_zero_data on
 
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/load_menu.c */
-const s8 D_001FD208[0x8] = "SLOT %d\000";
+const s8 gLoadMenuRodata_001FD208[0x8] = "SLOT %d\000";
 #endif

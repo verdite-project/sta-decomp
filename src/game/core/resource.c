@@ -1,7 +1,7 @@
 #include "common.h"
 typedef struct { char pad[0x1C]; void *p; } Obj_Res_Free_0_0014DC10;
 typedef struct { s32 x0; s32 x4; s32 x8; char pc[0x10]; s32 x1c; char x20[0x14]; s32 x34; } Obj_Res_Open_0_0014DC70;
-extern s32 D_00201E94;
+extern s32 gGameMainSbss_00201E94;
 void Res_ReleaseHandle_0_0014DC00(void *arg0);
 s32 Res_Free_0_0014DC10(Obj_Res_Free_0_0014DC10 *o);
 void Res_Read_1_0014DC50(void *arg0);
@@ -38,7 +38,7 @@ s32 Res_Open_0_0014DC70(Obj_Res_Open_0_0014DC70 *o, s32 a)
     o->x1c = h;
     o->x4 = File_GetOffset_0_0015A350(h);
     o->x8 = o->x4;
-    o->x34 = D_00201E94;
+    o->x34 = gGameMainSbss_00201E94;
     File_GetSize_1_0015A2F0(o->x1c, o->x20);
     return 1;
 }

@@ -2,7 +2,7 @@
  * wip/MenuProc_DrawWeight_0_00185D70.c. The matching build takes it from the assembly that
  * ui_gauge.c includes (INCLUDE_ASM(MenuProc_DrawWeight_0_00185D70)). */
 #ifdef NONMATCHING
-/* NEAR 2 of 434 words (unchanged). Temp reg of the 24-byte buf = D_001F26B0 lq/sq copy: ours a0, retail a2.
+/* NEAR 2 of 434 words (unchanged). Temp reg of the 24-byte buf = gMenuProcDrawWeightData_001F26B0 lq/sq copy: ours a0, retail a2.
    Library calls renamed (strcpy/strlen/sprintf). Tried: b38, all 120 local orders, void* param copies, mode copy,
    inline copy helper, pointer src/dst, array extern, u128/u64 member copies, initializer, dead a1 uses, a1 types. */
 #include "m2c.h"
@@ -37,40 +37,40 @@ s32 Text_Render_2_00188010(T *, Col);
 u64 fptodp(f32);
 void sprintf(s8 *, s8 *, u64);
 #ifndef NONMATCHING
-extern S D_001F26B0 __attribute__((aligned(16)));
+extern S gMenuProcDrawWeightData_001F26B0 __attribute__((aligned(16)));
 #else
-/* data twins (src/game/data/ui_global_data.c): D_001F26B0 */
-static S D_001F26B0 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+/* data twins (src/game/data/ui_global_data.c): gMenuProcDrawWeightData_001F26B0 */
+static S gMenuProcDrawWeightData_001F26B0 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
 #endif
-extern s8 D_0048CE40[];
+extern s8 gUiGaugeBss_0048CE40[];
 #ifdef NONMATCHING
 extern u8 gStrPoison_001FC980[];
-extern u8 D_001FC988[];
-extern u8 D_001FC998[];
+extern u8 gMenuProcDrawWeightRodata_001FC988[];
+extern u8 gMenuProcDrawWeightRodata_001FC998[];
 extern u8 gStrGravity_001FC9A8[];
 extern u8 gStrCurse_001FC9B0[];
 extern u8 gStrSeal_001FC9B8[];
 #endif
-extern f32 D_0048D040[];
+extern f32 gUiGaugeBss_0048D040[];
 #ifndef NONMATCHING
-extern s8 *D_001F2690[];
+extern s8 *gMenuProcDrawWeightData_001F2690[];
 #else
-/* data twins (src/game/data/ui_global_data.c): D_001F2690 */
-static s8 *D_001F2690[0x8] = { (s8 *)gStrPoison_001FC980, (s8 *)D_001FC988, (s8 *)D_001FC998, (s8 *)gStrGravity_001FC9A8, (s8 *)gStrCurse_001FC9B0, (s8 *)gStrSeal_001FC9B8, 0, 0 };
+/* data twins (src/game/data/ui_global_data.c): gMenuProcDrawWeightData_001F2690 */
+static s8 *gMenuProcDrawWeightData_001F2690[0x8] = { (s8 *)gStrPoison_001FC980, (s8 *)gMenuProcDrawWeightRodata_001FC988, (s8 *)gMenuProcDrawWeightRodata_001FC998, (s8 *)gStrGravity_001FC9A8, (s8 *)gStrCurse_001FC9B0, (s8 *)gStrSeal_001FC9B8, 0, 0 };
 #endif
-extern s8 D_001FCAA0[];
+extern s8 gMenuProcDrawItemStatsRodata_001FCAA0[];
 extern s8 D_001FCB38[];
 #ifndef NONMATCHING
-extern s32 D_00202078;
+extern s32 gMenuProcDrawWeightSbss_00202078;
 #else
-/* data twins (src/game/data/sbss.c): D_00202078 */
-static s32 D_00202078;
+/* data twins (src/game/data/sbss.c): gMenuProcDrawWeightSbss_00202078 */
+static s32 gMenuProcDrawWeightSbss_00202078;
 #endif
 #ifndef NONMATCHING
-extern s32 D_00202074;
+extern s32 gMenuProcDrawWeightSbss_00202074;
 #else
-/* data twins (src/game/data/sbss.c): D_00202074 */
-static s32 D_00202074;
+/* data twins (src/game/data/sbss.c): gMenuProcDrawWeightSbss_00202074 */
+static s32 gMenuProcDrawWeightSbss_00202074;
 #endif
 static inline f32 u2f(u32 x) { return x; }
 static inline void txt(s8 *s, Col c, O *o, s32 k, f32 sc) {
@@ -98,7 +98,7 @@ void MenuProc_DrawWeight_0_00185D70(O *o, s32 a1, u32 mode, C *a3) {
     s32 r;
     R *g;
 
-    buf = D_001F26B0;
+    buf = gMenuProcDrawWeightData_001F26B0;
     if (mode < 300) {
         buf.x = o->x30;
         buf.y = o->x34;
@@ -108,36 +108,36 @@ void MenuProc_DrawWeight_0_00185D70(O *o, s32 a1, u32 mode, C *a3) {
     switch (mode) {
     case 300:
         if (a3 == NULL) break;
-        D_0048CE40[0] = 0;
+        gUiGaugeBss_0048CE40[0] = 0;
         for (i = 0; i < 6; i++) {
             r = PlayerData_GetStatusTimer_0_001CE200(i);
             if (r == 0) {
-                D_0048D040[i] = 0.0f;
-                if (D_00202078 == i) {
-                    D_00202078 = (D_00202078 + 1) % 6;
+                gUiGaugeBss_0048D040[i] = 0.0f;
+                if (gMenuProcDrawWeightSbss_00202078 == i) {
+                    gMenuProcDrawWeightSbss_00202078 = (gMenuProcDrawWeightSbss_00202078 + 1) % 6;
                 }
-            } else if (D_00202078 == i) {
-                strcpy(D_0048CE40, D_001F2690[i]);
+            } else if (gMenuProcDrawWeightSbss_00202078 == i) {
+                strcpy(gUiGaugeBss_0048CE40, gMenuProcDrawWeightData_001F2690[i]);
                 if (r == 1) {
                     col.w = 0x80808080;
                 } else if (r == 2) {
                     col.w = 0x80404080;
                 }
-                if (D_00202074) {
-                    D_0048D040[i] -= 16.0f;
-                    if (D_0048D040[i] < 0.0f) {
-                        D_0048D040[i] = 0.0f;
-                        D_00202074 = 0;
-                        D_00202078 = (D_00202078 + 1) % 6;
+                if (gMenuProcDrawWeightSbss_00202074) {
+                    gUiGaugeBss_0048D040[i] -= 16.0f;
+                    if (gUiGaugeBss_0048D040[i] < 0.0f) {
+                        gUiGaugeBss_0048D040[i] = 0.0f;
+                        gMenuProcDrawWeightSbss_00202074 = 0;
+                        gMenuProcDrawWeightSbss_00202078 = (gMenuProcDrawWeightSbss_00202078 + 1) % 6;
                     }
                 } else {
-                    D_0048D040[i] += 12.0f;
-                    if (!(D_0048D040[i] <= 250.0f)) {
-                        D_00202074 = 1;
+                    gUiGaugeBss_0048D040[i] += 12.0f;
+                    if (!(gUiGaugeBss_0048D040[i] <= 250.0f)) {
+                        gMenuProcDrawWeightSbss_00202074 = 1;
                     }
                 }
-                col.c.a = (D_0048D040[i] > 192.0f) ? 0xC0 : (s32)D_0048D040[i];
-                txt(D_0048CE40, col, o, 1, 0.9f);
+                col.c.a = (gUiGaugeBss_0048D040[i] > 192.0f) ? 0xC0 : (s32)gUiGaugeBss_0048D040[i];
+                txt(gUiGaugeBss_0048CE40, col, o, 1, 0.9f);
             }
         }
         break;
@@ -158,8 +158,8 @@ void MenuProc_DrawWeight_0_00185D70(O *o, s32 a1, u32 mode, C *a3) {
         } else {
             col.w = 0x80808080;
         }
-        sprintf(D_0048CE40, D_001FCAA0, fptodp(u2f((u16)a3->max) / 10.0f));
-        txt(D_0048CE40, col, o, 2, 0.8f);
+        sprintf(gUiGaugeBss_0048CE40, gMenuProcDrawItemStatsRodata_001FCAA0, fptodp(u2f((u16)a3->max) / 10.0f));
+        txt(gUiGaugeBss_0048CE40, col, o, 2, 0.8f);
         break;
     case 303:
         if (a3->max < 0) a3->max = 0;
@@ -167,8 +167,8 @@ void MenuProc_DrawWeight_0_00185D70(O *o, s32 a1, u32 mode, C *a3) {
         if (a3->hp < 0) a3->hp = 0;
         if (a3->hp > 999) a3->hp = 999;
         col.w = 0x80808080;
-        sprintf(D_0048CE40, D_001FCB38, fptodp(u2f((u16)a3->hp) / 10.0f));
-        txt(D_0048CE40, col, o, 0, 0.8f);
+        sprintf(gUiGaugeBss_0048CE40, D_001FCB38, fptodp(u2f((u16)a3->hp) / 10.0f));
+        txt(gUiGaugeBss_0048CE40, col, o, 0, 0.8f);
         break;
     case 304:
         g = &MenuLayout_GetSub_1_00189020(0)->x5C->r;
@@ -186,8 +186,8 @@ void MenuProc_DrawWeight_0_00185D70(O *o, s32 a1, u32 mode, C *a3) {
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
 extern u8 gStrPoison_001FC980[];
-extern u8 D_001FC988[];
-extern u8 D_001FC998[];
+extern u8 gMenuProcDrawWeightRodata_001FC988[];
+extern u8 gMenuProcDrawWeightRodata_001FC998[];
 extern u8 gStrGravity_001FC9A8[];
 extern u8 gStrCurse_001FC9B0[];
 extern u8 gStrSeal_001FC9B8[];
@@ -195,13 +195,13 @@ extern u8 gStrSeal_001FC9B8[];
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/ui_gauge_rodata.c): D_001FC988__grp: D_001FC988@0x0 */
+/* data group (src/game/data/ui_gauge_rodata.c): D_001FC988__grp: gMenuProcDrawWeightRodata_001FC988@0x0 */
 char D_001FC988__grp[0x10] __attribute__((aligned(8))) = "Paralyze\000\000\000\000\000\000\000\000";
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/ui_gauge_rodata.c): D_001FC998__grp: D_001FC998@0x0 */
+/* data group (src/game/data/ui_gauge_rodata.c): D_001FC998__grp: gMenuProcDrawWeightRodata_001FC998@0x0 */
 char D_001FC998__grp[0x10] __attribute__((aligned(8))) = "Darkness\000\000\000\000\000\000\000\000";
 #endif
 

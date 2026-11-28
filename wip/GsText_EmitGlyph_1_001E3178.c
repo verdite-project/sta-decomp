@@ -9,7 +9,7 @@ typedef struct { u8 p0[0x10]; Vec x10; Vec x20; f32 x30; f32 x34; u8 p38[8]; f32
 typedef struct { f32 x0, x4, x8, xC; s16 x10, x12, x14, x16; } G;
 extern A *gGsText_00201E5C;
 extern S *gGsTextStyle_00201E60;
-extern const f32 D_00201B84;
+extern const f32 gGsTextEmitGlyphSdata_00201B84;
 void memset(void *, s32, s32);
 void Vu0_CopyQword_3_001DC328(void *, void *);
 void GsText_SetVertex_0_001E3758(Pkt *, s32, f32, f32, f32, f32);
@@ -68,20 +68,20 @@ s32 GsText_EmitGlyph_1_001E3178(G *g) {
     if (gGsTextStyle_00201E60->x58 != 0) {
         n = g->x10 < 0 ? 0 : g->x10;
         gGsTextStyle_00201E60->x20.x += (f32)n * gGsTextStyle_00201E60->x30 * gGsTextStyle_00201E60->x40;
-        a.x = gGsTextStyle_00201E60->x20.x - D_00201B84;
-        b.x = (f32)g->x12 * gGsTextStyle_00201E60->x30 * gGsTextStyle_00201E60->x40 + (gGsTextStyle_00201E60->x20.x - D_00201B84);
-        a.y = gGsTextStyle_00201E60->x20.y - D_00201B84;
-        b.y = (gGsTextStyle_00201E60->x20.y - D_00201B84) + (f32)gGsText_00201E5C->x28->x8 * gGsTextStyle_00201E60->x34 * gGsTextStyle_00201E60->x44;
+        a.x = gGsTextStyle_00201E60->x20.x - gGsTextEmitGlyphSdata_00201B84;
+        b.x = (f32)g->x12 * gGsTextStyle_00201E60->x30 * gGsTextStyle_00201E60->x40 + (gGsTextStyle_00201E60->x20.x - gGsTextEmitGlyphSdata_00201B84);
+        a.y = gGsTextStyle_00201E60->x20.y - gGsTextEmitGlyphSdata_00201B84;
+        b.y = (gGsTextStyle_00201E60->x20.y - gGsTextEmitGlyphSdata_00201B84) + (f32)gGsText_00201E5C->x28->x8 * gGsTextStyle_00201E60->x34 * gGsTextStyle_00201E60->x44;
         gGsTextStyle_00201E60->x20.x += (f32)g->x14 * gGsTextStyle_00201E60->x30 * gGsTextStyle_00201E60->x40;
     } else {
         gGsTextStyle_00201E60->x20.x = gGsTextStyle_00201E60->x10.x;
         gGsTextStyle_00201E60->x20.y = gGsTextStyle_00201E60->x10.y - (f32)gGsText_00201E5C->x28->x8 * gGsTextStyle_00201E60->x34 * gGsTextStyle_00201E60->x44;
         n = g->x10 < 0 ? 0 : g->x10;
         gGsTextStyle_00201E60->x10.x += (f32)n * gGsTextStyle_00201E60->x30;
-        a.x = gGsTextStyle_00201E60->x10.x - D_00201B84;
-        b.x = (f32)g->x12 * gGsTextStyle_00201E60->x30 + (gGsTextStyle_00201E60->x10.x - D_00201B84);
-        a.y = gGsTextStyle_00201E60->x10.y - D_00201B84;
-        b.y = (gGsTextStyle_00201E60->x10.y - D_00201B84) + (f32)gGsText_00201E5C->x28->x8 * gGsTextStyle_00201E60->x34;
+        a.x = gGsTextStyle_00201E60->x10.x - gGsTextEmitGlyphSdata_00201B84;
+        b.x = (f32)g->x12 * gGsTextStyle_00201E60->x30 + (gGsTextStyle_00201E60->x10.x - gGsTextEmitGlyphSdata_00201B84);
+        a.y = gGsTextStyle_00201E60->x10.y - gGsTextEmitGlyphSdata_00201B84;
+        b.y = (gGsTextStyle_00201E60->x10.y - gGsTextEmitGlyphSdata_00201B84) + (f32)gGsText_00201E5C->x28->x8 * gGsTextStyle_00201E60->x34;
         gGsTextStyle_00201E60->x10.x += (f32)g->x14 * gGsTextStyle_00201E60->x30;
     }
     clip(&pkt, mkr(a.x + o, a.y, b.x + o, b.y));

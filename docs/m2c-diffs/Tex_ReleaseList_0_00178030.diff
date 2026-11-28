@@ -2,26 +2,26 @@
 +++ matched
 @@ -1,19 +1,13 @@
  #include "common.h"
--extern s32 D_0047F080[];
+-extern s32 gTextureHashBss_0047F080[];
 -void Tex_ReleaseList_0_00178030(s32 arg0) {
 -    s32 *var_5;
 -    s32 var_6;
 -    if (arg0 != 0) {
 -        var_6 = 0;
--        var_5 = D_0047F080;
+-        var_5 = gTextureHashBss_0047F080;
 -loop_2:
 -        if (*var_5 == arg0) {
--            *(D_0047F080 + (var_6 * 8)) = 0;
+-            *(gTextureHashBss_0047F080 + (var_6 * 8)) = 0;
 +typedef struct { void *p; s32 x; } E;
-+extern E D_0047F080[8];
++extern E gTextureHashBss_0047F080[8];
 +void Tex_ReleaseList_0_00178030(void *p)
 +{
 +    s32 i;
 +    if (!p)
 +        return;
 +    for (i = 0; i < 8; i++) {
-+        if (D_0047F080[i].p == p) {
-+            D_0047F080[i].p = NULL;
++        if (gTextureHashBss_0047F080[i].p == p) {
++            gTextureHashBss_0047F080[i].p = NULL;
              return;
 -        }
 -        var_6 += 1;

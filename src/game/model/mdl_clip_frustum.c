@@ -7,7 +7,7 @@
 #include "common.h"
 typedef struct { f32 t0; f32 t1; f32 n; f32 f; } Fr;
 extern Flags8 D_00222A50[];
-extern Mtx D_002F15C0;
+extern Mtx gMdlDrawWithOverlayBss_002F15C0;
 void sceVu0CopyVector(Vec *, Vec *);
 void sceVu0ApplyMatrix(Vec *, void *, Vec *);
 
@@ -38,7 +38,7 @@ s8 Mdl_ClipFrustum_0_0016BD00(u8 *m, Vec *o, Vec *u, f32 *pl, Fr *fr) {
     sceVu0CopyVector(&p, o);
     p.w = 1.0f;
     sceVu0ApplyMatrix(&p, m, &p);
-    sceVu0ApplyMatrix(&p, &D_002F15C0, &p);
+    sceVu0ApplyMatrix(&p, &gMdlDrawWithOverlayBss_002F15C0, &p);
     qy = p.y + -u->y * len;
     qz = p.z + -u->z * len;
     qx = p.x + -u->x * len;

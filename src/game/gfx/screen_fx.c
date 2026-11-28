@@ -38,85 +38,85 @@ typedef struct {
     u8 pad4D[3];
 } S;
 typedef union { u128 q; f32 f[4]; } V_ScreenFx_ProjectPoint_0_00159160;
-extern Q D_001F2050;
-extern s32 D_002F1AE0[];
+extern Q gScreenFxData_001F2050;
+extern s32 gScreenFxBss_002F1AE0[];
 extern W gWeatherState_002F19B0;
-extern f32 D_002F2070[];
-extern u64 D_00201F78;
-extern V_ScreenFx_ProjectPoint_0_00159160 D_001F2040[];
-extern f32 D_002F16C0[];
-extern f32 D_002F1840[];
-extern f32 D_002F19E0[];
+extern f32 gScreenFxBss_002F2070[];
+extern u64 gScreenFxUpdateSbss_00201F78;
+extern V_ScreenFx_ProjectPoint_0_00159160 gScreenFxData_001F2040[];
+extern f32 gSoundEmitterBss_002F16C0[];
+extern f32 gGameMainBss_002F1840[];
+extern f32 gScreenFxBss_002F19E0[];
 #ifndef NONMATCHING
-extern f32 D_002F2080[];
+extern f32 gScreenFxBss_002F2080[];
 #else
-/* data twins (src/game/data/screen_fx_bss.c): D_002F2080 */
-static f32 D_002F2080[0xf];
+/* data twins (src/game/data/screen_fx_bss.c): gScreenFxBss_002F2080 */
+static f32 gScreenFxBss_002F2080[0xf];
 #endif
 #ifndef NONMATCHING
-extern f32 D_002F20BC[];
+extern f32 gScreenFxBss_002F20BC[];
 #else
-/* data twins (src/game/data/screen_fx_bss.c): D_002F20BC */
-static f32 D_002F20BC[0x1];
+/* data twins (src/game/data/screen_fx_bss.c): gScreenFxBss_002F20BC */
+static f32 gScreenFxBss_002F20BC[0x1];
 #endif
-extern struct { unsigned char : 7; unsigned char f : 1; char pad[15]; } D_002F2078;
-extern s16 D_002F1A64[];
+extern struct { unsigned char : 7; unsigned char f : 1; char pad[15]; } gScreenFxBss_002F2078;
+extern s16 gScreenFxBss_002F1A64[];
 extern s16 D_002F1A66[];
-extern u8 D_002F1A68[];
+extern u8 gScreenFxBss_002F1A68[];
 extern u8 D_002F1A69[];
 extern u8 D_002F1A6A[];
 extern u8 D_002F1A6B[];
-extern s16 D_002F1A6C[];
+extern s16 gScreenFxBss_002F1A6C[];
 extern s16 D_002F1A6E[];
-extern s16 D_002F1A70[];
+extern s16 gScreenFxBss_002F1A70[];
 extern s16 D_002F1A72[];
-extern s16 D_002F1A74[];
+extern s16 gScreenFxBss_002F1A74[];
 extern s16 D_002F1A76[];
-extern u16 D_002F1A78[];
+extern u16 gScreenFxBss_002F1A78[];
 extern u8 D_002F1A7A[];
 extern u8 D_002F1A7B[];
 extern u8 D_002F1A7D[];
 extern u8 D_002F1A7E[];
 extern u8 D_002F1A7F[];
-extern s32 D_002F1AA0[];
-extern s32 D_002F1AB0[];
-extern s32 D_002F1AC0[];
-extern s32 D_002F1AD0[];
-extern s16 D_002F1A48[];
+extern s32 gScreenFxBss_002F1AA0[];
+extern s32 gScreenFxBss_002F1AB0[];
+extern s32 gScreenFxBss_002F1AC0[];
+extern s32 gScreenFxBss_002F1AD0[];
+extern s16 gScreenFxBss_002F1A48[];
 #ifndef NONMATCHING
-extern s32 D_002F1A80[];
+extern s32 gScreenFxBss_002F1A80[];
 #else
-/* data twins (src/game/data/screen_fx_bss.c): D_002F1A80 */
-static s32 D_002F1A80[0x7];
+/* data twins (src/game/data/screen_fx_bss.c): gScreenFxBss_002F1A80 */
+static s32 gScreenFxBss_002F1A80[0x7];
 #endif
 #ifndef NONMATCHING
-extern s32 D_002F1A60[];
+extern s32 gScreenFxBss_002F1A60[];
 #else
-/* data twins (src/game/data/screen_fx_bss.c): D_002F1A60 */
-static s32 D_002F1A60[0x1] __attribute__((aligned(16)));
+/* data twins (src/game/data/screen_fx_bss.c): gScreenFxBss_002F1A60 */
+static s32 gScreenFxBss_002F1A60[0x1] __attribute__((aligned(16)));
 #endif
 extern s32 D_002F19CC[];
-extern s32 D_002F19C0[];
-extern s32 D_002F19D8[];
-extern s32 D_002F19DC[];
+extern s32 gScreenFxBss_002F19C0[];
+extern s32 gScreenFxBss_002F19D8[];
+extern s32 gScreenFxBss_002F19DC[];
 extern W gWeatherState_002F19B0__as_Weather_RespawnParticle_0_00157FE0;
-extern struct { unsigned char : 6; unsigned char f : 1; char pad[15]; } D_002F2078__as_ScreenFx_EnableWeather_0_00159500;
-extern s32 D_002F2070__as_ScreenFx_EnableWeather_0_00159500[];
-extern struct { unsigned char : 5; unsigned char f : 1; char pad[15]; } D_002F2078__as_ScreenFx_GetParamsA_0_00159590;
-extern struct { unsigned char : 4; unsigned char f : 1; char pad[15]; } D_002F2078__as_ScreenFx_GetParamsB_0_001595C0;
-extern struct { unsigned char : 2; unsigned char f : 1; char pad[15]; } D_002F2078__as_ScreenFx_SetEnabledB_0_001595F0;
-extern struct { unsigned char : 1; unsigned char f : 1; char pad[15]; } D_002F2078__as_ScreenFx_GetParamsC_0_00159620;
-extern struct { unsigned char f : 1; char pad[15]; } D_002F2078__as_ScreenFx_GetParamsD_0_00159650;
+extern struct { unsigned char : 6; unsigned char f : 1; char pad[15]; } gScreenFxBss_002F2078__as_ScreenFx_EnableWeather_0_00159500;
+extern s32 gScreenFxBss_002F2070__as_ScreenFx_EnableWeather_0_00159500[];
+extern struct { unsigned char : 5; unsigned char f : 1; char pad[15]; } gScreenFxBss_002F2078__as_ScreenFx_GetParamsA_0_00159590;
+extern struct { unsigned char : 4; unsigned char f : 1; char pad[15]; } gScreenFxBss_002F2078__as_ScreenFx_GetParamsB_0_001595C0;
+extern struct { unsigned char : 2; unsigned char f : 1; char pad[15]; } gScreenFxBss_002F2078__as_ScreenFx_SetEnabledB_0_001595F0;
+extern struct { unsigned char : 1; unsigned char f : 1; char pad[15]; } gScreenFxBss_002F2078__as_ScreenFx_GetParamsC_0_00159620;
+extern struct { unsigned char f : 1; char pad[15]; } gScreenFxBss_002F2078__as_ScreenFx_GetParamsD_0_00159650;
 extern s32 gWeatherState_002F19B0__as_ScreenFx_DrawAll_2_00159680[];
-extern s8 D_002F19C0__as_ScreenFx_DrawAll_2_00159680[];
+extern s8 gScreenFxBss_002F19C0__as_ScreenFx_DrawAll_2_00159680[];
 extern s8 D_002F19CC__as_ScreenFx_DrawAll_2_00159680[];
-extern M2C_UNK D_002F1A60__as_ScreenFx_DrawAll_2_00159680[];
-extern M2C_UNK D_002F1A80__as_ScreenFx_DrawAll_2_00159680[];
-extern s8 D_002F1AA0__as_ScreenFx_DrawAll_2_00159680[];
-extern M2C_UNK D_002F1AB0__as_ScreenFx_DrawAll_2_00159680[];
-extern M2C_UNK D_002F1AC0__as_ScreenFx_DrawAll_2_00159680[];
-extern f32 D_002F1AD0__as_ScreenFx_DrawAll_2_00159680[];
-extern u8 D_002F2078__as_ScreenFx_DrawAll_2_00159680[];
+extern M2C_UNK gScreenFxBss_002F1A60__as_ScreenFx_DrawAll_2_00159680[];
+extern M2C_UNK gScreenFxBss_002F1A80__as_ScreenFx_DrawAll_2_00159680[];
+extern s8 gScreenFxBss_002F1AA0__as_ScreenFx_DrawAll_2_00159680[];
+extern M2C_UNK gScreenFxBss_002F1AB0__as_ScreenFx_DrawAll_2_00159680[];
+extern M2C_UNK gScreenFxBss_002F1AC0__as_ScreenFx_DrawAll_2_00159680[];
+extern f32 gScreenFxBss_002F1AD0__as_ScreenFx_DrawAll_2_00159680[];
+extern u8 gScreenFxBss_002F2078__as_ScreenFx_DrawAll_2_00159680[];
 void ScreenFx_DrawTint_0_00157320(s32 a0);
 s32* Weather_GetState_0_00157620(void);
 void Weather_Update_0_00157D50(f32 dt);
@@ -165,7 +165,7 @@ M2C_UNK ScreenFx_DrawRadialBlur_0_001580E0__as_ScreenFx_DrawAll_2_00159680(M2C_U
 
 /* ScreenFx_DrawTint_0_00157320 */
 /* ScreenFx_DrawTint_0_00157320 */
-static inline s32 wd(void) { return D_00201F2C ? 0 : 0x1180; }
+static inline s32 wd(void) { return gSfxAllSbss_00201F2C ? 0 : 0x1180; }
 
 void ScreenFx_DrawTint_0_00157320(s32 a0) {
     Q q;
@@ -178,7 +178,7 @@ void ScreenFx_DrawTint_0_00157320(s32 a0) {
     GsPkt_SetReg_3_001543E0(0x3F, 0xFFFFFFFF);
     GsPkt_SetReg_3_001543E0(0x4C, (s64)(wd() / 32) | 0xA0000);
     GsPkt_SetReg_3_001543E0(0x4E, 0x3A000118);
-    f = D_00201E90;
+    f = gGameMainSbss_00201E90;
     v = (__fixunssfdi(f) << 32) | 0x27F0000;
     GsPkt_SetReg_3_001543E0(0x40, v | (__fixunssfdi(448.0f - f - 1.0f) << 48));
     GsPkt_SetReg_3_001543E0(0x47, 0x32001);
@@ -194,7 +194,7 @@ void ScreenFx_DrawTint_0_00157320(s32 a0) {
     p += 2;
     i = 0;
     do {
-        c = D_001F2050;
+        c = gScreenFxData_001F2050;
         q.w[0] = 128.0f * c.f[0];
         q.w[1] = 128.0f * c.f[1];
         q.w[2] = 128.0f * c.f[2];
@@ -220,7 +220,7 @@ void ScreenFx_DrawTint_0_00157320(s32 a0) {
 /* Weather_GetState_0_00157620 */
 
 s32 *Weather_GetState_0_00157620(void) {
-    return D_002F1AE0;
+    return gScreenFxBss_002F1AE0;
 }
 
 /* text_00157630 */
@@ -268,9 +268,9 @@ void Weather_Update_0_00157D50(f32 dt) {
             }
         }
     }
-    D_002F2070[0] += dt / 100.0f;
-    if (D_002F2070[0] > 1.0f) {
-        D_002F2070[0] -= 1.0f;
+    gScreenFxBss_002F2070[0] += dt / 100.0f;
+    if (gScreenFxBss_002F2070[0] > 1.0f) {
+        gScreenFxBss_002F2070[0] -= 1.0f;
         memcpy(gWeatherState_002F19B0.pos[0], gWeatherState_002F19B0.pos[1], 0x160);
         memcpy(gWeatherState_002F19B0.vel[0], gWeatherState_002F19B0.vel[1], 0x160);
         Weather_RespawnParticle_0_00157FE0(1);
@@ -315,7 +315,7 @@ void ScreenFx_DrawRadialBlur_0_001580E0(P *p) {
         b.f4C.b0 = 1;
         b.f4C.b1 = 1;
         b.f4C.b2 = 1;
-        k = p->x1C ? D_00201F2C : !(D_00201F2C != 0);
+        k = p->x1C ? gSfxAllSbss_00201F2C : !(gSfxAllSbss_00201F2C != 0);
         if (k == 0) v = 0; else if (k == 1) v = 0x118000; else v = 0;
         tex = (u64)(v >> 8) | 0x68028000 | ((u64)2 << 32);
         sc = ((s64)(p->w - 1) << 16) | ((s64)(p->h - 1) << 48);
@@ -327,7 +327,7 @@ void ScreenFx_DrawRadialBlur_0_001580E0(P *p) {
         GsPkt_SetReg_3_001543E0(0x47, 0x31001);
         if (p->x1F) {
             GsPkt_SetReg_3_001543E0(0x45, 1);
-            GsPkt_SetReg_3_001543E0(0x44, D_00201F78);
+            GsPkt_SetReg_3_001543E0(0x44, gScreenFxUpdateSbss_00201F78);
         }
         GsPkt_SetReg_3_001543E0(6, tex);
         GsPkt_SetReg_3_001543E0(0x14, 0x60);
@@ -430,7 +430,7 @@ void ScreenFx_DrawMotionBlur_0_00158900(Arg *a0) {
     u32 fbp;
     s32 i;
     s32 sel;
-    sel = a0->x8 ? D_00201F2C : !D_00201F2C;
+    sel = a0->x8 ? gSfxAllSbss_00201F2C : !gSfxAllSbss_00201F2C;
     if (sel == 0) fbp = 0;
     else if (sel == 1) fbp = 0x118000;
     else fbp = 0;
@@ -491,7 +491,7 @@ void ScreenFx_DrawShift_0_00158BF0(s32 dx, s32 dy) {
     s32 i;
     u8 z;
 
-    { s32 v = !(D_00201F2C != 0); if (v == 0) w = 0; else if (v == 1) w = 0x118000; else w = 0; }
+    { s32 v = !(gSfxAllSbss_00201F2C != 0); if (v == 0) w = 0; else if (v == 1) w = 0x118000; else w = 0; }
     GsPkt_BeginAD_3_001545D0();
     GsPkt_SetReg_3_001543E0(6, (u64)(w >> 8) | 0x68028000 | ((u64)2 << 32));
     GsPkt_SetReg_3_001543E0(0x14, 0);
@@ -580,17 +580,17 @@ void ScreenFx_ProjectPoint_0_00159160(s32 *arg0, s32 *arg1) {
     f32 a[4];
     f32 w;
 
-    if (D_002F20BC[0] == 0.0f) {
+    if (gScreenFxBss_002F20BC[0] == 0.0f) {
         *arg0 = 0;
         *arg1 = 0;
-        sceVu0CopyMatrix(D_002F2080, D_002F16C0);
+        sceVu0CopyMatrix(gScreenFxBss_002F2080, gSoundEmitterBss_002F16C0);
         return;
     }
-    c = D_001F2040[0];
-    c.f[2] = D_002F19E0[0];
-    sceVu0InversMatrix(m, D_002F2080);
+    c = gScreenFxData_001F2040[0];
+    c.f[2] = gScreenFxBss_002F19E0[0];
+    sceVu0InversMatrix(m, gScreenFxBss_002F2080);
     sceVu0ApplyMatrix(b, m, c.f);
-    sceVu0ApplyMatrix(a, D_002F1840, b);
+    sceVu0ApplyMatrix(a, gGameMainBss_002F1840, b);
     w = 1.0f / a[3];
     a[0] = a[0] * w - 2048.0f;
     a[1] = a[1] * w - 2048.0f;
@@ -608,30 +608,30 @@ void ScreenFx_ProjectPoint_0_00159160(s32 *arg0, s32 *arg1) {
     if (*arg1 > 0x80) {
         *arg1 = 0x80;
     }
-    sceVu0CopyMatrix(D_002F2080, D_002F16C0);
+    sceVu0CopyMatrix(gScreenFxBss_002F2080, gSoundEmitterBss_002F16C0);
 }
 
 /* ScreenFx_SetEnabled_0_00159310 */
 void ScreenFx_SetEnabled_0_00159310(int v)
 {
-    D_002F2078.f = v;
+    gScreenFxBss_002F2078.f = v;
 }
 
 /* ScreenFx_SetFlashParams_0_00159340 */
 void ScreenFx_SetFlashParams_0_00159340(u8 a0, u8 a1, u8 a2, u8 a3, s16 a4, u8 a5) {
-    D_002F1A64[0] = 0x100;
+    gScreenFxBss_002F1A64[0] = 0x100;
     D_002F1A66[0] = 0x100;
-    D_002F1A68[0] = a1;
+    gScreenFxBss_002F1A68[0] = a1;
     D_002F1A69[0] = a2;
     D_002F1A6A[0] = a3;
     D_002F1A6B[0] = a0;
-    D_002F1A6C[0] = 0x10;
+    gScreenFxBss_002F1A6C[0] = 0x10;
     D_002F1A6E[0] = 0x10;
-    D_002F1A70[0] = -8;
+    gScreenFxBss_002F1A70[0] = -8;
     D_002F1A72[0] = -8;
-    D_002F1A74[0] = a4;
+    gScreenFxBss_002F1A74[0] = a4;
     D_002F1A76[0] = 0x3C;
-    D_002F1A78[0] = a5;
+    gScreenFxBss_002F1A78[0] = a5;
     D_002F1A7A[0] = 2;
     D_002F1A7B[0] = 0x50;
     D_002F1A7D[0] = 1;
@@ -643,10 +643,10 @@ void ScreenFx_SetFlashParams_0_00159340(u8 a0, u8 a1, u8 a2, u8 a3, s16 a4, u8 a
 /* Warning: Gap in callee-saved word stack region.
  * Saved: [0x0, 0x10, 0x14, 0x18, 0x1c, 0x20, 0x24], gap at: 0x8. */
 void ScreenFx_SetFadeTarget_0_00159400(s32 *arg0, f32 fparg0) {
-    sceVu0CopyVector(D_002F1AC0, D_002F1AA0);
-    sceVu0CopyVector(D_002F1AB0, arg0);
+    sceVu0CopyVector(gScreenFxBss_002F1AC0, gScreenFxBss_002F1AA0);
+    sceVu0CopyVector(gScreenFxBss_002F1AB0, arg0);
     (*D_002F1AD4) = fparg0;
-    (*D_002F1AD0) = 0;
+    (*gScreenFxBss_002F1AD0) = 0;
 }
 
 /* ScreenFx_SetFadeColor_0_00159460 */
@@ -655,7 +655,7 @@ void ScreenFx_SetFadeTarget_0_00159400(s32 *arg0, f32 fparg0) {
 s32 D_002F1A50[0x4];
 
 void ScreenFx_SetFadeColor_0_00159460(s32 arg0) {
-    (*D_002F1A48) = 2;
+    (*gScreenFxBss_002F1A48) = 2;
     sceVu0CopyVector(D_002F1A50, arg0);
 }
 #undef sceVu0CopyVector
@@ -684,203 +684,203 @@ void ScreenFx_InitEntry_0_00159480(void *arg0) {
 }
 
 /* ScreenFx_EnableWeather_0_00159500 */
-#define D_002F2078 D_002F2078__as_ScreenFx_EnableWeather_0_00159500
+#define gScreenFxBss_002F2078 gScreenFxBss_002F2078__as_ScreenFx_EnableWeather_0_00159500
 
 s32 *ScreenFx_EnableWeather_0_00159500(s32 on)
 {
     s32 v = on != 0;
-    if (v && !D_002F2078.f) {
+    if (v && !gScreenFxBss_002F2078.f) {
         Weather_RespawnParticle_0_00157FE0(0);
         Weather_RespawnParticle_0_00157FE0(1);
-        D_002F2070[0] = 0;
+        gScreenFxBss_002F2070[0] = 0;
     }
-    D_002F2078.f = v;
-    return D_002F1AE0;
+    gScreenFxBss_002F2078.f = v;
+    return gScreenFxBss_002F1AE0;
 }
-#undef D_002F2078
+#undef gScreenFxBss_002F2078
 
 /* ScreenFx_GetParamsA_0_00159590 */
-#define D_002F2078 D_002F2078__as_ScreenFx_GetParamsA_0_00159590
+#define gScreenFxBss_002F2078 gScreenFxBss_002F2078__as_ScreenFx_GetParamsA_0_00159590
 
 s32 *ScreenFx_GetParamsA_0_00159590(int v)
 {
-    D_002F2078.f = v != 0;
-    return D_002F1A80;
+    gScreenFxBss_002F2078.f = v != 0;
+    return gScreenFxBss_002F1A80;
 }
-#undef D_002F2078
+#undef gScreenFxBss_002F2078
 
 /* ScreenFx_GetParamsB_0_001595C0 */
-#define D_002F2078 D_002F2078__as_ScreenFx_GetParamsB_0_001595C0
+#define gScreenFxBss_002F2078 gScreenFxBss_002F2078__as_ScreenFx_GetParamsB_0_001595C0
 
 s32 *ScreenFx_GetParamsB_0_001595C0(int v)
 {
-    D_002F2078.f = v != 0;
-    return D_002F1A60;
+    gScreenFxBss_002F2078.f = v != 0;
+    return gScreenFxBss_002F1A60;
 }
-#undef D_002F2078
+#undef gScreenFxBss_002F2078
 
 /* ScreenFx_SetEnabledB_0_001595F0 */
-#define D_002F2078 D_002F2078__as_ScreenFx_SetEnabledB_0_001595F0
+#define gScreenFxBss_002F2078 gScreenFxBss_002F2078__as_ScreenFx_SetEnabledB_0_001595F0
 
 void ScreenFx_SetEnabledB_0_001595F0(int v)
 {
-    D_002F2078.f = v != 0;
+    gScreenFxBss_002F2078.f = v != 0;
 }
-#undef D_002F2078
+#undef gScreenFxBss_002F2078
 
 /* ScreenFx_GetParamsC_0_00159620 */
-#define D_002F2078 D_002F2078__as_ScreenFx_GetParamsC_0_00159620
+#define gScreenFxBss_002F2078 gScreenFxBss_002F2078__as_ScreenFx_GetParamsC_0_00159620
 
 s32 *ScreenFx_GetParamsC_0_00159620(int v)
 {
-    D_002F2078.f = v != 0;
+    gScreenFxBss_002F2078.f = v != 0;
     return D_002F19CC;
 }
-#undef D_002F2078
+#undef gScreenFxBss_002F2078
 
 /* ScreenFx_GetParamsD_0_00159650 */
-#define D_002F2078 D_002F2078__as_ScreenFx_GetParamsD_0_00159650
+#define gScreenFxBss_002F2078 gScreenFxBss_002F2078__as_ScreenFx_GetParamsD_0_00159650
 
 s32 *ScreenFx_GetParamsD_0_00159650(int v)
 {
-    D_002F2078.f = v != 0;
-    return D_002F19C0;
+    gScreenFxBss_002F2078.f = v != 0;
+    return gScreenFxBss_002F19C0;
 }
-#undef D_002F2078
+#undef gScreenFxBss_002F2078
 
 /* ScreenFx_DrawAll_2_00159680 */
 #define gWeatherState_002F19B0 gWeatherState_002F19B0__as_ScreenFx_DrawAll_2_00159680
-#define D_002F1AD0 D_002F1AD0__as_ScreenFx_DrawAll_2_00159680
-#define D_002F2078 D_002F2078__as_ScreenFx_DrawAll_2_00159680
+#define gScreenFxBss_002F1AD0 gScreenFxBss_002F1AD0__as_ScreenFx_DrawAll_2_00159680
+#define gScreenFxBss_002F2078 gScreenFxBss_002F2078__as_ScreenFx_DrawAll_2_00159680
 
 void ScreenFx_DrawAll_2_00159680(void) {
     s32 sp1C;
     s32 sp18;
     f32 temp_f1;
 
-    if (((u64) ((s64) D_002F2078[0] << 0x38) >> 0x3F) != 0) {
+    if (((u64) ((s64) gScreenFxBss_002F2078[0] << 0x38) >> 0x3F) != 0) {
         GsPkt_SetLayer_1_00154700(gWeatherState_002F19B0[0], -1);
-        if (D_002F2078[0] & 1) {
-            ScreenFx_DrawMotionBlur_0_00158900(D_002F19C0);
+        if (gScreenFxBss_002F2078[0] & 1) {
+            ScreenFx_DrawMotionBlur_0_00158900(gScreenFxBss_002F19C0);
         }
         ScreenFx_DrawFlash_0_00156AF0();
         ScreenFx_DrawTint_0_00157320(0);
         GsPkt_EndLayer_1_00155900();
-        if ((D_002F1AD0[0] += 0.033333335f) > D_002F1AD4[0]) {
+        if ((gScreenFxBss_002F1AD0[0] += 0.033333335f) > D_002F1AD4[0]) {
             D_002F1AD4[0] = 0.0f;
         }
         if (D_002F1AD4[0] == 0.0f) {
-            sceVu0CopyVector(D_002F1AA0, D_002F1AB0);
+            sceVu0CopyVector(gScreenFxBss_002F1AA0, gScreenFxBss_002F1AB0);
         } else {
-            sceVu0InterVector(1.0f - (D_002F1AD0[0] / D_002F1AD4[0]), D_002F1AA0, D_002F1AC0, D_002F1AB0);
+            sceVu0InterVector(1.0f - (gScreenFxBss_002F1AD0[0] / D_002F1AD4[0]), gScreenFxBss_002F1AA0, gScreenFxBss_002F1AC0, gScreenFxBss_002F1AB0);
         }
         GsPkt_SetLayer_1_00154700(gWeatherState_002F19B0[0], 0);
-        D_002F19DC[0] = 0;
-        D_002F1A48[0] = 2;
-        D_002F19D8[0] = 0;
-        if (((u64) ((s64) D_002F2078[0] << 0x3C) >> 0x3F) != 0) {
-            ScreenFx_DrawColorFilter_0_00158EE0(D_002F1AA0);
+        gScreenFxBss_002F19DC[0] = 0;
+        gScreenFxBss_002F1A48[0] = 2;
+        gScreenFxBss_002F19D8[0] = 0;
+        if (((u64) ((s64) gScreenFxBss_002F2078[0] << 0x3C) >> 0x3F) != 0) {
+            ScreenFx_DrawColorFilter_0_00158EE0(gScreenFxBss_002F1AA0);
         }
         ScreenFx_DrawFade_0_00156F60();
         GsPkt_EndLayer_1_00155900();
         return;
     }
     GsPkt_SetLayer_1_00154700(gWeatherState_002F19B0[0], -1);
-    if (D_002F2078[0] & 1) {
-        ScreenFx_DrawMotionBlur_0_00158900(D_002F19C0);
+    if (gScreenFxBss_002F2078[0] & 1) {
+        ScreenFx_DrawMotionBlur_0_00158900(gScreenFxBss_002F19C0);
     }
-    if (((u64) ((s64) D_002F2078[0] << 0x3E) >> 0x3F) != 0) {
+    if (((u64) ((s64) gScreenFxBss_002F2078[0] << 0x3E) >> 0x3F) != 0) {
         ScreenFx_DrawMotionBlur_0_00158900(D_002F19CC);
     }
-    if (((u64) ((s64) D_002F2078[0] << 0x3D) >> 0x3F) != 0) {
+    if (((u64) ((s64) gScreenFxBss_002F2078[0] << 0x3D) >> 0x3F) != 0) {
         ScreenFx_ProjectPoint_0_00159160(&sp1C, &sp18);
-        if (D_002F1A48[0] != 1) {
+        if (gScreenFxBss_002F1A48[0] != 1) {
             ScreenFx_DrawShift_0_00158BF0(sp1C, sp18);
         }
     }
     ScreenFx_DrawTint_0_00157320(0);
     GsPkt_EndLayer_1_00155900();
     GsPkt_SetLayer_1_00154700(gWeatherState_002F19B0[0], 0);
-    if (((u64) ((s64) D_002F2078[0] << 0x3B) >> 0x3F) != 0) {
-        ScreenFx_DrawRadialBlur_0_001580E0(D_002F1A60);
+    if (((u64) ((s64) gScreenFxBss_002F2078[0] << 0x3B) >> 0x3F) != 0) {
+        ScreenFx_DrawRadialBlur_0_001580E0(gScreenFxBss_002F1A60);
     }
-    if (((u64) ((s64) D_002F2078[0] << 0x3A) >> 0x3F) != 0) {
-        ScreenFx_DrawRadialBlur_0_001580E0(D_002F1A80);
+    if (((u64) ((s64) gScreenFxBss_002F2078[0] << 0x3A) >> 0x3F) != 0) {
+        ScreenFx_DrawRadialBlur_0_001580E0(gScreenFxBss_002F1A80);
     }
-    if (D_002F1A48[0] != 0) {
-        D_002F1A48[0] -= 1;
+    if (gScreenFxBss_002F1A48[0] != 0) {
+        gScreenFxBss_002F1A48[0] -= 1;
     }
-    if (((u64) ((s64) D_002F2078[0] << 0x39) >> 0x3F) != 0) {
+    if (((u64) ((s64) gScreenFxBss_002F2078[0] << 0x39) >> 0x3F) != 0) {
         Weather_Draw_0_00157630();
     }
     ScreenFx_DrawDistort_0_00156CE0();
-    if (((u64) ((s64) D_002F2078[0] << 0x3C) >> 0x3F) != 0) {
-        ScreenFx_DrawColorFilter_0_00158EE0(D_002F1AA0);
+    if (((u64) ((s64) gScreenFxBss_002F2078[0] << 0x3C) >> 0x3F) != 0) {
+        ScreenFx_DrawColorFilter_0_00158EE0(gScreenFxBss_002F1AA0);
     }
     ScreenFx_DrawFade_0_00156F60();
     GsPkt_EndLayer_1_00155900();
 }
 #undef gWeatherState_002F19B0
-#undef D_002F1AD0
-#undef D_002F2078
+#undef gScreenFxBss_002F1AD0
+#undef gScreenFxBss_002F2078
 #undef GsPkt_SetReg_3_001543E0
 #undef gWeatherState_002F19B0
 #undef Draw_Sprite_1_00155BD0
 #undef sceVu0CopyVector
-#undef D_002F2078
-#undef D_002F2070
+#undef gScreenFxBss_002F2078
+#undef gScreenFxBss_002F2070
 #undef Weather_RespawnParticle_0_00157FE0
 #undef ScreenFx_DrawMotionBlur_0_00158900
 #undef ScreenFx_DrawShift_0_00158BF0
 #undef ScreenFx_DrawColorFilter_0_00158EE0
 #undef ScreenFx_ProjectPoint_0_00159160
 #undef ScreenFx_DrawRadialBlur_0_001580E0
-#undef D_002F19C0
+#undef gScreenFxBss_002F19C0
 #undef D_002F19CC
-#undef D_002F1A60
-#undef D_002F1A80
-#undef D_002F1AA0
-#undef D_002F1AB0
-#undef D_002F1AC0
-#undef D_002F1AD0
+#undef gScreenFxBss_002F1A60
+#undef gScreenFxBss_002F1A80
+#undef gScreenFxBss_002F1AA0
+#undef gScreenFxBss_002F1AB0
+#undef gScreenFxBss_002F1AC0
+#undef gScreenFxBss_002F1AD0
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/screen_fx_bss.c): D_002F1A64, D_002F1A68, D_002F1A6C, D_002F1A70, D_002F1A74, D_002F1A78, D_002F1AA0, D_002F1AB0, D_002F1AC0, D_002F1AD0, D_002F1AE0, D_002F2070 */
-s16 D_002F1A64[0x2];
-u8 D_002F1A68[0x4];
-s16 D_002F1A6C[0x2];
-s16 D_002F1A70[0x2];
-s16 D_002F1A74[0x2];
-u16 D_002F1A78[0x4];
-s32 D_002F1AA0[0x4];
-s32 D_002F1AB0[0x4];
-s32 D_002F1AC0[0x4];
-s32 D_002F1AD0[0x4];
-s32 D_002F1AE0[0x1];
-f32 D_002F2070[0x2];
+/* data twins (src/game/data/screen_fx_bss.c): gScreenFxBss_002F1A64, gScreenFxBss_002F1A68, gScreenFxBss_002F1A6C, gScreenFxBss_002F1A70, gScreenFxBss_002F1A74, gScreenFxBss_002F1A78, gScreenFxBss_002F1AA0, gScreenFxBss_002F1AB0, gScreenFxBss_002F1AC0, gScreenFxBss_002F1AD0, gScreenFxBss_002F1AE0, gScreenFxBss_002F2070 */
+s16 gScreenFxBss_002F1A64[0x2];
+u8 gScreenFxBss_002F1A68[0x4];
+s16 gScreenFxBss_002F1A6C[0x2];
+s16 gScreenFxBss_002F1A70[0x2];
+s16 gScreenFxBss_002F1A74[0x2];
+u16 gScreenFxBss_002F1A78[0x4];
+s32 gScreenFxBss_002F1AA0[0x4];
+s32 gScreenFxBss_002F1AB0[0x4];
+s32 gScreenFxBss_002F1AC0[0x4];
+s32 gScreenFxBss_002F1AD0[0x4];
+s32 gScreenFxBss_002F1AE0[0x1];
+f32 gScreenFxBss_002F2070[0x2];
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/gs_packet_bss_002F1990.c): gWeatherState_002F19B0__grp: gWeatherState_002F19B0@0x0, D_002F19C0@0x10, D_002F19C4@0x14, D_002F19C8@0x18, D_002F19D4@0x24, D_002F19D8@0x28, D_002F19DC@0x2c, D_002F19E0@0x30, D_002F1A48@0x98 */
+/* data group (src/game/data/gs_packet_bss_002F1990.c): gWeatherState_002F19B0__grp: gWeatherState_002F19B0@0x0, gScreenFxBss_002F19C0@0x10, gScreenFxBss_002F19C4@0x14, gScreenFxBss_002F19C8@0x18, gScreenFxBss_002F19D4@0x24, gScreenFxBss_002F19D8@0x28, gScreenFxBss_002F19DC@0x2c, gScreenFxBss_002F19E0@0x30, gScreenFxBss_002F1A48@0x98 */
 u8 gWeatherState_002F19B0__grp[0xa0] __attribute__((aligned(16)));
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/screen_fx_flash_data.c): D_001F2040__grp: D_001F2040@0x0 */
+/* data group (src/game/data/screen_fx_flash_data.c): D_001F2040__grp: gScreenFxData_001F2040@0x0 */
 f32 D_001F2040__grp[0x4] __attribute__((aligned(16))) = { 0.0f, 0.0f, 0.0f, 1.0f };
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/screen_fx_flash_data.c): D_001F2050__grp: D_001F2050@0x0 */
+/* data group (src/game/data/screen_fx_flash_data.c): D_001F2050__grp: gScreenFxData_001F2050@0x0 */
 f32 D_001F2050__grp[0x4] __attribute__((aligned(16))) = { 0.0f, 0.0f, 0.0f, 1.0f };
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/screen_fx_bss.c): D_002F2078__grp: D_002F2078@0x0 */
+/* data group (src/game/data/screen_fx_bss.c): D_002F2078__grp: gScreenFxBss_002F2078@0x0 */
 u8 D_002F2078__grp[0x8] __attribute__((aligned(8)));
 #endif

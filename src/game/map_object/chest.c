@@ -6,7 +6,7 @@ typedef struct { u8 pad[0x40]; s32 x40; u8 pad44[0xF]; B8 x53; u8 pad54[0x2C]; }
 typedef struct { u8 pad[4]; u16 x4; u8 pad6[0x3A]; } C;
 typedef struct { s32 x0; u8 pad4[0x6A]; u16 x6E; u8 pad70[0xC8]; A *x138; u8 pad13C[0x34]; C *x170; u8 pad174[0xC]; B *x180; } O;
 typedef struct { u8 pad[0x8C]; O **x8C; u8 pad90[0x19]; B8 xA9; u8 padAA[2]; s16 xAC; } R;
-extern O **D_00201E80[2];
+extern O **gMapSbss_00201E80[2];
 s8 *Mdl_GetFrameData_0_001715B0(s32);
 s32 MapObj_CheckFacing_0_001B9610(O *, s32);
 void MapObj_SetAnimFrame_0_001B87C0(f32, f32, O *, s32, s32, s32);
@@ -28,7 +28,7 @@ R *Chest_CheckOpen_0_001B9360(void) {
     Vec v;
     O ***pp;
 
-    for (k = 0, pp = &D_00201E80[2]; k < 2; k++, pp++) {
+    for (k = 0, pp = &gMapSbss_00201E80[2]; k < 2; k++, pp++) {
         if (*pp == NULL) continue;
         o = **pp;
         if (o == NULL) continue;
@@ -65,7 +65,7 @@ R *Chest_CheckOpen_0_001B9360(void) {
             if (r == NULL) {
                 return NULL;
             }
-            r->x8C = D_00201E80[k + 2];
+            r->x8C = gMapSbss_00201E80[k + 2];
             r->xAC = i;
             r->xA9.b2 = 1;
             return r;

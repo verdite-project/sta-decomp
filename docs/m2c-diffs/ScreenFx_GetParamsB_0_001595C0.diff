@@ -2,12 +2,12 @@
 +++ matched
 @@ -1,6 +1,7 @@
  #include "common.h"
-+extern struct { unsigned char : 4; unsigned char f : 1; char pad[15]; } D_002F2078;
- extern s32 D_002F1A60[];
--extern u8 D_002F2078[];
++extern struct { unsigned char : 4; unsigned char f : 1; char pad[15]; } gScreenFxBss_002F2078;
+ extern s32 gScreenFxBss_002F1A60[];
+-extern u8 gScreenFxBss_002F2078[];
 -s32 *ScreenFx_GetParamsB_0_001595C0(s32 arg0) {
--    (*D_002F2078) = ((*D_002F2078) & ~0x10) | ((arg0 != 0) * 0x10);
+-    (*gScreenFxBss_002F2078) = ((*gScreenFxBss_002F2078) & ~0x10) | ((arg0 != 0) * 0x10);
 +s32 *ScreenFx_GetParamsB_0_001595C0(int v)
 +{
-+    D_002F2078.f = v != 0;
-     return D_002F1A60;
++    gScreenFxBss_002F2078.f = v != 0;
+     return gScreenFxBss_002F1A60;

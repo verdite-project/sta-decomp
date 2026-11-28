@@ -2,16 +2,16 @@
 +++ matched
 @@ -1,7 +1,9 @@
  #include "common.h"
--extern s32 D_00486990[];
+-extern s32 gUiGaugeBss_00486990[];
 -void UiAnim_Get_1_0017F840(s32 arg0, void **arg1) {
 -    if (arg1 != NULL) {
--        *arg1 = D_00486990 + ((arg0 % 24) * 0x4C);
+-        *arg1 = gUiGaugeBss_00486990 + ((arg0 % 24) * 0x4C);
 -    }
 +typedef struct { char b[0x4C]; } E;
-+extern E D_00486990[24];
++extern E gUiGaugeBss_00486990[24];
 +void UiAnim_Get_1_0017F840(s32 i, E **out)
 +{
 +    i %= 24;
 +    if (out)
-+        *out = &D_00486990[i];
++        *out = &gUiGaugeBss_00486990[i];
  }

@@ -2,27 +2,27 @@
 +++ matched
 @@ -1,15 +1,16 @@
  #include "common.h"
-+extern struct { unsigned char : 6; unsigned char f : 1; char pad[15]; } D_002F2078;
-+extern s32 D_002F2070[];
- extern s32 D_002F1AE0[];
--extern s32 D_002F2070[];
--extern u8 D_002F2078[];
++extern struct { unsigned char : 6; unsigned char f : 1; char pad[15]; } gScreenFxBss_002F2078;
++extern s32 gScreenFxBss_002F2070[];
+ extern s32 gScreenFxBss_002F1AE0[];
+-extern s32 gScreenFxBss_002F2070[];
+-extern u8 gScreenFxBss_002F2078[];
 -s32 *ScreenFx_EnableWeather_0_00159500(s32 arg0) {
 -    s32 temp_16;
 -    temp_16 = arg0 != 0;
--    if ((temp_16 != 0) && (((u64) ((s64) (*D_002F2078) << 0x39) >> 0x3F) == 0)) {
+-    if ((temp_16 != 0) && (((u64) ((s64) (*gScreenFxBss_002F2078) << 0x39) >> 0x3F) == 0)) {
 +void Weather_RespawnParticle_0_00157FE0(s32 a);
 +s32 *ScreenFx_EnableWeather_0_00159500(s32 on)
 +{
 +    s32 v = on != 0;
-+    if (v && !D_002F2078.f) {
++    if (v && !gScreenFxBss_002F2078.f) {
          Weather_RespawnParticle_0_00157FE0(0);
          Weather_RespawnParticle_0_00157FE0(1);
--        (*D_002F2070) = 0;
-+        D_002F2070[0] = 0;
+-        (*gScreenFxBss_002F2070) = 0;
++        gScreenFxBss_002F2070[0] = 0;
      }
--    (*D_002F2078) = ((*D_002F2078) & ~0x40) | ((temp_16 & 1) << 6);
--    return (s32 *) (D_002F1AE0);
-+    D_002F2078.f = v;
-+    return D_002F1AE0;
+-    (*gScreenFxBss_002F2078) = ((*gScreenFxBss_002F2078) & ~0x40) | ((temp_16 & 1) << 6);
+-    return (s32 *) (gScreenFxBss_002F1AE0);
++    gScreenFxBss_002F2078.f = v;
++    return gScreenFxBss_002F1AE0;
  }

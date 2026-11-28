@@ -2,19 +2,19 @@
 +++ matched
 @@ -1,10 +1,9 @@
  #include "common.h"
--extern s32 D_00270560[];
+-extern s32 gAngleBBss_00270560[];
 -f32 Angle_Wrap2PiB_2_00146B90(f32 fparg0) {
 -    f32 var_f12;
 -    var_f12 = fparg0 - (6.2831855f * (f32) (fparg0 / 6.2831855f));
 -    if (var_f12 < 0.0f) {
 -        var_f12 += 6.2831855f;
 -    }
--    return *(D_00270560 + (M2C_BITWISE(s32, (100.0f * var_f12)) * 4));
-+extern f32 D_00270560[];
+-    return *(gAngleBBss_00270560 + (M2C_BITWISE(s32, (100.0f * var_f12)) * 4));
++extern f32 gAngleBBss_00270560[];
 +f32 Angle_Wrap2PiB_2_00146B90(f32 a)
 +{
 +    a -= 6.2831855f * (s32)(a / 6.2831855f);
 +    if (a < 0.0f)
 +        a += 6.2831855f;
-+    return D_00270560[(s32)(100.0f * a)];
++    return gAngleBBss_00270560[(s32)(100.0f * a)];
  }

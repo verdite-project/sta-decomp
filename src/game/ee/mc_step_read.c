@@ -1,6 +1,6 @@
 #include "common.h"
 #include "game/ee.h"
-extern s32 D_004B63B4[];
+extern s32 gMcStepReadBss_004B63B4[];
 s32 Mc_StepGetInfo_3_001D3BF0(s32, s32, s32 *, s32 *, s32 *, s32);
 void *memcpy(void *, void *, s32);
 void memset(void *, s32, s32);
@@ -17,8 +17,8 @@ s32 Mc_StepRead_4_001D5F88(void) {
     s32 e;
     switch (step) {
     case 0:
-        D_004B6474[0] = 0;
-        D_004B63B4[0] = 0;
+        gMcStepReadCheckedBss_004B6474[0] = 0;
+        gMcStepReadBss_004B63B4[0] = 0;
         gMcState_004B63B8.step++;
         gMcState_004B63B8.retry = 0;
     case 1:
@@ -62,7 +62,7 @@ s32 Mc_StepRead_4_001D5F88(void) {
             gMcState_004B63B8.step--;
             break;
         }
-        D_004B6474[0] = r;
+        gMcStepReadCheckedBss_004B6474[0] = r;
         gMcState_004B63B8.step++;
         break;
     case 4:
@@ -71,7 +71,7 @@ s32 Mc_StepRead_4_001D5F88(void) {
         gMcState_004B63B8.step++;
         break;
     case 5:
-        if (sceMcRead(D_004B6474[0], D_004B6478, 0x400) != 0) {
+        if (sceMcRead(gMcStepReadCheckedBss_004B6474[0], D_004B6478, 0x400) != 0) {
             if (gMcState_004B63B8.retry == 2) {
                 gMcState_004B63B8.step = 100;
                 break;
@@ -94,14 +94,14 @@ s32 Mc_StepRead_4_001D5F88(void) {
             break;
         }
         gMcState_004B63B8.retry = 0;
-        if (gMcState_004B63B8.size < D_004B63B4[0] + r) {
-            r = gMcState_004B63B8.size - D_004B63B4[0];
-            memcpy(gMcState_004B63B8.buf + D_004B63B4[0], D_004B6478, r);
+        if (gMcState_004B63B8.size < gMcStepReadBss_004B63B4[0] + r) {
+            r = gMcState_004B63B8.size - gMcStepReadBss_004B63B4[0];
+            memcpy(gMcState_004B63B8.buf + gMcStepReadBss_004B63B4[0], D_004B6478, r);
             gMcState_004B63B8.step--;
             break;
         }
-        memcpy(gMcState_004B63B8.buf + D_004B63B4[0], D_004B6478, r);
-        D_004B63B4[0] += r;
+        memcpy(gMcState_004B63B8.buf + gMcStepReadBss_004B63B4[0], D_004B6478, r);
+        gMcStepReadBss_004B63B4[0] += r;
         gMcState_004B63B8.step++;
         break;
     case 7:
@@ -109,7 +109,7 @@ s32 Mc_StepRead_4_001D5F88(void) {
         gMcState_004B63B8.step++;
         break;
     case 8:
-        if (sceMcClose(D_004B6474[0]) != 0) {
+        if (sceMcClose(gMcStepReadCheckedBss_004B6474[0]) != 0) {
             if (gMcState_004B63B8.retry == 2) {
                 gMcState_004B63B8.cmd = 0;
                 gMcState_004B63B8.err = 0x47;
@@ -135,7 +135,7 @@ s32 Mc_StepRead_4_001D5F88(void) {
         gMcState_004B63B8.err = 0x48;
         return 1;
     case 100:
-        if (D_004B6474[0] < 0) {
+        if (gMcStepReadCheckedBss_004B6474[0] < 0) {
             gMcState_004B63B8.err = 0x47;
             gMcState_004B63B8.cmd = 0;
             return gMcState_004B63B8.x90;
@@ -144,7 +144,7 @@ s32 Mc_StepRead_4_001D5F88(void) {
         gMcState_004B63B8.step++;
         break;
     case 101:
-        if (sceMcClose(D_004B6474[0]) != 0) {
+        if (sceMcClose(gMcStepReadCheckedBss_004B6474[0]) != 0) {
             if (gMcState_004B63B8.retry == 2) {
                 gMcState_004B63B8.cmd = 0;
                 gMcState_004B63B8.err = 0x47;
@@ -165,6 +165,6 @@ s32 Mc_StepRead_4_001D5F88(void) {
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): D_004B63B4 */
-s32 D_004B63B4[0x26] __attribute__((aligned(4)));
+/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): gMcStepReadBss_004B63B4 */
+s32 gMcStepReadBss_004B63B4[0x26] __attribute__((aligned(4)));
 #endif

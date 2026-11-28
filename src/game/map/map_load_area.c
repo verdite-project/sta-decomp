@@ -25,10 +25,10 @@ typedef struct {
 } S;
 typedef struct { u8 pad0[0x10]; s32 x10; u8 pad14[4]; S **x18; u8 pad1C[4]; } Info;
 typedef struct { u16 key; s16 x; s16 y; s16 z; } K;
-extern s32 D_00201E80;
-#define PP(i) (((S ***)(&D_00201E80 + 2))[i])
-extern s32 D_002022C0;
-extern Vec D_004B4BD0;
+extern s32 gMapSbss_00201E80;
+#define PP(i) (((S ***)(&gMapSbss_00201E80 + 2))[i])
+extern s32 gGfxBuildViewMatricesSbss_002022C0;
+extern Vec gGfxBuildViewMatricesBss_004B4BD0;
 void sceVu0CopyVector(Vec *, Vec *);
 void sceVu0AddVector(Vec *, Vec *, Vec *);
 s32 Map_StreamGetResult_1_001B0660(Info *);
@@ -62,21 +62,21 @@ void Map_LoadArea_1_001B51F0(S *a0, K *k, s32 a2) {
 
     side = -1;
     if (a0->id == k->key) return;
-    if (((S **)(&D_00201E80)[2]) && *((S **)(&D_00201E80)[2]) == a0) side = 0;
-    if (((S **)(&D_00201E80)[3]) && *((S **)(&D_00201E80)[3]) == a0) side = 1;
+    if (((S **)(&gMapSbss_00201E80)[2]) && *((S **)(&gMapSbss_00201E80)[2]) == a0) side = 0;
+    if (((S **)(&gMapSbss_00201E80)[3]) && *((S **)(&gMapSbss_00201E80)[3]) == a0) side = 1;
     n = !side;
-    if ((&D_00201E80)[1] != n && PP(side)) {
+    if ((&gMapSbss_00201E80)[1] != n && PP(side)) {
         sceVu0CopyVector(&v, &(*PP(side))->pos);
         if (v.x != 0.0f || v.y != 0.0f || v.z != 0.0f) {
-            D_002022C0 = 1;
+            gGfxBuildViewMatricesSbss_002022C0 = 1;
             v.w = 0.0f;
-            sceVu0CopyVector(&D_004B4BD0, &v);
+            sceVu0CopyVector(&gGfxBuildViewMatricesBss_004B4BD0, &v);
         }
     }
-    if (((S **)(&D_00201E80)[2])) sceVu0CopyVector(&v, &(*((S **)(&D_00201E80)[2]))->pos);
-    if (((S **)(&D_00201E80)[3])) sceVu0CopyVector(&v, &(*((S **)(&D_00201E80)[3]))->pos);
+    if (((S **)(&gMapSbss_00201E80)[2])) sceVu0CopyVector(&v, &(*((S **)(&gMapSbss_00201E80)[2]))->pos);
+    if (((S **)(&gMapSbss_00201E80)[3])) sceVu0CopyVector(&v, &(*((S **)(&gMapSbss_00201E80)[3]))->pos);
     cur = n;
-    (&D_00201E80)[1] = cur;
+    (&gMapSbss_00201E80)[1] = cur;
     v.x = -1.0f * k->x;
     v.y = -1.0f * k->y;
     v.z = -1.0f * k->z;

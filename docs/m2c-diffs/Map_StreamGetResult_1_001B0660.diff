@@ -4,35 +4,35 @@
  #include "common.h"
 -s8 Task_KillWrap_0_0014DAF0(s32);                              /* extern */
 -void sceVu0CopyVector(u8 *, s32 *);          /* extern */
--extern s32 D_004B4B90[];
--extern s32 D_004B4BB4[];
--extern s32 D_004B4BC0[];
--extern s32 D_004B4BC4[];
+-extern s32 gMapBss_004B4B90[];
+-extern s32 gMapBss_004B4BB4[];
+-extern s32 gMapBss_004B4BC0[];
+-extern s32 gMapBss_004B4BC4[];
 -s8 Map_StreamGetResult_1_001B0660(u8 *arg0) {
 -    s8 var_16;
 -    var_16 = 0;
--    if ((*D_004B4BC0) != 0) {
--        var_16 = Task_KillWrap_0_0014DAF0((*D_004B4BC0));
-+extern struct { f32 v[4]; char p10[0x14]; s32 x24; char p28[8]; s32 h; s32 x34; } D_004B4B90;
+-    if ((*gMapBss_004B4BC0) != 0) {
+-        var_16 = Task_KillWrap_0_0014DAF0((*gMapBss_004B4BC0));
++extern struct { f32 v[4]; char p10[0x14]; s32 x24; char p28[8]; s32 h; s32 x34; } gMapBss_004B4B90;
 +s32 Task_KillWrap_0_0014DAF0(s32 h);
 +void sceVu0CopyVector(f32 *v0, f32 *v1);
 +typedef struct { f32 v[4]; s32 x10; u8 b14; char p15[3]; s32 x18; } Out;
 +s32 Map_StreamGetResult_1_001B0660(Out *o)
 +{
 +    s32 r = 0;
-+    if (D_004B4B90.h)
-+        r = Task_KillWrap_0_0014DAF0(D_004B4B90.h);
++    if (gMapBss_004B4B90.h)
++        r = Task_KillWrap_0_0014DAF0(gMapBss_004B4B90.h);
 +    if (o) {
-+        sceVu0CopyVector(o->v, D_004B4B90.v);
-+        o->x10 = D_004B4B90.x24;
++        sceVu0CopyVector(o->v, gMapBss_004B4B90.v);
++        o->x10 = gMapBss_004B4B90.x24;
 +        o->b14 = r;
-+        o->x18 = D_004B4B90.x34;
++        o->x18 = gMapBss_004B4B90.x34;
      }
 -    if (arg0 != NULL) {
--        sceVu0CopyVector(arg0, D_004B4B90);
--        M2C_FIELD(arg0, s32 *, 0x10) = (s32) (*D_004B4BB4);
+-        sceVu0CopyVector(arg0, gMapBss_004B4B90);
+-        M2C_FIELD(arg0, s32 *, 0x10) = (s32) (*gMapBss_004B4BB4);
 -        M2C_FIELD(arg0, s8 *, 0x14) = var_16;
--        M2C_FIELD(arg0, s32 *, 0x18) = (s32) (*D_004B4BC4);
+-        M2C_FIELD(arg0, s32 *, 0x18) = (s32) (*gMapBss_004B4BC4);
 -    }
 -    return var_16;
 +    return r;

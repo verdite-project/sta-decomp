@@ -1,4 +1,4 @@
-/* NEAR: 34 of 202 words differ (was 53). Rewritten with the G struct at D_004830C0 like matched Tex_Release_1_00177570;
+/* NEAR: 34 of 202 words differ (was 53). Rewritten with the G struct at gTextureBss_004830C0 like matched Tex_Release_1_00177570;
    idx = G.x8 read before the a0 round-up fixes the entry.
    Remaining: after the Vram_AllocForTex_0_00176BF0 call to the end, register naming only: retail keeps r in a1, &x22 in a0, addresses in v0
    and values in v1 (we use a0/v1 the other way round), same ops. Permuting the 6 tail statements (720 builds) did not help. */
@@ -45,10 +45,10 @@ typedef struct {
     s32 x4;
     s16 x8, xA, xC, xE;
 } G;
-extern G D_004830C0;
+extern G gTextureBss_004830C0;
 extern Blk gVramBlocks_0047F0C0[];
-extern E30 D_004800C0[];
-extern s32 D_00202018;
+extern E30 gTextureHashBss_004800C0[];
+extern s32 gTexResidentSbss_00202018;
 u16 Vram_AllocForTex_0_00176BF0(E30 *, u16);
 
 void Tex_Resident_0_001777C0(u16 a0, u64 *a1, u64 *a2) {
@@ -56,42 +56,42 @@ void Tex_Resident_0_001777C0(u16 a0, u64 *a1, u64 *a2) {
     E30 *p;
     u16 r;
 
-    idx = D_004830C0.x8;
+    idx = gTextureBss_004830C0.x8;
     a0 = (a0 + 0x1F) & ~0x1F;
-    D_004830C0.xA--;
-    if (idx == D_004800C0[idx].x1C) {
-        D_004830C0.x8 = -1;
+    gTextureBss_004830C0.xA--;
+    if (idx == gTextureHashBss_004800C0[idx].x1C) {
+        gTextureBss_004830C0.x8 = -1;
     } else {
-        D_004800C0[D_004800C0[idx].x1C].x1E = D_004800C0[idx].x1E;
-        D_004800C0[D_004800C0[idx].x1E].x1C = D_004800C0[idx].x1C;
-        if (D_004830C0.x8 == idx) D_004830C0.x8 = D_004800C0[idx].x1C;
+        gTextureHashBss_004800C0[gTextureHashBss_004800C0[idx].x1C].x1E = gTextureHashBss_004800C0[idx].x1E;
+        gTextureHashBss_004800C0[gTextureHashBss_004800C0[idx].x1E].x1C = gTextureHashBss_004800C0[idx].x1C;
+        if (gTextureBss_004830C0.x8 == idx) gTextureBss_004830C0.x8 = gTextureHashBss_004800C0[idx].x1C;
     }
-    D_004830C0.xE++;
-    if (D_004830C0.xC == -1) {
-        D_004830C0.xC = idx;
-        D_004800C0[idx].x1C = idx;
-        D_004800C0[idx].x1E = idx;
+    gTextureBss_004830C0.xE++;
+    if (gTextureBss_004830C0.xC == -1) {
+        gTextureBss_004830C0.xC = idx;
+        gTextureHashBss_004800C0[idx].x1C = idx;
+        gTextureHashBss_004800C0[idx].x1E = idx;
     } else {
-        D_004800C0[idx].x1C = D_004830C0.xC;
-        D_004800C0[idx].x1E = D_004800C0[D_004830C0.xC].x1E;
-        D_004800C0[D_004800C0[idx].x1C].x1E = idx;
-        D_004800C0[D_004800C0[idx].x1E].x1C = idx;
-        D_004830C0.xC = idx;
+        gTextureHashBss_004800C0[idx].x1C = gTextureBss_004830C0.xC;
+        gTextureHashBss_004800C0[idx].x1E = gTextureHashBss_004800C0[gTextureBss_004830C0.xC].x1E;
+        gTextureHashBss_004800C0[gTextureHashBss_004800C0[idx].x1C].x1E = idx;
+        gTextureHashBss_004800C0[gTextureHashBss_004800C0[idx].x1E].x1C = idx;
+        gTextureBss_004830C0.xC = idx;
     }
-    D_00202018 = 0;
-    p = &D_004800C0[idx];
+    gTexResidentSbss_00202018 = 0;
+    p = &gTextureHashBss_004800C0[idx];
     p->b0 = 3;
-    D_004800C0[idx].x2A = a0 << 4;
-    D_004800C0[idx].x2E = 0;
-    D_004800C0[idx].x14 = a0 << 4;
-    r = Vram_AllocForTex_0_00176BF0(p, (u32)(D_004800C0[idx].x2A + D_004800C0[idx].x2E + 15) >> 4);
-    D_004800C0[idx].x22 = r;
-    D_004800C0[idx].x10 = gVramBlocks_0047F0C0[r].off;
+    gTextureHashBss_004800C0[idx].x2A = a0 << 4;
+    gTextureHashBss_004800C0[idx].x2E = 0;
+    gTextureHashBss_004800C0[idx].x14 = a0 << 4;
+    r = Vram_AllocForTex_0_00176BF0(p, (u32)(gTextureHashBss_004800C0[idx].x2A + gTextureHashBss_004800C0[idx].x2E + 15) >> 4);
+    gTextureHashBss_004800C0[idx].x22 = r;
+    gTextureHashBss_004800C0[idx].x10 = gVramBlocks_0047F0C0[r].off;
     if (a1) p->tex0 = *(Tex0 *)a1;
-    if (a2) D_004800C0[idx].x8 = *a2;
-    D_004800C0[idx].tex0.tbp0 = D_004800C0[idx].x10;
-    D_004800C0[idx].tex0.cbp = D_004800C0[idx].x10;
-    D_00202018 = 0;
+    if (a2) gTextureHashBss_004800C0[idx].x8 = *a2;
+    gTextureHashBss_004800C0[idx].tex0.tbp0 = gTextureHashBss_004800C0[idx].x10;
+    gTextureHashBss_004800C0[idx].tex0.cbp = gTextureHashBss_004800C0[idx].x10;
+    gTexResidentSbss_00202018 = 0;
 }
 
 

@@ -3,13 +3,13 @@
 @@ -1,6 +1,8 @@
  #include "common.h"
 -void PlayTime_DiffNow_2_001DF910(void) {
--    M2C_ERROR(/* unknown instruction: ldr $a0, D_00202380 */);
--    M2C_ERROR(/* unknown instruction: ldr $a1, D_002023A0 */);
+-    M2C_ERROR(/* unknown instruction: ldr $a0, gPlayTimeSbss_00202380 */);
+-    M2C_ERROR(/* unknown instruction: ldr $a1, gPlayTimeSbss_002023A0 */);
 -    PlayTime_Diff_2_001DF790(M2C_ERROR(/* unknown instruction: ldl $a0, D_00202387 */), M2C_ERROR(/* unknown instruction: ldl $a1, D_002023A7 */));
 +typedef struct { s32 a, b; } Pair;
-+extern Pair D_00202380, D_002023A0;
++extern Pair gPlayTimeSbss_00202380, gPlayTimeSbss_002023A0;
 +void PlayTime_Diff_2_001DF790(Pair a, Pair b);
 +void PlayTime_DiffNow_2_001DF910(void)
 +{
-+    PlayTime_Diff_2_001DF790(D_00202380, D_002023A0);
++    PlayTime_Diff_2_001DF790(gPlayTimeSbss_00202380, gPlayTimeSbss_002023A0);
  }

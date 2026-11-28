@@ -6,15 +6,15 @@ typedef struct { f32 x, y; s32 z[0]; } __attribute__((aligned(8))) V2;
 typedef struct { u8 p0[5]; u8 x5; u8 p6[0x1A]; u32 x20; u8 p24[4]; f32 x28; } O;
 typedef struct { u8 p0[4]; O *x4; u8 p8[0x10]; u16 *x18; s32 x1C; f32 x20; f32 x24; u8 p28[8]; u8 x30[4]; u8 x34; u8 p35[0xB]; B8 x40[8]; } T;
 typedef struct { u8 p0[0x1C]; s32 x1C[3]; u8 p28[0x10]; s64 x38[3]; s64 x50[3]; u8 p68[0x10]; s32 x78; } G;
-extern G D_004BC2F0;
-extern f32 D_004BC360[];
+extern G gCreditsLoadBss_004BC2F0;
+extern f32 gSaveSystemStepBss_004BC360[];
 #ifndef NONMATCHING
-extern u16 D_00201E68[];
+extern u16 gCreditsCbDrawTextSdata_00201E68[];
 #else
-/* data twins (src/game/data/sdata.c): D_00201E68 */
-static u16 D_00201E68[0x4] = { 0, 0, 0, 0 };
+/* data twins (src/game/data/sdata.c): gCreditsCbDrawTextSdata_00201E68 */
+static u16 gCreditsCbDrawTextSdata_00201E68[0x4] = { 0, 0, 0, 0 };
 #endif
-extern f32 D_00201B90;
+extern f32 gCreditsCbDrawTextSdata_00201B90;
 void GsText_SetQword_0_001E1E80(s32, s64, s64);
 void GsText_Begin_1_001E23C8(void);
 void GsText_End_1_001E2430(void);
@@ -42,8 +42,8 @@ void CreditsCb_DrawText_0_001E4518(T *p) {
     t.x = p->x20; t.y = p->x24; pos = t;
     n = p->x4->x20;
     if (n >= 3) n = 2;
-    GsText_SetBuffer_0_001E1E70(D_004BC2F0.x1C[n]);
-    GsText_SetQword_0_001E1E80(0, D_004BC2F0.x38[n], D_004BC2F0.x50[n]);
+    GsText_SetBuffer_0_001E1E70(gCreditsLoadBss_004BC2F0.x1C[n]);
+    GsText_SetQword_0_001E1E80(0, gCreditsLoadBss_004BC2F0.x38[n], gCreditsLoadBss_004BC2F0.x50[n]);
     GsText_Begin_1_001E23C8();
     switch (p->x4->x5 & 0xF) {
     case 0: m = 2; break;
@@ -57,20 +57,20 @@ void CreditsCb_DrawText_0_001E4518(T *p) {
         h = w = 0.0f;
         GsText_Measure_2_001E2B88(s, &w, &h, 1);
         if (pos.x > 640.0f || pos.x + (s32)w < 0.0f || pos.y > 448.0f || pos.y + (s32)h < 0.0f) {
-            GsText_DrawString_2_001E2748(&pos, D_00201E68);
+            GsText_DrawString_2_001E2748(&pos, gCreditsCbDrawTextSdata_00201E68);
         } else {
 
             C4 col = { p->x30[0], p->x30[1], p->x30[2], p->x30[3] };
 
 
             a = col.b[3];
-            if (D_004BC2F0.x78 != 0) {
-                col.b[3] = a / (u8)(D_004BC2F0.x78 + 1);
+            if (gCreditsLoadBss_004BC2F0.x78 != 0) {
+                col.b[3] = a / (u8)(gCreditsLoadBss_004BC2F0.x78 + 1);
                 GsText_SetColorIdx_0_001E2AB0(*(s32 *)&col);
-                i = D_004BC2F0.x78 - 1;
+                i = gCreditsLoadBss_004BC2F0.x78 - 1;
                 if (i >= 0) {
-                f = D_00201B90;
-                k = D_004BC2F0.x78 + 1;
+                f = gCreditsCbDrawTextSdata_00201B90;
+                k = gCreditsLoadBss_004BC2F0.x78 + 1;
                 do {
                     { V2 u; u.x = pos.x; u.y = pos.y; t = u; }
 
@@ -84,29 +84,29 @@ void CreditsCb_DrawText_0_001E4518(T *p) {
                 i--; k--;
                 } while (i >= 0);
                 }
-                col.b[3] = a - col.b[3] * D_004BC2F0.x78;
+                col.b[3] = a - col.b[3] * gCreditsLoadBss_004BC2F0.x78;
             }
 
             GsText_SetColorIdx_0_001E2AB0(*(s32 *)&col);
             GsText_DrawString_2_001E2748(&pos, s);
         }
-        for (i = D_004BC2F0.x78 - 1; i >= 0; i--) {
+        for (i = gCreditsLoadBss_004BC2F0.x78 - 1; i >= 0; i--) {
             if (i == 0)
                 p->x40[0] = *(B8 *)&pos;
             else
                 *(B8 *)((u8 *)p + i * 8 + 0x40) = *(B8 *)((u8 *)p + i * 8 + 0x38);
         }
-        GsText_GetPos_1_001E2B40(D_004BC360);
+        GsText_GetPos_1_001E2B40(gSaveSystemStepBss_004BC360);
     } else {
         GsText_DrawString_2_001E2748(&pos, s);
-        GsText_GetPos_1_001E2B40(D_004BC360);
-        D_004BC360[0] = pos.x;
+        GsText_GetPos_1_001E2B40(gSaveSystemStepBss_004BC360);
+        gSaveSystemStepBss_004BC360[0] = pos.x;
     }
     GsText_End_1_001E2430();
 }
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/sdata.c): D_00201B90__grp: D_00201B90@0x0 */
+/* data group (src/game/data/sdata.c): D_00201B90__grp: gCreditsCbDrawTextSdata_00201B90@0x0 */
 unsigned int D_00201B90__grp[0x1c] __attribute__((section(".sdata"))) __attribute__((aligned(16))) = { 0x3f4ccccc, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 };
 #endif

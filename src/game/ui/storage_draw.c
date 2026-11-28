@@ -10,19 +10,19 @@ typedef struct { s32 *p; s32 n; f32 f; void *fn; s32 a; s32 b; void *cb; } Arg;
 typedef struct { s32 x0; } O;
 typedef struct { s32 state; s32 input; s8 b8; s8 b9; u8 pad[4]; u8 bE; } S;
 #ifndef NONMATCHING
-extern f32 D_00201D90;
+extern f32 gStorageDrawSdata_00201D90;
 #else
-/* data twins (src/game/data/sdata.c): D_00201D90 */
-static f32 D_00201D90 = -2.99f;
+/* data twins (src/game/data/sdata.c): gStorageDrawSdata_00201D90 */
+static f32 gStorageDrawSdata_00201D90 = -2.99f;
 #endif
 /* .bss, from the top down (CodeWarrior writes it in reverse) */
 s32 D_004A4350[0x4];
-extern Q2 D_001F32F0;
+extern Q2 gStorageDrawData_001F32F0;
 #ifndef NONMATCHING
-extern s32 D_001F32A0[];
+extern s32 gStorageDrawData_001F32A0[];
 #else
-/* data twins (src/game/data/title_nop_data.c): D_001F32A0 */
-static s32 D_001F32A0[0x4] = { 0, 1, 2, 3 };
+/* data twins (src/game/data/title_nop_data.c): gStorageDrawData_001F32A0 */
+static s32 gStorageDrawData_001F32A0[0x4] = { 0, 1, 2, 3 };
 #endif
 void Storage_Draw_0_001A30E0(u8 *arg0);
 void Storage_DrawStatus_0_001A31E0(f32 f);
@@ -55,17 +55,17 @@ void Storage_Draw_0_001A30E0(u8 *arg0) {
     Col c;
 
     Menu_SetFlags_0_0018A310(0xC);
-    if (!(D_00201D90 <= -2.49f)) {
-        Storage_DrawStatus_0_001A31E0__as_Storage_Draw_0_001A30E0(arg0, D_00201D90);
+    if (!(gStorageDrawSdata_00201D90 <= -2.49f)) {
+        Storage_DrawStatus_0_001A31E0__as_Storage_Draw_0_001A30E0(arg0, gStorageDrawSdata_00201D90);
     }
     if (arg0[8] == 0x1F) {
-        D_00201D90 = Approachf_3_00187770(D_00201D90, -0.02f, 3.5f);
+        gStorageDrawSdata_00201D90 = Approachf_3_00187770(gStorageDrawSdata_00201D90, -0.02f, 3.5f);
         c.w = 0x80FFFFFF;
         if (D_004A4350[0] >= 0) {
             Text_Draw_2_001875C0(Msg_GetText_2_00195B10(D_004A4350[0] + 0x8C), 2, *(u32 *)&c, 622.0f, 17.0f, 1.0f);
         }
     } else {
-        D_00201D90 = Approachf_3_00187770(D_00201D90, -2.99f, 3.5f);
+        gStorageDrawSdata_00201D90 = Approachf_3_00187770(gStorageDrawSdata_00201D90, -2.99f, 3.5f);
     }
 }
 
@@ -81,8 +81,8 @@ void Storage_Open_0_001A32A0(O *p) {
     switch (p->x0) {
     case 0x19:
         D_004A4350[0] = 0;
-        q = D_001F32F0;
-        a.p = D_001F32A0;
+        q = gStorageDrawData_001F32F0;
+        a.p = gStorageDrawData_001F32A0;
         a.n = 4;
         a.fn = Storage_GetEntry_0_001A3560;
         a.f = -3.0f;
@@ -118,8 +118,8 @@ void Storage_Update_0_001A3380(S *arg0) {
             var_s0 = 0;
         }
     } else if (temp_v1 & 0x2000) {
-        D_004A3320[0] = var_s0 + 1;
-        arg0->b9 = D_004A3320[0];
+        gShopDrawBss_004A3320[0] = var_s0 + 1;
+        arg0->b9 = gShopDrawBss_004A3320[0];
         arg0->b8 = 0x22;
         MenuStack_Push_1_00189ED0(0x1F);
         UiAnim_SetVisible_1_0017F7C0(0, 0, 0);
@@ -156,13 +156,13 @@ void StorageProc_Pos_0_001A3500(s32 arg0, void *arg1, void *arg2) {
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-extern u8 D_001F32B0[];
-/* data group (src/game/data/title_nop_data.c): D_001F32F0__grp: D_001F32F0@0x0 */
-s32 D_001F32F0__grp[0x8] __attribute__((aligned(16))) = { 0, 5, 0, (s32)D_001F32B0, 7, -0x3fc00000, 0, 0 };
+extern u8 gStorageDrawData_001F32B0[];
+/* data group (src/game/data/title_nop_data.c): D_001F32F0__grp: gStorageDrawData_001F32F0@0x0 */
+s32 D_001F32F0__grp[0x8] __attribute__((aligned(16))) = { 0, 5, 0, (s32)gStorageDrawData_001F32B0, 7, -0x3fc00000, 0, 0 };
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/title_nop_data.c): D_001F32B0 */
-u8 D_001F32B0[0x40] = { 0, 0, 0x40, 0xc0, 0xa6, 0xf, 0, 0, 0, 0, 0, 0xc0, 0xa5, 0xf, 0, 0, 0, 0, 0x80, 0xbf, 0xa4, 0xf, 0, 0, 0, 0, 0, 0, 0xa3, 0xf, 0, 0, 0, 0, 0x80, 0x3f, 0xa2, 0xf, 0, 0, 0, 0, 0, 0x40, 0xa1, 0xf, 0, 0, 0, 0, 0x40, 0x40, 0xa0, 0xf, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+/* data twins (src/game/data/title_nop_data.c): gStorageDrawData_001F32B0 */
+u8 gStorageDrawData_001F32B0[0x40] = { 0, 0, 0x40, 0xc0, 0xa6, 0xf, 0, 0, 0, 0, 0, 0xc0, 0xa5, 0xf, 0, 0, 0, 0, 0x80, 0xbf, 0xa4, 0xf, 0, 0, 0, 0, 0, 0, 0xa3, 0xf, 0, 0, 0, 0, 0x80, 0x3f, 0xa2, 0xf, 0, 0, 0, 0, 0, 0x40, 0xa1, 0xf, 0, 0, 0, 0, 0x40, 0x40, 0xa0, 0xf, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 #endif

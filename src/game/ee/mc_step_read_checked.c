@@ -2,28 +2,28 @@
 #include "game/ee.h"
 
 #ifndef NONMATCHING
-extern s32 D_004B638C[];
+extern s32 gMcStepReadCheckedBss_004B638C[];
 #else
-/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): D_004B638C */
-static s32 D_004B638C[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): gMcStepReadCheckedBss_004B638C */
+static s32 gMcStepReadCheckedBss_004B638C[0x1];
 #endif
 #ifndef NONMATCHING
-extern s32 D_004B6390[];
+extern s32 gMcStepReadCheckedBss_004B6390[];
 #else
-/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): D_004B6390 */
-static s32 D_004B6390[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): gMcStepReadCheckedBss_004B6390 */
+static s32 gMcStepReadCheckedBss_004B6390[0x1];
 #endif
 #ifndef NONMATCHING
-extern s32 D_004B6394[];
+extern s32 gMcStepReadCheckedBss_004B6394[];
 #else
-/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): D_004B6394 */
-static s32 D_004B6394[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): gMcStepReadCheckedBss_004B6394 */
+static s32 gMcStepReadCheckedBss_004B6394[0x1];
 #endif
 #ifndef NONMATCHING
-extern s32 D_004B6398[];
+extern s32 gMcStepReadCheckedBss_004B6398[];
 #else
-/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): D_004B6398 */
-static s32 D_004B6398[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): gMcStepReadCheckedBss_004B6398 */
+static s32 gMcStepReadCheckedBss_004B6398[0x1];
 #endif
 s32 Mc_StepGetInfo_3_001D3BF0(s32, s32, s32 *, s32 *, s32 *, s32);
 void *memcpy(void *, void *, s32);
@@ -51,10 +51,10 @@ s32 Mc_StepReadChecked_3_001D4A78(void)
 
     switch (t->step) {
     case 0:
-        D_004B6474[0] = -1;
+        gMcStepReadCheckedBss_004B6474[0] = -1;
         t->step++;
         t->retry = 0;
-        D_004B638C[0] = 0;
+        gMcStepReadCheckedBss_004B638C[0] = 0;
     case 1:
         v = Mc_StepGetInfo_3_001D3BF0(port, slot, &t->type[(port) * 4 + (slot)], &t->free[(port) * 4 + (slot)], &t->format[(port) * 4 + (slot)], t->x90);
         t->x90 = v;
@@ -101,14 +101,14 @@ s32 Mc_StepReadChecked_3_001D4A78(void)
                     t->step--;
                 }
             } else {
-                D_004B6474[0] = r;
+                gMcStepReadCheckedBss_004B6474[0] = r;
                 t->retry = 0;
                 t->step++;
             }
         }
         break;
     case 4:
-        v = sceMcRead(D_004B6474[0], D_004B6390, 4);
+        v = sceMcRead(gMcStepReadCheckedBss_004B6474[0], gMcStepReadCheckedBss_004B6390, 4);
         if (v != 0) {
             if (t->retry == 2) {
                 t->err = 0x47;
@@ -136,21 +136,21 @@ s32 Mc_StepReadChecked_3_001D4A78(void)
         }
         break;
     case 6:
-        x = D_004B6390[0];
-        D_004B6398[0] = x + 6;
+        x = gMcStepReadCheckedBss_004B6390[0];
+        gMcStepReadCheckedBss_004B6398[0] = x + 6;
         x -= 0x3FB;
         if (x > 0) {
-            D_004B6398[0] += (x + 0x3FE) / 0x3FF;
+            gMcStepReadCheckedBss_004B6398[0] += (x + 0x3FE) / 0x3FF;
         }
-        a = (D_004B6398[0] + 0x1F) & ~0x1F;
-        d = D_004B6398[0] - 1;
+        a = (gMcStepReadCheckedBss_004B6398[0] + 0x1F) & ~0x1F;
+        d = gMcStepReadCheckedBss_004B6398[0] - 1;
         t->step++;
-        D_004B6398[0] = a;
-        D_004B6394[0] = d - a + 0x20;
+        gMcStepReadCheckedBss_004B6398[0] = a;
+        gMcStepReadCheckedBss_004B6394[0] = d - a + 0x20;
         t->retry = 0;
         break;
     case 7:
-        v = sceMcSeek(D_004B6474[0], D_004B6398[0] - 0x20, 0);
+        v = sceMcSeek(gMcStepReadCheckedBss_004B6474[0], gMcStepReadCheckedBss_004B6398[0] - 0x20, 0);
         if (v != 0) {
             if (t->retry == 2) {
                 t->err = 0x47;
@@ -179,7 +179,7 @@ s32 Mc_StepReadChecked_3_001D4A78(void)
         }
         break;
     case 9:
-        v = sceMcRead(D_004B6474[0], D_004B6478, 0x20);
+        v = sceMcRead(gMcStepReadCheckedBss_004B6474[0], D_004B6478, 0x20);
         if (v != 0) {
             if (t->retry == 2) {
                 t->err = 0x47;
@@ -202,7 +202,7 @@ s32 Mc_StepReadChecked_3_001D4A78(void)
                     t->step--;
                 }
             } else {
-                if (D_004B6478[D_004B6394[0]] != 1) {
+                if (D_004B6478[gMcStepReadCheckedBss_004B6394[0]] != 1) {
                     t->err = 0x47;
                     t->step = 100;
                 } else {
@@ -213,7 +213,7 @@ s32 Mc_StepReadChecked_3_001D4A78(void)
         }
         break;
     case 11:
-        v = sceMcSeek(D_004B6474[0], 4, 0);
+        v = sceMcSeek(gMcStepReadCheckedBss_004B6474[0], 4, 0);
         if (v != 0) {
             if (t->retry == 2) {
                 t->err = 0x47;
@@ -243,8 +243,8 @@ s32 Mc_StepReadChecked_3_001D4A78(void)
         }
         break;
     case 13:
-        len = D_004B638C[0] == 0 ? 0x3FC : 0x400;
-        v = sceMcRead(D_004B6474[0], D_004B6478, len);
+        len = gMcStepReadCheckedBss_004B638C[0] == 0 ? 0x3FC : 0x400;
+        v = sceMcRead(gMcStepReadCheckedBss_004B6474[0], D_004B6478, len);
         if (v != 0) {
             if (t->retry == 2) {
                 t->err = 0x47;
@@ -270,8 +270,8 @@ s32 Mc_StepReadChecked_3_001D4A78(void)
                     t->step--;
                 }
             } else {
-                max = D_004B638C[0] ? 0x3FF : 0x3FB;
-                len = D_004B6390[0] - D_004B638C[0];
+                max = gMcStepReadCheckedBss_004B638C[0] ? 0x3FF : 0x3FB;
+                len = gMcStepReadCheckedBss_004B6390[0] - gMcStepReadCheckedBss_004B638C[0];
                 if (max < len) len = max;
                 if (len != 0) {
                     sum = 0;
@@ -279,13 +279,13 @@ s32 Mc_StepReadChecked_3_001D4A78(void)
                         sum += ~D_004B6478[i];
                     }
                     if (sum == D_004B6478[len]) {
-                        if (t->size < (u32)D_004B6390[0]) {
-                            len = t->size - D_004B638C[0];
+                        if (t->size < (u32)gMcStepReadCheckedBss_004B6390[0]) {
+                            len = t->size - gMcStepReadCheckedBss_004B638C[0];
                         } else {
-                            len = D_004B6390[0] - D_004B638C[0];
+                            len = gMcStepReadCheckedBss_004B6390[0] - gMcStepReadCheckedBss_004B638C[0];
                         }
                         if (max < len) len = max;
-                        memcpy((void *)(t->buf + D_004B638C[0]), D_004B6478, len);
+                        memcpy((void *)(t->buf + gMcStepReadCheckedBss_004B638C[0]), D_004B6478, len);
                         if (len < max) {
                             t->step++;
                             break;
@@ -297,7 +297,7 @@ s32 Mc_StepReadChecked_3_001D4A78(void)
                         break;
                     }
                 }
-                D_004B638C[0] += len;
+                gMcStepReadCheckedBss_004B638C[0] += len;
                 t->retry = 0;
                 t->step--;
             }
@@ -308,7 +308,7 @@ s32 Mc_StepReadChecked_3_001D4A78(void)
         t->step++;
         break;
     case 16:
-        if (sceMcClose(D_004B6474[0]) != 0) {
+        if (sceMcClose(gMcStepReadCheckedBss_004B6474[0]) != 0) {
             if (t->retry == 2) {
                 t->cmd = 0;
                 t->err = 0x47;
@@ -337,7 +337,7 @@ s32 Mc_StepReadChecked_3_001D4A78(void)
         }
         break;
     case 100:
-        if (D_004B6474[0] < 0) {
+        if (gMcStepReadCheckedBss_004B6474[0] < 0) {
             t->cmd = 0;
             return -100;
         }
@@ -345,7 +345,7 @@ s32 Mc_StepReadChecked_3_001D4A78(void)
         t->step++;
         break;
     case 101:
-        if (sceMcClose(D_004B6474[0]) != 0) {
+        if (sceMcClose(gMcStepReadCheckedBss_004B6474[0]) != 0) {
             if (t->retry == 2) {
                 t->err = 0x47;
                 return -1;
@@ -367,6 +367,6 @@ s32 Mc_StepReadChecked_3_001D4A78(void)
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): D_004B6474 */
-s32 D_004B6474[0x113] __attribute__((aligned(4)));
+/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): gMcStepReadCheckedBss_004B6474 */
+s32 gMcStepReadCheckedBss_004B6474[0x113] __attribute__((aligned(4)));
 #endif

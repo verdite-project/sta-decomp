@@ -3,25 +3,25 @@
 #include "game/player.h"
 #include "game/data.h"
 typedef struct { u8 pad[0x9C]; s16 id; u8 pad2[0xA]; u8 b0:1; u8 b1:1; } O;
-extern s32 D_00201E94;
-extern s8 *D_002022F0;
+extern s32 gGameMainSbss_00201E94;
+extern s8 *gPlayerSeSbss_002022F0;
 #ifndef NONMATCHING
-extern s32 D_002022F4;
+extern s32 gPlayerSeSbss_002022F4;
 #else
-/* data twins (src/game/data/sbss.c): D_002022F4 */
-static s32 D_002022F4;
+/* data twins (src/game/data/sbss.c): gPlayerSeSbss_002022F4 */
+static s32 gPlayerSeSbss_002022F4;
 #endif
 #ifndef NONMATCHING
-extern s32 D_002022F8;
+extern s32 gPlayerSeSbss_002022F8;
 #else
-/* data twins (src/game/data/sbss.c): D_002022F8 */
-static s32 D_002022F8;
+/* data twins (src/game/data/sbss.c): gPlayerSeSbss_002022F8 */
+static s32 gPlayerSeSbss_002022F8;
 #endif
 /* .bss, from the top down (CodeWarrior writes it in reverse) */
 f32 D_004B5DC0[0x4];
 f32 D_004B5DB0[0x4];
-extern s32 D_002022BC;
-extern u16 D_00317238[];
+extern s32 gPlayerSbss_002022BC;
+extern u16 gMapCommandBss_00317238[];
 void Player_PlayHurtSe_0_001CA2B0(void);
 s32 Player_PlayStepSe_1_001CA2D0(u32 arg0);
 s32 Player_PlayMoveSe_1_001CA4A0(u32 arg0, s32 arg1);
@@ -273,37 +273,37 @@ s32 Player_ThrowItem_0_001CA960(void) {
     f32 v[4];
     u8 f;
 
-    if (D_002022F0 == NULL) {
+    if (gPlayerSeSbss_002022F0 == NULL) {
         return -1;
     }
-    switch (D_002022F4) {
+    switch (gPlayerSeSbss_002022F4) {
     case 1:
-        f = M2C_FIELD(D_002022F0, u8 *, 0xA8);
+        f = M2C_FIELD(gPlayerSeSbss_002022F0, u8 *, 0xA8);
         if (((u64)((s64)f << 0x3E) >> 0x3F) == 0 && (f & 1)) {
-            D_002022F4++;
+            gPlayerSeSbss_002022F4++;
         }
-        D_002022F8 = 0;
+        gPlayerSeSbss_002022F8 = 0;
         break;
     case 2:
-        Player_GetHandMatrix_1_001C0660(m, D_002022F0, 0, D_00201E94);
-        Mtx_Lerp_2_0015EB20(1.0f - (f32)D_002022F8 / 15.0f, D_002022F0, D_002022F0, m);
-        if (D_002022F8 < 0xF) {
-            D_002022F8++;
+        Player_GetHandMatrix_1_001C0660(m, gPlayerSeSbss_002022F0, 0, gGameMainSbss_00201E94);
+        Mtx_Lerp_2_0015EB20(1.0f - (f32)gPlayerSeSbss_002022F8 / 15.0f, gPlayerSeSbss_002022F0, gPlayerSeSbss_002022F0, m);
+        if (gPlayerSeSbss_002022F8 < 0xF) {
+            gPlayerSeSbss_002022F8++;
         } else {
-            D_002022F8 = 0;
-            D_002022F4++;
+            gPlayerSeSbss_002022F8 = 0;
+            gPlayerSeSbss_002022F4++;
         }
         break;
     case 3:
-        ItemObj_GetScale_0_001ADBA0(D_002022F0, v);
+        ItemObj_GetScale_0_001ADBA0(gPlayerSeSbss_002022F0, v);
         Mtx_Compose_2_00173FD0(m, D_004B5DB0, D_004B5DC0, v);
-        Mtx_Lerp_2_0015EB20(1.0f - (f32)D_002022F8 / 15.0f, D_002022F0, D_002022F0, m);
-        D_002022F8++;
-        if (D_002022F8 >= 0xF) {
-            ItemObj_Free_1_001AF4A0(D_002022F0);
-            D_002022F0 = NULL;
-            D_002022F4 = 0;
-            D_002022F8 = 0;
+        Mtx_Lerp_2_0015EB20(1.0f - (f32)gPlayerSeSbss_002022F8 / 15.0f, gPlayerSeSbss_002022F0, gPlayerSeSbss_002022F0, m);
+        gPlayerSeSbss_002022F8++;
+        if (gPlayerSeSbss_002022F8 >= 0xF) {
+            ItemObj_Free_1_001AF4A0(gPlayerSeSbss_002022F0);
+            gPlayerSeSbss_002022F0 = NULL;
+            gPlayerSeSbss_002022F4 = 0;
+            gPlayerSeSbss_002022F8 = 0;
             return 1;
         }
         break;
@@ -330,24 +330,24 @@ s32 Player_HoldItem_0_001CAB20(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     s32 sp80[4];
     s32 sp50[12];
 
-    if (D_002022F0 != NULL) {
-        ItemObj_Free_1_001AF4A0(D_002022F0);
+    if (gPlayerSeSbss_002022F0 != NULL) {
+        ItemObj_Free_1_001AF4A0(gPlayerSeSbss_002022F0);
     }
-    D_002022F0 = ItemObj_SpawnAt_0_001AE620(arg0, arg2, arg3);
-    if (D_002022F0 != NULL) {
-        Player_GetHandMatrix_1_001C0660(sp50, D_002022F0, 1, D_00201E94);
-        sceVu0CopyVector(D_002022F0 + 0x40, sp80);
-        ItemObj_GetMatrix_0_001ADC60(D_002022F0, D_002022F0);
+    gPlayerSeSbss_002022F0 = ItemObj_SpawnAt_0_001AE620(arg0, arg2, arg3);
+    if (gPlayerSeSbss_002022F0 != NULL) {
+        Player_GetHandMatrix_1_001C0660(sp50, gPlayerSeSbss_002022F0, 1, gGameMainSbss_00201E94);
+        sceVu0CopyVector(gPlayerSeSbss_002022F0 + 0x40, sp80);
+        ItemObj_GetMatrix_0_001ADC60(gPlayerSeSbss_002022F0, gPlayerSeSbss_002022F0);
         sceVu0CopyVector(D_004B5DB0, (void *) arg2);
         sceVu0CopyVector(D_004B5DC0, (void *) arg3);
-        { s32 t = D_002022BC; M2C_FIELD(D_002022F0, s32 *, 0x8C) = t;
-        D_002022F4 = 1;
-        D_002022F8 = 0;
+        { s32 t = gPlayerSbss_002022BC; M2C_FIELD(gPlayerSeSbss_002022F0, s32 *, 0x8C) = t;
+        gPlayerSeSbss_002022F4 = 1;
+        gPlayerSeSbss_002022F8 = 0;
         Inventory_ChangeCount_1_001CBED0(arg0, -arg1, 0, t); }
         return 0;
     }
-    D_002022F4 = 0;
-    D_002022F8 = 0;
+    gPlayerSeSbss_002022F4 = 0;
+    gPlayerSeSbss_002022F8 = 0;
     return -1;
 }
 #undef ItemObj_Free_1_001AF4A0
@@ -362,36 +362,36 @@ void Mtx_Lerp_2_0015EB20__as_Player_DropItem_0_001CAC30(f32, O *, O *, void *);
 void Player_GetHandMatrix_1_001C0660__as_Player_DropItem_0_001CAC30(void *, O *, s32, s32);
 #define ItemObj_Free_1_001AF4A0 ItemObj_Free_1_001AF4A0__as_Player_DropItem_0_001CAC30
 void ItemObj_Free_1_001AF4A0__as_Player_DropItem_0_001CAC30(O *);
-#define D_002022F0 D_002022F0__as_Player_DropItem_0_001CAC30
-extern O *D_002022F0__as_Player_DropItem_0_001CAC30;
+#define gPlayerSeSbss_002022F0 gPlayerSeSbss_002022F0__as_Player_DropItem_0_001CAC30
+extern O *gPlayerSeSbss_002022F0__as_Player_DropItem_0_001CAC30;
 
 s32 Player_DropItem_0_001CAC30(void) {
     u8 buf[0x40];
-    if (D_002022F0 == NULL) return -1;
-    switch (D_002022F4) {
+    if (gPlayerSeSbss_002022F0 == NULL) return -1;
+    switch (gPlayerSeSbss_002022F4) {
     case 1:
-        if (!D_002022F0->b1 && D_002022F0->b0) D_002022F4++;
-        D_002022F8 = 0;
+        if (!gPlayerSeSbss_002022F0->b1 && gPlayerSeSbss_002022F0->b0) gPlayerSeSbss_002022F4++;
+        gPlayerSeSbss_002022F8 = 0;
         break;
     case 2:
-        if (D_002022F8 < 0xF) D_002022F8++;
-        Player_GetHandMatrix_1_001C0660(buf, D_002022F0, 0, D_00201E94);
-        Mtx_Lerp_2_0015EB20(1.0f - (f32)D_002022F8 / 15.0f, D_002022F0, D_002022F0, buf);
-        if (D_00317238[0] & 0x2000) {
-            Inventory_Give_0_001CBCD0(D_002022F0->id);
-            D_002022F8 = 0;
-            D_002022F4++;
+        if (gPlayerSeSbss_002022F8 < 0xF) gPlayerSeSbss_002022F8++;
+        Player_GetHandMatrix_1_001C0660(buf, gPlayerSeSbss_002022F0, 0, gGameMainSbss_00201E94);
+        Mtx_Lerp_2_0015EB20(1.0f - (f32)gPlayerSeSbss_002022F8 / 15.0f, gPlayerSeSbss_002022F0, gPlayerSeSbss_002022F0, buf);
+        if (gMapCommandBss_00317238[0] & 0x2000) {
+            Inventory_Give_0_001CBCD0(gPlayerSeSbss_002022F0->id);
+            gPlayerSeSbss_002022F8 = 0;
+            gPlayerSeSbss_002022F4++;
         }
         break;
     case 3:
-        Player_GetHandMatrix_1_001C0660(buf, D_002022F0, 1, D_00201E94);
-        Mtx_Lerp_2_0015EB20(1.0f - (f32)D_002022F8 / 15.0f, D_002022F0, D_002022F0, buf);
-        D_002022F8++;
-        if (D_002022F8 >= 0xF) {
-            ItemObj_Free_1_001AF4A0(D_002022F0);
-            D_002022F0 = NULL;
-            D_002022F4 = 0;
-            D_002022F8 = 0;
+        Player_GetHandMatrix_1_001C0660(buf, gPlayerSeSbss_002022F0, 1, gGameMainSbss_00201E94);
+        Mtx_Lerp_2_0015EB20(1.0f - (f32)gPlayerSeSbss_002022F8 / 15.0f, gPlayerSeSbss_002022F0, gPlayerSeSbss_002022F0, buf);
+        gPlayerSeSbss_002022F8++;
+        if (gPlayerSeSbss_002022F8 >= 0xF) {
+            ItemObj_Free_1_001AF4A0(gPlayerSeSbss_002022F0);
+            gPlayerSeSbss_002022F0 = NULL;
+            gPlayerSeSbss_002022F4 = 0;
+            gPlayerSeSbss_002022F8 = 0;
             return 1;
         }
         break;
@@ -403,7 +403,7 @@ s32 Player_DropItem_0_001CAC30(void) {
 #undef Mtx_Lerp_2_0015EB20
 #undef Player_GetHandMatrix_1_001C0660
 #undef ItemObj_Free_1_001AF4A0
-#undef D_002022F0
+#undef gPlayerSeSbss_002022F0
 
 /* Player_PlaceItem_0_001CADF0 */
 #define ItemObj_SpawnAt_0_001AE620 ItemObj_SpawnAt_0_001AE620__as_Player_PlaceItem_0_001CADF0
@@ -412,18 +412,18 @@ s8 *ItemObj_SpawnAt_0_001AE620__as_Player_PlaceItem_0_001CADF0(s32, M2C_UNK, M2C
 M2C_UNK ItemObj_Free_1_001AF4A0__as_Player_PlaceItem_0_001CADF0(s8 *);
 
 s32 Player_PlaceItem_0_001CADF0(s32 arg0, M2C_UNK arg1, M2C_UNK arg2) {
-    if (D_002022F0 != NULL) {
-        ItemObj_Free_1_001AF4A0(D_002022F0);
+    if (gPlayerSeSbss_002022F0 != NULL) {
+        ItemObj_Free_1_001AF4A0(gPlayerSeSbss_002022F0);
     }
-    D_002022F0 = ItemObj_SpawnAt_0_001AE620(arg0, arg1, arg2);
-    if (D_002022F0 != NULL) {
-        M2C_FIELD(D_002022F0, s32 *, 0x8C) = (s32) D_002022BC;
-        D_002022F4 = 1;
-        D_002022F8 = 0;
+    gPlayerSeSbss_002022F0 = ItemObj_SpawnAt_0_001AE620(arg0, arg1, arg2);
+    if (gPlayerSeSbss_002022F0 != NULL) {
+        M2C_FIELD(gPlayerSeSbss_002022F0, s32 *, 0x8C) = (s32) gPlayerSbss_002022BC;
+        gPlayerSeSbss_002022F4 = 1;
+        gPlayerSeSbss_002022F8 = 0;
         return 0;
     }
-    D_002022F4 = 0;
-    D_002022F8 = 0;
+    gPlayerSeSbss_002022F4 = 0;
+    gPlayerSeSbss_002022F8 = 0;
     return -1;
 }
 #undef ItemObj_SpawnAt_0_001AE620
@@ -434,31 +434,31 @@ s32 Player_PlaceItem_0_001CADF0(s32 arg0, M2C_UNK arg1, M2C_UNK arg2) {
 int ItemObj_Free_1_001AF4A0__as_Player_ReleaseHeldItem_0_001CAE90();
 #define sceVu0CopyVector sceVu0CopyVector__as_Player_ReleaseHeldItem_0_001CAE90
 void sceVu0CopyVector__as_Player_ReleaseHeldItem_0_001CAE90(s32 *, s32 *);
-#define D_002022F0 D_002022F0__as_Player_ReleaseHeldItem_0_001CAE90
-extern void *D_002022F0__as_Player_ReleaseHeldItem_0_001CAE90;
+#define gPlayerSeSbss_002022F0 gPlayerSeSbss_002022F0__as_Player_ReleaseHeldItem_0_001CAE90
+extern void *gPlayerSeSbss_002022F0__as_Player_ReleaseHeldItem_0_001CAE90;
 #define D_004B5DB0 D_004B5DB0__as_Player_ReleaseHeldItem_0_001CAE90
 extern s32 D_004B5DB0__as_Player_ReleaseHeldItem_0_001CAE90[];
 #define D_004B5DC0 D_004B5DC0__as_Player_ReleaseHeldItem_0_001CAE90
 extern s32 D_004B5DC0__as_Player_ReleaseHeldItem_0_001CAE90[];
 
 void Player_ReleaseHeldItem_0_001CAE90(void) {
-    if (D_002022F0 != NULL) {
-        ItemObj_Free_1_001AF4A0(D_002022F0);
+    if (gPlayerSeSbss_002022F0 != NULL) {
+        ItemObj_Free_1_001AF4A0(gPlayerSeSbss_002022F0);
     }
-    D_002022F0 = NULL;
-    D_002022F4 = 0;
-    D_002022F8 = 0;
+    gPlayerSeSbss_002022F0 = NULL;
+    gPlayerSeSbss_002022F4 = 0;
+    gPlayerSeSbss_002022F8 = 0;
     sceVu0CopyVector(D_004B5DB0, &gZeroVec_003139A0);
     sceVu0CopyVector(D_004B5DC0, &gZeroVec_003139A0);
 }
 #undef sceVu0CopyVector
-#undef D_002022F0
+#undef gPlayerSeSbss_002022F0
 #undef D_004B5DB0
 #undef D_004B5DC0
 #undef ItemObj_Free_1_001AF4A0
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/sbss.c): D_002022F0 */
-s8 *D_002022F0;
+/* data twins (src/game/data/sbss.c): gPlayerSeSbss_002022F0 */
+s8 *gPlayerSeSbss_002022F0;
 #endif

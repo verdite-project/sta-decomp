@@ -49,7 +49,7 @@ Function names point at examples in `src/`.
 - `x > 0xFF` (not `>= 0x100`) gives slti $at+bnez for early-return range checks; `*++s` keeps separate addiu+lhu 0 instead of folded offsets.
 - Constants with bit31 set built as `ori; dsll 16; ori` (zero-extended) mean the parameter is 64-bit (u64/s64), not u32.
 - Each loop with its own s-reg assignment wants its own counter/pointer variables (declared in the order of the regs, highest first); reusing one set across loops shares regs.
-- Shared-struct globals: splat names each field address (D_004A1058...), but one struct extern at the base matches too; table accesses folded as `lbu 0x18(base+idx*4)` reveal the base.
+- Shared-struct globals: splat names each field address (gOptionBss_004A1058...), but one struct extern at the base matches too; table accesses folded as `lbu 0x18(base+idx*4)` reveal the base.
 - A bitfield's assigned value is reused without reloading when written as an expression: `o->x = (f32)(u32)(o->b1 = 0);` (separate statements reload the byte).
 - When all s-regs are used, params spill to the stack at entry: a u8 param spills with sb, an int with sw; the callee's prototype param types (u8) decide lbu reloads at the call instead of hoisted andi.
 - if/else assigning two constants to a local union becomes movz (select); storing via `*(u32 *)&col = K;` in each branch keeps the branches and separate sw.
@@ -189,10 +189,10 @@ keeps its local name as `typedef Canon Local;` (e.g. `ResNode`, `Bits8`, `UiArg`
 Globals accessed at many offsets across unmatched code, worth a shared header in `include/` (like `actor.h`):
 
 - Done: `gPlayerData_00201DC0` is `PlayerData *` (include/game/save.h); `gMcState_004B63B8` is `McState`, `gGsText_00201E5C` `GsTextState *`, `gGsTextStyle_00201E60` `GsTextStyle *` (include/game/ee.h); `gZeroVec_003139A0` is `Vec`. Units still on their own view: `tools/struct_views.py show GLOBAL`; move them with `tools/struct_views.py migrate GLOBAL TYPE`.
-- Done: `D_004AC630`, `D_004AC970`, `D_004AE370` (0xD0-byte objects) are `Obj3D` in `include/obj3d.h`. Several matched files still carry local partial copies; migrate them when touched.
-- `D_0022CBC0`: 63 elements of 0x80 bytes.
-- `D_003407E0`: elements of 0xED0 bytes.
-- `D_0022F080`: struct `{ off, state, n, left, buf }` (SndBank_IopTransferB_0_0012F0F0 near-miss).
+- Done: `gItemObjectSpawnBss_004AC630`, `gItemObjectBss_004AC970`, `gItemObjectBss_004AE370` (0xD0-byte objects) are `Obj3D` in `include/obj3d.h`. Several matched files still carry local partial copies; migrate them when touched.
+- `gSoundBankLoadBss_0022CBC0`: 63 elements of 0x80 bytes.
+- `gSfxSystemBss_003407E0`: elements of 0xED0 bytes.
+- `gSoundBankLoadBss_0022F080`: struct `{ off, state, n, left, buf }` (SndBank_IopTransferB_0_0012F0F0 near-miss).
 - `Actor->unk518`: sub-object; +0x180, +0x190 used.
 
 ## Compiler builds

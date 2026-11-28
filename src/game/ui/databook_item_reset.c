@@ -34,140 +34,140 @@ typedef struct { u8 pad[0x54]; u8 *x54; } P_DbMapProc_DrawInfo_1_00198570;
 typedef struct { u8 pad[0xE]; u8 xE; } G;
 typedef struct { s32 x0; s32 x4; u8 x8; u8 pad9[5]; u8 xE; } M;
 typedef struct { s32 x0; u32 n; } P_DbMap_ResetLayout_0_00198D80;
-extern Q2 D_001F2F40;
-extern s32 D_00201D3C;
-extern u32 D_00202190;
+extern Q2 gDatabookItemResetData_001F2F40;
+extern s32 gDatabookItemDrawSdata_00201D3C;
+extern u32 gDatabookItemResetSbss_00202190;
 #ifndef NONMATCHING
-extern char D_001FD388[];
+extern char gDatabookItemResetRodata_001FD388[];
 #else
-/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD388 */
-static char D_001FD388[0x10] __attribute__((aligned(8))) = { -0x7f, 0x48, -0x7f, 0x48, -0x7f, 0x48, -0x7f, 0x48, 0, 0, 0, 0, 0, 0, 0, 0 };
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookItemResetRodata_001FD388 */
+static char gDatabookItemResetRodata_001FD388[0x10] __attribute__((aligned(8))) = { -0x7f, 0x48, -0x7f, 0x48, -0x7f, 0x48, -0x7f, 0x48, 0, 0, 0, 0, 0, 0, 0, 0 };
 #endif
-extern s32 *D_00201D3C__as_DbItem_LoadEntry_0_00197F90;
+extern s32 *gDatabookItemDrawSdata_00201D3C__as_DbItem_LoadEntry_0_00197F90;
 #ifndef NONMATCHING
-extern f32 D_00201D44;
+extern f32 gDatabookItemResetSdata_00201D44;
 #else
-/* data twins (src/game/data/sdata.c): D_00201D44 */
-static f32 D_00201D44 = -2.99f;
-#endif
-#ifndef NONMATCHING
-extern s32 D_002021A8;
-#else
-/* data twins (src/game/data/sbss.c): D_002021A8 */
-static s32 D_002021A8;
+/* data twins (src/game/data/sdata.c): gDatabookItemResetSdata_00201D44 */
+static f32 gDatabookItemResetSdata_00201D44 = -2.99f;
 #endif
 #ifndef NONMATCHING
-extern s32 D_004A1450[];
+extern s32 gDatabookItemResetSbss_002021A8;
 #else
-/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A1450 */
-static s32 D_004A1450[0xc8];
+/* data twins (src/game/data/sbss.c): gDatabookItemResetSbss_002021A8 */
+static s32 gDatabookItemResetSbss_002021A8;
 #endif
 #ifndef NONMATCHING
-extern s32 D_004A18B0[];
+extern s32 gDatabookItemResetBss_004A1450[];
 #else
-/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A18B0 */
-static s32 D_004A18B0[0x2];
-#endif
-extern S D_001F2FE0 __attribute__((aligned(16)));
-#ifndef NONMATCHING
-extern u32 D_002021A4;
-#else
-/* data twins (src/game/data/sbss.c): D_002021A4 */
-static u32 D_002021A4;
+/* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemResetBss_004A1450 */
+static s32 gDatabookItemResetBss_004A1450[0xc8];
 #endif
 #ifndef NONMATCHING
-extern s8 D_001FD398[];
+extern s32 gDatabookItemResetBss_004A18B0[];
 #else
-/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD398 */
-static s8 D_001FD398[0x8] = { 0x25, 0x64, 0x20, -0x7f, -0x6d, 0, 0, 0 };
+/* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemResetBss_004A18B0 */
+static s32 gDatabookItemResetBss_004A18B0[0x2];
+#endif
+extern S gDatabookItemResetData_001F2FE0 __attribute__((aligned(16)));
+#ifndef NONMATCHING
+extern u32 gDatabookItemResetSbss_002021A4;
+#else
+/* data twins (src/game/data/sbss.c): gDatabookItemResetSbss_002021A4 */
+static u32 gDatabookItemResetSbss_002021A4;
 #endif
 #ifndef NONMATCHING
-extern s8 D_001FD3A0[];
+extern s8 gDatabookItemResetRodata_001FD398[];
 #else
-/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD3A0 */
-static s8 D_001FD3A0[0x10] __attribute__((aligned(8))) = { -0x7f, 0x40, -0x7f, 0x40, -0x6d, 0x47, -0x61, 0x72, -0x6a, -0x3b, -0x69, -0x5a, 0, 0, 0, 0 };
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookItemResetRodata_001FD398 */
+static s8 gDatabookItemResetRodata_001FD398[0x8] = { 0x25, 0x64, 0x20, -0x7f, -0x6d, 0, 0, 0 };
 #endif
 #ifndef NONMATCHING
-extern s8 D_001FD3B0[];
+extern s8 gDatabookItemResetRodata_001FD3A0[];
 #else
-/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD3B0 */
-static s8 D_001FD3B0[0x10] __attribute__((aligned(8))) = { 0x20, 0x20, -0x7f, 0x48, -0x7f, 0x48, -0x7f, 0x48, -0x7f, 0x48, 0, 0, 0, 0, 0, 0 };
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookItemResetRodata_001FD3A0 */
+static s8 gDatabookItemResetRodata_001FD3A0[0x10] __attribute__((aligned(8))) = { -0x7f, 0x40, -0x7f, 0x40, -0x6d, 0x47, -0x61, 0x72, -0x6a, -0x3b, -0x69, -0x5a, 0, 0, 0, 0 };
 #endif
 #ifndef NONMATCHING
-extern s8 D_001FD3C0[];
+extern s8 gDatabookItemResetRodata_001FD3B0[];
 #else
-/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD3C0 */
-static s8 D_001FD3C0[0x8] = { 0x2d, 0x2d, 0x2d, 0x20, -0x7f, -0x6d, 0, 0 };
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookItemResetRodata_001FD3B0 */
+static s8 gDatabookItemResetRodata_001FD3B0[0x10] __attribute__((aligned(8))) = { 0x20, 0x20, -0x7f, 0x48, -0x7f, 0x48, -0x7f, 0x48, -0x7f, 0x48, 0, 0, 0, 0, 0, 0 };
 #endif
 #ifndef NONMATCHING
-extern s8 D_001FD3C8[];
+extern s8 gDatabookItemResetRodata_001FD3C0[];
 #else
-/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD3C8 */
-static s8 D_001FD3C8[0x8] = { 0x25, 0x33, 0x64, 0x20, -0x7f, -0x6d, 0, 0 };
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookItemResetRodata_001FD3C0 */
+static s8 gDatabookItemResetRodata_001FD3C0[0x8] = { 0x2d, 0x2d, 0x2d, 0x20, -0x7f, -0x6d, 0, 0 };
 #endif
 #ifndef NONMATCHING
-extern s8 D_001FD3D0[];
+extern s8 gDatabookItemResetRodata_001FD3C8[];
 #else
-/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD3D0 */
-static s8 D_001FD3D0[0x10] __attribute__((aligned(8))) = { -0x7f, 0x40, -0x73, -0x3b, -0x73, -0x7e, -0x61, 0x72, -0x6a, -0x3b, -0x69, -0x5a, 0, 0, 0, 0 };
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookItemResetRodata_001FD3C8 */
+static s8 gDatabookItemResetRodata_001FD3C8[0x8] = { 0x25, 0x33, 0x64, 0x20, -0x7f, -0x6d, 0, 0 };
 #endif
 #ifndef NONMATCHING
-extern s8 D_001FD3E0[];
+extern s8 gDatabookItemResetRodata_001FD3D0[];
 #else
-/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD3E0 */
-static s8 D_001FD3E0[0x8] = { 0x20, 0x2d, 0x2d, 0x2d, 0x20, -0x7f, -0x6d, 0 };
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookItemResetRodata_001FD3D0 */
+static s8 gDatabookItemResetRodata_001FD3D0[0x10] __attribute__((aligned(8))) = { -0x7f, 0x40, -0x73, -0x3b, -0x73, -0x7e, -0x61, 0x72, -0x6a, -0x3b, -0x69, -0x5a, 0, 0, 0, 0 };
 #endif
 #ifndef NONMATCHING
-extern s8 D_001FD3E8[];
+extern s8 gDatabookItemResetRodata_001FD3E0[];
 #else
-/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD3E8 */
-static s8 D_001FD3E8[0x8] = { 0x20, 0x25, 0x33, 0x64, 0x20, -0x7f, -0x6d, 0 };
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookItemResetRodata_001FD3E0 */
+static s8 gDatabookItemResetRodata_001FD3E0[0x8] = { 0x20, 0x2d, 0x2d, 0x2d, 0x20, -0x7f, -0x6d, 0 };
 #endif
 #ifndef NONMATCHING
-extern s8 D_004A1770[];
+extern s8 gDatabookItemResetRodata_001FD3E8[];
 #else
-/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A1770 */
-static s8 D_004A1770[0x100];
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookItemResetRodata_001FD3E8 */
+static s8 gDatabookItemResetRodata_001FD3E8[0x8] = { 0x20, 0x25, 0x33, 0x64, 0x20, -0x7f, -0x6d, 0 };
 #endif
 #ifndef NONMATCHING
-extern s8 D_004A1870[];
+extern s8 gDatabookItemResetBss_004A1770[];
 #else
-/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A1870 */
-static s8 D_004A1870[0x14];
+/* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemResetBss_004A1770 */
+static s8 gDatabookItemResetBss_004A1770[0x100];
 #endif
-extern f32 D_004A1884[];
+#ifndef NONMATCHING
+extern s8 gDatabookItemResetBss_004A1870[];
+#else
+/* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemResetBss_004A1870 */
+static s8 gDatabookItemResetBss_004A1870[0x14];
+#endif
+extern f32 gDatabookItemResetBss_004A1884[];
 extern f32 D_004A1888[];
 #ifndef NONMATCHING
-extern f32 D_004A189C[];
+extern f32 gDatabookItemResetBss_004A189C[];
 #else
-/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A189C */
-static f32 D_004A189C[0x1];
+/* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemResetBss_004A189C */
+static f32 gDatabookItemResetBss_004A189C[0x1];
 #endif
 #ifndef NONMATCHING
-extern f32 D_004A18A0[];
+extern f32 gDatabookItemResetBss_004A18A0[];
 #else
-/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A18A0 */
-static f32 D_004A18A0[0x3];
+/* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemResetBss_004A18A0 */
+static f32 gDatabookItemResetBss_004A18A0[0x3];
 #endif
 #ifndef NONMATCHING
-extern u32 D_004A18AC[];
+extern u32 gDatabookItemResetBss_004A18AC[];
 #else
-/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A18AC */
-static u32 D_004A18AC[0x1];
+/* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemResetBss_004A18AC */
+static u32 gDatabookItemResetBss_004A18AC[0x1];
 #endif
 #ifndef NONMATCHING
-extern f32 D_004A18B8[];
+extern f32 gDatabookItemResetBss_004A18B8[];
 #else
-/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A18B8 */
-static f32 D_004A18B8[0x2];
+/* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemResetBss_004A18B8 */
+static f32 gDatabookItemResetBss_004A18B8[0x2];
 #endif
-extern Q2 D_001F2FC0;
-extern u32 D_002022B8;
+extern Q2 gDatabookItemResetData_001F2FC0;
+extern u32 gSoundSbss_002022B8;
 #ifndef NONMATCHING
-extern s8 D_001FD3F0[];
+extern s8 gDatabookItemResetRodata_001FD3F0[];
 #else
-/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD3F0 */
-static s8 D_001FD3F0[0x8] = "%s\000\000\000\000\000\000";
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDatabookItemResetRodata_001FD3F0 */
+static s8 gDatabookItemResetRodata_001FD3F0[0x8] = "%s\000\000\000\000\000\000";
 #endif
 char* DbItem_GetListName_1_00197F30(s32 i);
 void DbItemProc_Pos_0_00198100(s32 arg0, void *arg1, void *arg2);
@@ -250,18 +250,18 @@ void DbItem_ResetLayout_0_00197DD0(void) {
                 cnt++;
             }
         }
-        D_00202190 = (u32)(hit * 100) / cnt;
-        q = D_001F2F40;
+        gDatabookItemResetSbss_00202190 = (u32)(hit * 100) / cnt;
+        q = gDatabookItemResetData_001F2F40;
         a.fn = DbItem_GetListName_1_00197F30__as_DbItem_ResetLayout_0_00197DD0;
         a.f = -3.0f;
         a.cb = DbItemProc_Pos_0_00198100__as_DbItem_ResetLayout_0_00197DD0_;
         a.a = 0;
         a.b = 0;
-        a.p = D_00201D3C;
-        a.n = D_00202198;
-        UiAnim_SetColor_0_0017F890(D_00201D38, &q, &a);
-        UiAnim_SetVisible_1_0017F7C0(D_00201D38, 1, 1);
-        UiAnim_SetTarget_1_0017F470__as_DbItem_ResetLayout_0_00197DD0__(D_004A1430[0], D_00201D38, 1);
+        a.p = gDatabookItemDrawSdata_00201D3C;
+        a.n = gDatabookItemDrawSbss_00202198;
+        UiAnim_SetColor_0_0017F890(gDatabookItemDrawSdata_00201D38, &q, &a);
+        UiAnim_SetVisible_1_0017F7C0(gDatabookItemDrawSdata_00201D38, 1, 1);
+        UiAnim_SetTarget_1_0017F470__as_DbItem_ResetLayout_0_00197DD0__(gDatabookItemDrawBss_004A1430[0], gDatabookItemDrawSdata_00201D38, 1);
     }
 }
 
@@ -269,10 +269,10 @@ void DbItem_ResetLayout_0_00197DD0(void) {
 char *DbItem_GetListName_1_00197F30(s32 i)
 {
     if (i < 0)
-        return D_001FD388;
+        return gDatabookItemResetRodata_001FD388;
     if (Save_TestItemBit_1_001A9B40(i))
         return DbItem_Find_1_0019D510(i);
-    return D_001FD388;
+    return gDatabookItemResetRodata_001FD388;
 }
 
 /* DbItem_LoadEntry_0_00197F90 */
@@ -285,8 +285,8 @@ void DbItem_LoadEntry_0_00197F90(s32 a0) {
     s32 v;
 
     base = Item_GetTable_1_001AFC90();
-    D_00202198 = 0;
-    memset(D_00201D3C__as_DbItem_LoadEntry_0_00197F90, -1, 4);
+    gDatabookItemDrawSbss_00202198 = 0;
+    memset(gDatabookItemDrawSdata_00201D3C__as_DbItem_LoadEntry_0_00197F90, -1, 4);
     for (i = 100; i < 0x400; i++) {
         Inventory_GetEntry_1_001CC3F0(ItemSort_GetCount_0_00195BE0(i));
         e = base + ItemSort_GetCount_0_00195BE0(i) * 0x90;
@@ -299,11 +299,11 @@ void DbItem_LoadEntry_0_00197F90(s32 a0) {
                     r = Save_TestItemBit_1_001A9B40(v);
                 }
                 if (r != 0) {
-                    D_00201D3C__as_DbItem_LoadEntry_0_00197F90[D_00202198] = v;
+                    gDatabookItemDrawSdata_00201D3C__as_DbItem_LoadEntry_0_00197F90[gDatabookItemDrawSbss_00202198] = v;
                 } else {
-                    D_00201D3C__as_DbItem_LoadEntry_0_00197F90[D_00202198] = -1;
+                    gDatabookItemDrawSdata_00201D3C__as_DbItem_LoadEntry_0_00197F90[gDatabookItemDrawSbss_00202198] = -1;
                 }
-                D_00202198++;
+                gDatabookItemDrawSbss_00202198++;
             }
         }
     }
@@ -323,15 +323,15 @@ void DbMap_Draw_0_00198160(u8 *arg0) {
     Col_DbItem_ResetLayout_0_00197DD0 c;
     s32 s;
 
-    s = D_004A1450[D_004A18B0[0]];
+    s = gDatabookItemResetBss_004A1450[gDatabookItemResetBss_004A18B0[0]];
     Menu_SetFlags_0_0018A310(0xE);
     if (arg0[8] == 0x19) {
-        D_00201D44 = Approachf_3_00187770(D_00201D44, -0.02f, 3.5f);
+        gDatabookItemResetSdata_00201D44 = Approachf_3_00187770(gDatabookItemResetSdata_00201D44, -0.02f, 3.5f);
     } else {
-        D_00201D44 = Approachf_3_00187770(D_00201D44, -2.99f, 3.5f);
+        gDatabookItemResetSdata_00201D44 = Approachf_3_00187770(gDatabookItemResetSdata_00201D44, -2.99f, 3.5f);
     }
-    if (!(D_00201D44 <= -2.99f)) {
-        DbMap_DrawRing_0_001982A0(s, D_00201D44);
+    if (!(gDatabookItemResetSdata_00201D44 <= -2.99f)) {
+        DbMap_DrawRing_0_001982A0(s, gDatabookItemResetSdata_00201D44);
     }
     if (s >= 0) {
         s32 h = DbMap_GetName_0_00195A30(s);
@@ -339,7 +339,7 @@ void DbMap_Draw_0_00198160(u8 *arg0) {
         Text_Draw_2_001875C0(h, 2, c, 622.0f, 17.0f, 1.0f);
     }
     UiAnim_UpdateAll_1_0017F5C0();
-    Menu_DrawFrame_0_00185390(D_00201D44, 1, D_002021A8, D_004A18B0[0]);
+    Menu_DrawFrame_0_00185390(gDatabookItemResetSdata_00201D44, 1, gDatabookItemResetSbss_002021A8, gDatabookItemResetBss_004A18B0[0]);
 }
 
 /* DbMap_DrawRing_0_001982A0 */
@@ -410,8 +410,8 @@ void DbMapProc_DrawInfo_1_00198570(A *o, s32 mode, u32 kind) {
     u32 c;
     B *b;
 
-    s = D_001F2FE0;
-    n = D_004A1450[D_004A18B0[0]] * 10;
+    s = gDatabookItemResetData_001F2FE0;
+    n = gDatabookItemResetBss_004A1450[gDatabookItemResetBss_004A18B0[0]] * 10;
     {
         s8 buf[0x100] = {0};
 
@@ -436,32 +436,32 @@ void DbMapProc_DrawInfo_1_00198570(A *o, s32 mode, u32 kind) {
         }
         if (kind == 501) {
             col.w = 0x80808080;
-            sprintf(buf, D_001FD398, D_002021A4);
+            sprintf(buf, gDatabookItemResetRodata_001FD398, gDatabookItemResetSbss_002021A4);
             Text_Draw_2_001875C0__as_DbMapProc_DrawInfo_1_00198570(o->x38, buf, o->x3C, 0.9f, 2, col.w);
         }
         if (mode == 100) {
             if (kind == 400) {
                 col.w = 0x80808080;
-                strcpy(buf, D_001FD3A0);
+                strcpy(buf, gDatabookItemResetRodata_001FD3A0);
                 Text_Draw_2_001875C0__as_DbMapProc_DrawInfo_1_00198570(o->x38, buf, o->x3C, 0.9f, 0, col.w);
             }
             if (kind == 401) {
                 col.w = 0x80808080;
                 if (n < 0) {
-                    strcpy(D_004A1770, D_001FD3B0);
-                    strcpy(buf, D_001FD3B0);
+                    strcpy(gDatabookItemResetBss_004A1770, gDatabookItemResetRodata_001FD3B0);
+                    strcpy(buf, gDatabookItemResetRodata_001FD3B0);
                 } else {
                     k = n / 10;
                     if (any(n / 10)) {
                         c = MapState_GetBestKillRate_0_001AA090(k * 10);
                         f = 100.0f * (u2f(c) / (f32)DbMap_GetKillRate_0_001959E0(k));
                         if (DbMap_GetKillRate_0_001959E0(k) == 0) {
-                            sprintf(buf, D_001FD3C0, (s32)f);
+                            sprintf(buf, gDatabookItemResetRodata_001FD3C0, (s32)f);
                         } else {
-                            sprintf(buf, D_001FD3C8, (s32)f);
+                            sprintf(buf, gDatabookItemResetRodata_001FD3C8, (s32)f);
                         }
                     } else {
-                        strcpy(buf, D_001FD3B0);
+                        strcpy(buf, gDatabookItemResetRodata_001FD3B0);
                     }
                 }
                 Text_Draw_2_001875C0__as_DbMapProc_DrawInfo_1_00198570(o->x38, buf, o->x3C, 0.9f, 0, col.w);
@@ -470,38 +470,38 @@ void DbMapProc_DrawInfo_1_00198570(A *o, s32 mode, u32 kind) {
         if (PlayerData_Get_2_001C9BA0()->xE != 0 && mode == 200) {
             if (kind == 400) {
                 col.w = 0x80808080;
-                strcpy(buf, D_001FD3D0);
+                strcpy(buf, gDatabookItemResetRodata_001FD3D0);
                 Text_Draw_2_001875C0__as_DbMapProc_DrawInfo_1_00198570(o->x38, buf, o->x3C, 0.9f, 0, col.w);
             }
             if (kind == 401) {
                 col.w = 0x80808080;
                 if (n < 0) {
-                    strcpy(D_004A1770, D_001FD3B0);
-                    strcpy(buf, D_001FD3B0);
+                    strcpy(gDatabookItemResetBss_004A1770, gDatabookItemResetRodata_001FD3B0);
+                    strcpy(buf, gDatabookItemResetRodata_001FD3B0);
                 } else {
                     k = n / 10;
                     if (any(n / 10)) {
                         c = MapState_GetKillCount_0_001A9FF0(k * 10);
                         f = 100.0f * (u2f(c) / (f32)DbMap_GetKillRate_0_001959E0(k));
                         if (DbMap_GetKillRate_0_001959E0(k) == 0) {
-                            sprintf(buf, D_001FD3E0, (s32)f);
+                            sprintf(buf, gDatabookItemResetRodata_001FD3E0, (s32)f);
                         } else {
-                            sprintf(buf, D_001FD3E8, (s32)f);
+                            sprintf(buf, gDatabookItemResetRodata_001FD3E8, (s32)f);
                         }
                     } else {
-                        strcpy(buf, D_001FD3B0);
+                        strcpy(buf, gDatabookItemResetRodata_001FD3B0);
                     }
                 }
                 Text_Draw_2_001875C0__as_DbMapProc_DrawInfo_1_00198570(o->x38, buf, o->x3C, 0.9f, 0, col.w);
             }
         }
         if (kind == 10001) {
-            D_004A189C[0] = o->x38;
-            D_004A18A0[0] = o->x3C;
-            D_004A1884[0] = 1.25f;
-            D_004A18AC[0] = 0x80FFFFFF;
+            gDatabookItemResetBss_004A189C[0] = o->x38;
+            gDatabookItemResetBss_004A18A0[0] = o->x3C;
+            gDatabookItemResetBss_004A1884[0] = 1.25f;
+            gDatabookItemResetBss_004A18AC[0] = 0x80FFFFFF;
             D_004A1888[0] = 1.25f;
-            Ui_DrawWindow_0_00183650(D_004A1870);
+            Ui_DrawWindow_0_00183650(gDatabookItemResetBss_004A1870);
         }
     }
 }
@@ -518,12 +518,12 @@ void DbMap_Update_0_00198BE0(M *m) {
     s32 old;
     switch (m->x0) {
     case 0x19:
-        D_004A18B0[0] = 0;
+        gDatabookItemResetBss_004A18B0[0] = 0;
         DbMap_BuildList_1_00199000();
         DbMap_ResetLayout_0_00198D80();
         break;
     case 0x16:
-        old = D_004A18B0[0];
+        old = gDatabookItemResetBss_004A18B0[0];
         sel = old;
         if (m->x4 & 0x4000) {
             Ui_SetOffset_0_001803D0(-2, -2);
@@ -539,20 +539,20 @@ void DbMap_Update_0_00198BE0(M *m) {
         } else if (m->x4 & 0x40) {
             sel = old + 1;
         }
-        if (D_002021A8 != 0) {
-            sel = (sel + D_002021A8) % D_002021A8;
+        if (gDatabookItemResetSbss_002021A8 != 0) {
+            sel = (sel + gDatabookItemResetSbss_002021A8) % gDatabookItemResetSbss_002021A8;
         }
         if (UiAnim_SetTarget_1_0017F470(old, 0, 0)) {
-            if (D_004A18B0[0] != sel) {
+            if (gDatabookItemResetBss_004A18B0[0] != sel) {
                 Snd_PlaySe_3_00131600(0x66, m->xE);
             }
-            D_004A18B0[0] = sel;
+            gDatabookItemResetBss_004A18B0[0] = sel;
         } else {
-            D_004A18B8[0] = 10.0f;
+            gDatabookItemResetBss_004A18B8[0] = 10.0f;
         }
         break;
     }
-    Ui_LoadAreaImage_3_00183970(D_004A1450[D_004A18B0[0]] * 10);
+    Ui_LoadAreaImage_3_00183970(gDatabookItemResetBss_004A1450[gDatabookItemResetBss_004A18B0[0]] * 10);
 }
 
 /* DbMap_ResetLayout_0_00198D80 */
@@ -566,7 +566,7 @@ void DbMap_ResetLayout_0_00198D80(void) {
     s32 cnt;
     s32 found;
 
-    Ui_SetOffset_0_001803D0(D_002022B8 / 10, -2);
+    Ui_SetOffset_0_001803D0(gSoundSbss_002022B8 / 10, -2);
     p = DbMap_GetCount_1_001958E0();
     if (p != 0) {
         cnt = 0;
@@ -581,18 +581,18 @@ void DbMap_ResetLayout_0_00198D80(void) {
                 cnt++;
             }
         }
-        D_002021A4 = (u32)(cnt * 100) / p->n;
-        q = D_001F2FC0;
-        a.p = (s32)D_004A1450;
+        gDatabookItemResetSbss_002021A4 = (u32)(cnt * 100) / p->n;
+        q = gDatabookItemResetData_001F2FC0;
+        a.p = (s32)gDatabookItemResetBss_004A1450;
         a.fn = DbMap_GetListName_1_00198F30;
         a.f = -3.0f;
         a.cb = DbMapProc_Pos_0_00199110;
         a.a = 0;
         a.b = 0;
-        a.n = D_002021A8;
+        a.n = gDatabookItemResetSbss_002021A8;
         UiAnim_SetColor_0_0017F890(0, &q, &a);
         UiAnim_SetVisible_1_0017F7C0(0, 1, 1);
-        UiAnim_SetTarget_1_0017F470(D_004A18B0[0], 0, 1);
+        UiAnim_SetTarget_1_0017F470(gDatabookItemResetBss_004A18B0[0], 0, 1);
     }
 }
 #undef DbMapProc_DrawInfo_1_00198570
@@ -605,7 +605,7 @@ s8 *DbMap_GetListName_1_00198F30(s32 a) {
     s32 found;
     s32 k;
     if (a < 0) {
-        return D_001FD3B0;
+        return gDatabookItemResetRodata_001FD3B0;
     }
     found = 0;
     for (i = 0, k = a * 10; i < 10; i++, k++) {
@@ -614,10 +614,10 @@ s8 *DbMap_GetListName_1_00198F30(s32 a) {
         }
     }
     if (found) {
-        sprintf(D_004A1770, D_001FD3F0, DbMap_GetLocationName_1_00195AA0(a));
-        return D_004A1770;
+        sprintf(gDatabookItemResetBss_004A1770, gDatabookItemResetRodata_001FD3F0, DbMap_GetLocationName_1_00195AA0(a));
+        return gDatabookItemResetBss_004A1770;
     }
-    return D_001FD3B0;
+    return gDatabookItemResetRodata_001FD3B0;
 }
 
 /* DbMap_BuildList_1_00199000 */
@@ -631,7 +631,7 @@ void DbMap_BuildList_1_00199000(void) {
 
     p = DbMap_GetCount_1_001958E0__as_DbMap_BuildList_1_00199000();
     if (p != 0) {
-        D_002021A8 = 0;
+        gDatabookItemResetSbss_002021A8 = 0;
         for (i = 1; i < (u32)(p[1] + 1); i++) {
             found = 0;
             for (j = 0; j < 10; j++) {
@@ -640,11 +640,11 @@ void DbMap_BuildList_1_00199000(void) {
                 }
             }
             if (found != 0) {
-                D_004A1450[D_002021A8] = i;
+                gDatabookItemResetBss_004A1450[gDatabookItemResetSbss_002021A8] = i;
             } else {
-                D_004A1450[D_002021A8] = -1;
+                gDatabookItemResetBss_004A1450[gDatabookItemResetSbss_002021A8] = -1;
             }
-            D_002021A8++;
+            gDatabookItemResetSbss_002021A8++;
         }
     }
 }
@@ -660,39 +660,39 @@ void DbMapProc_Pos_0_00199110(s32 arg0, void *arg1, void *arg2) {
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/sbss.c): D_00202190 */
-u32 D_00202190;
+/* data twins (src/game/data/sbss.c): gDatabookItemResetSbss_00202190 */
+u32 gDatabookItemResetSbss_00202190;
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/load_menu_bss_004A1120.c): D_004A1884 */
-f32 D_004A1884[0x6] __attribute__((aligned(4)));
+/* data twins (src/game/data/load_menu_bss_004A1120.c): gDatabookItemResetBss_004A1884 */
+f32 gDatabookItemResetBss_004A1884[0x6] __attribute__((aligned(4)));
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-extern u8 D_001F2F00[];
-/* data group (src/game/data/databook_item_reset_data.c): D_001F2F40__grp: D_001F2F40@0x0 */
-s32 D_001F2F40__grp[0x8] __attribute__((aligned(16))) = { 0, 5, 0, (s32)D_001F2F00, 7, -0x3fc00000, 0, 0 };
+extern u8 gDatabookItemResetData_001F2F00[];
+/* data group (src/game/data/databook_item_reset_data.c): D_001F2F40__grp: gDatabookItemResetData_001F2F40@0x0 */
+s32 D_001F2F40__grp[0x8] __attribute__((aligned(16))) = { 0, 5, 0, (s32)gDatabookItemResetData_001F2F00, 7, -0x3fc00000, 0, 0 };
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-extern u8 D_001F2F80[];
-/* data group (src/game/data/databook_item_reset_data.c): D_001F2FC0__grp: D_001F2FC0@0x0 */
-s32 D_001F2FC0__grp[0x8] __attribute__((aligned(16))) = { 0, 5, 0, (s32)D_001F2F80, 7, -0x3fc00000, 0, 0 };
+extern u8 gDatabookItemResetData_001F2F80[];
+/* data group (src/game/data/databook_item_reset_data.c): D_001F2FC0__grp: gDatabookItemResetData_001F2FC0@0x0 */
+s32 D_001F2FC0__grp[0x8] __attribute__((aligned(16))) = { 0, 5, 0, (s32)gDatabookItemResetData_001F2F80, 7, -0x3fc00000, 0, 0 };
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/databook_item_reset_data.c): D_001F2FE0__grp: D_001F2FE0@0x0 */
+/* data group (src/game/data/databook_item_reset_data.c): D_001F2FE0__grp: gDatabookItemResetData_001F2FE0@0x0 */
 f32 D_001F2FE0__grp[0x8] __attribute__((aligned(16))) = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f };
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/databook_item_reset_data.c): D_001F2F00, D_001F2F80 */
-u8 D_001F2F00[0x40] = { 0, 0, 0x40, 0xc0, 0xa6, 0xf, 0, 0, 0, 0, 0, 0xc0, 0xa5, 0xf, 0, 0, 0, 0, 0x80, 0xbf, 0xa4, 0xf, 0, 0, 0, 0, 0, 0, 0xa3, 0xf, 0, 0, 0, 0, 0x80, 0x3f, 0xa2, 0xf, 0, 0, 0, 0, 0, 0x40, 0xa1, 0xf, 0, 0, 0, 0, 0x40, 0x40, 0xa0, 0xf, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-u8 D_001F2F80[0x40] = { 0, 0, 0x40, 0xc0, 0xa6, 0xf, 0, 0, 0, 0, 0, 0xc0, 0xa5, 0xf, 0, 0, 0, 0, 0x80, 0xbf, 0xa4, 0xf, 0, 0, 0, 0, 0, 0, 0xa3, 0xf, 0, 0, 0, 0, 0x80, 0x3f, 0xa2, 0xf, 0, 0, 0, 0, 0, 0x40, 0xa1, 0xf, 0, 0, 0, 0, 0x40, 0x40, 0xa0, 0xf, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+/* data twins (src/game/data/databook_item_reset_data.c): gDatabookItemResetData_001F2F00, gDatabookItemResetData_001F2F80 */
+u8 gDatabookItemResetData_001F2F00[0x40] = { 0, 0, 0x40, 0xc0, 0xa6, 0xf, 0, 0, 0, 0, 0, 0xc0, 0xa5, 0xf, 0, 0, 0, 0, 0x80, 0xbf, 0xa4, 0xf, 0, 0, 0, 0, 0, 0, 0xa3, 0xf, 0, 0, 0, 0, 0x80, 0x3f, 0xa2, 0xf, 0, 0, 0, 0, 0, 0x40, 0xa1, 0xf, 0, 0, 0, 0, 0x40, 0x40, 0xa0, 0xf, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+u8 gDatabookItemResetData_001F2F80[0x40] = { 0, 0, 0x40, 0xc0, 0xa6, 0xf, 0, 0, 0, 0, 0, 0xc0, 0xa5, 0xf, 0, 0, 0, 0, 0x80, 0xbf, 0xa4, 0xf, 0, 0, 0, 0, 0, 0, 0xa3, 0xf, 0, 0, 0, 0, 0x80, 0x3f, 0xa2, 0xf, 0, 0, 0, 0, 0, 0x40, 0xa1, 0xf, 0, 0, 0, 0, 0x40, 0x40, 0xa0, 0xf, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 #endif

@@ -2,12 +2,12 @@
 +++ matched
 @@ -1,20 +1,9 @@
  #include "common.h"
--extern s32 D_004BB010[];
+-extern s32 gTaskCallbackBss_004BB010[];
 -void GlowFx_Init_0_001E1200(void) {
 -    s32 *var_4;
 -    s32 var_5;
 -    var_5 = 0xF;
--    var_4 = D_004BB010;
+-    var_4 = gTaskCallbackBss_004BB010;
 -    do {
 -        M2C_FIELD(var_4, s32 *, 0) = -1;
 -        M2C_FIELD(var_4, s32 *, -0x40) = -1;

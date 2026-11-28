@@ -66,9 +66,9 @@ s32 Tex_Find_1_00177AF0(u64, s8 **);
 s32 Tex_FindByHash_1_00177B20(u64);
 void sceVu0CopyMatrix(void *, void *);
 void memset(void *, s32, s32);
-extern s8 D_001F2170[];
-extern s32 D_00201CAC, D_00201CB8, D_00201CB4;
-extern E D_003407E0[];
+extern s8 gMatrixFromData_001F2170[];
+extern s32 gSfxCreateSdata_00201CAC, gSfxAllSdata_00201CB8, gTextureHashSdata_00201CB4;
+extern E gSfxSystemBss_003407E0[];
 static inline void reloc(E *e) {
     if (e != NULL) {
         s32 n; s8 *base; s32 j;
@@ -100,7 +100,7 @@ static inline E *alloc(void) {
     u32 i;
     E *e;
     for (i = 0; i < 0x100; i++) {
-        e = &D_003407E0[i];
+        e = &gSfxSystemBss_003407E0[i];
         if (!e->x188.f.b0) {
             e->x188.w = 0;
             e->x188.f.b0 = 1;
@@ -125,9 +125,9 @@ E *Sfx_Create_2_00169F40(s8 **a0, s32 a1, s32 *tbl, s32 a3, s32 f5, s32 f6, u16 
     Hd *h;
     L l;
     e = alloc();
-    a = Node_FindById_2_0014DCD0(*a0 + a1, D_00201CAC);
-    b = Node_FindById_2_0014DCD0(*a0, D_00201CB8);
-    c = Node_FindById_2_0014DCD0(*a0, D_00201CB4);
+    a = Node_FindById_2_0014DCD0(*a0 + a1, gSfxCreateSdata_00201CAC);
+    b = Node_FindById_2_0014DCD0(*a0, gSfxAllSdata_00201CB8);
+    c = Node_FindById_2_0014DCD0(*a0, gTextureHashSdata_00201CB4);
     if (a == 0) return NULL;
     if (e == NULL) return NULL;
     memset(e, 0, 0xED0);
@@ -147,7 +147,7 @@ E *Sfx_Create_2_00169F40(s8 **a0, s32 a1, s32 *tbl, s32 a3, s32 f5, s32 f6, u16 
     }
     if (c != 0) e->xE74 = a0;
     if (b != 0) e->xE78 = b - (s32)e->xE70;
-    sceVu0CopyMatrix(e, D_001F2170);
+    sceVu0CopyMatrix(e, gMatrixFromData_001F2170);
     memset(e->xE80, 0, 0x40);
     e->x17C = 1.0f;
     e->x180 = 1.0f;

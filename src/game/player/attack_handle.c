@@ -13,10 +13,10 @@ typedef struct {
 } Buf;
 typedef struct { u8 pad[4]; u32 w; u8 pad2[8]; V4 a; V8 b; } Src;
 #ifndef NONMATCHING
-extern s8 D_001FDE10[];
+extern s8 gAttackHandleRodata_001FDE10[];
 #else
-/* data twins (src/game/data/attack_handle_rodata.c): D_001FDE10 */
-static s8 D_001FDE10[0x2d] __attribute__((aligned(4))) = "abnormal sfxevent-parameter. in SFX(%d)\012\000\000\000\000\000";
+/* data twins (src/game/data/attack_handle_rodata.c): gAttackHandleRodata_001FDE10 */
+static s8 gAttackHandleRodata_001FDE10[0x2d] __attribute__((aligned(4))) = "abnormal sfxevent-parameter. in SFX(%d)\012\000\000\000\000\000";
 #endif
 void Attack_HandleSfxEvent_1_001D3810(s8 *a0, s32 id, E *e, s8 *a3, s32 t0, s32 t1, s32 t2);
 void Attack_ApplyHit_0_001D3A90(s8 *a0, s8 *a1, s32 a2, s32 a3, s32 t0, u8 t1);
@@ -81,7 +81,7 @@ void Attack_HandleSfxEvent_1_001D3810(s8 *a0, s32 id, E *e, s8 *a3, s32 t0, s32 
                         Sfx_SetMatrixOrAim_0_00167740(h, M2);
                         break;
                     default:
-                        sprintf(str, D_001FDE10, name);
+                        sprintf(str, gAttackHandleRodata_001FDE10, name);
                         break;
                     }
                     if (((B8 *)(*(s8 **)(a0 + 0x90) + 0x18A))->b1) {

@@ -33,8 +33,8 @@ typedef struct {
 } Mgr_Script_SendEventImpl_1_00166DA0;
 typedef struct { u8 b[0x258]; } R;
 typedef struct { s32 id; u32 n; s32 a; s32 b; s32 x10; u8 m[0x200]; u8 k[0x80]; R r[1]; } H;
-extern Mgr_Script_RunEvent_2_00166C10 *D_00201FA4;
-extern Slot_Script_RunEvent_2_00166C10 *D_00201FA8;
+extern Mgr_Script_RunEvent_2_00166C10 *gScriptEventSbss_00201FA4;
+extern Slot_Script_RunEvent_2_00166C10 *gEnemyScriptSbss_00201FA8;
 s32 Script_RunEvent_2_00166C10(Mgr_Script_RunEvent_2_00166C10 *o, s32 i);
 s32 Script_RunAll_1_00166CC0(Mgr_Script_RunAll_1_00166CC0 *o);
 u32 Script_SendEventImpl_1_00166DA0(Mgr_Script_SendEventImpl_1_00166DA0 *arg0, s32 arg1, s32 arg2);
@@ -52,22 +52,22 @@ s32 Script_RunEvent_2_00166C10(Mgr_Script_RunEvent_2_00166C10 *o, s32 i) {
     Slot_Script_RunEvent_2_00166C10 *save2;
     Slot_Script_RunEvent_2_00166C10 *s;
     s32 r;
-    save = D_00201FA4;
-    save2 = D_00201FA8;
-    D_00201FA4 = o;
+    save = gScriptEventSbss_00201FA4;
+    save2 = gEnemyScriptSbss_00201FA8;
+    gScriptEventSbss_00201FA4 = o;
     r = 0;
     if (o->s[i].f0) {
         s = &o->s[i];
-        D_00201FA8 = s;
+        gEnemyScriptSbss_00201FA8 = s;
         if (s->f10 == 0) {
             r = Script_Exec_2_00166170(o, s);
             if (r == 0) s->f0 = 0;
         } else {
             s->f10--;
         }
-        D_00201FA8 = save2;
+        gEnemyScriptSbss_00201FA8 = save2;
     }
-    D_00201FA4 = save;
+    gScriptEventSbss_00201FA4 = save;
     return r;
 }
 #undef Script_Exec_2_00166170
@@ -75,37 +75,37 @@ s32 Script_RunEvent_2_00166C10(Mgr_Script_RunEvent_2_00166C10 *o, s32 i) {
 /* Script_RunAll_1_00166CC0 */
 #define Script_Exec_2_00166170 Script_Exec_2_00166170__as_Script_RunAll_1_00166CC0
 s8 Script_Exec_2_00166170__as_Script_RunAll_1_00166CC0(Mgr_Script_RunAll_1_00166CC0 *, Slot_Script_RunAll_1_00166CC0 *);
-#define D_00201FA4 D_00201FA4__as_Script_RunAll_1_00166CC0
-extern Mgr_Script_RunAll_1_00166CC0 *D_00201FA4__as_Script_RunAll_1_00166CC0;
-#define D_00201FA8 D_00201FA8__as_Script_RunAll_1_00166CC0
-extern Slot_Script_RunAll_1_00166CC0 *D_00201FA8__as_Script_RunAll_1_00166CC0;
+#define gScriptEventSbss_00201FA4 gScriptEventSbss_00201FA4__as_Script_RunAll_1_00166CC0
+extern Mgr_Script_RunAll_1_00166CC0 *gScriptEventSbss_00201FA4__as_Script_RunAll_1_00166CC0;
+#define gEnemyScriptSbss_00201FA8 gEnemyScriptSbss_00201FA8__as_Script_RunAll_1_00166CC0
+extern Slot_Script_RunAll_1_00166CC0 *gEnemyScriptSbss_00201FA8__as_Script_RunAll_1_00166CC0;
 
 s32 Script_RunAll_1_00166CC0(Mgr_Script_RunAll_1_00166CC0 *o) {
     u32 i;
     Mgr_Script_RunAll_1_00166CC0 *save;
     Slot_Script_RunAll_1_00166CC0 *save2;
     Slot_Script_RunAll_1_00166CC0 *s;
-    save = D_00201FA4;
-    D_00201FA4 = o;
+    save = gScriptEventSbss_00201FA4;
+    gScriptEventSbss_00201FA4 = o;
     for (i = 0; i < o->count; i++) {
         if (o->s[i].f0) {
-            save2 = D_00201FA8;
+            save2 = gEnemyScriptSbss_00201FA8;
             s = &o->s[i];
-            D_00201FA8 = s;
+            gEnemyScriptSbss_00201FA8 = s;
             if (s->f10 == 0) {
                 if (Script_Exec_2_00166170(o, s) == 0) s->f0 = 0;
             } else {
                 s->f10--;
             }
-            D_00201FA8 = save2;
+            gEnemyScriptSbss_00201FA8 = save2;
         }
     }
-    D_00201FA4 = save;
+    gScriptEventSbss_00201FA4 = save;
     return 0;
 }
 #undef Script_Exec_2_00166170
-#undef D_00201FA4
-#undef D_00201FA8
+#undef gScriptEventSbss_00201FA4
+#undef gEnemyScriptSbss_00201FA8
 
 /* Script_SendEventImpl_1_00166DA0 */
 u32 Script_SendEventImpl_1_00166DA0(Mgr_Script_SendEventImpl_1_00166DA0 *arg0, s32 arg1, s32 arg2) {
@@ -174,6 +174,6 @@ void Script_InitContext_1_00166F90(H **arg0, s32 arg1, s32 arg2, u32 arg3) {
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/sbss.c): D_00201FA4 */
-Mgr_Script_RunEvent_2_00166C10 *D_00201FA4;
+/* data twins (src/game/data/sbss.c): gScriptEventSbss_00201FA4 */
+Mgr_Script_RunEvent_2_00166C10 *gScriptEventSbss_00201FA4;
 #endif

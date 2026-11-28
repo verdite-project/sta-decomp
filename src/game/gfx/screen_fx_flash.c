@@ -14,7 +14,7 @@ Q_ScreenFx_DrawFlash_0_00156AF0* GsPkt_Alloc_3_00154A80(s32);
 u64 __fixunssfdi(f32);
 
 /* ScreenFx_DrawFlash_0_00156AF0 */
-static inline s32 wd_ScreenFx_DrawFlash_0_00156AF0(void) { return D_00201F2C ? 0 : 0x1180; }
+static inline s32 wd_ScreenFx_DrawFlash_0_00156AF0(void) { return gSfxAllSbss_00201F2C ? 0 : 0x1180; }
 
 void ScreenFx_DrawFlash_0_00156AF0(void) {
     Q_ScreenFx_DrawFlash_0_00156AF0 q;
@@ -23,7 +23,7 @@ void ScreenFx_DrawFlash_0_00156AF0(void) {
     GsPkt_BeginAD_3_001545D0();
     GsPkt_SetReg_3_001543E0(0x4C, (s64)(wd_ScreenFx_DrawFlash_0_00156AF0() / 32) | 0xA0000);
     GsPkt_SetReg_3_001543E0(0x4E, 0x3A000118);
-    f = D_00201E90;
+    f = gGameMainSbss_00201E90;
     GsPkt_SetReg_3_001543E0(0x40, 0x27F0000 | ((u64)__fixunssfdi(f) << 32) | ((u64)__fixunssfdi(448.0f - f - 1.0f) << 48));
     GsPkt_SetReg_3_001543E0(0x47, 0x31001);
     GsPkt_SetReg_3_001543E0(6, 0xA8016BC0 | ((u64)0xA << 32));
@@ -63,7 +63,7 @@ void ScreenFx_DrawFlash_0_00156AF0(void) {
 /* ScreenFx_DrawDistort_0_00156CE0 */
 #define GsPkt_Alloc_3_00154A80 GsPkt_Alloc_3_00154A80__as_ScreenFx_DrawDistort_0_00156CE0
 extern Q_ScreenFx_DrawDistort_0_00156CE0 *GsPkt_Alloc_3_00154A80__as_ScreenFx_DrawDistort_0_00156CE0(s32);
-static inline s32 wd_ScreenFx_DrawDistort_0_00156CE0(void) { return D_00201F2C ? 0 : 0x1180; }
+static inline s32 wd_ScreenFx_DrawDistort_0_00156CE0(void) { return gSfxAllSbss_00201F2C ? 0 : 0x1180; }
 
 void ScreenFx_DrawDistort_0_00156CE0(void) {
     Q_ScreenFx_DrawDistort_0_00156CE0 q;
@@ -115,7 +115,7 @@ void ScreenFx_DrawDistort_0_00156CE0(void) {
     GsPkt_BeginAD_3_001545D0();
     GsPkt_SetReg_3_001543E0(0x4C, (s64)(wd_ScreenFx_DrawDistort_0_00156CE0() / 32) | 0xA0000);
     GsPkt_SetReg_3_001543E0(0x4E, 0x3A000118);
-    f = D_00201E90;
+    f = gGameMainSbss_00201E90;
     GsPkt_SetReg_3_001543E0(0x40, 0x27F0000 | ((u64)__fixunssfdi(f) << 32) | ((u64)__fixunssfdi(448.0f - f - 1.0f) << 48));
     GsPkt_EndAD_3_00154420();
     Tex_FlushAll_1_00176AE0();
@@ -125,7 +125,7 @@ void ScreenFx_DrawDistort_0_00156CE0(void) {
 /* ScreenFx_DrawFade_0_00156F60 */
 #define GsPkt_Alloc_3_00154A80 GsPkt_Alloc_3_00154A80__as_ScreenFx_DrawFade_0_00156F60
 extern Q_ScreenFx_DrawFade_0_00156F60 *GsPkt_Alloc_3_00154A80__as_ScreenFx_DrawFade_0_00156F60(s32);
-static inline s32 wd_ScreenFx_DrawFade_0_00156F60(void) { return D_00201F2C ? 0 : 0x1180; }
+static inline s32 wd_ScreenFx_DrawFade_0_00156F60(void) { return gSfxAllSbss_00201F2C ? 0 : 0x1180; }
 
 void ScreenFx_DrawFade_0_00156F60(void) {
     Q_ScreenFx_DrawFade_0_00156F60 q;
@@ -188,7 +188,7 @@ void ScreenFx_DrawBars_0_00157110(u8 a0) {
     u16 x;
     if (a0 != 0x80) {
         GsPkt_BeginAD_3_001545D0();
-        GsPkt_SetReg_3_001543E0(0x4C, (s64)((D_00201F2C ? 0 : 0x1180) / 32) | 0xA0000);
+        GsPkt_SetReg_3_001543E0(0x4C, (s64)((gSfxAllSbss_00201F2C ? 0 : 0x1180) / 32) | 0xA0000);
         GsPkt_SetReg_3_001543E0(0x4E, 0x3A000118);
         GsPkt_SetReg_3_001543E0(0x40, 0x027F0000 | ((s64)0x01BF0000 << 32));
         GsPkt_SetReg_3_001543E0(0x47, 0x31001);

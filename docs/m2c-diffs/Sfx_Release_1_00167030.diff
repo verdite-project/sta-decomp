@@ -5,10 +5,10 @@
 -typedef struct { char pad[0x188]; unsigned char f : 1; } BF_188_0_1;
 -typedef struct { char pad[0x188]; unsigned char : 4; unsigned char f : 1; } BF_188_4_1;
 -typedef struct { char pad[0x188]; unsigned char : 3; unsigned char f : 1; } BF_188_3_1;
--extern s32 D_003407E0[];
+-extern s32 gSfxSystemBss_003407E0[];
 -extern s32 D_0042C910[];
 -s32 Sfx_Release_1_00167030(u32 arg0, s32 arg1) {
--    if (arg0 >= (u32) D_003407E0) {
+-    if (arg0 >= (u32) gSfxSystemBss_003407E0) {
 -        if ((u32) D_0042C910 < arg0) {
 -            goto block_3;
 -        }
@@ -21,13 +21,13 @@
 -block_3:
 -    return 0;
 +typedef struct { char pad[0x188]; unsigned char a : 1; unsigned char : 2; unsigned char c : 1; unsigned char b : 1; } Obj;
-+extern char D_003407E0[];
++extern char gSfxSystemBss_003407E0[];
 +extern char D_0042C910[];
 +void Sfx_Free_1_001670E0(Obj *o);
 +s32 Sfx_Release_1_00167030(char *p)
 +{
 +    Obj *o = (Obj *)p;
-+    if (p < D_003407E0 || p > D_0042C910)
++    if (p < gSfxSystemBss_003407E0 || p > D_0042C910)
 +        return 0;
 +    Sfx_Free_1_001670E0(o);
 +    o->a = 1;

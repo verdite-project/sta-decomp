@@ -21,22 +21,22 @@ typedef struct { s32 a; s32 b; s32 x8; s32 xC; s32 x10; u16 x14; u16 x16; u8 x18
 typedef struct { s32 x0; s32 x4; s32 x8; u8 xC; u8 xD; u8 xE; u8 xF; } S_Bgm_Tick_0_001D9A80;
 typedef struct { s32 x0; s32 x4; s32 x8; u8 xC; u8 xD; u8 xE; } S_Bgm_DmaChunk_0_001D9BC0;
 typedef struct { u32 data, addr, size, mode; } Dma;
-extern u8 D_004B9FAC[];
-extern struct { u16 a; u16 b; char pad[12]; } D_004B9FA8;
-extern S_Bgm_Update_0_001D9680 D_004B9FA0;
-extern E D_004B9F20[4];
+extern u8 gBgmBss_004B9FAC[];
+extern struct { u16 a; u16 b; char pad[12]; } gBgmBss_004B9FA8;
+extern S_Bgm_Update_0_001D9680 gBgmBss_004B9FA0;
+extern E gBgmBss_004B9F20[4];
 extern s32 D_004B9F24[];
 extern s32 D_004B9F44[];
 extern s32 D_004B9F64[];
 extern s32 D_004B9F84[];
 extern s16 D_004B9FAA[];
-extern s32 D_004B9FA4[];
-extern Dma D_004B9FC0;
+extern s32 gBgmBss_004B9FA4[];
+extern Dma gBgmBss_004B9FC0;
 #ifndef NONMATCHING
-extern s32 D_0020231C;
+extern s32 gBgmSbss_0020231C;
 #else
-/* data twins (src/game/data/sbss.c): D_0020231C */
-static s32 D_0020231C;
+/* data twins (src/game/data/sbss.c): gBgmSbss_0020231C */
+static s32 gBgmSbss_0020231C;
 #endif
 void Bgm_DrvGetStatus_0_001D8FA0(void);
 u8 Bgm_GetState_0_001D8FB0(void);
@@ -62,7 +62,7 @@ void Bgm_DrvGetStatus_0_001D8FA0(void) {
 
 /* Bgm_GetState_0_001D8FB0 */
 u8 Bgm_GetState_0_001D8FB0(void) {
-    return (*D_004B9FAC);
+    return (*gBgmBss_004B9FAC);
 }
 
 /* Bgm_Play_0_001D8FC0 */
@@ -241,7 +241,7 @@ s32 Bgm_FindTrack_0_001D9470(Hdr_Bgm_FindTrack_0_001D9470 *a, s32 base, s32 end,
 /* Bgm_Poll_0_001D95E0 */
 s32 Bgm_Poll_0_001D95E0(void) {
     u8 r;
-    if (*D_004B9FAC == 0) return 0;
+    if (*gBgmBss_004B9FAC == 0) return 0;
     r = SndDrv_Call_2_001D85D0(3, 1, 0x02070000);
     switch (r) {
     case 0:
@@ -257,9 +257,9 @@ void SndDrv_CallArgs_2_001D8680__as_Bgm_SetVolume_1_001D9650(s32 a, s32 b, s32 c
 
 void Bgm_SetVolume_1_001D9650(u16 a, u16 b)
 {
-    D_004B9FA8.a = a;
-    D_004B9FA8.b = b;
-    SndDrv_CallArgs_2_001D8680(3, 0, 0x2080000, D_004B9FA8.a, D_004B9FA8.b);
+    gBgmBss_004B9FA8.a = a;
+    gBgmBss_004B9FA8.b = b;
+    SndDrv_CallArgs_2_001D8680(3, 0, 0x2080000, gBgmBss_004B9FA8.a, gBgmBss_004B9FA8.b);
 }
 #undef SndDrv_CallArgs_2_001D8680
 
@@ -267,7 +267,7 @@ void Bgm_SetVolume_1_001D9650(u16 a, u16 b)
 #define SndDrv_Call_2_001D85D0 SndDrv_Call_2_001D85D0__as_Bgm_Update_0_001D9680
 void SndDrv_Call_2_001D85D0__as_Bgm_Update_0_001D9680(int, int, int);
 s32 Bgm_Update_0_001D9680(void) {
-    S_Bgm_Update_0_001D9680 *s = &D_004B9FA0;
+    S_Bgm_Update_0_001D9680 *s = &gBgmBss_004B9FA0;
     if (s->xC == 0) return -1;
     SndDrv_Call_2_001D85D0(3, 0, 0x020E0000);
     if (s->x4 != 0) {
@@ -281,15 +281,15 @@ s32 Bgm_Update_0_001D9680(void) {
 #undef SndDrv_Call_2_001D85D0
 
 /* Bgm_Stop_0_001D9710 */
-#define D_004B9FA0 D_004B9FA0__as_Bgm_Stop_0_001D9710
-extern S_Bgm_Stop_0_001D9710 D_004B9FA0__as_Bgm_Stop_0_001D9710;
-#define D_004B9FAC D_004B9FAC__as_Bgm_Stop_0_001D9710
-extern u8 D_004B9FAC__as_Bgm_Stop_0_001D9710;
+#define gBgmBss_004B9FA0 gBgmBss_004B9FA0__as_Bgm_Stop_0_001D9710
+extern S_Bgm_Stop_0_001D9710 gBgmBss_004B9FA0__as_Bgm_Stop_0_001D9710;
+#define gBgmBss_004B9FAC gBgmBss_004B9FAC__as_Bgm_Stop_0_001D9710
+extern u8 gBgmBss_004B9FAC__as_Bgm_Stop_0_001D9710;
 #define SndDrv_Call_2_001D85D0 SndDrv_Call_2_001D85D0__as_Bgm_Stop_0_001D9710
 void SndDrv_Call_2_001D85D0__as_Bgm_Stop_0_001D9710(int, int, int);
 s32 Bgm_Stop_0_001D9710(void) {
-    S_Bgm_Stop_0_001D9710 *s = &D_004B9FA0;
-    if (D_004B9FA0.xC == 0) {
+    S_Bgm_Stop_0_001D9710 *s = &gBgmBss_004B9FA0;
+    if (gBgmBss_004B9FA0.xC == 0) {
         return -1;
     }
     SndDrv_Call_2_001D85D0(3, 0, 0x02060000);
@@ -304,17 +304,17 @@ s32 Bgm_Stop_0_001D9710(void) {
     return 1;
 }
 #undef SndDrv_Call_2_001D85D0
-#undef D_004B9FA0
-#undef D_004B9FAC
+#undef gBgmBss_004B9FA0
+#undef gBgmBss_004B9FAC
 
 /* Bgm_Resume_0_001D97A0 */
-#define D_004B9FA0 D_004B9FA0__as_Bgm_Resume_0_001D97A0
-extern S_Bgm_Resume_0_001D97A0 D_004B9FA0__as_Bgm_Resume_0_001D97A0[];
+#define gBgmBss_004B9FA0 gBgmBss_004B9FA0__as_Bgm_Resume_0_001D97A0
+extern S_Bgm_Resume_0_001D97A0 gBgmBss_004B9FA0__as_Bgm_Resume_0_001D97A0[];
 #define SndDrv_Call_2_001D85D0 SndDrv_Call_2_001D85D0__as_Bgm_Resume_0_001D97A0
 void SndDrv_Call_2_001D85D0__as_Bgm_Resume_0_001D97A0(s32, s32, s32);
 s32 Bgm_Resume_0_001D97A0(void) {
-    S_Bgm_Resume_0_001D97A0 *s = D_004B9FA0;
-    if (D_004B9FAC[0] == 7) {
+    S_Bgm_Resume_0_001D97A0 *s = gBgmBss_004B9FA0;
+    if (gBgmBss_004B9FAC[0] == 7) {
         SndDrv_Call_2_001D85D0(3, 0, 0x02010000);
         s->e = 1;
         s->c = 2;
@@ -326,16 +326,16 @@ s32 Bgm_Resume_0_001D97A0(void) {
     return 1;
 }
 #undef SndDrv_Call_2_001D85D0
-#undef D_004B9FA0
+#undef gBgmBss_004B9FA0
 
 /* Bgm_ApplyVolume_0_001D9820 */
-#define D_004B9FA0 D_004B9FA0__as_Bgm_ApplyVolume_0_001D9820
-extern S_Bgm_ApplyVolume_0_001D9820 D_004B9FA0__as_Bgm_ApplyVolume_0_001D9820;
+#define gBgmBss_004B9FA0 gBgmBss_004B9FA0__as_Bgm_ApplyVolume_0_001D9820
+extern S_Bgm_ApplyVolume_0_001D9820 gBgmBss_004B9FA0__as_Bgm_ApplyVolume_0_001D9820;
 #define SndDrv_CallArgs_2_001D8680 SndDrv_CallArgs_2_001D8680__as_Bgm_ApplyVolume_0_001D9820
 void SndDrv_CallArgs_2_001D8680__as_Bgm_ApplyVolume_0_001D9820(s32 a, s32 b, s32 c, ...);
 s32 Bgm_ApplyVolume_0_001D9820(u16 a, u16 b) {
-    S_Bgm_ApplyVolume_0_001D9820 *s = &D_004B9FA0;
-    if (D_00202310 == 0) {
+    S_Bgm_ApplyVolume_0_001D9820 *s = &gBgmBss_004B9FA0;
+    if (gBgmSbss_00202310 == 0) {
         return 0;
     }
     switch (s->xC) {
@@ -351,13 +351,13 @@ s32 Bgm_ApplyVolume_0_001D9820(u16 a, u16 b) {
     return 1;
 }
 #undef SndDrv_CallArgs_2_001D8680
-#undef D_004B9FA0
+#undef gBgmBss_004B9FA0
 
 /* Bgm_SetTrackParam_0_001D98D0 */
 s32 Bgm_SetTrackParam_0_001D98D0(s32 i, s32 p1, s32 p2, s32 p3, u16 p4, u16 p5) {
     E *e;
     if (i < 0 || i >= 4) return 0;
-    e = &D_004B9F20[i];
+    e = &gBgmBss_004B9F20[i];
     if (e->a == 0) return 0;
     e->x8 = p1;
     e->x10 = p2;
@@ -380,28 +380,28 @@ void Bgm_UpdateWrap_0_001D9990(void) {
 /* Bgm_Init_0_001D99A0 */
 #define Bgm_RpcCallback_0_001D9DC0 Bgm_RpcCallback_0_001D9DC0__as_Bgm_Init_0_001D99A0
 void Bgm_RpcCallback_0_001D9DC0__as_Bgm_Init_0_001D99A0(void);
-#define D_004B9F20 D_004B9F20__as_Bgm_Init_0_001D99A0
-extern s32 D_004B9F20__as_Bgm_Init_0_001D99A0[];
-#define D_004B9FA0 D_004B9FA0__as_Bgm_Init_0_001D99A0
-extern s32 D_004B9FA0__as_Bgm_Init_0_001D99A0[];
-#define D_004B9FA8 D_004B9FA8__as_Bgm_Init_0_001D99A0
-extern s16 D_004B9FA8__as_Bgm_Init_0_001D99A0[];
+#define gBgmBss_004B9F20 gBgmBss_004B9F20__as_Bgm_Init_0_001D99A0
+extern s32 gBgmBss_004B9F20__as_Bgm_Init_0_001D99A0[];
+#define gBgmBss_004B9FA0 gBgmBss_004B9FA0__as_Bgm_Init_0_001D99A0
+extern s32 gBgmBss_004B9FA0__as_Bgm_Init_0_001D99A0[];
+#define gBgmBss_004B9FA8 gBgmBss_004B9FA8__as_Bgm_Init_0_001D99A0
+extern s16 gBgmBss_004B9FA8__as_Bgm_Init_0_001D99A0[];
 s32 Bgm_Init_0_001D99A0(void) {
     SndDrv_SetCallback_1_001D8320(3, Bgm_RpcCallback_0_001D9DC0);
     if (SndDrv_Call_2_001D85D0(3, 1, 0x10000) == 0) {
         return 0;
     }
     SndDrv_StartThread_1_001D8210();
-    memset(D_004B9FA0, 0, 0x20);
-    memset(D_004B9F20, 0, 0x20);
-    D_004B9FA0[0] = 0x40000;
-    D_004B9FB0[0] = 0x8000;
+    memset(gBgmBss_004B9FA0, 0, 0x20);
+    memset(gBgmBss_004B9F20, 0, 0x20);
+    gBgmBss_004B9FA0[0] = 0x40000;
+    gBgmBss_004B9FB0[0] = 0x8000;
     D_004B9FB4[0] = 0x2000;
-    D_00202318 = 0;
-    D_004B9FA8[0] = 0x3FFF;
-    D_00202310 = 0;
+    gSoundDriverFlushSbss_00202318 = 0;
+    gBgmBss_004B9FA8[0] = 0x3FFF;
+    gBgmSbss_00202310 = 0;
     D_004B9FAA[0] = 0x3FFF;
-    D_00202314 = 0;
+    gBgmSbss_00202314 = 0;
     D_004B9F84[0] = 0x40000;
     D_004B9F64[0] = 0x40000;
     D_004B9F44[0] = 0x40000;
@@ -409,16 +409,16 @@ s32 Bgm_Init_0_001D99A0(void) {
     return 1;
 }
 #undef Bgm_RpcCallback_0_001D9DC0
-#undef D_004B9F20
-#undef D_004B9FA0
-#undef D_004B9FA8
+#undef gBgmBss_004B9F20
+#undef gBgmBss_004B9FA0
+#undef gBgmBss_004B9FA8
 
 /* Bgm_Tick_0_001D9A80 */
-#define D_004B9FA0 D_004B9FA0__as_Bgm_Tick_0_001D9A80
-extern S_Bgm_Tick_0_001D9A80 D_004B9FA0__as_Bgm_Tick_0_001D9A80;
+#define gBgmBss_004B9FA0 gBgmBss_004B9FA0__as_Bgm_Tick_0_001D9A80
+extern S_Bgm_Tick_0_001D9A80 gBgmBss_004B9FA0__as_Bgm_Tick_0_001D9A80;
 static inline s32 stop_9710(void) {
-    S_Bgm_Tick_0_001D9A80 *s = &D_004B9FA0;
-    if (D_004B9FA0.xC == 0) {
+    S_Bgm_Tick_0_001D9A80 *s = &gBgmBss_004B9FA0;
+    if (gBgmBss_004B9FA0.xC == 0) {
         return -1;
     }
     SndDrv_Call_2_001D85D0(3, 0, 0x02060000);
@@ -433,9 +433,9 @@ static inline s32 stop_9710(void) {
     return 1;
 }
 void Bgm_Tick_0_001D9A80(void) {
-    S_Bgm_Tick_0_001D9A80 *s = &D_004B9FA0;
+    S_Bgm_Tick_0_001D9A80 *s = &gBgmBss_004B9FA0;
     s32 r = SndDrv_Call_2_001D85D0(3, 1, 0x02070000);
-    switch (D_004B9FA0.xC) {
+    switch (gBgmBss_004B9FA0.xC) {
     case 1:
         if (r == 3) {
             SndDrv_Call_2_001D85D0(3, 0, 0x02010000);
@@ -461,23 +461,23 @@ void Bgm_Tick_0_001D9A80(void) {
         s->x4 = 0;
     }
 }
-#undef D_004B9FA0
+#undef gBgmBss_004B9FA0
 
 /* Bgm_DmaChunk_0_001D9BC0 */
-#define D_004B9FA0 D_004B9FA0__as_Bgm_DmaChunk_0_001D9BC0
-extern S_Bgm_DmaChunk_0_001D9BC0 D_004B9FA0__as_Bgm_DmaChunk_0_001D9BC0;
-#define D_00202310 D_00202310__as_Bgm_DmaChunk_0_001D9BC0
-extern u8 *D_00202310__as_Bgm_DmaChunk_0_001D9BC0;
-#define D_00202314 D_00202314__as_Bgm_DmaChunk_0_001D9BC0
-extern u32 D_00202314__as_Bgm_DmaChunk_0_001D9BC0;
+#define gBgmBss_004B9FA0 gBgmBss_004B9FA0__as_Bgm_DmaChunk_0_001D9BC0
+extern S_Bgm_DmaChunk_0_001D9BC0 gBgmBss_004B9FA0__as_Bgm_DmaChunk_0_001D9BC0;
+#define gBgmSbss_00202310 gBgmSbss_00202310__as_Bgm_DmaChunk_0_001D9BC0
+extern u8 *gBgmSbss_00202310__as_Bgm_DmaChunk_0_001D9BC0;
+#define gBgmSbss_00202314 gBgmSbss_00202314__as_Bgm_DmaChunk_0_001D9BC0
+extern u32 gBgmSbss_00202314__as_Bgm_DmaChunk_0_001D9BC0;
 s32 Bgm_DmaChunk_0_001D9BC0(u8 *src, u32 n, u32 dst, s32 idx) {
-    Dma *d = &D_004B9FC0; S_Bgm_DmaChunk_0_001D9BC0 *s = &D_004B9FA0;
+    Dma *d = &gBgmBss_004B9FC0; S_Bgm_DmaChunk_0_001D9BC0 *s = &gBgmBss_004B9FA0;
     u32 i;
     u32 id;
-    if (D_004B9FA4[0] != 0) return 0;
-    if (n > D_00202314) return 0;
-    for (i = 0; i < n; i++) D_00202310[i] = (src + D_004B9F20[idx].x8)[i];
-    d->data = (u32)D_00202310;
+    if (gBgmBss_004B9FA4[0] != 0) return 0;
+    if (n > gBgmSbss_00202314) return 0;
+    for (i = 0; i < n; i++) gBgmSbss_00202310[i] = (src + gBgmBss_004B9F20[idx].x8)[i];
+    d->data = (u32)gBgmSbss_00202310;
     d->addr = dst;
     d->size = n;
     d->mode = 0;
@@ -486,9 +486,9 @@ s32 Bgm_DmaChunk_0_001D9BC0(u8 *src, u32 n, u32 dst, s32 idx) {
     s->x4 = id;
     return id != 0;
 }
-#undef D_004B9FA0
-#undef D_00202310
-#undef D_00202314
+#undef gBgmBss_004B9FA0
+#undef gBgmSbss_00202310
+#undef gBgmSbss_00202314
 
 /* Bgm_RpcCallback_0_001D9DC0 */
 #define Bgm_DmaChunk_0_001D9BC0 Bgm_DmaChunk_0_001D9BC0__as_Bgm_RpcCallback_0_001D9DC0
@@ -498,25 +498,25 @@ s32 *Bgm_RpcCallback_0_001D9DC0(u32 cmd, s32 *p, s32 unused, s32 *size)
 {
     switch (cmd & 0xFFF0000) {
     case 0x2040000:
-        D_0020231C = Bgm_DmaChunk_0_001D9BC0(p[0], p[1], p[2], p[3]);
+        gBgmSbss_0020231C = Bgm_DmaChunk_0_001D9BC0(p[0], p[1], p[2], p[3]);
         break;
     }
     *size = 4;
-    return &D_0020231C;
+    return &gBgmSbss_0020231C;
 }
 #undef Bgm_DmaChunk_0_001D9BC0
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/sbss.c): D_00202310, D_00202314 */
-s32 D_00202310;
-s32 D_00202314;
-/* data twins (src/game/data/bgm_bss.c): D_004B9F20 */
-E D_004B9F20[4];
+/* data twins (src/game/data/sbss.c): gBgmSbss_00202310, gBgmSbss_00202314 */
+s32 gBgmSbss_00202310;
+s32 gBgmSbss_00202314;
+/* data twins (src/game/data/bgm_bss.c): gBgmBss_004B9F20 */
+E gBgmBss_004B9F20[4];
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/bgm_bss.c): D_004B9FA0__grp: D_004B9FA0@0x0, D_004B9FA4@0x4, D_004B9FA8@0x8, D_004B9FAC@0xc, D_004B9FB0@0x10, D_004B9FC0@0x20, D_004BA000@0x60 */
+/* data group (src/game/data/bgm_bss.c): D_004B9FA0__grp: gBgmBss_004B9FA0@0x0, gBgmBss_004B9FA4@0x4, gBgmBss_004B9FA8@0x8, gBgmBss_004B9FAC@0xc, gBgmBss_004B9FB0@0x10, gBgmBss_004B9FC0@0x20, gBgmBss_004BA000@0x60 */
 u8 D_004B9FA0__grp[0xa0] __attribute__((aligned(16)));
 #endif

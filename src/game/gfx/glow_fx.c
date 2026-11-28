@@ -10,12 +10,12 @@ typedef struct { s32 v; char p[0x3C]; } F;
 typedef struct { s32 v; char pad[0x3C]; } E_GlowFx_Init_0_001E1200;
 extern E_GlowFx_Update_0_001E0C10 gGlowFxSlots_004BAC50[16];
 #ifndef NONMATCHING
-extern u8 D_002023AC;
+extern u8 gGlowFxSbss_002023AC;
 #else
-/* data twins (src/game/data/sbss.c): D_002023AC */
-static u8 D_002023AC;
+/* data twins (src/game/data/sbss.c): gGlowFxSbss_002023AC */
+static u8 gGlowFxSbss_002023AC;
 #endif
-extern Vec D_001F2160;
+extern Vec gMatrixFromData_001F2160;
 s32 GlowFx_Stop_0_001E0D30(s32 i, s32 unused, f32 t);
 s32 GlowFx_SetParams_0_001E0F30(s32 i, s32 p, s32 q, f32 x, f32 y);
 s32 GlowFx_Start_0_001E1050(void);
@@ -43,7 +43,7 @@ void GlowFx_Update_0_001E0C10(f32 dt)
                 if (ok) {
                     Glow_Enable_0_0015DB60(e->h);
                     e->h = -1;
-                    D_002023AC--;
+                    gGlowFxSbss_002023AC--;
                 }
             } else {
                 f32 r = t / e->d;
@@ -82,7 +82,7 @@ static inline s32 release(s32 i)
         return 0;
     Glow_Enable_0_0015DB60(gGlowFxSlots_004BAC50[i].h);
     gGlowFxSlots_004BAC50[i].h = -1;
-    D_002023AC--;
+    gGlowFxSbss_002023AC--;
     return 1;
 }
 
@@ -117,7 +117,7 @@ s32 GlowFx_StopAll_0_001E0E80(void)
         if (ok) {
             Glow_Enable_0_0015DB60(e->h);
             e->h = -1;
-            D_002023AC--;
+            gGlowFxSbss_002023AC--;
         }
     }
     return 1;
@@ -166,7 +166,7 @@ void sceVu0CopyVector__as_GlowFx_Start_0_001E1050(void *, void *);
 static inline s32 find(void) {
     s32 i;
     E_GlowFx_Start_0_001E1050 *e;
-    if (D_002023AC == 16) return -1;
+    if (gGlowFxSbss_002023AC == 16) return -1;
     for (i = 0, e = gGlowFxSlots_004BAC50; i < 16; i++, e++) if (e->h == -1) return i;
     return -1;
 }
@@ -186,19 +186,19 @@ static inline void setup(s32 i) {
     if (i < 0 || i >= 16) ok = 0; else if (gGlowFxSlots_004BAC50[i].h == -1) ok = 0; else ok = 1;
     if (ok) {
         f = (E_GlowFx_Start_0_001E1050 *)((s32)gGlowFxSlots_004BAC50 + (i << 6));
-        sceVu0CopyVector(f->p, &D_001F2160);
+        sceVu0CopyVector(f->p, &gMatrixFromData_001F2160);
         sceVu0CopyVector(f->p + 0x10, &gZeroVec_003139A0);
         gGlowFxSlots_004BAC50[i].x30 = 0.0f;
         gGlowFxSlots_004BAC50[i].x34 = 0.0f;
-        Glow_SetParams_0_0015D800(f->h, &D_001F2160, &gZeroVec_003139A0, 0.0f, 0.0f);
+        Glow_SetParams_0_0015D800(f->h, &gMatrixFromData_001F2160, &gZeroVec_003139A0, 0.0f, 0.0f);
     }
 }
 s32 GlowFx_Start_0_001E1050(void) {
     s32 i = find();
     if (i != -1) {
-        s32 h = Glow_Add_0_0015DBF0(0, &D_001F2160, &gZeroVec_003139A0, 0.0f, 0.0f); E_GlowFx_Start_0_001E1050 *e = &gGlowFxSlots_004BAC50[i]; e->h = h; gGlowFxSlots_004BAC50[i].x4 = 0; gGlowFxSlots_004BAC50[i].x8 = 0;
+        s32 h = Glow_Add_0_0015DBF0(0, &gMatrixFromData_001F2160, &gZeroVec_003139A0, 0.0f, 0.0f); E_GlowFx_Start_0_001E1050 *e = &gGlowFxSlots_004BAC50[i]; e->h = h; gGlowFxSlots_004BAC50[i].x4 = 0; gGlowFxSlots_004BAC50[i].x8 = 0;
         setup(i);
-        D_002023AC++;
+        gGlowFxSbss_002023AC++;
     }
     return i;
 }

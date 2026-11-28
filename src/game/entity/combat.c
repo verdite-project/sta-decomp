@@ -9,21 +9,21 @@ typedef struct { u16 x0; u16 x2; u16 x4; u16 x6; u16 x8; u8 pada[0xA]; u16 x14; 
 typedef struct { u8 pad[0x24]; s32 x24; u8 pad28[0x18]; } Hit;
 typedef struct { u8 p:4; u8 v:3; } BF30;
 typedef struct { u8 p:1; u8 v:1; } BF31;
-extern s8 D_001FABD0[4][6][7];
-extern s8 D_001FABD7[4][6][7];
+extern s8 gCombatRodata_001FABD0[4][6][7];
+extern s8 gCombatRodata_001FABD7[4][6][7];
 #ifndef NONMATCHING
-extern u8 D_00201C48;
+extern u8 gCombatSdata_00201C48;
 #else
-/* data twins (src/game/data/sdata.c): D_00201C48 */
-static u8 D_00201C48 = 1;
+/* data twins (src/game/data/sdata.c): gCombatSdata_00201C48 */
+static u8 gCombatSdata_00201C48 = 1;
 #endif
 #ifndef NONMATCHING
-extern Ids D_00201C40;
+extern Ids gCombatSdata_00201C40;
 #else
-/* data twins (src/game/data/sdata.c): D_00201C40 */
-static Ids D_00201C40 = { 0x6400, 0x6400, 0x6400, 0x6400 };
+/* data twins (src/game/data/sdata.c): gCombatSdata_00201C40 */
+static Ids gCombatSdata_00201C40 = { 0x6400, 0x6400, 0x6400, 0x6400 };
 #endif
-extern s32 D_00201E80;
+extern s32 gMapSbss_00201E80;
 void Combat_CalcDamage_1_00132DB0(O_Combat_CalcDamage_1_00132DB0 *o, s32 a1, u8 *pa, u8 *pb, u8 *pc, u8 *pd);
 f32 Combat_CalcHitAngle_0_00133D00(s8 *a, f32 *o1, f32 *o2, f32 *o3);
 void Combat_RollStatusEffects_2_00133FD0(A *arg0, s8 *arg1, u8 *arg2);
@@ -204,17 +204,17 @@ void Combat_CalcDamage_1_00132DB0(O_Combat_CalcDamage_1_00132DB0 *o, s32 a1, u8 
     a = cls(f23);
     b = cls(f22);
     if (!(f24 <= f20)) {
-        t = D_001FABD0[a][0];
+        t = gCombatRodata_001FABD0[a][0];
         v[0] += t[0];
         for (i = 1; i < 7; i++) v[i] += t[i];
         mode = 2;
     } else if (!(f24 <= (f21 + f20) / 2.0f)) {
-        t = D_001FABD7[a][0];
+        t = gCombatRodata_001FABD7[a][0];
         v[0] += t[0];
         for (i = 1; i < 7; i++) v[i] += t[i];
         mode = 1;
     } else {
-        t = ((s8 (*)[7])D_001FABD0)[a * 6 + 2 + b];
+        t = ((s8 (*)[7])gCombatRodata_001FABD0)[a * 6 + 2 + b];
         v[0] += t[0];
         for (i = 1; i < 7; i++) v[i] += t[i];
         mode = 0;
@@ -511,22 +511,22 @@ void Enemy_CalcAimOffset_1_00134620(s8 *a, Vec *pos, Vec *tgt) {
         d.z /= len;
     }
     Enemy_GetForwardVector_2_001403D0(a, &m);
-    if (D_00201C48 == 0) {
+    if (gCombatSdata_00201C48 == 0) {
         r.x = sinf(tgt->y);
         r.y = 0.0f;
         r.z = cosf(tgt->y);
     }
-    if (D_00201C48 == 1) {
+    if (gCombatSdata_00201C48 == 1) {
         r.x = -sinf(tgt->y);
         r.y = 0.0f;
         r.z = -cosf(tgt->y);
     }
-    if (D_00201C48 == 2) {
+    if (gCombatSdata_00201C48 == 2) {
         r.x = cosf(tgt->y);
         r.y = 0.0f;
         r.z = -sinf(tgt->y);
     }
-    if (D_00201C48 == 3) {
+    if (gCombatSdata_00201C48 == 3) {
         r.x = -cosf(tgt->y);
         r.y = 0.0f;
         r.z = sinf(tgt->y);
@@ -875,7 +875,7 @@ u8 Enemy_SelectAttack_1_00135490(s8 *a, f32 *pl, f32 *pc, f32 *py) {
     Enemy_Set5B6b4_1_0013EA80(a, 0);
     if (t == 1) {
         id = Enemy_GetCurrentParamIdx_0_0013E110(a);
-        ids = D_00201C40;
+        ids = gCombatSdata_00201C40;
         switch (id) {
         case 0x1068:
         case 0x1069:
@@ -967,8 +967,8 @@ u8 Enemy_SelectAttack_1_00135490(s8 *a, f32 *pl, f32 *pc, f32 *py) {
 }
 
 /* Enemy_EvalAttackRange_1_00135990 */
-#define C (((s32 **)&D_00201E80)[2])
-#define D (((s32 **)&D_00201E80)[3])
+#define C (((s32 **)&gMapSbss_00201E80)[2])
+#define D (((s32 **)&gMapSbss_00201E80)[3])
 static inline f32 u2f(u32 x) { return x; }
 static inline f32 mu(u32 x, f32 k) { f32 f = x; return f * k; }
 
@@ -1176,6 +1176,6 @@ s32 Combat_ApplyDamage_1_00135E90(s8 *a0, s32 a1, s8 *a2, u8 a3, s32 *out) {
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/sound_emitter_rodata.c): D_001FABD0__grp: D_001FABD0@0x0, D_001FABD7@0x7 */
+/* data group (src/game/data/sound_emitter_rodata.c): D_001FABD0__grp: gCombatRodata_001FABD0@0x0, gCombatRodata_001FABD7@0x7 */
 s32 D_001FABD0__grp[0x2c] __attribute__((aligned(16))) = { -0x1f7f9fe, 0x404f8fe, -0x30307fc, 0x4040402, 0x80404f8, 0x8040404, 0x10606f8, 0x6080404, -0x7fef908, 0x4040802, 0x602fff8, -0x70303f8, -0x3f7f908, 0x1f8fefe, -0x103f7fa, 0x401f8fe, -0x303fdf8, 0x204fef8, 0x8fc06f8, 0x804fcfe, -0x3070304, -0x3f7f9fe, 0x6f8f8fc, -0x10103f8, 0x80601f8, -0x7010104, -0x7fdfbff, -0x1f7f904, -0x3fdf7fc, -0x3010704, -0x303f7fc, 0x602fcf8, -0x70707f8, 0x80806f8, -0x7070708, -0x7fef7fc, 0x4f8f8f8, -0x707fef8, 0x804f8f8, -0x70707ff, 0x10804f8, -0x7070708, 0, 0 };
 #endif

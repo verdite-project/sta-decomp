@@ -1,6 +1,6 @@
 #include "common.h"
 #include "game/sound.h"
-extern u16 D_0020230C;
+extern u16 gStreamSbss_0020230C;
 void Strm_DrvGetStatus_1_001D8C50(void);
 void Strm_DrvSetMode_1_001D8CC0(u16 d, u16 e);
 s32 Strm_DrvOpenFile_1_001D8D20(s32 a0, const char *s, s32 a2);
@@ -79,9 +79,9 @@ s32 Strm_DrvOpenFile_1_001D8D20(s32 a0, const char *s, s32 a2) {
 int SndDrv_Call_2_001D85D0__as_Strm_DrvClose_1_001D8DF0();
 
 void Strm_DrvClose_1_001D8DF0(void) {
-    if (D_0020230C != 0) {
+    if (gStreamSbss_0020230C != 0) {
         SndDrv_Call_2_001D85D0(5, 1, 0x40000);
-        D_0020230C = 0;
+        gStreamSbss_0020230C = 0;
     }
 }
 #undef SndDrv_Call_2_001D85D0
@@ -95,14 +95,14 @@ void Strm_DrvClose_1_001D8DF0(void) {
 
 void Strm_DrvInit_0_001D8E30(void)
 {
-    if (D_0020230C != 1) {
+    if (gStreamSbss_0020230C != 1) {
         SndDrv_Call_2_001D85D0(5, 1, 0x30000);
-        D_0020230C = 1;
+        gStreamSbss_0020230C = 1;
     }
 }
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/sbss.c): D_0020230C */
-u16 D_0020230C;
+/* data twins (src/game/data/sbss.c): gStreamSbss_0020230C */
+u16 gStreamSbss_0020230C;
 #endif

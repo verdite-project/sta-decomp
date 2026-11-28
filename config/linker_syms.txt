@@ -4,9 +4,9 @@
  * to the object they lie in; an expression here is passed as it is. */
 
 /* Sjis_DecodeChar_2_001E5B18 (still asm, Shift-JIS decoder) reads the halfword table
- * D_001FE994 through a biased address (its first index is 0x3E), which lands
+ * gGfxUploadRodata_001FE994 through a biased address (its first index is 0x3E), which lands
  * inside GsText_ParseEscape_1_001E2D70's jump table. */
-D_001FE918 = D_001FE994 - 0x7C;
+D_001FE918 = gGfxUploadRodata_001FE994 - 0x7C;
 
 /* crt0's link constants: the main thread's stack top and size, and the heap
  * size (-1: up to the stack). */

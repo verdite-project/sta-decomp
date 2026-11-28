@@ -5,7 +5,7 @@
 -void sceVu0AddVector(u8 *, u8 *, s32);       /* extern */
 +typedef struct { char p0[0x1D]; s8 b1d; s16 h1e; f32 v20[4]; f32 v30[4]; char p40[0x10]; } E;
 +extern E D_0026F0D0[64];
- extern s32 D_00201ED8;
+ extern s32 gSoundEmitterSbss_00201ED8;
 -extern s32 D_0026F0D0[];
 -void SndEmit_OffsetPositions_1_0012F7E0(s32 arg0) {
 -    u8 *temp_4_2;
@@ -43,4 +43,4 @@
      }
 -    SndCh_OffsetPositions_1_0012C440(arg0);
 +    SndCh_OffsetPositions_1_0012C440(v);
-     D_00201ED8 = 1;
+     gSoundEmitterSbss_00201ED8 = 1;

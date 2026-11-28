@@ -19,9 +19,9 @@ typedef struct {
     Owner *owner;
 } Blk;
 extern Blk gVramBlocks_0047F0C0[];
-extern s16 D_004830D8[];
+extern s16 gTextureBss_004830D8[];
 extern s16 D_004830DA[];
-extern s16 D_004830DC[];
+extern s16 gTextureBss_004830DC[];
 extern s16 D_004830DE[];
 void Vram_FreeBlock_0_00177380(s32);
 
@@ -39,19 +39,19 @@ s16 Vram_AllocBlock_1_00176FB0(s32 x) {
     o = gVramBlocks_0047F0C0[i].owner;
     D_004830DE[0]--;
     if (i == gVramBlocks_0047F0C0[i].fnext) {
-        D_004830DC[0] = -1;
+        gTextureBss_004830DC[0] = -1;
     } else {
         gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[i].fnext].fprev = gVramBlocks_0047F0C0[i].fprev;
         gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[i].fprev].fnext = gVramBlocks_0047F0C0[i].fnext;
-        if (D_004830DC[0] == i) D_004830DC[0] = gVramBlocks_0047F0C0[i].fnext;
+        if (gTextureBss_004830DC[0] == i) gTextureBss_004830DC[0] = gVramBlocks_0047F0C0[i].fnext;
     }
     n = gVramBlocks_0047F0C0[i].next;
     on = gVramBlocks_0047F0C0[n].owner;
     if ((on != NULL || n == 0) && (gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[i].prev].owner != NULL || i == gVramBlocks_0047F0C0[i].prev)) {
         D_004830DA[0]++;
-        h = D_004830D8[0];
+        h = gTextureBss_004830D8[0];
         if (h == -1) {
-            D_004830D8[0] = a0;
+            gTextureBss_004830D8[0] = a0;
             gVramBlocks_0047F0C0[i].fnext = a0;
             gVramBlocks_0047F0C0[i].fprev = a0;
         } else {
@@ -59,7 +59,7 @@ s16 Vram_AllocBlock_1_00176FB0(s32 x) {
             gVramBlocks_0047F0C0[i].fprev = gVramBlocks_0047F0C0[h].fprev;
             gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[i].fnext].fprev = a0;
             gVramBlocks_0047F0C0[gVramBlocks_0047F0C0[i].fprev].fnext = a0;
-            D_004830D8[0] = a0;
+            gTextureBss_004830D8[0] = a0;
         }
         gVramBlocks_0047F0C0[i].owner = NULL;
         i = a0;

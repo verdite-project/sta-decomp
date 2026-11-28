@@ -3,14 +3,14 @@
 @@ -1,8 +1,8 @@
  #include "common.h"
 -void func_00123A88(s32, s32);                /* extern */
- extern s32 D_00201E10;
+ extern s32 gOptionModeSdata_00201E10;
 -void Option_Store_1_001A94E0(s32 arg0) {
 -    if (arg0 != 0) {
--        func_00123A88(D_00201E10, 0x10);
+-        func_00123A88(gOptionModeSdata_00201E10, 0x10);
 -    }
 +void func_00123A88(void *p, s32 v, s32 n);
 +void Option_Store_1_001A94E0(void *p)
 +{
 +    if (p)
-+        func_00123A88(p, D_00201E10, 0x10);
++        func_00123A88(p, gOptionModeSdata_00201E10, 0x10);
  }

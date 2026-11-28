@@ -32,10 +32,10 @@ typedef struct {
 typedef struct {
     f32 x0, x4, x8, xC, x10, x14, x18, x1C, x20, x24; u32 x28; u8 p2C; Flags8 x2D;
 } R;
-extern O *D_00201FC0;
-extern Vec D_001F2140;
-extern Vec D_001F2150;
-extern Vec D_001F2160;
+extern O *gSfxSystemSbss_00201FC0;
+extern Vec gMatrixFromData_001F2140;
+extern Vec gMatrixFromData_001F2150;
+extern Vec gMatrixFromData_001F2160;
 S FxTable_GetEntry_0_0014D8A0(u16);
 void FxTable_CallB_0_0014D940(u16, O *, f32);
 void Fx_GetWorldMatrix_1_00163C80(O *, Mtx *);
@@ -151,7 +151,7 @@ s32 Fx_UpdateEmitter_0_00160370(O *o, R *r, f32 dt) {
         o->x88 -= dt;
         if (o->x88 < 0.0f) return 1;
     }
-    p = (o->xA0 == 0xFFFF) ? NULL : &D_00201FC0[o->xA0];
+    p = (o->xA0 == 0xFFFF) ? NULL : &gSfxSystemSbss_00201FC0[o->xA0];
     if (p != NULL && p->x114.f.b2) {
         if (o->x114.f.b5) {
             Fx_GetWorldMatrix_1_00163C80(o, &m1);
@@ -159,7 +159,7 @@ s32 Fx_UpdateEmitter_0_00160370(O *o, R *r, f32 dt) {
             sceVu0CopyVector(&o->v, &m1.m[3]);
             sceVu0CopyVector(&o->x10, &v1C0);
             sceVu0CopyMatrix(&o->xC0, &m1);
-            sceVu0CopyVector(&o->xC0.m[3], &D_001F2160);
+            sceVu0CopyVector(&o->xC0.m[3], &gMatrixFromData_001F2160);
             o->x114.f.b5 = 0;
         }
         if (o->x114.f.b6) return 1;
@@ -207,10 +207,10 @@ s32 Fx_UpdateEmitter_0_00160370(O *o, R *r, f32 dt) {
             if (0.999f < o->xC0.m[2].y || o->xC0.m[2].y < -0.999f) {
                 sceVu0CopyVector(&v1B0, (Vec *)&o->x20);
             } else {
-                sceVu0ApplyMatrix(&m2.m[2], &o->xC0, &D_001F2150);
-                sceVu0OuterProduct(&m2.m[0], &D_001F2140, &m2.m[2]);
-                sceVu0CopyVector(&m2.m[1], &D_001F2140);
-                sceVu0CopyVector(&m2.m[3], &D_001F2160);
+                sceVu0ApplyMatrix(&m2.m[2], &o->xC0, &gMatrixFromData_001F2150);
+                sceVu0OuterProduct(&m2.m[0], &gMatrixFromData_001F2140, &m2.m[2]);
+                sceVu0CopyVector(&m2.m[1], &gMatrixFromData_001F2140);
+                sceVu0CopyVector(&m2.m[3], &gMatrixFromData_001F2160);
                 sceVu0ApplyMatrix(&v1B0, &m2, (Vec *)&o->x20);
             }
             sceVu0ScaleVector(&v160, &v1B0, dt);

@@ -14,52 +14,52 @@ typedef struct { u8 b0:1; } B;
 typedef struct { Vec a; Vec b; Vec c; f32 x30; f32 x34; B fl; u8 pad[7]; } Ent_Light_Add_0_0015B980;
 typedef struct { Ent_Light_Add_0_0015B980 sp[4]; Ent_Light_Add_0_0015B980 ents[2][64]; } W_Light_Add_0_0015B980;
 typedef struct { u128 q[4]; } M;
-extern s32 D_0030A2D0[];
+extern s32 gLightBss_0030A2D0[];
 #ifndef NONMATCHING
-extern Vec D_0030A290;
+extern Vec gLightBss_0030A290;
 #else
-/* data twins (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A290 */
-static Vec D_0030A290;
+/* data twins (src/game/data/screen_fx_bss_0030A0D0.c): gLightBss_0030A290 */
+static Vec gLightBss_0030A290;
 #endif
 #ifndef NONMATCHING
-extern Vec D_0030A320;
+extern Vec gLightBss_0030A320;
 #else
-/* data twins (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A320 */
-static Vec D_0030A320;
+/* data twins (src/game/data/screen_fx_bss_0030A0D0.c): gLightBss_0030A320 */
+static Vec gLightBss_0030A320;
 #endif
-extern Vec D_0030A330;
-extern Vec D_0030A350;
-extern Vec D_0030A360;
-extern Vec D_0030A370;
-extern Vec D_0030A390;
-extern Vec D_001F2150;
-extern u16 D_0030C3D0[];
+extern Vec gLightBss_0030A330;
+extern Vec gLightBss_0030A350;
+extern Vec gLightBss_0030A360;
+extern Vec gLightBss_0030A370;
+extern Vec gLightBss_0030A390;
+extern Vec gMatrixFromData_001F2150;
+extern u16 gLightBss_0030C3D0[];
 extern u16 D_0030C3D4[];
-extern char D_0030A310[];
-extern B_LightGroup_Clear_0_0015B890 D_0030A2D0__as_LightGroup_Get_0_0015B900[];
-extern E_LightGroup_Clear_0_0015B890 D_0030A2D0__as_LightGroup_Clear_0_0015B890[];
-extern char D_0030A390__as_LightGroup_Clear_0_0015B890[];
-extern f32 D_0030A39C[];
-extern Vec D_0030A3A0[];
-extern f32 D_0030A3AC[];
-extern Vec D_0030A3B0[];
-extern f32 D_0030A3B4[];
-extern f32 D_0030A3B8[];
-extern f32 D_0030A3BC[];
+extern char gLightBss_0030A310[];
+extern B_LightGroup_Clear_0_0015B890 gLightBss_0030A2D0__as_LightGroup_Get_0_0015B900[];
+extern E_LightGroup_Clear_0_0015B890 gLightBss_0030A2D0__as_LightGroup_Clear_0_0015B890[];
+extern char gLightBss_0030A390__as_LightGroup_Clear_0_0015B890[];
+extern f32 gLightBss_0030A39C[];
+extern Vec gLightBss_0030A3A0[];
+extern f32 gLightBss_0030A3AC[];
+extern Vec gLightBss_0030A3B0[];
+extern f32 gLightBss_0030A3B4[];
+extern f32 gLightBss_0030A3B8[];
+extern f32 gLightBss_0030A3BC[];
 #ifndef NONMATCHING
-extern f32 D_0030A3C0[];
+extern f32 gLightBss_0030A3C0[];
 #else
-/* data twins (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A3C0 */
-static f32 D_0030A3C0[0x1];
+/* data twins (src/game/data/screen_fx_bss_0030A0D0.c): gLightBss_0030A3C0 */
+static f32 gLightBss_0030A3C0[0x1];
 #endif
-extern f32 D_0030A3C4[];
+extern f32 gLightBss_0030A3C4[];
 extern B D_0030A3C8[];
-extern s8 D_0030A2D0__as_Light_Init_1_0015BCA0[];
-extern W_Light_Add_0_0015B980 D_0030A2D0__as_Light_Add_0_0015B980;
-extern Vec D_0030A390__as_Light_Add_0_0015B980[];
+extern s8 gLightBss_0030A2D0__as_Light_Init_1_0015BCA0[];
+extern W_Light_Add_0_0015B980 gLightBss_0030A2D0__as_Light_Add_0_0015B980;
+extern Vec gLightBss_0030A390__as_Light_Add_0_0015B980[];
 extern Vec gZeroVec_003139A0__as_Light_Add_0_0015B980[];
-extern M D_0030A310__as_Light_Add_0_0015B980;
-extern M D_0030A350__as_Light_Add_0_0015B980;
+extern M gLightBss_0030A310__as_Light_Add_0_0015B980;
+extern M gLightBss_0030A350__as_Light_Add_0_0015B980;
 void Light_OffsetAll_0_0015B110(s32 arg0);
 void Fog_SetReg_0_0015B1C0(Q *src, f32 *c);
 void Light_CopyColor_0_0015B6B0(void *arg0, void *arg1);
@@ -94,8 +94,8 @@ void Light_OffsetAll_0_0015B110(s32 arg0) {
     u8 *b;
     E *e;
     j = 0;
-    h = (u8 *)D_0030A2D0;
-    b = (u8 *)D_0030A2D0;
+    h = (u8 *)gLightBss_0030A2D0;
+    b = (u8 *)gLightBss_0030A2D0;
     do {
         i = 0;
         if (*(u16 *)(h + 0x2104) != 0) {
@@ -115,8 +115,8 @@ void Light_OffsetAll_0_0015B110(s32 arg0) {
 }
 
 /* Fog_SetReg_0_0015B1C0 */
-#define D_0030A2D0 D_0030A2D0__as_Fog_SetReg_0_0015B1C0
-extern u8 D_0030A2D0__as_Fog_SetReg_0_0015B1C0[];
+#define gLightBss_0030A2D0 gLightBss_0030A2D0__as_Fog_SetReg_0_0015B1C0
+extern u8 gLightBss_0030A2D0__as_Fog_SetReg_0_0015B1C0[];
 
 /* Fog_SetReg_0_0015B1C0 */
 void Fog_SetReg_0_0015B1C0(Q *src, f32 *c) {
@@ -145,11 +145,11 @@ void Fog_ApplyDefault_0_0015B270(void) {
     q.q = 0;
     p = GsPkt_Alloc_3_00154A80(1);
     q.w[0] = 0x30000001;
-    q.w[1] = (u32)(D_0030A2D0 + D_00201F2C * 32);
+    q.w[1] = (u32)(gLightBss_0030A2D0 + gSfxAllSbss_00201F2C * 32);
     q.w[3] = 0x6C010059;
     p->q = q.q;
     GsPkt_Commit_1_00154A70();
-    sceVu0CopyVector(&c, D_0030A2D0 + D_00201F2C * 32 + 0x10);
+    sceVu0CopyVector(&c, gLightBss_0030A2D0 + gSfxAllSbss_00201F2C * 32 + 0x10);
     GsPkt_BeginAD_3_001545D0();
     r = __fixunssfdi(255.0f * c.x);
     g = __fixunssfdi(255.0f * c.y);
@@ -158,11 +158,11 @@ void Fog_ApplyDefault_0_0015B270(void) {
     GsPkt_SetReg_3_001543E0(0x3D, (b << 16) | r);
     GsPkt_EndAD_3_00154420();
 }
-#undef D_0030A2D0
+#undef gLightBss_0030A2D0
 
 /* Light_UpdateModel_0_0015B360_ */
-#define D_0030A2D0 D_0030A2D0__as_Light_UpdateModel_0_0015B360_
-extern W_Light_UpdateModel_0_0015B360 D_0030A2D0__as_Light_UpdateModel_0_0015B360_;
+#define gLightBss_0030A2D0 gLightBss_0030A2D0__as_Light_UpdateModel_0_0015B360_
+extern W_Light_UpdateModel_0_0015B360 gLightBss_0030A2D0__as_Light_UpdateModel_0_0015B360_;
 #define sceVu0AddVector sceVu0AddVector__as_Light_UpdateModel_0_0015B360_
 void sceVu0AddVector__as_Light_UpdateModel_0_0015B360_(Vec *, Vec *, Vec *);
 
@@ -180,39 +180,39 @@ void Light_UpdateModel_0_0015B360(void *a0, s32 mask) {
     Vec d;
     Vec c;
 
-    h = (Vec *)((u8 *)&D_0030A2D0 + D_00201F2C * 32);
+    h = (Vec *)((u8 *)&gLightBss_0030A2D0 + gSfxAllSbss_00201F2C * 32);
     h2 = h + 1;
-    sceVu0CopyVector__as_Light_UpdateModel_0_0015B360(&D_0030A360, &gZeroVec_003139A0);
-    sceVu0CopyVector__as_Light_UpdateModel_0_0015B360(&D_0030A370, &gZeroVec_003139A0);
-    sceVu0CopyMatrix(&D_0030A290, a0);
-    sum = Light_CalcIntensity_0_0015B720__as_Light_UpdateModel_0_0015B360(&D_0030A350, &D_0030A390);
+    sceVu0CopyVector__as_Light_UpdateModel_0_0015B360(&gLightBss_0030A360, &gZeroVec_003139A0);
+    sceVu0CopyVector__as_Light_UpdateModel_0_0015B360(&gLightBss_0030A370, &gZeroVec_003139A0);
+    sceVu0CopyMatrix(&gLightBss_0030A290, a0);
+    sum = Light_CalcIntensity_0_0015B720__as_Light_UpdateModel_0_0015B360(&gLightBss_0030A350, &gLightBss_0030A390);
     for (i = 0; i < 2; i++) {
-        if ((mask & (1 << i)) && D_0030A2D0.cnt[i]) {
+        if ((mask & (1 << i)) && gLightBss_0030A2D0.cnt[i]) {
             for (j = 0; j < 64; j++) {
-                if (D_0030A2D0.ents[i][j].fl.b0) {
-                    sum += Light_CalcIntensity_0_0015B720__as_Light_UpdateModel_0_0015B360(&D_0030A350, &D_0030A2D0.ents[i][j]);
+                if (gLightBss_0030A2D0.ents[i][j].fl.b0) {
+                    sum += Light_CalcIntensity_0_0015B720__as_Light_UpdateModel_0_0015B360(&gLightBss_0030A350, &gLightBss_0030A2D0.ents[i][j]);
                 }
             }
         }
     }
     inv = 1.0f / sum;
-    d.x = D_0030A360.x * inv;
-    d.y = D_0030A360.y * inv;
-    d.z = D_0030A360.z * inv;
+    d.x = gLightBss_0030A360.x * inv;
+    d.y = gLightBss_0030A360.y * inv;
+    d.z = gLightBss_0030A360.z * inv;
     d.w = 0.0f;
-    c.x = D_0030A370.x * inv;
-    c.y = D_0030A370.y * inv;
-    c.z = D_0030A370.z * inv;
-    c.w = D_0030A370.w * inv;
-    sceVu0InterVector(0.85f, &D_0030A320, &D_0030A320, &d);
-    sceVu0InterVector(0.85f, &D_0030A330, &D_0030A330, &c);
-    if (h && &D_0030A330) {
-        h->x = D_0030A330.x;
-        h->y = D_0030A330.y;
-        h->z = 0.5f * (0.999999f - D_0030A330.z);
-        h->w = 0.5f * (1.0f - D_0030A330.w);
+    c.x = gLightBss_0030A370.x * inv;
+    c.y = gLightBss_0030A370.y * inv;
+    c.z = gLightBss_0030A370.z * inv;
+    c.w = gLightBss_0030A370.w * inv;
+    sceVu0InterVector(0.85f, &gLightBss_0030A320, &gLightBss_0030A320, &d);
+    sceVu0InterVector(0.85f, &gLightBss_0030A330, &gLightBss_0030A330, &c);
+    if (h && &gLightBss_0030A330) {
+        h->x = gLightBss_0030A330.x;
+        h->y = gLightBss_0030A330.y;
+        h->z = 0.5f * (0.999999f - gLightBss_0030A330.z);
+        h->w = 0.5f * (1.0f - gLightBss_0030A330.w);
     }
-    sceVu0CopyVector__as_Light_UpdateModel_0_0015B360(h2, &D_0030A320);
+    sceVu0CopyVector__as_Light_UpdateModel_0_0015B360(h2, &gLightBss_0030A320);
     if (!(h2->x <= 1.0f)) h2->x = 1.0f;
     if (h2->x < 0.0f) h2->x = 0.0f;
     if (!(h2->y <= 1.0f)) h2->y = 1.0f;
@@ -244,9 +244,9 @@ f32 Light_CalcIntensity_0_0015B720(void *a0, u8 *a1) {
     f32 s;
     sceVu0CopyVector(&v60, a1);
     v60.w = 1.0f;
-    sceVu0ApplyMatrix(&v60, &D_0030A290, &v60);
+    sceVu0ApplyMatrix(&v60, &gLightBss_0030A290, &v60);
     sceVu0Normalize(&v50, &v60);
-    d = sceVu0InnerProduct(&v50, &D_001F2150);
+    d = sceVu0InnerProduct(&v50, &gMatrixFromData_001F2150);
     d += k;
     if (d < 0.0f) {
         return 0.0f;
@@ -258,9 +258,9 @@ f32 Light_CalcIntensity_0_0015B720(void *a0, u8 *a1) {
     }
     r *= powf(1.0f - s / *(f32 *)(a1 + 0xC), *(f32 *)(a1 + 0x34));
     sceVu0ScaleVector(&v40, a1 + 0x10, r);
-    sceVu0AddVector(&D_0030A360, &v40, &D_0030A360);
+    sceVu0AddVector(&gLightBss_0030A360, &v40, &gLightBss_0030A360);
     sceVu0ScaleVector(&v30, a1 + 0x20, r);
-    sceVu0AddVector(&D_0030A370, &v30, &D_0030A370);
+    sceVu0AddVector(&gLightBss_0030A370, &v30, &gLightBss_0030A370);
     return r;
 }
 
@@ -269,8 +269,8 @@ f32 Light_CalcIntensity_0_0015B720(void *a0, u8 *a1) {
 /* LightGroup_Clear_0_0015B890 */
 void LightGroup_Clear_0_0015B890(s32 i)
 {
-    memset(D_0030A2D0__as_LightGroup_Clear_0_0015B890[i].b + 0x100, 0, 0x1000);
-    D_0030C3D0[i] = 0;
+    memset(gLightBss_0030A2D0__as_LightGroup_Clear_0_0015B890[i].b + 0x100, 0, 0x1000);
+    gLightBss_0030C3D0[i] = 0;
     D_0030C3D4[i] = 0;
 }
 
@@ -280,10 +280,10 @@ void *LightGroup_Get_0_0015B900(s32 i)
 {
     if (i < 0) {
         if (i == -1)
-            return D_0030A310;
-        return D_0030A390__as_LightGroup_Clear_0_0015B890;
+            return gLightBss_0030A310;
+        return gLightBss_0030A390__as_LightGroup_Clear_0_0015B890;
     }
-    return &D_0030A2D0__as_LightGroup_Get_0_0015B900[i / 64].e[i % 64];
+    return &gLightBss_0030A2D0__as_LightGroup_Get_0_0015B900[i / 64].e[i % 64];
 }
 
 /* Light_Add_0_0015B980 */
@@ -292,11 +292,11 @@ void *LightGroup_Get_0_0015B900(s32 i)
 static inline Ent_Light_Add_0_0015B980 *getEnt(s32 id) {
     if (id < 0) {
         if (id == -1) {
-            return &D_0030A2D0__as_Light_Add_0_0015B980.sp[1];
+            return &gLightBss_0030A2D0__as_Light_Add_0_0015B980.sp[1];
         }
-        return &D_0030A2D0__as_Light_Add_0_0015B980.sp[3];
+        return &gLightBss_0030A2D0__as_Light_Add_0_0015B980.sp[3];
     }
-    return &D_0030A2D0__as_Light_Add_0_0015B980.ents[id / 64][id % 64];
+    return &gLightBss_0030A2D0__as_Light_Add_0_0015B980.ents[id / 64][id % 64];
 }
 
 s32 Light_Add_0_0015B980(s32 idx, Vec *a, Vec *b, Vec *c, f32 f0, f32 f1, f32 f2, f32 f3) {
@@ -304,11 +304,11 @@ s32 Light_Add_0_0015B980(s32 idx, Vec *a, Vec *b, Vec *c, f32 f0, f32 f1, f32 f2
     s32 id;
     Ent_Light_Add_0_0015B980 *e;
 
-    i = D_0030C3D0[idx];
+    i = gLightBss_0030C3D0[idx];
 
     for (;;) {
-        if (!D_0030A2D0__as_Light_Add_0_0015B980.ents[idx][i].fl.b0) {
-            D_0030C3D0[idx] = i + 1;
+        if (!gLightBss_0030A2D0__as_Light_Add_0_0015B980.ents[idx][i].fl.b0) {
+            gLightBss_0030C3D0[idx] = i + 1;
             id = i + idx * 64;
             break;
         }
@@ -332,106 +332,106 @@ s32 Light_Add_0_0015B980(s32 idx, Vec *a, Vec *b, Vec *c, f32 f0, f32 f1, f32 f2
 
 /* Light_SetAmbient_0_0015BB40 */
 void Light_SetAmbient_0_0015BB40(Vec *a, Vec *b, f32 f) {
-    sceVu0CopyVector__as_Light_Add_0_0015B980(D_0030A390__as_Light_Add_0_0015B980, gZeroVec_003139A0__as_Light_Add_0_0015B980);
-    D_0030A39C[0] = 30000.0f;
+    sceVu0CopyVector__as_Light_Add_0_0015B980(gLightBss_0030A390__as_Light_Add_0_0015B980, gZeroVec_003139A0__as_Light_Add_0_0015B980);
+    gLightBss_0030A39C[0] = 30000.0f;
     if (b != NULL) {
-        sceVu0ScaleVector__as_Light_Add_0_0015B980(D_0030A3A0, b, 1.0f / 255.0f);
+        sceVu0ScaleVector__as_Light_Add_0_0015B980(gLightBss_0030A3A0, b, 1.0f / 255.0f);
     } else {
-        sceVu0CopyVector__as_Light_Add_0_0015B980(D_0030A3A0, gZeroVec_003139A0__as_Light_Add_0_0015B980);
-        D_0030A3A0[0].x = 0.0f;
+        sceVu0CopyVector__as_Light_Add_0_0015B980(gLightBss_0030A3A0, gZeroVec_003139A0__as_Light_Add_0_0015B980);
+        gLightBss_0030A3A0[0].x = 0.0f;
     }
-    D_0030A3AC[0] = 100.0f;
+    gLightBss_0030A3AC[0] = 100.0f;
     if (a != NULL) {
-        sceVu0CopyVector__as_Light_Add_0_0015B980(D_0030A3B0, a);
+        sceVu0CopyVector__as_Light_Add_0_0015B980(gLightBss_0030A3B0, a);
     } else {
-        D_0030A3B8[0] = 0.0f;
-        D_0030A3B0[0].x = 1000.0f;
-        D_0030A3B4[0] = 15000.0f;
-        D_0030A3BC[0] = 1.0f;
+        gLightBss_0030A3B8[0] = 0.0f;
+        gLightBss_0030A3B0[0].x = 1000.0f;
+        gLightBss_0030A3B4[0] = 15000.0f;
+        gLightBss_0030A3BC[0] = 1.0f;
     }
     if (f < 0.0f) {
-        D_0030A3C0[0] = 1.0f;
+        gLightBss_0030A3C0[0] = 1.0f;
     } else {
-        D_0030A3C0[0] = f;
+        gLightBss_0030A3C0[0] = f;
     }
-    D_0030A3C4[0] = 0.1f;
+    gLightBss_0030A3C4[0] = 0.1f;
     D_0030A3C8[0].b0 = 1;
 }
 
 /* Light_Init_1_0015BCA0 */
 
 void Light_Init_1_0015BCA0(void) {
-    memset__as_Light_Add_0_0015B980(D_0030A2D0__as_Light_Init_1_0015BCA0, 0, 0x2110);
-    sceVu0CopyVector__as_Light_Add_0_0015B980(D_0030A390__as_Light_Add_0_0015B980, gZeroVec_003139A0__as_Light_Add_0_0015B980);
-    D_0030A39C[0] = 30000.0f;
-    sceVu0CopyVector__as_Light_Add_0_0015B980(D_0030A3A0, gZeroVec_003139A0__as_Light_Add_0_0015B980);
-    D_0030A3A0[0].x = 0.0f;
-    D_0030A3AC[0] = 100.0f;
-    D_0030A3B0[0].x = 1000.0f;
-    D_0030A3B8[0] = 0.0f;
-    D_0030A3B4[0] = 15000.0f;
-    D_0030A3BC[0] = 1.0f;
-    D_0030A3C0[0] = 1.0f;
-    D_0030A3C4[0] = 0.1f;
+    memset__as_Light_Add_0_0015B980(gLightBss_0030A2D0__as_Light_Init_1_0015BCA0, 0, 0x2110);
+    sceVu0CopyVector__as_Light_Add_0_0015B980(gLightBss_0030A390__as_Light_Add_0_0015B980, gZeroVec_003139A0__as_Light_Add_0_0015B980);
+    gLightBss_0030A39C[0] = 30000.0f;
+    sceVu0CopyVector__as_Light_Add_0_0015B980(gLightBss_0030A3A0, gZeroVec_003139A0__as_Light_Add_0_0015B980);
+    gLightBss_0030A3A0[0].x = 0.0f;
+    gLightBss_0030A3AC[0] = 100.0f;
+    gLightBss_0030A3B0[0].x = 1000.0f;
+    gLightBss_0030A3B8[0] = 0.0f;
+    gLightBss_0030A3B4[0] = 15000.0f;
+    gLightBss_0030A3BC[0] = 1.0f;
+    gLightBss_0030A3C0[0] = 1.0f;
+    gLightBss_0030A3C4[0] = 0.1f;
     D_0030A3C8[0].b0 = 1;
-    D_0030A350__as_Light_Add_0_0015B980 = *(M *)D_0030A390__as_Light_Add_0_0015B980;
-    D_0030A310__as_Light_Add_0_0015B980 = *(M *)D_0030A390__as_Light_Add_0_0015B980;
+    gLightBss_0030A350__as_Light_Add_0_0015B980 = *(M *)gLightBss_0030A390__as_Light_Add_0_0015B980;
+    gLightBss_0030A310__as_Light_Add_0_0015B980 = *(M *)gLightBss_0030A390__as_Light_Add_0_0015B980;
 }
 #undef sceVu0AddVector
-#undef D_0030A2D0
+#undef gLightBss_0030A2D0
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A2D0, D_0030A310 */
-s32 D_0030A2D0[0x10];
-char D_0030A310[0x10];
+/* data twins (src/game/data/screen_fx_bss_0030A0D0.c): gLightBss_0030A2D0, gLightBss_0030A310 */
+s32 gLightBss_0030A2D0[0x10];
+char gLightBss_0030A310[0x10];
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A350 */
-Vec D_0030A350;
+/* data twins (src/game/data/screen_fx_bss_0030A0D0.c): gLightBss_0030A350 */
+Vec gLightBss_0030A350;
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A3C4, D_0030C3D0 */
-f32 D_0030A3C4[0x803] __attribute__((aligned(4)));
-u16 D_0030C3D0[0x8];
+/* data twins (src/game/data/screen_fx_bss_0030A0D0.c): gLightBss_0030A3C4, gLightBss_0030C3D0 */
+f32 gLightBss_0030A3C4[0x803] __attribute__((aligned(4)));
+u16 gLightBss_0030C3D0[0x8];
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A330__grp: D_0030A330@0x0, D_0030A334@0x4, D_0030A338@0x8 */
+/* data group (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A330__grp: gLightBss_0030A330@0x0, gLightBss_0030A334@0x4, gLightBss_0030A338@0x8 */
 u8 D_0030A330__grp[0x20] __attribute__((aligned(16)));
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A360__grp: D_0030A360@0x0, D_0030A364@0x4, D_0030A368@0x8 */
+/* data group (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A360__grp: gLightBss_0030A360@0x0, gLightBss_0030A364@0x4, gLightBss_0030A368@0x8 */
 u8 D_0030A360__grp[0x10] __attribute__((aligned(16)));
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A370__grp: D_0030A370@0x0, D_0030A374@0x4, D_0030A378@0x8 */
+/* data group (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A370__grp: gLightBss_0030A370@0x0, gLightBss_0030A374@0x4, gLightBss_0030A378@0x8 */
 u8 D_0030A370__grp[0x20] __attribute__((aligned(16)));
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A390__grp: D_0030A390@0x0, D_0030A39C@0xc */
+/* data group (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A390__grp: gLightBss_0030A390@0x0, gLightBss_0030A39C@0xc */
 u8 D_0030A390__grp[0x10] __attribute__((aligned(16)));
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A3A0__grp: D_0030A3A0@0x0, D_0030A3AC@0xc */
+/* data group (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A3A0__grp: gLightBss_0030A3A0@0x0, gLightBss_0030A3AC@0xc */
 u8 D_0030A3A0__grp[0x10] __attribute__((aligned(16)));
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A3B0__grp: D_0030A3B0@0x0, D_0030A3B4@0x4, D_0030A3B8@0x8, D_0030A3BC@0xc */
+/* data group (src/game/data/screen_fx_bss_0030A0D0.c): D_0030A3B0__grp: gLightBss_0030A3B0@0x0, gLightBss_0030A3B4@0x4, gLightBss_0030A3B8@0x8, gLightBss_0030A3BC@0xc */
 u8 D_0030A3B0__grp[0x10] __attribute__((aligned(16)));
 #endif

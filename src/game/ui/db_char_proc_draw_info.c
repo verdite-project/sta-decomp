@@ -34,19 +34,19 @@ E *Item_GetTable_1_001AFC90(void);
 double fptodp(f32);
 void Ui_DrawWindow_0_00183650(T *);
 #ifndef NONMATCHING
-extern S D_001F2EE0 __attribute__((aligned(16)));
+extern S gDbCharProcDrawInfoData_001F2EE0 __attribute__((aligned(16)));
 #else
-/* data twins (src/game/data/databook_item_reset_data.c): D_001F2EE0 */
-static S D_001F2EE0 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+/* data twins (src/game/data/databook_item_reset_data.c): gDbCharProcDrawInfoData_001F2EE0 */
+static S gDbCharProcDrawInfoData_001F2EE0 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
 #endif
-extern T D_004A13A0;
-extern s32 D_00202184;
-extern s32 D_00202188;
+extern T gDbCharProcDrawInfoBss_004A13A0;
+extern s32 gDatabookCharUpdateWrapSbss_00202184;
+extern s32 gDbCharProcDrawInfoSbss_00202188;
 #ifndef NONMATCHING
-extern s8 D_001FD328[];
+extern s8 gDbCharProcDrawInfoRodata_001FD328[];
 #else
-/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD328 */
-static s8 D_001FD328[0x8] = { 0x25, 0x64, 0x20, -0x7f, -0x6d, 0, 0, 0 };
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDbCharProcDrawInfoRodata_001FD328 */
+static s8 gDbCharProcDrawInfoRodata_001FD328[0x8] = { 0x25, 0x64, 0x20, -0x7f, -0x6d, 0, 0, 0 };
 #endif
 #ifndef NONMATCHING
 extern s8 gStrHpD_001FD330[];
@@ -67,10 +67,10 @@ extern s8 gStr3d_001FD340[];
 static s8 gStr3d_001FD340[0x8] = "%3d\000\000\000\000\000";
 #endif
 #ifndef NONMATCHING
-extern s8 D_001FD348[];
+extern s8 gDbCharProcDrawInfoRodata_001FD348[];
 #else
-/* data twins (src/game/data/databook_item_reset_rodata.c): D_001FD348 */
-static s8 D_001FD348[0x8] = { 0x2d, 0x2d, 0x2d, 0, 0, 0, 0, 0 };
+/* data twins (src/game/data/databook_item_reset_rodata.c): gDbCharProcDrawInfoRodata_001FD348 */
+static s8 gDbCharProcDrawInfoRodata_001FD348[0x8] = { 0x2d, 0x2d, 0x2d, 0, 0, 0, 0, 0 };
 #endif
 #ifndef NONMATCHING
 extern s8 gStr31f_001FD350[];
@@ -81,7 +81,7 @@ static s8 gStr31f_001FD350[0x6] = "%3.1f\000";
 static inline f32 u2f(u32 x) { return x; }
 
 void DbCharProc_DrawInfo_0_00196330(O *o, s32 a1, u32 mode, s32 a3) {
-    S t __attribute__((aligned(16))) = D_001F2EE0;
+    S t __attribute__((aligned(16))) = gDbCharProcDrawInfoData_001F2EE0;
     s8 buf[0x100] = {0};
     Col col;
     R *r;
@@ -105,15 +105,15 @@ void DbCharProc_DrawInfo_0_00196330(O *o, s32 a1, u32 mode, s32 a3) {
     }
     if (mode == 501) {
         col.w = 0x80808080;
-        sprintf(buf, D_001FD328, D_00202184);
+        sprintf(buf, gDbCharProcDrawInfoRodata_001FD328, gDatabookCharUpdateWrapSbss_00202184);
         Text_Draw_2_001875C0(o->x38, o->x3C, 0.9f, buf, 2, col.w);
     }
     if (mode == 1000) {
         col.w = 0x80808080;
-        if (D_00202188 != 0) {
-            sprintf(buf, gStrHpD_001FD330, D_00202188);
+        if (gDbCharProcDrawInfoSbss_00202188 != 0) {
+            sprintf(buf, gStrHpD_001FD330, gDbCharProcDrawInfoSbss_00202188);
         } else {
-            sprintf(buf, gStrHp_001FD338, D_00202188);
+            sprintf(buf, gStrHp_001FD338, gDbCharProcDrawInfoSbss_00202188);
         }
         Text_Draw_2_001875C0(o->x38, o->x3C, 0.9f, buf, 0, col.w);
     }
@@ -139,12 +139,12 @@ void DbCharProc_DrawInfo_0_00196330(O *o, s32 a1, u32 mode, s32 a3) {
     case 0:
         switch (mode) {
         case 10001:
-            D_004A13A0.x2C = o->x38;
-            D_004A13A0.x30 = o->x3C;
-            D_004A13A0.x14 = 1.25f;
-            D_004A13A0.x3C = 0x80FFFFFF;
-            D_004A13A0.x18 = 1.25f;
-            Ui_DrawWindow_0_00183650(&D_004A13A0);
+            gDbCharProcDrawInfoBss_004A13A0.x2C = o->x38;
+            gDbCharProcDrawInfoBss_004A13A0.x30 = o->x3C;
+            gDbCharProcDrawInfoBss_004A13A0.x14 = 1.25f;
+            gDbCharProcDrawInfoBss_004A13A0.x3C = 0x80FFFFFF;
+            gDbCharProcDrawInfoBss_004A13A0.x18 = 1.25f;
+            Ui_DrawWindow_0_00183650(&gDbCharProcDrawInfoBss_004A13A0);
             break;
         }
         break;
@@ -155,18 +155,18 @@ void DbCharProc_DrawInfo_0_00196330(O *o, s32 a1, u32 mode, s32 a3) {
             if (a3 > 0) {
                 sprintf(buf, gStr3d_001FD340, Inventory_GetEntry_1_001CC3F0(a3)->x0);
                 if (Item_GetCategory_0_001AFBD0(a3) == 0) {
-                    strcpy(buf, D_001FD348);
+                    strcpy(buf, gDbCharProcDrawInfoRodata_001FD348);
                 } else if (Item_GetCategory_0_001AFBD0(a3) == 1) {
                     u16 k = Item_GetTable_1_001AFC90()[a3].x20;
                     switch (k) {
                     case 5:
                     case 6:
-                        strcpy(buf, D_001FD348);
+                        strcpy(buf, gDbCharProcDrawInfoRodata_001FD348);
                         break;
                     }
                 }
             } else {
-                strcpy(buf, D_001FD348);
+                strcpy(buf, gDbCharProcDrawInfoRodata_001FD348);
             }
             Text_Draw_2_001875C0(o->x38, o->x3C, 0.9f, buf, 2, col.w);
             break;
@@ -182,7 +182,7 @@ void DbCharProc_DrawInfo_0_00196330(O *o, s32 a1, u32 mode, s32 a3) {
                 Text_Draw_2_001875C0(o->x38 - 20.0f, o->x3C - 4.0f, 0.9f, buf, 2, col.w);
             } else {
                 col.w = 0x80808080;
-                strcpy(buf, D_001FD348);
+                strcpy(buf, gDbCharProcDrawInfoRodata_001FD348);
                 Text_Draw_2_001875C0(o->x38 - 20.0f, o->x3C - 4.0f, 0.9f, buf, 2, col.w);
             }
             break;
@@ -194,12 +194,12 @@ void DbCharProc_DrawInfo_0_00196330(O *o, s32 a1, u32 mode, s32 a3) {
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/sbss.c): D_00202188 */
-s32 D_00202188;
+/* data twins (src/game/data/sbss.c): gDbCharProcDrawInfoSbss_00202188 */
+s32 gDbCharProcDrawInfoSbss_00202188;
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/load_menu_bss_004A1120.c): D_004A13A0__grp: D_004A13A0@0x0, D_004A13B4@0x14, D_004A13CC@0x2c, D_004A13D0@0x30, D_004A13DC@0x3c */
+/* data group (src/game/data/load_menu_bss_004A1120.c): D_004A13A0__grp: gDbCharProcDrawInfoBss_004A13A0@0x0, gDbCharProcDrawInfoBss_004A13B4@0x14, gDbCharProcDrawInfoBss_004A13CC@0x2c, gDbCharProcDrawInfoBss_004A13D0@0x30, gDbCharProcDrawInfoBss_004A13DC@0x3c */
 u8 D_004A13A0__grp[0x40] __attribute__((aligned(16)));
 #endif

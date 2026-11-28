@@ -19,67 +19,67 @@ typedef struct { s32 id; u8 pad[0x72]; u16 x76; u8 pad2[0x148 - 0x78]; Ent *x148
 extern G2C4 *D_002022C4;
 extern BF D_00222A54[];
 extern u8 gLoadBuf_00270F40[];
-extern f32 D_004B4B90[];
+extern f32 gMapBss_004B4B90[];
 #ifndef NONMATCHING
-extern s32 D_004B4BB0[];
+extern s32 gMapBss_004B4BB0[];
 #else
-/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4BB0 */
-static s32 D_004B4BB0[0x1] __attribute__((aligned(16)));
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gMapBss_004B4BB0 */
+static s32 gMapBss_004B4BB0[0x1] __attribute__((aligned(16)));
 #endif
 #ifndef NONMATCHING
-extern s32 D_004B4BB4[];
+extern s32 gMapBss_004B4BB4[];
 #else
-/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4BB4 */
-static s32 D_004B4BB4[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gMapBss_004B4BB4 */
+static s32 gMapBss_004B4BB4[0x1];
 #endif
-extern s16 D_004B4BBC[];
+extern s16 gMapBss_004B4BBC[];
 extern s16 D_004B4BBE[];
 #ifndef NONMATCHING
-extern s32 D_004B4BC0[];
+extern s32 gMapBss_004B4BC0[];
 #else
-/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4BC0 */
-static s32 D_004B4BC0[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gMapBss_004B4BC0 */
+static s32 gMapBss_004B4BC0[0x1];
 #endif
 #ifndef NONMATCHING
-extern s32 D_004B4BC4[];
+extern s32 gMapBss_004B4BC4[];
 #else
-/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4BC4 */
-static s32 D_004B4BC4[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gMapBss_004B4BC4 */
+static s32 gMapBss_004B4BC4[0x1];
 #endif
 #ifndef NONMATCHING
-extern s32 D_004B4BC8[];
+extern s32 gMapBss_004B4BC8[];
 #else
-/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4BC8 */
-static s32 D_004B4BC8[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gMapBss_004B4BC8 */
+static s32 gMapBss_004B4BC8[0x1];
 #endif
 #ifndef NONMATCHING
-extern s32 D_004B4BCC[];
+extern s32 gMapBss_004B4BCC[];
 #else
-/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4BCC */
-static s32 D_004B4BCC[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gMapBss_004B4BCC */
+static s32 gMapBss_004B4BCC[0x1];
 #endif
 #ifndef NONMATCHING
-extern s32 D_004B4BB8[];
+extern s32 gMapBss_004B4BB8[];
 #else
-/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4BB8 */
-static s32 D_004B4BB8[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gMapBss_004B4BB8 */
+static s32 gMapBss_004B4BB8[0x1];
 #endif
-extern f32 D_004B4B94[];
+extern f32 gMapBss_004B4B94[];
 /* .bss, from the top down (CodeWarrior writes it in reverse) */
 f32 D_004B4B98[0x6] __attribute__((aligned(8)));
 extern s32 D_004B4B9C[];
-extern s32 D_004B4B90__as_Map_StreamStart_0_001B0450[];
-extern struct { f32 v[4]; char p10[0x14]; s32 x24; char p28[8]; s32 h; s32 x34; } D_004B4B90__as_Map_StreamGetResult_1_001B0660;
-extern s32 D_004B4B90__as_Map_StreamInit_0_001B07B0[];
-extern s32 D_004B4B94__as_Map_StreamInit_0_001B07B0[];
+extern s32 gMapBss_004B4B90__as_Map_StreamStart_0_001B0450[];
+extern struct { f32 v[4]; char p10[0x14]; s32 x24; char p28[8]; s32 h; s32 x34; } gMapBss_004B4B90__as_Map_StreamGetResult_1_001B0660;
+extern s32 gMapBss_004B4B90__as_Map_StreamInit_0_001B07B0[];
+extern s32 gMapBss_004B4B94__as_Map_StreamInit_0_001B07B0[];
 extern s32 D_004B4B98__as_Map_StreamInit_0_001B07B0[];
-extern O_MapObj_DropItem_0_001B0880 **D_00201E80[2];
-extern O_MapObj_SpawnItem_0_001B0990 *D_00201E80__as_MapObj_SpawnItem_0_001B0990[2];
-extern T_Map_FindLoaded_0_001B0AE0 **D_00201E88;
-extern T_Map_FindLoaded_0_001B0AE0 **D_00201E8C;
-extern O_Map_GetLightIndex_0_001B0BC0 **D_00201E88__as_Map_GetLightIndex_0_001B0BC0;
-extern O_Map_GetLightIndex_0_001B0BC0 **D_00201E8C__as_Map_GetLightIndex_0_001B0BC0;
-extern s32 D_00201E80__as_Map_FindLoaded_0_001B0AE0;
+extern O_MapObj_DropItem_0_001B0880 **gMapSbss_00201E80[2];
+extern O_MapObj_SpawnItem_0_001B0990 *gMapSbss_00201E80__as_MapObj_SpawnItem_0_001B0990[2];
+extern T_Map_FindLoaded_0_001B0AE0 **gMapSbss_00201E88;
+extern T_Map_FindLoaded_0_001B0AE0 **gMapSbss_00201E8C;
+extern O_Map_GetLightIndex_0_001B0BC0 **gMapSbss_00201E88__as_Map_GetLightIndex_0_001B0BC0;
+extern O_Map_GetLightIndex_0_001B0BC0 **gMapSbss_00201E8C__as_Map_GetLightIndex_0_001B0BC0;
+extern s32 gMapSbss_00201E80__as_Map_FindLoaded_0_001B0AE0;
 void Map_StreamUpdate_0_001B0020(void);
 s32 Map_StreamGetResult_1_001B0660(Out *o);
 void Map_RequestArea_1_001B06E0(s32 arg0, f32 *arg1, s32 arg2);
@@ -135,64 +135,64 @@ void Map_StreamUpdate_0_001B0020(void) {
     s32 x;
     if (D_002022C4 == 0) return;
     if (D_002022C4->b1 && D_002022C4->x14 != 0) return;
-    if (D_004B4BB0[0] != -1) {
-        if (D_004B4BC0[0] != 0) {
-            if ((u8)Task_KillWrap_0_0014DAF0(D_004B4BC0[0])) {
-                Task_AddWrap_0_0014DAD0(D_004B4BC0[0]);
+    if (gMapBss_004B4BB0[0] != -1) {
+        if (gMapBss_004B4BC0[0] != 0) {
+            if ((u8)Task_KillWrap_0_0014DAF0(gMapBss_004B4BC0[0])) {
+                Task_AddWrap_0_0014DAD0(gMapBss_004B4BC0[0]);
             } else {
-                Task_RunWrap_0_0014DAB0(D_004B4BC0[0]);
-                D_004B4BC0[0] = 0;
+                Task_RunWrap_0_0014DAB0(gMapBss_004B4BC0[0]);
+                gMapBss_004B4BC0[0] = 0;
             }
         }
-        if (D_004B4BC0[0] != 0) return;
-        D_004B4BBC[0] = 0;
-        D_004B4BB4[0] = D_004B4BB0[0];
-        D_004B4B90[0] = D_004B4B90[0];
-        D_004B4B90[1] = D_004B4B90[1];
-        D_004B4B90[2] = D_004B4B90[2];
-        D_004B4B90[3] = D_004B4B90[3];
-        D_004B4BB0[0] = -1;
-        Map_GetFile_2_001B7050(D_004B4BB4[0], buf, D_004B4BC8);
-        D_004B4BC4[0] = Map_AllocAreaBuf_1_001B70E0(D_004B4BB4[0]);
-        D_004B4BCC[0] = 0;
-        D_004B4BC0[0] = Task_SetPriorityWrap_0_0014DB00(buf, 0x100, gLoadBuf_00270F40);
-        D_004B4BCC[0] = Obj_FreeTimer_0_0014DA70(D_004B4BC0[0]);
+        if (gMapBss_004B4BC0[0] != 0) return;
+        gMapBss_004B4BBC[0] = 0;
+        gMapBss_004B4BB4[0] = gMapBss_004B4BB0[0];
+        gMapBss_004B4B90[0] = gMapBss_004B4B90[0];
+        gMapBss_004B4B90[1] = gMapBss_004B4B90[1];
+        gMapBss_004B4B90[2] = gMapBss_004B4B90[2];
+        gMapBss_004B4B90[3] = gMapBss_004B4B90[3];
+        gMapBss_004B4BB0[0] = -1;
+        Map_GetFile_2_001B7050(gMapBss_004B4BB4[0], buf, gMapBss_004B4BC8);
+        gMapBss_004B4BC4[0] = Map_AllocAreaBuf_1_001B70E0(gMapBss_004B4BB4[0]);
+        gMapBss_004B4BCC[0] = 0;
+        gMapBss_004B4BC0[0] = Task_SetPriorityWrap_0_0014DB00(buf, 0x100, gLoadBuf_00270F40);
+        gMapBss_004B4BCC[0] = Obj_FreeTimer_0_0014DA70(gMapBss_004B4BC0[0]);
         D_004B4BBE[0] = 0;
-        Task_FlushWrap_0_0014DAC0(D_004B4BC0[0], 0);
-    } else if (D_004B4BB4[0] != -1) {
-        switch ((u8)Task_KillWrap_0_0014DAF0(D_004B4BC0[0])) {
+        Task_FlushWrap_0_0014DAC0(gMapBss_004B4BC0[0], 0);
+    } else if (gMapBss_004B4BB4[0] != -1) {
+        switch ((u8)Task_KillWrap_0_0014DAF0(gMapBss_004B4BC0[0])) {
         case 0:
             break;
         case 5:
-            n = D_004B4BC8[0] - D_004B4BCC[0];
+            n = gMapBss_004B4BC8[0] - gMapBss_004B4BCC[0];
             n = umin(n, 0x80000);
             q = n >> 4;
             off = q << 4;
             r = n - off;
             FlushCache(0);
-            Dma_SprCopy_1_001789E0((u8 *)(**(s32 **)(*(s32 *)D_004B4BC4[0] + 0x24) + D_004B4BCC[0]), gLoadBuf_00270F40, q);
+            Dma_SprCopy_1_001789E0((u8 *)(**(s32 **)(*(s32 *)gMapBss_004B4BC4[0] + 0x24) + gMapBss_004B4BCC[0]), gLoadBuf_00270F40, q);
             if (r > 0) {
-                memcpy((u8 *)(**(s32 **)(*(s32 *)D_004B4BC4[0] + 0x24) + D_004B4BCC[0]) + off, gLoadBuf_00270F40 + off, r);
+                memcpy((u8 *)(**(s32 **)(*(s32 *)gMapBss_004B4BC4[0] + 0x24) + gMapBss_004B4BCC[0]) + off, gLoadBuf_00270F40 + off, r);
             }
-            D_004B4BCC[0] += n;
-            Task_RemoveWrap_0_0014DAE0(D_004B4BC0[0]);
+            gMapBss_004B4BCC[0] += n;
+            Task_RemoveWrap_0_0014DAE0(gMapBss_004B4BC0[0]);
             break;
         case 3:
         case 6:
-            if (D_004B4BBC[0] == 0) {
-                x = **(s32 **)(*(s32 *)D_004B4BC4[0] + 0x24);
+            if (gMapBss_004B4BBC[0] == 0) {
+                x = **(s32 **)(*(s32 *)gMapBss_004B4BC4[0] + 0x24);
                 if (D_004B4BBE[0] == 0) {
-                    if (Obj_SetTimerEx_0_0014DA90(D_004B4BC0[0], x, x, D_004B4BC8[0])) {
+                    if (Obj_SetTimerEx_0_0014DA90(gMapBss_004B4BC0[0], x, x, gMapBss_004B4BC8[0])) {
                         D_004B4BBE[0] = 1;
                     }
                 }
                 if (D_004B4BBE[0]) {
-                    if (Obj_SetTimer_0_0014DA80(D_004B4BC0[0], 2)) break;
+                    if (Obj_SetTimer_0_0014DA80(gMapBss_004B4BC0[0], 2)) break;
                 }
                 D_004B4BBE[0] = 0;
-                Map_LoadTextures_0_001B6FC0(D_004B4BC4[0]);
-                Map_SetOrigin_1_001B4BD0__as_Map_StreamUpdate_0_001B0020(*(s32 *)D_004B4BC4[0], D_004B4B90);
-                D_004B4BBC[0] = 1;
+                Map_LoadTextures_0_001B6FC0(gMapBss_004B4BC4[0]);
+                Map_SetOrigin_1_001B4BD0__as_Map_StreamUpdate_0_001B0020(*(s32 *)gMapBss_004B4BC4[0], gMapBss_004B4B90);
+                gMapBss_004B4BBC[0] = 1;
             }
             break;
         case 1:
@@ -207,63 +207,63 @@ void Map_StreamUpdate_0_001B0020(void) {
 /* Map_StreamFlush_1_001B03E0 */
 
 void Map_StreamFlush_1_001B03E0(void) {
-    if ((*D_004B4BC0) != 0) {
-        Task_AddWrap_0_0014DAD0__as_Map_StreamFlush_1_001B03E0((*D_004B4BC0));
-        (*D_004B4BC0) = 0;
+    if ((*gMapBss_004B4BC0) != 0) {
+        Task_AddWrap_0_0014DAD0__as_Map_StreamFlush_1_001B03E0((*gMapBss_004B4BC0));
+        (*gMapBss_004B4BC0) = 0;
     }
-    (*D_004B4BB8) = 0;
-    (*D_004B4BC0) = 0;
-    (*D_004B4BB4) = -1;
-    (*D_004B4BB0) = -1;
-    (*D_004B4BBC) = 0;
-    (*D_004B4BC4) = 0;
+    (*gMapBss_004B4BB8) = 0;
+    (*gMapBss_004B4BC0) = 0;
+    (*gMapBss_004B4BB4) = -1;
+    (*gMapBss_004B4BB0) = -1;
+    (*gMapBss_004B4BBC) = 0;
+    (*gMapBss_004B4BC4) = 0;
     (*D_004B4BBE) = 0;
 }
 
 /* Map_StreamStart_0_001B0450 */
 static inline void reset(void) {
-    if (D_004B4BC0[0] != 0) {
-        Task_AddWrap_0_0014DAD0(D_004B4BC0[0]);
-        D_004B4BC0[0] = 0;
+    if (gMapBss_004B4BC0[0] != 0) {
+        Task_AddWrap_0_0014DAD0(gMapBss_004B4BC0[0]);
+        gMapBss_004B4BC0[0] = 0;
     }
-    D_004B4BB8[0] = 0;
-    D_004B4BC0[0] = 0;
-    D_004B4BB4[0] = -1;
-    D_004B4BB0[0] = -1;
-    D_004B4BBC[0] = 0;
-    D_004B4BC4[0] = 0;
+    gMapBss_004B4BB8[0] = 0;
+    gMapBss_004B4BC0[0] = 0;
+    gMapBss_004B4BB4[0] = -1;
+    gMapBss_004B4BB0[0] = -1;
+    gMapBss_004B4BBC[0] = 0;
+    gMapBss_004B4BC4[0] = 0;
     D_004B4BBE[0] = 0;
 }
 static inline s32 status(void) {
     s32 r = 0;
-    if (D_004B4BC0[0] != 0) r = Task_KillWrap_0_0014DAF0(D_004B4BC0[0]);
+    if (gMapBss_004B4BC0[0] != 0) r = Task_KillWrap_0_0014DAF0(gMapBss_004B4BC0[0]);
     return r;
 }
 
 void Map_StreamStart_0_001B0450(void) {
     s8 *p;
     s32 x;
-    if (D_004B4BB4[0] != -1) {
+    if (gMapBss_004B4BB4[0] != -1) {
         if ((u8)status() != 3 && (u8)status() != 6) {
-            while (!D_004B4BBC[0]) {
+            while (!gMapBss_004B4BBC[0]) {
                 Task_InitWrap_0_0014DAA0();
             }
-        } else if (D_004B4BBC[0] == 0) {
-            x = **(s32 **)(*(s8 **)D_004B4BC4[0] + 0x24);
+        } else if (gMapBss_004B4BBC[0] == 0) {
+            x = **(s32 **)(*(s8 **)gMapBss_004B4BC4[0] + 0x24);
             if (D_004B4BBE[0] == 0) {
-                if (Obj_SetTimerEx_0_0014DA90(D_004B4BC0[0], x, x, D_004B4BC8[0])) {
+                if (Obj_SetTimerEx_0_0014DA90(gMapBss_004B4BC0[0], x, x, gMapBss_004B4BC8[0])) {
                     D_004B4BBE[0] = 1;
                 }
             }
             if (D_004B4BBE[0]) {
-                while (Obj_SetTimer_0_0014DA80(D_004B4BC0[0], 2)) {
+                while (Obj_SetTimer_0_0014DA80(gMapBss_004B4BC0[0], 2)) {
                 }
             }
-            Map_LoadTextures_0_001B6FC0(D_004B4BC4[0]);
-            Map_SetOrigin_1_001B4BD0__as_Map_StreamStart_0_001B0450(*(s32 *)D_004B4BC4[0], D_004B4B90__as_Map_StreamStart_0_001B0450);
+            Map_LoadTextures_0_001B6FC0(gMapBss_004B4BC4[0]);
+            Map_SetOrigin_1_001B4BD0__as_Map_StreamStart_0_001B0450(*(s32 *)gMapBss_004B4BC4[0], gMapBss_004B4B90__as_Map_StreamStart_0_001B0450);
         }
-        p = *(s8 **)D_004B4BC4[0];
-        Map_OnAreaLoadedWrap_1_001B6FB0(D_004B4BC4[0]);
+        p = *(s8 **)gMapBss_004B4BC4[0];
+        Map_OnAreaLoadedWrap_1_001B6FB0(gMapBss_004B4BC4[0]);
         ((Flags8_6x2 *)(**(s8 ***)*(s8 **)(p + 0x178) + 0x24))->f.b6 = 1;
         reset();
     }
@@ -275,28 +275,28 @@ void Map_StreamStart_0_001B0450(void) {
 s32 Map_StreamGetResult_1_001B0660(Out *o)
 {
     s32 r = 0;
-    if (D_004B4B90__as_Map_StreamGetResult_1_001B0660.h)
-        r = Task_KillWrap_0_0014DAF0(D_004B4B90__as_Map_StreamGetResult_1_001B0660.h);
+    if (gMapBss_004B4B90__as_Map_StreamGetResult_1_001B0660.h)
+        r = Task_KillWrap_0_0014DAF0(gMapBss_004B4B90__as_Map_StreamGetResult_1_001B0660.h);
     if (o) {
-        sceVu0CopyVector(o->v, D_004B4B90__as_Map_StreamGetResult_1_001B0660.v);
-        o->x10 = D_004B4B90__as_Map_StreamGetResult_1_001B0660.x24;
+        sceVu0CopyVector(o->v, gMapBss_004B4B90__as_Map_StreamGetResult_1_001B0660.v);
+        o->x10 = gMapBss_004B4B90__as_Map_StreamGetResult_1_001B0660.x24;
         o->b14 = r;
-        o->x18 = D_004B4B90__as_Map_StreamGetResult_1_001B0660.x34;
+        o->x18 = gMapBss_004B4B90__as_Map_StreamGetResult_1_001B0660.x34;
     }
     return r;
 }
 
 /* Map_RequestArea_1_001B06E0 */
 void Map_RequestArea_1_001B06E0(s32 arg0, f32 *arg1, s32 arg2) {
-    if (D_004B4BB4[0] != arg0 && (D_004B4BB8[0] == 0 || arg2 != 0)) {
-        if (D_004B4BBC[0] == 0 && D_004B4BB4[0] != -1) {
-            Map_FreeArea_1_001B5640(D_004B4BC4[0]);
+    if (gMapBss_004B4BB4[0] != arg0 && (gMapBss_004B4BB8[0] == 0 || arg2 != 0)) {
+        if (gMapBss_004B4BBC[0] == 0 && gMapBss_004B4BB4[0] != -1) {
+            Map_FreeArea_1_001B5640(gMapBss_004B4BC4[0]);
         }
-        D_004B4BB0[0] = arg0;
-        D_004B4B90[0] = -arg1[0];
-        D_004B4B94[0] = -arg1[1];
+        gMapBss_004B4BB0[0] = arg0;
+        gMapBss_004B4B90[0] = -arg1[0];
+        gMapBss_004B4B94[0] = -arg1[1];
         D_004B4B98[0] = -arg1[2];
-        D_004B4BB8[0] = arg2;
+        gMapBss_004B4BB8[0] = arg2;
         D_004B4B9C[0] = 0;
     }
 }
@@ -304,31 +304,31 @@ void Map_RequestArea_1_001B06E0(s32 arg0, f32 *arg1, s32 arg2) {
 /* Map_StreamInit_0_001B07B0 */
 
 void Map_StreamInit_0_001B07B0(void) {
-    if ((*D_004B4BC0) != 0) {
-        Task_AddWrap_0_0014DAD0((*D_004B4BC0));
-        (*D_004B4BC0) = 0;
+    if ((*gMapBss_004B4BC0) != 0) {
+        Task_AddWrap_0_0014DAD0((*gMapBss_004B4BC0));
+        (*gMapBss_004B4BC0) = 0;
     }
-    (*D_004B4BB8) = 0;
-    (*D_004B4BC0) = 0;
-    (*D_004B4BB4) = -1;
-    (*D_004B4BB0) = -1;
-    (*D_004B4BBC) = 0;
-    (*D_004B4BC4) = 0;
+    (*gMapBss_004B4BB8) = 0;
+    (*gMapBss_004B4BC0) = 0;
+    (*gMapBss_004B4BB4) = -1;
+    (*gMapBss_004B4BB0) = -1;
+    (*gMapBss_004B4BBC) = 0;
+    (*gMapBss_004B4BC4) = 0;
     (*D_004B4BBE) = 0;
-    (*D_004B4B90__as_Map_StreamInit_0_001B07B0) = 0;
-    (*D_004B4B94__as_Map_StreamInit_0_001B07B0) = 0;
+    (*gMapBss_004B4B90__as_Map_StreamInit_0_001B07B0) = 0;
+    (*gMapBss_004B4B94__as_Map_StreamInit_0_001B07B0) = 0;
     (*D_004B4B98__as_Map_StreamInit_0_001B07B0) = 0;
     (*D_004B4B9C) = 0;
     Task_Register_0_0014DB10(Map_StreamUpdate_0_001B0020);
-    memset(D_004B4B90__as_Map_StreamInit_0_001B07B0, 0, 0x40);
-    (*D_004B4BB4) = -1;
-    (*D_004B4BB0) = -1;
+    memset(gMapBss_004B4B90__as_Map_StreamInit_0_001B07B0, 0, 0x40);
+    (*gMapBss_004B4BB4) = -1;
+    (*gMapBss_004B4BB0) = -1;
 }
 
 /* MapObj_DropItem_0_001B0880 */
 /* MapObj_DropItem_0_001B0880 */
-#define C (D_00201E80[2])
-#define D (D_00201E80[3])
+#define C (gMapSbss_00201E80[2])
+#define D (gMapSbss_00201E80[3])
 
 void MapObj_DropItem_0_001B0880(u16 a0, u16 a1) {
     O_MapObj_DropItem_0_001B0880 **h;
@@ -359,9 +359,9 @@ void MapObj_SpawnItem_0_001B0990(s32 a0, s32 a1, s32 a2, s32 a3, s32 t0, u16 id,
     O_MapObj_SpawnItem_0_001B0990 *o;
     O_MapObj_SpawnItem_0_001B0990 *p;
     o = 0;
-    p = D_00201E80__as_MapObj_SpawnItem_0_001B0990[2];
+    p = gMapSbss_00201E80__as_MapObj_SpawnItem_0_001B0990[2];
     if (p && p->p && *p->p == id) o = p;
-    p = D_00201E80__as_MapObj_SpawnItem_0_001B0990[3];
+    p = gMapSbss_00201E80__as_MapObj_SpawnItem_0_001B0990[3];
     if (p && p->p && *p->p == id) o = p;
     if (o && (u32)a0 < 0x400 && id < 200 && Inventory_CountItem_0_001CC0C0(a0, 1)) {
         ItemObj_Drop_0_001AE900(o, a0, a1, a2, t2, 0);
@@ -388,11 +388,11 @@ void MapObj_SendEvent_1_001B0A80(void *arg0, s32 arg1) {
 
 /* Map_FindLoaded_0_001B0AE0 */
 s32 *Map_FindLoaded_0_001B0AE0(s32 arg0) {
-    if ((M2C_FIELD(&D_00201E80__as_Map_FindLoaded_0_001B0AE0, s32 **, 8) != NULL) && (*M2C_FIELD(&D_00201E80__as_Map_FindLoaded_0_001B0AE0, s32 **, 8) == arg0)) {
-        return M2C_FIELD(&D_00201E80__as_Map_FindLoaded_0_001B0AE0, s32 **, 8);
+    if ((M2C_FIELD(&gMapSbss_00201E80__as_Map_FindLoaded_0_001B0AE0, s32 **, 8) != NULL) && (*M2C_FIELD(&gMapSbss_00201E80__as_Map_FindLoaded_0_001B0AE0, s32 **, 8) == arg0)) {
+        return M2C_FIELD(&gMapSbss_00201E80__as_Map_FindLoaded_0_001B0AE0, s32 **, 8);
     }
-    if ((M2C_FIELD(&D_00201E80__as_Map_FindLoaded_0_001B0AE0, s32 **, 0xC) != NULL) && (*M2C_FIELD(&D_00201E80__as_Map_FindLoaded_0_001B0AE0, s32 **, 0xC) == arg0)) {
-        return M2C_FIELD(&D_00201E80__as_Map_FindLoaded_0_001B0AE0, s32 **, 0xC);
+    if ((M2C_FIELD(&gMapSbss_00201E80__as_Map_FindLoaded_0_001B0AE0, s32 **, 0xC) != NULL) && (*M2C_FIELD(&gMapSbss_00201E80__as_Map_FindLoaded_0_001B0AE0, s32 **, 0xC) == arg0)) {
+        return M2C_FIELD(&gMapSbss_00201E80__as_Map_FindLoaded_0_001B0AE0, s32 **, 0xC);
     }
     return NULL;
 }
@@ -400,8 +400,8 @@ s32 *Map_FindLoaded_0_001B0AE0(s32 arg0) {
 /* Map_SetVar_0_001B0B30 */
 void Map_SetVar_0_001B0B30(s32 arg0, s16 arg1) {
     U_Map_FindLoaded_0_001B0AE0 *r = 0;
-    if ((D_00201E88 ? (*D_00201E88)->b0 != 0 : 0) && ((U_Map_FindLoaded_0_001B0AE0 *)*D_00201E88)->x0 == arg0) r = (U_Map_FindLoaded_0_001B0AE0 *)*D_00201E88;
-    if ((D_00201E8C ? (*D_00201E8C)->b0 != 0 : 0) && ((U_Map_FindLoaded_0_001B0AE0 *)*D_00201E8C)->x0 == arg0) r = (U_Map_FindLoaded_0_001B0AE0 *)*D_00201E8C;
+    if ((gMapSbss_00201E88 ? (*gMapSbss_00201E88)->b0 != 0 : 0) && ((U_Map_FindLoaded_0_001B0AE0 *)*gMapSbss_00201E88)->x0 == arg0) r = (U_Map_FindLoaded_0_001B0AE0 *)*gMapSbss_00201E88;
+    if ((gMapSbss_00201E8C ? (*gMapSbss_00201E8C)->b0 != 0 : 0) && ((U_Map_FindLoaded_0_001B0AE0 *)*gMapSbss_00201E8C)->x0 == arg0) r = (U_Map_FindLoaded_0_001B0AE0 *)*gMapSbss_00201E8C;
     if (r) r->x8E = arg1;
 }
 
@@ -409,14 +409,14 @@ void Map_SetVar_0_001B0B30(s32 arg0, s16 arg1) {
 static inline s32 act(O_Map_GetLightIndex_0_001B0BC0 **p) { return p ? (((O2 *)*p)->b0 != 0) : 0; }
 s16 Map_GetLightIndex_0_001B0BC0(s32 id, s32 base) {
     s32 r = -1;
-    if (act(D_00201E88__as_Map_GetLightIndex_0_001B0BC0) && (*D_00201E88__as_Map_GetLightIndex_0_001B0BC0)->id == id) r = 0;
-    if (act(D_00201E8C__as_Map_GetLightIndex_0_001B0BC0) && (*D_00201E8C__as_Map_GetLightIndex_0_001B0BC0)->id == id) r = 1;
+    if (act(gMapSbss_00201E88__as_Map_GetLightIndex_0_001B0BC0) && (*gMapSbss_00201E88__as_Map_GetLightIndex_0_001B0BC0)->id == id) r = 0;
+    if (act(gMapSbss_00201E8C__as_Map_GetLightIndex_0_001B0BC0) && (*gMapSbss_00201E8C__as_Map_GetLightIndex_0_001B0BC0)->id == id) r = 1;
     if (r == -1) return r;
     return base + r * 64;
 }
 
 /* Map_GetGlowIndex_0_001B0C70 */
-#define TB ((O_Map_GetGlowIndex_0_001B0C70 ***)&D_00201E80__as_Map_FindLoaded_0_001B0AE0)
+#define TB ((O_Map_GetGlowIndex_0_001B0C70 ***)&gMapSbss_00201E80__as_Map_FindLoaded_0_001B0AE0)
 static inline O_Map_GetGlowIndex_0_001B0C70 *get(s32 arg0) {
     s32 var_v1;
     s32 var_v1_2;
@@ -467,8 +467,8 @@ u16 Map_GetGlowIndex_0_001B0C70(s32 arg0, s32 arg1) {
 #undef TB
 
 /* MapObj_SpawnSfx_0_001B0D60 */
-#define D_00201E80 D_00201E80__as_MapObj_SpawnSfx_0_001B0D60
-extern M2C_UNK D_00201E80__as_MapObj_SpawnSfx_0_001B0D60;
+#define gMapSbss_00201E80 gMapSbss_00201E80__as_MapObj_SpawnSfx_0_001B0D60
+extern M2C_UNK gMapSbss_00201E80__as_MapObj_SpawnSfx_0_001B0D60;
 
 void MapObj_SpawnSfx_0_001B0D60(s16 arg0, s16 arg1, s32 arg2, s32 arg3) {
     f32 mtx[16];
@@ -481,24 +481,24 @@ void MapObj_SpawnSfx_0_001B0D60(s16 arg0, s16 arg1, s32 arg2, s32 arg3) {
     s32 h;
 
     o = NULL;
-    if (M2C_FIELD(&D_00201E80, s8 ***, 8) != NULL) {
-        var_v1 = (M2C_FIELD(*M2C_FIELD(&D_00201E80, s8 ***, 8), u8 *, 0x1D8) & 1) != 0;
+    if (M2C_FIELD(&gMapSbss_00201E80, s8 ***, 8) != NULL) {
+        var_v1 = (M2C_FIELD(*M2C_FIELD(&gMapSbss_00201E80, s8 ***, 8), u8 *, 0x1D8) & 1) != 0;
     } else {
         var_v1 = 0;
     }
     if (var_v1 != 0) {
-        temp_a1 = *M2C_FIELD(&D_00201E80, s8 ***, 8);
+        temp_a1 = *M2C_FIELD(&gMapSbss_00201E80, s8 ***, 8);
         if (M2C_FIELD(temp_a1, s32 *, 0) == arg0) {
             o = temp_a1;
         }
     }
-    if (M2C_FIELD(&D_00201E80, s8 ***, 0xC) != NULL) {
-        var_v1_2 = (M2C_FIELD(*M2C_FIELD(&D_00201E80, s8 ***, 0xC), u8 *, 0x1D8) & 1) != 0;
+    if (M2C_FIELD(&gMapSbss_00201E80, s8 ***, 0xC) != NULL) {
+        var_v1_2 = (M2C_FIELD(*M2C_FIELD(&gMapSbss_00201E80, s8 ***, 0xC), u8 *, 0x1D8) & 1) != 0;
     } else {
         var_v1_2 = 0;
     }
     if (var_v1_2 != 0) {
-        temp_a1_2 = *M2C_FIELD(&D_00201E80, s8 ***, 0xC);
+        temp_a1_2 = *M2C_FIELD(&gMapSbss_00201E80, s8 ***, 0xC);
         if (M2C_FIELD(temp_a1_2, s32 *, 0) == arg0) {
             o = temp_a1_2;
         }
@@ -518,22 +518,22 @@ void MapObj_SpawnSfx_0_001B0D60(s16 arg0, s16 arg1, s32 arg2, s32 arg3) {
         Sfx_SetTransform_1_001677C0(h, mtx);
     }
 }
-#undef D_00201E80
+#undef gMapSbss_00201E80
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): D_004B4BBC */
-s16 D_004B4BBC[0x2];
+/* data twins (src/game/data/pad_get_connected_bss_004B4BB0.c): gMapBss_004B4BBC */
+s16 gMapBss_004B4BBC[0x2];
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/pad_get_connected_bss_004AC630.c): D_004B4B90__grp: D_004B4B90@0x0, D_004B4B94@0x4 */
+/* data group (src/game/data/pad_get_connected_bss_004AC630.c): D_004B4B90__grp: gMapBss_004B4B90@0x0, gMapBss_004B4B94@0x4 */
 u8 D_004B4B90__grp[0x8] __attribute__((aligned(16)));
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/sbss.c): D_00201E80__grp: D_00201E80@0x0, D_00201E88@0x8, D_00201E8C@0xc */
+/* data group (src/game/data/sbss.c): D_00201E80__grp: gMapSbss_00201E80@0x0, gMapSbss_00201E88@0x8, gMapSbss_00201E8C@0xc */
 unsigned char D_00201E80__grp[0x10] __attribute__((section(".sbss"))) __attribute__((aligned(16)));
 #endif

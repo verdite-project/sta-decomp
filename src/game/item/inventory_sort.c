@@ -19,9 +19,9 @@ void Inventory_RemoveOne_1_001CBA60(s16);
 void Player_RecalcStats_1_001CEDC0(s32);
 H *PlayerData_Get_2_001C9BA0(void);
 void Equip_SelectBest_0_0019A0D0(s32);
-extern u16 D_004A3310[];
+extern u16 gShopBss_004A3310[];
 extern s16 D_004A3312[];
-extern s32 D_004A3318[];
+extern s32 gShopBss_004A3318[];
 
 static inline E *item(s32 id) { return &Item_GetTable_1_001AFC90()[id]; }
 static inline s16 calc(u32 id) {
@@ -58,13 +58,13 @@ void Inventory_Sort_0_0019FD00(void) {
     s32 k;
     u16 u;
 
-    switch (D_004A3318[0]) {
+    switch (gShopBss_004A3318[0]) {
     case 0:
         break;
     case 1:
         k = D_004A3312[0];
         if (k == 0) break;
-        id = D_004A3310[0];
+        id = gShopBss_004A3310[0];
         n = k;
         e = &Item_GetTable_1_001AFC90()[id];
         Inventory_GetSlot_1_001A97D0(id);
@@ -93,7 +93,7 @@ void Inventory_Sort_0_0019FD00(void) {
         break;
     case 2:
         Player_RecalcStats_1_001CEDC0(3);
-        id = D_004A3310[0];
+        id = gShopBss_004A3310[0];
         Inventory_GetSlot_1_001A97D0(id)->x0 = Inventory_GetEntry_1_001CC3F0(id)->x0;
         Inventory_GetSlot_1_001A97D0(id)->x3 = Inventory_GetEntry_1_001CC3F0(id)->x3;
         Inventory_GetSlot_1_001A97D0(id)->x1 = Inventory_GetEntry_1_001CC3F0(id)->x1;
@@ -112,7 +112,7 @@ void Inventory_Sort_0_0019FD00(void) {
         break;
     case 3:
         n = D_004A3312[0];
-        id = D_004A3310[0];
+        id = gShopBss_004A3310[0];
         Inventory_GetSlot_1_001A97D0(id)->x0 = Inventory_GetEntry_1_001CC3F0(id)->x0;
         Inventory_GetSlot_1_001A97D0(id)->x3 = Inventory_GetEntry_1_001CC3F0(id)->x3;
         Inventory_GetSlot_1_001A97D0(id)->x1 = Inventory_GetEntry_1_001CC3F0(id)->x1;
@@ -121,7 +121,7 @@ void Inventory_Sort_0_0019FD00(void) {
         break;
     case 4:
         n = D_004A3312[0];
-        id = D_004A3310[0];
+        id = gShopBss_004A3310[0];
         Inventory_GetEntry_1_001CC3F0(id)->x0 = Inventory_GetSlot_1_001A97D0(id)->x0;
         Inventory_GetEntry_1_001CC3F0(id)->x3 = Inventory_GetSlot_1_001A97D0(id)->x3;
         Inventory_GetEntry_1_001CC3F0(id)->x1 = Inventory_GetSlot_1_001A97D0(id)->x1;
@@ -130,8 +130,8 @@ void Inventory_Sort_0_0019FD00(void) {
         Inventory_GetSlot_1_001A97D0(id)->x4 -= n;
         break;
     case 5:
-        p = Inventory_GetEntry_1_001CC3F0(*(s16 *)D_004A3310);
-        id = D_004A3310[0];
+        p = Inventory_GetEntry_1_001CC3F0(*(s16 *)gShopBss_004A3310);
+        id = gShopBss_004A3310[0];
         Inventory_GetSlot_1_001A97D0(id)->x0 = Inventory_GetEntry_1_001CC3F0(id)->x0;
         Inventory_GetSlot_1_001A97D0(id)->x3 = Inventory_GetEntry_1_001CC3F0(id)->x3;
         Inventory_GetSlot_1_001A97D0(id)->x1 = Inventory_GetEntry_1_001CC3F0(id)->x1;
@@ -148,8 +148,8 @@ void Inventory_Sort_0_0019FD00(void) {
         u16 u;
         s32 id;
 
-        p = Inventory_GetEntry_1_001CC3F0(*(s16 *)D_004A3310);
-        u = D_004A3310[0];
+        p = Inventory_GetEntry_1_001CC3F0(*(s16 *)gShopBss_004A3310);
+        u = gShopBss_004A3310[0];
         e3 = &Item_GetTable_1_001AFC90()[id = u];
         PlayerData_Get_2_001C9BA0()->h4 -= calc(id);
         if (e3->xA == 1) {
@@ -161,7 +161,7 @@ void Inventory_Sort_0_0019FD00(void) {
         break;
     }
     }
-    D_004A3318[0] = 0;
+    gShopBss_004A3318[0] = 0;
 }
 #else
 INCLUDE_ASM(Inventory_Sort_0_0019FD00);

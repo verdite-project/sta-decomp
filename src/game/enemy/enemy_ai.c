@@ -37,10 +37,10 @@ typedef struct {
 } S;
 typedef struct { u8 pad[0x1C]; u8 x1C:2; } R;
 #ifndef NONMATCHING
-extern u8 D_00201F10;
+extern u8 gEnemyAiSbss_00201F10;
 #else
-/* data twins (src/game/data/sbss.c): D_00201F10 */
-static u8 D_00201F10;
+/* data twins (src/game/data/sbss.c): gEnemyAiSbss_00201F10 */
+static u8 gEnemyAiSbss_00201F10;
 #endif
 void Enemy_UpdateAI_1_00136400(Obj613 *a, f32 dt);
 void Enemy_InitState_1_00136700(Actor *a0);
@@ -260,8 +260,8 @@ void Enemy_InitState_1_00136700(Actor *a0) {
     Enemy_Set5C8_1_0013E450(a0, 0.5f);
     Enemy_Set5C0_1_0013E470(a0, 0.0f);
     if (a0->unk4A8 == 0) {
-        a0->unk710 = D_00201F10;
-        D_00201F10++;
+        a0->unk710 = gEnemyAiSbss_00201F10;
+        gEnemyAiSbss_00201F10++;
     }
     EnemyScr_EventInit_1_001428C0(a0);
 }

@@ -33,33 +33,33 @@ typedef struct { char p0[2]; u8 b2; char p3[2]; u8 b5; char p6[2]; } E_Inventory
 typedef struct { char pad[0x5C00]; E_Inventory_GetSlotCount_0_001AA6D0 e[1]; } S_Inventory_GetSlotCount_0_001AA6D0;
 extern PlayerData *gPlayerData_00201DC0;
 extern S *gPlayerData_00201DC0__as_Inventory_GetSlot_1_001A97D0;
-extern G_MapState_OffsetObjects_0_001A9810 *D_00201DC4;
+extern G_MapState_OffsetObjects_0_001A9810 *gSaveByteSdata_00201DC4;
 #pragma explicit_zero_data on
 s16 D_001F37B0[0x30] = { 0xa, 0xb, 0xc, 0xd, 0x16, 0x21, 0x28, 0x29, 0x2a, 0x2b, 0x32, 0x33, 0x34, 0x35, 0x3c, 0x3d, 0x3e, 0x3f, 0x40, 0x46, 0x47, 0x50, 0x51, 0x52, 0x53, 0x5a, 0x5b, 0x5c, 0x64, 0x65, 0x6e, 0x6f, 0x70, 0x78, 0x79, 0x7a, 0x7b, 0x82, 0x83, 0x84, 0x8c, 0x96, 0, 0, 0, 0, 0, 0 };
-extern Rec *D_00201DC4__as_MapState_GetObjectPos_0_001A9900;
-extern Rec *D_00201DC4__as_MapState_SetObjectPos_0_001A9A20;
-extern Rec_MapState_SetBit_0_001A9CA0 *D_00201DC4__as_MapState_SetBit_0_001A9CA0;
-extern Rec_MapState_GetField_0_001A9D50 *D_00201DC4__as_MapState_GetField_0_001A9D50;
-extern Rec_MapState_SetField_0_001A9E10 *D_00201DC4__as_MapState_SetField_0_001A9E10;
-extern G_MapState_TestBit_0_001A9BE0 *D_00201DC4__as_MapState_TestBit_0_001A9BE0;
+extern Rec *gSaveByteSdata_00201DC4__as_MapState_GetObjectPos_0_001A9900;
+extern Rec *gSaveByteSdata_00201DC4__as_MapState_SetObjectPos_0_001A9A20;
+extern Rec_MapState_SetBit_0_001A9CA0 *gSaveByteSdata_00201DC4__as_MapState_SetBit_0_001A9CA0;
+extern Rec_MapState_GetField_0_001A9D50 *gSaveByteSdata_00201DC4__as_MapState_GetField_0_001A9D50;
+extern Rec_MapState_SetField_0_001A9E10 *gSaveByteSdata_00201DC4__as_MapState_SetField_0_001A9E10;
+extern G_MapState_TestBit_0_001A9BE0 *gSaveByteSdata_00201DC4__as_MapState_TestBit_0_001A9BE0;
 #ifdef NONMATCHING
-extern u8 D_004AA440[];
+extern u8 gMapStateBss_004AA440[];
 #endif
 #ifndef NONMATCHING
-extern u8 *D_00201DC8;
+extern u8 *gMapStateSdata_00201DC8;
 #else
-/* data twins (src/game/data/sdata.c): D_00201DC8 */
-static u8 *D_00201DC8 __attribute__((aligned(8))) = (u8 *)D_004AA440;
+/* data twins (src/game/data/sdata.c): gMapStateSdata_00201DC8 */
+static u8 *gMapStateSdata_00201DC8 __attribute__((aligned(8))) = (u8 *)gMapStateBss_004AA440;
 #endif
-extern S_MapState_GetKillCount_0_001A9FF0 *D_00201DC4__as_MapState_GetBestKillRate_0_001AA090;
-extern Big *D_00201DC4__as_MapState_IncVisits_0_001AA130;
-extern E_MapState_GetCounter_0_001AA1E0 *D_00201DC4__as_MapState_GetCounter_0_001AA1E0;
-extern Rec_MapState_IncCounter_0_001AA2A0 *D_00201DC4__as_MapState_IncCounter_0_001AA2A0;
-extern G_MapState_OffsetObjects_0_001A9810_ *D_00201DC4__as_MapState_IsVisited_1_001AA440;
-extern Rec_MapState_SetVisited_0_001AA4C0 *D_00201DC4__as_MapState_SetVisited_0_001AA4C0;
-extern E_MapState_GetWord_1_001AA540 *D_00201DC4__as_MapState_GetWord_1_001AA540;
-extern Rec_MapState_SetWord_1_001AA5D0 *D_00201DC4__as_MapState_SetWord_1_001AA5D0;
-extern Rec_MapState_GetKillCount_0_001A9FF0 *D_00201DC4__as_MapState_GetKillCount_0_001A9FF0;
+extern S_MapState_GetKillCount_0_001A9FF0 *gSaveByteSdata_00201DC4__as_MapState_GetBestKillRate_0_001AA090;
+extern Big *gSaveByteSdata_00201DC4__as_MapState_IncVisits_0_001AA130;
+extern E_MapState_GetCounter_0_001AA1E0 *gSaveByteSdata_00201DC4__as_MapState_GetCounter_0_001AA1E0;
+extern Rec_MapState_IncCounter_0_001AA2A0 *gSaveByteSdata_00201DC4__as_MapState_IncCounter_0_001AA2A0;
+extern G_MapState_OffsetObjects_0_001A9810_ *gSaveByteSdata_00201DC4__as_MapState_IsVisited_1_001AA440;
+extern Rec_MapState_SetVisited_0_001AA4C0 *gSaveByteSdata_00201DC4__as_MapState_SetVisited_0_001AA4C0;
+extern E_MapState_GetWord_1_001AA540 *gSaveByteSdata_00201DC4__as_MapState_GetWord_1_001AA540;
+extern Rec_MapState_SetWord_1_001AA5D0 *gSaveByteSdata_00201DC4__as_MapState_SetWord_1_001AA5D0;
+extern Rec_MapState_GetKillCount_0_001A9FF0 *gSaveByteSdata_00201DC4__as_MapState_GetKillCount_0_001A9FF0;
 extern S_Inventory_GetSlotFlag_0_001AA6B0 *gPlayerData_00201DC0__as_Inventory_GetSlotFlag_0_001AA6B0;
 extern S_Inventory_GetSlotCount_0_001AA6D0 *gPlayerData_00201DC0__as_Inventory_GetSlotCount_0_001AA6D0;
 E* Inventory_GetSlot_1_001A97D0(s16 i);
@@ -176,8 +176,8 @@ void MapState_OffsetObjects_0_001A9810(s32 k) {
     i = find_MapState_OffsetObjects_0_001A9810(k);
     if (i != -1) {
         for (j = 0; j < 16; j++) {
-            D_00201DC4[i].x60[j] = -1;
-            sceVu0CopyVector(&D_00201DC4[i].x80[j], &gZeroVec_003139A0);
+            gSaveByteSdata_00201DC4[i].x60[j] = -1;
+            sceVu0CopyVector(&gSaveByteSdata_00201DC4[i].x80[j], &gZeroVec_003139A0);
         }
     }
 }
@@ -199,18 +199,18 @@ s16 MapState_GetObjectPos_0_001A9900(s32 id, s32 k, Vec *a, Vec *b) {
         return 0;
     }
     if (a) {
-        a->x = D_00201DC4__as_MapState_GetObjectPos_0_001A9900[i].v[k].x;
-        a->y = D_00201DC4__as_MapState_GetObjectPos_0_001A9900[i].v[k].y;
-        a->z = D_00201DC4__as_MapState_GetObjectPos_0_001A9900[i].v[k].z;
+        a->x = gSaveByteSdata_00201DC4__as_MapState_GetObjectPos_0_001A9900[i].v[k].x;
+        a->y = gSaveByteSdata_00201DC4__as_MapState_GetObjectPos_0_001A9900[i].v[k].y;
+        a->z = gSaveByteSdata_00201DC4__as_MapState_GetObjectPos_0_001A9900[i].v[k].z;
         a->w = 1.0f;
     }
     if (b) {
-        b->y = D_00201DC4__as_MapState_GetObjectPos_0_001A9900[i].v[k].w;
+        b->y = gSaveByteSdata_00201DC4__as_MapState_GetObjectPos_0_001A9900[i].v[k].w;
         b->w = 0.0f;
         b->z = 0.0f;
         b->x = 0.0f;
     }
-    return D_00201DC4__as_MapState_GetObjectPos_0_001A9900[i].h[k];
+    return gSaveByteSdata_00201DC4__as_MapState_GetObjectPos_0_001A9900[i].h[k];
 }
 
 /* MapState_SetObjectPos_0_001A9A20 */
@@ -229,17 +229,17 @@ void MapState_SetObjectPos_0_001A9A20(s32 id, s32 k, s16 h, Vec *a, Vec *b) {
     if (i == -1) {
         return;
     }
-    D_00201DC4__as_MapState_SetObjectPos_0_001A9A20[i].h[k] = h;
+    gSaveByteSdata_00201DC4__as_MapState_SetObjectPos_0_001A9A20[i].h[k] = h;
     if (h != -1) {
-        D_00201DC4__as_MapState_SetObjectPos_0_001A9A20[i].v[k].x = a->x;
-        D_00201DC4__as_MapState_SetObjectPos_0_001A9A20[i].v[k].y = a->y;
-        D_00201DC4__as_MapState_SetObjectPos_0_001A9A20[i].v[k].z = a->z;
-        D_00201DC4__as_MapState_SetObjectPos_0_001A9A20[i].v[k].w = b->y;
+        gSaveByteSdata_00201DC4__as_MapState_SetObjectPos_0_001A9A20[i].v[k].x = a->x;
+        gSaveByteSdata_00201DC4__as_MapState_SetObjectPos_0_001A9A20[i].v[k].y = a->y;
+        gSaveByteSdata_00201DC4__as_MapState_SetObjectPos_0_001A9A20[i].v[k].z = a->z;
+        gSaveByteSdata_00201DC4__as_MapState_SetObjectPos_0_001A9A20[i].v[k].w = b->y;
     } else {
-        D_00201DC4__as_MapState_SetObjectPos_0_001A9A20[i].v[k].w = 0.0f;
-        D_00201DC4__as_MapState_SetObjectPos_0_001A9A20[i].v[k].z = 0.0f;
-        D_00201DC4__as_MapState_SetObjectPos_0_001A9A20[i].v[k].y = 0.0f;
-        D_00201DC4__as_MapState_SetObjectPos_0_001A9A20[i].v[k].x = 0.0f;
+        gSaveByteSdata_00201DC4__as_MapState_SetObjectPos_0_001A9A20[i].v[k].w = 0.0f;
+        gSaveByteSdata_00201DC4__as_MapState_SetObjectPos_0_001A9A20[i].v[k].z = 0.0f;
+        gSaveByteSdata_00201DC4__as_MapState_SetObjectPos_0_001A9A20[i].v[k].y = 0.0f;
+        gSaveByteSdata_00201DC4__as_MapState_SetObjectPos_0_001A9A20[i].v[k].x = 0.0f;
     }
 }
 
@@ -270,7 +270,7 @@ static inline s32 find_MapState_TestBit_0_001A9BE0(s32 k) {
 s32 MapState_TestBit_0_001A9BE0(s32 k, s16 b) {
     s32 i = find_MapState_TestBit_0_001A9BE0(k);
     if (i == -1) return 0;
-    return (D_00201DC4__as_MapState_TestBit_0_001A9BE0[i].x40[b / 32] & (1 << (b % 32))) != 0;
+    return (gSaveByteSdata_00201DC4__as_MapState_TestBit_0_001A9BE0[i].x40[b / 32] & (1 << (b % 32))) != 0;
 }
 
 /* MapState_SetBit_0_001A9CA0 */
@@ -286,7 +286,7 @@ static inline u32 find_MapState_SetBit_0_001A9CA0(s32 id) {
 void MapState_SetBit_0_001A9CA0(s32 id, s16 k) {
     u32 idx = find_MapState_SetBit_0_001A9CA0(id);
     if (idx != -1) {
-        D_00201DC4__as_MapState_SetBit_0_001A9CA0[idx].bits[k / 32] |= 1 << (k % 32);
+        gSaveByteSdata_00201DC4__as_MapState_SetBit_0_001A9CA0[idx].bits[k / 32] |= 1 << (k % 32);
     }
 }
 
@@ -309,7 +309,7 @@ u32 MapState_GetField_0_001A9D50(s32 id, u16 k) {
     }
     n = k * 2;
     sh = n % 32;
-    return ((3 << sh) & D_00201DC4__as_MapState_GetField_0_001A9D50[i].bits[n / 32]) >> sh;
+    return ((3 << sh) & gSaveByteSdata_00201DC4__as_MapState_GetField_0_001A9D50[i].bits[n / 32]) >> sh;
 }
 
 /* MapState_SetField_0_001A9E10 */
@@ -326,7 +326,7 @@ void MapState_SetField_0_001A9E10(s32 id, u16 k, u8 v) {
     u32 i = find_MapState_SetField_0_001A9E10(id);
     if (i != -1) {
         s32 b = k * 2;
-        D_00201DC4__as_MapState_SetField_0_001A9E10[i].w[b / 32] |= (v & 3) << (b % 32);
+        gSaveByteSdata_00201DC4__as_MapState_SetField_0_001A9E10[i].w[b / 32] |= (v & 3) << (b % 32);
     }
 }
 
@@ -336,7 +336,7 @@ s32 Bestiary_IsSeen_2_001A9EC0(s16 i)
 {
     if (0 > i || i > 0x80)
         return 0;
-    return ((B_Bestiary_IsSeen_2_001A9EC0 *)&D_00201DC8[i])->f;
+    return ((B_Bestiary_IsSeen_2_001A9EC0 *)&gMapStateSdata_00201DC8[i])->f;
 }
 
 /* Bestiary_SetSeen_1_001A9F10 */
@@ -344,7 +344,7 @@ void Bestiary_SetSeen_1_001A9F10(s16 i)
 {
     if (0 > i || i > 0x80)
         return;
-    ((B_Bestiary_SetSeen_1_001A9F10 *)&D_00201DC8[i])->f = 1;
+    ((B_Bestiary_SetSeen_1_001A9F10 *)&gMapStateSdata_00201DC8[i])->f = 1;
 }
 
 /* Bestiary_IsKilled_1_001A9F60 */
@@ -352,7 +352,7 @@ s32 Bestiary_IsKilled_1_001A9F60(s16 i)
 {
     if (0 > i || i > 0x80)
         return 0;
-    return D_00201DC8[i] & 1;
+    return gMapStateSdata_00201DC8[i] & 1;
 }
 
 /* Bestiary_SetKilled_1_001A9FA0 */
@@ -360,7 +360,7 @@ void Bestiary_SetKilled_1_001A9FA0(s16 i)
 {
     if (0 > i || i > 0x80)
         return;
-    ((B_Bestiary_SetKilled_1_001A9FA0 *)&D_00201DC8[i])->f = 1;
+    ((B_Bestiary_SetKilled_1_001A9FA0 *)&gMapStateSdata_00201DC8[i])->f = 1;
 }
 
 /* MapState_GetKillCount_0_001A9FF0 */
@@ -380,13 +380,13 @@ u16 MapState_GetKillCount_0_001A9FF0(s32 id) {
     if (i == -1) {
         return 0;
     }
-    return D_00201DC4__as_MapState_GetKillCount_0_001A9FF0->t[id / 10];
+    return gSaveByteSdata_00201DC4__as_MapState_GetKillCount_0_001A9FF0->t[id / 10];
 }
 
 /* MapState_GetBestKillRate_0_001AA090 */
 static inline s32 find_MapState_GetBestKillRate_0_001AA090(s32 k) { u32 i; for (i = 0; i < 0x2A; i++) if (k == D_001F37B0[i]) return i; return -1; }
 u16 MapState_GetBestKillRate_0_001AA090(s32 a) {
- if (find_MapState_GetBestKillRate_0_001AA090(a) == -1) return 0; return D_00201DC4__as_MapState_GetBestKillRate_0_001AA090->t[a / 10];
+ if (find_MapState_GetBestKillRate_0_001AA090(a) == -1) return 0; return gSaveByteSdata_00201DC4__as_MapState_GetBestKillRate_0_001AA090->t[a / 10];
 }
 
 /* MapState_IncVisits_0_001AA130 */
@@ -403,8 +403,8 @@ void MapState_IncVisits_0_001AA130(s32 id) {
     u32 i = find_MapState_IncVisits_0_001AA130(id);
     if (i != -1) {
         s32 k = id / 10 - 1;
-        D_00201DC4__as_MapState_IncVisits_0_001AA130->a[k]++;
-        if (D_00201DC4__as_MapState_IncVisits_0_001AA130->b[k] < D_00201DC4__as_MapState_IncVisits_0_001AA130->a[k]) D_00201DC4__as_MapState_IncVisits_0_001AA130->b[k] = D_00201DC4__as_MapState_IncVisits_0_001AA130->a[k];
+        gSaveByteSdata_00201DC4__as_MapState_IncVisits_0_001AA130->a[k]++;
+        if (gSaveByteSdata_00201DC4__as_MapState_IncVisits_0_001AA130->b[k] < gSaveByteSdata_00201DC4__as_MapState_IncVisits_0_001AA130->a[k]) gSaveByteSdata_00201DC4__as_MapState_IncVisits_0_001AA130->b[k] = gSaveByteSdata_00201DC4__as_MapState_IncVisits_0_001AA130->a[k];
     }
 }
 
@@ -421,7 +421,7 @@ static inline s32 find_MapState_GetCounter_0_001AA1E0(s32 a) {
 s32 MapState_GetCounter_0_001AA1E0(s32 arg0, s16 arg1) {
     s32 i = find_MapState_GetCounter_0_001AA1E0(arg0);
     if (i == -1) return 0;
-    return (D_00201DC4__as_MapState_GetCounter_0_001AA1E0[i].n[arg1 / 8] >> (arg1 % 8 * 4)) & 0xF;
+    return (gSaveByteSdata_00201DC4__as_MapState_GetCounter_0_001AA1E0[i].n[arg1 / 8] >> (arg1 % 8 * 4)) & 0xF;
 }
 
 /* MapState_IncCounter_0_001AA2A0 */
@@ -439,7 +439,7 @@ static inline u32 get(s32 id, s16 k) {
     if (i == -1) {
         return 0;
     }
-    return (D_00201DC4__as_MapState_IncCounter_0_001AA2A0[i].bits[k / 8] >> (k % 8 * 4)) & 0xF;
+    return (gSaveByteSdata_00201DC4__as_MapState_IncCounter_0_001AA2A0[i].bits[k / 8] >> (k % 8 * 4)) & 0xF;
 }
 
 void MapState_IncCounter_0_001AA2A0(s32 id, s16 k) {
@@ -449,8 +449,8 @@ void MapState_IncCounter_0_001AA2A0(s32 id, s16 k) {
         if (v > 16) {
             v = 16;
         }
-        D_00201DC4__as_MapState_IncCounter_0_001AA2A0[idx].bits[k / 8] &= ~(0xF << (k % 8 * 4));
-        D_00201DC4__as_MapState_IncCounter_0_001AA2A0[idx].bits[k / 8] |= v << (k % 8 * 4);
+        gSaveByteSdata_00201DC4__as_MapState_IncCounter_0_001AA2A0[idx].bits[k / 8] &= ~(0xF << (k % 8 * 4));
+        gSaveByteSdata_00201DC4__as_MapState_IncCounter_0_001AA2A0[idx].bits[k / 8] |= v << (k % 8 * 4);
     }
 }
 
@@ -465,7 +465,7 @@ static inline s32 find_MapState_IsVisited_1_001AA440(s32 k) {
 s32 MapState_IsVisited_1_001AA440(s32 k) {
     s32 i = find_MapState_IsVisited_1_001AA440(k);
     if (i == -1) return 0;
-    return D_00201DC4__as_MapState_IsVisited_1_001AA440[i].x50.f.b0;
+    return gSaveByteSdata_00201DC4__as_MapState_IsVisited_1_001AA440[i].x50.f.b0;
 }
 
 /* MapState_SetVisited_0_001AA4C0 */
@@ -481,7 +481,7 @@ static inline u32 find_MapState_SetVisited_0_001AA4C0(s32 id) {
 void MapState_SetVisited_0_001AA4C0(s32 id) {
     u32 i = find_MapState_SetVisited_0_001AA4C0(id);
     if (i != -1) {
-        D_00201DC4__as_MapState_SetVisited_0_001AA4C0[i].b0 = 1;
+        gSaveByteSdata_00201DC4__as_MapState_SetVisited_0_001AA4C0[i].b0 = 1;
     }
 }
 
@@ -498,7 +498,7 @@ static inline s32 find_MapState_GetWord_1_001AA540(s32 a) {
 s32 MapState_GetWord_1_001AA540(s32 arg0, s16 arg1) {
     s32 i = find_MapState_GetWord_1_001AA540(arg0);
     if (i == -1) return 0;
-    return D_00201DC4__as_MapState_GetWord_1_001AA540[i].v[arg1];
+    return gSaveByteSdata_00201DC4__as_MapState_GetWord_1_001AA540[i].v[arg1];
 }
 
 /* MapState_SetWord_1_001AA5D0 */
@@ -514,7 +514,7 @@ static inline u32 find_MapState_SetWord_1_001AA5D0(s32 id) {
 void MapState_SetWord_1_001AA5D0(s32 id, s16 k, s32 v) {
     u32 i = find_MapState_SetWord_1_001AA5D0(id);
     if (i != -1) {
-        D_00201DC4__as_MapState_SetWord_1_001AA5D0[i].v[k] = v;
+        gSaveByteSdata_00201DC4__as_MapState_SetWord_1_001AA5D0[i].v[k] = v;
     }
 }
 #undef gPlayerData_00201DC0
@@ -553,11 +553,11 @@ u8 Inventory_GetSlotCount_0_001AA6D0(s16 i) { if (gPlayerData_00201DC0__as_Inven
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-extern u8 D_004AA440[];
+extern u8 gMapStateBss_004AA440[];
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/pad_get_connected_bss.c): D_004AA440__grp: D_004AA440@0x0 */
+/* data group (src/game/data/pad_get_connected_bss.c): D_004AA440__grp: gMapStateBss_004AA440@0x0 */
 u8 D_004AA440__grp[0x2160] __attribute__((aligned(16)));
 #endif

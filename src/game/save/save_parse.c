@@ -31,7 +31,7 @@ typedef struct {
     Rec_Save_ParseGame_1_001A9080 r5;
 } Big_Save_ParseGame_1_001A9080;
 typedef struct { u8 pad0[8]; u16 x8; u8 xA; u8 xB; u8 pad[0x98 - 0xC]; u8 x98; u8 x99; u8 x9A; u8 x9B; } Src;
-extern Big_Save_ParseOptions_1_001A8B90 *D_00201E00;
+extern Big_Save_ParseOptions_1_001A8B90 *gSaveParseSdata_00201E00;
 extern PlayerData *gPlayerData_00201DC0;
 void Save_ParseOptions_1_001A8B90(Rec_Save_ParseOptions_1_001A8B90 *p);
 void Save_ParseOptionsB_0_001A8F00(Rec_Save_ParseOptionsB_0_001A8F00 *p);
@@ -47,20 +47,20 @@ void PlayTime_CopyClock_1_001DF930(u8 *);
 void Save_ParseOptions_1_001A8B90(Rec_Save_ParseOptions_1_001A8B90 *p) {
     s32 *d;
     u8 *s;
-    s8 *c1 = &D_001FD988[1];
-    s8 *c2 = &D_001FD988[2];
-    s8 *c3 = &D_001FD988[3];
+    s8 *c1 = &gSaveParseRodata_001FD988[1];
+    s8 *c2 = &gSaveParseRodata_001FD988[2];
+    s8 *c3 = &gSaveParseRodata_001FD988[3];
 
     while (1) {
         d = (s32 *)((u8 *)p + 0x10);
         s = (u8 *)d + 0x10; s += (p->x1C + 15) & ~15;
-        if (p->tag == (D_001FD988[0] | (*c1 << 8) | (*c2 << 16) | (*c3 << 24))) return;
+        if (p->tag == (gSaveParseRodata_001FD988[0] | (*c1 << 8) | (*c2 << 16) | (*c3 << 24))) return;
         switch (p->tag) {
         case 0x6154504F:
-            memcpy(D_00201E00->x20, s, *d);
+            memcpy(gSaveParseSdata_00201E00->x20, s, *d);
             break;
         case 0x61535953:
-            memcpy(D_00201E00->x50, s, *d);
+            memcpy(gSaveParseSdata_00201E00->x50, s, *d);
             break;
         }
         p = (Rec_Save_ParseOptions_1_001A8B90 *)((u8 *)p + p->x4);
@@ -68,8 +68,8 @@ void Save_ParseOptions_1_001A8B90(Rec_Save_ParseOptions_1_001A8B90 *p) {
 }
 
 /* Save_WriteOptions_1_001A8CA0 */
-#define D_00201E00 D_00201E00__as_Save_WriteOptions_1_001A8CA0
-extern Big_Save_WriteOptions_1_001A8CA0 *D_00201E00__as_Save_WriteOptions_1_001A8CA0;
+#define gSaveParseSdata_00201E00 gSaveParseSdata_00201E00__as_Save_WriteOptions_1_001A8CA0
+extern Big_Save_WriteOptions_1_001A8CA0 *gSaveParseSdata_00201E00__as_Save_WriteOptions_1_001A8CA0;
 #define FCC(s) ((s)[0] | ((s)[1] << 8) | ((s)[2] << 16) | ((s)[3] << 24))
 static inline void init_Save_WriteOptions_1_001A8CA0(Rec_Save_WriteOptions_1_001A8CA0 *p, s8 *s, u32 x4, u32 x10, u32 x14) {
     p->tag = FCC(s);
@@ -85,8 +85,8 @@ static inline void init_Save_WriteOptions_1_001A8CA0(Rec_Save_WriteOptions_1_001
 }
 
 void Save_WriteOptions_1_001A8CA0(void) {
-Big_Save_WriteOptions_1_001A8CA0 *b = D_00201E00; init_Save_WriteOptions_1_001A8CA0(&b->r0, D_001FD990, 0x30, 0x20, 0x10); b = D_00201E00; init_Save_WriteOptions_1_001A8CA0(&b->r1, D_001FD998, 0xA0, 0x90, 0x80); b = D_00201E00; init_Save_WriteOptions_1_001A8CA0(&b->r2, D_001FD988, 0x20, 0x10, 0); }
-#undef D_00201E00
+Big_Save_WriteOptions_1_001A8CA0 *b = gSaveParseSdata_00201E00; init_Save_WriteOptions_1_001A8CA0(&b->r0, gSaveParseRodata_001FD990, 0x30, 0x20, 0x10); b = gSaveParseSdata_00201E00; init_Save_WriteOptions_1_001A8CA0(&b->r1, gSaveParseRodata_001FD998, 0xA0, 0x90, 0x80); b = gSaveParseSdata_00201E00; init_Save_WriteOptions_1_001A8CA0(&b->r2, gSaveParseRodata_001FD988, 0x20, 0x10, 0); }
+#undef gSaveParseSdata_00201E00
 
 /* Save_ApplyLoaded_0_001A8E30 */
 void Save_ApplyLoaded_0_001A8E30(void) {
@@ -117,14 +117,14 @@ extern Big_Save_ParseOptionsB_0_001A8F00 *gPlayerData_00201DC0__as_Save_ParseOpt
 void Save_ParseOptionsB_0_001A8F00(Rec_Save_ParseOptionsB_0_001A8F00 *p) {
     s32 *d;
     u8 *s;
-    s8 *c1 = &D_001FD988[1];
-    s8 *c2 = &D_001FD988[2];
-    s8 *c3 = &D_001FD988[3];
+    s8 *c1 = &gSaveParseRodata_001FD988[1];
+    s8 *c2 = &gSaveParseRodata_001FD988[2];
+    s8 *c3 = &gSaveParseRodata_001FD988[3];
 
     while (1) {
         d = (s32 *)((u8 *)p + 0x10);
         s = (u8 *)d + 0x10; s += (p->x1C + 15) & ~15;
-        if (p->tag == (D_001FD988[0] | (*c1 << 8) | (*c2 << 16) | (*c3 << 24))) return;
+        if (p->tag == (gSaveParseRodata_001FD988[0] | (*c1 << 8) | (*c2 << 16) | (*c3 << 24))) return;
         switch (p->tag) {
         case 0x61534350:
             memcpy(gPlayerData_00201DC0->x20, s, *d);
@@ -173,12 +173,12 @@ void Save_ParseGame_1_001A9080(void) {
     s->xA = s->x9A;
     s->xB = s->x99;
     memcpy(gPlayerData_00201DC0->x20, s, 0x10A0);
-    b = gPlayerData_00201DC0; init_Save_ParseGame_1_001A9080(&b->r0, D_001FD9A0, 0x10C0, 0x10B0, 0x10A0);
-    b = gPlayerData_00201DC0; init_Save_ParseGame_1_001A9080(&b->r1, D_001FD9A8, 0x49E0, 0x49D0, 0x49C0);
-    b = gPlayerData_00201DC0; init_Save_ParseGame_1_001A9080(&b->r2, D_001FD9B0, 0xA0, 0x90, 0x80);
-    b = gPlayerData_00201DC0; init_Save_ParseGame_1_001A9080(&b->r3, D_001FD9B8, 0xA0, 0x90, 0x80);
-    b = gPlayerData_00201DC0; init_Save_ParseGame_1_001A9080(&b->r4, D_001FD9C0, 0x2020, 0x2010, 0x2000);
-    b = gPlayerData_00201DC0; init_Save_ParseGame_1_001A9080(&b->r5, D_001FD988, 0x20, 0x10, 0);
+    b = gPlayerData_00201DC0; init_Save_ParseGame_1_001A9080(&b->r0, gSaveParseRodata_001FD9A0, 0x10C0, 0x10B0, 0x10A0);
+    b = gPlayerData_00201DC0; init_Save_ParseGame_1_001A9080(&b->r1, gSaveParseRodata_001FD9A8, 0x49E0, 0x49D0, 0x49C0);
+    b = gPlayerData_00201DC0; init_Save_ParseGame_1_001A9080(&b->r2, gSaveParseRodata_001FD9B0, 0xA0, 0x90, 0x80);
+    b = gPlayerData_00201DC0; init_Save_ParseGame_1_001A9080(&b->r3, gSaveParseRodata_001FD9B8, 0xA0, 0x90, 0x80);
+    b = gPlayerData_00201DC0; init_Save_ParseGame_1_001A9080(&b->r4, gSaveParseRodata_001FD9C0, 0x2020, 0x2010, 0x2000);
+    b = gPlayerData_00201DC0; init_Save_ParseGame_1_001A9080(&b->r5, gSaveParseRodata_001FD988, 0x20, 0x10, 0);
 }
 #undef gPlayerData_00201DC0
 
@@ -195,25 +195,25 @@ s32 Save_GetData_1_001A9400(void) {
 #pragma explicit_zero_data on
 extern u8 D_004A4980[];
 extern u8 D_004A4880[];
-/* data twins (src/game/data/sdata.c): gPlayerData_00201DC0, D_00201E00 */
+/* data twins (src/game/data/sdata.c): gPlayerData_00201DC0, gSaveParseSdata_00201E00 */
 PlayerData *gPlayerData_00201DC0 = (PlayerData *)D_004A4980;
-Big_Save_ParseOptions_1_001A8B90 *D_00201E00 = (Big_Save_ParseOptions_1_001A8B90 *)D_004A4880;
+Big_Save_ParseOptions_1_001A8B90 *gSaveParseSdata_00201E00 = (Big_Save_ParseOptions_1_001A8B90 *)D_004A4880;
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/save_parse_rodata.c): D_001FD988__grp: D_001FD988@0x0, D_001FD989@0x1, D_001FD98A@0x2, D_001FD98B@0x3, D_001FD990@0x8, D_001FD991@0x9, D_001FD992@0xa, D_001FD993@0xb, D_001FD998@0x10, D_001FD999@0x11, D_001FD99A@0x12 */
+/* data group (src/game/data/save_parse_rodata.c): D_001FD988__grp: gSaveParseRodata_001FD988@0x0, gSaveParseRodata_001FD989@0x1, gSaveParseRodata_001FD98A@0x2, gSaveParseRodata_001FD98B@0x3, gSaveParseRodata_001FD990@0x8, gSaveParseRodata_001FD991@0x9, gSaveParseRodata_001FD992@0xa, gSaveParseRodata_001FD993@0xb, gSaveParseRodata_001FD998@0x10, gSaveParseRodata_001FD999@0x11, gSaveParseRodata_001FD99A@0x12 */
 u8 D_001FD988__grp[0x13] __attribute__((aligned(8))) = { 0x45, 0x4e, 0x44, 0x5f, 0, 0, 0, 0, 0x4f, 0x50, 0x54, 0x61, 0, 0, 0, 0, 0x53, 0x59, 0x53 };
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/save_parse_rodata.c): D_001FD9A0__grp: D_001FD9A0@0x0, D_001FD9A1@0x1, D_001FD9A2@0x2, D_001FD9A3@0x3, D_001FD9A8@0x8, D_001FD9A9@0x9, D_001FD9AA@0xa, D_001FD9AB@0xb, D_001FD9B0@0x10, D_001FD9B1@0x11, D_001FD9B2@0x12 */
+/* data group (src/game/data/save_parse_rodata.c): D_001FD9A0__grp: gSaveParseRodata_001FD9A0@0x0, gSaveParseRodata_001FD9A1@0x1, gSaveParseRodata_001FD9A2@0x2, gSaveParseRodata_001FD9A3@0x3, gSaveParseRodata_001FD9A8@0x8, gSaveParseRodata_001FD9A9@0x9, gSaveParseRodata_001FD9AA@0xa, gSaveParseRodata_001FD9AB@0xb, gSaveParseRodata_001FD9B0@0x10, gSaveParseRodata_001FD9B1@0x11, gSaveParseRodata_001FD9B2@0x12 */
 u8 D_001FD9A0__grp[0x13] __attribute__((aligned(16))) = { 0x50, 0x43, 0x53, 0x61, 0, 0, 0, 0, 0x4d, 0x41, 0x50, 0x61, 0, 0, 0, 0, 0x45, 0x4e, 0x45 };
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/save_parse_rodata.c): D_001FD9B8__grp: D_001FD9B8@0x0, D_001FD9B9@0x1, D_001FD9BA@0x2, D_001FD9BB@0x3, D_001FD9C0@0x8, D_001FD9C1@0x9, D_001FD9C2@0xa, D_001FD9C3@0xb */
+/* data group (src/game/data/save_parse_rodata.c): D_001FD9B8__grp: gSaveParseRodata_001FD9B8@0x0, gSaveParseRodata_001FD9B9@0x1, gSaveParseRodata_001FD9BA@0x2, gSaveParseRodata_001FD9BB@0x3, gSaveParseRodata_001FD9C0@0x8, gSaveParseRodata_001FD9C1@0x9, gSaveParseRodata_001FD9C2@0xa, gSaveParseRodata_001FD9C3@0xb */
 s32 D_001FD9B8__grp[0x6] __attribute__((aligned(8))) = { 0x614d5449, 0, 0x61484353, 0, 0, 0 };
 #endif

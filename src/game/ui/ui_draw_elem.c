@@ -10,10 +10,10 @@
 typedef struct { f32 a[6]; } M2;
 typedef struct { u32 n; u8 *p; } L;
 #ifndef NONMATCHING
-extern M2 D_001F2790 __attribute__((aligned(16)));
+extern M2 gUiDrawElemData_001F2790 __attribute__((aligned(16)));
 #else
-/* data twins (src/game/data/menu_draw_wrap_data.c): D_001F2790 */
-static M2 D_001F2790 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
+/* data twins (src/game/data/menu_draw_wrap_data.c): gUiDrawElemData_001F2790 */
+static M2 gUiDrawElemData_001F2790 = { 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f };
 #endif
 M2 *Mtx2_Rotate_1_00182860(M2 *, f32);
 M2 *Mtx2_Mul_1_001828F0(M2 *, M2 *, M2 *);
@@ -60,7 +60,7 @@ void Ui_DrawElem_1_00182C10(u8 *o, L *l) {
         pos[2] = t2 + *(f32 *)(o + 0xC);
         pos[3] = t3 + *(f32 *)(o + 0x10);
         }
-        w = D_001F2790;
+        w = gUiDrawElemData_001F2790;
         Mtx2_Rotate_1_00182860(&C, *(f32 *)(o + 0x24));
         Mtx2_Mul_1_001828F0(&X, &w, &C);
         X.a[4] = *(f32 *)(o + 0x2C);

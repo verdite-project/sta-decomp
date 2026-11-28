@@ -5,15 +5,15 @@
 /* used by: script_op, sfx, sfx_all, sfx_system, text_00169F40.s */
 
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/effect/sfx_system.c */
-u8 D_003407E0[0xec130];
-u8 D_003406E0[0x100];
+u8 gSfxSystemBss_003407E0[0xec130];
+u8 gSfxSystemBss_003406E0[0x100];
 #endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/effect/sfx.c */
-u8 D_003406D0[0x10];
+u8 gSfxBss_003406D0[0x10];
 #endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/effect/sfx_all.c */
-s32 D_0033F6D0[0x400];
+s32 gSfxAllBss_0033F6D0[0x400];
 #endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/script/script_op.c */
-u8 D_0033F540[0x190];
+u8 gScriptOpBss_0033F540[0x190];
 #endif

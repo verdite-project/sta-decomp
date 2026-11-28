@@ -4,11 +4,11 @@
  #include "common.h"
 -void Enemy_Set5B6b1_1_0013E6F0(s32, s32);                /* extern */
 -void Enemy_Set5B3b6_1_0013E710(s32, s32);                /* extern */
--extern void *D_00201FA8;
+-extern void *gEnemyScriptSbss_00201FA8;
 -void EnemyCmd_SetHiddenFlags_0_00144370(void *arg0) {
 -    s32 temp_17;
 -    u8 temp_16;
--    temp_17 = M2C_FIELD(D_00201FA8, s32 *, 0x154);
+-    temp_17 = M2C_FIELD(gEnemyScriptSbss_00201FA8, s32 *, 0x154);
 -    temp_16 = M2C_FIELD(arg0, u8 *, 0x10);
 -    if (M2C_FIELD(arg0, u8 *, 8) != 0) {
 -        Enemy_Set5B3b6_1_0013E710(temp_17, 1);
@@ -17,12 +17,12 @@
 -        Enemy_Set5B6b1_1_0013E6F0(temp_17, 1);
 -    }
 +typedef struct { char pad[0x154]; void *p; } S;
-+extern S *D_00201FA8;
++extern S *gEnemyScriptSbss_00201FA8;
 +void Enemy_Set5B3b6_1_0013E710(void *p, s32 v);
 +void Enemy_Set5B6b1_1_0013E6F0(void *p, s32 v);
 +void EnemyCmd_SetHiddenFlags_0_00144370(u8 *o)
 +{
-+    void *p = D_00201FA8->p;
++    void *p = gEnemyScriptSbss_00201FA8->p;
 +    u8 a = o[8];
 +    u8 b = o[0x10];
 +    if (a)

@@ -40,8 +40,8 @@ void sceVu0CopyVector(Vec *, Vec *);
 f32 Vec_Distance_3_00146940(Vec *, O *);
 void EnemyScr_Event2015_1_00141510(s8 *, u8, s32, s32);
 extern Vec gZeroVec_003139A0;
-extern Mtx D_001F2170;
-extern s32 **D_002022BC;
+extern Mtx gMatrixFromData_001F2170;
+extern s32 **gPlayerSbss_002022BC;
 
 static inline s8 *find(u16 id) {
     s32 it = 0;
@@ -58,14 +58,14 @@ static inline void orbit(Vec *v, f32 t, s8 *p, O *o) {
     v->y = 100.0f * Angle_Wrap2PiB_2_00146B90(a);
     v->z = 0.0f;
     v->w = 1.0f;
-    sceVu0RotMatrixY(WRAP3(a), &m, &D_001F2170);
+    sceVu0RotMatrixY(WRAP3(a), &m, &gMatrixFromData_001F2170);
     sceVu0ApplyMatrix(v, &m, v);
     sceVu0AddVector(v, Enemy_Ptr6F0_1_0013FFA0(p), v);
     v->y += o->x54;
     v->w = 1.0f;
 }
 
-static inline s32 ok(void) { return D_002022BC && *D_002022BC; }
+static inline s32 ok(void) { return gPlayerSbss_002022BC && *gPlayerSbss_002022BC; }
 
 void FxProc_ChaseEnemy_0_00148D00(O *o, f32 dt) {
     ST st;
@@ -134,7 +134,7 @@ void FxProc_ChaseEnemy_0_00148D00(O *o, f32 dt) {
         if (s == 4) {
             done = Vec_Distance_3_00146940(Enemy_Ptr6F0_1_0013FFA0(p), o) < 100.0f;
             if (done) {
-                EnemyScr_Event2015_1_00141510(p, ok() ? **D_002022BC : 0, 3, 0);
+                EnemyScr_Event2015_1_00141510(p, ok() ? **gPlayerSbss_002022BC : 0, 3, 0);
                 o->x88 = (f32)(u32)(o->x114.f.b1 = 0);
             }
         }

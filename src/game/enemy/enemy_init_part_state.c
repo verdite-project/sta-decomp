@@ -3,7 +3,7 @@
 #include "include_asm.h"
 
 #ifdef NONMATCHING
-/* NEAR 23/88 (unchanged from prev). Only temp-register naming in the first ~25 insns differs: retail D_00201F2C->t1, off->t0, !D->a2, tbl elem->a2, h**->a3;
+/* NEAR 23/88 (unchanged from prev). Only temp-register naming in the first ~25 insns differs: retail gSfxAllSbss_00201F2C->t1, off->t0, !D->a2, tbl elem->a2, h**->a3;
  * ours swaps t0/t1 and a2/a3. Tried: all 720 decl orders of explicit locals (dd,nd,sz,off,h,d), statement order perms, b38, u32 D, D==0,
  * typed x518 struct, inline buf()/ent() helpers, s32 param with masks, mult operand order. None moved it. */
 #include "m2c.h"
@@ -19,7 +19,7 @@ typedef struct {
     u8 pad51C[4];
     u8 list[16];
 } A;
-extern s32 D_00201F2C;
+extern s32 gSfxAllSbss_00201F2C;
 
 void Enemy_InitPartState_1_001A8510(A *a0, u8 a1) {
     Hd *h;
@@ -32,8 +32,8 @@ void Enemy_InitPartState_1_001A8510(A *a0, u8 a1) {
     off = (a0->tbl[a1]->x2A + 1) * 0x140;
     h = **(Hd ***)(a0->x518 + 0xB0);
     d = h->data;
-    q = (Fl *)(d + !D_00201F2C * (h->n * 0x140 + 0x200));
-    p = (Fl *)(d + D_00201F2C * (h->n * 0x140 + 0x200) + off + 0x1F8);
+    q = (Fl *)(d + !gSfxAllSbss_00201F2C * (h->n * 0x140 + 0x200));
+    p = (Fl *)(d + gSfxAllSbss_00201F2C * (h->n * 0x140 + 0x200) + off + 0x1F8);
     if (p->en || ((Fl *)((s8 *)q + off + 0x1F8))->en) {
         p->en = 0;
         ((Fl *)((s8 *)q + off + 0x1F8))->en = 0;

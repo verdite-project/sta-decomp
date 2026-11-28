@@ -6,27 +6,27 @@
    screen_fx_update, text_001544C0.s, text_00157630.s */
 
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/screen_fx.c */
-s16 D_002F1A48[0x4];
-f32 D_002F19E0[0x1a];
-s32 D_002F19DC[0x1];
-s32 D_002F19D8[0x1];
-u8 D_002F19D4[0x4];
-u8 D_002F19C8[0xc]; /* also D_002F19CA, D_002F19CB, D_002F19CC */
-u8 D_002F19C4[0x4];
-u8 D_002F19C0[0x4];
+s16 gScreenFxBss_002F1A48[0x4];
+f32 gScreenFxBss_002F19E0[0x1a];
+s32 gScreenFxBss_002F19DC[0x1];
+s32 gScreenFxBss_002F19D8[0x1];
+u8 gScreenFxBss_002F19D4[0x4];
+u8 gScreenFxBss_002F19C8[0xc]; /* also D_002F19CA, D_002F19CB, D_002F19CC */
+u8 gScreenFxBss_002F19C4[0x4];
+u8 gScreenFxBss_002F19C0[0x4];
 u8 gWeatherState_002F19B0[0x10];
 #endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/gs_packet.c */
-u8 D_002F19AC[0x4];
-u8 D_002F19A8[0x4];
+u8 gGsPacketBss_002F19AC[0x4];
+u8 gGsPacketBss_002F19A8[0x4];
 #endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/gfx_upload.c */
-u32 D_002F19A4[0x1];
+u32 gGfxUploadBss_002F19A4[0x1];
 #endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/gfx/gs_packet.c */
-u32 D_002F19A0[0x1];
-u32 D_002F199C[0x1];
-u8 D_002F1998[0x4];
-u8 D_002F1994[0x4];
-u8 D_002F1990[0x4] __attribute__((aligned(16)));
+u32 gGsPacketBss_002F19A0[0x1];
+u32 gGsPacketBss_002F199C[0x1];
+u8 gGsPacketBss_002F1998[0x4];
+u8 gGsPacketBss_002F1994[0x4];
+u8 gGsPacketBss_002F1990[0x4] __attribute__((aligned(16)));
 #endif

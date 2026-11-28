@@ -4,16 +4,16 @@
 typedef struct { u8 pad[0x10]; u32 fsize; } Tbl;
 extern Tbl gMcDirBuf_004B68C0[];
 #ifndef NONMATCHING
-extern u32 D_004B639C[];
+extern u32 gMcStepWriteBss_004B639C[];
 #else
-/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): D_004B639C */
-static u32 D_004B639C[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): gMcStepWriteBss_004B639C */
+static u32 gMcStepWriteBss_004B639C[0x1];
 #endif
 #ifndef NONMATCHING
-extern s32 D_004B63A0[];
+extern s32 gMcStepWriteBss_004B63A0[];
 #else
-/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): D_004B63A0 */
-static s32 D_004B63A0[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004B5DD0.c): gMcStepWriteBss_004B63A0 */
+static s32 gMcStepWriteBss_004B63A0[0x1];
 #endif
 s32 Mc_StepGetInfo_3_001D3BF0(s32, s32, s32 *, s32 *, s32 *, s32);
 s32 sceMcClose(s32);
@@ -29,8 +29,8 @@ s32 Mc_StepWrite_4_001D5280(void) {
     s32 k;
     switch (gMcState_004B63B8.step) {
     case 0:
-        D_004B6474[0] = 0;
-        D_004B639C[0] = 0;
+        gMcStepReadCheckedBss_004B6474[0] = 0;
+        gMcStepWriteBss_004B639C[0] = 0;
         gMcState_004B63B8.step++;
         break;
     case 1:
@@ -73,7 +73,7 @@ s32 Mc_StepWrite_4_001D5280(void) {
         if (r < 0) {
             if (gMcState_004B63B8.retry == 2) {
                 if (r == -2) gMcState_004B63B8.err = 3;
-                else if (r == -4) { D_004B68D0[0] = 0; gMcState_004B63B8.step++; break; }
+                else if (r == -4) { gMcStepWriteCheckedBss_004B68D0[0] = 0; gMcState_004B63B8.step++; break; }
                 else gMcState_004B63B8.err = 100;
                 return r;
             }
@@ -81,7 +81,7 @@ s32 Mc_StepWrite_4_001D5280(void) {
             gMcState_004B63B8.step--;
             break;
         }
-        if (r == 0) D_004B68D0[0] = 0;
+        if (r == 0) gMcStepWriteCheckedBss_004B68D0[0] = 0;
         gMcState_004B63B8.step++;
         break;
     case 5:
@@ -102,7 +102,7 @@ s32 Mc_StepWrite_4_001D5280(void) {
         gMcState_004B63B8.step = 8;
         break;
     case 8:
-        if (sceMcOpen(i, j, gMcState_004B63B8.name, D_004B68D0[0] == 0 ? 0x203 : 3) != 0) {
+        if (sceMcOpen(i, j, gMcState_004B63B8.name, gMcStepWriteCheckedBss_004B68D0[0] == 0 ? 0x203 : 3) != 0) {
             if (gMcState_004B63B8.retry == 2) {
                 gMcState_004B63B8.cmd = 0;
                 gMcState_004B63B8.err = 0x3D;
@@ -127,17 +127,17 @@ s32 Mc_StepWrite_4_001D5280(void) {
             }
             break;
         }
-        D_004B6474[0] = r;
+        gMcStepReadCheckedBss_004B6474[0] = r;
         gMcState_004B63B8.step++;
         break;
     case 10:
-        D_004B63A0[0] = gMcState_004B63B8.size - D_004B639C[0];
-        if (D_004B63A0[0] > 0x400) D_004B63A0[0] = 0x400;
+        gMcStepWriteBss_004B63A0[0] = gMcState_004B63B8.size - gMcStepWriteBss_004B639C[0];
+        if (gMcStepWriteBss_004B63A0[0] > 0x400) gMcStepWriteBss_004B63A0[0] = 0x400;
         gMcState_004B63B8.retry = 0;
         gMcState_004B63B8.step++;
         break;
     case 11:
-        if (sceMcWrite(D_004B6474[0], gMcState_004B63B8.xB8 + D_004B639C[0], D_004B63A0[0]) != 0) {
+        if (sceMcWrite(gMcStepReadCheckedBss_004B6474[0], gMcState_004B63B8.xB8 + gMcStepWriteBss_004B639C[0], gMcStepWriteBss_004B63A0[0]) != 0) {
             if (gMcState_004B63B8.retry == 2) {
                 gMcState_004B63B8.x90 = -1;
                 gMcState_004B63B8.step = 100;
@@ -161,12 +161,12 @@ s32 Mc_StepWrite_4_001D5280(void) {
             break;
         }
         gMcState_004B63B8.retry = 0;
-        D_004B639C[0] += r;
-        if (D_004B639C[0] >= gMcState_004B63B8.size) gMcState_004B63B8.step++;
+        gMcStepWriteBss_004B639C[0] += r;
+        if (gMcStepWriteBss_004B639C[0] >= gMcState_004B63B8.size) gMcState_004B63B8.step++;
         else gMcState_004B63B8.step = 10;
         break;
     case 13:
-        if (sceMcClose(D_004B6474[0]) != 0) {
+        if (sceMcClose(gMcStepReadCheckedBss_004B6474[0]) != 0) {
             if (gMcState_004B63B8.retry == 2) {
                 gMcState_004B63B8.x90 = -1;
                 gMcState_004B63B8.step = 100;
@@ -192,7 +192,7 @@ s32 Mc_StepWrite_4_001D5280(void) {
         gMcState_004B63B8.err = 0x3E;
         return 1;
     case 100:
-        if (D_004B6474[0] >= 0) {
+        if (gMcStepReadCheckedBss_004B6474[0] >= 0) {
             gMcState_004B63B8.retry = 0;
             gMcState_004B63B8.step++;
             break;
@@ -201,7 +201,7 @@ s32 Mc_StepWrite_4_001D5280(void) {
         gMcState_004B63B8.cmd = 0;
         return -999;
     case 101:
-        if (sceMcClose(D_004B6474[0]) != 0) {
+        if (sceMcClose(gMcStepReadCheckedBss_004B6474[0]) != 0) {
             if (gMcState_004B63B8.retry == 2) {
                 gMcState_004B63B8.cmd = 0;
                 gMcState_004B63B8.err = 0x3D;

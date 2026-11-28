@@ -3,23 +3,23 @@
 @@ -1,12 +1,12 @@
  #include "common.h"
 -void memset(void *, s32, s32);           /* extern */
--extern s32 D_0030A2D0[];
--extern s32 D_0030C3D0[];
+-extern s32 gLightBss_0030A2D0[];
+-extern s32 gLightBss_0030C3D0[];
 -extern s32 D_0030C3D4[];
 -void LightGroup_Clear_0_0015B890(s32 arg0) {
 -    s32 temp_5;
--    memset(D_0030A2D0 + (arg0 << 0xC) + 0x100, 0, 0x1000);
+-    memset(gLightBss_0030A2D0 + (arg0 << 0xC) + 0x100, 0, 0x1000);
 -    temp_5 = arg0 * 2;
--    *(D_0030C3D0 + temp_5) = 0;
+-    *(gLightBss_0030C3D0 + temp_5) = 0;
 -    *(D_0030C3D4 + temp_5) = 0;
 +typedef struct { u8 b[0x1000]; } E;
-+extern E D_0030A2D0[];
-+extern u16 D_0030C3D0[];
++extern E gLightBss_0030A2D0[];
++extern u16 gLightBss_0030C3D0[];
 +extern u16 D_0030C3D4[];
 +void *memset(void *p, s32 c, u32 n);
 +void LightGroup_Clear_0_0015B890(s32 i)
 +{
-+    memset(D_0030A2D0[i].b + 0x100, 0, 0x1000);
-+    D_0030C3D0[i] = 0;
++    memset(gLightBss_0030A2D0[i].b + 0x100, 0, 0x1000);
++    gLightBss_0030C3D0[i] = 0;
 +    D_0030C3D4[i] = 0;
  }

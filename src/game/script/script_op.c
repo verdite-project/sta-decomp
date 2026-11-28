@@ -10,15 +10,15 @@ typedef struct {
 } Slot;
 typedef struct { s32 h0; u32 count; s32 *base; } Mgr;
 typedef void (*Fn)(Cmd *);
-extern Fn D_001F2400[];
-extern Fn D_001F1CD0[];
+extern Fn gScriptOpData_001F2400[];
+extern Fn gScriptOpData_001F1CD0[];
 #ifndef NONMATCHING
-extern Fn D_0033F540[];
+extern Fn gScriptOpBss_0033F540[];
 #else
-/* data twins (src/game/data/vibration_bss_0033F540.c): D_0033F540 */
-static Fn D_0033F540[0x190 / sizeof(Fn)];
+/* data twins (src/game/data/vibration_bss_0033F540.c): gScriptOpBss_0033F540 */
+static Fn gScriptOpBss_0033F540[0x190 / sizeof(Fn)];
 #endif
-extern Fn D_001F21B0[];
+extern Fn gMatrixFromData_001F21B0[];
 void Script_OpCompare_1_00165DF0(void *o, Ctx *s);
 s8 Script_Exec_2_00166170(Mgr *o, Slot *s);
 void Script_FetchOperand_2_00165940(void *, Ctx *, u32 *, Val *);
@@ -218,13 +218,13 @@ s8 Script_Exec_2_00166170(Mgr *o, Slot *s) {
             getArgs(o, s, &c, op, arg);
             if (c.op != 0 && !(c.op & 0x8000)) {
                 if (c.op >= 300) {
-                    D_001F2400[c.op - 300](&c);
+                    gScriptOpData_001F2400[c.op - 300](&c);
                 } else if (c.op >= 200) {
-                    D_001F1CD0[c.op - 200](&c);
+                    gScriptOpData_001F1CD0[c.op - 200](&c);
                 } else if (c.op >= 100) {
-                    D_0033F540[c.op - 100](&c);
+                    gScriptOpBss_0033F540[c.op - 100](&c);
                 } else {
-                    D_001F21B0[c.op](&c);
+                    gMatrixFromData_001F21B0[c.op](&c);
                 }
             }
             break;
@@ -317,7 +317,7 @@ void EnemyCmd_StoreHpToFlag_1_00144490(void);
 void EnemyCmd_TestGameFlag_2_00145080(void);
 void EnemyCmd_UpdateParamFlags_1_00144FB0(void);
 void EnemyCmd_UpdatePartStat_1_00143DF0(void);
-/* data group (src/game/data/fx_proc_data.c): D_001F1CD0__grp: D_001F1CD0@0x0 */
+/* data group (src/game/data/fx_proc_data.c): D_001F1CD0__grp: gScriptOpData_001F1CD0@0x0 */
 s32 D_001F1CD0__grp[0x64] __attribute__((aligned(16))) = { (s32)EnemyCmd_ResetVectors_1_00145610, (s32)EnemyCmd_Nop_1_00143890, (s32)EnemyCmd_Nop_1_00143890, (s32)EnemyCmd_Nop_1_00143890, (s32)EnemyCmd_ShakeCamera_0_001455B0, (s32)EnemyCmd_SpawnItem_0_001454E0, (s32)EnemyCmd_GetModelPos_0_00145410, (s32)EnemyCmd_PlaySe_1_001453A0, (s32)EnemyCmd_SetMapObjFlag_0_001452E0, (s32)EnemyCmd_Set609_1_001452C0, (s32)EnemyCmd_SelectMotionB_1_001452A0, (s32)EnemyCmd_SetMode_1_00145290, (s32)EnemyCmd_GetHpPercent_2_00145250, (s32)EnemyCmd_AddPartValue_0_001451E0, (s32)EnemyCmd_Get5B0b0_1_001451A0, (s32)EnemyCmd_AddHp_2_00145190, (s32)EnemyCmd_Set5B0b1_1_00145180, (s32)EnemyCmd_GetType_1_00145140, (s32)EnemyCmd_Random_2_00145100, (s32)EnemyCmd_KillNow_1_001450F0, (s32)EnemyCmd_Set5B0b7_1_001450E0, (s32)EnemyCmd_SetDead_1_001450D0, (s32)EnemyCmd_TestGameFlag_2_00145080, (s32)EnemyCmd_SetGameFlag_2_00145070, (s32)EnemyCmd_Set5B1b0_1_00145060, (s32)EnemyCmd_RegisterSeen_0_00145010, (s32)EnemyCmd_RegisterKill_0_00144FC0, (s32)EnemyCmd_UpdateParamFlags_1_00144FB0, (s32)EnemyCmd_Set5B1b1_1_00144FA0, (s32)EnemyCmd_GetParamIdx_1_00144F60, (s32)EnemyCmd_Set5B1b2Notify_0_00144F00, (s32)EnemyCmd_Set5B1b3_1_00144EF0, (s32)EnemyCmd_Set5B1b5_1_00144EE0, (s32)EnemyCmd_HealPercent_1_00144E40, (s32)EnemyCmd_Set5B0b0_1_00144E30, (s32)EnemyCmd_BreakPart_1_00144E10, (s32)EnemyCmd_Set5B1b6_1_00144E00, (s32)EnemyCmd_Set5B1b7_1_00144DF0, (s32)EnemyCmd_BroadcastFrame_1_00144D80, (s32)EnemyCmd_Set5B2b0_1_00144D70, (s32)EnemyCmd_Set5B3b3_1_00144D60, (s32)EnemyCmd_ResetState_1_00144D50, (s32)EnemyCmd_SpawnEffectB_0_00144BE0, (s32)EnemyCmd_StopEffect_0_00144B80, (s32)EnemyCmd_SpawnEffect_0_00144A00, (s32)EnemyCmd_GetPosition_2_00144970, (s32)EnemyCmd_Set5B2b4_1_00144960, (s32)EnemyCmd_FindSpawnPoint_0_001444F0, (s32)EnemyCmd_Set5B1b4_1_001444E0, (s32)EnemyCmd_StoreHpToFlag_1_00144490, (s32)EnemyCmd_ClampHpFromFlag_1_00144420, (s32)EnemyCmd_Set5B0b2_1_00144410, (s32)EnemyCmd_Set5B2b1_1_00144400, (s32)EnemyCmd_Set5B2b2_1_001443F0, (s32)EnemyCmd_Set5B2b6w2_1_001443E0, (s32)EnemyCmd_ReturnToTitle_1_001443D0, (s32)EnemyCmd_SetHiddenFlags_0_00144370, (s32)EnemyCmd_Kill_1_00144360, (s32)EnemyCmd_BroadcastMotion_1_001442F0, (s32)EnemyCmd_GetTargetPos_0_001441B0, (s32)EnemyCmd_InitPart_1_00143E10, (s32)EnemyCmd_LoadPart_1_00143E00, (s32)EnemyCmd_UpdatePartStat_1_00143DF0, (s32)EnemyCmd_GetVec660_0_00143D60, (s32)EnemyCmd_SetPartValue_1_00143D10, (s32)EnemyCmd_ResolveHit_0_00143C70, (s32)EnemyCmd_GetMotionFrame_1_00143C30, (s32)EnemyCmd_StartTimer_0_00143BD0, (s32)EnemyCmd_Set5B4b4_1_00143BC0, (s32)EnemyCmd_Set5A1b5_1_00143BB0, (s32)EnemyCmd_SelectMotion_1_00143B90, (s32)EnemyCmd_GetPlayerValue_0_00143B60, (s32)EnemyCmd_Get608_1_00143B20, (s32)EnemyCmd_GetRelativePos_0_00143960, (s32)EnemyCmd_Set60B_1_00143950, (s32)EnemyCmd_Set5B8_1_00143940, (s32)EnemyCmd_Set5B4b5_1_00143930, (s32)EnemyCmd_Set5B4b6_1_00143920, (s32)EnemyCmd_GetGlobal_0_001438F0, (s32)EnemyCmd_GetFlag_0_001438B0, (s32)EnemyCmd_Set5B5b7_1_001438A0, (s32)EnemyCmd_Nop_1_00143890, (s32)EnemyCmd_Nop_1_00143890, (s32)EnemyCmd_Nop_1_00143890, (s32)EnemyCmd_Nop_1_00143890, (s32)EnemyCmd_Nop_1_00143890, (s32)EnemyCmd_Nop_1_00143890, (s32)EnemyCmd_Nop_1_00143890, (s32)EnemyCmd_Nop_1_00143890, (s32)EnemyCmd_Nop_1_00143890, (s32)EnemyCmd_Nop_1_00143890, (s32)EnemyCmd_Nop_1_00143890, (s32)EnemyCmd_Nop_1_00143890, (s32)EnemyCmd_Nop_1_00143890, (s32)EnemyCmd_Nop_1_00143890, (s32)EnemyCmd_Nop_1_00143890, (s32)EnemyCmd_Nop_1_00143890, (s32)EnemyCmd_Nop_1_00143890, (s32)EnemyCmd_Nop_1_00143890, (s32)EnemyCmd_Nop_1_00143890 };
 #endif
 
@@ -423,6 +423,6 @@ void MapCmd_TranslateNode_0_0017D810(void);
 void MapCmd_Vibrate_1_0017DB60(void);
 void MapCmd_WaitEvent_0_0017C2A0(void);
 void MapCmd_WarpPlayer_0_0017CE20(void);
-/* data group (src/game/data/screen_fx_flash_data_001F2340.c): D_001F2400__grp: D_001F2400@0x0 */
+/* data group (src/game/data/screen_fx_flash_data_001F2340.c): D_001F2400__grp: gScriptOpData_001F2400@0x0 */
 s32 D_001F2400__grp[0x64] __attribute__((aligned(16))) = { (s32)MapCmd_GetObjectName_0_0017ED20, (s32)MapCmd_GetItemName_0_0017ECD0, (s32)MapCmd_GetSfxParamB_0_0017EAF0, (s32)MapCmd_SetSfxParamB_0_0017E940, (s32)MapCmd_SetSfxParamA_0_0017E5B0, (s32)MapCmd_SetSfxTransform_0_0017E390, (s32)MapCmd_GetSfxState_0_0017E260, (s32)MapCmd_SetSfx_0_0017E370, (s32)MapCmd_GetSfxParamA_0_0017E760, (s32)MapCmd_QueryEnemies_0_0017E220, (s32)MapCmd_PlayBgm_0_0017E050, (s32)MapCmd_GetObjectAnim_0_0017DEC0, (s32)MapCmd_SetObjectAnimC_0_0017DEB0, (s32)MapCmd_SetObjectAnimB_0_0017DEA0, (s32)MapCmd_PlayObjectAnim_0_0017DE40, (s32)MapCmd_GetObjectFlag_0_0017DD90, (s32)MapCmd_SetObjectFlag_0_0017DD10, (s32)MapCmd_GetObjectVarB_0_0017DCD0, (s32)MapCmd_GetObjectVar_0_0017DC70, (s32)MapCmd_SetLightPos_0_0017DC00, (s32)MapCmd_Vibrate_1_0017DB60, (s32)MapCmd_SetCameraTarget_0_0017DB40, (s32)MapCmd_GetNodePos_0_0017DA60, (s32)MapCmd_TranslateNodeRel_0_0017D960, (s32)MapCmd_GetGlobal_0_0017D930, (s32)MapCmd_TranslateNode_0_0017D810, (s32)MapCmd_RotateNodeRel_0_0017D6E0, (s32)MapCmd_RotateNode_0_0017D5B0, (s32)MapCmd_SetObjectsAlpha_0_0017D480, (s32)MapCmd_SetObjectAlpha_0_0017D3D0, (s32)MapCmd_GetPlayerPosB_0_0017D350, (s32)MapCmd_GetPlayerVarB_0_0017D300, (s32)MapCmd_GetPlayerRot_1_0017D240, (s32)MapCmd_CopyVar_0_0017D1C0, (s32)MapCmd_GetEffectState_0_0017D170, (s32)MapCmd_GetEquip_0_0017D130, (s32)MapCmd_GetPlayerFlag_0_0017D0E0, (s32)MapCmd_GetDistToObject_0_0017D000, (s32)MapCmd_SetPlayerPosVec_0_0017CFB0, (s32)MapCmd_SetPlayerPos_1_0017CF40, (s32)MapCmd_NopC_2_0017EDB0, (s32)MapCmd_GetPlayerPos_1_0017CE80, (s32)MapCmd_AddItem_0_0017CE70, (s32)MapCmd_RemoveItem_0_0017CE60, (s32)MapCmd_WarpPlayer_0_0017CE20, (s32)MapCmd_SetPlayerFlags_0_0017CD50, (s32)MapCmd_GetPlayerStat2_0_0017CD10, (s32)MapCmd_SetPlayerVar3_0_0017CD00, (s32)MapCmd_SetPlayerVar4_0_0017CCE0, (s32)MapCmd_GetPlayerVar_0_0017CC90, (s32)MapCmd_SetItemFlag_0_0017CC80, (s32)MapCmd_GetWeather_0_0017CBA0, (s32)MapCmd_Random_2_0017CB50, (s32)MapCmd_SetEffectPos_0_0017CAC0, (s32)MapCmd_SetTexScroll_1_0017CAA0, (s32)MapCmd_SetFloat_0_0017CA60, (s32)MapCmd_IsBusy_0_0017CA10, (s32)MapCmd_ResetObjects_0_0017C930, (s32)MapCmd_RequestEvent_0_0017C890, (s32)MapCmd_FadeLight_0_0017C6F0, (s32)MapCmd_SetObjParam_0_0017C6D0, (s32)MapCmd_GetEnemyPosition_1_0017C620, (s32)MapCmd_GetEnemyRotation_1_0017C540, (s32)MapCmd_GetCameraState_0_0017C4B0, (s32)MapCmd_SetCameraPath_0_0017C490, (s32)MapCmd_WaitEvent_0_0017C2A0, (s32)MapCmd_GetTimer_0_0017C270, (s32)MapCmd_SetObjectAnim_0_0017C150, (s32)MapCmd_SpawnSfxOnObjectB_0_0017BF50, (s32)MapCmd_SpawnSfxOnObject_0_0017BD70, (s32)MapCmd_PlaySeOnObjectB_0_0017BC50, (s32)MapCmd_PlaySeAtXYZ_1_0017BC00, (s32)MapCmd_PlaySeOnObject_0_0017BAC0, (s32)MapCmd_PlaySeAt_1_0017BA50, (s32)MapCmd_StopSe_1_0017BA40, (s32)MapCmd_StartStream_0_0017BA30, (s32)MapCmd_SetObjectNode_0_0017B9E0, (s32)MapCmd_HideObject_0_0017B8A0, (s32)MapCmd_ShowObject_0_0017B800, (s32)MapCmd_GetValue_0_0017B7A0, (s32)MapCmd_SetDoor_0_0017B780, (s32)MapCmd_GetDoorState_0_0017B730, (s32)MapCmd_RotateObject_0_0017B410, (s32)MapCmd_MoveObject_0_0017B0F0, (s32)MapCmd_SetGlow_0_0017B060, (s32)MapCmd_GetGlow_0_0017AF20, (s32)MapCmd_SetLight_0_0017ADE0, (s32)MapCmd_GetLight_0_0017ABD0, (s32)MapCmd_NopB_2_0017ABC0, (s32)MapCmd_NopA_2_0017ABB0, (s32)MapCmd_GetObjectState_0_0017B5A0, (s32)MapCmd_StopObject_0_0017B4D0, (s32)MapCmd_GetPlayerStat_0_0017AA40, (s32)MapCmd_SpawnItem_0_0017DF20, (s32)MapCmd_SetFlagBits_0_0017A920, (s32)MapCmd_GetFlagWord_0_0017A890, (s32)MapCmd_SetMapVar_0_0017A850, (s32)MapCmd_NotifyEnemies_0_0017A790, (s32)MapCmd_FadeTo_1_0017A650, (s32)MapCmd_SetFlag2034_0_0017A640 };
 #endif

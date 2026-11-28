@@ -143,11 +143,11 @@ typedef struct {
     u8 pad94[4];
     Fr base[1];
 } A_Fx_EvalTrack_1_00162490;
-extern O *D_00201FC0;
-extern E *D_00201FD0;
-extern G D_0042D7E0;
-extern Vec D_001F2160;
-extern Mtx D_001F2170;
+extern O *gSfxSystemSbss_00201FC0;
+extern E *gSfxAllSbss_00201FD0;
+extern G gSfxAllBss_0042D7E0;
+extern Vec gMatrixFromData_001F2160;
+extern Mtx gMatrixFromData_001F2170;
 s32 Fx_SpawnParticle_1_00161060(s32 id0, s32 a1, O *par, M *m, A_Fx_SpawnParticle_1_00161060 *a, H *h, V *v);
 void Fx_EvalTrack_1_00162490(s8 *dst, A_Fx_EvalTrack_1_00162490 *a, f32 t);
 void sceVu0CopyVector(void *, void *);
@@ -268,8 +268,8 @@ s32 Fx_SpawnParticle_1_00161060(s32 id0, s32 a1, O *par, M *m, A_Fx_SpawnParticl
     u16 id;
 
     id = id0;
-    o = &D_00201FC0[id];
-    if (a->type == 2 && D_0042D7E0.x0[4] < 2) {
+    o = &gSfxSystemSbss_00201FC0[id];
+    if (a->type == 2 && gSfxAllBss_0042D7E0.x0[4] < 2) {
         return 0;
     }
     o->x20 = a->xC4;
@@ -327,13 +327,13 @@ s32 Fx_SpawnParticle_1_00161060(s32 id0, s32 a1, O *par, M *m, A_Fx_SpawnParticl
         sceVu0CopyVector(o, v);
         if (par == 0) {
             if (o->b7) {
-                sceVu0AddVector(o, o, &D_001F2160);
+                sceVu0AddVector(o, o, &gMatrixFromData_001F2160);
             } else {
                 BLK((&r1), ra)
             }
         }
         o->x0.w = 1.0f;
-        sceVu0CopyMatrix(&o->xC0, &D_001F2170);
+        sceVu0CopyMatrix(&o->xC0, &gMatrixFromData_001F2170);
     } else {
         if (par) {
             Fx_GetWorldMatrix_1_00163C80(par, &m3B0);
@@ -349,7 +349,7 @@ s32 Fx_SpawnParticle_1_00161060(s32 id0, s32 a1, O *par, M *m, A_Fx_SpawnParticl
             sceVu0ApplyMatrix(o, m, o);
             sceVu0CopyMatrix(&o->xC0, m);
         }
-        sceVu0CopyVector(&o->xC0.m[3], &D_001F2160);
+        sceVu0CopyVector(&o->xC0.m[3], &gMatrixFromData_001F2160);
     }
     o->x88 = v->x24;
     w = v->x28;
@@ -394,10 +394,10 @@ s32 Fx_SpawnParticle_1_00161060(s32 id0, s32 a1, O *par, M *m, A_Fx_SpawnParticl
         sceVu0CopyVector(&o->x100, o);
     }
     if (a->type == 2) {
-        ret = Mdl_CreateInstance_0_00174230(&D_0042D7E0, h->x10, -1, -1);
-        D_00201FDC++;
+        ret = Mdl_CreateInstance_0_00174230(&gSfxAllBss_0042D7E0, h->x10, -1, -1);
+        gFxSpawnSbss_00201FDC++;
         for (i = 0; i < 2; i++) {
-            e = &((E (*)[2])D_00201FD0)[id][i];
+            e = &((E (*)[2])gSfxAllSbss_00201FD0)[id][i];
             e->x0 = o->x0.x;
             e->x4 = o->x0.y;
             e->x8 = o->x0.z;
@@ -418,9 +418,9 @@ s32 Fx_SpawnParticle_1_00161060(s32 id0, s32 a1, O *par, M *m, A_Fx_SpawnParticl
         }
     } else {
         for (i = 0; i < 2; i++) {
-            e = &((E (*)[2])D_00201FD0)[id][i];
+            e = &((E (*)[2])gSfxAllSbss_00201FD0)[id][i];
             *(Q3 *)e = h->x20;
-            if (i != D_00201F2C) {
+            if (i != gSfxAllSbss_00201F2C) {
                 e->e1 = 1;
                 e->f2C_b = 0;
             } else {
@@ -484,6 +484,6 @@ void Fx_EvalTrack_1_00162490(s8 *dst, A_Fx_EvalTrack_1_00162490 *a, f32 t) {
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/sbss.c): D_00201FDC */
-u16 D_00201FDC;
+/* data twins (src/game/data/sbss.c): gFxSpawnSbss_00201FDC */
+u16 gFxSpawnSbss_00201FDC;
 #endif

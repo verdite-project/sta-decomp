@@ -34,18 +34,18 @@ void TextParam_Init_1_00187A90(T *, s8 *, u64);
 s32 Text_Render_2_00188010(T *, Col);
 s64 fptodp(f32);
 void Ui_DrawWindow_0_00183650(s8 *);
-extern S D_001F2720 __attribute__((aligned(16)));
-extern s8 D_0048CE40[];
-extern s8 D_001FCA80[];
-extern s8 D_001FCA88[];
-extern s8 D_001FCA90[];
+extern S gMenuProcDrawItemStatsData_001F2720 __attribute__((aligned(16)));
+extern s8 gUiGaugeBss_0048CE40[];
+extern s8 gUiGaugeRodata_001FCA80[];
+extern s8 gUiGaugeRodata_001FCA88[];
+extern s8 gMenuProcDrawItemStatsRodata_001FCA90[];
 extern s8 gStr3d_001FCA98[];
-extern s8 D_001FCAA0[];
-extern s8 D_0048D0A0[];
-extern f32 D_0048D0CC[];
-extern f32 D_0048D0D0[];
-extern s32 D_0048D0DC[];
-extern f32 D_0048D0B4[];
+extern s8 gMenuProcDrawItemStatsRodata_001FCAA0[];
+extern s8 gUiGaugeBss_0048D0A0[];
+extern f32 gUiGaugeBss_0048D0CC[];
+extern f32 gUiGaugeBss_0048D0D0[];
+extern s32 gUiGaugeBss_0048D0DC[];
+extern f32 gUiGaugeBss_0048D0B4[];
 extern f32 D_0048D0B8[];
 static inline f32 u2f(u32 x) { return x; }
 static inline void txt(s8 *s, f32 x, f32 y, Col *c, T *t) {
@@ -72,7 +72,7 @@ void MenuProc_DrawItemStats_0_00184280(O *o, s32 a1, u32 mode, s32 id) {
     E *e;
     s32 k;
 
-    buf = D_001F2720;
+    buf = gMenuProcDrawItemStatsData_001F2720;
     if (mode < 600) {
         buf.x = o->x30;
         buf.y = o->x34;
@@ -110,19 +110,19 @@ void MenuProc_DrawItemStats_0_00184280(O *o, s32 a1, u32 mode, s32 id) {
             } else {
                 *(u32 *)&c1 = 0x80808080;
             }
-            sprintf(D_0048CE40, D_001FCA80, *Inventory_GetEntry_1_001CC3F0(id));
+            sprintf(gUiGaugeBss_0048CE40, gUiGaugeRodata_001FCA80, *Inventory_GetEntry_1_001CC3F0(id));
             k = (s16)id;
             if (Item_GetCategory_0_001AFBD0(k) == 0) {
-                strcpy(D_0048CE40, D_001FCA88);
+                strcpy(gUiGaugeBss_0048CE40, gUiGaugeRodata_001FCA88);
             } else if (Item_GetCategory_0_001AFBD0(k) == 1) {
                 e = Item_GetTable_1_001AFC90();
                 switch (((E *)((s32)e + id * 0x90))->x20) {
                 case 5:
                 case 6:
-                    strcpy(D_0048CE40, D_001FCA88);
+                    strcpy(gUiGaugeBss_0048CE40, gUiGaugeRodata_001FCA88);
                 }
             }
-            txt(D_0048CE40, o->x38, o->x3C, &c1, &t1);
+            txt(gUiGaugeBss_0048CE40, o->x38, o->x3C, &c1, &t1);
         }
         break;
     case 0x25E:
@@ -130,11 +130,11 @@ void MenuProc_DrawItemStats_0_00184280(O *o, s32 a1, u32 mode, s32 id) {
             k = Item_GetDurability_0_001848A0(id);
             *(u32 *)&c2 = 0x80808080;
             if (k == 0) {
-                strcpy(D_0048CE40, D_001FCA90);
+                strcpy(gUiGaugeBss_0048CE40, gMenuProcDrawItemStatsRodata_001FCA90);
             } else {
-                sprintf(D_0048CE40, gStr3d_001FCA98, k);
+                sprintf(gUiGaugeBss_0048CE40, gStr3d_001FCA98, k);
             }
-            txt(D_0048CE40, o->x38, o->x3C, &c2, &t2);
+            txt(gUiGaugeBss_0048CE40, o->x38, o->x3C, &c2, &t2);
         }
         break;
     case 0x25F:
@@ -153,17 +153,17 @@ void MenuProc_DrawItemStats_0_00184280(O *o, s32 a1, u32 mode, s32 id) {
         if (id > 0) {
             e = &Item_GetTable_1_001AFC90()[id];
             *(u32 *)&c3 = 0x80808080;
-            sprintf(D_0048CE40, D_001FCAA0, fptodp(u2f(e->x4) / 10.0f));
-            txt(D_0048CE40, o->x38, o->x3C, &c3, &t3);
+            sprintf(gUiGaugeBss_0048CE40, gMenuProcDrawItemStatsRodata_001FCAA0, fptodp(u2f(e->x4) / 10.0f));
+            txt(gUiGaugeBss_0048CE40, o->x38, o->x3C, &c3, &t3);
         }
         break;
     case 0x2711:
-        D_0048D0CC[0] = o->x38;
-        D_0048D0D0[0] = o->x3C;
-        D_0048D0B4[0] = 1.0f;
+        gUiGaugeBss_0048D0CC[0] = o->x38;
+        gUiGaugeBss_0048D0D0[0] = o->x3C;
+        gUiGaugeBss_0048D0B4[0] = 1.0f;
         D_0048D0B8[0] = 1.0f;
-        D_0048D0DC[0] = 0x80FFFFFF;
-        Ui_DrawWindow_0_00183650(D_0048D0A0);
+        gUiGaugeBss_0048D0DC[0] = 0x80FFFFFF;
+        Ui_DrawWindow_0_00183650(gUiGaugeBss_0048D0A0);
         break;
     }
 }

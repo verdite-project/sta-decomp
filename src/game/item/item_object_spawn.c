@@ -217,45 +217,45 @@ typedef struct O {
 typedef struct { s16 a[2]; s16 n[2]; O *list[2][16]; } G_ItemObj_Free_1_001AF4A0;
 typedef struct { char b[0x90]; } E;
 typedef struct { s32 a; u32 count; s32 b; s32 c; } Hdr;
-extern Obj_ItemObj_SpawnAt_0_001AE620 *D_00202288;
-extern Ent_ItemObj_SpawnAt_0_001AE620 *D_002022B0;
-extern f32 D_001F2170[];
-extern s32 D_00201E80;
-extern Vec_ItemObj_Drop_0_001AE900 D_001F3820;
-extern Vec_ItemObj_Drop_0_001AE900 D_001F3830;
-extern s32 D_002022BC;
+extern Obj_ItemObj_SpawnAt_0_001AE620 *gItemObjectSbss_00202288;
+extern Ent_ItemObj_SpawnAt_0_001AE620 *gItemObjectSbss_002022B0;
+extern f32 gMatrixFromData_001F2170[];
+extern s32 gMapSbss_00201E80;
+extern Vec_ItemObj_Drop_0_001AE900 gItemObjectSpawnData_001F3820;
+extern Vec_ItemObj_Drop_0_001AE900 gItemObjectSpawnData_001F3830;
+extern s32 gPlayerSbss_002022BC;
 /* .bss, from the top down (CodeWarrior writes it in reverse) */
 s16 D_004AC5A4[0x46] __attribute__((aligned(4)));
 extern Node *D_004AC5A8[][16];
-extern s16 D_004AC5A0[];
-extern s32 D_00202290;
+extern s16 gItemObjectSpawnBss_004AC5A0[];
+extern s32 gItemObjectSbss_00202290;
 extern s16 D_004AC5A2[];
 extern s16 D_004AC5A6[];
-extern s32 D_004B4B80[];
-extern Obj_ItemObj_SpawnAt_0_001AE620 D_004AC630__as_ItemObj_SpawnAt_0_001AE620[4];
-extern Obj_ItemObj_Spawn_0_001AE7C0 *D_00202288__as_ItemObj_Spawn_0_001AE7C0;
-extern Ent_ItemObj_Spawn_0_001AE7C0 *D_002022B0__as_ItemObj_Spawn_0_001AE7C0;
-extern Obj_ItemObj_Spawn_0_001AE7C0 D_004AC630__as_ItemObj_Spawn_0_001AE7C0[4];
-extern Ent_ItemObj_Drop_0_001AE900 *D_002022B0__as_ItemObj_Drop_0_001AE900;
-extern Node *D_00202288__as_ItemObj_Drop_0_001AE900;
-extern Obj_ItemObj_SpawnFromMap_0_001AEE80 *D_00202288__as_ItemObj_SpawnFromMap_0_001AEE80;
-extern Ent_ItemObj_SpawnFromMap_0_001AEE80 *D_002022B0__as_ItemObj_SpawnFromMap_0_001AEE80;
-extern Obj_ItemObj_SpawnFromMap_0_001AEE80 D_004AE370__as_ItemObj_SpawnFromMap_0_001AEE80[2][64];
-extern Obj_ItemObj_SpawnFromSource_0_001AF150 *D_00202288__as_ItemObj_SpawnFromSource_0_001AF150;
-extern Ent_ItemObj_SpawnFromSource_0_001AF150 *D_002022B0__as_ItemObj_SpawnFromSource_0_001AF150;
-extern Obj_ItemObj_SpawnFromSource_0_001AF150 D_004AE370__as_ItemObj_SpawnFromSource_0_001AF150[][64];
-extern O *D_00202288__as_ItemObj_Free_1_001AF4A0;
-extern volatile G_ItemObj_Free_1_001AF4A0 D_004AC5A0__as_ItemObj_Free_1_001AF4A0;
-extern s32 *D_00201E80__as_ItemObj_FreeOwned_0_001AF740[2];
-extern s32 D_00202288__as_ItemObj_FreeAll_0_001AF840;
-extern u8 D_004AC630__as_ItemObj_FreeAll_0_001AF840[];
-extern u8 D_004AC970__as_ItemObj_FreeAll_0_001AF840[];
-extern u8 D_004AE370__as_ItemObj_FreeAll_0_001AF840[];
-extern s32 D_00202288__as_ItemObj_Init_0_001AF980;
-extern u8 D_004AC5A0__as_ItemObj_ClearTables_1_001AFA20[];
-extern s32 D_002022B0__as_Item_GetTable_1_001AFC90;
-extern u8 *D_002022B0__as_Item_LoadTables_0_001AFCA0;
-extern u8 *D_002022B0__as_Item_LoadTableB_0_001AFFA0;
+extern s32 gItemObjectBss_004B4B80[];
+extern Obj_ItemObj_SpawnAt_0_001AE620 gItemObjectSpawnBss_004AC630__as_ItemObj_SpawnAt_0_001AE620[4];
+extern Obj_ItemObj_Spawn_0_001AE7C0 *gItemObjectSbss_00202288__as_ItemObj_Spawn_0_001AE7C0;
+extern Ent_ItemObj_Spawn_0_001AE7C0 *gItemObjectSbss_002022B0__as_ItemObj_Spawn_0_001AE7C0;
+extern Obj_ItemObj_Spawn_0_001AE7C0 gItemObjectSpawnBss_004AC630__as_ItemObj_Spawn_0_001AE7C0[4];
+extern Ent_ItemObj_Drop_0_001AE900 *gItemObjectSbss_002022B0__as_ItemObj_Drop_0_001AE900;
+extern Node *gItemObjectSbss_00202288__as_ItemObj_Drop_0_001AE900;
+extern Obj_ItemObj_SpawnFromMap_0_001AEE80 *gItemObjectSbss_00202288__as_ItemObj_SpawnFromMap_0_001AEE80;
+extern Ent_ItemObj_SpawnFromMap_0_001AEE80 *gItemObjectSbss_002022B0__as_ItemObj_SpawnFromMap_0_001AEE80;
+extern Obj_ItemObj_SpawnFromMap_0_001AEE80 gItemObjectBss_004AE370__as_ItemObj_SpawnFromMap_0_001AEE80[2][64];
+extern Obj_ItemObj_SpawnFromSource_0_001AF150 *gItemObjectSbss_00202288__as_ItemObj_SpawnFromSource_0_001AF150;
+extern Ent_ItemObj_SpawnFromSource_0_001AF150 *gItemObjectSbss_002022B0__as_ItemObj_SpawnFromSource_0_001AF150;
+extern Obj_ItemObj_SpawnFromSource_0_001AF150 gItemObjectBss_004AE370__as_ItemObj_SpawnFromSource_0_001AF150[][64];
+extern O *gItemObjectSbss_00202288__as_ItemObj_Free_1_001AF4A0;
+extern volatile G_ItemObj_Free_1_001AF4A0 gItemObjectSpawnBss_004AC5A0__as_ItemObj_Free_1_001AF4A0;
+extern s32 *gMapSbss_00201E80__as_ItemObj_FreeOwned_0_001AF740[2];
+extern s32 gItemObjectSbss_00202288__as_ItemObj_FreeAll_0_001AF840;
+extern u8 gItemObjectSpawnBss_004AC630__as_ItemObj_FreeAll_0_001AF840[];
+extern u8 gItemObjectBss_004AC970__as_ItemObj_FreeAll_0_001AF840[];
+extern u8 gItemObjectBss_004AE370__as_ItemObj_FreeAll_0_001AF840[];
+extern s32 gItemObjectSbss_00202288__as_ItemObj_Init_0_001AF980;
+extern u8 gItemObjectSpawnBss_004AC5A0__as_ItemObj_ClearTables_1_001AFA20[];
+extern s32 gItemObjectSbss_002022B0__as_Item_GetTable_1_001AFC90;
+extern u8 *gItemObjectSbss_002022B0__as_Item_LoadTables_0_001AFCA0;
+extern u8 *gItemObjectSbss_002022B0__as_Item_LoadTableB_0_001AFFA0;
 Obj_ItemObj_SpawnAt_0_001AE620* ItemObj_SpawnAt_0_001AE620(s16 id, f32 *a, f32 *b);
 Obj_ItemObj_Spawn_0_001AE7C0* ItemObj_Spawn_0_001AE7C0(s16 id);
 Node* ItemObj_Drop_0_001AE900(s32 *owner, s16 id, Vec_ItemObj_Drop_0_001AE900 *a, Vec_ItemObj_Drop_0_001AE900 *b, s32 ground, s32 rel);
@@ -317,12 +317,12 @@ void Arc_LoadFile_2_00159DD0__as_Item_LoadTables_0_001AFCA0(s32, s8 *, void *, u
 
 Obj_ItemObj_SpawnAt_0_001AE620 *ItemObj_SpawnAt_0_001AE620(s16 id, f32 *a, f32 *b) {
     Obj_ItemObj_SpawnAt_0_001AE620 *s = 0;
-    Ent_ItemObj_SpawnAt_0_001AE620 *t = D_002022B0;
+    Ent_ItemObj_SpawnAt_0_001AE620 *t = gItemObjectSbss_002022B0;
     s32 i;
 
     for (i = 0; i < 4; i++) {
-        if (D_004AC630__as_ItemObj_SpawnAt_0_001AE620[i].h9C == -1) {
-            s = &D_004AC630__as_ItemObj_SpawnAt_0_001AE620[i];
+        if (gItemObjectSpawnBss_004AC630__as_ItemObj_SpawnAt_0_001AE620[i].h9C == -1) {
+            s = &gItemObjectSpawnBss_004AC630__as_ItemObj_SpawnAt_0_001AE620[i];
             break;
         }
     }
@@ -345,8 +345,8 @@ Obj_ItemObj_SpawnAt_0_001AE620 *ItemObj_SpawnAt_0_001AE620(s16 id, f32 *a, f32 *
     s->x60 = 1.0f;
     s->x6C = 0.0f;
     Mtx_Compose_2_00173FD0__as_ItemObj_SpawnAt_0_001AE620(s, a, b, t[id].x80);
-    if (D_00202288 == 0) {
-        D_00202288 = s;
+    if (gItemObjectSbss_00202288 == 0) {
+        gItemObjectSbss_00202288 = s;
     }
     return s;
 }
@@ -355,12 +355,12 @@ Obj_ItemObj_SpawnAt_0_001AE620 *ItemObj_SpawnAt_0_001AE620(s16 id, f32 *a, f32 *
 
 Obj_ItemObj_Spawn_0_001AE7C0 *ItemObj_Spawn_0_001AE7C0(s16 id) {
     Obj_ItemObj_Spawn_0_001AE7C0 *s = 0;
-    Ent_ItemObj_Spawn_0_001AE7C0 *t = D_002022B0__as_ItemObj_Spawn_0_001AE7C0;
+    Ent_ItemObj_Spawn_0_001AE7C0 *t = gItemObjectSbss_002022B0__as_ItemObj_Spawn_0_001AE7C0;
     s32 i;
 
     for (i = 0; i < 4; i++) {
-        if (D_004AC630__as_ItemObj_Spawn_0_001AE7C0[i].h9C == -1) {
-            s = &D_004AC630__as_ItemObj_Spawn_0_001AE7C0[i];
+        if (gItemObjectSpawnBss_004AC630__as_ItemObj_Spawn_0_001AE7C0[i].h9C == -1) {
+            s = &gItemObjectSpawnBss_004AC630__as_ItemObj_Spawn_0_001AE7C0[i];
             break;
         }
     }
@@ -376,16 +376,16 @@ Obj_ItemObj_Spawn_0_001AE7C0 *ItemObj_Spawn_0_001AE7C0(s16 id) {
     s->b2 = 1;
     s->x80 = t[id].x10;
     s->xB4 = 1.0f;
-    sceVu0CopyMatrix(s, D_001F2170);
-    if (D_00202288__as_ItemObj_Spawn_0_001AE7C0 == 0) {
-        D_00202288__as_ItemObj_Spawn_0_001AE7C0 = s;
+    sceVu0CopyMatrix(s, gMatrixFromData_001F2170);
+    if (gItemObjectSbss_00202288__as_ItemObj_Spawn_0_001AE7C0 == 0) {
+        gItemObjectSbss_00202288__as_ItemObj_Spawn_0_001AE7C0 = s;
     }
     return s;
 }
 
 /* ItemObj_Drop_0_001AE900 */
 static inline void upd(Node *n) {
-    Ent_ItemObj_Drop_0_001AE900 *tbl = D_002022B0__as_ItemObj_Drop_0_001AE900;
+    Ent_ItemObj_Drop_0_001AE900 *tbl = gItemObjectSbss_002022B0__as_ItemObj_Drop_0_001AE900;
     if (n != NULL && n->idx != -1) {
         if (((u64)((s64)n->fA9 << 0x3E) >> 0x3F) != 0) {
             Mtx_Compose_2_00173FD0__as_ItemObj_Drop_0_001AE900(n, &n->v40, &n->v50, &n->v60);
@@ -406,13 +406,13 @@ Node *ItemObj_Drop_0_001AE900(s32 *owner, s16 id, Vec_ItemObj_Drop_0_001AE900 *a
     Node *s;
     s32 side;
 
-    t = D_002022B0__as_ItemObj_Drop_0_001AE900;
-    c = D_001F3830;
+    t = gItemObjectSbss_002022B0__as_ItemObj_Drop_0_001AE900;
+    c = gItemObjectSpawnData_001F3830;
     side = -1;
-    if (((s32 **)&D_00201E80)[2] == owner) {
+    if (((s32 **)&gMapSbss_00201E80)[2] == owner) {
         side = 0;
     }
-    if (((s32 **)&D_00201E80)[3] == owner) {
+    if (((s32 **)&gMapSbss_00201E80)[3] == owner) {
         side = 1;
     }
     s = ItemObj_AllocSlot_1_001AE360(id, side);
@@ -455,8 +455,8 @@ Node *ItemObj_Drop_0_001AE900(s32 *owner, s16 id, Vec_ItemObj_Drop_0_001AE900 *a
     }
     D_004AC5A8[side][D_004AC5A4[side]++] = s;
     ItemObj_SaveState_1_001AE510();
-    if (D_00202288__as_ItemObj_Drop_0_001AE900 == 0) {
-        D_00202288__as_ItemObj_Drop_0_001AE900 = s;
+    if (gItemObjectSbss_00202288__as_ItemObj_Drop_0_001AE900 == 0) {
+        gItemObjectSbss_00202288__as_ItemObj_Drop_0_001AE900 = s;
     }
     return s;
 }
@@ -464,7 +464,7 @@ Node *ItemObj_Drop_0_001AE900(s32 *owner, s16 id, Vec_ItemObj_Drop_0_001AE900 *a
 static inline void update_ItemObj_Drop_0_001AE900(Obj_ItemObj_Drop_0_001AE900 *o) {
     Mtx m;
     Ent_ItemObj_Drop_0_001AE900 *e;
-    Ent_ItemObj_Drop_0_001AE900 *ents = D_002022B0__as_ItemObj_Drop_0_001AE900;
+    Ent_ItemObj_Drop_0_001AE900 *ents = gItemObjectSbss_002022B0__as_ItemObj_Drop_0_001AE900;
     if (o == NULL) return;
     if (o->f9C == -1) return;
     if (o->c1) {
@@ -484,11 +484,11 @@ Obj_ItemObj_Drop_0_001AE900 *ItemObj_SpawnThrown_0_001AEC00(s32 arg0, s16 id, Ve
     Obj_ItemObj_Drop_0_001AE900 *o;
     s32 k;
     Vec_ItemObj_Drop_0_001AE900 c;
-    ents = D_002022B0__as_ItemObj_Drop_0_001AE900;
-    c = D_001F3820;
+    ents = gItemObjectSbss_002022B0__as_ItemObj_Drop_0_001AE900;
+    c = gItemObjectSpawnData_001F3820;
     side = -1;
-    if ((&D_00201E80)[2] == D_002022BC) side = 0;
-    if ((&D_00201E80)[3] == D_002022BC) side = 1;
+    if ((&gMapSbss_00201E80)[2] == gPlayerSbss_002022BC) side = 0;
+    if ((&gMapSbss_00201E80)[3] == gPlayerSbss_002022BC) side = 1;
     k = !side;
     o = ItemObj_AllocSlot_1_001AE360(id, k);
     if (o == NULL) return NULL;
@@ -510,7 +510,7 @@ Obj_ItemObj_Drop_0_001AE900 *ItemObj_SpawnThrown_0_001AEC00(s32 arg0, s16 id, Ve
     sceVu0CopyVector__as_ItemObj_Drop_0_001AE900(&o->d, d);
     update_ItemObj_Drop_0_001AE900(o);
     D_004AC5A8[k][D_004AC5A4[k]++] = o;
-    if (D_00202288__as_ItemObj_Drop_0_001AE900 == NULL) D_00202288__as_ItemObj_Drop_0_001AE900 = o;
+    if (gItemObjectSbss_00202288__as_ItemObj_Drop_0_001AE900 == NULL) gItemObjectSbss_00202288__as_ItemObj_Drop_0_001AE900 = o;
     return o;
 }
 
@@ -520,7 +520,7 @@ Vec_ItemObj_SpawnFromMap_0_001AEE80 D_001F3810 = { 1.0f, 1.0f, 1.0f, 1.0f };
 static inline void update_ItemObj_SpawnFromMap_0_001AEE80(Obj_ItemObj_SpawnFromMap_0_001AEE80 *o) {
     Mtx_ItemObj_SpawnFromMap_0_001AEE80 m;
     Ent_ItemObj_SpawnFromMap_0_001AEE80 *e;
-    Ent_ItemObj_SpawnFromMap_0_001AEE80 *ents = D_002022B0__as_ItemObj_SpawnFromMap_0_001AEE80;
+    Ent_ItemObj_SpawnFromMap_0_001AEE80 *ents = gItemObjectSbss_002022B0__as_ItemObj_SpawnFromMap_0_001AEE80;
     if (o == NULL) return;
     if (o->f9C == -1) return;
     if (o->c1) {
@@ -540,14 +540,14 @@ Obj_ItemObj_SpawnFromMap_0_001AEE80 *ItemObj_SpawnFromMap_0_001AEE80(s32 *arg0, 
     Obj_ItemObj_SpawnFromMap_0_001AEE80 *o;
     s16 *cnt;
     Vec_ItemObj_SpawnFromMap_0_001AEE80 c;
-    ents = D_002022B0__as_ItemObj_SpawnFromMap_0_001AEE80;
+    ents = gItemObjectSbss_002022B0__as_ItemObj_SpawnFromMap_0_001AEE80;
     c = D_001F3810;
     side = -1;
-    if ((&D_00201E80)[2] == (s32)arg0) side = 0;
-    if ((&D_00201E80)[3] == (s32)arg0) side = 1;
-    cnt = &D_004AC5A0[side];
+    if ((&gMapSbss_00201E80)[2] == (s32)arg0) side = 0;
+    if ((&gMapSbss_00201E80)[3] == (s32)arg0) side = 1;
+    cnt = &gItemObjectSpawnBss_004AC5A0[side];
     if (!(*(volatile s16 *)cnt < 0x40)) return NULL;
-    o = &D_004AE370__as_ItemObj_SpawnFromMap_0_001AEE80[side][*(volatile s16 *)cnt];
+    o = &gItemObjectBss_004AE370__as_ItemObj_SpawnFromMap_0_001AEE80[side][*(volatile s16 *)cnt];
     if (o->f9C != -1) ItemObj_Free_1_001AF4A0__as_ItemObj_SpawnFromMap_0_001AEE80(o);
     o->f9C = id;
     o->fAA = 0;
@@ -570,7 +570,7 @@ Obj_ItemObj_SpawnFromMap_0_001AEE80 *ItemObj_SpawnFromMap_0_001AEE80(s32 *arg0, 
     if (arg0 != NULL) Map_CopyOrigin_0_001B51E0__as_ItemObj_SpawnFromMap_0_001AEE80(*arg0, &o->d);
     update_ItemObj_SpawnFromMap_0_001AEE80(o);
     (*cnt)++;
-    if (D_00202288__as_ItemObj_SpawnFromMap_0_001AEE80 == NULL) D_00202288__as_ItemObj_SpawnFromMap_0_001AEE80 = o;
+    if (gItemObjectSbss_00202288__as_ItemObj_SpawnFromMap_0_001AEE80 == NULL) gItemObjectSbss_00202288__as_ItemObj_SpawnFromMap_0_001AEE80 = o;
     return o;
 }
 
@@ -578,7 +578,7 @@ Obj_ItemObj_SpawnFromMap_0_001AEE80 *ItemObj_SpawnFromMap_0_001AEE80(s32 *arg0, 
 static inline void update_ItemObj_SpawnFromSource_0_001AF150(Obj_ItemObj_SpawnFromSource_0_001AF150 *o) {
     MtxA m;
     Ent_ItemObj_SpawnFromSource_0_001AF150 *e;
-    Ent_ItemObj_SpawnFromSource_0_001AF150 *ents = D_002022B0__as_ItemObj_SpawnFromSource_0_001AF150;
+    Ent_ItemObj_SpawnFromSource_0_001AF150 *ents = gItemObjectSbss_002022B0__as_ItemObj_SpawnFromSource_0_001AF150;
     if (o == NULL) return;
     if (o->f9C == -1) return;
     if (o->c1) {
@@ -597,14 +597,14 @@ Obj_ItemObj_SpawnFromSource_0_001AF150 *ItemObj_SpawnFromSource_0_001AF150(s32 a
     s32 side;
     s32 k;
     Obj_ItemObj_SpawnFromSource_0_001AF150 *o;
-    ents = D_002022B0__as_ItemObj_SpawnFromSource_0_001AF150;
+    ents = gItemObjectSbss_002022B0__as_ItemObj_SpawnFromSource_0_001AF150;
     side = -1;
-    if ((&D_00201E80)[2] == D_002022BC) side = 0;
-    if ((&D_00201E80)[3] == D_002022BC) side = 1;
+    if ((&gMapSbss_00201E80)[2] == gPlayerSbss_002022BC) side = 0;
+    if ((&gMapSbss_00201E80)[3] == gPlayerSbss_002022BC) side = 1;
     k = !side;
     if (arg2 >= 0x40) return NULL;
-    if (arg2 >= D_004AC5A0[k]) D_004AC5A0[k] = arg2 + 1;
-    o = &D_004AE370__as_ItemObj_SpawnFromSource_0_001AF150[k][arg2];
+    if (arg2 >= gItemObjectSpawnBss_004AC5A0[k]) gItemObjectSpawnBss_004AC5A0[k] = arg2 + 1;
+    o = &gItemObjectBss_004AE370__as_ItemObj_SpawnFromSource_0_001AF150[k][arg2];
     if (o->f9C != -1) ItemObj_Free_1_001AF4A0__as_ItemObj_SpawnFromSource_0_001AF150(o);
     o->f9C = arg1->f18;
     o->fAA = arg1->f1C;
@@ -621,7 +621,7 @@ Obj_ItemObj_SpawnFromSource_0_001AF150 *ItemObj_SpawnFromSource_0_001AF150(s32 a
     Map_DecodeTransform_0_001B59E0(arg1, &o->a, &o->b, &o->c);
     sceVu0CopyVector__as_ItemObj_SpawnFromSource_0_001AF150(&o->d, arg3);
     update_ItemObj_SpawnFromSource_0_001AF150(o);
-    if (D_00202288__as_ItemObj_SpawnFromSource_0_001AF150 == NULL) D_00202288__as_ItemObj_SpawnFromSource_0_001AF150 = o;
+    if (gItemObjectSbss_00202288__as_ItemObj_SpawnFromSource_0_001AF150 == NULL) gItemObjectSbss_00202288__as_ItemObj_SpawnFromSource_0_001AF150 = o;
     return o;
 }
 
@@ -647,8 +647,8 @@ void ItemObj_Free_1_001AF4A0(O *o) {
 
     if (o == 0) return;
     if (o->m9C == -1) return;
-    if (o == D_00202288__as_ItemObj_Free_1_001AF4A0) {
-        D_0020228C = 1;
+    if (o == gItemObjectSbss_00202288__as_ItemObj_Free_1_001AF4A0) {
+        gItemObjectSpawnSbss_0020228C = 1;
     }
     if (o->mA8.b & 1) {
         if (o->mB8 != 0) {
@@ -662,7 +662,7 @@ void ItemObj_Free_1_001AF4A0(O *o) {
                 Sfx_Release_1_00167030(o->mC0[k / 2][k % 2]);
             }
         }
-        Mdl_DestroyInstance_0_001745D0(D_002022A0, o->m84);
+        Mdl_DestroyInstance_0_001745D0(gItemObjectSbss_002022A0, o->m84);
         o->m84 = 0;
     }
     o->m9C = -1;
@@ -678,17 +678,17 @@ void ItemObj_Free_1_001AF4A0(O *o) {
         o->m9C = -1;
         o->m9E = 1;
         for (t = 0; t < 2; t++) {
-            for (k = 0; k < D_004AC5A0__as_ItemObj_Free_1_001AF4A0.n[t]; k++) {
-                if (D_004AC5A0__as_ItemObj_Free_1_001AF4A0.list[t][k] == o) break;
+            for (k = 0; k < gItemObjectSpawnBss_004AC5A0__as_ItemObj_Free_1_001AF4A0.n[t]; k++) {
+                if (gItemObjectSpawnBss_004AC5A0__as_ItemObj_Free_1_001AF4A0.list[t][k] == o) break;
             }
-            if (k >= D_004AC5A0__as_ItemObj_Free_1_001AF4A0.n[t]) continue;
+            if (k >= gItemObjectSpawnBss_004AC5A0__as_ItemObj_Free_1_001AF4A0.n[t]) continue;
             goto cond;
         body:
-            D_004AC5A0__as_ItemObj_Free_1_001AF4A0.list[t][k] = D_004AC5A0__as_ItemObj_Free_1_001AF4A0.list[t][k + 1];
+            gItemObjectSpawnBss_004AC5A0__as_ItemObj_Free_1_001AF4A0.list[t][k] = gItemObjectSpawnBss_004AC5A0__as_ItemObj_Free_1_001AF4A0.list[t][k + 1];
             k++;
         cond:
-            if (k < D_004AC5A0__as_ItemObj_Free_1_001AF4A0.n[t] - 1) goto body;
-            D_004AC5A0__as_ItemObj_Free_1_001AF4A0.n[t]--;
+            if (k < gItemObjectSpawnBss_004AC5A0__as_ItemObj_Free_1_001AF4A0.n[t] - 1) goto body;
+            gItemObjectSpawnBss_004AC5A0__as_ItemObj_Free_1_001AF4A0.n[t]--;
             break;
         }
         break;
@@ -710,11 +710,11 @@ void ItemObj_FreeOwned_0_001AF740(s32 *a0) {
     s32 i;
     Obj3D *o;
     k = -1;
-    if (D_00201E80__as_ItemObj_FreeOwned_0_001AF740[2] == a0) k = 0;
-    if (D_00201E80__as_ItemObj_FreeOwned_0_001AF740[3] == a0) k = 1;
-    for (i = 0, o = D_004AE370[k]; i < 64; i++, o++) ItemObj_Free_1_001AF4A0__as_ItemObj_FreeOwned_0_001AF740(o);
-    for (i = 0, o = D_004AC970[k]; i < 16; i++, o++) ItemObj_Free_1_001AF4A0__as_ItemObj_FreeOwned_0_001AF740(o);
-    D_004AC5A0[k] = 0;
+    if (gMapSbss_00201E80__as_ItemObj_FreeOwned_0_001AF740[2] == a0) k = 0;
+    if (gMapSbss_00201E80__as_ItemObj_FreeOwned_0_001AF740[3] == a0) k = 1;
+    for (i = 0, o = gItemObjectBss_004AE370[k]; i < 64; i++, o++) ItemObj_Free_1_001AF4A0__as_ItemObj_FreeOwned_0_001AF740(o);
+    for (i = 0, o = gItemObjectBss_004AC970[k]; i < 16; i++, o++) ItemObj_Free_1_001AF4A0__as_ItemObj_FreeOwned_0_001AF740(o);
+    gItemObjectSpawnBss_004AC5A0[k] = 0;
     D_004AC5A4[k] = 0;
 }
 
@@ -728,21 +728,21 @@ void ItemObj_FreeAll_0_001AF840(void) {
     s32 var_16_3;
     s32 var_16_2;
 
-    if ((*D_004B4B80) != 0) {
-        Pool_Free_2_00128580(D_00202290, (*D_004B4B80));
+    if ((*gItemObjectBss_004B4B80) != 0) {
+        Pool_Free_2_00128580(gItemObjectSbss_00202290, (*gItemObjectBss_004B4B80));
     }
-    if ((*D_004B4B74) != 0) {
-        Task_RunWrap_0_0014DAB0((*D_004B4B74));
-        (*D_004B4B74) = 0;
+    if ((*gItemObjectBss_004B4B74) != 0) {
+        Task_RunWrap_0_0014DAB0((*gItemObjectBss_004B4B74));
+        (*gItemObjectBss_004B4B74) = 0;
     }
-    (*D_004B4B80) = 0;
+    (*gItemObjectBss_004B4B80) = 0;
     var_17 = 0;
-    (*D_004B4B74) = 0;
-    var_16 = (u8 *) (D_004AE370__as_ItemObj_FreeAll_0_001AF840);
-    D_00202288__as_ItemObj_FreeAll_0_001AF840 = 0;
-    (*D_004B4B70) = 0;
-    D_0020228C = 0;
-    (*D_004B4B88) = 0;
+    (*gItemObjectBss_004B4B74) = 0;
+    var_16 = (u8 *) (gItemObjectBss_004AE370__as_ItemObj_FreeAll_0_001AF840);
+    gItemObjectSbss_00202288__as_ItemObj_FreeAll_0_001AF840 = 0;
+    (*gItemObjectBss_004B4B70) = 0;
+    gItemObjectSpawnSbss_0020228C = 0;
+    (*gItemObjectBss_004B4B88) = 0;
     do {
         ItemObj_Free_1_001AF4A0__as_ItemObj_FreeAll_0_001AF840(var_16);
         ItemObj_Free_1_001AF4A0__as_ItemObj_FreeAll_0_001AF840(var_16 + 0x3400);
@@ -750,7 +750,7 @@ void ItemObj_FreeAll_0_001AF840(void) {
         var_16 += 0xD0;
     } while (var_17 < 0x40);
     var_16_2 = 0;
-    var_17_2 = (u8 *) (D_004AC970__as_ItemObj_FreeAll_0_001AF840);
+    var_17_2 = (u8 *) (gItemObjectBss_004AC970__as_ItemObj_FreeAll_0_001AF840);
     do {
         ItemObj_Free_1_001AF4A0__as_ItemObj_FreeAll_0_001AF840(var_17_2);
         ItemObj_Free_1_001AF4A0__as_ItemObj_FreeAll_0_001AF840(var_17_2 + 0xD00);
@@ -758,13 +758,13 @@ void ItemObj_FreeAll_0_001AF840(void) {
         var_17_2 += 0xD0;
     } while (var_16_2 < 0x10);
     var_16_3 = 0;
-    var_17_3 = (u8 *) (D_004AC630__as_ItemObj_FreeAll_0_001AF840);
+    var_17_3 = (u8 *) (gItemObjectSpawnBss_004AC630__as_ItemObj_FreeAll_0_001AF840);
     do {
         ItemObj_Free_1_001AF4A0__as_ItemObj_FreeAll_0_001AF840(var_17_3);
         var_16_3 += 1;
         var_17_3 += 0xD0;
     } while (var_16_3 < 4);
-    (*D_004AC5A0) = 0;
+    (*gItemObjectSpawnBss_004AC5A0) = 0;
     (*D_004AC5A2) = 0;
     (*D_004AC5A4) = 0;
     (*D_004AC5A6) = 0;
@@ -773,8 +773,8 @@ void ItemObj_FreeAll_0_001AF840(void) {
 /* ItemObj_SetPools_0_001AF970 */
 
 void ItemObj_SetPools_0_001AF970(s32 arg0, s32 arg1) {
-    D_00202290 = arg0;
-    D_002022A0 = arg1;
+    gItemObjectSbss_00202290 = arg0;
+    gItemObjectSbss_002022A0 = arg1;
     ItemObj_ClearTables_1_001AFA20__as_ItemObj_SetPools_0_001AF970();
 }
 
@@ -782,21 +782,21 @@ void ItemObj_SetPools_0_001AF970(s32 arg0, s32 arg1) {
 
 void ItemObj_Init_0_001AF980(void) {
     ItemObj_ClearTables_1_001AFA20__as_ItemObj_Init_0_001AF980();
-    memset__as_ItemObj_Init_0_001AF980(D_004B4B70, 0, 0x1C);
+    memset__as_ItemObj_Init_0_001AF980(gItemObjectBss_004B4B70, 0, 0x1C);
     Task_Register_0_0014DB10(ItemMdl_Update_0_001AB690);
-    if ((*D_004B4B80) != 0) {
-        Pool_Free_2_00128580(D_00202290, (*D_004B4B80));
+    if ((*gItemObjectBss_004B4B80) != 0) {
+        Pool_Free_2_00128580(gItemObjectSbss_00202290, (*gItemObjectBss_004B4B80));
     }
-    if ((*D_004B4B74) != 0) {
-        Task_RunWrap_0_0014DAB0((*D_004B4B74));
-        (*D_004B4B74) = 0;
+    if ((*gItemObjectBss_004B4B74) != 0) {
+        Task_RunWrap_0_0014DAB0((*gItemObjectBss_004B4B74));
+        (*gItemObjectBss_004B4B74) = 0;
     }
-    (*D_004B4B80) = 0;
-    D_00202288__as_ItemObj_Init_0_001AF980 = 0;
-    (*D_004B4B74) = 0;
-    D_0020228C = 0;
-    (*D_004B4B70) = 0;
-    (*D_004B4B88) = 0;
+    (*gItemObjectBss_004B4B80) = 0;
+    gItemObjectSbss_00202288__as_ItemObj_Init_0_001AF980 = 0;
+    (*gItemObjectBss_004B4B74) = 0;
+    gItemObjectSpawnSbss_0020228C = 0;
+    (*gItemObjectBss_004B4B70) = 0;
+    (*gItemObjectBss_004B4B88) = 0;
 }
 
 /* ItemObj_ClearTables_1_001AFA20 */
@@ -804,18 +804,18 @@ static inline void init(Obj3D *e, s16 t) { e->x9C = -1; e->x9E = t; e->xB4 = 1.0
 
 void ItemObj_ClearTables_1_001AFA20(void) {
     u32 i;
-    memset(D_004AC5A0__as_ItemObj_ClearTables_1_001AFA20, 0, 0x88);
-    memset(D_004AE370, 0, 0x6800);
-    memset(D_004AC970, 0, 0x1A00);
-    memset(D_004AC630, 0, 0x340);
-    for (i = 0; i < 64; i++) { init(&D_004AE370[0][i], 0); init(&D_004AE370[1][i], 0); }
-    for (i = 0; i < 16; i++) { init(&D_004AC970[0][i], 1); init(&D_004AC970[1][i], 1); }
-    init(&D_004AC630[0], 2); init(&D_004AC630[1], 2); init(&D_004AC630[2], 2); init(&D_004AC630[3], 2);
+    memset(gItemObjectSpawnBss_004AC5A0__as_ItemObj_ClearTables_1_001AFA20, 0, 0x88);
+    memset(gItemObjectBss_004AE370, 0, 0x6800);
+    memset(gItemObjectBss_004AC970, 0, 0x1A00);
+    memset(gItemObjectSpawnBss_004AC630, 0, 0x340);
+    for (i = 0; i < 64; i++) { init(&gItemObjectBss_004AE370[0][i], 0); init(&gItemObjectBss_004AE370[1][i], 0); }
+    for (i = 0; i < 16; i++) { init(&gItemObjectBss_004AC970[0][i], 1); init(&gItemObjectBss_004AC970[1][i], 1); }
+    init(&gItemObjectSpawnBss_004AC630[0], 2); init(&gItemObjectSpawnBss_004AC630[1], 2); init(&gItemObjectSpawnBss_004AC630[2], 2); init(&gItemObjectSpawnBss_004AC630[3], 2);
 }
 
 /* Item_GetCategory_0_001AFBD0 */
-#define D_002022B0 D_002022B0__as_Item_GetCategory_0_001AFBD0
-extern E *D_002022B0__as_Item_GetCategory_0_001AFBD0;
+#define gItemObjectSbss_002022B0 gItemObjectSbss_002022B0__as_Item_GetCategory_0_001AFBD0
+extern E *gItemObjectSbss_002022B0__as_Item_GetCategory_0_001AFBD0;
 
 /* Item_GetCategory_0_001AFBD0 */
 s32 Item_GetCategory_0_001AFBD0(s32 arg0) {
@@ -834,21 +834,21 @@ s32 Item_GetCategory_0_001AFBD0(s32 arg0) {
 /* Item_GetData_1_001AFC40 */
 E *Item_GetData_1_001AFC40(s16 i)
 {
-    if (D_002022B0 && i > 0 && i <= 0x3FF)
-        return &D_002022B0[i];
+    if (gItemObjectSbss_002022B0 && i > 0 && i <= 0x3FF)
+        return &gItemObjectSbss_002022B0[i];
     return NULL;
 }
 
 /* Item_GetTable_1_001AFC90 */
 
 s32 Item_GetTable_1_001AFC90(void) {
-    return D_002022B0__as_Item_GetTable_1_001AFC90;
+    return gItemObjectSbss_002022B0__as_Item_GetTable_1_001AFC90;
 }
 
 /* Item_LoadTables_0_001AFCA0 */
 #define B(d, s) M2C_FIELD(p, u8 *, d) = M2C_FIELD(e, u8 *, s)
 #define H(d, s) M2C_FIELD(p, u16 *, d) = M2C_FIELD(e, u16 *, s)
-static inline u8 *lookup(s16 id) { if (D_002022B0__as_Item_LoadTables_0_001AFCA0 != NULL && id > 0 && id < 0x400) return D_002022B0__as_Item_LoadTables_0_001AFCA0 + id * 0x90; return NULL; }
+static inline u8 *lookup(s16 id) { if (gItemObjectSbss_002022B0__as_Item_LoadTables_0_001AFCA0 != NULL && id > 0 && id < 0x400) return gItemObjectSbss_002022B0__as_Item_LoadTables_0_001AFCA0 + id * 0x90; return NULL; }
 
 void Item_LoadTables_0_001AFCA0(s8 *arg0) {
     u32 sz;
@@ -909,39 +909,39 @@ s32 Item_LoadTableB_0_001AFFA0(void *a) {
     switch (p[0]) {
     case 0x4D505449:
         q = (s32)p + 0x10;
-        D_002022B0__as_Item_LoadTableB_0_001AFFA0 = (u8 *)(q + 0x10 + ((*(u32 *)(q + 0xC) + 0xF) & ~0xF));
+        gItemObjectSbss_002022B0__as_Item_LoadTableB_0_001AFFA0 = (u8 *)(q + 0x10 + ((*(u32 *)(q + 0xC) + 0xF) & ~0xF));
         break;
     }
     return 0;
 }
-#undef D_002022B0
+#undef gItemObjectSbss_002022B0
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/sbss.c): D_0020228C */
-s32 D_0020228C;
+/* data twins (src/game/data/sbss.c): gItemObjectSpawnSbss_0020228C */
+s32 gItemObjectSpawnSbss_0020228C;
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/pad_get_connected_bss_004AC630.c): D_004AC630__grp: D_004AC630@0x0, D_004AC6CC@0x9c, D_004AC79C@0x16c, D_004AC86C@0x23c, D_004AC93C@0x30c */
+/* data group (src/game/data/pad_get_connected_bss_004AC630.c): D_004AC630__grp: gItemObjectSpawnBss_004AC630@0x0, gItemObjectSpawnBss_004AC6CC@0x9c, gItemObjectSpawnBss_004AC79C@0x16c, gItemObjectSpawnBss_004AC86C@0x23c, gItemObjectSpawnBss_004AC93C@0x30c */
 u8 D_004AC630__grp[0x340] __attribute__((aligned(16)));
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/map_area_load_data.c): D_001F3820__grp: D_001F3820@0x0 */
+/* data group (src/game/data/map_area_load_data.c): D_001F3820__grp: gItemObjectSpawnData_001F3820@0x0 */
 f32 D_001F3820__grp[0x4] __attribute__((aligned(16))) = { 1.0f, 1.0f, 1.0f, 1.0f };
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/map_area_load_data.c): D_001F3830__grp: D_001F3830@0x0 */
+/* data group (src/game/data/map_area_load_data.c): D_001F3830__grp: gItemObjectSpawnData_001F3830@0x0 */
 f32 D_001F3830__grp[0x4] __attribute__((aligned(16))) = { 1.0f, 1.0f, 1.0f, 1.0f };
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/pad_get_connected_bss.c): D_004AC5A0__grp: D_004AC5A0@0x0 */
+/* data group (src/game/data/pad_get_connected_bss.c): D_004AC5A0__grp: gItemObjectSpawnBss_004AC5A0@0x0 */
 u8 D_004AC5A0__grp[0x4] __attribute__((aligned(16)));
 #endif

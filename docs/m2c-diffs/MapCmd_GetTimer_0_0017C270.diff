@@ -3,12 +3,12 @@
 @@ -1,6 +1,8 @@
  #include "common.h"
 -s32 *Script_GetArgPtr_2_00165130();                               /* extern */
- extern s32 D_00201E94;
+ extern s32 gGameMainSbss_00201E94;
 -void MapCmd_GetTimer_0_0017C270(void) {
--    *Script_GetArgPtr_2_00165130() = D_00201E94;
+-    *Script_GetArgPtr_2_00165130() = gGameMainSbss_00201E94;
 +s32 *Script_GetArgPtr_2_00165130(s32 a, s32 b);
 +void MapCmd_GetTimer_0_0017C270(s32 a)
 +{
 +    s32 *p = Script_GetArgPtr_2_00165130(a, 0);
-+    *p = D_00201E94;
++    *p = gGameMainSbss_00201E94;
  }

@@ -118,7 +118,9 @@ START END` prints each function's strings, callees and C to help with naming.
 
 Game data keeps splat's `D_<ADDR>` until what it is is settled; then it is
 named `g<Name>_<ADDR>` (no certainty digit, so it never reads as a
-function), for example `gMcState_004B63B8`. `config/game_data_names.txt`
+function), for example `gMcState_004B63B8`. An object whose owner is known
+but not its purpose is named after the owner unit and its section
+(`gGsPacketBss_002F1194`); rename it once its purpose is settled. `config/game_data_names.txt`
 lists the names and `tools/apply_data_names.py` applies them to the tree
 (sources, config, both copies of a data twin); rerun the split afterwards
 (`rm -rf asm; ./build.sh --matching`) so `asm/` has them too.

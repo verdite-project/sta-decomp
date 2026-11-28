@@ -24,10 +24,10 @@ void Pool_ArrayAppend_0_001535B0(s32 *, Blk *);
 void memset(Obj *, s32, s32);
 void Mdl_Relocate_1_00170380(Hdr *, Obj *);
 Hdr *Node_FindById_2_0014DCD0(Hdr *, s32);
-extern s8 D_001FB900[];
-extern s8 D_001FB901[];
-extern s8 D_001FB902[];
-extern s8 D_001FB903[];
+extern s8 gTextureFindRodata_001FB900[];
+extern s8 gTextureFindRodata_001FB901[];
+extern s8 gTextureFindRodata_001FB902[];
+extern s8 gTextureFindRodata_001FB903[];
 
 static inline void *data(Hdr *h) { Sub *s = &h->sub; return (void *)((s32)(s + 1) + ((s->size + 15) & ~15)); }
 void Tex_LoadAnimated_0_0016FB80(s32 *a0, Hdr **a1, Blk ***a2, s32 **a3, s32 **a4) {
@@ -37,7 +37,7 @@ s32 **o1; s32 **o2; Blk ***o0; s8 *d1; s8 *d2; s8 *d3; s32 size;
     root = *a1;
     p = (Hdr *)((s8 *)root + root->off);
     if (i < root->cnt) {
-    o0 = a2; o1 = a3; o2 = a4; d1 = D_001FB901; d2 = D_001FB902; d3 = D_001FB903;
+    o0 = a2; o1 = a3; o2 = a4; d1 = gTextureFindRodata_001FB901; d2 = gTextureFindRodata_001FB902; d3 = gTextureFindRodata_001FB903;
     do {
         switch (p->magic) {
         case 0x494F5453:
@@ -45,7 +45,7 @@ s32 **o1; s32 **o2; Blk ***o0; s8 *d1; s8 *d2; s8 *d3; s32 size;
         for (j = 0; j < p->cnt; j++, q = (Hdr *)((s8 *)q + q->next)) {
             switch (q->magic) {
             case 0x4D415453:
-            t = Node_FindById_2_0014DCD0(q, D_001FB900[0] | (*d1 << 8) | (*d2 << 0x10) | (*d3 << 0x18));
+            t = Node_FindById_2_0014DCD0(q, gTextureFindRodata_001FB900[0] | (*d1 << 8) | (*d2 << 0x10) | (*d3 << 0x18));
             info = (Info *)data(q);
             size = info->x0 * 16 + 0x40 + info->x2 * 8 + info->x6 * 4 + info->xA * 0x50 + info->xE * 4;
             b = Pool_Alloc_3_001288C0(*a0, size);

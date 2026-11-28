@@ -23,34 +23,34 @@ extern s32 gStrCdrom0TargetEndingPss1_001FD230[];
 static s32 gStrCdrom0TargetEndingPss1_001FD230[0x8] = { 0x6f726463, 0x5c3a306d, 0x47524154, 0x455c5445, 0x4e49444e, 0x53502e47, 0x313b53, 0 };
 #endif
 #ifndef NONMATCHING
-extern s32 *D_00202150;
+extern s32 *gEndingPlaySbss_00202150;
 #else
-/* data twins (src/game/data/sbss.c): D_00202150 */
-static s32 *D_00202150;
+/* data twins (src/game/data/sbss.c): gEndingPlaySbss_00202150 */
+static s32 *gEndingPlaySbss_00202150;
 #endif
 #ifndef NONMATCHING
-extern s32 *D_0020214C;
+extern s32 *gEndingPlaySbss_0020214C;
 #else
-/* data twins (src/game/data/sbss.c): D_0020214C */
-static s32 *D_0020214C;
+/* data twins (src/game/data/sbss.c): gEndingPlaySbss_0020214C */
+static s32 *gEndingPlaySbss_0020214C;
 #endif
 #ifndef NONMATCHING
-extern s32 D_00202148;
+extern s32 gEndingPlaySbss_00202148;
 #else
-/* data twins (src/game/data/sbss.c): D_00202148 */
-static s32 D_00202148;
+/* data twins (src/game/data/sbss.c): gEndingPlaySbss_00202148 */
+static s32 gEndingPlaySbss_00202148;
 #endif
 #ifndef NONMATCHING
-extern s32 D_00202144;
+extern s32 gEndingPlaySbss_00202144;
 #else
-/* data twins (src/game/data/sbss.c): D_00202144 */
-static s32 D_00202144;
+/* data twins (src/game/data/sbss.c): gEndingPlaySbss_00202144 */
+static s32 gEndingPlaySbss_00202144;
 #endif
 #ifndef NONMATCHING
-extern s8 D_001FD250[];
+extern s8 gEndingPlayRodata_001FD250[];
 #else
-/* data twins (src/game/data/databook_rodata.c): D_001FD250 */
-static s8 D_001FD250[0x18] = "\\TARGET\\STA_SR.ADX\000\000\000\000\000\000";
+/* data twins (src/game/data/databook_rodata.c): gEndingPlayRodata_001FD250 */
+static s8 gEndingPlayRodata_001FD250[0x18] = "\\TARGET\\STA_SR.ADX\000\000\000\000\000\000";
 #endif
 void Ending_PlayMovie_2_00194EE0(void *arg0);
 void Ending_OpenLoadMenu_0_00194F60(void *arg0);
@@ -125,16 +125,16 @@ void Ending_StaffRoll_2_00194FC0(void) {
     sceGsSyncV(0);
     sceGsResetGraph(0, 1, 2, 1);
     x = 0;
-    Arc_LoadFile_2_00159DD0(0xC6EE908E, D_00222AF0, &D_00202150, &x);
-    D_00202148 = *D_00202150;
-    D_0020214C = Pool_Alloc_3_001288C0(D_00222AF0, Credits_InitText_0_001E3AF8(D_00202148));
-    D_00202144 = *D_0020214C;
-    Credits_Load_1_001E3B48(D_00202148, D_00202144);
+    Arc_LoadFile_2_00159DD0(0xC6EE908E, gGameMainBss_00222AF0, &gEndingPlaySbss_00202150, &x);
+    gEndingPlaySbss_00202148 = *gEndingPlaySbss_00202150;
+    gEndingPlaySbss_0020214C = Pool_Alloc_3_001288C0(gGameMainBss_00222AF0, Credits_InitText_0_001E3AF8(gEndingPlaySbss_00202148));
+    gEndingPlaySbss_00202144 = *gEndingPlaySbss_0020214C;
+    Credits_Load_1_001E3B48(gEndingPlaySbss_00202148, gEndingPlaySbss_00202144);
     Credits_SetSpeed_0_001E3DB8(2);
     sceGsSetDefDBuff(&db, 0, 0x280, 0xE0, 3, 0x3A, 1);
     db.clear1.rgbaq = db.clear0.rgbaq = ((u64)0x80 << 24) | ((u64)0x3F800000 << 32);
     FlushCache(0);
-    Strm_PlayFile_2_00130590(D_001FD250, 0, 0);
+    Strm_PlayFile_2_00130590(gEndingPlayRodata_001FD250, 0, 0);
     fr = sceGsSyncV(0);
 loop:
         FlushCache(0);
@@ -161,8 +161,8 @@ flip:
     goto loop;
 done:
     Strm_Stop_2_00130440();
-    Pool_Free_2_00128580(D_00222AF0, D_0020214C);
-    Pool_Free_2_00128580(D_00222AF0, D_00202150);
+    Pool_Free_2_00128580(gGameMainBss_00222AF0, gEndingPlaySbss_0020214C);
+    Pool_Free_2_00128580(gGameMainBss_00222AF0, gEndingPlaySbss_00202150);
     Gfx_Nop_2_001558F0();
     Gfx_KickFrame_1_00154B70();
     GsPkt_SetLayer_1_00154700(5, -2);

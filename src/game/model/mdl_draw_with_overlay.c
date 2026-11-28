@@ -16,9 +16,9 @@ typedef struct { Obj *o; Oth *p; s32 i; u8 *e; Vec v; f32 a; f32 b; s32 n; s32 p
 typedef struct { s32 x; } Z;
 extern Flags8 D_00222A50[];
 extern f32 D_00222A40[];
-extern Mtx D_002F15C0;
-extern f32 D_00201C18;
-extern f32 D_00201C1C;
+extern Mtx gMdlDrawWithOverlayBss_002F15C0;
+extern f32 gGameMainSdata_00201C18;
+extern f32 gGameMainSdata_00201C1C;
 void sceVu0Normalize(Vec *, Vec *);
 void sceVu0CopyVector(Vec *, Vec *);
 f32 tanf(f32);
@@ -63,9 +63,9 @@ void Mdl_DrawWithOverlay_0_0016C350(Obj *obj, Oth *oth, u8 *ctx, Vec *src) {
     v.z = src->z;
     v.w = 0.0f;
     sceVu0Normalize(&v, &v);
-    u.x = D_002F15C0.m[0].x * v.x + D_002F15C0.m[1].x * v.y + D_002F15C0.m[2].x * v.z;
-    u.y = D_002F15C0.m[0].y * v.x + D_002F15C0.m[1].y * v.y + D_002F15C0.m[2].y * v.z;
-    u.z = D_002F15C0.m[0].z * v.x + D_002F15C0.m[1].z * v.y + D_002F15C0.m[2].z * v.z;
+    u.x = gMdlDrawWithOverlayBss_002F15C0.m[0].x * v.x + gMdlDrawWithOverlayBss_002F15C0.m[1].x * v.y + gMdlDrawWithOverlayBss_002F15C0.m[2].x * v.z;
+    u.y = gMdlDrawWithOverlayBss_002F15C0.m[0].y * v.x + gMdlDrawWithOverlayBss_002F15C0.m[1].y * v.y + gMdlDrawWithOverlayBss_002F15C0.m[2].y * v.z;
+    u.z = gMdlDrawWithOverlayBss_002F15C0.m[0].z * v.x + gMdlDrawWithOverlayBss_002F15C0.m[1].z * v.y + gMdlDrawWithOverlayBss_002F15C0.m[2].z * v.z;
     sceVu0Normalize(&u, &u);
     u.w = 2.0f * (D_00222A50[0].f.b3 ? 500.0f : obj->xC);
     s = tanf(1.5f * (3.1415927f * D_00222A40[0]) / 360.0f);
@@ -76,10 +76,10 @@ void Mdl_DrawWithOverlay_0_0016C350(Obj *obj, Oth *oth, u8 *ctx, Vec *src) {
     s = rsq(1.0f, 1.0f + k2);
     fr.x120 = k * s;
     fr.x128 = k * s2;
-    fr.x118 = D_00201C18;
+    fr.x118 = gGameMainSdata_00201C18;
     fr.x124 = s;
     fr.x12C = 0.7f * s2;
-    fr.x11C = D_00201C1C;
+    fr.x11C = gGameMainSdata_00201C1C;
     if (D_00222A50[0].f.b3) {
         m = 2;
     } else {
@@ -128,6 +128,6 @@ void Mdl_DrawWithOverlay_0_0016C350(Obj *obj, Oth *oth, u8 *ctx, Vec *src) {
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/gs_packet_bss.c): D_002F15C0__grp: D_002F15C0@0x0, D_002F15C4@0x4, D_002F15C8@0x8, D_002F15D0@0x10, D_002F15D4@0x14, D_002F15D8@0x18, D_002F15E0@0x20, D_002F15E4@0x24 */
+/* data group (src/game/data/gs_packet_bss.c): D_002F15C0__grp: gMdlDrawWithOverlayBss_002F15C0@0x0, gMdlDrawWithOverlayBss_002F15C4@0x4, gMdlDrawWithOverlayBss_002F15C8@0x8, gMdlDrawWithOverlayBss_002F15D0@0x10, gMdlDrawWithOverlayBss_002F15D4@0x14, gMdlDrawWithOverlayBss_002F15D8@0x18, gMdlDrawWithOverlayBss_002F15E0@0x20, gMdlDrawWithOverlayBss_002F15E4@0x24 */
 u8 D_002F15C0__grp[0x40] __attribute__((aligned(16)));
 #endif

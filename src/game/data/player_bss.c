@@ -10,8 +10,8 @@
    text_00151E50.s, text_0015DBF0.s, text_colour */
 
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/ui/text_colour.c */
-u8 D_003139A8[0x8];
-u8 D_003139A4[0x4];
+u8 gTextColourBss_003139A8[0x8];
+u8 gTextColourBss_003139A4[0x4];
 u8 gZeroVec_003139A0[0x4];
-u8 D_0030D9A0[0x6000];
+u8 gTextColourBss_0030D9A0[0x6000];
 #endif

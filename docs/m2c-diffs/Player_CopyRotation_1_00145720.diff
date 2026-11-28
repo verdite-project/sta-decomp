@@ -3,13 +3,13 @@
 @@ -1,6 +1,8 @@
  #include "common.h"
 -void sceVu0CopyVector();                         /* extern */
--extern void *D_002022E4;
+-extern void *gPlayerSbss_002022E4;
 -void Player_CopyRotation_1_00145720(void) {
 -    sceVu0CopyVector();
 +typedef struct { char pad[0x518]; u8 *p; } S;
-+extern S *D_002022E4;
++extern S *gPlayerSbss_002022E4;
 +void sceVu0CopyVector(f32 *v0, f32 *v1);
 +void Player_CopyRotation_1_00145720(f32 *v)
 +{
-+    sceVu0CopyVector(v, (f32 *)(D_002022E4->p + 0x20));
++    sceVu0CopyVector(v, (f32 *)(gPlayerSbss_002022E4->p + 0x20));
  }

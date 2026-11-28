@@ -2,11 +2,11 @@
 +++ matched
 @@ -1,5 +1,6 @@
  #include "common.h"
--extern s32 D_00202120;
+-extern s32 gMenuProcSbss_00202120;
 -s32 Menu_GetCursor_1_0018B820(s32 arg0) {
--    return *(&D_00202120 + (arg0 * 4));
-+extern s32 D_00202120[2];
+-    return *(&gMenuProcSbss_00202120 + (arg0 * 4));
++extern s32 gMenuProcSbss_00202120[2];
 +s32 Menu_GetCursor_1_0018B820(s32 i)
 +{
-+    return D_00202120[i];
++    return gMenuProcSbss_00202120[i];
  }

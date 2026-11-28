@@ -2,5 +2,5 @@
 #include "game/ui.h"
 
 void ItemMenu_Reset_0_0019DF80(void) {
-    (*D_004A32C8) = 0;
+    (*gPauseMenuEntryBss_004A32C8) = 0;
 }

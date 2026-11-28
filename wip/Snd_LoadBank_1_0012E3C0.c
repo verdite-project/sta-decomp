@@ -1,15 +1,15 @@
-/* NEAR (unverifiable): the three FOURCCs are string literals at D_001FAB60/68/70 ("FCC(\"xxxx\")"); with literals
+/* NEAR (unverifiable): the three FOURCCs are string literals at gSoundStartRodata_001FAB60/68/70 ("FCC(\"xxxx\")"); with literals
  * MWCC reproduces the target shape (byte0 + &lit[1..3] hoisted, 3rd FOURCC rebuilt per outer iteration),
  * but batch.py discards .data/.sdata so it cannot link literals, and my build puts them in sdata (gp) while
- * the target uses lui. extern s8 D_001FAB60[] arrays link but fully hoist all three (130/160 differ).
- * Remaining known diff: final 0x14-byte struct copy is lq/sq here vs 5x lwc1/swc1 in target. The chars are "STAM", "STMI", "SEEa" (retail D_001FAB60/68/70). */
+ * the target uses lui. extern s8 gSoundStartRodata_001FAB60[] arrays link but fully hoist all three (130/160 differ).
+ * Remaining known diff: final 0x14-byte struct copy is lq/sq here vs 5x lwc1/swc1 in target. The chars are "STAM", "STMI", "SEEa" (retail gSoundStartRodata_001FAB60/68/70). */
 #include "m2c.h"
 typedef struct Ch { s32 id; s32 size; u32 lo:8; u32 off:24; u16 xC; u16 n; } Ch;
 typedef struct { s32 x0; s32 x4; u8 pad8[4]; s32 xC; } D;
 typedef struct { s32 a; s32 b; s16 c; s16 d; s32 e; s32 f; } P;
 typedef struct { u8 pad[0x10]; Ch **x10; } Obj;
 typedef struct { s32 x0; Obj **x4; } Arg;
-extern s32 D_0022EC3C[];
+extern s32 gSoundBankLoadBss_0022EC3C[];
 extern u8 D_0022EC16[];
 extern P D_0022EC28;
 void Se_RegisterBank_0_001DA7D0(s32);
@@ -45,10 +45,10 @@ void Snd_LoadBank_1_0012E3C0(Arg *a0) {
                         p.d = *(s16 *)(v + 4);
                         p.e = (s8)v[6];
                         p.f = (s8)v[7];
-                        Se_RegisterBank_0_001DA7D0(D_0022EC3C[0]);
+                        Se_RegisterBank_0_001DA7D0(gSoundBankLoadBss_0022EC3C[0]);
                         r = Se_RegisterSfx_0_001DA840(p.b, p.c, p.d, p.e, p.f, p.a);
                         if (r < 0) return;
-                        D_0022EC3C[0] = r;
+                        gSoundBankLoadBss_0022EC3C[0] = r;
                         D_0022EC16[0] = 1;
                         D_0022EC28 = p;
                     }

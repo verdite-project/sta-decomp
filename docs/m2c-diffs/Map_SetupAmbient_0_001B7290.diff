@@ -4,25 +4,25 @@
  #include "common.h"
 -void sceVu0CopyVector(s32 *, s32);           /* extern */
 -void sceVu0ScaleVector(s32 *, s32 *, s32); /* extern */
--extern s32 D_001F3850[];
--extern s32 D_001F3860[];
+-extern s32 gMapAreaLoadData_001F3850[];
+-extern s32 gPlayerData_001F3860[];
 +typedef struct { char p[0x10]; f32 a[4]; f32 b[4]; f32 f; } T;
-+extern f32 D_001F3850[4];
-+extern f32 D_001F3860[4];
- extern f32 D_001F3870[];
++extern f32 gMapAreaLoadData_001F3850[4];
++extern f32 gPlayerData_001F3860[4];
+ extern f32 gPlayerData_001F3870[];
 -void Map_SetupAmbient_0_001B7290(void) {
 -    s32 *temp_2;
 -    temp_2 = LightGroup_Get_0_0015B900(-1);
--    sceVu0CopyVector(D_001F3860, temp_2 + 0x20);
--    sceVu0ScaleVector(D_001F3850, temp_2 + 0x10, 0x437F0000);
--    (*D_001F3870) = M2C_FIELD(temp_2, f32 *, 0x30);
+-    sceVu0CopyVector(gPlayerData_001F3860, temp_2 + 0x20);
+-    sceVu0ScaleVector(gMapAreaLoadData_001F3850, temp_2 + 0x10, 0x437F0000);
+-    (*gPlayerData_001F3870) = M2C_FIELD(temp_2, f32 *, 0x30);
 +T *LightGroup_Get_0_0015B900(s32 i);
 +void sceVu0CopyVector(f32 *v0, f32 *v1);
 +void sceVu0ScaleVector(f32 *v0, f32 *v1, f32 s);
 +void Map_SetupAmbient_0_001B7290(void)
 +{
 +    T *t = LightGroup_Get_0_0015B900(-1);
-+    sceVu0CopyVector(D_001F3860, t->b);
-+    sceVu0ScaleVector(D_001F3850, t->a, 255.0f);
-+    D_001F3870[0] = t->f;
++    sceVu0CopyVector(gPlayerData_001F3860, t->b);
++    sceVu0ScaleVector(gMapAreaLoadData_001F3850, t->a, 255.0f);
++    gPlayerData_001F3870[0] = t->f;
  }

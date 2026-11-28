@@ -33,7 +33,7 @@ Obj **Pool_Alloc_3_001288C0(s32, s32);
 void Pool_ArrayAppend_0_001535B0(s32 *, Obj **);
 void memset(Obj *, s32, s32);
 void sceVu0CopyMatrix(Mtx *, Mtx *);
-extern Mtx D_001F2340[];
+extern Mtx gMdlCreateInstanceData_001F2340[];
 static inline Blk *getb(s32 d, u32 i, s32 sz) { return (Blk *)(d + i * sz); }
 static inline Obj **body(s32 *arg0, Src **arg1, s32 *poff, s32 arg3, Src *src) {
     s32 n;
@@ -91,8 +91,8 @@ static inline Obj **body(s32 *arg0, Src **arg1, s32 *poff, s32 arg3, Src *src) {
             blk = (Blk *)((s32)o->data + (u32)i * (n * 0x140 + 0x200));
             base = *src->x10;
             es = (s32)src->e;
-            sceVu0CopyMatrix(&blk->nd[0].m1, D_001F2340);
-            sceVu0CopyMatrix(&blk->nd[0].m0, D_001F2340);
+            sceVu0CopyMatrix(&blk->nd[0].m1, gMdlCreateInstanceData_001F2340);
+            sceVu0CopyMatrix(&blk->nd[0].m0, gMdlCreateInstanceData_001F2340);
             blk->nd[0].b130 = 0xFF;
             blk->nd[0].b132 = 0xFF;
             blk->nd[0].f134 = 1.0f;
@@ -101,8 +101,8 @@ static inline Obj **body(s32 *arg0, Src **arg1, s32 *poff, s32 arg3, Src *src) {
             for (j = 0; j < n; j++) {
                 e = (Ent *)(es + (*poff + j) * 16);
                 if (e->x8 == 0) {
-                    sceVu0CopyMatrix(&blk->nd[j + 1].m0, D_001F2340);
-                    sceVu0CopyMatrix(&blk->nd[j + 1].m1, D_001F2340);
+                    sceVu0CopyMatrix(&blk->nd[j + 1].m0, gMdlCreateInstanceData_001F2340);
+                    sceVu0CopyMatrix(&blk->nd[j + 1].m1, gMdlCreateInstanceData_001F2340);
                 } else {
                     sceVu0CopyMatrix(&blk->nd[j + 1].m0, (Mtx *)(base + e->x8));
                     sceVu0CopyMatrix(&blk->nd[j + 1].m1, (Mtx *)(base + e->xC));

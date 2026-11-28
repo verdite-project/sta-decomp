@@ -1,5 +1,5 @@
 /* The big game object behind the getter/setter block at 0x13D1C0-0x13FFFF.
- * D_002022E4 points to one. The name is a guess; fields are named by offset until known.
+ * gPlayerSbss_002022E4 points to one. The name is a guess; fields are named by offset until known.
  * Layout comes from the matched accessors in src/game_0013*.c. */
 #ifndef ACTOR_H
 #define ACTOR_H
@@ -55,6 +55,6 @@ typedef struct Actor {
     u16 unk712;
 } Actor;
 
-extern Actor *D_002022E4;
+extern Actor *gPlayerSbss_002022E4;
 
 #endif

@@ -282,66 +282,66 @@ typedef struct {
 } Obj_EnemyData_Parse_0_001A7810;
 typedef struct { char pad[0x3C]; unsigned int : 4; unsigned int f : 1; } BF_3C_4_1;
 extern E gEnemyDataTbl_004A43B0[];
-extern E D_004A43B8[];
-extern s32 D_004A4878[];
-extern A_ActorList_Next_2_001A5460 **D_004A4570[];
+extern E gEnemyManagerBss_004A43B8[];
+extern s32 gEnemyListBss_004A4878[];
+extern A_ActorList_Next_2_001A5460 **gEnemyListBss_004A4570[];
 #ifndef NONMATCHING
-extern s32 D_00202274;
+extern s32 gEnemyListSbss_00202274;
 #else
-/* data twins (src/game/data/sbss.c): D_00202274 */
-static s32 D_00202274;
+/* data twins (src/game/data/sbss.c): gEnemyListSbss_00202274 */
+static s32 gEnemyListSbss_00202274;
 #endif
-extern A_ActorList_AllocSlot_0_001A5530 **D_004A4570__as_ActorList_AllocSlot_0_001A5530[];
-extern u8 **D_004A4570__as_ActorList_FindFree_0_001A55E0[];
-extern A_ActorList_NextTargetable_0_001A5660 **D_004A4570__as_ActorList_NextTargetable_0_001A5660[];
-extern u8 **D_004A4570__as_ActorList_NextB_0_001A5710[];
-extern s32 D_004A4570__as_ActorList_FromHandle_1_001A5970[];
-extern Mtx_Enemy_GetAttachMatrix_0_001A5AA0 D_001F2170;
+extern A_ActorList_AllocSlot_0_001A5530 **gEnemyListBss_004A4570__as_ActorList_AllocSlot_0_001A5530[];
+extern u8 **gEnemyListBss_004A4570__as_ActorList_FindFree_0_001A55E0[];
+extern A_ActorList_NextTargetable_0_001A5660 **gEnemyListBss_004A4570__as_ActorList_NextTargetable_0_001A5660[];
+extern u8 **gEnemyListBss_004A4570__as_ActorList_NextB_0_001A5710[];
+extern s32 gEnemyListBss_004A4570__as_ActorList_FromHandle_1_001A5970[];
+extern Mtx_Enemy_GetAttachMatrix_0_001A5AA0 gMatrixFromData_001F2170;
 extern Flags8 D_00222A50[];
-extern G **D_00201E80[2];
-extern G **D_002022BC;
-extern u32 D_002022B8;
+extern G **gMapSbss_00201E80[2];
+extern G **gPlayerSbss_002022BC;
+extern u32 gSoundSbss_002022B8;
 #ifndef NONMATCHING
-extern f32 D_00201DAC;
+extern f32 gEnemyListSdata_00201DAC;
 #else
-/* data twins (src/game/data/sdata.c): D_00201DAC */
-static f32 D_00201DAC __attribute__((aligned(4))) = 1.0f;
+/* data twins (src/game/data/sdata.c): gEnemyListSdata_00201DAC */
+static f32 gEnemyListSdata_00201DAC __attribute__((aligned(4))) = 1.0f;
 #endif
-extern Big D_0030D0E0;
+extern Big gGlowInitBss_0030D0E0;
 #ifndef NONMATCHING
-extern Vec D_001F37A0;
+extern Vec gEnemyListData_001F37A0;
 #else
-/* data twins (src/game/data/title_nop_data.c): D_001F37A0 */
-static Vec D_001F37A0 = { 128.0f, 128.0f, 128.0f, 1.0f };
-#endif
-#ifndef NONMATCHING
-extern f32 D_001FD910[];
-#else
-/* data twins (src/game/data/enemy_list_rodata.c): D_001FD910 */
-static f32 D_001FD910[0x1] = { 128.0f };
+/* data twins (src/game/data/title_nop_data.c): gEnemyListData_001F37A0 */
+static Vec gEnemyListData_001F37A0 = { 128.0f, 128.0f, 128.0f, 1.0f };
 #endif
 #ifndef NONMATCHING
-extern f32 D_001FD914[];
+extern f32 gEnemyListRodata_001FD910[];
 #else
-/* data twins (src/game/data/enemy_list_rodata.c): D_001FD914 */
-static f32 D_001FD914[0x1] = { 0.0f };
+/* data twins (src/game/data/enemy_list_rodata.c): gEnemyListRodata_001FD910 */
+static f32 gEnemyListRodata_001FD910[0x1] = { 128.0f };
 #endif
 #ifndef NONMATCHING
-extern f32 D_001FD918[];
+extern f32 gEnemyListRodata_001FD914[];
 #else
-/* data twins (src/game/data/enemy_list_rodata.c): D_001FD918 */
-static f32 D_001FD918[0x1] = { 128.0f };
+/* data twins (src/game/data/enemy_list_rodata.c): gEnemyListRodata_001FD914 */
+static f32 gEnemyListRodata_001FD914[0x1] = { 0.0f };
+#endif
+#ifndef NONMATCHING
+extern f32 gEnemyListRodata_001FD918[];
+#else
+/* data twins (src/game/data/enemy_list_rodata.c): gEnemyListRodata_001FD918 */
+static f32 gEnemyListRodata_001FD918[0x1] = { 128.0f };
 #endif
 #pragma explicit_zero_data on
 const f32 D_001FD91C[0xd] __attribute__((aligned(4))) = { 100.0f, 0.0f, 0.0f, 0.0f, 100.0f, 128.0f, 128.0f, 128.0f, 100.0f, 128.0f, 128.0f, 0.0f, 100.0f };
 const f32 D_001FD950[0x4] __attribute__((aligned(4))) = { 0.3f, 0.4f, 0.3f, 0.3f };
-extern s16 D_004A4774[];
+extern s16 gEnemyListBss_004A4774[];
 extern u16 D_004A4776[];
-extern Fn D_001F33A0[];
-extern Vec D_001F2120;
+extern Fn gEnemyListData_001F33A0[];
+extern Vec gMatrixFromData_001F2120;
 extern B8 D_00222A50__as_Enemies_DrawAll_1_001A6770[];
-extern s8 D_001FD960[];
-extern s32 *D_00202280__as_EnemyData_Parse_0_001A7810;
+extern s8 gEnemyListRodata_001FD960[];
+extern s32 *gEnemyListSbss_00202280__as_EnemyData_Parse_0_001A7810;
 s32 ActorList_GetCount_1_001A5430(void);
 s32 ActorList_SetCount_1_001A5440(s32 arg0);
 A_ActorList_Next_2_001A5460* ActorList_Next_2_001A5460(s32 *it);
@@ -441,17 +441,17 @@ void sceVu0CopyVector__as_EnemyMgr_Init_0_001A5340(Vec*, void *);
 void EnemyMgr_Init_0_001A5340(void) {
     s32 i;
 
-    if (D_00201DA8 != -1 && *(volatile s32 *)&D_004A43B8[D_00201DA8].v != 0) {
-        Task_RunWrap_0_0014DAB0(D_004A43B8[D_00201DA8].v);
-        D_004A43B8[D_00201DA8].v = 0;
+    if (gEnemyMgrUpdateSdata_00201DA8 != -1 && *(volatile s32 *)&gEnemyManagerBss_004A43B8[gEnemyMgrUpdateSdata_00201DA8].v != 0) {
+        Task_RunWrap_0_0014DAB0(gEnemyManagerBss_004A43B8[gEnemyMgrUpdateSdata_00201DA8].v);
+        gEnemyManagerBss_004A43B8[gEnemyMgrUpdateSdata_00201DA8].v = 0;
     }
-    D_00201DA8 = -1;
+    gEnemyMgrUpdateSdata_00201DA8 = -1;
     Task_Register_0_0014DB10(EnemyMgr_Update_0_001A4990);
     memset(gEnemyDataTbl_004A43B0, 0, 0x1B8);
     for (i = 10; i >= 0; i--) {
         gEnemyDataTbl_004A43B0[i].v = -1;
     }
-    D_00201DA8 = -1;
+    gEnemyMgrUpdateSdata_00201DA8 = -1;
 }
 
 /* ActorList_GetCount_1_001A5430 */
@@ -460,15 +460,15 @@ void EnemyMgr_Init_0_001A5340(void) {
 /* ActorList_GetCount_1_001A5430 */
 /* ActorList_GetCount_1_001A5430 */
 s32 ActorList_GetCount_1_001A5430(void) {
-    return (*D_004A4878);
+    return (*gEnemyListBss_004A4878);
 }
 
 /* ActorList_SetCount_1_001A5440 */
 s32 ActorList_SetCount_1_001A5440(s32 arg0) {
     s32 temp_2;
 
-    temp_2 = (*D_004A4878);
-    (*D_004A4878) = arg0;
+    temp_2 = (*gEnemyListBss_004A4878);
+    (*gEnemyListBss_004A4878) = arg0;
     return temp_2;
 }
 
@@ -476,7 +476,7 @@ s32 ActorList_SetCount_1_001A5440(s32 arg0) {
 A_ActorList_Next_2_001A5460 *ActorList_Next_2_001A5460(s32 *it) {
  A_ActorList_Next_2_001A5460 *r; s32 i; A_ActorList_Next_2_001A5460 **o;
  i = *it; r = 0;
- while (i < 0x81) { o = D_004A4570[0x80 - i]; i++; if (o != 0 && (*o)->f.f.b0 && (*o)->f.f.b2 && Enemy_Get5B2b3_1_0013E830(*o) == 0) { r = *o; break; } }
+ while (i < 0x81) { o = gEnemyListBss_004A4570[0x80 - i]; i++; if (o != 0 && (*o)->f.f.b0 && (*o)->f.f.b2 && Enemy_Get5B2b3_1_0013E830(*o) == 0) { r = *o; break; } }
  *it = i; return r;
 }
 
@@ -484,13 +484,13 @@ A_ActorList_Next_2_001A5460 *ActorList_Next_2_001A5460(s32 *it) {
 A_ActorList_AllocSlot_0_001A5530 **ActorList_AllocSlot_0_001A5530(void) {
     s32 i;
     A_ActorList_AllocSlot_0_001A5530 ***p;
-    i = D_00202274;
+    i = gEnemyListSbss_00202274;
     if (i >= 0x81) return NULL;
     goto setup;
 body:
     if (*p != NULL && ((**p)->f.f.b0 || (**p)->f.f.b1)) {
-        D_00202274 = i + 1;
-        return D_004A4570__as_ActorList_AllocSlot_0_001A5530[i];
+        gEnemyListSbss_00202274 = i + 1;
+        return gEnemyListBss_004A4570__as_ActorList_AllocSlot_0_001A5530[i];
     }
     p++;
     i++;
@@ -498,7 +498,7 @@ cond:
     if (i < 0x81) goto body;
     return NULL;
 setup:
-    p = &D_004A4570__as_ActorList_AllocSlot_0_001A5530[i];
+    p = &gEnemyListBss_004A4570__as_ActorList_AllocSlot_0_001A5530[i];
     goto cond;
 }
 
@@ -510,14 +510,14 @@ u8 **ActorList_FindFree_0_001A55E0(void) {
     u8 **temp_2;
     u8 temp_3;
 
-    D_00202274 = 0;
+    gEnemyListSbss_00202274 = 0;
     var_5 = 0;
-    var_4 = (u8 ***) (D_004A4570__as_ActorList_FindFree_0_001A55E0);
+    var_4 = (u8 ***) (gEnemyListBss_004A4570__as_ActorList_FindFree_0_001A55E0);
 loop_1:
     temp_2 = (u8 **) (*var_4);
     if ((temp_2 != NULL) && ((temp_3 = M2C_FIELD(*temp_2, u8 *, 0x5A0), ((temp_3 & 1) != 0)) || (((u64) ((s64) temp_3 << 0x3E) >> 0x3F) != 0))) {
-        D_00202274 = var_5 + 1;
-        return (u8 **) ((D_004A4570__as_ActorList_FindFree_0_001A55E0)[var_5]);
+        gEnemyListSbss_00202274 = var_5 + 1;
+        return (u8 **) ((gEnemyListBss_004A4570__as_ActorList_FindFree_0_001A55E0)[var_5]);
     }
     var_5 += 1;
     var_4 = (u8***)((u8 *)var_4 + 4);
@@ -529,7 +529,7 @@ loop_1:
 
 /* ActorList_NextTargetable_0_001A5660 */
 A_ActorList_NextTargetable_0_001A5660 *ActorList_NextTargetable_0_001A5660(void) {
-    s32 i = D_00202274; A_ActorList_NextTargetable_0_001A5660 ***p; if (!(i < 0x81)) return NULL; goto setup; body: if (*p && ((**p)->f5A0.b & 1) && (**p)->f5A0.f.b2) { D_00202274 = i + 1; return *D_004A4570__as_ActorList_NextTargetable_0_001A5660[i]; } p++; i++; cond: if (!(i < 0x81)) return NULL; goto body; setup: p = &D_004A4570__as_ActorList_NextTargetable_0_001A5660[i]; goto cond;
+    s32 i = gEnemyListSbss_00202274; A_ActorList_NextTargetable_0_001A5660 ***p; if (!(i < 0x81)) return NULL; goto setup; body: if (*p && ((**p)->f5A0.b & 1) && (**p)->f5A0.f.b2) { gEnemyListSbss_00202274 = i + 1; return *gEnemyListBss_004A4570__as_ActorList_NextTargetable_0_001A5660[i]; } p++; i++; cond: if (!(i < 0x81)) return NULL; goto body; setup: p = &gEnemyListBss_004A4570__as_ActorList_NextTargetable_0_001A5660[i]; goto cond;
 }
 
 /* ActorList_NextB_0_001A5710 */
@@ -540,16 +540,16 @@ u8 *ActorList_NextB_0_001A5710(void) {
     u8 **temp_2;
     u8 temp_3;
 
-    D_00202274 = 0;
+    gEnemyListSbss_00202274 = 0;
     var_5 = 0;
-    var_4 = (u8 ***) (D_004A4570__as_ActorList_NextB_0_001A5710);
+    var_4 = (u8 ***) (gEnemyListBss_004A4570__as_ActorList_NextB_0_001A5710);
 loop_1:
     temp_2 = (u8 **) (*var_4);
     if (temp_2 != NULL) {
         temp_3 = M2C_FIELD(*temp_2, u8 *, 0x5A0);
         if ((temp_3 & 1) && (((u64) ((s64) temp_3 << 0x3D) >> 0x3F) != 0)) {
-            D_00202274 = var_5 + 1;
-            return (u8 *) (*(D_004A4570__as_ActorList_NextB_0_001A5710)[var_5]);
+            gEnemyListSbss_00202274 = var_5 + 1;
+            return (u8 *) (*(gEnemyListBss_004A4570__as_ActorList_NextB_0_001A5710)[var_5]);
         }
     }
     var_5 += 1;
@@ -605,7 +605,7 @@ void Actor_ClosestOnSegment_0_001A58A0(Vec *a, Vec *b, Vec *o1, Vec *o2, f32 f) 
 
 s32 ActorList_FromHandle_1_001A5970(u16 *p)
 {
-    return D_004A4570__as_ActorList_FromHandle_1_001A5970[p[1]];
+    return gEnemyListBss_004A4570__as_ActorList_FromHandle_1_001A5970[p[1]];
 }
 
 /* Enemy_DropItems_0_001A5990 */
@@ -642,7 +642,7 @@ u8 Enemy_GetAttachMatrix_0_001A5AA0(u16 *flag, Arg *a, Mtx_Enemy_GetAttachMatrix
     u8 j;
     u8 changed = 0;
 
-    sceVu0CopyMatrix(out, D_001F2170);
+    sceVu0CopyMatrix(out, gMatrixFromData_001F2170);
     if (a->obj->cur != NULL) {
         p = Mdl_GetFrameData_0_001715B0(a->obj->inf->id);
         sceVu0CopyMatrix(m1, a->obj->m);
@@ -657,7 +657,7 @@ u8 Enemy_GetAttachMatrix_0_001A5AA0(u16 *flag, Arg *a, Mtx_Enemy_GetAttachMatrix
                 }
             }
             if (changed) {
-                sceVu0CopyMatrix(m3, D_001F2170);
+                sceVu0CopyMatrix(m3, gMatrixFromData_001F2170);
                 m3[0][0] = m1[0][0];
                 m3[0][1] = m1[1][0];
                 m3[0][2] = m1[2][0];
@@ -687,8 +687,8 @@ u8 Enemy_GetAttachMatrix_0_001A5AA0(u16 *flag, Arg *a, Mtx_Enemy_GetAttachMatrix
 #undef sceVu0CopyVector
 
 /* ActorList_TranslateAll_1_001A5CD0 */
-#define D_004A4570 D_004A4570__as_ActorList_TranslateAll_1_001A5CD0
-extern s8 **D_004A4570__as_ActorList_TranslateAll_1_001A5CD0[];
+#define gEnemyListBss_004A4570 gEnemyListBss_004A4570__as_ActorList_TranslateAll_1_001A5CD0
+extern s8 **gEnemyListBss_004A4570__as_ActorList_TranslateAll_1_001A5CD0[];
 
 void ActorList_TranslateAll_1_001A5CD0(s32 arg0) {
     s32 i;
@@ -697,7 +697,7 @@ void ActorList_TranslateAll_1_001A5CD0(s32 arg0) {
     s8 *a;
     s8 *t;
 
-    pp = D_004A4570;
+    pp = gEnemyListBss_004A4570;
     for (i = 0; i < 0x81; i++) {
         o = *pp;
         if (o != NULL) {
@@ -719,13 +719,13 @@ void ActorList_TranslateAll_1_001A5CD0(s32 arg0) {
         pp++;
     }
 }
-#undef D_004A4570
+#undef gEnemyListBss_004A4570
 
 /* Enemy_Draw_1_001A5DE0 */
-#define D_004A4570 D_004A4570__as_Enemy_Draw_1_001A5DE0
-extern P_Enemies_DrawAll_1_001A6770 **D_004A4570__as_Enemy_Draw_1_001A5DE0[];
-#define D_001F2170 D_001F2170__as_Enemy_Draw_1_001A5DE0
-extern s8 D_001F2170__as_Enemy_Draw_1_001A5DE0[];
+#define gEnemyListBss_004A4570 gEnemyListBss_004A4570__as_Enemy_Draw_1_001A5DE0
+extern P_Enemies_DrawAll_1_001A6770 **gEnemyListBss_004A4570__as_Enemy_Draw_1_001A5DE0[];
+#define gMatrixFromData_001F2170 gMatrixFromData_001F2170__as_Enemy_Draw_1_001A5DE0
+extern s8 gMatrixFromData_001F2170__as_Enemy_Draw_1_001A5DE0[];
 #define Mdl_GetFrameData_0_001715B0 Mdl_GetFrameData_0_001715B0__as_Enemy_Draw_1_001A5DE0
 s8* Mdl_GetFrameData_0_001715B0__as_Enemy_Draw_1_001A5DE0(H_Enemy_Draw_1_001A5DE0 *);
 #define sceVu0AddVector sceVu0AddVector__as_Enemy_Draw_1_001A5DE0
@@ -788,17 +788,17 @@ void Enemy_Draw_1_001A5DE0(O_Enemy_Draw_1_001A5DE0 *o) {
         a3 = e->xC4;
         a2 = e->xC8;
         m1 = 0;
-        if (D_00201E80[2] != NULL && *D_00201E80[2] != NULL && *D_00201E80[2] == e->xC0) g = e->xC0;
-        if (D_00201E80[3] != NULL && *D_00201E80[3] != NULL && *D_00201E80[3] == e->xC0) g = e->xC0;
+        if (gMapSbss_00201E80[2] != NULL && *gMapSbss_00201E80[2] != NULL && *gMapSbss_00201E80[2] == e->xC0) g = e->xC0;
+        if (gMapSbss_00201E80[3] != NULL && *gMapSbss_00201E80[3] != NULL && *gMapSbss_00201E80[3] == e->xC0) g = e->xC0;
         tb = g->x154;
         sel = g->x8C;
         if (g->x8E != -2) sel = g->x8E;
         if (sel != -1) m1 = tb[sel];
-        if ((pp = D_002022BC) != NULL && (t = *pp) != NULL && t != g && t->x8C != -1) m0 = t->x154[t->x8C + 0x20];
+        if ((pp = gPlayerSbss_002022BC) != NULL && (t = *pp) != NULL && t != g && t->x8C != -1) m0 = t->x154[t->x8C + 0x20];
         if (sel == -1) {
             if (a3 != NULL) {
                 if (!a3->x2D.f.b5) return;
-                if (a3->x24 != 0 && D_002022B8 != a3->x24) return;
+                if (a3->x24 != 0 && gSoundSbss_002022B8 != a3->x24) return;
                 if (!(m0 & (1 << a3->x20))) return;
             }
             if (a2 != NULL && !(m0 & (1 << a2->x20))) return;
@@ -814,7 +814,7 @@ void Enemy_Draw_1_001A5DE0(O_Enemy_Draw_1_001A5DE0 *o) {
         if (g != NULL) low = g->x158->xBC & 1;
     }
     if (idx == -1 || g == NULL) {
-        *(Big *)(r + 0x10) = D_0030D0E0;
+        *(Big *)(r + 0x10) = gGlowInitBss_0030D0E0;
     } else {
         *(Big *)(r + 0x10) = g->x188[idx];
     }
@@ -848,9 +848,9 @@ void Enemy_Draw_1_001A5DE0(O_Enemy_Draw_1_001A5DE0 *o) {
         if (!(f <= 1.0f)) f = 2.0f - f;
         u = 1.0f - f;
         jj = j;
-        q.x = lp(D_001FD910[jj * 4], o->x550.x, f, u);
-        q.y = lp(D_001FD914[jj * 4], o->x550.y, f, u);
-        q.z = lp(D_001FD918[jj * 4], o->x550.z, f, u);
+        q.x = lp(gEnemyListRodata_001FD910[jj * 4], o->x550.x, f, u);
+        q.y = lp(gEnemyListRodata_001FD914[jj * 4], o->x550.y, f, u);
+        q.z = lp(gEnemyListRodata_001FD918[jj * 4], o->x550.z, f, u);
         q.w = lp(D_001FD91C[jj * 4], o->x550.w, f, u);
         pv.x = o->x560.x;
         pv.y = o->x560.y;
@@ -864,13 +864,13 @@ void Enemy_Draw_1_001A5DE0(O_Enemy_Draw_1_001A5DE0 *o) {
         Fog_SetReg_0_0015B1C0(&pv, &q);
     }
     if (Enemy_Get5B7b7_1_0013D1E0(o)) {
-        cv = D_001F37A0;
-        cv.x *= D_00201DAC;
-        cv.y *= D_00201DAC;
-        cv.z *= D_00201DAC;
+        cv = gEnemyListData_001F37A0;
+        cv.x *= gEnemyListSdata_00201DAC;
+        cv.y *= gEnemyListSdata_00201DAC;
+        cv.z *= gEnemyListSdata_00201DAC;
         Mtx_LerpRows_0_0015CC80(r + 0x10, &cv, 1.0f);
-        D_00201DAC -= 0.05f;
-        if (D_00201DAC < 0.0f) D_00201DAC = 1.0f;
+        gEnemyListSdata_00201DAC -= 0.05f;
+        if (gEnemyListSdata_00201DAC < 0.0f) gEnemyListSdata_00201DAC = 1.0f;
         Enemy_Clear5B7b7_1_0013D1C0(o);
     }
     f = Enemy_CalcSpeedScale_0_0013D6C0(o);
@@ -925,7 +925,7 @@ void Enemies_DrawAll_1_001A6770(void) {
         GsPkt_EndLayer_1_00155900();
     }
     i = 0;
-    pp = D_004A4570;
+    pp = gEnemyListBss_004A4570;
     for (; i < 0x81; i++, pp++) {
         P_Enemies_DrawAll_1_001A6770 **q = *pp;
         if (q != NULL) {
@@ -959,7 +959,7 @@ void Enemies_DrawAll_1_001A6770(void) {
 void Enemies_ResetFlags_0_001A6950(void) {
     s32 i;
     for (i = 0; i < 0x81; i++) {
-        A_Enemies_ResetFlags_0_001A6950 **p = D_004A4570[i];
+        A_Enemies_ResetFlags_0_001A6950 **p = gEnemyListBss_004A4570[i];
         if (p) {
             A_Enemies_ResetFlags_0_001A6950 *a = *p;
             if (a->f5A0.b & 1) {
@@ -987,8 +987,8 @@ void Enemy_Destroy_0_001A6A10(P_Enemy_Destroy_0_001A6A10 **a0) {
 
     p = *a0;
     q = p->x4;
-    D_004A4570[p->x2] = 0;
-    { u16 v = (*a0)->x2; s16 n = D_004A4774[0]++; D_004A4776[n] = v; }
+    gEnemyListBss_004A4570[p->x2] = 0;
+    { u16 v = (*a0)->x2; s16 n = gEnemyListBss_004A4774[0]++; D_004A4776[n] = v; }
     if (p->x8 != 0) {
         for (i = 0; i < p->x7C; i++) {
             if (p->x51C[i].x164 != 0) {
@@ -999,15 +999,15 @@ void Enemy_Destroy_0_001A6A10(P_Enemy_Destroy_0_001A6A10 **a0) {
             Tex_ReleaseList_0_00178030((*q)->x10);
         }
         if (p->x518->xB0 != 0) {
-            Mdl_DestroyInstance_0_001745D0(D_00202280, p->x518->xB0);
+            Mdl_DestroyInstance_0_001745D0(gEnemyListSbss_00202280, p->x518->xB0);
         }
         if (p->x49C != 0) {
-            Pool_Free_2_00128580(D_00202278, (void *)p->x49C);
+            Pool_Free_2_00128580(gEnemyListSbss_00202278, (void *)p->x49C);
         }
         if (p->x4A4 != 0) {
-            Pool_Free_2_00128580(D_00202278, (void *)p->x4A4);
+            Pool_Free_2_00128580(gEnemyListSbss_00202278, (void *)p->x4A4);
         }
-        Pool_Free_2_00128580(D_00202278, (void *)p->x8);
+        Pool_Free_2_00128580(gEnemyListSbss_00202278, (void *)p->x8);
     }
     if (p->x4B0 != NULL && (s = p->x518) != NULL && p->x4B0->xC.b6) {
         for (i = 0; i < 8; i++) {
@@ -1020,7 +1020,7 @@ void Enemy_Destroy_0_001A6A10(P_Enemy_Destroy_0_001A6A10 **a0) {
     if (p->x5A0 != 0xFF) {
         EnemyMgr_FreeSlot_0_001A5070(a0);
     }
-    Pool_Free_2_00128580(D_00202278, a0);
+    Pool_Free_2_00128580(gEnemyListSbss_00202278, a0);
 }
 
 /* Enemy_Despawn_0_001A6C10 */
@@ -1101,8 +1101,8 @@ void Enemy_InitBody_1_001A6DC0(Actor *a0) {
     a0->pad000[0x80] = 0;
     a0->flags5A1.f.b5 = 0;
     Script_InitContext_1_00166F90(*(s32 *)(a0->pad000 + 0x4A4), *(s32 *)(a0->pad000 + 0xC), *(s32 *)(a0->pad000 + 0x4A0), 8);
-    Mdl_UpdateBoneMatrices_0_00171270(*b->pB0, D_001F2170, 0);
-    Mdl_UpdateBoneMatrices_0_00171270(*b->pB0, D_001F2170, 1);
+    Mdl_UpdateBoneMatrices_0_00171270(*b->pB0, gMatrixFromData_001F2170, 0);
+    Mdl_UpdateBoneMatrices_0_00171270(*b->pB0, gMatrixFromData_001F2170, 1);
     }
 }
 
@@ -1233,7 +1233,7 @@ void Enemy_Spawn_0_001A7420(A_Enemy_Spawn_0_001A7420 **pp) {
     a->m518 = (Sub_Enemy_Spawn_0_001A7420 *)a->m8[0];
     a->m51C = (s32)a->m518 + 0x640;
     b = a->m518;
-    a->m518->pB0 = Mdl_CreateInstance_0_00174230(D_00202280, p4, -1, -1);
+    a->m518->pB0 = Mdl_CreateInstance_0_00174230(gEnemyListSbss_00202280, p4, -1, -1);
     a->m518->pB0[0]->f24.b2 = 0;
     a->m518->pB0[0]->f24.b5 = 1;
     a->m518->m0.y = -170.0f;
@@ -1264,13 +1264,13 @@ void Enemy_Spawn_0_001A7420(A_Enemy_Spawn_0_001A7420 **pp) {
         }
     }
     m = b->pB0[0];
-    base = (s8 *)(D_00201F2C * (m->m6 * 0x140 + 0x200) + (s32)m->m40);
-    Mdl_UpdateBoneMatricesCur_0_00171540(m, D_001F2170);
+    base = (s8 *)(gSfxAllSbss_00201F2C * (m->m6 * 0x140 + 0x200) + (s32)m->m40);
+    Mdl_UpdateBoneMatricesCur_0_00171540(m, gMatrixFromData_001F2170);
     sceVu0CopyVector(&v0, base + (b->mB5 + 1) * 0x140 + 0xF0);
     sceVu0CopyVector(&v1, base + (b->mB4 + 1) * 0x140 + 0xF0);
     b->m170 = v0.y - v1.y;
-    if (D_001F33A0[a->m0] != 0) D_001F33A0[a->m0](a, 0.0f);
-    if (a->m518->m50.x == 0.0f) sceVu0CopyVector(&a->m518->m50, &D_001F2120);
+    if (gEnemyListData_001F33A0[a->m0] != 0) gEnemyListData_001F33A0[a->m0](a, 0.0f);
+    if (a->m518->m50.x == 0.0f) sceVu0CopyVector(&a->m518->m50, &gMatrixFromData_001F2120);
     if (a->m4A8 != 0) {
         s8 *s = (s8 *)*a->m4A8;
         Sub_Enemy_Spawn_0_001A7420 *t = a->m518;
@@ -1283,7 +1283,7 @@ void Enemy_Spawn_0_001A7420(A_Enemy_Spawn_0_001A7420 **pp) {
     a->m4A4 = 0;
     if (a->m0 != 0) {
         EnemyScr_GetScriptPath_3_00142930(a->m0, buf);
-        a->m4A4 = Pool_Alloc_3_001288C0(D_00202278, 0x1554);
+        a->m4A4 = Pool_Alloc_3_001288C0(gEnemyListSbss_00202278, 0x1554);
         Script_InitContext_1_00166F90(a->m4A4, a->mC, a->m4A0, 8);
     }
     if (a->m0 != 0) Enemy_UpdateModelMatrix_0_001A7E60(a);
@@ -1326,7 +1326,7 @@ void EnemyData_Parse_0_001A7810(Obj_EnemyData_Parse_0_001A7810 **a0, Src **a1) {
         c = (Ch *)(base + ((Ch *)base)->off);
         cnt = ((Ch *)base)->xE;
         for (i = 0; i < cnt; i++) {
-            if (c->x0 == (D_001FD960[0] | (D_001FD960[1] << 8) | (D_001FD960[2] << 16) | (D_001FD960[3] << 24))) break;
+            if (c->x0 == (gEnemyListRodata_001FD960[0] | (gEnemyListRodata_001FD960[1] << 8) | (gEnemyListRodata_001FD960[2] << 16) | (gEnemyListRodata_001FD960[3] << 24))) break;
             c = (Ch *)((u8 *)c + c->x4);
         }
         d = (Ch *)((u8 *)c + c->off);
@@ -1352,7 +1352,7 @@ void EnemyData_Parse_0_001A7810(Obj_EnemyData_Parse_0_001A7810 **a0, Src **a1) {
         }
         break;
     }
-    o->x8 = Pool_Alloc_3_001288C0__as_EnemyData_Parse_0_001A7810(D_00202278, n * 0x170 + 0x640);
+    o->x8 = Pool_Alloc_3_001288C0__as_EnemyData_Parse_0_001A7810(gEnemyListSbss_00202278, n * 0x170 + 0x640);
     o->x4 = a1;
     o->x10 = dbc1;
     o->x14 = dbc2;
@@ -1393,7 +1393,7 @@ u8 **EnemyData_LoadTextures_0_001A7C70(s32 arg0) {
     s32 **var_16;
 
     var_16 = (s32 **) (NULL);
-    temp_2 = (u8 **) (Tex_LoadArchive_0_0016F950(D_00202280__as_EnemyData_Parse_0_001A7810, (u8 **) arg0));
+    temp_2 = (u8 **) (Tex_LoadArchive_0_0016F950(gEnemyListSbss_00202280__as_EnemyData_Parse_0_001A7810, (u8 **) arg0));
     if (temp_2 == NULL) {
         return NULL;
     }
@@ -1408,19 +1408,19 @@ u8 **EnemyData_LoadTextures_0_001A7C70(s32 arg0) {
 }
 #undef Mdl_GetFrameData_0_001715B0
 #undef sceVu0AddVector
-#undef D_004A4570
-#undef D_001F2170
+#undef gEnemyListBss_004A4570
+#undef gMatrixFromData_001F2170
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/sbss.c): D_00202278, D_00202280 */
-s32 D_00202278;
-s32 D_00202280;
+/* data twins (src/game/data/sbss.c): gEnemyListSbss_00202278, gEnemyListSbss_00202280 */
+s32 gEnemyListSbss_00202278;
+s32 gEnemyListSbss_00202280;
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/enemy_list_rodata_001FD960.c): D_001FD960__grp: D_001FD960@0x0, D_001FD961@0x1, D_001FD962@0x2, D_001FD963@0x3 */
+/* data group (src/game/data/enemy_list_rodata_001FD960.c): D_001FD960__grp: gEnemyListRodata_001FD960@0x0, gEnemyListRodata_001FD961@0x1, gEnemyListRodata_001FD962@0x2, gEnemyListRodata_001FD963@0x3 */
 f32 D_001FD960__grp[0x4] __attribute__((aligned(16))) = { 800069.2f, 0.0f, 0.0f, 0.0f };
 #endif
 
@@ -1428,12 +1428,12 @@ f32 D_001FD960__grp[0x4] __attribute__((aligned(16))) = { 800069.2f, 0.0f, 0.0f,
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
 void Player_LoadModel_1_001C9CD0(void);
-/* data group (src/game/data/title_nop_data.c): D_001F33A0__grp: D_001F33A0@0x0 */
+/* data group (src/game/data/title_nop_data.c): D_001F33A0__grp: gEnemyListData_001F33A0@0x0 */
 s32 D_001F33A0__grp[0x100] __attribute__((aligned(16))) = { (s32)Player_LoadModel_1_001C9CD0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/save_byte_bss.c): D_004A4570__grp: D_004A4570@0x0, D_004A4774@0x204, D_004A4878@0x308 */
+/* data group (src/game/data/save_byte_bss.c): D_004A4570__grp: gEnemyListBss_004A4570@0x0, gEnemyListBss_004A4774@0x204, gEnemyListBss_004A4878@0x308 */
 u8 D_004A4570__grp[0x310] __attribute__((aligned(16)));
 #endif

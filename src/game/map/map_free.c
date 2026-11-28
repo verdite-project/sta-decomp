@@ -63,11 +63,11 @@ typedef struct { u8 pad[0x18]; s16 x18; u8 pad1A[6]; u8 x20; u8 pad21[7]; } E28;
 typedef struct { s32 a; s32 b; } E8;
 typedef struct { s32 v; s32 x; } E_Map_InitObjects_0_001B6130;
 typedef struct { char pad[0x70]; u16 n; char p72[0x1E]; s32 a[7]; char pac[0xD0]; E_Map_InitObjects_0_001B6130 *e; } Obj;
-extern S_Map_FreeArea_1_001B5640 **D_002022BC;
+extern S_Map_FreeArea_1_001B5640 **gPlayerSbss_002022BC;
 extern s32 D_002022C4;
-extern s32 D_00201E88;
-extern s32 D_00201E8C;
-extern s32 D_002022B8;
+extern s32 gMapSbss_00201E88;
+extern s32 gMapSbss_00201E8C;
+extern s32 gSoundSbss_002022B8;
 void Map_FreeArea_1_001B5640(S_Map_FreeArea_1_001B5640 **a0);
 void Map_FreeAll_1_001B5940(void);
 void Map_DecodeTransform_0_001B59E0(s8 *arg0, s8 *arg1, s8 *arg2, s8 *arg3);
@@ -110,8 +110,8 @@ void Map_FreeArea_1_001B5640(S_Map_FreeArea_1_001B5640 **a0) {
         return;
     }
     o = s->o;
-    if (D_002022BC == a0) {
-        D_002022BC = NULL;
+    if (gPlayerSbss_002022BC == a0) {
+        gPlayerSbss_002022BC = NULL;
     }
     if (s->f1D8 & 1) {
         Map_ResetArea_1_001B4F20(*a0);
@@ -120,9 +120,9 @@ void Map_FreeArea_1_001B5640(S_Map_FreeArea_1_001B5640 **a0) {
             if (e->x54) {
                 Sfx_Release_1_00167030(e->x54);
             }
-            Mdl_DestroyInstance_0_001745D0(D_002022D0, e->x40);
+            Mdl_DestroyInstance_0_001745D0(gMapAreaLoadSbss_002022D0, e->x40);
             if (e->x44) {
-                Mdl_DestroyInstance_0_001745D0(D_002022D0, e->x44);
+                Mdl_DestroyInstance_0_001745D0(gMapAreaLoadSbss_002022D0, e->x44);
             }
         }
         for (i = 0; i < s->n82; i++) {
@@ -147,7 +147,7 @@ void Map_FreeArea_1_001B5640(S_Map_FreeArea_1_001B5640 **a0) {
         if (o->m->f3C.b4) {
             Tex_ReleaseList_0_00178030(o->m->x10);
         }
-        Mdl_DestroyInstance_0_001745D0(D_002022D0, *s->x178);
+        Mdl_DestroyInstance_0_001745D0(gMapAreaLoadSbss_002022D0, *s->x178);
         if (s->xC) {
             Pool_Free_2_00128580(D_002022C4, (void *)s->xC);
         }
@@ -157,7 +157,7 @@ void Map_FreeArea_1_001B5640(S_Map_FreeArea_1_001B5640 **a0) {
         if (o->m->f3C.b4) {
             Tex_ReleaseList_0_00178030(o->m->x10);
         }
-        Mdl_Free_0_00170250(D_002022D0, o);
+        Mdl_Free_0_00170250(gMapAreaLoadSbss_002022D0, o);
     } else if (s->x24) {
         Pool_Free_2_00128580(D_002022C4, (void *)s->x24);
     }
@@ -175,20 +175,20 @@ void Map_FreeAll_1_001B5940(void)
     if (t.x18)
         Map_FreeArea_1_001B5640(t.x18);
     Map_StreamFlush_1_001B03E0();
-    if (D_00201E88) {
+    if (gMapSbss_00201E88) {
         PointLightGroup_Clear_0_0015C6D0(0);
         LightGroup_Clear_0_0015B890(0);
-        Map_FreeArea_1_001B5640(D_00201E88);
-        D_00201E88 = 0;
+        Map_FreeArea_1_001B5640(gMapSbss_00201E88);
+        gMapSbss_00201E88 = 0;
     }
-    if (D_00201E8C) {
+    if (gMapSbss_00201E8C) {
         PointLightGroup_Clear_0_0015C6D0(1);
         LightGroup_Clear_0_0015B890(1);
-        Map_FreeArea_1_001B5640(D_00201E8C);
-        D_00201E8C = 0;
+        Map_FreeArea_1_001B5640(gMapSbss_00201E8C);
+        gMapSbss_00201E8C = 0;
     }
     SndEmit_KillAll_1_0012F920();
-    D_002022B8 = 0;
+    gSoundSbss_002022B8 = 0;
     MapSe_Flush_0_001E1CC0();
 }
 #undef Map_FreeArea_1_001B5640

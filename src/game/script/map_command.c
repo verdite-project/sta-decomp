@@ -129,29 +129,29 @@ typedef struct { s32 p0; s32 p4; s32 id; s32 pC; s32 key; s32 p14; f32 x18; } Ar
 typedef struct { s32 p0; s32 p4; s32 id; s32 pC; s32 key; } Arg_MapCmd_GetSfxParamA_0_0017E760;
 typedef struct { s32 p0; s32 p4; s32 id; s32 pC; s32 key; s32 p14; f32 x18; } Arg_MapCmd_SetObjectTexture_0_0017E150_;
 typedef struct { s32 p0; s32 p4; s32 id; s32 pC; s32 key; } Arg;
-extern Mdl **D_00201E88[2];
-extern u16 D_00317238[];
-extern u8 D_00202030;
+extern Mdl **gMapSbss_00201E88[2];
+extern u16 gMapCommandBss_00317238[];
+extern u8 gDoorSbss_00202030;
 #ifndef NONMATCHING
-extern u8 D_00202034;
+extern u8 gMapCommandSbss_00202034;
 #else
-/* data twins (src/game/data/sbss.c): D_00202034 */
-static u8 D_00202034;
+/* data twins (src/game/data/sbss.c): gMapCommandSbss_00202034 */
+static u8 gMapCommandSbss_00202034;
 #endif
-extern s32 **D_002022BC;
-extern s32 D_00201E80;
-extern s32 D_00201E94;
+extern s32 **gPlayerSbss_002022BC;
+extern s32 gMapSbss_00201E80;
+extern s32 gGameMainSbss_00201E94;
 #ifndef NONMATCHING
-extern s32 D_00202038;
+extern s32 gMapCommandSbss_00202038;
 #else
-/* data twins (src/game/data/sbss.c): D_00202038 */
-static s32 D_00202038;
+/* data twins (src/game/data/sbss.c): gMapCommandSbss_00202038 */
+static s32 gMapCommandSbss_00202038;
 #endif
-extern s8 **D_00201E80__as_MapCmd_PlaySeAtXYZ_1_0017BC00_[2];
-extern S_MapCmd_SetPlayerPos_1_0017CF40 *D_002022E4__as_MapCmd_SetPlayerPos_1_0017CF40;
-extern Actor_ *D_002022E4__as_MapCmd_SetPlayerVar3_0_0017CD00;
-extern S_MapCmd_GetEquip_0_0017D130 *D_002022E4__as_MapCmd_GetEquip_0_0017D130_;
-extern Mtx D_001F2170;
+extern s8 **gMapSbss_00201E80__as_MapCmd_PlaySeAtXYZ_1_0017BC00_[2];
+extern S_MapCmd_SetPlayerPos_1_0017CF40 *gPlayerSbss_002022E4__as_MapCmd_SetPlayerPos_1_0017CF40;
+extern Actor_ *gPlayerSbss_002022E4__as_MapCmd_SetPlayerVar3_0_0017CD00;
+extern S_MapCmd_GetEquip_0_0017D130 *gPlayerSbss_002022E4__as_MapCmd_GetEquip_0_0017D130_;
+extern Mtx gMatrixFromData_001F2170;
 u8* MapObj_FindById_0_00179DB0(s32 id, s32 key);
 s32 Event_FindEnemyByMotion_0_00179E50(s32 arg0, s32 arg1);
 s32 Event_CheckTrigger_0_00179F80(Q_Event_FindEnemyByMotion_0_00179E50 *q);
@@ -428,7 +428,7 @@ u8 *MapObj_FindById_0_00179DB0(s32 id, s32 key) {
     Mdl **q;
     s32 j;
     Mdl ***pp;
-    for (i = 0, pp = D_00201E88; i < 2; i++, pp++) {
+    for (i = 0, pp = gMapSbss_00201E88; i < 2; i++, pp++) {
         q = *pp;
         if (q != NULL && *q != NULL && (*q)->id == id) {
             t = (*q)->x164;
@@ -494,7 +494,7 @@ s32 Event_CheckTalk_0_00179F10(void) {
     msg.z = 0.0f;
     msg.y = 0.0f;
     msg.x = 0.0f;
-    msg.f = (D_00317238[0] & 0x2000) != 0;
+    msg.f = (gMapCommandBss_00317238[0] & 0x2000) != 0;
     Event_CheckTrigger_0_00179F80__as_Event_CheckTalk_0_00179F10(&msg);
     return 0;
 }
@@ -541,7 +541,7 @@ s32 Event_CheckTrigger_0_00179F80(Q_Event_FindEnemyByMotion_0_00179E50 *q) {
         if (chk(q->x8, q->x4, 0x10, 0x640) != -1) r = 1;
         break;
     case 3: {
-        s32 c = D_00202030;
+        s32 c = gDoorSbss_00202030;
         if ((c >= 31 && c <= 49) || (q->x4 == 99 && c == 1)) {
             if (chk(q->x8, q->x4, 0x20, 0xC80) != -1) r = 1;
         }
@@ -647,7 +647,7 @@ void Enemy_CopyPosition_2_00140470__as_MapCmd_SetFlag2034_0_0017A640___(void *p,
 /* MapCmd_SetFlag2034_0_0017A640 */
 /* MapCmd_SetFlag2034_0_0017A640 */
 void MapCmd_SetFlag2034_0_0017A640(void *arg0) {
-    D_00202034 = M2C_FIELD(arg0, u8 *, 8);
+    gMapCommandSbss_00202034 = M2C_FIELD(arg0, u8 *, 8);
 }
 
 /* MapCmd_FadeTo_1_0017A650 */
@@ -730,18 +730,18 @@ void MapCmd_GetPlayerStat_0_0017AA40(char *a0) {
     s32 v = *(s32 *)(a0 + 8);
     if (v < 12) {
         switch (v) {
-        case 0: *p = D_00317238[0] & 0x10; break;
-        case 1: *p = D_00317238[0] & 0x40; break;
-        case 2: *p = D_00317238[0] & 0x80; break;
-        case 3: *p = D_00317238[0] & 0x20; break;
-        case 4: *p = D_00317238[0] & 0x1000; break;
-        case 5: *p = D_00317238[0] & 0x4000; break;
-        case 6: *p = D_00317238[0] & 0x8000; break;
-        case 7: *p = D_00317238[0] & 0x2000; break;
-        case 8: *p = D_00317238[0] & 0x400; break;
-        case 9: *p = D_00317238[0] & 0x800; break;
-        case 10: *p = D_00317238[0] & 0x100; break;
-        case 11: *p = D_00317238[0] & 0x200; break;
+        case 0: *p = gMapCommandBss_00317238[0] & 0x10; break;
+        case 1: *p = gMapCommandBss_00317238[0] & 0x40; break;
+        case 2: *p = gMapCommandBss_00317238[0] & 0x80; break;
+        case 3: *p = gMapCommandBss_00317238[0] & 0x20; break;
+        case 4: *p = gMapCommandBss_00317238[0] & 0x1000; break;
+        case 5: *p = gMapCommandBss_00317238[0] & 0x4000; break;
+        case 6: *p = gMapCommandBss_00317238[0] & 0x8000; break;
+        case 7: *p = gMapCommandBss_00317238[0] & 0x2000; break;
+        case 8: *p = gMapCommandBss_00317238[0] & 0x400; break;
+        case 9: *p = gMapCommandBss_00317238[0] & 0x800; break;
+        case 10: *p = gMapCommandBss_00317238[0] & 0x100; break;
+        case 11: *p = gMapCommandBss_00317238[0] & 0x200; break;
         }
     }
 }
@@ -1059,12 +1059,12 @@ void MapCmd_GetValue_0_0017B7A0(s32 a) {
     temp_2 = Script_GetArgPtr_2_00165130__as_MapCmd_GetValue_0_0017B7A0(a, 0);
     if (temp_2 != NULL) {
         var_5 = 0;
-        if ((D_002022BC != NULL) && (*D_002022BC != NULL)) {
+        if ((gPlayerSbss_002022BC != NULL) && (*gPlayerSbss_002022BC != NULL)) {
             var_5 = 1;
         }
         var_3 = 0;
         if (var_5 != 0) {
-            var_3 = **D_002022BC;
+            var_3 = **gPlayerSbss_002022BC;
         }
         *temp_2 = var_3;
     }
@@ -1165,8 +1165,8 @@ void MapCmd_PlaySeAt_1_0017BA50(Obj_MapCmd_SetFlag2034_0_0017A640 *o)
 }
 
 /* MapCmd_PlaySeOnObject_0_0017BAC0 */
-#define CC (((C ***)&D_00201E80)[2])
-#define DD (((C ***)&D_00201E80)[3])
+#define CC (((C ***)&gMapSbss_00201E80)[2])
+#define DD (((C ***)&gMapSbss_00201E80)[3])
 
 void MapCmd_PlaySeOnObject_0_0017BAC0(O *o) {
     C **s;
@@ -1243,8 +1243,8 @@ void MapCmd_PlaySeAtXYZ_1_0017BC00(Obj_MapCmd_PlaySeAtXYZ_1_0017BC00 *o)
 }
 
 /* MapCmd_PlaySeOnObjectB_0_0017BC50 */
-#define C (D_00201E80__as_MapCmd_PlaySeAtXYZ_1_0017BC00_[2])
-#define D (D_00201E80__as_MapCmd_PlaySeAtXYZ_1_0017BC00_[3])
+#define C (gMapSbss_00201E80__as_MapCmd_PlaySeAtXYZ_1_0017BC00_[2])
+#define D (gMapSbss_00201E80__as_MapCmd_PlaySeAtXYZ_1_0017BC00_[3])
 
 void MapCmd_PlaySeOnObjectB_0_0017BC50(A_MapCmd_PlaySeAtXYZ_1_0017BC00_ *a) {
     s8 **h;
@@ -1400,7 +1400,7 @@ void MapCmd_SetObjectAnim_0_0017C150(O_MapCmd_PlaySeAtXYZ_1_0017BC00 *o) {
 void MapCmd_GetTimer_0_0017C270(s32 a)
 {
     s32 *p = Script_GetArgPtr_2_00165130__as_MapCmd_GetTimer_0_0017C270(a, 0);
-    *p = D_00201E94;
+    *p = gGameMainSbss_00201E94;
 }
 #undef C
 #undef D
@@ -1432,20 +1432,20 @@ void MapCmd_WaitEvent_0_0017C2A0(P_MapCmd_WaitEvent_0_0017C2A0 *p) {
     case 0:
         switch (mode) {
         case 0:
-            if (D_00202038 <= 0) { *r = 0; } else { D_00202038--; *r = 1; }
+            if (gMapCommandSbss_00202038 <= 0) { *r = 0; } else { gMapCommandSbss_00202038--; *r = 1; }
             break;
         case 1:
-            if (D_00202038 >= 0xFF) { *r = 0; } else { D_00202038++; *r = 1; }
+            if (gMapCommandSbss_00202038 >= 0xFF) { *r = 0; } else { gMapCommandSbss_00202038++; *r = 1; }
             break;
         }
         break;
     case 1:
         switch (mode) {
         case 0:
-            if (D_00202038 <= 0) { *r = 0; } else { D_00202038--; *r = 1; }
+            if (gMapCommandSbss_00202038 <= 0) { *r = 0; } else { gMapCommandSbss_00202038--; *r = 1; }
             break;
         case 1:
-            if (D_00202038 != 0) { *r = 0; } else { D_00202038++; *r = 1; }
+            if (gMapCommandSbss_00202038 != 0) { *r = 0; } else { gMapCommandSbss_00202038++; *r = 1; }
             break;
         }
         break;
@@ -1454,7 +1454,7 @@ void MapCmd_WaitEvent_0_0017C2A0(P_MapCmd_WaitEvent_0_0017C2A0 *p) {
         case 0:
             break;
         case 1:
-            if (D_00202038 >= 0xFF) { *r = 0; } else { D_00202038++; *r = 1; }
+            if (gMapCommandSbss_00202038 >= 0xFF) { *r = 0; } else { gMapCommandSbss_00202038++; *r = 1; }
             break;
         }
         break;
@@ -1462,9 +1462,9 @@ void MapCmd_WaitEvent_0_0017C2A0(P_MapCmd_WaitEvent_0_0017C2A0 *p) {
         *r = 0;
         break;
     }
-    if (D_00202038 == 0) {
+    if (gMapCommandSbss_00202038 == 0) {
         Game_SetBusy_1_0012C030(0);
-    } else if (D_00202038 > 0) {
+    } else if (gMapCommandSbss_00202038 > 0) {
         Game_SetBusy_1_0012C030(1);
     }
 }
@@ -1823,7 +1823,7 @@ void MapCmd_AddItem_0_0017CE70(void *arg0) {
 
 /* MapCmd_GetPlayerPos_1_0017CE80 */
 void MapCmd_GetPlayerPos_1_0017CE80(s32 a) {
-    Q_MapCmd_SetFlag2034_0_0017A640 *q = (Q_MapCmd_SetFlag2034_0_0017A640 *)(D_002022E4__as_MapCmd_SetPlayerVar3_0_0017CD00->x518 + 0x180);
+    Q_MapCmd_SetFlag2034_0_0017A640 *q = (Q_MapCmd_SetFlag2034_0_0017A640 *)(gPlayerSbss_002022E4__as_MapCmd_SetPlayerVar3_0_0017CD00->x518 + 0x180);
     f32 *px = Script_GetArgPtr_2_00165130__as_MapCmd_GetPlayerPos_1_0017CE80(a, 0);
     f32 *py = Script_GetArgPtr_2_00165130__as_MapCmd_GetPlayerPos_1_0017CE80(a, 1);
     f32 *pz = Script_GetArgPtr_2_00165130__as_MapCmd_GetPlayerPos_1_0017CE80(a, 2);
@@ -1838,7 +1838,7 @@ void MapCmd_GetPlayerPos_1_0017CE80(s32 a) {
 
 void MapCmd_SetPlayerPos_1_0017CF40(Obj_MapCmd_SetFlag2034_0_0017A640__ *o)
 {
-    T_MapCmd_SetPlayerVar3_0_0017CD00 *t = (T_MapCmd_SetPlayerVar3_0_0017CD00 *)(D_002022E4__as_MapCmd_SetPlayerPos_1_0017CF40->p + 0x180);
+    T_MapCmd_SetPlayerVar3_0_0017CD00 *t = (T_MapCmd_SetPlayerVar3_0_0017CD00 *)(gPlayerSbss_002022E4__as_MapCmd_SetPlayerPos_1_0017CF40->p + 0x180);
     if (t) {
         t->r->r[0] = 3.1415927f * o->x / 180.0f;
         t->r->r[1] = 3.1415927f * o->y / 180.0f;
@@ -1880,7 +1880,7 @@ void MapCmd_GetDistToObject_0_0017D000(Arg_MapCmd_SetFlag2034_0_0017A640__ *a0) 
             if (e != NULL) {
                 mm = Mdl_GetFrameData_0_001715B0(*(s32 *)(e + 0x40));
                 if (mm != NULL) {
-                    p = D_002022E4->unk518 + 0x180;
+                    p = gPlayerSbss_002022E4->unk518 + 0x180;
                     if (p != NULL) {
                         sceVu0CopyVector(&b, p + 0x40);
                         sceVu0CopyMatrix(&m, mm + 0x200);
@@ -1954,7 +1954,7 @@ void MapCmd_CopyVar_0_0017D1C0(u8 *a0) {
 
 /* MapCmd_GetPlayerRot_1_0017D240 */
 void MapCmd_GetPlayerRot_1_0017D240(s32 a) {
-    R *s = &D_002022E4__as_MapCmd_GetEquip_0_0017D130_->x518->r;
+    R *s = &gPlayerSbss_002022E4__as_MapCmd_GetEquip_0_0017D130_->x518->r;
     f32 *p = (f32 *)Script_GetArgPtr_2_00165130__as_MapCmd_GetPlayerRot_1_0017D240(a, 0);
     f32 t;
     if (s != NULL) {
@@ -2558,7 +2558,7 @@ void MapCmd_SetSfx_0_0017E370(void *arg0) {
 void MapCmd_SetSfxTransform_0_0017E390(O_MapCmd_SetSfxTransform_0_0017E390 *o) {
     Mtx m;
 
-    sceVu0CopyMatrix__as_MapCmd_SetObjectTexture_0_0017E150__(&m, &D_001F2170);
+    sceVu0CopyMatrix__as_MapCmd_SetObjectTexture_0_0017E150__(&m, &gMatrixFromData_001F2170);
     sceVu0RotMatrixZ(WRAP(DEG(o->x30)), &m, &m);
     sceVu0RotMatrixX(WRAP(DEG(o->x38)), &m, &m);
     sceVu0RotMatrixY(WRAP(DEG(o->x40)), &m, &m);
@@ -2581,11 +2581,11 @@ static inline s32 ok_MapCmd_SetObjectTexture_0_0017E150(Chr **p) {
 }
 static inline Chr *find_MapCmd_SetObjectTexture_0_0017E150(s32 id) {
     Chr *r = 0;
-    if (ok_MapCmd_SetObjectTexture_0_0017E150(((Chr ***)&D_00201E80)[2]) && (*((Chr ***)&D_00201E80)[2])->id == id) {
-        r = *((Chr ***)&D_00201E80)[2];
+    if (ok_MapCmd_SetObjectTexture_0_0017E150(((Chr ***)&gMapSbss_00201E80)[2]) && (*((Chr ***)&gMapSbss_00201E80)[2])->id == id) {
+        r = *((Chr ***)&gMapSbss_00201E80)[2];
     }
-    if (ok_MapCmd_SetObjectTexture_0_0017E150(((Chr ***)&D_00201E80)[3]) && (*((Chr ***)&D_00201E80)[3])->id == id) {
-        r = *((Chr ***)&D_00201E80)[3];
+    if (ok_MapCmd_SetObjectTexture_0_0017E150(((Chr ***)&gMapSbss_00201E80)[3]) && (*((Chr ***)&gMapSbss_00201E80)[3])->id == id) {
+        r = *((Chr ***)&gMapSbss_00201E80)[3];
     }
     return r;
 }
@@ -2624,8 +2624,8 @@ static inline s32 ok_MapCmd_GetSfxParamA_0_0017E760(Chr **p) {
 static inline Chr *find_MapCmd_GetSfxParamA_0_0017E760(s32 id) {
     Chr *r = 0;
     Chr **p;
-    p = ((Chr ***)&D_00201E80)[2]; if (ok_MapCmd_GetSfxParamA_0_0017E760(p) && (*p)->id == id) r = *p;
-    if (ok_MapCmd_GetSfxParamA_0_0017E760(((Chr ***)&D_00201E80)[3]) && (*((Chr ***)&D_00201E80)[3])->id == id) r = *((Chr ***)&D_00201E80)[3];
+    p = ((Chr ***)&gMapSbss_00201E80)[2]; if (ok_MapCmd_GetSfxParamA_0_0017E760(p) && (*p)->id == id) r = *p;
+    if (ok_MapCmd_GetSfxParamA_0_0017E760(((Chr ***)&gMapSbss_00201E80)[3]) && (*((Chr ***)&gMapSbss_00201E80)[3])->id == id) r = *((Chr ***)&gMapSbss_00201E80)[3];
     return r;
 }
 static inline s32 lookup_MapCmd_GetSfxParamA_0_0017E760(Chr *c, s32 key) {
@@ -2659,11 +2659,11 @@ static inline s32 ok_MapCmd_SetFlag2034_0_0017A640(Chr **p) {
 }
 static inline Chr *find_MapCmd_SetFlag2034_0_0017A640(s32 id) {
     Chr *r = 0;
-    if (ok_MapCmd_SetFlag2034_0_0017A640(((Chr ***)&D_00201E80)[2]) && (*((Chr ***)&D_00201E80)[2])->id == id) {
-        r = *((Chr ***)&D_00201E80)[2];
+    if (ok_MapCmd_SetFlag2034_0_0017A640(((Chr ***)&gMapSbss_00201E80)[2]) && (*((Chr ***)&gMapSbss_00201E80)[2])->id == id) {
+        r = *((Chr ***)&gMapSbss_00201E80)[2];
     }
-    if (ok_MapCmd_SetFlag2034_0_0017A640(((Chr ***)&D_00201E80)[3]) && (*((Chr ***)&D_00201E80)[3])->id == id) {
-        r = *((Chr ***)&D_00201E80)[3];
+    if (ok_MapCmd_SetFlag2034_0_0017A640(((Chr ***)&gMapSbss_00201E80)[3]) && (*((Chr ***)&gMapSbss_00201E80)[3])->id == id) {
+        r = *((Chr ***)&gMapSbss_00201E80)[3];
     }
     return r;
 }
@@ -2706,8 +2706,8 @@ static inline s32 ok_MapCmd_GetSfxParamB_0_0017EAF0(Chr **p) {
 static inline Chr *find_MapCmd_GetSfxParamB_0_0017EAF0(s32 id) {
     Chr *r = 0;
     Chr **p;
-    p = ((Chr ***)&D_00201E80)[2]; if (ok_MapCmd_GetSfxParamB_0_0017EAF0(p) && (*p)->id == id) r = *p;
-    if (ok_MapCmd_GetSfxParamB_0_0017EAF0(((Chr ***)&D_00201E80)[3]) && (*((Chr ***)&D_00201E80)[3])->id == id) r = *((Chr ***)&D_00201E80)[3];
+    p = ((Chr ***)&gMapSbss_00201E80)[2]; if (ok_MapCmd_GetSfxParamB_0_0017EAF0(p) && (*p)->id == id) r = *p;
+    if (ok_MapCmd_GetSfxParamB_0_0017EAF0(((Chr ***)&gMapSbss_00201E80)[3]) && (*((Chr ***)&gMapSbss_00201E80)[3])->id == id) r = *((Chr ***)&gMapSbss_00201E80)[3];
     return r;
 }
 static inline s32 lookup_MapCmd_GetSfxParamB_0_0017EAF0(Chr *c, s32 key) {
@@ -2740,6 +2740,6 @@ void MapCmd_GetSfxParamB_0_0017EAF0(Arg *a) {
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/vibration_bss.c): D_00317238 */
-u16 D_00317238[0x2];
+/* data twins (src/game/data/vibration_bss.c): gMapCommandBss_00317238 */
+u16 gMapCommandBss_00317238[0x2];
 #endif

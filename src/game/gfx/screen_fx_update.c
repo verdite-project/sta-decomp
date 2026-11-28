@@ -33,13 +33,13 @@ typedef struct {
     Flags8 x6C8;
     u8 pad6C9[0x47];
 } G;
-extern M2C_UNK D_002F1AA0[];
-extern M2C_UNK D_002F1AB0[];
-extern M2C_UNK D_002F1AC0[];
-extern f32 D_002F1AD0[];
-extern u8 D_002F2078[];
+extern M2C_UNK gScreenFxBss_002F1AA0[];
+extern M2C_UNK gScreenFxBss_002F1AB0[];
+extern M2C_UNK gScreenFxBss_002F1AC0[];
+extern f32 gScreenFxBss_002F1AD0[];
+extern u8 gScreenFxBss_002F2078[];
 extern G gWeatherState_002F19B0;
-extern B8 D_00201F78[8];
+extern B8 gScreenFxUpdateSbss_00201F78[8];
 M2C_UNK sceVu0InterVector(f32, M2C_UNK *, M2C_UNK *, M2C_UNK *);
 M2C_UNK sceVu0CopyVector(void *, void *);
 M2C_UNK Weather_Update_0_00157D50(f32);
@@ -55,17 +55,17 @@ M2C_UNK sceVu0CopyVector__as_ScreenFx_Update_1_00159970(M2C_UNK *, M2C_UNK *);
 void ScreenFx_Update_1_00159970(f32 arg0) {
     f32 temp_f1;
 
-    temp_f1 = D_002F1AD0[0] + arg0;
-    D_002F1AD0[0] = temp_f1;
+    temp_f1 = gScreenFxBss_002F1AD0[0] + arg0;
+    gScreenFxBss_002F1AD0[0] = temp_f1;
     if (!(temp_f1 <= D_002F1AD4[0])) {
         D_002F1AD4[0] = 0.0f;
     }
     if (D_002F1AD4[0] == 0.0f) {
-        sceVu0CopyVector(D_002F1AA0, D_002F1AB0);
+        sceVu0CopyVector(gScreenFxBss_002F1AA0, gScreenFxBss_002F1AB0);
     } else {
-        sceVu0InterVector(1.0f - (D_002F1AD0[0] / D_002F1AD4[0]), D_002F1AA0, D_002F1AC0, D_002F1AB0);
+        sceVu0InterVector(1.0f - (gScreenFxBss_002F1AD0[0] / D_002F1AD4[0]), gScreenFxBss_002F1AA0, gScreenFxBss_002F1AC0, gScreenFxBss_002F1AB0);
     }
-    if (((u64) ((s64) D_002F2078[0] << 0x39) >> 0x3F) != 0) {
+    if (((u64) ((s64) gScreenFxBss_002F2078[0] << 0x39) >> 0x3F) != 0) {
         Weather_Update_0_00157D50(arg0);
     }
 }
@@ -97,22 +97,22 @@ void ScreenFx_Init_1_00159A60(void) {
     sceVu0CopyVector(&gWeatherState_002F19B0.x110, &v);
     gWeatherState_002F19B0.x120 = 0;
     gWeatherState_002F19B0.x124 = 0;
-    D_00201F78[0].lo = 4;
-    D_00201F78[0].hi = 2;
-    D_00201F78[1].lo = 5;
-    D_00201F78[1].hi = 3;
-    D_00201F78[2].lo = 0;
-    D_00201F78[2].hi = 6;
-    D_00201F78[3].lo = 1;
-    D_00201F78[3].hi = 7;
-    D_00201F78[4].lo = 5;
-    D_00201F78[4].hi = 3;
-    D_00201F78[5].lo = 4;
-    D_00201F78[5].hi = 2;
-    D_00201F78[6].lo = 1;
-    D_00201F78[6].hi = 7;
-    D_00201F78[7].lo = 0;
-    D_00201F78[7].hi = 6;
+    gScreenFxUpdateSbss_00201F78[0].lo = 4;
+    gScreenFxUpdateSbss_00201F78[0].hi = 2;
+    gScreenFxUpdateSbss_00201F78[1].lo = 5;
+    gScreenFxUpdateSbss_00201F78[1].hi = 3;
+    gScreenFxUpdateSbss_00201F78[2].lo = 0;
+    gScreenFxUpdateSbss_00201F78[2].hi = 6;
+    gScreenFxUpdateSbss_00201F78[3].lo = 1;
+    gScreenFxUpdateSbss_00201F78[3].hi = 7;
+    gScreenFxUpdateSbss_00201F78[4].lo = 5;
+    gScreenFxUpdateSbss_00201F78[4].hi = 3;
+    gScreenFxUpdateSbss_00201F78[5].lo = 4;
+    gScreenFxUpdateSbss_00201F78[5].hi = 2;
+    gScreenFxUpdateSbss_00201F78[6].lo = 1;
+    gScreenFxUpdateSbss_00201F78[6].hi = 7;
+    gScreenFxUpdateSbss_00201F78[7].lo = 0;
+    gScreenFxUpdateSbss_00201F78[7].hi = 6;
     Weather_RespawnParticle_0_00157FE0(0);
     Weather_RespawnParticle_0_00157FE0(1);
     gWeatherState_002F19B0.x6C0 = 0;
@@ -127,6 +127,6 @@ void ScreenFx_Init_1_00159A60(void) {
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/sbss.c): D_00201F78 */
-B8 D_00201F78[8];
+/* data twins (src/game/data/sbss.c): gScreenFxUpdateSbss_00201F78 */
+B8 gScreenFxUpdateSbss_00201F78[8];
 #endif

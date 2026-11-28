@@ -26,7 +26,7 @@ loop:
             *p = a.q;
             GsPkt_Commit_1_00154A70();
             Tex_FlushAll_1_00176AE0();
-            ScreenFx_DrawSprite_0_001323C0(e, D_00201F04, D_00201F08, arg0);
+            ScreenFx_DrawSprite_0_001323C0(e, gScreenFxBeginSbss_00201F04, gScreenFxBeginSbss_00201F08, arg0);
             p = GsPkt_Alloc_3_00154A80(1); *p = b.q;
             GsPkt_Commit_1_00154A70();
             Tex_FlushAll_1_00176AE0();

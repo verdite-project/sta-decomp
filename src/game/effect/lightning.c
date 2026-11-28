@@ -4,8 +4,8 @@
 typedef struct { char pad[0x10]; char sub[0x4D0]; } E;
 typedef struct { E e[64]; } B;
 typedef struct { u8 pad0[8]; f32 x8; f32 xC; f32 x10; f32 x14; } LP;
-extern B D_003174F0[2];
-extern Mtx D_002F16C0;
+extern B gVibrationBss_003174F0[2];
+extern Mtx gSoundEmitterBss_002F16C0;
 /* .bss, from the top down (CodeWarrior writes it in reverse) */
 Vec D_0033E500[0x100];
 void Lightning_BuildStrip_0_00164440(LP *P, u32 *out, Vec *L, Vec *dir, Vec *c);
@@ -21,7 +21,7 @@ void Lightning_InitAll_1_001643B0(void)
     s32 j, i;
     for (j = 0; j < 2; j++) {
         for (i = 0; i < 64; i++)
-            Lightning_Init_0_00164BB0(D_003174F0[j].e[i].sub);
+            Lightning_Init_0_00164BB0(gVibrationBss_003174F0[j].e[i].sub);
     }
     Lightning_ResetPoints_0_00164940();
 }
@@ -43,9 +43,9 @@ static inline void body(LP *P, u32 **po, Vec *L, Vec *dir, Vec *c) {
 
     tbl = D_0033E500;
     for (k = 0; k < 4; k++) {
-        tr[k].x = D_002F16C0.m[0].x * L[k].x + D_002F16C0.m[1].x * L[k].y + D_002F16C0.m[2].x * L[k].z;
-        tr[k].y = D_002F16C0.m[0].y * L[k].x + D_002F16C0.m[1].y * L[k].y + D_002F16C0.m[2].y * L[k].z;
-        tr[k].z = D_002F16C0.m[0].z * L[k].x + D_002F16C0.m[1].z * L[k].y + D_002F16C0.m[2].z * L[k].z;
+        tr[k].x = gSoundEmitterBss_002F16C0.m[0].x * L[k].x + gSoundEmitterBss_002F16C0.m[1].x * L[k].y + gSoundEmitterBss_002F16C0.m[2].x * L[k].z;
+        tr[k].y = gSoundEmitterBss_002F16C0.m[0].y * L[k].x + gSoundEmitterBss_002F16C0.m[1].y * L[k].y + gSoundEmitterBss_002F16C0.m[2].y * L[k].z;
+        tr[k].z = gSoundEmitterBss_002F16C0.m[0].z * L[k].x + gSoundEmitterBss_002F16C0.m[1].z * L[k].y + gSoundEmitterBss_002F16C0.m[2].z * L[k].z;
         tr[k].w = L[k].w;
         sceVu0CopyVector(&nd[k], &dir[k]);
         nd[k].w = nd[k].z + (nd[k].x + nd[k].y);

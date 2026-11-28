@@ -168,72 +168,72 @@ typedef struct {
 } Obj_ItemObj_DropToGround_0_001AE0E0;
 typedef struct { u8 pad[8]; u16 x8; u8 padA[0x90 - 0xA]; } Ent_ItemObj_AllocSlot_1_001AE360;
 typedef struct { u8 pad[8]; Obj3D *t[2][16]; } Tbl;
-extern A *D_00202290;
-extern B *D_00202288;
+extern A *gItemObjectSbss_00202290;
+extern B *gItemObjectSbss_00202288;
 #ifndef NONMATCHING
-extern s32 D_004B4B78[];
+extern s32 gItemObjectBss_004B4B78[];
 #else
-/* data twins (src/game/data/pad_get_connected_bss_004AC630.c): D_004B4B78 */
-static s32 D_004B4B78[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004AC630.c): gItemObjectBss_004B4B78 */
+static s32 gItemObjectBss_004B4B78[0x1];
 #endif
 #ifndef NONMATCHING
-extern s32 D_004B4B7C[];
+extern s32 gItemObjectBss_004B4B7C[];
 #else
-/* data twins (src/game/data/pad_get_connected_bss_004AC630.c): D_004B4B7C */
-static s32 D_004B4B7C[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004AC630.c): gItemObjectBss_004B4B7C */
+static s32 gItemObjectBss_004B4B7C[0x1];
 #endif
-extern s32 *D_004B4B80[];
+extern s32 *gItemObjectBss_004B4B80[];
 #ifndef NONMATCHING
-extern s32 *D_004B4B84[];
+extern s32 *gItemObjectBss_004B4B84[];
 #else
-/* data twins (src/game/data/pad_get_connected_bss_004AC630.c): D_004B4B84 */
-static s32 *D_004B4B84[0x1];
+/* data twins (src/game/data/pad_get_connected_bss_004AC630.c): gItemObjectBss_004B4B84 */
+static s32 *gItemObjectBss_004B4B84[0x1];
 #endif
 extern F3b D_00222A54[];
 #ifndef NONMATCHING
-extern s8 D_001FD9D0[];
+extern s8 gItemObjectRodata_001FD9D0[];
 #else
-/* data twins (src/game/data/save_parse_rodata.c): D_001FD9D0 */
-static s8 D_001FD9D0[0x20] __attribute__((aligned(8))) = "equip/e%4.04dm.stm\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
+/* data twins (src/game/data/save_parse_rodata.c): gItemObjectRodata_001FD9D0 */
+static s8 gItemObjectRodata_001FD9D0[0x20] __attribute__((aligned(8))) = "equip/e%4.04dm.stm\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
 #endif
 #ifndef NONMATCHING
-extern s8 D_001FD9F0[];
+extern s8 gItemObjectRodata_001FD9F0[];
 #else
-/* data twins (src/game/data/save_parse_rodata.c): D_001FD9F0 */
-static s8 D_001FD9F0[0x20] __attribute__((aligned(8))) = "item/i%4.04dm.stm\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
+/* data twins (src/game/data/save_parse_rodata.c): gItemObjectRodata_001FD9F0 */
+static s8 gItemObjectRodata_001FD9F0[0x20] __attribute__((aligned(8))) = "item/i%4.04dm.stm\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
 #endif
 extern s8 gLoadBuf_00270F40[];
 #ifndef NONMATCHING
-extern s32 D_004AD670[];
+extern s32 gItemObjectBss_004AD670[];
 #else
-/* data twins (src/game/data/pad_get_connected_bss_004AC630.c): D_004AD670 */
-static s32 D_004AD670[0x340];
+/* data twins (src/game/data/pad_get_connected_bss_004AC630.c): gItemObjectBss_004AD670 */
+static s32 gItemObjectBss_004AD670[0x340];
 #endif
 #ifndef NONMATCHING
-extern s32 D_004B1770[];
+extern s32 gItemObjectBss_004B1770[];
 #else
-/* data twins (src/game/data/pad_get_connected_bss_004AC630.c): D_004B1770 */
-static s32 D_004B1770[0xd00];
+/* data twins (src/game/data/pad_get_connected_bss_004AC630.c): gItemObjectBss_004B1770 */
+static s32 gItemObjectBss_004B1770[0xd00];
 #endif
-extern Ent *D_002022B0;
-extern Bone *D_002022B0__as_ItemMdl_SetTransform_0_001ABF70;
-extern Obj D_004AE370__as_ItemMdl_SetTransform_0_001ABF70[2][64];
-extern s8 D_0030D0E0[];
-extern O_ItemObj_TestVisible_0_001ACD90 **D_002022BC;
+extern Ent *gItemObjectSbss_002022B0;
+extern Bone *gItemObjectSbss_002022B0__as_ItemMdl_SetTransform_0_001ABF70;
+extern Obj gItemObjectBss_004AE370__as_ItemMdl_SetTransform_0_001ABF70[2][64];
+extern s8 gGlowInitBss_0030D0E0[];
+extern O_ItemObj_TestVisible_0_001ACD90 **gPlayerSbss_002022BC;
 extern BF D_00222A50[];
 extern Node_ItemObj_Animate_0_001AD4E0 *D_002022A4;
 extern s8 D_001FDA30[];
-extern s32 D_00201E80;
-extern Tbl D_004AC5A0;
-extern Node_ItemObj_UpdateTransforms_0_001AC4A0 D_004AC970__as_ItemObj_UpdateTransforms_0_001AC4A0[];
-extern Node_ItemObj_UpdateTransforms_0_001AC4A0 D_004AE370__as_ItemObj_UpdateTransforms_0_001AC4A0[];
-extern u8 D_004AC630__as_ItemObj_DrawPass_1_001ACEB0[];
-extern u8 D_004AC970__as_ItemObj_DrawPass_1_001ACEB0[];
-extern u8 D_004AE370__as_ItemObj_DrawPass_1_001ACEB0[];
-extern Ent_ItemObj_Animate_0_001AD4E0 *D_002022B0__as_ItemObj_Animate_0_001AD4E0;
-extern Ent_ItemObj_GetScale_0_001ADBA0 *D_002022B0__as_ItemObj_GetScale_0_001ADBA0;
-extern Ent_ItemObj_GetMatrix_0_001ADC60 *D_002022B0__as_ItemObj_GetMatrix_0_001ADC60;
-extern Ent_ItemObj_AllocSlot_1_001AE360 *D_002022B0__as_ItemObj_AllocSlot_1_001AE360;
+extern s32 gMapSbss_00201E80;
+extern Tbl gItemObjectSpawnBss_004AC5A0;
+extern Node_ItemObj_UpdateTransforms_0_001AC4A0 gItemObjectBss_004AC970__as_ItemObj_UpdateTransforms_0_001AC4A0[];
+extern Node_ItemObj_UpdateTransforms_0_001AC4A0 gItemObjectBss_004AE370__as_ItemObj_UpdateTransforms_0_001AC4A0[];
+extern u8 gItemObjectSpawnBss_004AC630__as_ItemObj_DrawPass_1_001ACEB0[];
+extern u8 gItemObjectBss_004AC970__as_ItemObj_DrawPass_1_001ACEB0[];
+extern u8 gItemObjectBss_004AE370__as_ItemObj_DrawPass_1_001ACEB0[];
+extern Ent_ItemObj_Animate_0_001AD4E0 *gItemObjectSbss_002022B0__as_ItemObj_Animate_0_001AD4E0;
+extern Ent_ItemObj_GetScale_0_001ADBA0 *gItemObjectSbss_002022B0__as_ItemObj_GetScale_0_001ADBA0;
+extern Ent_ItemObj_GetMatrix_0_001ADC60 *gItemObjectSbss_002022B0__as_ItemObj_GetMatrix_0_001ADC60;
+extern Ent_ItemObj_AllocSlot_1_001AE360 *gItemObjectSbss_002022B0__as_ItemObj_AllocSlot_1_001AE360;
 void* ItemMdl_NextRequest_0_001ABB20(void);
 void ItemMdl_Spawn_0_001ABCC0(Node *o, s32 a1);
 s32 ItemMdl_SetTransform_0_001ABF70(s32 key, s32 arg1, s32 arg2);
@@ -344,29 +344,29 @@ void sceVu0CopyVector__as_ItemObj_DropToGround_0_001AE0E0(f32 *, f32 *);
 void sceVu0CopyVector__as_ItemObj_FindGround_0_001AE250(f32 *, f32 *);
 
 /* ItemMdl_Update_0_001AB690_ */
-#define D_004AC630 D_004AC630__as_ItemMdl_Update_0_001AB690_
-extern s32 D_004AC630__as_ItemMdl_Update_0_001AB690_[];
-#define D_004AC970 D_004AC970__as_ItemMdl_Update_0_001AB690_
-extern s32 D_004AC970__as_ItemMdl_Update_0_001AB690_[];
-#define D_004AE370 D_004AE370__as_ItemMdl_Update_0_001AB690_
-extern s32 D_004AE370__as_ItemMdl_Update_0_001AB690_[];
+#define gItemObjectSpawnBss_004AC630 gItemObjectSpawnBss_004AC630__as_ItemMdl_Update_0_001AB690_
+extern s32 gItemObjectSpawnBss_004AC630__as_ItemMdl_Update_0_001AB690_[];
+#define gItemObjectBss_004AC970 gItemObjectBss_004AC970__as_ItemMdl_Update_0_001AB690_
+extern s32 gItemObjectBss_004AC970__as_ItemMdl_Update_0_001AB690_[];
+#define gItemObjectBss_004AE370 gItemObjectBss_004AE370__as_ItemMdl_Update_0_001AB690_
+extern s32 gItemObjectBss_004AE370__as_ItemMdl_Update_0_001AB690_[];
 #define Mdl_UpdateBoneMatricesCur_0_00171540 Mdl_UpdateBoneMatricesCur_0_00171540__as_ItemMdl_Update_0_001AB690_
 void Mdl_UpdateBoneMatricesCur_0_00171540__as_ItemMdl_Update_0_001AB690_(Anim *, Node *);
 
 /* ItemMdl_Update_0_001AB690 */
 /* ItemMdl_Update_0_001AB690 */
 static inline void cleanup(void) {
-    if (D_004B4B80[0]) Pool_Free_2_00128580(D_00202290, D_004B4B80[0]);
-    if (D_004B4B74[0]) {
-        Task_RunWrap_0_0014DAB0(D_004B4B74[0]);
-        D_004B4B74[0] = 0;
+    if (gItemObjectBss_004B4B80[0]) Pool_Free_2_00128580(gItemObjectSbss_00202290, gItemObjectBss_004B4B80[0]);
+    if (gItemObjectBss_004B4B74[0]) {
+        Task_RunWrap_0_0014DAB0(gItemObjectBss_004B4B74[0]);
+        gItemObjectBss_004B4B74[0] = 0;
     }
-    D_004B4B80[0] = 0;
-    D_00202288 = 0;
-    D_004B4B74[0] = 0;
-    D_0020228C = 0;
-    D_004B4B70[0] = 0;
-    D_004B4B88[0] = 0;
+    gItemObjectBss_004B4B80[0] = 0;
+    gItemObjectSbss_00202288 = 0;
+    gItemObjectBss_004B4B74[0] = 0;
+    gItemObjectSpawnSbss_0020228C = 0;
+    gItemObjectBss_004B4B70[0] = 0;
+    gItemObjectBss_004B4B88[0] = 0;
 }
 
 void ItemMdl_Update_0_001AB690(void) {
@@ -381,62 +381,62 @@ void ItemMdl_Update_0_001AB690(void) {
     s32 c;
     s32 k;
 
-    if (D_00202290 == NULL) return;
-    if (D_00202290->f18.f.b1 && D_00202290->x14 != 0) return;
-    if (D_0020228C != 0) {
+    if (gItemObjectSbss_00202290 == NULL) return;
+    if (gItemObjectSbss_00202290->f18.f.b1 && gItemObjectSbss_00202290->x14 != 0) return;
+    if (gItemObjectSpawnSbss_0020228C != 0) {
         cleanup();
         return;
     }
-    if (D_00202288 == 0) D_00202288 = ItemMdl_NextRequest_0_001ABB20();
-    if (D_00202288 == 0) return;
-    if (!D_00202288->fA8.f.b1) {
-        c = D_00202288->h9E == 2 && D_00202288->h9C >= 800;
-        k = D_00202288->h9C;
-        if (c) sprintf(buf1, D_001FD9D0, k);
-        else sprintf(buf1, D_001FD9F0, k);
+    if (gItemObjectSbss_00202288 == 0) gItemObjectSbss_00202288 = ItemMdl_NextRequest_0_001ABB20();
+    if (gItemObjectSbss_00202288 == 0) return;
+    if (!gItemObjectSbss_00202288->fA8.f.b1) {
+        c = gItemObjectSbss_00202288->h9E == 2 && gItemObjectSbss_00202288->h9C >= 800;
+        k = gItemObjectSbss_00202288->h9C;
+        if (c) sprintf(buf1, gItemObjectRodata_001FD9D0, k);
+        else sprintf(buf1, gItemObjectRodata_001FD9F0, k);
         strcpy(buf2, buf1);
-        if (D_004B4B78) {
+        if (gItemObjectBss_004B4B78) {
             s = Arc_FindByHash_2_0015ABD0(File_HashName_3_00159D10(buf1));
-            D_004B4B78[0] = File_GetSectorOrSize_0_0015A300(s);
+            gItemObjectBss_004B4B78[0] = File_GetSectorOrSize_0_0015A300(s);
             File_Close_2_0015AB80(s);
         }
-        D_004B4B80[0] = Pool_Alloc_3_001288C0(D_00202290, D_004B4B78[0]);
-        D_004B4B84[0] = 0;
-        D_004B4B7C[0] = 0;
-        D_004B4B74[0] = Task_SetPriorityWrap_0_0014DB00(buf2, 0x102, gLoadBuf_00270F40);
-        D_004B4B7C[0] = Obj_FreeTimer_0_0014DA70(D_004B4B74[0]);
-        Task_FlushWrap_0_0014DAC0(D_004B4B74[0], 0);
-        D_00202288->fA8.f.b1 = 1;
+        gItemObjectBss_004B4B80[0] = Pool_Alloc_3_001288C0(gItemObjectSbss_00202290, gItemObjectBss_004B4B78[0]);
+        gItemObjectBss_004B4B84[0] = 0;
+        gItemObjectBss_004B4B7C[0] = 0;
+        gItemObjectBss_004B4B74[0] = Task_SetPriorityWrap_0_0014DB00(buf2, 0x102, gLoadBuf_00270F40);
+        gItemObjectBss_004B4B7C[0] = Obj_FreeTimer_0_0014DA70(gItemObjectBss_004B4B74[0]);
+        Task_FlushWrap_0_0014DAC0(gItemObjectBss_004B4B74[0], 0);
+        gItemObjectSbss_00202288->fA8.f.b1 = 1;
     }
-    switch (Task_KillWrap_0_0014DAF0(D_004B4B74[0])) {
+    switch (Task_KillWrap_0_0014DAF0(gItemObjectBss_004B4B74[0])) {
     case 0:
         break;
     case 5:
-        n = D_004B4B78[0] - D_004B4B7C[0];
+        n = gItemObjectBss_004B4B78[0] - gItemObjectBss_004B4B7C[0];
         n = (n > 0x80000) ? 0x80000 : n;
         q = (s32)n >> 4;
         r = n - q * 16;
         FlushCache(0);
-        Dma_SprCopy_1_001789E0(*D_004B4B80[0] + D_004B4B7C[0], gLoadBuf_00270F40, q);
-        if (r > 0) memcpy(*D_004B4B80[0] + D_004B4B7C[0] + q * 16, gLoadBuf_00270F40 + q * 16, r);
-        D_004B4B7C[0] += n;
-        Task_RemoveWrap_0_0014DAE0(D_004B4B74[0]);
+        Dma_SprCopy_1_001789E0(*gItemObjectBss_004B4B80[0] + gItemObjectBss_004B4B7C[0], gLoadBuf_00270F40, q);
+        if (r > 0) memcpy(*gItemObjectBss_004B4B80[0] + gItemObjectBss_004B4B7C[0] + q * 16, gLoadBuf_00270F40 + q * 16, r);
+        gItemObjectBss_004B4B7C[0] += n;
+        Task_RemoveWrap_0_0014DAE0(gItemObjectBss_004B4B74[0]);
         break;
     case 3:
     case 6:
-        if (D_004B4B70[0] != 0) break;
-        p = *D_004B4B80[0];
-        if (D_004B4B88[0] == 0) {
-            if (Obj_SetTimerEx_0_0014DA90(D_004B4B74[0], p, p, D_004B4B78[0])) D_004B4B88[0] = 1;
+        if (gItemObjectBss_004B4B70[0] != 0) break;
+        p = *gItemObjectBss_004B4B80[0];
+        if (gItemObjectBss_004B4B88[0] == 0) {
+            if (Obj_SetTimerEx_0_0014DA90(gItemObjectBss_004B4B74[0], p, p, gItemObjectBss_004B4B78[0])) gItemObjectBss_004B4B88[0] = 1;
         }
-        if (D_004B4B88[0] != 0 && Obj_SetTimer_0_0014DA80(D_004B4B74[0], 8) != 0) break;
-        D_004B4B88[0] = 0;
-        D_004B4B84[0] = Tex_LoadArchive_0_0016F950(D_002022A0, D_004B4B80[0]);
-        b = D_00202288;
-        b->x90 = Tex_FindAnim_0_0016FF80(*D_004B4B84[0]);
-        ItemMdl_Spawn_0_001ABCC0__as_ItemMdl_Update_0_001AB690(D_00202288, D_004B4B84[0]);
-        D_004B4B80[0] = 0;
-        D_004B4B70[0] = 1;
+        if (gItemObjectBss_004B4B88[0] != 0 && Obj_SetTimer_0_0014DA80(gItemObjectBss_004B4B74[0], 8) != 0) break;
+        gItemObjectBss_004B4B88[0] = 0;
+        gItemObjectBss_004B4B84[0] = Tex_LoadArchive_0_0016F950(gItemObjectSbss_002022A0, gItemObjectBss_004B4B80[0]);
+        b = gItemObjectSbss_00202288;
+        b->x90 = Tex_FindAnim_0_0016FF80(*gItemObjectBss_004B4B84[0]);
+        ItemMdl_Spawn_0_001ABCC0__as_ItemMdl_Update_0_001AB690(gItemObjectSbss_00202288, gItemObjectBss_004B4B84[0]);
+        gItemObjectBss_004B4B80[0] = 0;
+        gItemObjectBss_004B4B70[0] = 1;
         cleanup();
         break;
     case 1:
@@ -467,7 +467,7 @@ void *ItemMdl_NextRequest_0_001ABB20(void) {
     s32 *var_2;
 
     var_6 = 0;
-    var_2_5 = (s32 *) (D_004AC630);
+    var_2_5 = (s32 *) (gItemObjectSpawnBss_004AC630);
 loop_1:
     if (M2C_FIELD(var_2_5, s16 *, 0x9C) != -1) {
         temp_4 = M2C_FIELD(var_2_5, u8 *, 0xA8);
@@ -479,7 +479,7 @@ loop_1:
     var_2_5 = (s32*)((u8 *)var_2_5 + 0xD0);
     if (var_6 >= 4) {
         var_6_2 = 0;
-        var_2_4 = (s32 *) (D_004AC970);
+        var_2_4 = (s32 *) (gItemObjectBss_004AC970);
 loop_7:
         if (M2C_FIELD(var_2_4, s16 *, 0x9C) != -1) {
             temp_4_2 = M2C_FIELD(var_2_4, u8 *, 0xA8);
@@ -491,7 +491,7 @@ loop_7:
         var_2_4 = (s32*)((u8 *)var_2_4 + 0xD0);
         if (var_6_2 >= 0x10) {
             var_6_3 = 0;
-            var_2_3 = (s32 *) (D_004AD670);
+            var_2_3 = (s32 *) (gItemObjectBss_004AD670);
 loop_13:
             if (M2C_FIELD(var_2_3, s16 *, 0x9C) != -1) {
                 temp_4_3 = M2C_FIELD(var_2_3, u8 *, 0xA8);
@@ -503,7 +503,7 @@ loop_13:
             var_2_3 = (s32*)((u8 *)var_2_3 + 0xD0);
             if (var_6_3 >= 0x10) {
                 var_6_4 = 0;
-                var_2_2 = (s32 *) (D_004AE370);
+                var_2_2 = (s32 *) (gItemObjectBss_004AE370);
 loop_19:
                 if (M2C_FIELD(var_2_2, s16 *, 0x9C) != -1) {
                     temp_4_4 = M2C_FIELD(var_2_2, u8 *, 0xA8);
@@ -515,7 +515,7 @@ loop_19:
                 var_2_2 = (s32*)((u8 *)var_2_2 + 0xD0);
                 if (var_6_4 >= 0x40) {
                     var_6_5 = 0;
-                    var_2 = (s32 *) (D_004B1770);
+                    var_2 = (s32 *) (gItemObjectBss_004B1770);
 loop_25:
                     if (M2C_FIELD(var_2, s16 *, 0x9C) != -1) {
                         temp_4_5 = M2C_FIELD(var_2, u8 *, 0xA8);
@@ -541,7 +541,7 @@ loop_25:
 
 /* ItemMdl_Spawn_0_001ABCC0 */
 static inline Ent *ent_ItemMdl_Update_0_001AB690(s16 i) {
-    if (D_002022B0 != NULL && i > 0 && i < 0x400) return &D_002022B0[i];
+    if (gItemObjectSbss_002022B0 != NULL && i > 0 && i < 0x400) return &gItemObjectSbss_002022B0[i];
     return NULL;
 }
 
@@ -554,14 +554,14 @@ void ItemMdl_Spawn_0_001ABCC0(Node *o, s32 a1) {
     s32 i;
 
     e = ent_ItemMdl_Update_0_001AB690(o->idx);
-    o->x84 = Mdl_CreateInstance_0_00174230(D_002022A0, a1, -1, -1);
+    o->x84 = Mdl_CreateInstance_0_00174230(gItemObjectSbss_002022A0, a1, -1, -1);
     o->x84->a->x24.f.b2 = 0;
-    save = D_00201F2C;
+    save = gSfxAllSbss_00201F2C;
     for (i = 0; i < 2; i++) {
-        D_00201F2C = i;
+        gSfxAllSbss_00201F2C = i;
         Mdl_UpdateBoneMatricesCur_0_00171540(o->x84->a, o);
     }
-    D_00201F2C = save;
+    gSfxAllSbss_00201F2C = save;
     o->xA8.f.b1 = 0;
     o->xA8.f.b0 = 1;
     o->xA8.f.b7 = 1;
@@ -594,7 +594,7 @@ void ItemMdl_Spawn_0_001ABCC0(Node *o, s32 a1) {
 /* ItemMdl_SetTransform_0_001ABF70 */
 static inline void update(Obj *o) {
     f32 tmp[16] __attribute__((aligned(16)));
-    Bone *bones = D_002022B0__as_ItemMdl_SetTransform_0_001ABF70;
+    Bone *bones = gItemObjectSbss_002022B0__as_ItemMdl_SetTransform_0_001ABF70;
     if (o != NULL && o->bone != -1) {
         if (o->local) {
             Mtx_Compose_2_00173FD0(o, o->m[4], o->m[5], o->m[6]);
@@ -614,7 +614,7 @@ s32 ItemMdl_SetTransform_0_001ABF70(s32 key, s32 arg1, s32 arg2) {
     Obj *o;
     Obj *row;
     if (id == 0) return 0;
-    for (i = 0, row = D_004AE370__as_ItemMdl_SetTransform_0_001ABF70[0]; i < 2; i++, row += 64) {
+    for (i = 0, row = gItemObjectBss_004AE370__as_ItemMdl_SetTransform_0_001ABF70[0]; i < 2; i++, row += 64) {
         for (o = row, j = 0; j < 64; j++, o++) {
             if (o->busy == 0 && o->hide == 0 && o->pp != NULL && *o->pp != NULL && o->bone != -1 && **o->pp == key && o->id == id) {
                 sceVu0SubVector(o->m[4], arg2, o->m[7], id);
@@ -626,13 +626,13 @@ s32 ItemMdl_SetTransform_0_001ABF70(s32 key, s32 arg1, s32 arg2) {
     return 0;
 }
 #undef Mdl_UpdateBoneMatricesCur_0_00171540
-#undef D_004AC630
-#undef D_004AC970
-#undef D_004AE370
+#undef gItemObjectSpawnBss_004AC630
+#undef gItemObjectBss_004AC970
+#undef gItemObjectBss_004AE370
 
 /* ItemObj_OffsetAll_0_001AC0F0 */
-#define D_002022B0 D_002022B0__as_ItemObj_OffsetAll_0_001AC0F0
-extern Ent_ItemObj_UpdateTransforms_0_001AC4A0 *D_002022B0__as_ItemObj_OffsetAll_0_001AC0F0;
+#define gItemObjectSbss_002022B0 gItemObjectSbss_002022B0__as_ItemObj_OffsetAll_0_001AC0F0
+extern Ent_ItemObj_UpdateTransforms_0_001AC4A0 *gItemObjectSbss_002022B0__as_ItemObj_OffsetAll_0_001AC0F0;
 #define sceVu0AddVector sceVu0AddVector__as_ItemObj_OffsetAll_0_001AC0F0
 void sceVu0AddVector__as_ItemObj_OffsetAll_0_001AC0F0(s32, s8 *, s8 *, s32);
 #define memcpy memcpy__as_ItemObj_OffsetAll_0_001AC0F0
@@ -653,7 +653,7 @@ s32 ItemObj_OffsetAll_0_001AC0F0(s32 arg0, u16 arg1, s32 arg2) {
     if (arg1 == 0) {
         return 0;
     }
-    for (i = 0, row = D_004AE370[0]; i < 2; i++, row += 64) {
+    for (i = 0, row = gItemObjectBss_004AE370[0]; i < 2; i++, row += 64) {
         for (p = row, j = 0; j < 0x40; j++, p++) {
             if (p->x9E == 0 && p->xA9.f.b2 == 0 && p->x8C != NULL && *p->x8C != NULL
                 && p->x9C != -1 && **p->x8C == arg0 && p->xAA == arg1) {
@@ -706,12 +706,12 @@ Obj3D *ItemObj_FindPickTarget_0_001AC3E0(void) {
     best = NULL;
     dist = 1e8f;
     for (i = 0; i < 64; i++) {
-        ItemObj_TestPickRay_0_001AC200__as_ItemObj_FindPickTarget_0_001AC3E0(&D_004AE370[0][i], &best, &dist);
-        ItemObj_TestPickRay_0_001AC200__as_ItemObj_FindPickTarget_0_001AC3E0(&D_004AE370[1][i], &best, &dist);
+        ItemObj_TestPickRay_0_001AC200__as_ItemObj_FindPickTarget_0_001AC3E0(&gItemObjectBss_004AE370[0][i], &best, &dist);
+        ItemObj_TestPickRay_0_001AC200__as_ItemObj_FindPickTarget_0_001AC3E0(&gItemObjectBss_004AE370[1][i], &best, &dist);
     }
     for (i = 0; i < 16; i++) {
-        ItemObj_TestPickRay_0_001AC200__as_ItemObj_FindPickTarget_0_001AC3E0(&D_004AC970[0][i], &best, &dist);
-        ItemObj_TestPickRay_0_001AC200__as_ItemObj_FindPickTarget_0_001AC3E0(&D_004AC970[1][i], &best, &dist);
+        ItemObj_TestPickRay_0_001AC200__as_ItemObj_FindPickTarget_0_001AC3E0(&gItemObjectBss_004AC970[0][i], &best, &dist);
+        ItemObj_TestPickRay_0_001AC200__as_ItemObj_FindPickTarget_0_001AC3E0(&gItemObjectBss_004AC970[1][i], &best, &dist);
     }
     return best;
 }
@@ -721,7 +721,7 @@ static inline void upd_ItemObj_UpdateTransforms_0_001AC4A0(Node_ItemObj_UpdateTr
     if (n->idx != -1) {
         sceVu0AddVector__as_ItemObj_UpdateTransforms_0_001AC4A0(&n->v70, &n->v70, m);
         {
-        Ent_ItemObj_UpdateTransforms_0_001AC4A0 *tbl = D_002022B0;
+        Ent_ItemObj_UpdateTransforms_0_001AC4A0 *tbl = gItemObjectSbss_002022B0;
         if (n != NULL && n->idx != -1) {
             if (((u64)((s64)n->fA9 << 0x3E) >> 0x3F) != 0) {
                 Mtx_Compose_2_00173FD0__as_ItemObj_UpdateTransforms_0_001AC4A0(n, &n->v40, &n->v50, &n->v60);
@@ -742,14 +742,14 @@ void ItemObj_UpdateTransforms_0_001AC4A0(void *arg0) {
     s32 i;
     Node_ItemObj_UpdateTransforms_0_001AC4A0 *n;
 
-    n = D_004AE370__as_ItemObj_UpdateTransforms_0_001AC4A0;
+    n = gItemObjectBss_004AE370__as_ItemObj_UpdateTransforms_0_001AC4A0;
     for (i = 0; i < 0x40; i++) {
         upd_ItemObj_UpdateTransforms_0_001AC4A0(n, arg0);
         upd_ItemObj_UpdateTransforms_0_001AC4A0(n + 0x40, arg0);
         n++;
     }
     {
-    Node_ItemObj_UpdateTransforms_0_001AC4A0 *m = D_004AC970__as_ItemObj_UpdateTransforms_0_001AC4A0;
+    Node_ItemObj_UpdateTransforms_0_001AC4A0 *m = gItemObjectBss_004AC970__as_ItemObj_UpdateTransforms_0_001AC4A0;
     for (i = 0; i < 0x10; i++) {
         upd_ItemObj_UpdateTransforms_0_001AC4A0(m, arg0);
         upd_ItemObj_UpdateTransforms_0_001AC4A0(m + 0x10, arg0);
@@ -829,7 +829,7 @@ void ItemObj_DrawAll_0_001AC820(O_ItemObj_DrawAll_0_001AC820 *o, s32 (*cb)(s8 **
             v = Player_GetCameraData_0_001C9B40();
         }
     } else if (o->xA6 == -1 || o->x8C == NULL) {
-        v = D_0030D0E0;
+        v = gGlowInitBss_0030D0E0;
     } else {
         v = *(s8 **)(*o->x8C + 0x188) + o->xA6 * 0xA0;
     }
@@ -868,7 +868,7 @@ s32 ItemObj_TestVisible_0_001ACD90(O_ItemObj_TestVisible_0_001ACD90 **a0, s16 bi
     idx = o->x8C;
     if (a != -2) idx = a;
     if (idx != -1) m = tbl[idx];
-    if (D_002022BC && (p = *D_002022BC) && p != o && p->x8C != -1) n = p->x154[p->x8C + 0x20];
+    if (gPlayerSbss_002022BC && (p = *gPlayerSbss_002022BC) && p != o && p->x8C != -1) n = p->x154[p->x8C + 0x20];
     if (idx == -1) {
         if (!(n & (1 << bit))) return 0;
     } else {
@@ -886,16 +886,16 @@ void ItemObj_DrawPass_1_001ACEB0(s32 arg0) {
     s32 j;
     u8 *r;
     s32 k;
-    for (i = 0, p = D_004AE370__as_ItemObj_DrawPass_1_001ACEB0; i < 0x40; i++, p += 0xD0) {
+    for (i = 0, p = gItemObjectBss_004AE370__as_ItemObj_DrawPass_1_001ACEB0; i < 0x40; i++, p += 0xD0) {
         ItemObj_DrawAll_0_001AC820__as_ItemObj_DrawPass_1_001ACEB0(p, arg0, 1);
         ItemObj_DrawAll_0_001AC820__as_ItemObj_DrawPass_1_001ACEB0(p + 0x3400, arg0, 1);
     }
-    for (j = 0, q = D_004AC970__as_ItemObj_DrawPass_1_001ACEB0; j < 0x10; j++, q += 0xD0) {
+    for (j = 0, q = gItemObjectBss_004AC970__as_ItemObj_DrawPass_1_001ACEB0; j < 0x10; j++, q += 0xD0) {
         ItemObj_DrawAll_0_001AC820__as_ItemObj_DrawPass_1_001ACEB0(q, arg0, 0);
         ItemObj_DrawAll_0_001AC820__as_ItemObj_DrawPass_1_001ACEB0(q + 0xD00, arg0, 0);
     }
     D_00222A50[0].b = 1;
-    for (k = 0, r = D_004AC630__as_ItemObj_DrawPass_1_001ACEB0; k < 4; k++, r += 0xD0) {
+    for (k = 0, r = gItemObjectSpawnBss_004AC630__as_ItemObj_DrawPass_1_001ACEB0; k < 4; k++, r += 0xD0) {
         ItemObj_DrawAll_0_001AC820__as_ItemObj_DrawPass_1_001ACEB0(r, arg0, 0);
     }
     D_00222A50[0].b = 0;
@@ -987,7 +987,7 @@ void ItemObj_SpawnProjectile_0_001AD2C0(s32 a0, s32 a1, s32 a2, E *e, s32 t0, s3
         case 1:
             o = Attack_SpawnSfx_0_001D1F20(a0, 0, a1, a2, e, t0, t1);
             if (o) {
-                Sfx_SetOwner_1_00167600(o, D_002022E4);
+                Sfx_SetOwner_1_00167600(o, gPlayerSbss_002022E4);
                 if (e->xA == 0xFFFF) {
                     Player_InitAttack_0_001C79B0(&d);
                     Sfx_GetState_0_001672B0(o, &d);
@@ -1003,31 +1003,31 @@ void ItemObj_ResetAll_0_001AD390(void) {
     s32 i;
 
     for (i = 0; i < 0x40; i++) {
-        if (D_004AE370[0][i].x9C != -1 && (D_004AE370[0][i].xA8.b & 1)) {
-            Mdl_ResetBones_0_00171610(D_004AE370[0][i].x84);
+        if (gItemObjectBss_004AE370[0][i].x9C != -1 && (gItemObjectBss_004AE370[0][i].xA8.b & 1)) {
+            Mdl_ResetBones_0_00171610(gItemObjectBss_004AE370[0][i].x84);
         }
-        if (D_004AE370[1][i].x9C != -1 && (D_004AE370[1][i].xA8.b & 1)) {
-            Mdl_ResetBones_0_00171610(D_004AE370[1][i].x84);
+        if (gItemObjectBss_004AE370[1][i].x9C != -1 && (gItemObjectBss_004AE370[1][i].xA8.b & 1)) {
+            Mdl_ResetBones_0_00171610(gItemObjectBss_004AE370[1][i].x84);
         }
     }
     for (i = 0; i < 0x10; i++) {
-        if (D_004AC970[0][i].x9C != -1 && (D_004AC970[0][i].xA8.b & 1)) {
-            Mdl_ResetBones_0_00171610(D_004AC970[0][i].x84);
+        if (gItemObjectBss_004AC970[0][i].x9C != -1 && (gItemObjectBss_004AC970[0][i].xA8.b & 1)) {
+            Mdl_ResetBones_0_00171610(gItemObjectBss_004AC970[0][i].x84);
         }
-        if (D_004AC970[1][i].x9C != -1 && (D_004AC970[1][i].xA8.b & 1)) {
-            Mdl_ResetBones_0_00171610(D_004AC970[1][i].x84);
+        if (gItemObjectBss_004AC970[1][i].x9C != -1 && (gItemObjectBss_004AC970[1][i].xA8.b & 1)) {
+            Mdl_ResetBones_0_00171610(gItemObjectBss_004AC970[1][i].x84);
         }
     }
     for (i = 0; i < 4; i++) {
-        if (D_004AC630[i].x9C != -1 && (D_004AC630[i].xA8.b & 1)) {
-            Mdl_ResetBones_0_00171610(D_004AC630[i].x84);
+        if (gItemObjectSpawnBss_004AC630[i].x9C != -1 && (gItemObjectSpawnBss_004AC630[i].xA8.b & 1)) {
+            Mdl_ResetBones_0_00171610(gItemObjectSpawnBss_004AC630[i].x84);
         }
     }
 }
 
 /* ItemObj_Animate_0_001AD4E0 */
 static inline void upd_ItemObj_Animate_0_001AD4E0(Node_ItemObj_Animate_0_001AD4E0 *n) {
-    Ent_ItemObj_Animate_0_001AD4E0 *tbl = D_002022B0__as_ItemObj_Animate_0_001AD4E0;
+    Ent_ItemObj_Animate_0_001AD4E0 *tbl = gItemObjectSbss_002022B0__as_ItemObj_Animate_0_001AD4E0;
     if (n != NULL && n->idx != -1) {
         if (n->xA9.f.b1) {
             Mtx_Compose_2_00173FD0__as_ItemObj_Animate_0_001AD4E0(n, &n->v40, &n->v50, &n->v60);
@@ -1042,7 +1042,7 @@ static inline void upd_ItemObj_Animate_0_001AD4E0(Node_ItemObj_Animate_0_001AD4E
     }
 }
 static inline Ent_ItemObj_Animate_0_001AD4E0 *ent_ItemObj_OffsetAll_0_001AC0F0(s16 i) {
-    if (D_002022B0__as_ItemObj_Animate_0_001AD4E0 != NULL && i > 0 && i < 0x400) return &D_002022B0__as_ItemObj_Animate_0_001AD4E0[i];
+    if (gItemObjectSbss_002022B0__as_ItemObj_Animate_0_001AD4E0 != NULL && i > 0 && i < 0x400) return &gItemObjectSbss_002022B0__as_ItemObj_Animate_0_001AD4E0[i];
     return NULL;
 }
 
@@ -1142,23 +1142,23 @@ void ItemObj_UpdateAll_1_001ADA30(f32 arg0) {
     s32 i;
 
     for (i = 0; i < 0x40; i++) {
-        ItemObj_Animate_0_001AD4E0__as_ItemObj_UpdateAll_1_001ADA30(&D_004AE370[0][i], arg0);
-        ItemObj_Animate_0_001AD4E0__as_ItemObj_UpdateAll_1_001ADA30(&D_004AE370[1][i], arg0);
+        ItemObj_Animate_0_001AD4E0__as_ItemObj_UpdateAll_1_001ADA30(&gItemObjectBss_004AE370[0][i], arg0);
+        ItemObj_Animate_0_001AD4E0__as_ItemObj_UpdateAll_1_001ADA30(&gItemObjectBss_004AE370[1][i], arg0);
     }
     for (i = 0; i < 0x10; i++) {
-        ItemObj_Animate_0_001AD4E0__as_ItemObj_UpdateAll_1_001ADA30(&D_004AC970[0][i], arg0);
-        ItemObj_Animate_0_001AD4E0__as_ItemObj_UpdateAll_1_001ADA30(&D_004AC970[1][i], arg0);
+        ItemObj_Animate_0_001AD4E0__as_ItemObj_UpdateAll_1_001ADA30(&gItemObjectBss_004AC970[0][i], arg0);
+        ItemObj_Animate_0_001AD4E0__as_ItemObj_UpdateAll_1_001ADA30(&gItemObjectBss_004AC970[1][i], arg0);
     }
     for (i = 0; i < 4; i++) {
-        ItemObj_Animate_0_001AD4E0__as_ItemObj_UpdateAll_1_001ADA30(&D_004AC630[i], arg0);
+        ItemObj_Animate_0_001AD4E0__as_ItemObj_UpdateAll_1_001ADA30(&gItemObjectSpawnBss_004AC630[i], arg0);
     }
     for (i = 0; i < 0x10; i++) {
-        if (D_004AC970[0][i].x9C != -1 && !(D_004AC970[0][i].x40.y < 29000.0f)) {
-            ItemObj_Free_1_001AF4A0(&D_004AC970[0][i]);
+        if (gItemObjectBss_004AC970[0][i].x9C != -1 && !(gItemObjectBss_004AC970[0][i].x40.y < 29000.0f)) {
+            ItemObj_Free_1_001AF4A0(&gItemObjectBss_004AC970[0][i]);
             ItemObj_SaveState_1_001AE510();
         }
-        if (D_004AC970[1][i].x9C != -1 && !(D_004AC970[1][i].x40.y < 29000.0f)) {
-            ItemObj_Free_1_001AF4A0(&D_004AC970[1][i]);
+        if (gItemObjectBss_004AC970[1][i].x9C != -1 && !(gItemObjectBss_004AC970[1][i].x40.y < 29000.0f)) {
+            ItemObj_Free_1_001AF4A0(&gItemObjectBss_004AC970[1][i]);
             ItemObj_SaveState_1_001AE510();
         }
     }
@@ -1167,7 +1167,7 @@ void ItemObj_UpdateAll_1_001ADA30(f32 arg0) {
 
 /* ItemObj_GetScale_0_001ADBA0 */
 void ItemObj_GetScale_0_001ADBA0(Obj3D *n, Vec *out) {
-    Ent_ItemObj_GetScale_0_001ADBA0 *tbl = D_002022B0__as_ItemObj_GetScale_0_001ADBA0;
+    Ent_ItemObj_GetScale_0_001ADBA0 *tbl = gItemObjectSbss_002022B0__as_ItemObj_GetScale_0_001ADBA0;
     out->x = out->y = out->z = 1.0f;
     out->w = 0.0f;
     if (n != NULL && n->x9C != -1) {
@@ -1183,7 +1183,7 @@ void ItemObj_GetScale_0_001ADBA0(Obj3D *n, Vec *out) {
 /* ItemObj_GetMatrix_0_001ADC60 */
 
 void ItemObj_GetMatrix_0_001ADC60(Node_ItemObj_GetMatrix_0_001ADC60 *n, Mtx *out) {
-    Ent_ItemObj_GetMatrix_0_001ADC60 *tbl = D_002022B0__as_ItemObj_GetMatrix_0_001ADC60;
+    Ent_ItemObj_GetMatrix_0_001ADC60 *tbl = gItemObjectSbss_002022B0__as_ItemObj_GetMatrix_0_001ADC60;
     if (n != NULL && n->idx != -1) {
         if (((u64)((s64)n->fA9 << 0x3E) >> 0x3F) != 0) {
             Mtx_Compose_2_00173FD0__as_ItemObj_GetMatrix_0_001ADC60(out, &n->v40, &n->v50, &n->v60);
@@ -1218,15 +1218,15 @@ void ItemObj_BindCaps_1_001ADD30(void) {
     s32 i;
 
     for (i = 0; i < 0x40; i++) {
-        fix(&D_004AE370[0][i]);
-        fix(&D_004AE370[1][i]);
+        fix(&gItemObjectBss_004AE370[0][i]);
+        fix(&gItemObjectBss_004AE370[1][i]);
     }
     for (i = 0; i < 0x10; i++) {
-        fix(&D_004AC970[0][i]);
-        fix(&D_004AC970[1][i]);
+        fix(&gItemObjectBss_004AC970[0][i]);
+        fix(&gItemObjectBss_004AC970[1][i]);
     }
     for (i = 0; i < 4; i++) {
-        fix(&D_004AC630[i]);
+        fix(&gItemObjectSpawnBss_004AC630[i]);
     }
 }
 
@@ -1251,14 +1251,14 @@ void ItemObj_DropToGround_0_001AE0E0(s32 arg0, Obj_ItemObj_DropToGround_0_001AE0
     ray.p1[3] = 1.0f;
     ray.p1[1] += 60000.0f;
     memset(&res, 0, 0x40);
-    if (arg0 == (&D_00201E80)[2]) {
+    if (arg0 == (&gMapSbss_00201E80)[2]) {
         side = 0;
     }
-    if (arg0 == (&D_00201E80)[3]) {
+    if (arg0 == (&gMapSbss_00201E80)[3]) {
         side = 1;
     }
     for (i = 0; i < 2; i++) {
-        s32 *p = ((s32 **)(&D_00201E80 + 2))[side];
+        s32 *p = ((s32 **)(&gMapSbss_00201E80 + 2))[side];
         if (p != 0) {
             MapColl_RayVsObjects_0_001B2180(*p, &res, &ray, 6, 3);
             if (res.hit != 0) {
@@ -1289,14 +1289,14 @@ s32 ItemObj_FindGround_0_001AE250(s32 arg0, f32 *pos, f32 *out) {
     sceVu0CopyVector__as_ItemObj_FindGround_0_001AE250(ray.p1, ray.p0);
     ray.p1[1] += 60000.0f;
     memset(&res, 0, 0x40);
-    if (arg0 == (&D_00201E80)[2]) {
+    if (arg0 == (&gMapSbss_00201E80)[2]) {
         side = 0;
     }
-    if (arg0 == (&D_00201E80)[3]) {
+    if (arg0 == (&gMapSbss_00201E80)[3]) {
         side = 1;
     }
     for (i = 0; i < 2; i++) {
-        s32 *p = ((s32 **)(&D_00201E80 + 2))[side];
+        s32 *p = ((s32 **)(&gMapSbss_00201E80 + 2))[side];
         if (p != 0) {
             MapColl_RayVsObjects_0_001B2180(*p, &res, &ray, 6, 3);
             if (res.hit != 0) {
@@ -1317,16 +1317,16 @@ Obj3D *ItemObj_AllocSlot_1_001AE360(s16 id, u8 side) {
     s32 i;
     s32 m;
 
-    ents = D_002022B0__as_ItemObj_AllocSlot_1_001AE360;
+    ents = gItemObjectSbss_002022B0__as_ItemObj_AllocSlot_1_001AE360;
     for (i = 0; i < 16; i++) {
-        if (D_004AC970[side][i].x9C == -1) return &D_004AC970[side][i];
+        if (gItemObjectBss_004AC970[side][i].x9C == -1) return &gItemObjectBss_004AC970[side][i];
     }
     for (k = 0; k < ents[id].x8; k++) {
         for (i = 0; i < 16; i++) {
-            if (ents[D_004AC5A0.t[side][i]->x9C].x8 <= k) {
-                ItemObj_Free_1_001AF4A0(*(Obj3D *volatile *)&D_004AC5A0.t[side][i]);
+            if (ents[gItemObjectSpawnBss_004AC5A0.t[side][i]->x9C].x8 <= k) {
+                ItemObj_Free_1_001AF4A0(*(Obj3D *volatile *)&gItemObjectSpawnBss_004AC5A0.t[side][i]);
                 for (m = 0; m < 16; m++) {
-                    if (D_004AC970[side][m].x9C == -1) return &D_004AC970[side][m];
+                    if (gItemObjectBss_004AC970[side][m].x9C == -1) return &gItemObjectBss_004AC970[side][m];
                 }
             }
         }
@@ -1337,30 +1337,30 @@ Obj3D *ItemObj_AllocSlot_1_001AE360(s16 id, u8 side) {
 #undef memcpy
 #undef Mdl_UpdateBoneMatricesCur_0_00171540
 #undef Sfx_SetTransform_1_001677C0
-#undef D_002022B0
+#undef gItemObjectSbss_002022B0
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/sbss.c): D_00202288, D_00202290, D_002022A0, D_002022B0 */
-B *D_00202288;
-A *D_00202290;
-s32 D_002022A0;
-Ent *D_002022B0;
-/* data twins (src/game/data/pad_get_connected_bss_004AC630.c): D_004B4B70, D_004B4B74, D_004B4B80, D_004B4B88 */
-s32 D_004B4B70[0x1];
-s32 D_004B4B74[0x1];
-s32 *D_004B4B80[0x1];
-s32 D_004B4B88[0x2];
+/* data twins (src/game/data/sbss.c): gItemObjectSbss_00202288, gItemObjectSbss_00202290, gItemObjectSbss_002022A0, gItemObjectSbss_002022B0 */
+B *gItemObjectSbss_00202288;
+A *gItemObjectSbss_00202290;
+s32 gItemObjectSbss_002022A0;
+Ent *gItemObjectSbss_002022B0;
+/* data twins (src/game/data/pad_get_connected_bss_004AC630.c): gItemObjectBss_004B4B70, gItemObjectBss_004B4B74, gItemObjectBss_004B4B80, gItemObjectBss_004B4B88 */
+s32 gItemObjectBss_004B4B70[0x1];
+s32 gItemObjectBss_004B4B74[0x1];
+s32 *gItemObjectBss_004B4B80[0x1];
+s32 gItemObjectBss_004B4B88[0x2];
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/pad_get_connected_bss_004AC630.c): D_004AC970__grp: D_004AC970@0x0 */
+/* data group (src/game/data/pad_get_connected_bss_004AC630.c): D_004AC970__grp: gItemObjectBss_004AC970@0x0 */
 u8 D_004AC970__grp[0xd00] __attribute__((aligned(16)));
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/pad_get_connected_bss_004AC630.c): D_004AE370__grp: D_004AE370@0x0 */
+/* data group (src/game/data/pad_get_connected_bss_004AC630.c): D_004AE370__grp: gItemObjectBss_004AE370@0x0 */
 u8 D_004AE370__grp[0x3400] __attribute__((aligned(16)));
 #endif

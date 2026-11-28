@@ -87,19 +87,19 @@ const char gStrScrChr0126Bin_001FB6E0[0x20] = "scr/chr0126_.bin\000\000\000\000\
 const char gStrScrChr0127Bin_001FB700[0x20] = "scr/chr0127_.bin\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
 #endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/enemy/enemy_script.c */
-const s32 D_001FB720[0x6] = { 0x2f726373, 0x30726863, 0x5f303032, 0x6e69622e, 0, 0 };
+const s32 gEnemyScriptRodata_001FB720[0x6] = { 0x2f726373, 0x30726863, 0x5f303032, 0x6e69622e, 0, 0 };
 #endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/effect/fx_proc.c */
-const f32 D_001FB738[0x2] = { 100000.0f, 0.0f };
+const f32 gFxProcRodata_001FB738[0x2] = { 100000.0f, 0.0f };
 #endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/file.c */
-const s8 D_001FB740[0x7] = "%s%s%s\000";
-const s8 D_001FB748[0x7] = "host0:\000";
-const s8 D_001FB750[0x8] = "S:/STA/\000";
-const s8 D_001FB758[0x8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
-const s8 D_001FB760[0x10] = ";1\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
+const s8 gFileRodata_001FB740[0x7] = "%s%s%s\000";
+const s8 gFileRodata_001FB748[0x7] = "host0:\000";
+const s8 gFileRodata_001FB750[0x8] = "S:/STA/\000";
+const s8 gFileRodata_001FB758[0x8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
+const s8 gFileRodata_001FB760[0x10] = ";1\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
 #endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/core/iop.c */
-const u8 D_001FB770[0x1d] = "cdrom0:\\IOPRP250.IMG;1\000\000\000\000\000\000\000";
+const u8 gIopRodata_001FB770[0x1d] = "cdrom0:\\IOPRP250.IMG;1\000\000\000\000\000\000\000";
 #endif
 const u8 pad_001FB78D[0x3] __attribute__((aligned(1))) = { 0, 0, 0 };

@@ -3,27 +3,27 @@
 @@ -1,21 +1,20 @@
  #include "common.h"
 -void sceVu0CopyVector(u8 *, s32);                /* extern */
--extern u8 *D_002022E4;
+-extern u8 *gPlayerSbss_002022E4;
 -void Player_GetPos_1_001C9410(u8 *arg0) {
 -    s32 temp_3;
 -    s32 var_3;
 +typedef struct { char pad[0x518]; u8 *p; } S;
-+extern S *D_002022E4;
++extern S *gPlayerSbss_002022E4;
 +void sceVu0CopyVector(f32 *v0, f32 *v1);
 +void Player_GetPos_1_001C9410(f32 *v)
 +{
 +    u8 *t;
-     if (D_002022E4 == NULL) {
+     if (gPlayerSbss_002022E4 == NULL) {
 -        var_3 = 0;
 +        t = NULL;
      } else {
--        temp_3 = M2C_FIELD(D_002022E4, s32 *, 0x518);
+-        temp_3 = M2C_FIELD(gPlayerSbss_002022E4, s32 *, 0x518);
 -        if (temp_3 == 0) {
 -            var_3 = 0;
 -        } else {
 -            var_3 = temp_3 + 0x180;
 -        }
-+        u8 *p = D_002022E4->p;
++        u8 *p = gPlayerSbss_002022E4->p;
 +        if (p == NULL)
 +            t = NULL;
 +        else

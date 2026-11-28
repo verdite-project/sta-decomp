@@ -49,17 +49,17 @@ void Noise_Eval_1_0015ED80(Noise *p, u32 n, f32 *out, f32 x, f32 lo, f32 hi) {
     xs = x * scale;
     if (p->f4 != 0) {
         for (i = 0; i < n; i++) {
-            f32 r = Noise_Fbm_1_0015F040(xs + (f32)D_00316A20[idx[i]], 1.0f - f1C, 2.0f, 6.0f);
+            f32 r = Noise_Fbm_1_0015F040(xs + (f32)gNoiseFbmBss_00316A20[idx[i]], 1.0f - f1C, 2.0f, 6.0f);
             out[i] = amp * (r * m) + base * m;
         }
     } else {
         for (i = 0; i < n; i++) {
-            f32 v = 4096.0f + (xs + (f32)D_00316A20[idx[i]]);
+            f32 v = 4096.0f + (xs + (f32)gNoiseFbmBss_00316A20[idx[i]]);
             s32 k = (s32)v;
             u8 a = k;
             f32 f = v - (f32)k;
-            f32 g0 = f * D_003139E0[D_00316A20[a]];
-            f32 d = (f - 1.0f) * D_003139E0[D_00316A20[(u8)(a + 1)]] - g0;
+            f32 g0 = f * gNoiseFbmBss_003139E0[gNoiseFbmBss_00316A20[a]];
+            f32 d = (f - 1.0f) * gNoiseFbmBss_003139E0[gNoiseFbmBss_00316A20[(u8)(a + 1)]] - g0;
             f32 s = (3.0f - 2.0f * f) * (f * f);
             f32 r = g0 + s * d;
             out[i] = amp * (r * m) + base * m;

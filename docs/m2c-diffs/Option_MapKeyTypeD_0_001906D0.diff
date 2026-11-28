@@ -1,7 +1,7 @@
 --- m2c
 +++ matched
 @@ -2,7 +2,11 @@
- extern s32 D_001F2B70[];
+ extern s32 gOptionData_001F2B70[];
 -s32 Option_MapKeyTypeD_0_001906D0(s32 arg0) {
 -    if ((arg0 != 2) && (arg0 != 1) && (arg0 != 0)) {
 -        return 0;
@@ -11,8 +11,8 @@
 +    case 0:
 +    case 1:
 +    case 2:
-+        return D_001F2B70[x];
++        return gOptionData_001F2B70[x];
      }
--    return D_001F2B70[arg0];
+-    return gOptionData_001F2B70[arg0];
 +    return 0;
  }

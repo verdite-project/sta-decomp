@@ -38,7 +38,7 @@ Obj **Pool_Alloc_3_001288C0(s32, s32);
 void Pool_ArrayAppend_0_001535B0(s32 *, Obj **);
 void memset(Obj *, s32, s32);
 void sceVu0CopyMatrix(Mtx *, Mtx *);
-extern Mtx D_001F2340[];
+extern Mtx gMdlCreateInstanceData_001F2340[];
 static inline Blk *getb(s32 d, u32 i, s32 sz) { return (Blk *)(d + i * sz); }
 static inline Obj **body(s32 *arg0, Src **arg1, s32 *poff, s32 arg3, Src *src) {
     s32 n;
@@ -96,8 +96,8 @@ static inline Obj **body(s32 *arg0, Src **arg1, s32 *poff, s32 arg3, Src *src) {
             blk = (Blk *)((s32)o->data + (u32)i * (n * 0x140 + 0x200));
             base = *src->x10;
             es = (s32)src->e;
-            sceVu0CopyMatrix(&blk->nd[0].m1, D_001F2340);
-            sceVu0CopyMatrix(&blk->nd[0].m0, D_001F2340);
+            sceVu0CopyMatrix(&blk->nd[0].m1, gMdlCreateInstanceData_001F2340);
+            sceVu0CopyMatrix(&blk->nd[0].m0, gMdlCreateInstanceData_001F2340);
             blk->nd[0].b130 = 0xFF;
             blk->nd[0].b132 = 0xFF;
             blk->nd[0].f134 = 1.0f;
@@ -106,8 +106,8 @@ static inline Obj **body(s32 *arg0, Src **arg1, s32 *poff, s32 arg3, Src *src) {
             for (j = 0; j < n; j++) {
                 e = (Ent *)(es + (*poff + j) * 16);
                 if (e->x8 == 0) {
-                    sceVu0CopyMatrix(&blk->nd[j + 1].m0, D_001F2340);
-                    sceVu0CopyMatrix(&blk->nd[j + 1].m1, D_001F2340);
+                    sceVu0CopyMatrix(&blk->nd[j + 1].m0, gMdlCreateInstanceData_001F2340);
+                    sceVu0CopyMatrix(&blk->nd[j + 1].m1, gMdlCreateInstanceData_001F2340);
                 } else {
                     sceVu0CopyMatrix(&blk->nd[j + 1].m0, (Mtx *)(base + e->x8));
                     sceVu0CopyMatrix(&blk->nd[j + 1].m1, (Mtx *)(base + e->xC));
@@ -137,19 +137,19 @@ INCLUDE_ASM(Mdl_CreateInstance_0_00174230);
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-extern unsigned char D_00202030[];
-extern unsigned char D_00317230[];
-extern unsigned char D_00317238[];
-extern unsigned char D_0031723C[];
-extern unsigned char D_00486900[];
-extern unsigned char D_00486940[];
-/* data group (src/game/data/screen_fx_flash_data_001F2340.c): D_001F2340__grp: D_001F2340@0x0 */
-int D_001F2340__grp[0x30] __attribute__((aligned(16))) = { 0x3f800000, 0, 0, 0, 0, 0x3f800000, 0, 0, 0, 0, 0x3f800000, 0, 0, 0, 0, 0x3f800000, (int)D_00486940, (int)D_00486900, (int)D_0031723C, (int)D_00317238, (int)D_00317230, (int)D_00202030, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+extern unsigned char gDoorSbss_00202030[];
+extern unsigned char gMenuBss_00317230[];
+extern unsigned char gMapCommandBss_00317238[];
+extern unsigned char gPlayerBss_0031723C[];
+extern unsigned char gMdlCreateInstanceBss_00486900[];
+extern unsigned char gMdlCreateInstanceBss_00486940[];
+/* data group (src/game/data/screen_fx_flash_data_001F2340.c): D_001F2340__grp: gMdlCreateInstanceData_001F2340@0x0 */
+int D_001F2340__grp[0x30] __attribute__((aligned(16))) = { 0x3f800000, 0, 0, 0, 0, 0x3f800000, 0, 0, 0, 0, 0x3f800000, 0, 0, 0, 0, 0x3f800000, (int)gMdlCreateInstanceBss_00486940, (int)gMdlCreateInstanceBss_00486900, (int)gPlayerBss_0031723C, (int)gMapCommandBss_00317238, (int)gMenuBss_00317230, (int)gDoorSbss_00202030, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/ui_anim_bss.c): D_00486900, D_00486940 */
-unsigned char D_00486900[0x40];
-unsigned char D_00486940[0x40];
+/* data twins (src/game/data/ui_anim_bss.c): gMdlCreateInstanceBss_00486900, gMdlCreateInstanceBss_00486940 */
+unsigned char gMdlCreateInstanceBss_00486900[0x40];
+unsigned char gMdlCreateInstanceBss_00486940[0x40];
 #endif

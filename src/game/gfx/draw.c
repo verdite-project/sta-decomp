@@ -23,10 +23,10 @@ typedef struct { V_Draw_Prim_1_00155DB0 v[3]; s32 x30[4]; u32 fl; s32 x44[3]; V_
 typedef struct { Vec a; Vec b; s32 mode; u32 c0; u32 c1; s32 pad; } V_Draw_SelectionRing_0_00156450;
 typedef f32 Mtx_Draw_ShadowDisc_0_00156920[4][4];
 typedef struct { f32 x0[3]; f32 xC; f32 x10[3]; f32 x1C; Mtx_Draw_ShadowDisc_0_00156920 x20; s32 x60; } S;
-extern s32 D_00201F3C;
-extern f32 D_001F2140[];
-extern f32 D_001F2130[];
-extern Mtx_Draw_ShadowDisc_0_00156920 D_002F1840;
+extern s32 gDrawSbss_00201F3C;
+extern f32 gMatrixFromData_001F2140[];
+extern f32 gMatrixFromData_001F2130[];
+extern Mtx_Draw_ShadowDisc_0_00156920 gGameMainBss_002F1840;
 void Draw_Sprite_1_00155BD0(Src *s);
 void Draw_Prim_1_00155DB0(Tri *t);
 void Draw_SelectionRing_0_00156450(void *p, u32 col, f32 h);
@@ -304,7 +304,7 @@ void Draw_Prim_1_00155DB0(Tri *t) {
         p += 8;
     }
     q.q = 0;
-    q.w[3] = D_00201F3C | 0x15000000;
+    q.w[3] = gDrawSbss_00201F3C | 0x15000000;
     p[0] = q;
     GsPkt_CloseChain_1_001549D0();
 }
@@ -443,16 +443,16 @@ void Draw_ShadowDisc_0_00156920(S *s) {
     b[2][2] = 1.0f;
     sceVu0CopyVector(b[2], s->x10);
     b[2][3] = 0.0f;
-    sceVu0CopyVector(b[1], D_001F2140);
+    sceVu0CopyVector(b[1], gMatrixFromData_001F2140);
     sceVu0OuterProduct(b[0], b[1], b[2]);
     if (sqrtf(sceVu0InnerProduct(b[0], b[0])) < 1e-5f) {
-        sceVu0CopyVector(b[0], D_001F2130);
+        sceVu0CopyVector(b[0], gMatrixFromData_001F2130);
     } else {
         sceVu0Normalize(b[0], b[0]);
     }
     sceVu0OuterProduct(b[1], b[2], b[0]);
     if (sqrtf(sceVu0InnerProduct(b[1], b[1])) < 1e-5f) {
-        sceVu0CopyVector(b[0], D_001F2140);
+        sceVu0CopyVector(b[0], gMatrixFromData_001F2140);
     } else {
         sceVu0Normalize(b[1], b[1]);
     }
@@ -460,7 +460,7 @@ void Draw_ShadowDisc_0_00156920(S *s) {
     sceVu0CopyVector(a[3], s->x0);
     a[3][3] = 1.0f;
     sceVu0MulMatrix(c, s->x20, a);
-    sceVu0MulMatrix(d, D_002F1840, c);
+    sceVu0MulMatrix(d, gGameMainBss_002F1840, c);
     Draw_SelectionRing_0_00156450(d, s->x1C / s->xC, s->x60);
 }
 #undef sceVu0CopyVector
@@ -468,6 +468,6 @@ void Draw_ShadowDisc_0_00156920(S *s) {
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/sbss.c): D_00201F3C */
-s32 D_00201F3C;
+/* data twins (src/game/data/sbss.c): gDrawSbss_00201F3C */
+s32 gDrawSbss_00201F3C;
 #endif

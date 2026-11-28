@@ -8,20 +8,20 @@ typedef struct { u8 b0 : 3; u8 b3 : 3; u8 b6 : 2; } G;
 typedef struct { s32 x0; s32 h; u8 p8[0x10]; s32 x18; char name[0x100]; } E_ImageLoader_Request_1_001E1570;
 typedef struct { s32 x0; s32 h; char p8[0x114]; } E_ImageLoader_Init_0_001E1770;
 typedef struct Ch { s32 x0; s32 x4; u32 type : 8; u32 off : 24; u16 xC; u16 xE; } Ch;
-extern E D_004BB110[16];
-extern S D_004BB050[];
-extern P *D_002023B0;
+extern E gMapSeStreamBss_004BB110[16];
+extern S gMapSeStreamBss_004BB050[];
+extern P *gMapSeStreamSbss_002023B0;
 #ifndef NONMATCHING
-extern s32 D_00201E54;
+extern s32 gMapSeStreamSdata_00201E54;
 #else
-/* data twins (src/game/data/sdata.c): D_00201E54 */
-static s32 D_00201E54 = -1;
+/* data twins (src/game/data/sdata.c): gMapSeStreamSdata_00201E54 */
+static s32 gMapSeStreamSdata_00201E54 = -1;
 #endif
 extern G D_00222A54[];
 extern s32 gLoadBuf_00270F40[];
-extern E_ImageLoader_Init_0_001E1770 D_004BB110__as_ImageLoader_Init_0_001E1770[16];
-extern char D_004BB050__as_ImageLoader_Init_0_001E1770[];
-extern const s8 D_001FE890[];
+extern E_ImageLoader_Init_0_001E1770 gMapSeStreamBss_004BB110__as_ImageLoader_Init_0_001E1770[16];
+extern char gMapSeStreamBss_004BB050__as_ImageLoader_Init_0_001E1770[];
+extern const s8 gMapSeStreamRodata_001FE890[];
 void MapSe_StreamUpdate_0_001E1250(void);
 S* ImageLoader_Request_1_001E1570(const char *name, s32 idx);
 void ImageLoader_SetFlag_0_001E1760(s32 arg0);
@@ -50,18 +50,18 @@ void MapSe_StreamUpdate_0_001E1250(void) {
     s32 h;
     u32 n;
 
-    if (D_002023B0 != NULL && (!D_002023B0->b1 || D_002023B0->x14 == 0)) {
-        if (D_00201E54 == -1) {
+    if (gMapSeStreamSbss_002023B0 != NULL && (!gMapSeStreamSbss_002023B0->b1 || gMapSeStreamSbss_002023B0->x14 == 0)) {
+        if (gMapSeStreamSdata_00201E54 == -1) {
             for (i = 0; i < 16; i++) {
-                if (D_004BB110[i].x0 == 0 && D_004BB110[i].x18 != 0) {
-                    D_00201E54 = i;
+                if (gMapSeStreamBss_004BB110[i].x0 == 0 && gMapSeStreamBss_004BB110[i].x18 != 0) {
+                    gMapSeStreamSdata_00201E54 = i;
                     return;
                 }
             }
             return;
         }
-        e = &D_004BB110[D_00201E54];
-        s = &D_004BB050[D_00201E54];
+        e = &gMapSeStreamBss_004BB110[gMapSeStreamSdata_00201E54];
+        s = &gMapSeStreamBss_004BB050[gMapSeStreamSdata_00201E54];
         if (e->x10 == NULL) {
             if (&e->x8 != NULL) {
                 h = Arc_FindByHash_2_0015ABD0(File_HashName_3_00159D10(e->name));
@@ -69,7 +69,7 @@ void MapSe_StreamUpdate_0_001E1250(void) {
                 File_Close_2_0015AB80(h);
             }
             e->h = Task_SetPriorityWrap_0_0014DB00(e->name, 0xFE, gLoadBuf_00270F40);
-            e->x10 = Pool_Alloc_3_001288C0(D_002023B0, e->x8);
+            e->x10 = Pool_Alloc_3_001288C0(gMapSeStreamSbss_002023B0, e->x8);
             Task_FlushWrap_0_0014DAC0(e->h, 0);
             e->xC = 0;
             s->b1 = 1;
@@ -88,18 +88,18 @@ void MapSe_StreamUpdate_0_001E1250(void) {
         case 3:
         case 6:
             if (e->x0 == 0) {
-                s->x0 = (s32)D_004BB110[D_00201E54].x10;
+                s->x0 = (s32)gMapSeStreamBss_004BB110[gMapSeStreamSdata_00201E54].x10;
                 s->b1 = 0;
                 s->b0 = 1;
-                i = D_00201E54;
-                if (D_004BB110[i].h) {
-                    Task_RunWrap_0_0014DAB0(D_004BB110[i].h);
-                    D_004BB110[i].h = 0;
+                i = gMapSeStreamSdata_00201E54;
+                if (gMapSeStreamBss_004BB110[i].h) {
+                    Task_RunWrap_0_0014DAB0(gMapSeStreamBss_004BB110[i].h);
+                    gMapSeStreamBss_004BB110[i].h = 0;
                 }
-                memset(&D_004BB110[i], 0, 0x11C);
+                memset(&gMapSeStreamBss_004BB110[i], 0, 0x11C);
                 e->x0 = 1;
                 e->x18 = 0;
-                D_00201E54 = -1;
+                gMapSeStreamSdata_00201E54 = -1;
             }
             break;
         case 1:
@@ -112,20 +112,20 @@ void MapSe_StreamUpdate_0_001E1250(void) {
 }
 
 /* ImageLoader_Request_1_001E1570 */
-#define D_004BB110 D_004BB110__as_ImageLoader_Request_1_001E1570
-extern E_ImageLoader_Request_1_001E1570 D_004BB110__as_ImageLoader_Request_1_001E1570[16];
-#define D_002023B0 D_002023B0__as_ImageLoader_Request_1_001E1570
-extern s32 D_002023B0__as_ImageLoader_Request_1_001E1570;
+#define gMapSeStreamBss_004BB110 gMapSeStreamBss_004BB110__as_ImageLoader_Request_1_001E1570
+extern E_ImageLoader_Request_1_001E1570 gMapSeStreamBss_004BB110__as_ImageLoader_Request_1_001E1570[16];
+#define gMapSeStreamSbss_002023B0 gMapSeStreamSbss_002023B0__as_ImageLoader_Request_1_001E1570
+extern s32 gMapSeStreamSbss_002023B0__as_ImageLoader_Request_1_001E1570;
 
 /* ImageLoader_Request_1_001E1570 */
 S *ImageLoader_Request_1_001E1570(const char *name, s32 idx)
 {
     S *s;
 
-    s = &D_004BB050[idx];
+    s = &gMapSeStreamBss_004BB050[idx];
     if (s->x0) {
         if (s->x0 && s->b0) {
-            Pool_Free_2_00128580(D_002023B0, s->x0);
+            Pool_Free_2_00128580(gMapSeStreamSbss_002023B0, s->x0);
             s->x0 = 0;
             s->b0 = 0;
             s->b1 = 0;
@@ -133,25 +133,25 @@ S *ImageLoader_Request_1_001E1570(const char *name, s32 idx)
             s->b3 = 1;
         }
         if (s->x0) {
-            Pool_Free_2_00128580(D_002023B0, s->x0);
+            Pool_Free_2_00128580(gMapSeStreamSbss_002023B0, s->x0);
         }
-        if (D_004BB110[idx].h) {
-            Task_RunWrap_0_0014DAB0(D_004BB110[idx].h);
-            D_004BB110[idx].h = 0;
+        if (gMapSeStreamBss_004BB110[idx].h) {
+            Task_RunWrap_0_0014DAB0(gMapSeStreamBss_004BB110[idx].h);
+            gMapSeStreamBss_004BB110[idx].h = 0;
         }
-        memset(&D_004BB110[idx], 0, 0x11C);
+        memset(&gMapSeStreamBss_004BB110[idx], 0, 0x11C);
     }
-    strcpy(D_004BB110[idx].name, name);
+    strcpy(gMapSeStreamBss_004BB110[idx].name, name);
     s->b0 = 0;
     s->b1 = 1;
     s->b2 = 0;
-    D_004BB110[idx].x18 = 1;
+    gMapSeStreamBss_004BB110[idx].x18 = 1;
     return s;
 }
 
 /* ImageLoader_SetFlag_0_001E1760 */
 void ImageLoader_SetFlag_0_001E1760(s32 arg0) {
-    D_002023B0 = arg0;
+    gMapSeStreamSbss_002023B0 = arg0;
 }
 
 /* ImageLoader_Init_0_001E1770 */
@@ -160,10 +160,10 @@ void ImageLoader_Init_0_001E1770(void)
 {
     s32 i;
     E_ImageLoader_Init_0_001E1770 *e;
-    memset(D_004BB110__as_ImageLoader_Init_0_001E1770, 0, 0x11C0);
-    memset(D_004BB050__as_ImageLoader_Init_0_001E1770, 0, 0xC0);
+    memset(gMapSeStreamBss_004BB110__as_ImageLoader_Init_0_001E1770, 0, 0x11C0);
+    memset(gMapSeStreamBss_004BB050__as_ImageLoader_Init_0_001E1770, 0, 0xC0);
     Task_Register_0_0014DB10(MapSe_StreamUpdate_0_001E1250);
-    e = D_004BB110__as_ImageLoader_Init_0_001E1770;
+    e = gMapSeStreamBss_004BB110__as_ImageLoader_Init_0_001E1770;
     for (i = 0; i < 16; i++, e++) {
         if (e->h) {
             Task_RunWrap_0_0014DAB0(e->h);
@@ -172,8 +172,8 @@ void ImageLoader_Init_0_001E1770(void)
         memset(e, 0, 0x11C);
     }
 }
-#undef D_004BB110
-#undef D_002023B0
+#undef gMapSeStreamBss_004BB110
+#undef gMapSeStreamSbss_002023B0
 
 /* MapSe_BindBank_0_001E1810 */
 void MapSe_BindBank_0_001E1810(Ch *a0, s32 a1) {
@@ -185,7 +185,7 @@ void MapSe_BindBank_0_001E1810(Ch *a0, s32 a1) {
     case 0x4D415453:
     c = (Ch *)((u8 *)a0 + a0->off);
     for (i = 0; i < a0->xE; i++) {
-        if (c->x0 == (D_001FE890[0] | (((const s8 *)D_001FE890)[1] << 8) | (((const s8 *)D_001FE890)[2] << 16) | (((const s8 *)D_001FE890)[3] << 24))) {
+        if (c->x0 == (gMapSeStreamRodata_001FE890[0] | (((const s8 *)gMapSeStreamRodata_001FE890)[1] << 8) | (((const s8 *)gMapSeStreamRodata_001FE890)[2] << 16) | (((const s8 *)gMapSeStreamRodata_001FE890)[3] << 24))) {
             d = (Ch *)((u8 *)c + c->off);
             for (j = 0; j < c->xE; j++) {
                 switch (d->x0) {
@@ -206,8 +206,8 @@ void MapSe_BindBank_0_001E1810(Ch *a0, s32 a1) {
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/sbss.c): D_002023B0 */
-P *D_002023B0;
+/* data twins (src/game/data/sbss.c): gMapSeStreamSbss_002023B0 */
+P *gMapSeStreamSbss_002023B0;
 #endif
 
 #ifdef NONMATCHING
@@ -216,18 +216,18 @@ P *D_002023B0;
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/save_system_start_bss.c): D_004BB050 */
-S D_004BB050[0xc0 / sizeof(S)];
+/* data twins (src/game/data/save_system_start_bss.c): gMapSeStreamBss_004BB050 */
+S gMapSeStreamBss_004BB050[0xc0 / sizeof(S)];
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/map_se_stream_rodata.c): D_001FE890__grp: D_001FE890@0x0, D_001FE891@0x1, D_001FE892@0x2, D_001FE893@0x3, D_001FE8A0@0x10 */
+/* data group (src/game/data/map_se_stream_rodata.c): D_001FE890__grp: gMapSeStreamRodata_001FE890@0x0, gMapSeStreamRodata_001FE891@0x1, gMapSeStreamRodata_001FE892@0x2, gMapSeStreamRodata_001FE893@0x3, gMapSeStreamRodata_001FE8A0@0x10 */
 char D_001FE890__grp[0x20] __attribute__((aligned(16))) = "STSE\000\000\000\000\000\000\000\000\000\000\000\000se/m%3.03ds.mse\000";
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data group (src/game/data/save_system_start_bss.c): D_004BB110__grp: D_004BB110@0x0, D_004BB120@0x10 */
+/* data group (src/game/data/save_system_start_bss.c): D_004BB110__grp: gMapSeStreamBss_004BB110@0x0, gMapSeStreamBss_004BB120@0x10 */
 u8 D_004BB110__grp[0x11c0] __attribute__((aligned(16)));
 #endif

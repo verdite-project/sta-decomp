@@ -5,6 +5,6 @@
 #pragma explicit_zero_data on
 
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/item/item_object_spawn.c */
-Vec D_001F3820 = { 1.0f, 1.0f, 1.0f, 1.0f };
-Vec D_001F3830 = { 1.0f, 1.0f, 1.0f, 1.0f };
+Vec gItemObjectSpawnData_001F3820 = { 1.0f, 1.0f, 1.0f, 1.0f };
+Vec gItemObjectSpawnData_001F3830 = { 1.0f, 1.0f, 1.0f, 1.0f };
 #endif

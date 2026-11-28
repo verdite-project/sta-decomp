@@ -3,7 +3,7 @@
  * pointer gets merged by gcc (21 words); the split of s/p over the cases changes nothing. */
 #include "common.h"
 extern u16 D_001FE918[][0xBD];
-extern u16 D_001F3A60[][0xBD];
+extern u16 gShopMenuData_001F3A60[][0xBD];
 
 u8 *Sjis_DecodeChar_2_001E5B18(u16 *out, u8 *s) {
     u32 c;
@@ -37,7 +37,7 @@ u8 *Sjis_DecodeChar_2_001E5B18(u16 *out, u8 *s) {
         s++;
         hi = c - 0xE0;
         if ((u8)(*s - 0x40) >= 0xBD) return s;
-        *out = D_001F3A60[hi][*s];
+        *out = gShopMenuData_001F3A60[hi][*s];
         return s + 1;
     }
     *out = *s;

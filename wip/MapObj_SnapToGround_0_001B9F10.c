@@ -1,7 +1,7 @@
 #include "common.h"
 typedef struct { u8 b0 : 1; u8 b1 : 1; u8 b2 : 1; u8 b3 : 1; u8 b4 : 1; u8 b5 : 1; u8 b6 : 1; u8 b7 : 1; } BF8;
 typedef struct { u8 v : 2; } BF50;
-extern s32 D_00201E80;
+extern s32 gMapSbss_00201E80;
 s8 *Mdl_GetFrameData_0_001715B0(s8 **);
 void sceVu0SubVector(Vec *, Vec *, Vec *);
 f32 fabsf(f32);
@@ -40,7 +40,7 @@ void MapObj_SnapToGround_0_001B9F10(Vec *pos, Vec *rot, f32 scale, f32 maxh) {
     f32 diff;
     Vec d;
 
-    for (k = 0, q = (s8 ***)(&D_00201E80 + 2); k < 2; k++, q++) {
+    for (k = 0, q = (s8 ***)(&gMapSbss_00201E80 + 2); k < 2; k++, q++) {
         if (*q == NULL) continue;
         p = **q;
         if (p == NULL) continue;

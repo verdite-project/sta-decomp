@@ -2,7 +2,7 @@
 +++ matched
 @@ -1,14 +1,8 @@
  #include "common.h"
--extern s32 D_00201DC8;
+-extern s32 gMapStateSdata_00201DC8;
 -s32 Bestiary_IsKilled_1_001A9F60(s64 arg0) {
 -    s64 temp_3;
 -    temp_3 = (s64) (arg0 << 0x30) >> 0x30;
@@ -10,14 +10,14 @@
 -        if (temp_3 >= 0x81) {
 -            goto block_3;
 -        }
--        return *(D_00201DC8 + temp_3) & 1;
+-        return *(gMapStateSdata_00201DC8 + temp_3) & 1;
 -    }
 -block_3:
 -    return 0;
-+extern u8 *D_00201DC8;
++extern u8 *gMapStateSdata_00201DC8;
 +s32 Bestiary_IsKilled_1_001A9F60(s16 i)
 +{
 +    if (0 > i || i > 0x80)
 +        return 0;
-+    return D_00201DC8[i] & 1;
++    return gMapStateSdata_00201DC8[i] & 1;
  }

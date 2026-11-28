@@ -5,11 +5,11 @@
 /* used by: item_object, item_object_spawn, text_001AE510.s */
 
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/item/item_object_spawn.c */
-u8 D_004AC5A0[0x4]; /* also D_004AC5A2 */
+u8 gItemObjectSpawnBss_004AC5A0[0x4]; /* also D_004AC5A2 */
 #endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/save/map_state.c */
-u8 D_004AA440[0x2160];
+u8 gMapStateBss_004AA440[0x2160];
 #endif
 #ifndef NONMATCHING /* the NONMATCHING build defines these in src/game/save/save_byte.c */
-u8 D_004A5A60[0x49e0];
+u8 gSaveByteBss_004A5A60[0x49e0];
 #endif

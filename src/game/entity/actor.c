@@ -92,29 +92,29 @@ typedef struct {
 } P;
 typedef struct { f32 f; u8 pe[316]; } El_Actor_ResolveGround_0_0013A720;
 typedef struct { u8 pd[564]; El_Actor_ResolveGround_0_0013A720 e[4]; } Tb;
-extern QV D_001F1C80;
-extern Mtx D_001F2170;
+extern QV gActorData_001F1C80;
+extern Mtx gMatrixFromData_001F2170;
 extern f32 D_00222A48[];
-extern s32 D_00201E80;
+extern s32 gMapSbss_00201E80;
 extern F7 D_00222A51[];
 #ifndef NONMATCHING
-extern s16 D_001F1C30[];
+extern s16 gActorData_001F1C30[];
 #else
-/* data twins (src/game/data/game_main_data.c): D_001F1C30 */
-static s16 D_001F1C30[0x10] __attribute__((aligned(4))) = { 0x1e0, 0x1e0, 0x1e0, 0x1e1, 0x1e6, 0x1e2, 0x1e3, 0x1e5, 0x1e0, 0x1e0, -1, -1, -1, -1, 0x1e4, -1 };
+/* data twins (src/game/data/game_main_data.c): gActorData_001F1C30 */
+static s16 gActorData_001F1C30[0x10] __attribute__((aligned(4))) = { 0x1e0, 0x1e0, 0x1e0, 0x1e1, 0x1e6, 0x1e2, 0x1e3, 0x1e5, 0x1e0, 0x1e0, -1, -1, -1, -1, 0x1e4, -1 };
 #endif
-extern s16 D_001F1C50[];
+extern s16 gScriptData_001F1C50[];
 #ifndef NONMATCHING
-extern s16 D_001F1C60[];
+extern s16 gActorData_001F1C60[];
 #else
-/* data twins (src/game/data/game_main_data.c): D_001F1C60 */
-static s16 D_001F1C60[0x8] __attribute__((aligned(4))) = { 0x1f9, 0x1fa, 0x1fb, 0x1f9, 0x1fa, 0x1fb, 0, 0 };
+/* data twins (src/game/data/game_main_data.c): gActorData_001F1C60 */
+static s16 gActorData_001F1C60[0x8] __attribute__((aligned(4))) = { 0x1f9, 0x1fa, 0x1fb, 0x1f9, 0x1fa, 0x1fb, 0, 0 };
 #endif
 #ifndef NONMATCHING
-extern s16 D_001F1C10[];
+extern s16 gActorData_001F1C10[];
 #else
-/* data twins (src/game/data/game_main_data.c): D_001F1C10 */
-static s16 D_001F1C10[0x10] __attribute__((aligned(4))) = { 0x1db, 0x1db, 0x1db, 0x1da, 0x1dc, 0x1de, 0x1dd, -1, 0x1db, 0x1db, -1, -1, -1, -1, 0x1dd, -1 };
+/* data twins (src/game/data/game_main_data.c): gActorData_001F1C10 */
+static s16 gActorData_001F1C10[0x10] __attribute__((aligned(4))) = { 0x1db, 0x1db, 0x1db, 0x1da, 0x1dc, 0x1de, 0x1dd, -1, 0x1db, 0x1db, -1, -1, -1, -1, 0x1dd, -1 };
 #endif
 void Actor_BuildLookMatrix_0_00136DB0(s8 *a0, Vec *mat);
 void Actor_UpdateBones_0_001370A0(A *a);
@@ -239,7 +239,7 @@ void Actor_BuildLookMatrix_0_00136DB0(s8 *a0, Vec *mat) {
     Vec t70;
     f32 d;
     f32 r;
-    up = D_001F1C80;
+    up = gActorData_001F1C80;
     sceVu0SubVector(&m[2], &mat[3], Player_GetBody_1_00145770());
     sceVu0Normalize(&m[2], &m[2]);
     sceVu0Normalize(&e, &mat[2]);
@@ -288,10 +288,10 @@ void Actor_UpdateBones_0_001370A0(A *a) {
     done = 0;
     h = a->x518->x1A8;
     s7 = a->x518->x180;
-    bones = (Bone *)((u8 *)((s32)h + 0x40) + D_00201F2C * (h->h6 * 0x140 + 0x200) + 0xC0);
+    bones = (Bone *)((u8 *)((s32)h + 0x40) + gSfxAllSbss_00201F2C * (h->h6 * 0x140 + 0x200) + 0xC0);
     c = h->c;
     if (c) h->c--;
-    sceVu0CopyMatrix(bones, &D_001F2170);
+    sceVu0CopyMatrix(bones, &gMatrixFromData_001F2170);
     sceVu0AddVector(&bones->m.m[3], &bones->m.m[3], &h->x30);
     sceVu0CopyVector(Enemy_Ptr6E0_1_0013FFB0(a), &bones->m.m[3]);
     sceVu0CopyVector(Enemy_Ptr6F0_1_0013FFA0(a), &bones->m.m[3]);
@@ -413,7 +413,7 @@ void Actor_OffsetColliders_1_00137730(Actor *a, Vec *m) {
         }
     }
     h = *(H **)(a->unk518 + 0x1A8);
-    e = (s8 *)((s32)h + 0x40) + D_00201F2C * (h->n * 0x140 + 0x200) + 0xC0;
+    e = (s8 *)((s32)h + 0x40) + gSfxAllSbss_00201F2C * (h->n * 0x140 + 0x200) + 0xC0;
     sceVu0AddVector((Vec *)(e + 0x1F0), (Vec *)(e + 0x1F0), m);
     i = 1;
     if (i < h->n + 1) {
@@ -554,11 +554,11 @@ u8 Actor_CollideSegment_0_00138920(Actor *a, u8 i, s32 m2, s32 m1, Vec *out, u8 
                 sceVu0AddVector(c, c, q[0]);
                 c[0].w = p[0]->w;
                 memset(&b, 0, 0x40);
-                if ((&D_00201E80)[2]) {
-                    Enemy_RaycastMapA_0_0013D250(*(s32 *)(&D_00201E80)[2], &b, c, m2, m1);
+                if ((&gMapSbss_00201E80)[2]) {
+                    Enemy_RaycastMapA_0_0013D250(*(s32 *)(&gMapSbss_00201E80)[2], &b, c, m2, m1);
                 }
-                if ((&D_00201E80)[3]) {
-                    Enemy_RaycastMapA_0_0013D250(*(s32 *)(&D_00201E80)[3], &b, c, m2, m1);
+                if ((&gMapSbss_00201E80)[3]) {
+                    Enemy_RaycastMapA_0_0013D250(*(s32 *)(&gMapSbss_00201E80)[3], &b, c, m2, m1);
                 }
                 if (b.x24) {
                     sceVu0ScaleVector(&e, &d, f - 1.0f);
@@ -573,11 +573,11 @@ u8 Actor_CollideSegment_0_00138920(Actor *a, u8 i, s32 m2, s32 m1, Vec *out, u8 
         } else {
             sceVu0CopyVector(c, p[0]);
             memset(&b, 0, 0x40);
-            if ((&D_00201E80)[2]) {
-                Enemy_RaycastMapA_0_0013D250(*(s32 *)(&D_00201E80)[2], &b, c, m2, m1);
+            if ((&gMapSbss_00201E80)[2]) {
+                Enemy_RaycastMapA_0_0013D250(*(s32 *)(&gMapSbss_00201E80)[2], &b, c, m2, m1);
             }
-            if ((&D_00201E80)[3]) {
-                Enemy_RaycastMapA_0_0013D250(*(s32 *)(&D_00201E80)[3], &b, c, m2, m1);
+            if ((&gMapSbss_00201E80)[3]) {
+                Enemy_RaycastMapA_0_0013D250(*(s32 *)(&gMapSbss_00201E80)[3], &b, c, m2, m1);
             }
             if (b.x24) {
                 sceVu0ScaleVector(out, &b.b, c[0].w);
@@ -742,8 +742,8 @@ void Combat_CheckAttackHits_0_001391B0(s8 *arg0, s32 arg1, A2 *arg2) {
 #undef Combat_ProcessHit_0_00138FB0
 
 /* Combat_UpdateAttack_0_00139330 */
-#define D_001F2170 D_001F2170__as_Combat_UpdateAttack_0_00139330
-extern f32 D_001F2170__as_Combat_UpdateAttack_0_00139330[];
+#define gMatrixFromData_001F2170 gMatrixFromData_001F2170__as_Combat_UpdateAttack_0_00139330
+extern f32 gMatrixFromData_001F2170__as_Combat_UpdateAttack_0_00139330[];
 #define Combat_CheckAttackHits_0_001391B0 Combat_CheckAttackHits_0_001391B0__as_Combat_UpdateAttack_0_00139330
 void Combat_CheckAttackHits_0_001391B0__as_Combat_UpdateAttack_0_00139330(Actor *, Ent_Combat_UpdateAttack_0_00139330 *, void *);
 static inline Ent_Combat_UpdateAttack_0_00139330 *getEnt(Actor *a, u8 i) { return Enemy_GetPart_1_0013DC70(a, a->unk82[i + 0x18]); }
@@ -759,7 +759,7 @@ void Combat_UpdateAttack_0_00139330(Arg0 *arg0, s32 arg1, u8 arg2, Key_Combat_Up
 
     a = ActorList_GetCount_1_001A5430();
     e = Enemy_GetPart_1_0013DC70(a, a->unk82[arg2 + 0x18]);
-    base = (s8 *)((s32)arg0 + 0x40) + D_00201F2C * (arg0->h6 * 0x140 + 0x200);
+    base = (s8 *)((s32)arg0 + 0x40) + gSfxAllSbss_00201F2C * (arg0->h6 * 0x140 + 0x200);
     v = &e->a;
     p = arg4 + arg3->hE + arg3->bC;
     sceVu0CopyVector(&e->c, v);
@@ -787,12 +787,12 @@ void Combat_UpdateAttack_0_00139330(Arg0 *arg0, s32 arg1, u8 arg2, Key_Combat_Up
     if (D_00222A51[0].b7) {
         sceVu0CopyVector(&buf.a, v);
         sceVu0CopyVector(&buf.b, v + 1);
-        sceVu0CopyMatrix(&buf.m[0][0], D_001F2170);
+        sceVu0CopyMatrix(&buf.m[0][0], gMatrixFromData_001F2170);
         Draw_ShadowDisc_0_00156920(&buf);
     }
 }
 #undef Combat_CheckAttackHits_0_001391B0
-#undef D_001F2170
+#undef gMatrixFromData_001F2170
 
 /* Combat_UpdateProjectile_0_001395A0 */
 Vec D_001F1C70 = { 1.0f, 1.0f, 1.0f };
@@ -881,18 +881,18 @@ void Combat_UpdateProjectile_0_001395A0(f32 f, s32 a0, s32 a1, u8 a2, E *e, s32 
         k = -1;
         if (id == 0x1E0) {
             c = Enemy_Get608_1_0013E290(a);
-            if (c >= 0 && D_001F1C30[c] >= 0) k = D_001F1C30[c];
+            if (c >= 0 && gActorData_001F1C30[c] >= 0) k = gActorData_001F1C30[c];
         } else if (id == 0x1F3) {
             id = Enemy_Get609_1_0013E260(a);
             if (id >= 0) {
                 c = Enemy_Get60A_1_0013E270(a);
-                if (c >= 0 && D_001F1C50[c] >= 0) k = D_001F1C50[c] + id * 10;
+                if (c >= 0 && gScriptData_001F1C50[c] >= 0) k = gScriptData_001F1C50[c] + id * 10;
             }
         } else if (id == 0x1F2) {
             id = Enemy_Get609_1_0013E260(a);
             if (id >= 0) {
                 c = Enemy_Get60A_1_0013E270(a);
-                if (c >= 0 && D_001F1C60[c] >= 0) k = D_001F1C60[c] + id * 10;
+                if (c >= 0 && gActorData_001F1C60[c] >= 0) k = gActorData_001F1C60[c] + id * 10;
             }
         }
         if (k >= 0) {
@@ -986,9 +986,9 @@ void Actor_UpdateAttachedColliders_0_00139E20(s8 *arg0) {
 #undef sceVu0SubVector
 
 /* Actor_ProcessHitEvents_0_00139F30 */
-#define D_00201E80 D_00201E80__as_Actor_ProcessHitEvents_0_00139F30
-extern Obj **D_00201E80__as_Actor_ProcessHitEvents_0_00139F30[2];
-#define DE D_00201E80
+#define gMapSbss_00201E80 gMapSbss_00201E80__as_Actor_ProcessHitEvents_0_00139F30
+extern Obj **gMapSbss_00201E80__as_Actor_ProcessHitEvents_0_00139F30[2];
+#define DE gMapSbss_00201E80
 
 void Actor_ProcessHitEvents_0_00139F30(Actor *a) {
     s8 *b;
@@ -1068,7 +1068,7 @@ void Actor_ProcessHitEvents_0_00139F30(Actor *a) {
         }
     }
 }
-#undef D_00201E80
+#undef gMapSbss_00201E80
 #undef DE
 
 /* Actor_ResolveActorCollisionB_1_0013A190 */
@@ -1188,11 +1188,11 @@ void Actor_ResolveWallCollision_0_0013A450(Actor *a) {
             w = &C[0].w;
             *w = 100.0f;
             memset(&B, 0, 0x40);
-            if ((&D_00201E80)[2]) {
-                Enemy_RaycastMapA_0_0013D250(*(s32 *)(&D_00201E80)[2], &B, C, m2, m1);
+            if ((&gMapSbss_00201E80)[2]) {
+                Enemy_RaycastMapA_0_0013D250(*(s32 *)(&gMapSbss_00201E80)[2], &B, C, m2, m1);
             }
-            if ((&D_00201E80)[3]) {
-                Enemy_RaycastMapA_0_0013D250(*(s32 *)(&D_00201E80)[3], &B, C, m2, m1);
+            if ((&gMapSbss_00201E80)[3]) {
+                Enemy_RaycastMapA_0_0013D250(*(s32 *)(&gMapSbss_00201E80)[3], &B, C, m2, m1);
             }
             if (B.x24) {
                 sceVu0ScaleVector(&E, &B.b, *w);
@@ -1252,10 +1252,10 @@ void Actor_ResolveGround_0_0013A720(Actor *a) {
     }
     p->xB0.e.y += 1000.0f;
     memset(&p->xD0, 0, 0x40);
-    if (((s32 **)&D_00201E80)[2] != NULL) {
-        Enemy_RaycastMapC_0_0013D430(*((s32 **)&D_00201E80)[2], &p->xD0, &p->xB0, 4, fl);
+    if (((s32 **)&gMapSbss_00201E80)[2] != NULL) {
+        Enemy_RaycastMapC_0_0013D430(*((s32 **)&gMapSbss_00201E80)[2], &p->xD0, &p->xB0, 4, fl);
     }
-    q = ((s32 **)&D_00201E80)[3];
+    q = ((s32 **)&gMapSbss_00201E80)[3];
     if (q != NULL) {
         if (p->xD0.hit == 0) {
             Enemy_RaycastMapC_0_0013D430(*q, &p->xD0, &p->xB0, 4, fl);
@@ -1281,11 +1281,11 @@ void Actor_ResolveGround_0_0013A720(Actor *a) {
             if (!(Enemy_GetHeightAboveFloor_0_0013E3C0(a) <= 100.0f)) {
                 r = Enemy_Get608_1_0013E290(a);
                 if (r >= 0) {
-                    h = D_001F1C10[r];
+                    h = gActorData_001F1C10[r];
                     if (h >= 0 && Sfx_IsLoaded_2_00169BB0(h)) {
                         h = Sfx_Spawn_2_00169B50(h, 0, 0, 0);
                         if (h != 0) {
-                            sceVu0CopyMatrix(&m, &D_001F2170);
+                            sceVu0CopyMatrix(&m, &gMatrixFromData_001F2170);
                             sceVu0CopyVector(&m.m[3], &p->x40);
                             Sfx_SetTransform_1_001677C0(h, &m);
                             Sfx_SetOwner_1_00167600(h, a);
@@ -1305,13 +1305,13 @@ void Actor_ResolveGround_0_0013A720(Actor *a) {
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-extern u8 D_002704D0[];
-/* data group (src/game/data/fx_proc_data.c): D_001F1C80__grp: D_001F1C80@0x0 */
-s32 D_001F1C80__grp[0x14] __attribute__((aligned(16))) = { 0, 0x3f800000, 0, 0, (s32)D_002704D0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+extern u8 gActorBss_002704D0[];
+/* data group (src/game/data/fx_proc_data.c): D_001F1C80__grp: gActorData_001F1C80@0x0 */
+s32 D_001F1C80__grp[0x14] __attribute__((aligned(16))) = { 0, 0x3f800000, 0, 0, (s32)gActorBss_002704D0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 #endif
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/sound_emitter_bss_002704D0.c): D_002704D0 */
-u8 D_002704D0[0x80];
+/* data twins (src/game/data/sound_emitter_bss_002704D0.c): gActorBss_002704D0 */
+u8 gActorBss_002704D0[0x80];
 #endif

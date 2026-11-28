@@ -2,23 +2,23 @@
 +++ matched
 @@ -1,15 +1,8 @@
  #include "common.h"
--extern s32 D_004A0F90[];
+-extern s32 gMenuProcBss_004A0F90[];
 -void MenuProc_Run_1_0018B320(void *arg0) {
 -    if (arg0 != NULL) {
--        M2C_FIELD(D_004A0F90, f32 *, 0) = (f32) M2C_FIELD(arg0, f32 *, 0);
--        M2C_FIELD(D_004A0F90, f32 *, 4) = (f32) M2C_FIELD(arg0, f32 *, 4);
--        M2C_FIELD(D_004A0F90, f32 *, 8) = (f32) M2C_FIELD(arg0, f32 *, 8);
--        M2C_FIELD(D_004A0F90, f32 *, 0xC) = (f32) M2C_FIELD(arg0, f32 *, 0xC);
--        M2C_FIELD(D_004A0F90, f32 *, 0x10) = (f32) M2C_FIELD(arg0, f32 *, 0x10);
--        M2C_FIELD(D_004A0F90, f32 *, 0x14) = (f32) M2C_FIELD(arg0, f32 *, 0x14);
--        M2C_FIELD(D_004A0F90, f32 *, 0x18) = (f32) M2C_FIELD(arg0, f32 *, 0x18);
--        M2C_FIELD(D_004A0F90, f32 *, 0x1C) = (f32) M2C_FIELD(arg0, f32 *, 0x1C);
--        M2C_FIELD(D_004A0F90, f32 *, 0x20) = (f32) M2C_FIELD(arg0, f32 *, 0x20);
+-        M2C_FIELD(gMenuProcBss_004A0F90, f32 *, 0) = (f32) M2C_FIELD(arg0, f32 *, 0);
+-        M2C_FIELD(gMenuProcBss_004A0F90, f32 *, 4) = (f32) M2C_FIELD(arg0, f32 *, 4);
+-        M2C_FIELD(gMenuProcBss_004A0F90, f32 *, 8) = (f32) M2C_FIELD(arg0, f32 *, 8);
+-        M2C_FIELD(gMenuProcBss_004A0F90, f32 *, 0xC) = (f32) M2C_FIELD(arg0, f32 *, 0xC);
+-        M2C_FIELD(gMenuProcBss_004A0F90, f32 *, 0x10) = (f32) M2C_FIELD(arg0, f32 *, 0x10);
+-        M2C_FIELD(gMenuProcBss_004A0F90, f32 *, 0x14) = (f32) M2C_FIELD(arg0, f32 *, 0x14);
+-        M2C_FIELD(gMenuProcBss_004A0F90, f32 *, 0x18) = (f32) M2C_FIELD(arg0, f32 *, 0x18);
+-        M2C_FIELD(gMenuProcBss_004A0F90, f32 *, 0x1C) = (f32) M2C_FIELD(arg0, f32 *, 0x1C);
+-        M2C_FIELD(gMenuProcBss_004A0F90, f32 *, 0x20) = (f32) M2C_FIELD(arg0, f32 *, 0x20);
 -    }
 +typedef struct { f32 v[9]; } M;
-+extern M D_004A0F90;
++extern M gMenuProcBss_004A0F90;
 +void MenuProc_Run_1_0018B320(M *m)
 +{
 +    if (m)
-+        D_004A0F90 = *m;
++        gMenuProcBss_004A0F90 = *m;
  }

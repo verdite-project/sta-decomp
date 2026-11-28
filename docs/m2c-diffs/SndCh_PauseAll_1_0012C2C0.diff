@@ -2,13 +2,13 @@
 +++ matched
 @@ -1,20 +1,13 @@
  #include "common.h"
--extern s32 D_0022CBC0[];
+-extern s32 gSoundBankLoadBss_0022CBC0[];
 -void SndCh_PauseAll_1_0012C2C0(void) {
 -    s32 *var_6;
 -    s32 var_7;
 -    s8 temp_3;
 -    var_7 = 0;
--    var_6 = D_0022CBC0;
+-    var_6 = gSoundBankLoadBss_0022CBC0;
 -    do {
 -        if ((M2C_FIELD(var_6, s8 *, 0) != 0) && (M2C_FIELD(var_6, s8 *, 0xF) != 0)) {
 -            temp_3 = M2C_FIELD(var_6, s8 *, 0xE);
@@ -17,14 +17,14 @@
 -                M2C_FIELD(var_6, s8 *, 0xE) = 2;
 -            }
 +typedef struct { s8 b0; char p1[0xD]; s8 bE; s8 bF; char p10[0x5D]; s8 b6D; char rest[0x12]; } E;
-+extern E D_0022CBC0[63];
++extern E gSoundBankLoadBss_0022CBC0[63];
 +void SndCh_PauseAll_1_0012C2C0(void)
 +{
 +    s32 i;
 +    for (i = 0; i < 63; i++) {
-+        if (D_0022CBC0[i].b0 && D_0022CBC0[i].bF && D_0022CBC0[i].bE != 1) {
-+            D_0022CBC0[i].b6D = D_0022CBC0[i].bE;
-+            D_0022CBC0[i].bE = 2;
++        if (gSoundBankLoadBss_0022CBC0[i].b0 && gSoundBankLoadBss_0022CBC0[i].bF && gSoundBankLoadBss_0022CBC0[i].bE != 1) {
++            gSoundBankLoadBss_0022CBC0[i].b6D = gSoundBankLoadBss_0022CBC0[i].bE;
++            gSoundBankLoadBss_0022CBC0[i].bE = 2;
          }
 -        var_7 += 1;
 -        var_6 += 0x80;

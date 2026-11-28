@@ -9,7 +9,7 @@ typedef struct { u8 pad[0xC]; u16 xC; u16 xE; u8 pad10[2]; Flags8 f12; Flags8 f1
 typedef struct { u8 pad[0x40]; s32 x40; u8 pad44[0xC]; u8 x50; u8 pad51; Flags8 f52; u8 pad53[0x2D]; } E80;
 typedef struct { u8 pad[0x138]; E30 *x138; u8 pad13C[0x34]; E40 *x170; u8 pad174[0xC]; E80 *x180; } S;
 typedef struct { u8 pad[0x18]; Vec *o; } P;
-extern MtxF D_001F2170;
+extern MtxF gMatrixFromData_001F2170;
 s32 MapObj_CheckFacing_0_001B9610(S *a, s32 idx);
 s32 MapObj_IsActorNear_0_001B9E00(s32 arg0, s32 arg1, f32 r);
 u8* Mdl_GetFrameData_0_001715B0(s32);
@@ -80,7 +80,7 @@ s32 MapObj_CheckFacing_0_001B9610(S *a, s32 idx) {
         d = atan2f(-v120[0], -v120[2]) - WRAP(p->o[2].y);
         if (fabsf(WRAP(d)) <= 0.5235988f) return 1;
     } else {
-        sceVu0RotMatrixX(&m, &D_001F2170, WRAP(WRAP(p->o[2].x)));
+        sceVu0RotMatrixX(&m, &gMatrixFromData_001F2170, WRAP(WRAP(p->o[2].x)));
         sceVu0RotMatrixZ(&m, &m, WRAP(WRAP(p->o[2].z)));
         sceVu0RotMatrixY(&m, &m, WRAP(WRAP(3.1415927f + p->o[2].y)));
         v130[0] = 0.0f;

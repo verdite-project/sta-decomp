@@ -17,7 +17,7 @@ void Seg_ClosestPoints_3_00151B20(Res *, Seg *, Seg *);
 void Coll_SweepRecursive_0_00150730(Out *, Seg **, Seg **, RPair *, s32 *, f32 *, f32, f32, f32);
 float sqrtf(float);
 extern Vec gZeroVec_003139A0;
-extern s32 D_00201F24;
+extern s32 gCollSweepSegmentsInitSbss_00201F24;
 
 static inline void inner(Out *out, Seg *a1, Seg *a2, Seg *a3, Seg *a4) {
     s32 flag;
@@ -59,7 +59,7 @@ static inline void inner(Out *out, Seg *a1, Seg *a2, Seg *a3, Seg *a4) {
         k = 2.0f / (sqrtf(sceVu0InnerProduct(&r1.c, &r1.c)) + sqrtf(sceVu0InnerProduct(&r2.c, &r2.c)));
         if (!(k <= 1.0f)) k = 0.1f;
         f = 1.0f;
-        D_00201F24 = 0;
+        gCollSweepSegmentsInitSbss_00201F24 = 0;
         Coll_SweepRecursive_0_00150730(out, A, B, &C, &flag, &f, 0.0f, 1.0f, k);
         if (flag) out->x28 = 1;
     }

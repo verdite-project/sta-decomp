@@ -2,15 +2,15 @@
 +++ matched
 @@ -1,8 +1,8 @@
  #include "common.h"
--extern s32 (*D_004A0F98)();
-+extern void (*D_004A0F98[])(s32);
+-extern s32 (*gMenuProcBss_004A0F98)();
++extern void (*gMenuProcBss_004A0F98[])(s32);
  extern s32 D_004A0FAC[];
 -void MenuProc_CheckReady_0_0018B2E0(void) {
--    if ((D_004A0F98 != NULL) && ((*D_004A0FAC) >= 0x75)) {
--        D_004A0F98();
+-    if ((gMenuProcBss_004A0F98 != NULL) && ((*D_004A0FAC) >= 0x75)) {
+-        gMenuProcBss_004A0F98();
 -    }
 +void MenuProc_CheckReady_0_0018B2E0(s32 a)
 +{
-+    if (D_004A0F98[0] && D_004A0FAC[0] > 0x74)
-+        D_004A0F98[0](a);
++    if (gMenuProcBss_004A0F98[0] && D_004A0FAC[0] > 0x74)
++        gMenuProcBss_004A0F98[0](a);
  }

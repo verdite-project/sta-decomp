@@ -29,9 +29,9 @@ typedef struct {
     u8 pad96[0xB0 - 0x96];
     f32 fb0, fb4;
 } Obj;
-extern Mtx D_001F2170;
-extern Vec D_001F2140;
-extern f32 D_001F2160[];
+extern Mtx gMatrixFromData_001F2170;
+extern Vec gMatrixFromData_001F2140;
+extern f32 gMatrixFromData_001F2160[];
 void FxProc_OrientToVelocity_0_00148120(O_FxProc_OrientToVelocity_0_00148120 *o, f32 dt);
 void FxProc_RandomSpin_0_001484D0(O_FxProc_RandomSpin_0_001484D0 *o);
 void FxProc_FollowEnemy_0_001489B0(s8 *a0);
@@ -99,7 +99,7 @@ void FxProc_OrientToVelocity_0_00148120(O_FxProc_OrientToVelocity_0_00148120 *o,
     d = sceVu0InnerProduct(&A, &o->m.m[2]);
     s = (0.0f < d) ? 1.0f : -1.0f;
     ry = s * (l * kE);
-    d = sceVu0InnerProduct(&D_001F2140, &o->m.m[1]);
+    d = sceVu0InnerProduct(&gMatrixFromData_001F2140, &o->m.m[1]);
     s = (0.0f < d) ? -1.0f : 1.0f;
     rz = s * (kD * fabsf(d));
     sceVu0AddVector(&o->v, &o->v, &C);
@@ -108,12 +108,12 @@ void FxProc_OrientToVelocity_0_00148120(O_FxProc_OrientToVelocity_0_00148120 *o,
     sceVu0AddVector(&o->p, &E, &o->p);
     rx = 0.0f;
     a = rx * dt;
-    sceVu0RotMatrixY(&M, &D_001F2170, WRAP(a));
+    sceVu0RotMatrixY(&M, &gMatrixFromData_001F2170, WRAP(a));
     sceVu0MulMatrix(&o->m, &o->m, &M);
     y = ry + rz;
-    sceVu0RotMatrixX(&M, &D_001F2170, WRAP(y * dt));
+    sceVu0RotMatrixX(&M, &gMatrixFromData_001F2170, WRAP(y * dt));
     sceVu0MulMatrix(&o->m, &o->m, &M);
-    sceVu0RotMatrixZ(&M, &D_001F2170, WRAP(a));
+    sceVu0RotMatrixZ(&M, &gMatrixFromData_001F2170, WRAP(a));
     sceVu0MulMatrix(&o->m, &o->m, &M);
 }
 #undef sceVu0AddVector
@@ -140,7 +140,7 @@ void FxProc_RandomSpin_0_001484D0(O_FxProc_RandomSpin_0_001484D0 *o) {
     b = o->x60[2];
     o->xB0[2] = b + b * (-a + (a + a) * RND());
     if (o->x6C == 1.0f) {
-        sceVu0RotMatrixX(WRAP(6.2831855f * RND()), (Mtx *)o->xC0, &D_001F2170);
+        sceVu0RotMatrixX(WRAP(6.2831855f * RND()), (Mtx *)o->xC0, &gMatrixFromData_001F2170);
         sceVu0RotMatrixY(WRAP(6.2831855f * RND()), (Mtx *)o->xC0, (Mtx *)o->xC0);
         sceVu0ScaleVector(&o->v, &o->xE0, sqrtf(sceVu0InnerProduct(&o->v, &o->v)));
     }
@@ -173,7 +173,7 @@ void FxProc_FollowEnemy_0_001489B0(s8 *a0) {
     } else {
         *(f32 *)(a0 + 0xB8) = 0.0f;
     }
-    sceVu0AddVector(a, p != NULL ? (f32 *)(*(s32 *)(p + 0x518) + 0x90) : D_001F2160, (f32 *)(a0 + 0x50));
+    sceVu0AddVector(a, p != NULL ? (f32 *)(*(s32 *)(p + 0x518) + 0x90) : gMatrixFromData_001F2160, (f32 *)(a0 + 0x50));
     if (((BF_FxProc_FollowEnemy_0_001489B0 *)(a0 + 0x114))->v) {
         Fx_GetWorldMatrix_1_00163C80(a0, m);
         sceVu0CopyVector(b, m + 12);

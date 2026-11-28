@@ -7,10 +7,10 @@ typedef union { u128 q; u64 d[2]; u32 w[4]; } Q_ScreenFx_DrawCopy_0_00132190;
 typedef union { u128 q; u64 d[2]; u32 w[4]; f32 f[4]; } Q_ScreenFx_DrawSprite_0_001323C0;
 typedef struct { s32 x0; s32 x4; } A0;
 typedef struct { f32 x[4]; f32 f10; f32 f14; f32 f18; f32 f1C; } A3;
-extern u32 D_00201F00;
-extern u32 D_00201EF4;
-extern u32 D_00201EF0;
-extern u8 D_00201F0C;
+extern u32 gScreenFxDrawSbss_00201F00;
+extern u32 gScreenFxDrawSbss_00201EF4;
+extern u32 gScreenFxBeginSbss_00201EF0;
+extern u8 gScreenFxBeginSbss_00201F0C;
 void ScreenFx_DrawBlurPasses_0_00131970(s32 w, s32 h, f32 *c);
 void ScreenFx_DrawCopy_0_00132190(s32 w, s32 h);
 void ScreenFx_DrawSprite_0_001323C0(A0 *a0, u32 a1, u32 a2, A3 *a3);
@@ -23,7 +23,7 @@ u64 __fixunssfdi(f32);
 void memset(s32, s32, s32);
 
 /* ScreenFx_DrawBlurPasses_0_00131970 */
-static inline s32 wd_ScreenFx_DrawBlurPasses_0_00131970(void) { return D_00201F2C ? 0 : 0x1180; }
+static inline s32 wd_ScreenFx_DrawBlurPasses_0_00131970(void) { return gSfxAllSbss_00201F2C ? 0 : 0x1180; }
 
 void ScreenFx_DrawBlurPasses_0_00131970(s32 w, s32 h, f32 *c) {
     Q_ScreenFx_DrawBlurPasses_0_00131970 q1;
@@ -34,8 +34,8 @@ void ScreenFx_DrawBlurPasses_0_00131970(s32 w, s32 h, f32 *c) {
     Q_ScreenFx_DrawBlurPasses_0_00131970 *p;
     f32 f;
     GsPkt_BeginAD_3_001545D0();
-    GsPkt_SetReg_3_001543E0(0x4C, (u64)D_00201EF4 | ((s64)(s32)((u32)(u16)w >> 6) << 16) | 0xA000000);
-    GsPkt_SetReg_3_001543E0(0x4E, (u64)D_00201F00 | 0x3A000000);
+    GsPkt_SetReg_3_001543E0(0x4C, (u64)gScreenFxDrawSbss_00201EF4 | ((s64)(s32)((u32)(u16)w >> 6) << 16) | 0xA000000);
+    GsPkt_SetReg_3_001543E0(0x4E, (u64)gScreenFxDrawSbss_00201F00 | 0x3A000000);
     GsPkt_SetReg_3_001543E0(0x47, 0x32001);
     GsPkt_SetReg_3_001543E0(0x40, ((s64)((u16)w - 1) << 16) | ((s64)((u16)h - 1) << 48));
     GsPkt_SetReg_3_001543E0(0x41, ((s64)((u16)w - 1) << 16) | ((s64)((u16)h - 1) << 48));
@@ -61,8 +61,8 @@ void ScreenFx_DrawBlurPasses_0_00131970(s32 w, s32 h, f32 *c) {
     GsPkt_Commit_1_00154A70();
 
     GsPkt_BeginAD_3_001545D0();
-    GsPkt_SetReg_3_001543E0(0x4C, (u64)D_00201F00 | ((s64)(s32)((u32)(u16)w >> 6) << 16) | 0xA000000);
-    GsPkt_SetReg_3_001543E0(0x4E, (u64)D_00201EF4 | 0x3A000000);
+    GsPkt_SetReg_3_001543E0(0x4C, (u64)gScreenFxDrawSbss_00201F00 | ((s64)(s32)((u32)(u16)w >> 6) << 16) | 0xA000000);
+    GsPkt_SetReg_3_001543E0(0x4E, (u64)gScreenFxDrawSbss_00201EF4 | 0x3A000000);
     GsPkt_SetReg_3_001543E0(0x47, 0x71001);
     GsPkt_EndAD_3_00154420();
     p = GsPkt_Alloc_3_00154A80(5);
@@ -91,8 +91,8 @@ void ScreenFx_DrawBlurPasses_0_00131970(s32 w, s32 h, f32 *c) {
     GsPkt_Commit_1_00154A70();
 
     GsPkt_BeginAD_3_001545D0();
-    GsPkt_SetReg_3_001543E0(0x4C, (u64)D_00201EF4 | ((s64)(s32)((u32)(u16)w >> 6) << 16) | 0xA000000);
-    GsPkt_SetReg_3_001543E0(0x4E, (u64)D_00201F00 | 0x3A000000);
+    GsPkt_SetReg_3_001543E0(0x4C, (u64)gScreenFxDrawSbss_00201EF4 | ((s64)(s32)((u32)(u16)w >> 6) << 16) | 0xA000000);
+    GsPkt_SetReg_3_001543E0(0x4E, (u64)gScreenFxDrawSbss_00201F00 | 0x3A000000);
     GsPkt_SetReg_3_001543E0(0x47, 0x31001);
     GsPkt_EndAD_3_00154420();
     p = GsPkt_Alloc_3_00154A80(5);
@@ -121,8 +121,8 @@ void ScreenFx_DrawBlurPasses_0_00131970(s32 w, s32 h, f32 *c) {
     GsPkt_Commit_1_00154A70();
 
     GsPkt_BeginAD_3_001545D0();
-    GsPkt_SetReg_3_001543E0(0x4C, (u64)D_00201EF4 | ((s64)(s32)((u32)(u16)w >> 6) << 16) | 0xA000000);
-    GsPkt_SetReg_3_001543E0(0x4E, (u64)D_00201F00 | 0x3A000000);
+    GsPkt_SetReg_3_001543E0(0x4C, (u64)gScreenFxDrawSbss_00201EF4 | ((s64)(s32)((u32)(u16)w >> 6) << 16) | 0xA000000);
+    GsPkt_SetReg_3_001543E0(0x4E, (u64)gScreenFxDrawSbss_00201F00 | 0x3A000000);
     GsPkt_SetReg_3_001543E0(0x47, 0x71001);
     GsPkt_EndAD_3_00154420();
     p = GsPkt_Alloc_3_00154A80(5);
@@ -153,7 +153,7 @@ void ScreenFx_DrawBlurPasses_0_00131970(s32 w, s32 h, f32 *c) {
     GsPkt_BeginAD_3_001545D0();
     GsPkt_SetReg_3_001543E0(0x4C, (s64)(wd_ScreenFx_DrawBlurPasses_0_00131970() / 32) | 0xA0000);
     GsPkt_SetReg_3_001543E0(0x4E, 0x3A000118);
-    f = D_00201E90;
+    f = gGameMainSbss_00201E90;
     GsPkt_SetReg_3_001543E0(0x40, 0x27F0000 | ((u64)__fixunssfdi(f) << 32) | ((u64)__fixunssfdi(448.0f - f - 1.0f) << 48));
     GsPkt_SetReg_3_001543E0(0x47, 0x31001);
     GsPkt_SetReg_3_001543E0(0x42, ((u64)0x80 << 32) | 0x44);
@@ -166,7 +166,7 @@ void ScreenFx_DrawBlurPasses_0_00131970(s32 w, s32 h, f32 *c) {
     q5.d[0] = ((u64)0x80AB4000 << 32) | 0x8001;
     q5.d[1] = 0x535318E6;
     p[1].q = q5.q;
-    q5.d[0] = (u64)D_00201EF0 | ((s64)(s32)((u32)(u16)w >> 6) << 14) | (((u64)6 << 32) | 0xA8A00000);
+    q5.d[0] = (u64)gScreenFxBeginSbss_00201EF0 | ((s64)(s32)((u32)(u16)w >> 6) << 14) | (((u64)6 << 32) | 0xA8A00000);
     q5.d[1] = 0;
     p[2].q = q5.q;
     q5.d[0] = 0x60;
@@ -210,8 +210,8 @@ void ScreenFx_DrawCopy_0_00132190(s32 w, s32 h) {
     Q_ScreenFx_DrawCopy_0_00132190 q;
     Q_ScreenFx_DrawCopy_0_00132190 *p;
     GsPkt_BeginAD_3_001545D0();
-    GsPkt_SetReg_3_001543E0(0x4C, (u64)D_00201F00 | ((s64)(s32)((u32)(u16)w >> 6) << 16) | 0x3A000000);
-    GsPkt_SetReg_3_001543E0(0x4E, (u64)D_00201EF4 | 0x3A000000);
+    GsPkt_SetReg_3_001543E0(0x4C, (u64)gScreenFxDrawSbss_00201F00 | ((s64)(s32)((u32)(u16)w >> 6) << 16) | 0x3A000000);
+    GsPkt_SetReg_3_001543E0(0x4E, (u64)gScreenFxDrawSbss_00201EF4 | 0x3A000000);
     GsPkt_SetReg_3_001543E0(0x47, 0x30000);
     GsPkt_SetReg_3_001543E0(0x42, ((u64)0x80 << 32) | 0xA8);
     GsPkt_SetReg_3_001543E0(0x3B, (u64)0x80 << 32);
@@ -313,7 +313,7 @@ void ScreenFx_DrawSprite_0_001323C0(A0 *a0, u32 a1, u32 a2, A3 *a3) {
 #undef GsPkt_Alloc_3_00154A80
 
 /* ScreenFx_DrawLetterbox_0_001325F0 */
-static inline s32 wd_ScreenFx_DrawLetterbox_0_001325F0(void) { return D_00201F2C ? 0 : 0x1180; }
+static inline s32 wd_ScreenFx_DrawLetterbox_0_001325F0(void) { return gSfxAllSbss_00201F2C ? 0 : 0x1180; }
 
 void ScreenFx_DrawLetterbox_0_001325F0(void) {
     f32 f;
@@ -322,9 +322,9 @@ void ScreenFx_DrawLetterbox_0_001325F0(void) {
     GsPkt_SetReg_3_001543E0(0x4D, (s64)(wd_ScreenFx_DrawLetterbox_0_001325F0() / 32) | 0xA0000);
     GsPkt_SetReg_3_001543E0(0x4E, 0x3A000118);
     GsPkt_SetReg_3_001543E0(0x4F, 0x3A000118);
-    f = D_00201E90;
+    f = gGameMainSbss_00201E90;
     GsPkt_SetReg_3_001543E0(0x40, 0x27F0000 | ((u64)__fixunssfdi(f) << 32) | ((u64)__fixunssfdi(448.0f - f - 1.0f) << 48));
-    f = D_00201E90;
+    f = gGameMainSbss_00201E90;
     GsPkt_SetReg_3_001543E0(0x41, 0x27F0000 | ((u64)__fixunssfdi(f) << 32) | ((u64)__fixunssfdi(448.0f - f - 1.0f) << 48));
     GsPkt_EndAD_3_00154420();
     Tex_FlushAll_1_00176AE0();
@@ -347,14 +347,14 @@ void ScreenFx_DrawRestore_0_001327B0(void) {
     u16 w;
     u16 h;
     s64 a;
-    h = D_00201F08; w = D_00201F04;
+    h = gScreenFxBeginSbss_00201F08; w = gScreenFxBeginSbss_00201F04;
     GsPkt_BeginAD_3_001545D0();
     a = (s32)((u32)w >> 6);
     a = a << 16;
-    GsPkt_SetReg_3_001543E0(0x4C, (u64)D_00201EF4 | a | 0xA000000);
-    GsPkt_SetReg_3_001543E0(0x4D, (u64)D_00201EF4 | a | 0xA000000);
-    GsPkt_SetReg_3_001543E0(0x4E, (u64)D_00201F00 | 0x3A000000);
-    GsPkt_SetReg_3_001543E0(0x4F, (u64)D_00201F00 | 0x3A000000);
+    GsPkt_SetReg_3_001543E0(0x4C, (u64)gScreenFxDrawSbss_00201EF4 | a | 0xA000000);
+    GsPkt_SetReg_3_001543E0(0x4D, (u64)gScreenFxDrawSbss_00201EF4 | a | 0xA000000);
+    GsPkt_SetReg_3_001543E0(0x4E, (u64)gScreenFxDrawSbss_00201F00 | 0x3A000000);
+    GsPkt_SetReg_3_001543E0(0x4F, (u64)gScreenFxDrawSbss_00201F00 | 0x3A000000);
     a = (s64)(s32)(w - 1) << 16 | (s64)(s32)(h - 1) << 48;
     GsPkt_SetReg_3_001543E0(0x40, a);
     GsPkt_SetReg_3_001543E0(0x41, a);
@@ -381,8 +381,8 @@ int GsPkt_SetReg_3_001543E0__as_ScreenFx_Draw_0_00132930();
 int ScreenFx_DrawBlurPasses_0_00131970__as_ScreenFx_Draw_0_00132930();
 
 void ScreenFx_Draw_0_00132930(s32 arg0) {
-    if (D_00201F0C != 0) {
-        ScreenFx_DrawBlurPasses_0_00131970((s32) D_00201F04, (s32) D_00201F08, (void *) arg0);
+    if (gScreenFxBeginSbss_00201F0C != 0) {
+        ScreenFx_DrawBlurPasses_0_00131970((s32) gScreenFxBeginSbss_00201F04, (s32) gScreenFxBeginSbss_00201F08, (void *) arg0);
         GsPkt_BeginAD_3_001545D0();
         GsPkt_SetReg_3_001543E0(0x1A, 1);
         GsPkt_SetReg_3_001543E0(0x42, 0xAA);
@@ -392,7 +392,7 @@ void ScreenFx_Draw_0_00132930(s32 arg0) {
         GsPkt_SetReg_3_001543E0(1, 0x80000);
         GsPkt_EndAD_3_00154420();
         Tex_FlushAll_1_00176AE0();
-        D_00201F0C = 0;
+        gScreenFxBeginSbss_00201F0C = 0;
     }
 }
 #undef GsPkt_EndAD_3_00154420
@@ -401,7 +401,7 @@ void ScreenFx_Draw_0_00132930(s32 arg0) {
 
 #ifdef NONMATCHING
 #pragma explicit_zero_data on
-/* data twins (src/game/data/sbss.c): D_00201EF4, D_00201F00 */
-u32 D_00201EF4;
-u32 D_00201F00;
+/* data twins (src/game/data/sbss.c): gScreenFxDrawSbss_00201EF4, gScreenFxDrawSbss_00201F00 */
+u32 gScreenFxDrawSbss_00201EF4;
+u32 gScreenFxDrawSbss_00201F00;
 #endif
